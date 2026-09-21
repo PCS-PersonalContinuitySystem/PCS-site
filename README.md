@@ -19,6 +19,6 @@ pnpm export:preview
 
 Copy the generated `review/PCS-website-preview.html` into this repository as `index.html`, review the page, and commit the update.
 
-The website shows PCS 0.9.0 with labeled example data. The fictional illustration is labeled separately. Application download and contact links will appear only after their destinations are configured in the editable project and the page is regenerated.
+The website shows PCS 0.9.0 with labeled example data. The fictional illustration is labeled separately. The Download PCS button links directly to the complete PCS 0.9.0 Windows ZIP at https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.0/PCS-0.9.0-Windows-x64.zip. Support links point to https://ko-fi.com/pcssupport. Contact remains unconfigured.
 
 This repository hosts the website; it does not distribute the PCS Windows application.
