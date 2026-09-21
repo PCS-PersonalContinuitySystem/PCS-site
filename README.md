@@ -1,23 +1,24 @@
-# PCS website — GitHub Pages export
+# PCS website
 
-This folder is a static export of the saved **PCS — Personal Continuity System** website.
+The public product website for **PCS — Personal Continuity System**.
 
-## Publish it on GitHub Pages
+This repository contains the ready-to-host static website. `index.html` includes the page, styles, scripts, artwork, and example screenshots. It needs no server-side runtime, API keys, or database. `.nojekyll` tells GitHub Pages to serve the static files directly.
 
-1. Create or open the GitHub repository you want to use for the website.
-2. Upload **everything in this folder** to the top level of the repository. Keep the `brand` folder intact.
-3. Open the repository's **Settings**.
-4. Select **Pages** in the sidebar.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select the `main` branch and the `/(root)` folder, then save.
+## Publishing
 
-GitHub will publish the website after the Pages deployment finishes. The site may take several minutes to appear.
+In repository **Settings → Pages**, select **Deploy from a branch**, then **main** and **/ (root)**. Saving a new version of `index.html` to `main` publishes an update.
 
-## Editing later
+## Updating the design
 
-- The page content is in `index.html`.
-- The appearance is in `styles.css`.
-- Logos and banner images are in the `brand` folder.
-- Upload changed files to the same repository to update the published site.
+The editable React/TypeScript website project is retained separately. In that project, run:
 
-The PCS software download, documentation, release notes, and checksum are intentionally still placeholders in this draft.
+```sh
+pnpm install --frozen-lockfile
+pnpm export:preview
+```
+
+Copy the generated `review/PCS-website-preview.html` into this repository as `index.html`, review the page, and commit the update.
+
+The website shows PCS 0.9.0 with labeled example data. The fictional illustration is labeled separately. Application download and contact links will appear only after their destinations are configured in the editable project and the page is regenerated.
+
+This repository hosts the website; it does not distribute the PCS Windows application.
