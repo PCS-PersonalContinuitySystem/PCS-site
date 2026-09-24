@@ -1,0 +1,6 @@
+/* Documentation update only; established page design remains. */
+.faq-native details{border-bottom:1px solid currentColor;padding:0}
+.faq-native summary{padding:22px 0;cursor:pointer;font:inherit;font-weight:600;line-height:1.5}
+.faq-native details p{padding:0 0 22px;margin:0;line-height:1.7}
+.faq-native summary:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.supporting-copy a{text-decoration:underline;text-underline-offset:3px}
