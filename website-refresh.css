@@ -1,0 +1,34 @@
+
+/* PCS site refresh for 0.9.10 */
+@media (max-width: 879px) {
+  .menu-toggle { display: none !important; }
+  .site-header .navigation { display: flex !important; position: static !important; flex-wrap: wrap; gap: 14px; padding: 12px 0 20px; background: transparent; }
+  .header-inner { flex-wrap: wrap; }
+  .site-header { position: static; }
+}
+.app-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a9ba95;
+  margin-bottom: 14px;
+}
+.app-proof::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #b9c887;
+  box-shadow: 0 0 0 4px rgba(185, 200, 135, 0.12);
+}
+.app-panel-note {
+  margin-top: 16px;
+  color: #415962;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+.screenshot-button[href] { text-decoration: none; }
+.screenshot-button[href] .enlarge { opacity: 0.9; }
