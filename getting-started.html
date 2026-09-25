@@ -1,39 +1,541 @@
 <!DOCTYPE html>
-
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Getting started with PCS on Windows | PCS</title><meta content="Download the right PCS package, create a vault, and choose a cloud or supported Local conversation route." name="description"/>
-<link href="https://pcs-personalcontinuitysystem.github.io/PCS-site/getting-started.html" rel="canonical"/><meta content="index,follow,max-image-preview:large" name="robots"/>
-<meta content="#101920" name="theme-color"/><link href="assets/pcs-star.svg" rel="icon" type="image/svg+xml"/>
-<meta content="website" property="og:type"/><meta content="PCS — Personal Continuity System" property="og:site_name"/>
-<meta content="Getting started with PCS on Windows | PCS" property="og:title"/><meta content="Download the right PCS package, create a vault, and choose a cloud or supported Local conversation route." property="og:description"/>
-<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/getting-started.html" property="og:url"/><meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/01-welcome.jpg" property="og:image"/>
-<meta content="PCS 0.9.10 interface with authored example data" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/>
-<link href="assets/guides-c15cb839fc10.css" rel="stylesheet"/><link href="website-refresh.css" rel="stylesheet"/></head><body>
-<a class="skip" href="#main">Skip to guide</a><header class="topbar"><div class="shell"><a aria-label="PCS home" class="brand" href="./"><img alt="PCS" height="69" src="assets/pcs-wordmark-36dae8b37826.webp" width="222"/><span>Personal<br/>Continuity System</span></a><nav aria-label="Main navigation" class="toplinks"><a href="./">Home</a><a href="./#setup">Download</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS">GitHub</a></nav></div></header>
-<main id="main" tabindex="-1"><div class="guide-header"><div class="shell"><p class="eyebrow">PCS GUIDES / YOUR SPACE, YOUR CHOICES</p><h1>Getting started with PCS on Windows</h1><p class="intro">Download the right PCS package, create a vault, and choose a cloud or supported Local conversation route.</p><p class="version">PCS 0.9.10 · Pre-release guidance reviewed September 24, 2026</p></div></div>
-<div class="shell guide-grid"><aside class="guide-nav"><h2>In this guide</h2><ul class="toc"><li><a href="#before-you-begin">Before you begin</a></li><li><a href="#download">1. Download and extract the application</a></li><li><a href="#first-launch">2. Open PCS and create your vault</a></li><li><a href="#choose-a-route">3. Choose your conversation route</a></li><li><a href="#finish-safely">4. Check the result, then stop or quit deliberately</a></li><li><a href="#help">When something goes wrong</a></li></ul><h2>Read next</h2><nav aria-label="PCS guides"><a aria-current="page" class="active" href="getting-started.html">Getting started with PCS on Windows</a><a href="memory-control.html">What PCS remembers—and how to change it</a><a href="data-and-privacy.html">What stays on your PC—and what is shared</a><a href="continuity-map.html">Explore Continuity Map v2</a></nav><p>These pages work without JavaScript and do not make AI requests.</p></aside><article><details class="mobile-guide-nav"><summary>In this guide &amp; related guides</summary><ul class="toc"><li><a href="#before-you-begin">Before you begin</a></li><li><a href="#download">1. Download and extract the application</a></li><li><a href="#first-launch">2. Open PCS and create your vault</a></li><li><a href="#choose-a-route">3. Choose your conversation route</a></li><li><a href="#finish-safely">4. Check the result, then stop or quit deliberately</a></li><li><a href="#help">When something goes wrong</a></li></ul><h2>Read next</h2><nav aria-label="Mobile PCS guides"><a aria-current="page" class="active" href="getting-started.html">Getting started with PCS on Windows</a><a href="memory-control.html">What PCS remembers—and how to change it</a><a href="data-and-privacy.html">What stays on your PC—and what is shared</a><a href="continuity-map.html">Explore Continuity Map v2</a></nav></details>
-<h2 id="before-you-begin">Before you begin</h2>
-<p>PCS is a Windows application with an interface that opens locally in your browser. The app is free; cloud AI usage can incur charges from your chosen provider. The supported Local route needs compatible Windows/NVIDIA hardware and separate model and runtime downloads.</p>
-<div class="callout"><p><strong>This is a pre-release.</strong> Physical microphone/noisy-room testing, long-session acceptance and broader memory quality remain open. The release notes also flag a Google renewal disconnection. Start with non-sensitive example information while learning the controls; do not treat a successful first launch as a reliability guarantee.</p></div>
-<h2 id="download">1. Download and extract the application</h2>
-<p>Use <code>PCS-0.9.10-Windows-x64.zip</code> for the complete Windows application. The separately attached Source ZIP is for development, not the easiest way to start the app.</p>
-<div class="actions"><a class="button" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.10/PCS-0.9.10-Windows-x64.zip">Download PCS for Windows</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.10">Release notes and all downloads</a></div>
-<p>Extract the entire ZIP into a fresh folder you can write to. Keep its files together, including <code>support</code>. Do not place the new files over an older installation. Existing users should Quit PCS and preserve the entire cleanly stopped data directory, including original Materials, before changing releases. Do not merge data into another existing vault or run two installations against the same directory.</p>
-<p>Python, application dependencies and offline English speech recognition are included. The Local conversation model and runtime are not. The release includes a <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.10/PCS-0.9.10-SHA256SUMS.txt">checksum file</a> for checking download integrity.</p>
-<p>The top level keeps <strong>Start PCS.exe</strong> and <strong>START_HERE.md</strong> easy to find. <code>docs/HELP.html</code> opens the full offline Help and FAQ without starting PCS. Current guides, developer references and history have separate folders. Do not move or delete package members manually; the launcher verifies its manifest.</p>
-<h2 id="first-launch">2. Open PCS and create your vault</h2>
-<p>Double-click <strong>Start PCS.exe</strong>. The first launch shows a PCS setup window while it prepares the bundled runtime and dependencies; this setup is designed to work offline and leave system Python unchanged. When it closes, use the browser page opened by the launcher.</p>
-<p>The address begins with <code>http://127.0.0.1</code>. The full launch URL includes an access token: keep that full address private, including in screenshots and support reports.</p>
-<p>Choose <strong>Create a vault</strong>, enter and confirm a long, unique passphrase, and store it safely. PCS cannot recover a forgotten passphrase. Existing backup users can choose <strong>Restore an encrypted backup instead</strong>; follow the included <code>docs/RESTORE_VAULT.md</code> rather than experimenting with your only copy.</p>
-<figure><a href="screenshots/01-welcome.jpg"><img alt="PCS welcome interface showing authored example continuity" decoding="async" height="1080" loading="lazy" src="screenshots/01-welcome.jpg" width="1920"/></a><figcaption>PCS 0.9.10 — example data. This screenshot illustrates the interface, not a live AI session. Open it to see the original image.</figcaption></figure>
-<h2 id="choose-a-route">3. Choose your conversation route</h2>
-<h3>Google or OpenAI</h3><p>Open <strong>Settings → Connection</strong>, select your <strong>Conversation provider</strong>, and enter its Conversation API key. Review <strong>Learn from our conversations and recall personal memories</strong> and its sharing explanation, then choose <strong>Save settings</strong>. Memory and preparation normally use your conversation provider unless you configure their optional overrides.</p>
-<p>Return to <strong>Conversation</strong>. Leave <strong>Use microphone</strong> off for a text-only first session, or enable it and review the browser permission and input meter. Choose <strong>Start PCS</strong>. Check provider billing separately; the PCS download is not a supply of cloud API credits.</p>
-<h3>Supported Local route</h3><p>Open <strong>Settings → Connection → Local conversation</strong>. Use <strong>Download model</strong>, <strong>Get runtime</strong> and <strong>Download CUDA libraries</strong> for the specifically supported files. Extract both runtime archives into the same folder, then select <strong>Choose runtime folder…</strong> and <strong>Choose model file…</strong>.</p>
-<p>Review the continuity and local-tool choices, enable <strong>Use local mode</strong>, and save. The separate <strong>Start local conversation</strong> action can also start a local session. There is no cloud fallback. Local vision and network research are unavailable. See the in-app Help for the supported files and hardware limitations.</p>
-<h2 id="finish-safely">4. Check the result, then stop or quit deliberately</h2>
-<p>Use a simple example conversation and inspect any saved outcome. A spoken request or a queued notice is not proof that a change finished. <strong>Stop PCS</strong> ends the conversation; <strong>Lock</strong> also closes vault access. <strong>Quit PCS</strong> shuts the app down after confirmation.</p>
-<p>Closing the browser tab can leave the desktop host running and the vault unlocked. Use the app’s controls for the state you intend. Read <a href="memory-control.html">memory controls</a> and <a href="data-and-privacy.html">what stays local and what is shared</a> before adding personal material.</p>
-<h2 id="help">When something goes wrong</h2><p><strong>Connected does not always mean input is available.</strong> Read the status: OpenAI can pause for rate allowance; Local listening pauses during processing and speech; renewal pauses forwarding. Wait for an OpenAI pause to clear, then send deliberately. Drafts are preserved and requests are not automatically replayed. Google checkpoint-renewal failures and broader memory-quality issues remain open.</p><p>In-app <strong>Help</strong> works offline, including while the vault is locked. For startup diagnostics, the included guide describes <code>support/Start with console.cmd</code>. The <strong>Bug report</strong> tool lets you review a report before sharing; nothing is uploaded automatically. Remove private information before posting to a public repository.</p>
-<p class="source-note">Reviewed against the PCS 0.9.10 documentation-and-packaging candidate and retained 0.9.5 implementation: in-app Help, docs/REFERENCE.md, docs/CONTINUITY_MAP.md, memory/requested-memory and provider controls. Labeled 0.9.0 pictures are historical interface examples, not newly captured 0.9.6 screens. Known provider and memory-quality limitations remain.</p></article></div></main>
-<footer><div class="shell"><span>PCS — Personal Continuity System</span><span><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.10">Release notes</a> · <a href="https://ko-fi.com/pcssupport">Optional one-time support</a></span></div></footer></body></html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Getting started with PCS on Windows | PCS
+  </title>
+  <meta content="Download the right PCS package, create a vault, and choose a cloud or supported Local conversation route." name="description"/>
+  <link href="https://pcs-personalcontinuitysystem.github.io/PCS-site/getting-started.html" rel="canonical"/>
+  <meta content="index,follow,max-image-preview:large" name="robots"/>
+  <meta content="#101920" name="theme-color"/>
+  <link href="assets/pcs-star.svg" rel="icon" type="image/svg+xml"/>
+  <meta content="website" property="og:type"/>
+  <meta content="PCS — Personal Continuity System" property="og:site_name"/>
+  <meta content="Getting started with PCS on Windows | PCS" property="og:title"/>
+  <meta content="Download the right PCS package, create a vault, and choose a cloud or supported Local conversation route." property="og:description"/>
+  <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/getting-started.html" property="og:url"/>
+  <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/01-welcome-098.png" property="og:image"/>
+  <meta content="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." property="og:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <link href="assets/guides-c15cb839fc10.css" rel="stylesheet"/>
+  <link href="website-refresh.css" rel="stylesheet"/>
+  <meta content="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." name="twitter:image:alt"/>
+  <script defer="" src="assets/site-controls-0910-r2.js">
+  </script>
+ </head>
+ <body>
+  <a class="skip" href="#main">
+   Skip to guide
+  </a>
+  <header class="topbar">
+   <div class="shell">
+    <a aria-label="PCS home" class="brand" href="./">
+     <img alt="PCS" height="69" src="assets/pcs-wordmark-36dae8b37826.webp" width="222"/>
+     <span>
+      Personal
+      <br/>
+      Continuity System
+     </span>
+    </a>
+    <nav aria-label="Main navigation" class="toplinks">
+     <a href="./">
+      Home
+     </a>
+     <a href="./#setup">
+      Download
+     </a>
+     <a href="https://github.com/PCS-PersonalContinuitySystem/PCS">
+      GitHub
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main id="main" tabindex="-1">
+   <div class="guide-header">
+    <div class="shell">
+     <p class="eyebrow">
+      PCS GUIDES / YOUR SPACE, YOUR CHOICES
+     </p>
+     <h1>
+      Getting started with PCS on Windows
+     </h1>
+     <p class="intro">
+      Download the right PCS package, create a vault, and choose a cloud or supported Local conversation route.
+     </p>
+     <p class="version">
+      PCS 0.9.10 · Pre-release guide · updated September 25, 2026
+     </p>
+    </div>
+   </div>
+   <div class="shell guide-grid">
+    <aside class="guide-nav">
+     <h2>
+      In this guide
+     </h2>
+     <ul class="toc">
+      <li>
+       <a href="#before-you-begin">
+        Before you begin
+       </a>
+      </li>
+      <li>
+       <a href="#download">
+        1. Download and extract the application
+       </a>
+      </li>
+      <li>
+       <a href="#first-launch">
+        2. Open PCS and create your vault
+       </a>
+      </li>
+      <li>
+       <a href="#choose-a-route">
+        3. Choose your conversation route
+       </a>
+      </li>
+      <li>
+       <a href="#finish-safely">
+        4. Check the result, then stop or quit deliberately
+       </a>
+      </li>
+      <li>
+       <a href="#updating">
+        Updating an existing installation
+       </a>
+      </li>
+      <li>
+       <a href="#help">
+        When something goes wrong
+       </a>
+      </li>
+     </ul>
+     <h2>
+      Read next
+     </h2>
+     <nav aria-label="PCS guides">
+      <a aria-current="page" class="active" href="getting-started.html">
+       Getting started with PCS on Windows
+      </a>
+      <a href="memory-control.html">
+       What PCS remembers—and how to change it
+      </a>
+      <a href="data-and-privacy.html">
+       What stays on your PC—and what is shared
+      </a>
+      <a href="continuity-map.html">
+       Explore Continuity Map v2
+      </a>
+     </nav>
+     <p>
+      These pages work without JavaScript and do not make AI requests.
+     </p>
+    </aside>
+    <article>
+     <details class="mobile-guide-nav">
+      <summary>
+       In this guide &amp; related guides
+      </summary>
+      <ul class="toc">
+       <li>
+        <a href="#before-you-begin">
+         Before you begin
+        </a>
+       </li>
+       <li>
+        <a href="#download">
+         1. Download and extract the application
+        </a>
+       </li>
+       <li>
+        <a href="#first-launch">
+         2. Open PCS and create your vault
+        </a>
+       </li>
+       <li>
+        <a href="#choose-a-route">
+         3. Choose your conversation route
+        </a>
+       </li>
+       <li>
+        <a href="#finish-safely">
+         4. Check the result, then stop or quit deliberately
+        </a>
+       </li>
+       <li>
+        <a href="#updating">
+         Updating an existing installation
+        </a>
+       </li>
+       <li>
+        <a href="#help">
+         When something goes wrong
+        </a>
+       </li>
+      </ul>
+      <h2>
+       Read next
+      </h2>
+      <nav aria-label="Mobile PCS guides">
+       <a aria-current="page" class="active" href="getting-started.html">
+        Getting started with PCS on Windows
+       </a>
+       <a href="memory-control.html">
+        What PCS remembers—and how to change it
+       </a>
+       <a href="data-and-privacy.html">
+        What stays on your PC—and what is shared
+       </a>
+       <a href="continuity-map.html">
+        Explore Continuity Map v2
+       </a>
+      </nav>
+     </details>
+     <h2 id="before-you-begin">
+      Before you begin
+     </h2>
+     <p>
+      PCS is a Windows application with an interface that opens locally in your browser. The app is free; cloud AI usage can incur charges from your chosen provider. The supported Local route needs compatible Windows/NVIDIA hardware and separate model and runtime downloads.
+     </p>
+     <div class="callout">
+      <p>
+       <strong>
+        This is a pre-release.
+       </strong>
+       Physical microphone/noisy-room testing, long-session acceptance and broader memory quality remain open. The release notes also flag a Google renewal disconnection. Start with non-sensitive example information while learning the controls; do not treat a successful first launch as a reliability guarantee.
+      </p>
+     </div>
+     <h2 id="download">
+      1. Download and extract the application
+     </h2>
+     <p>
+      Use
+      <code>
+       PCS-0.9.10-Windows-x64.zip
+      </code>
+      for the complete Windows application. The separately attached Source ZIP is for development, not the easiest way to start the app.
+     </p>
+     <div class="actions">
+      <a class="button" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.10/PCS-0.9.10-Windows-x64.zip">
+       Download PCS for Windows
+      </a>
+      <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.10">
+       Release notes and all downloads
+      </a>
+     </div>
+     <p>
+      Extract the entire ZIP into a fresh, writable folder and keep its files together, including
+      <code>
+       support
+      </code>
+      . Do not overlay an older installation. Existing users should follow
+      <a href="#updating">
+       Updating an existing installation
+      </a>
+      below to transfer their saved information.
+     </p>
+     <p>
+      Python, application dependencies and offline English speech recognition are included. The Local conversation model and runtime are not. The release includes a
+      <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.10/PCS-0.9.10-SHA256SUMS.txt">
+       checksum file
+      </a>
+      for checking download integrity.
+     </p>
+     <p>
+      The top level keeps
+      <strong>
+       Start PCS.exe
+      </strong>
+      and
+      <strong>
+       START_HERE.md
+      </strong>
+      easy to find.
+      <code>
+       docs/HELP.html
+      </code>
+      opens the full offline Help and FAQ without starting PCS. Current guides, developer references and history have separate folders. Do not move or delete package members manually; the launcher verifies its manifest.
+     </p>
+     <h2 id="first-launch">
+      2. Open PCS and create your vault
+     </h2>
+     <p>
+      Double-click
+      <strong>
+       Start PCS.exe
+      </strong>
+      . The first launch shows a PCS setup window while it prepares the bundled runtime and dependencies; this setup is designed to work offline and leave system Python unchanged. When it closes, use the browser page opened by the launcher.
+     </p>
+     <p>
+      The address begins with
+      <code>
+       http://127.0.0.1
+      </code>
+      . The full launch URL includes an access token: keep that full address private, including in screenshots and support reports.
+     </p>
+     <p>
+      Choose
+      <strong>
+       Create a vault
+      </strong>
+      , enter and confirm a long, unique passphrase, and store it safely. PCS cannot recover a forgotten passphrase. Existing backup users can choose
+      <strong>
+       Restore an encrypted backup instead
+      </strong>
+      ; follow the included
+      <code>
+       docs/RESTORE_VAULT.md
+      </code>
+      rather than experimenting with your only copy.
+     </p>
+     <figure>
+      <a aria-label="Open image: Conversation workspace" data-image-preview="" href="screenshots/01-welcome-098.png">
+       <img alt="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." decoding="async" height="1080" loading="lazy" src="screenshots/01-welcome-098.png" width="1920"/>
+      </a>
+      <figcaption>
+       Conversation workspace · PCS 0.9.8 capture · synthetic example data. Open the image for full size.
+      </figcaption>
+     </figure>
+     <h2 id="choose-a-route">
+      3. Choose your conversation route
+     </h2>
+     <h3>
+      Google or OpenAI
+     </h3>
+     <p>
+      Open
+      <strong>
+       Settings → Connection
+      </strong>
+      , select your
+      <strong>
+       Conversation provider
+      </strong>
+      , and enter its Conversation API key. Review
+      <strong>
+       Learn from our conversations and recall personal memories
+      </strong>
+      and its sharing explanation, then choose
+      <strong>
+       Save settings
+      </strong>
+      . Memory and preparation normally use your conversation provider unless you configure their optional overrides.
+     </p>
+     <p>
+      Return to
+      <strong>
+       Conversation
+      </strong>
+      . Leave
+      <strong>
+       Use microphone
+      </strong>
+      off for a text-only first session, or enable it and review the browser permission and input meter. Choose
+      <strong>
+       Start PCS
+      </strong>
+      . Check provider billing separately; the PCS download is not a supply of cloud API credits.
+     </p>
+     <h3>
+      Supported Local route
+     </h3>
+     <p>
+      Open
+      <strong>
+       Settings → Connection → Local conversation
+      </strong>
+      . Use
+      <strong>
+       Download model
+      </strong>
+      ,
+      <strong>
+       Get runtime
+      </strong>
+      and
+      <strong>
+       Download CUDA libraries
+      </strong>
+      for the specifically supported files. Extract both runtime archives into the same folder, then select
+      <strong>
+       Choose runtime folder…
+      </strong>
+      and
+      <strong>
+       Choose model file…
+      </strong>
+      .
+     </p>
+     <p>
+      Review the continuity and local-tool choices, enable
+      <strong>
+       Use local mode
+      </strong>
+      , and save. The separate
+      <strong>
+       Start local conversation
+      </strong>
+      action can also start a local session. There is no cloud fallback. Local vision and network research are unavailable. See the in-app Help for the supported files and hardware limitations.
+     </p>
+     <h2 id="finish-safely">
+      4. Check the result, then stop or quit deliberately
+     </h2>
+     <p>
+      Use a simple example conversation and inspect any saved outcome. A spoken request or a queued notice is not proof that a change finished.
+      <strong>
+       Stop PCS
+      </strong>
+      ends the conversation;
+      <strong>
+       Lock
+      </strong>
+      also closes vault access.
+      <strong>
+       Quit PCS
+      </strong>
+      shuts the app down after confirmation.
+     </p>
+     <p>
+      Closing the browser tab can leave the desktop host running and the vault unlocked. Use the app’s controls for the state you intend. Read
+      <a href="memory-control.html">
+       memory controls
+      </a>
+      and
+      <a href="data-and-privacy.html">
+       what stays local and what is shared
+      </a>
+      before adding personal material.
+     </p>
+     <section id="updating">
+      <h2>
+       Updating an existing installation
+      </h2>
+      <p>
+       A fresh extraction does not automatically find the vault in an older PCS folder. Keep the old installation and a separate backup until the new copy is verified.
+      </p>
+      <ol>
+       <li>
+        In the old version, save edits, stop the conversation and finish or cancel background work. Keep the vault unlocked and use
+        <strong>
+         Backup &amp; restore → Save current backup…
+        </strong>
+        . Wait for confirmation and keep the backup passphrase safe. Then choose
+        <strong>
+         Quit PCS
+        </strong>
+        and wait for shutdown.
+       </li>
+       <li>
+        Extract the new Windows ZIP into a fresh folder and launch
+        <strong>
+         Start PCS.exe
+        </strong>
+        . Choose
+        <strong>
+         Restore an encrypted backup instead
+        </strong>
+        —do not create a new vault. Select the backup, choose
+        <strong>
+         Check backup
+        </strong>
+        , review the counts, and choose
+        <strong>
+         Restore this backup
+        </strong>
+        .
+       </li>
+       <li>
+        Choose
+        <strong>
+         Unlock existing
+        </strong>
+        with the backup's passphrase. If you use Materials, copy the original
+        <code>
+         data/Materials
+        </code>
+        folder into the new installation's
+        <code>
+         data/Materials
+        </code>
+        , preserving filenames, contents and relative subfolders. Refresh documents with the vault unlocked and the conversation stopped.
+       </li>
+       <li>
+        Check saved records and settings, reselect any automatic-backup destination, and replace shortcuts that still launch the old version. Never run both installations against the same data directory.
+       </li>
+      </ol>
+      <p>
+       <strong>
+        Encrypted vault backups include prepared notes, not original Materials files.
+       </strong>
+       Restoring never merges with or overwrites an existing vault. Detailed recovery guidance is in
+       <code>
+        docs/RESTORE_VAULT.md
+       </code>
+       inside the download.
+      </p>
+      <details>
+       <summary>
+        Alternative: copy the fully stopped data folder
+       </summary>
+       <p>
+        Quit PCS and wait for shutdown. Back up the entire
+        <code>
+         data
+        </code>
+        folder, including Materials. Before starting a fresh extraction, copy that folder beside its
+        <code>
+         Start PCS.exe
+        </code>
+        without merging it into an existing data folder. Keep the original, unlock the new copy with the current passphrase, and verify it. Use your actual data directory if you configured a custom path.
+       </p>
+       <p>
+        The in-app backup/restore limit is 256 MiB; larger vaults need the fully stopped-folder procedure. Original Materials in a folder copy are ordinary, unencrypted files. Preserve journals after an uncertain shutdown rather than deleting them.
+       </p>
+      </details>
+     </section>
+     <h2 id="help">
+      When something goes wrong
+     </h2>
+     <p>
+      Connected does not always mean input is available. Read the status: Local pauses listening during processing and speech; renewal can pause forwarding. In PCS 0.9.10 a preventive OpenAI wait can keep one never-sent answer pending for up to two minutes and request it once when allowance permits. Do not repeat a pending question. A cancelled, expired or rejected request has a different notice and is not automatically replayed. Existing provider and memory-quality limitations remain.
+     </p>
+     <p>
+      In-app
+      <strong>
+       Help
+      </strong>
+      works offline, including while the vault is locked. For startup diagnostics, the included guide describes
+      <code>
+       support/Start with console.cmd
+      </code>
+      . The
+      <strong>
+       Bug report
+      </strong>
+      tool lets you review a report before sharing; nothing is uploaded automatically. Remove private information before posting to a public repository.
+     </p>
+     <p class="source-note">
+      Guide updated for PCS 0.9.10. Screenshot captions identify the actual capture version and synthetic example data. Refer to the bundled Help and release notes for detailed controls and known limitations.
+     </p>
+    </article>
+   </div>
+  </main>
+  <footer>
+   <div class="shell">
+    <span>
+     PCS — Personal Continuity System
+    </span>
+    <span>
+     <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.10">
+      Release notes
+     </a>
+     ·
+     <a href="https://ko-fi.com/pcssupport">
+      Optional one-time support
+     </a>
+    </span>
+   </div>
+  </footer>
+ </body>
+</html>

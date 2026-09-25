@@ -1,34 +1,47 @@
-
-/* PCS site refresh for 0.9.10 */
-@media (max-width: 879px) {
-  .menu-toggle { display: none !important; }
-  .site-header .navigation { display: flex !important; position: static !important; flex-wrap: wrap; gap: 14px; padding: 12px 0 20px; background: transparent; }
-  .header-inner { flex-wrap: wrap; }
-  .site-header { position: static; }
+/* Website correction 2 for PCS 0.9.10. Keep static content usable without JS. */
+.app-proof { display:inline-flex; align-items:center; gap:8px; font-size:.78rem; letter-spacing:.10em; text-transform:uppercase; color:#3b5449; margin-bottom:14px; }
+.app-proof::before { content:""; width:8px; height:8px; border-radius:50%; background:#526c50; }
+.app-panel-note { margin-top:16px; color:#415962; font-size:.98rem; line-height:1.7; }
+.capture-note { margin:-18px 0 28px; color:#415962; font-size:.82rem; max-width:850px; line-height:1.65; }
+a.screenshot-button { display:block; position:relative; text-decoration:none; cursor:zoom-in; }
+a.screenshot-button img { display:block; width:100%; height:auto; }
+a.screenshot-button:focus-visible { outline:3px solid #6e865a; outline-offset:6px; }
+.screenshot figcaption { gap:10px; flex-wrap:wrap; }
+.update-link { font-size:.94rem; line-height:1.6; padding:15px 18px; border:1px solid #41554e; border-radius:6px; margin-bottom:24px; color:#d6e0d8; }
+.update-link a { color:#c2d79f; text-decoration:underline; text-underline-offset:3px; }
+.hardware-native { border-block:1px solid #3d5059; margin-top:22px; padding:18px 0; }
+.hardware-native summary { cursor:pointer; font-size:1rem; font-weight:600; color:#eef1e9; padding:6px 0; }
+.hardware-native div { padding-top:18px; }
+.hardware-native p { color:#c2cecc; margin:0 0 14px; font-size:.95rem; line-height:1.7; }
+.hardware-native a { color:#c2d79f; text-decoration:underline; }
+.hardware-native summary:focus-visible { outline:2px solid #c2d79f; outline-offset:5px; }
+/* Match the existing 879px breakpoint; enhancement is opt-in after handlers attach. */
+@media (max-width:879px) {
+ .header-inner { flex-wrap:wrap; }
+ .site-header { position:static; }
+ .menu-toggle { display:none; }
+ .site-header .navigation { display:flex; flex-wrap:wrap; width:100%; gap:8px 18px; margin-top:12px; padding:10px 0 16px; }
+ .site-header .navigation a { min-height:44px; }
+ html.site-enhanced .menu-toggle { display:inline-flex; }
+ html.site-enhanced .site-header .navigation { display:none; }
+ html.site-enhanced .site-header .navigation.is-open { display:flex; flex-direction:column; align-items:stretch; gap:0; }
+ .capture-note { margin:-12px 0 20px; }
 }
-.app-proof {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #a9ba95;
-  margin-bottom: 14px;
+/* Native <dialog>: keyboard focus is contained by the browser, Escape closes it. */
+.image-preview-dialog { box-sizing:border-box; margin:auto; padding:18px; width:min(1550px,calc(100vw - 32px)); max-width:none; max-height:94vh; max-height:94dvh; background:#101920; color:#eef1e9; border:1px solid #657d83; border-radius:10px; overflow:auto; }
+.image-preview-dialog::backdrop { background:rgba(3,10,14,.88); }
+.image-preview-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:12px 20px; margin-bottom:14px; }
+.image-preview-toolbar h2 { font:600 1.05rem/1.5 "Segoe UI",system-ui,sans-serif; letter-spacing:0; margin:0 auto 0 0; }
+.image-preview-original { color:#c2d79f; font-size:.88rem; text-decoration:underline; text-underline-offset:3px; }
+.image-preview-close { border:1px solid #526971; padding:9px 18px; min-height:44px; border-radius:5px; background:#22343e; color:#eef1e9; font:600 .93rem "Segoe UI",system-ui,sans-serif; cursor:pointer; }
+.image-preview-dialog figure { padding:0; margin:0; }
+.image-preview-dialog img { display:block; width:100%; height:auto; max-height:75vh; object-fit:contain; }
+.image-preview-dialog figcaption { color:#bccdcd; font:.83rem/1.65 "Segoe UI",system-ui,sans-serif; margin-top:12px; }
+.image-preview-dialog button:focus-visible,.image-preview-dialog a:focus-visible { outline:2px solid #c2d79f; outline-offset:4px; }
+@media(max-width:560px) {
+ .image-preview-dialog { width:calc(100vw - 16px); padding:12px; }
+ .image-preview-toolbar h2 { flex-basis:60%; }
+ .image-preview-original { order:3; }
+ .image-preview-dialog img { max-height:70vh; }
 }
-.app-proof::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: #b9c887;
-  box-shadow: 0 0 0 4px rgba(185, 200, 135, 0.12);
-}
-.app-panel-note {
-  margin-top: 16px;
-  color: #415962;
-  font-size: 0.98rem;
-  line-height: 1.7;
-}
-.screenshot-button[href] { text-decoration: none; }
-.screenshot-button[href] .enlarge { opacity: 0.9; }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
