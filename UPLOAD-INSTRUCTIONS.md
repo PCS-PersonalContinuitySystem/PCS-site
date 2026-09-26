@@ -1,40 +1,38 @@
-# Upload the corrected PCS website
+# Apply the real-screenshot website update
 
-**Website-only update for PCS 0.9.10. This does not replace or change the Windows application.**
+This package updates **PCS-PersonalContinuitySystem/PCS-site**, not the PCS application repository or the installed application.
 
-1. Extract **PCS-site-0.9.10-Corrected-Update.zip**.
-2. Open the extracted **PCS-site** folder. Upload **its contents** to the root of **PCS-PersonalContinuitySystem/PCS-site** using **Add file → Upload files**. Replace matching files and keep the folder structure. Do not upload the ZIP itself, nest PCS-site inside the repository, or use the main PCS application repository.
-3. Commit the HTML, styles, controls, screenshots and README together. Preserve the existing `.nojekyll` file and Pages settings (**main → / (root)**). Nothing in this package changes repository settings.
-4. Wait for the Pages deployment to complete, then reload the live website. Check the homepage download button, image previews, guide links, FAQ and Local hardware disclosure. On a narrow window, test Menu and Escape.
+## Upload at the repository root
 
-`index.html`, `README.md`, `website-refresh.css`, `assets/` and `screenshots/` should be at the repository root after upload. The README in this folder is for the **website repository**, not the application repository.
+Extract the ZIP and upload its contents without an extra enclosing folder. Replace these files:
 
-## What this corrects
+- `index.html`
+- `getting-started.html`
+- `memory-control.html`
+- `data-and-privacy.html`
+- `continuity-map.html`
+- `README.md`
+- `SCREENSHOTS.md`
+- `UPLOAD-INSTRUCTIONS.md`
 
-- Search metadata and application download/source/checksum/release links agree on **0.9.10**.
-- Every full-image link matches the picture it displays, with correct dimensions, alt text and an honest capture-version caption.
-- The fictional Talk / Keep / Plan panel remains removed.
-- Local hardware information and mobile navigation are functional, with useful no-JavaScript fallbacks.
-- Guide text distinguishes a pending never-sent OpenAI answer from a failed or cancelled request; update guidance includes built-in backup/restore and the separate Materials copy.
-- The current website README and screenshot inventory are included.
+Add `website-screenshots-0913.css`, `SCREENSHOT-MANIFEST.json`, and the **12 PNGs inside `screenshots/`**, retaining that folder name. `WEBSITE-CHECKS.json` records the static checks and may also be committed. Upload the related changes together so pages do not point to missing images.
 
-## Optional cleanup of earlier upload leftovers
+**Keep the existing `assets/`, `brand/`, `website-refresh.css`, `.nojekyll`, sitemap and other still-referenced files.** This is a replacement-file package, not a standalone checkout or complete website backup. Uploading only the ZIP will not update GitHub Pages. Do not restore an older `artifact.tar` over it.
 
-This package excludes `artifact.tar` and these unused old renderers:
+## What changes
 
-```text
-assets/site-13805acce83d.js
-assets/site-5ac2421fa76b.js
-assets/site-9fb1750e41e8.js
-```
+Continuity Map becomes feature 01 with a full-width real screenshot. Conversation, revisable memory, Materials and Calendar follow it. New screenshots replace the old images in the homepage, setup guide, memory guide, privacy guide and map guide. Full-image links, social-image metadata and captions point to the corresponding new pictures. The lengthy screenshot disclaimer is removed in favor of `PCS 0.9.13 · Sample data` captions.
 
-Uploading replacements does **not** delete old repository files. The files above may be removed after checking that no custom page references them. They are not loaded by any page in this package, so leaving them in the repository does not prevent these fixes from working. Do not remove the CSS, images, branding or `.nojekyll` that the site still uses.
+Application download, Source ZIP, checksum and release-note links remain pinned to **v0.9.13**. The application and release archives are not modified. The update does not incorporate any of the generated concept designs into the app.
 
-The supplied image captures span PCS 0.9.8, 0.9.9 and 0.9.10 and are explicitly labeled. They were not relabeled as newly captured 0.9.10 screens; see `SCREENSHOTS.md`.
+## Check after publishing
 
-## Publishing references
+Keep the repository's working GitHub Pages publishing configuration. After deployment, hard-refresh the public website and check:
 
-- [Upload files to a GitHub repository](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)
-- [GitHub Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+1. The map appears first in the feature list and opens at full size.
+2. Images load on all five pages, including the timeline and saved-source examples.
+3. Mobile navigation, FAQ disclosures, image-preview Close/Escape behavior and download links still work.
 
-No commit, deployment or repository-file deletion has been performed by this update package.
+The new images use versioned filenames to avoid an old screenshot being reused from cache. Preview the package within a full checkout so its existing styles and brand resources are available. No npm build or application installation is required to publish the static website.
+
+No GitHub files were changed by the preparation of this ZIP.

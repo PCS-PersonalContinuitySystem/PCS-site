@@ -16,14 +16,19 @@
   <meta content="What PCS remembers—and how to change it | PCS" property="og:title"/>
   <meta content="Inspect saved memories and their sources, correct what is wrong, and understand saving, clearing, exporting and backing up." property="og:description"/>
   <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html" property="og:url"/>
-  <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/01-welcome-098.png" property="og:image"/>
-  <meta content="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." property="og:image:alt"/>
+  <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/09-memory-inspect-0913.png" property="og:image"/>
+  <meta content="PCS 0.9.13 saved-memory inspector showing an owner-corrected sample record, its writer and linked source." property="og:image:alt"/>
   <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="PCS 0.9.13 saved-memory inspector showing an owner-corrected sample record, its writer and linked source." name="twitter:image:alt"/>
   <link href="assets/guides-c15cb839fc10.css" rel="stylesheet"/>
   <link href="website-refresh.css" rel="stylesheet"/>
-  <meta content="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." name="twitter:image:alt"/>
   <script defer="" src="assets/site-controls-0910-r2.js">
   </script>
+  <meta content="1920" property="og:image:width"/>
+  <meta content="1080" property="og:image:height"/>
+  <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/09-memory-inspect-0913.png" name="twitter:image"/>
+  <meta content="What PCS remembers—and how to change it | PCS" name="twitter:title"/>
+  <link href="website-screenshots-0913.css" rel="stylesheet"/>
  </head>
  <body>
   <a class="skip" href="#main">
@@ -65,7 +70,7 @@
       Inspect saved memories and their sources, correct what is wrong, and understand saving, clearing, exporting and backing up.
      </p>
      <p class="version">
-      PCS 0.9.10 · Pre-release guide · updated September 25, 2026
+      PCS 0.9.13 · Pre-release guide
      </p>
     </div>
    </div>
@@ -92,7 +97,7 @@
       </li>
       <li>
        <a href="#notes-sources">
-        Keep original sources distinct from generated suggestions
+        Keep sources distinct from suggestions
        </a>
       </li>
       <li>
@@ -145,7 +150,7 @@
        </li>
        <li>
         <a href="#notes-sources">
-         Keep original sources distinct from generated suggestions
+         Keep sources distinct from suggestions
         </a>
        </li>
        <li>
@@ -181,12 +186,20 @@
      <p>
       Memory formation and recall can be incomplete or wrong. Useful context is not a promise that every detail will be remembered, interpreted correctly, or included in every reply. The current pre-release still has open memory-quality validation.
      </p>
-     <figure>
-      <a aria-label="Open image: Inspect a saved memory and its sources" data-image-preview="" href="screenshots/02-memory-inspect-098.png">
-       <img alt="PCS 0.9.8 saved-memory inspector showing the recorded revision writer, editable saved content and linked original source in synthetic example data." height="1080" loading="lazy" src="screenshots/02-memory-inspect-098.png" width="1920"/>
+     <figure class="screenshot">
+      <a aria-label="Open image: Inspect a memory and its source" class="screenshot-button" data-image-preview="" href="screenshots/09-memory-inspect-0913.png">
+       <img alt="PCS 0.9.13 saved-memory inspector showing an owner-corrected sample record, its writer and linked source." decoding="async" height="1080" loading="lazy" src="screenshots/09-memory-inspect-0913.png" width="1920"/>
+       <span class="enlarge">
+        Open image
+       </span>
       </a>
       <figcaption>
-       Inspect a saved memory and its sources · PCS 0.9.8 capture · synthetic example data. Open the image for full size.
+       <span>
+        Inspect a memory and its source
+       </span>
+       <span>
+        PCS 0.9.13 · Sample data
+       </span>
       </figcaption>
      </figure>
      <h2 id="inspect-correct">
@@ -221,7 +234,7 @@
       <strong>
        Revision writer · recorded by PCS
       </strong>
-      identifies the provider/model attached by the host to that revision. An
+      identifies the writer attached by the host to that revision, including an owner edit or a provider/model where recorded. An
       <code>
        authorship
       </code>
@@ -236,6 +249,22 @@
       </a>
       offers a local, read-only view of recurring wording and saved topic labels, date-window comparisons and inspectable paths. It does not change the stored memories.
      </p>
+     <figure class="screenshot">
+      <a aria-label="Open image: Browse saved continuity" class="screenshot-button" data-image-preview="" href="screenshots/08-library-0913.png">
+       <img alt="PCS 0.9.13 Library with a sample memory selected and related records shown." decoding="async" height="1080" loading="lazy" src="screenshots/08-library-0913.png" width="1920"/>
+       <span class="enlarge">
+        Open image
+       </span>
+      </a>
+      <figcaption>
+       <span>
+        Browse saved continuity
+       </span>
+       <span>
+        PCS 0.9.13 · Sample data
+       </span>
+      </figcaption>
+     </figure>
      <h2 id="different-controls">
       These controls do different jobs
      </h2>
@@ -299,7 +328,7 @@
           </strong>
          </td>
          <td>
-          Also closes vault access and clears temporary Materials.
+          Also closes vault access and clears temporary Materials views. It does not delete original local files.
          </td>
         </tr>
        </tbody>
@@ -319,9 +348,47 @@
      <p>
       Notebooks can bring together a goal, your own notes, linked original documents and prepared reading notes, with up to 24 linked sources. Separately labeled suggestions may be saved during eligible conversations. A saved source link is not the same as a saved generated suggestion.
      </p>
+     <figure class="screenshot">
+      <a aria-label="Open image: A topic notebook with a linked source" class="screenshot-button" data-image-preview="" href="screenshots/06-notebook-0913.png">
+       <img alt="PCS 0.9.13 notebook editor with a sample observation goal, owner notes and linked local document." decoding="async" height="1080" loading="lazy" src="screenshots/06-notebook-0913.png" width="1920"/>
+       <span class="enlarge">
+        Open image
+       </span>
+      </a>
+      <figcaption>
+       <span>
+        A topic notebook with a linked source
+       </span>
+       <span>
+        PCS 0.9.13 · Sample data
+       </span>
+      </figcaption>
+     </figure>
      <p>
       Materials preparation is bounded. Linking a book does not mean PCS has read its whole contents. Related records in Library suggest possible connections; they are not proof that two ideas mean the same thing. Practice assessments are provisional and can be corrected.
      </p>
+     <p>
+      <strong>
+       Saved web sources
+      </strong>
+      in Materials → Reference notes retain supported captured text separately from personal memories and model-prepared notes. A bookmark or progress note is saved separately from that source. Keep generated questions or explanations distinct from the source; a partial capture does not establish a complete answer key.
+     </p>
+     <figure class="screenshot">
+      <a aria-label="Open image: Read a saved source and keep your place" class="screenshot-button" data-image-preview="" href="screenshots/11-saved-source-bookmark-0913.png">
+       <img alt="PCS 0.9.13 saved-source reader with sample quiz text and a separately saved bookmark note." decoding="async" height="1080" loading="lazy" src="screenshots/11-saved-source-bookmark-0913.png" width="1920"/>
+       <span class="enlarge">
+        Open image
+       </span>
+      </a>
+      <figcaption>
+       <span>
+        Read a saved source and keep your place
+       </span>
+       <span>
+        PCS 0.9.13 · Sample data
+       </span>
+      </figcaption>
+     </figure>
      <h2 id="backups">
       Keep a restorable backup
      </h2>
@@ -341,11 +408,14 @@
       file. Keep the passphrase separately.
      </p>
      <p>
-      A complete encrypted backup includes saved continuity and other vault contents. Original Materials files must be copied separately. A readable Markdown or plain-text
+      A complete encrypted backup includes saved continuity and other vault contents, including saved web snapshots and bookmarks. Original Materials files must be copied separately. A readable Markdown or plain-text
       <strong>
        Export
       </strong>
       is outside vault encryption and is not a complete restorable backup.
+     </p>
+     <p>
+      The first saved web source makes that vault require PCS 0.9.13 or newer, even after the source is deleted. Keep a pre-feature backup for rollback. Opening an older vault without saving a web source does not add that requirement.
      </p>
      <p>
       The included
@@ -359,7 +429,7 @@
       for what encryption does and does not cover.
      </p>
      <p class="source-note">
-      Guide updated for PCS 0.9.10. Screenshot captions identify the actual capture version and synthetic example data. Refer to the bundled Help and release notes for detailed controls and known limitations.
+      Guide for PCS 0.9.13. See the bundled Help and release notes for detailed controls and limitations.
      </p>
     </article>
    </div>
@@ -370,7 +440,7 @@
      PCS — Personal Continuity System
     </span>
     <span>
-     <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.10">
+     <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.13">
       Release notes
      </a>
      ·

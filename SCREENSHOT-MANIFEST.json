@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "app_version": "0.9.13",
+  "source_archive_sha256": "3c45e54924654867d2cdccace9c5adcd4deae66c2e39f8a241f75fd6beb9ae70",
+  "release_files_checked": 923,
+  "changed_release_files": [],
+  "missing_release_files": [],
+  "capture_method": "Unmodified released HTML/JS/CSS rendered in Chromium; asset loading and fetch/WebSocket transport bridged to real FastAPI TestClient and real encrypted sample vault. No UI fields or responses painted or substituted.",
+  "native_windows_launcher_executed": false,
+  "live_ai_requests": 0,
+  "external_page_downloads": 0,
+  "dataset": {
+    "memories": 72,
+    "notebooks": 5,
+    "calendar_entries": 15,
+    "local_documents": 3,
+    "web_snapshots": 3,
+    "kind": "authored sample data, not personal records"
+  },
+  "map": {
+    "themes": 26,
+    "connections": 86,
+    "derived_by": "released PCS map backend from actual sample records",
+    "arrangement": "normal built-in node drag controls; edge set and counts unchanged"
+  },
+  "browser_page_errors": [],
+  "real_asgi_http_requests": 41,
+  "http_status_counts": {
+    "200": 41
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux",
+    "browser": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)"
+  },
+  "images": [
+    {
+      "file": "screenshots/01-conversation-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 484883,
+      "sha256": "b9056eb4369afa7489fa30b3fc8266720f7b9c6e01f1045acaedab757104b349"
+    },
+    {
+      "file": "screenshots/02-continuity-map-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 564230,
+      "sha256": "ae46fcab7b60986f9947ff4b9b98bfb30e5d222e20bb7c56b0d7a8d66ff3e1d0"
+    },
+    {
+      "file": "screenshots/03-continuity-map-inspect-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 588604,
+      "sha256": "17e24be248995bc0af150e424023e320c8f80f9ea1466140700c92fde7c088da"
+    },
+    {
+      "file": "screenshots/04-materials-documents-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 191587,
+      "sha256": "a97a1d07774152c3dc65f50684bd5578c301f780e94620db1ce943d203a139d2"
+    },
+    {
+      "file": "screenshots/05-materials-web-sources-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 207228,
+      "sha256": "a0cbf490e8a18395a7d9288480f997b53b6c505ddd571e49244cd6903ac24118"
+    },
+    {
+      "file": "screenshots/06-notebook-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 224866,
+      "sha256": "a19ed3b1edacc063379e96a825352f95ab8a740d0be4e0feeb95d0f69f3ac329"
+    },
+    {
+      "file": "screenshots/07-calendar-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 189446,
+      "sha256": "f6371b39642c361f0152a8d2815fd2b492ff1ffd9cbca4b0d1783ca51641d70b"
+    },
+    {
+      "file": "screenshots/08-library-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 256797,
+      "sha256": "16db90f1c4a9561d5361b6606adec67ca3b6f01856b2c4130ce37afebb85ac56"
+    },
+    {
+      "file": "screenshots/09-memory-inspect-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 252847,
+      "sha256": "a596190f5c977d0ce80fac77db342666d86c3a15661d5eeb965de4b4f0d5656b"
+    },
+    {
+      "file": "screenshots/10-material-reader-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 181065,
+      "sha256": "20c352e9950df18a940fc24fd453887a911e2663e35dd54dc41e245906dc2483"
+    },
+    {
+      "file": "screenshots/11-saved-source-bookmark-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 198927,
+      "sha256": "624c62fe7d8bc259227efe0d3c22ade8366f5c9dbb46c8895cd1fcbb9d352cb6"
+    },
+    {
+      "file": "screenshots/12-map-timeline-0913.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 218239,
+      "sha256": "c4106426ff690aa7a049ebf56d0675125c7cdafe94fafea344ff8df416498043"
+    }
+  ]
+}

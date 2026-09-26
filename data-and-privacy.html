@@ -16,14 +16,19 @@
   <meta content="What stays on your PC—and what is shared | PCS" property="og:title"/>
   <meta content="Understand the PCS vault, cloud processing, Local mode, original files, readable exports and controls before sharing personal context." property="og:description"/>
   <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/data-and-privacy.html" property="og:url"/>
-  <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/01-welcome-098.png" property="og:image"/>
-  <meta content="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." property="og:image:alt"/>
+  <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/05-materials-web-sources-0913.png" property="og:image"/>
+  <meta content="PCS 0.9.13 saved web source cards for an authored quiz, study guide and fictional puzzle walkthrough." property="og:image:alt"/>
   <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="PCS 0.9.13 saved web source cards for an authored quiz, study guide and fictional puzzle walkthrough." name="twitter:image:alt"/>
   <link href="assets/guides-c15cb839fc10.css" rel="stylesheet"/>
   <link href="website-refresh.css" rel="stylesheet"/>
-  <meta content="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." name="twitter:image:alt"/>
   <script defer="" src="assets/site-controls-0910-r2.js">
   </script>
+  <meta content="1920" property="og:image:width"/>
+  <meta content="1080" property="og:image:height"/>
+  <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/05-materials-web-sources-0913.png" name="twitter:image"/>
+  <meta content="What stays on your PC—and what is shared | PCS" name="twitter:title"/>
+  <link href="website-screenshots-0913.css" rel="stylesheet"/>
  </head>
  <body>
   <a class="skip" href="#main">
@@ -65,7 +70,7 @@
       Understand the PCS vault, cloud processing, Local mode, original files, readable exports and controls before sharing personal context.
      </p>
      <p class="version">
-      PCS 0.9.10 · Pre-release guide · updated September 25, 2026
+      PCS 0.9.13 · Pre-release guide
      </p>
     </div>
    </div>
@@ -91,6 +96,11 @@
        </a>
       </li>
       <li>
+       <a href="#saved-web">
+        Saving and reusing a web source
+       </a>
+      </li>
+      <li>
        <a href="#local-route">
         What Local mode changes
        </a>
@@ -103,6 +113,11 @@
       <li>
        <a href="#closing-support">
         Close and share deliberately
+       </a>
+      </li>
+      <li>
+       <a href="#map-privacy">
+        Map privacy and writer attribution
        </a>
       </li>
      </ul>
@@ -149,6 +164,11 @@
         </a>
        </li>
        <li>
+        <a href="#saved-web">
+         Saving and reusing a web source
+        </a>
+       </li>
+       <li>
         <a href="#local-route">
          What Local mode changes
         </a>
@@ -161,6 +181,11 @@
        <li>
         <a href="#closing-support">
          Close and share deliberately
+        </a>
+       </li>
+       <li>
+        <a href="#map-privacy">
+         Map privacy and writer attribution
         </a>
        </li>
       </ul>
@@ -211,6 +236,9 @@
       </strong>
       Keep separate copies of original Materials when making a backup. An exported Markdown or plain-text record is readable by anyone who can access that file; it is not a protected vault backup.
      </p>
+     <p>
+      Saved web source snapshots and bookmarks are encrypted vault records, unlike ordinary local Materials files. Saving the first snapshot makes that vault require PCS 0.9.13 or newer, even after deletion. Keep a pre-feature backup when rollback matters.
+     </p>
      <h2 id="cloud-sharing">
       What can go to cloud providers
      </h2>
@@ -227,6 +255,31 @@
      <p>
       Local storage does not prevent a selected provider from receiving permitted content. This website does not quote provider retention periods or prices because those depend on the provider and configuration and may change.
      </p>
+     <h2 id="saved-web">
+      Saving and reusing a web source
+     </h2>
+     <p>
+      An explicit web import contacts the selected public website. It captures supported static text, not an interactive quiz, linked-page crawl or private signed-in session. Reading a saved source later is local retrieval; sharing its passages with a cloud conversation is still provider sharing under the Materials controls.
+     </p>
+     <p>
+      Source text is external evidence, not instructions or personal memory. Refresh preserves an earlier snapshot when the text changes; deletion removes the selected snapshot and bookmark, not other revisions or old backups. A confirmed TXT export is unencrypted.
+     </p>
+     <figure class="screenshot">
+      <a aria-label="Open image: Keep a source for another conversation" class="screenshot-button" data-image-preview="" href="screenshots/05-materials-web-sources-0913.png">
+       <img alt="PCS 0.9.13 saved web source cards for an authored quiz, study guide and fictional puzzle walkthrough." decoding="async" height="1080" loading="lazy" src="screenshots/05-materials-web-sources-0913.png" width="1920"/>
+       <span class="enlarge">
+        Open image
+       </span>
+      </a>
+      <figcaption>
+       <span>
+        Keep a source for another conversation
+       </span>
+       <span>
+        PCS 0.9.13 · Sample data
+       </span>
+      </figcaption>
+     </figure>
      <h2 id="local-route">
       What Local mode changes
      </h2>
@@ -290,10 +343,10 @@
       Map browsing and inspection make no model or embedding request and create no persisted graph index. The view uses bounded current records and source excerpts. Lock clears its private view state. Already-enabled screen sharing can still capture a visible Map or memory inspector, just as it can capture another window.
      </p>
      <p>
-      A host-recorded Local memory writer is separate from a provider name written inside editable JSON. A copied Google or OpenAI label in that JSON is not proof of a cloud call. Review the session's selected provider roles and sharing choices, not a model-authored tag alone.
+      A host-recorded Local memory writer is separate from a provider name written inside editable JSON. A copied Google or OpenAI label in that JSON is not proof of a cloud call. Review the session’s selected provider roles and sharing choices, not a model-authored tag alone.
      </p>
      <p class="source-note">
-      Guide updated for PCS 0.9.10. Screenshot captions identify the actual capture version and synthetic example data. Refer to the bundled Help and release notes for detailed controls and known limitations.
+      Guide for PCS 0.9.13. See the bundled Help and release notes for detailed controls and limitations.
      </p>
     </article>
    </div>
@@ -304,7 +357,7 @@
      PCS — Personal Continuity System
     </span>
     <span>
-     <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.10">
+     <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.13">
       Release notes
      </a>
      ·

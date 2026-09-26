@@ -10,7 +10,7 @@ The public website and guides for **PCS — Personal Continuity System**, a Wind
 
 ## Release information
 
-The homepage and Getting started guide target **[PCS 0.9.13 — pre-release][release]**. The main additions covered are more patient OpenAI turn-taking, a calm and self-assured default companion direction, and reusable public web sources in Materials.
+The homepage and guides target **[PCS 0.9.13 — pre-release][release]**. The main additions covered are more patient OpenAI turn-taking, a calm and self-assured default companion direction, and reusable public web sources in Materials.
 
 | Application download | Purpose |
 | --- | --- |
@@ -38,22 +38,23 @@ Saved web snapshots and their bookmarks are encrypted vault records and are incl
 | [`data-and-privacy.html`](data-and-privacy.html) | Local storage, sharing and data boundaries. |
 | [`continuity-map.html`](continuity-map.html) | Map guide and interpretation limits. |
 | `assets/` | Existing styles, brand resources and progressive-enhancement JavaScript. |
-| [`website-refresh.css`](website-refresh.css) | Shared layout, accessibility and image-preview overrides. |
+| [`website-refresh.css`](website-refresh.css) | Existing shared layout, accessibility and image-preview overrides. |
+| [`website-screenshots-0913.css`](website-screenshots-0913.css) | Full-width Continuity Map feature and screenshot spacing. |
 | `screenshots/` and [`SCREENSHOTS.md`](SCREENSHOTS.md) | Interface captures and their actual capture-version information. |
 | `brand/` | Existing brand artwork. |
 | [`sitemap.xml`](sitemap.xml) and `.nojekyll` | Page discovery and static-site publishing support. |
 
 **Editing `README.md` does not update the public homepage.** Edit `index.html` for homepage changes.
 
-This 0.9.13 update changes `index.html`, `getting-started.html` and this README. The other guides retain their existing version labels and are not being represented as newly reviewed 0.9.13 documentation. The application's bundled Help and release notes are the source for exact current controls.
+The current screenshot refresh uses the released **0.9.13 interface with a separate sample vault**. Continuity Map is the first, full-width feature; all five pages use the new captures and current social-image metadata. Captions are deliberately brief. [SCREENSHOTS.md](SCREENSHOTS.md) records how the images were made and the difference between authored sample data and live AI output.
 
 ## Apply the website update
 
-Replace **`index.html`**, **`README.md`** and **`getting-started.html`** at the root of **PCS-site**. Keep the existing `assets/`, `screenshots/`, `brand/`, `website-refresh.css`, `.nojekyll`, sitemap and other pages.
+Upload the contents of the update ZIP into the **PCS-site repository root**: five HTML pages, this README, `SCREENSHOTS.md`, `UPLOAD-INSTRUCTIONS.md`, `website-screenshots-0913.css`, `SCREENSHOT-MANIFEST.json` and the new PNG files under `screenshots/`.
 
-The replacement-file ZIP is **not a complete website backup**. Extract its three files before uploading; do not upload only the ZIP or place its contents inside an additional folder. Do not replace the separate application repository's README with this one.
+Keep the existing `assets/`, `brand/`, `website-refresh.css`, `.nojekyll`, sitemap and other still-referenced resources. The update ZIP is **not a complete website backup**. Do not upload only the ZIP or add an extra enclosing folder. Old screenshot files may remain for historical links; none are referenced by the refreshed pages.
 
-The pages reuse existing resource paths, so no new image assets, CSS files or JavaScript files are needed for this update.
+Do not put this README in the separate PCS application repository. The screenshot refresh does not change the application, vault format, or application release archives. See [UPLOAD-INSTRUCTIONS.md](UPLOAD-INSTRUCTIONS.md) for the replacement list.
 
 ## Preview locally
 
@@ -90,13 +91,17 @@ Versioned application URLs are deliberately static. Downloads remain usable with
 
 ### Keep capture claims accurate
 
-The homepage reuses actual interface captures from **0.9.8, 0.9.9 and 0.9.10**, with synthetic example records. Captions and social-image alt text retain those versions. These are not 0.9.13 screenshots, private user records, or proof of live model accuracy.
+The website images are browser screenshots of the **unchanged PCS 0.9.13 frontend**, connected through a local test transport to the real Python application and a disposable encrypted sample vault. The sample data was authored for these pictures; no live provider conversation or real web download is demonstrated. The Windows launcher was not run. The capture method, source hash and per-image checksums are documented in [SCREENSHOTS.md](SCREENSHOTS.md) and [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json).
 
-The new web-source feature captures **one accessible HTTPS HTML, TXT or Markdown page**, within the documented limits—not a whole website, interactive quiz, remote PDF or guaranteed answer key. Keep this qualification when editing the feature description. Do not claim that semantic turn detection removes every interruption or provider cooldown.
+The sample Map has **26 themes and 86 connections calculated by PCS**. Its nodes were repositioned using the actual drag controls; no links or counts were painted onto an image. The generated concept illustrations are **not** current-release screenshots and are not in this website update.
+
+Use a concise `PCS 0.9.13 · Sample data` caption. When replacing an image, update its path, full-size link, dimensions, alt text and social metadata together. Never simply replace a version number inside an old image.
+
+The web-source feature captures one accessible HTTPS HTML, TXT or Markdown page within its limits—not a whole website, interactive quiz, remote PDF or guaranteed answer key. Do not claim that semantic turn detection eliminates all interruptions or cooldowns.
 
 ## Accessibility and maintenance
 
-The homepage keeps its existing layout, section anchors, artwork and resource paths. It loads `assets/site-controls-0910-r2.js` for mobile navigation and image previews; that filename is a resource identifier, **not the current application version**. The script does not replace the page's HTML or download links. Existing legacy rendering bundles are not referenced by this homepage.
+The homepage keeps its visual identity, existing section anchors, artwork and shared resource paths, while promoting Continuity Map to the first feature. It loads `assets/site-controls-0910-r2.js` for mobile navigation and image previews; that filename is a resource identifier, **not the current application version**. The script does not replace the page's HTML or download links. Existing legacy rendering bundles are not referenced by this homepage.
 
 Native FAQ and hardware disclosures, ordinary navigation and direct full-image links remain available without JavaScript. Preserve the skip link, heading hierarchy, image descriptions, visible keyboard focus and mobile navigation controls.
 

@@ -1,0 +1,13 @@
+/* 0.9.13 screenshot refresh. Existing site assets remain unchanged. */
+.continuity-spotlight.feature-row { display:block; }
+.continuity-spotlight .map-spotlight-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(24px,5vw,80px); align-items:start; margin-bottom:30px; }
+.continuity-spotlight .feature-copy,.continuity-spotlight .feature-description,.continuity-spotlight .feature-media { width:100%; max-width:none; min-width:0; }
+.continuity-spotlight .map-spotlight-media { grid-column:1 / -1; }
+.continuity-spotlight .screenshot img { display:block; width:100%; height:auto; }
+.continuity-spotlight .text-link { margin-top:16px; }
+.secondary-capture { margin-top:24px; }
+#continuity-map-feature { scroll-margin-top:100px; }
+.screenshot figcaption { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px 18px; }
+.guide-grid .screenshot img { display:block; width:100%; height:auto; }
+.guide-grid .screenshot-button .enlarge { display:none; }
+@media (max-width:879px) { .continuity-spotlight .map-spotlight-heading { grid-template-columns:minmax(0,1fr); gap:18px; margin-bottom:22px; } }

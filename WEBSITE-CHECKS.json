@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "scope": "Static HTML/metadata/link/dimension checks, not a deployed-site browser or external-download test",
+  "counts": {
+    "html_pages": 5,
+    "figures": 16,
+    "internal_anchor_links": 80,
+    "release_links": 13,
+    "image_links": 16,
+    "social_images": 10
+  },
+  "feature_order": [
+    "Continuity Map & Library",
+    "Conversation",
+    "Revisable memory",
+    "Materials and notebooks",
+    "Calendar and plans"
+  ],
+  "expected_existing_repository_resources": [
+    "assets/documentation-096.css",
+    "assets/guides-c15cb839fc10.css",
+    "assets/pcs-star.svg",
+    "assets/pcs-wordmark-36dae8b37826.webp",
+    "assets/site-baf65b9a3b82.css",
+    "assets/site-controls-0910-r2.js",
+    "website-refresh.css"
+  ],
+  "new_app_captures": 12,
+  "all_capture_hashes_match": true,
+  "errors": [],
+  "not_performed": [
+    "Full website render with existing remote assets (those bytes unavailable to this environment)",
+    "Live GitHub Pages deployment/navigation test",
+    "Native Windows application launch or live AI session"
+  ]
+}
