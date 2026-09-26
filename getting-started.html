@@ -6,7 +6,7 @@
   <title>
    Getting started with PCS on Windows | PCS
   </title>
-  <meta content="Download the right PCS package, create a vault, and choose a cloud or supported Local conversation route." name="description"/>
+  <meta content="Download PCS 0.9.13, create or restore a vault, and choose a cloud or supported Local conversation route." name="description"/>
   <link href="https://pcs-personalcontinuitysystem.github.io/PCS-site/getting-started.html" rel="canonical"/>
   <meta content="index,follow,max-image-preview:large" name="robots"/>
   <meta content="#101920" name="theme-color"/>
@@ -14,14 +14,14 @@
   <meta content="website" property="og:type"/>
   <meta content="PCS — Personal Continuity System" property="og:site_name"/>
   <meta content="Getting started with PCS on Windows | PCS" property="og:title"/>
-  <meta content="Download the right PCS package, create a vault, and choose a cloud or supported Local conversation route." property="og:description"/>
+  <meta content="Download PCS 0.9.13, create or restore a vault, and choose a cloud or supported Local conversation route." property="og:description"/>
   <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/getting-started.html" property="og:url"/>
   <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/01-welcome-098.png" property="og:image"/>
   <meta content="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." property="og:image:alt"/>
   <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." name="twitter:image:alt"/>
   <link href="assets/guides-c15cb839fc10.css" rel="stylesheet"/>
   <link href="website-refresh.css" rel="stylesheet"/>
-  <meta content="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." name="twitter:image:alt"/>
   <script defer="" src="assets/site-controls-0910-r2.js">
   </script>
  </head>
@@ -62,10 +62,10 @@
       Getting started with PCS on Windows
      </h1>
      <p class="intro">
-      Download the right PCS package, create a vault, and choose a cloud or supported Local conversation route.
+      Download the right PCS package, create or restore a vault, and choose a cloud or supported Local conversation route.
      </p>
      <p class="version">
-      PCS 0.9.10 · Pre-release guide · updated September 25, 2026
+      PCS 0.9.13 · Pre-release guide
      </p>
     </div>
    </div>
@@ -203,7 +203,17 @@
        <strong>
         This is a pre-release.
        </strong>
-       Physical microphone/noisy-room testing, long-session acceptance and broader memory quality remain open. The release notes also flag a Google renewal disconnection. Start with non-sensitive example information while learning the controls; do not treat a successful first launch as a reliability guarantee.
+       Automated checks do not establish perfect microphone recognition, live-provider timing, Windows hardware compatibility or successful capture from every website. Begin with non-sensitive example information and keep backups.
+      </p>
+      <p>
+       <strong>
+        Existing users:
+       </strong>
+       saving the first web source adds a PCS 0.9.13 minimum-reader requirement to that vault, even if the source is later deleted. Keep a backup made before using the feature. See
+       <a href="#updating">
+        Updating an existing installation
+       </a>
+       .
       </p>
      </div>
      <h2 id="download">
@@ -212,15 +222,15 @@
      <p>
       Use
       <code>
-       PCS-0.9.10-Windows-x64.zip
+       PCS-0.9.13-Windows-x64.zip
       </code>
-      for the complete Windows application. The separately attached Source ZIP is for development, not the easiest way to start the app.
+      for the complete Windows application. The separately attached Source ZIP is for development, not the easiest way to start the app. Use the named release assets, not GitHub's automatic Source code archive.
      </p>
      <div class="actions">
-      <a class="button" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.10/PCS-0.9.10-Windows-x64.zip">
-       Download PCS for Windows
+      <a class="button" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.13/PCS-0.9.13-Windows-x64.zip">
+       Download PCS 0.9.13 for Windows
       </a>
-      <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.10">
+      <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.13">
        Release notes and all downloads
       </a>
      </div>
@@ -229,18 +239,22 @@
       <code>
        support
       </code>
-      . Do not overlay an older installation. Existing users should follow
+      . Do not run it inside an archive viewer or overlay an older installation. Existing users should follow
       <a href="#updating">
        Updating an existing installation
       </a>
-      below to transfer their saved information.
+      below.
      </p>
      <p>
-      Python, application dependencies and offline English speech recognition are included. The Local conversation model and runtime are not. The release includes a
-      <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.10/PCS-0.9.10-SHA256SUMS.txt">
+      Python, application dependencies and offline English speech recognition are included. The Local conversation model and runtime are not. Use the
+      <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.13/PCS-0.9.13-SHA256SUMS.txt">
        checksum file
       </a>
-      for checking download integrity.
+      to check download integrity. Developers can obtain the
+      <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.13/PCS-0.9.13-Source.zip">
+       matching Source ZIP
+      </a>
+      .
      </p>
      <p>
       The top level keeps
@@ -255,7 +269,7 @@
       <code>
        docs/HELP.html
       </code>
-      opens the full offline Help and FAQ without starting PCS. Current guides, developer references and history have separate folders. Do not move or delete package members manually; the launcher verifies its manifest.
+      opens full offline Help without starting PCS. Current guides, developer references and history have separate folders. Do not move or delete package members manually; the launcher verifies its manifest.
      </p>
      <h2 id="first-launch">
       2. Open PCS and create your vault
@@ -265,7 +279,7 @@
       <strong>
        Start PCS.exe
       </strong>
-      . The first launch shows a PCS setup window while it prepares the bundled runtime and dependencies; this setup is designed to work offline and leave system Python unchanged. When it closes, use the browser page opened by the launcher.
+      . First launch prepares the bundled runtime and dependencies, designed to work offline and leave system Python unchanged. Use the browser page opened by the launcher.
      </p>
      <p>
       The address begins with
@@ -294,7 +308,7 @@
        <img alt="PCS 0.9.8 Conversation workspace with the welcome panel, session controls and a memory stream populated with synthetic example records." decoding="async" height="1080" loading="lazy" src="screenshots/01-welcome-098.png" width="1920"/>
       </a>
       <figcaption>
-       Conversation workspace · PCS 0.9.8 capture · synthetic example data. Open the image for full size.
+       Conversation workspace · PCS 0.9.8 capture · synthetic example data. This is an earlier interface capture, not a new 0.9.13 screenshot. Open the image for full size.
       </figcaption>
      </figure>
      <h2 id="choose-a-route">
@@ -337,6 +351,13 @@
       </strong>
       . Check provider billing separately; the PCS download is not a supply of cloud API credits.
      </p>
+     <p>
+      For OpenAI voice,
+      <strong>
+       Settings → OpenAI turn completion
+      </strong>
+      offers patient semantic detection (the default), balanced semantic detection, and a 1.5-second silence-based fallback. Apply changes on the next Start. These are turn-taking options, not a promise that every pause or sound will be interpreted correctly.
+     </p>
      <h3>
       Supported Local route
      </h3>
@@ -368,7 +389,7 @@
       .
      </p>
      <p>
-      Review the continuity and local-tool choices, enable
+      Review continuity and local-tool choices, enable
       <strong>
        Use local mode
       </strong>
@@ -376,7 +397,20 @@
       <strong>
        Start local conversation
       </strong>
-      action can also start a local session. There is no cloud fallback. Local vision and network research are unavailable. See the in-app Help for the supported files and hardware limitations.
+      action can also start a local session. There is no cloud fallback. Local vision and network research are unavailable. See bundled Help for supported files and hardware limitations.
+     </p>
+     <h3>
+      Saved web sources in Materials
+     </h3>
+     <p>
+      Open
+      <strong>
+       Materials → Reference notes → Saved web sources → Add from web
+      </strong>
+      , or ask during an eligible cloud conversation with Search and Materials sharing enabled. Ask explicitly to save the source; a routine search does not automatically create one.
+     </p>
+     <p>
+      The importer captures extracted text from one accessible public HTTPS HTML, TXT or Markdown page, within its size limits. It does not execute interactive quizzes, crawl whole sites, fetch remote PDFs or recover missing answer keys. The captured source, generated notes and explicitly saved bookmarks remain distinct. Inspect the captured text and save confirmation before relying on it.
      </p>
      <h2 id="finish-safely">
       4. Check the result, then stop or quit deliberately
@@ -397,7 +431,7 @@
       shuts the app down after confirmation.
      </p>
      <p>
-      Closing the browser tab can leave the desktop host running and the vault unlocked. Use the app’s controls for the state you intend. Read
+      Closing the browser tab can leave the desktop host running and the vault unlocked. Use the app's controls for the state you intend. Read
       <a href="memory-control.html">
        memory controls
       </a>
@@ -405,7 +439,7 @@
       <a href="data-and-privacy.html">
        what stays local and what is shared
       </a>
-      before adding personal material.
+      , together with the current bundled Help, before adding personal material.
      </p>
      <section id="updating">
       <h2>
@@ -414,13 +448,21 @@
       <p>
        A fresh extraction does not automatically find the vault in an older PCS folder. Keep the old installation and a separate backup until the new copy is verified.
       </p>
+      <div class="callout">
+       <p>
+        <strong>
+         Before saving your first web source:
+        </strong>
+        keep a pre-feature backup. That first save makes the vault require PCS 0.9.13 or newer; deleting the source does not remove the requirement. Merely opening an older vault in 0.9.13 does not add it. Restoring a pre-feature backup rolls back to its saved state, not your later work. The encryption format is unchanged.
+       </p>
+      </div>
       <ol>
        <li>
         In the old version, save edits, stop the conversation and finish or cancel background work. Keep the vault unlocked and use
         <strong>
          Backup &amp; restore → Save current backup…
         </strong>
-        . Wait for confirmation and keep the backup passphrase safe. Then choose
+        . Wait for confirmation, save the backup outside the installation and keep its passphrase safe. Then choose
         <strong>
          Quit PCS
         </strong>
@@ -450,7 +492,7 @@
         <strong>
          Unlock existing
         </strong>
-        with the backup's passphrase. If you use Materials, copy the original
+        with the backup's passphrase. Copy the original files from the old
         <code>
          data/Materials
         </code>
@@ -458,7 +500,7 @@
         <code>
          data/Materials
         </code>
-        , preserving filenames, contents and relative subfolders. Refresh documents with the vault unlocked and the conversation stopped.
+        folder, preserving filenames, contents and relative subfolders. Refresh documents with the vault unlocked and the conversation stopped.
        </li>
        <li>
         Check saved records and settings, reselect any automatic-backup destination, and replace shortcuts that still launch the old version. Never run both installations against the same data directory.
@@ -466,9 +508,9 @@
       </ol>
       <p>
        <strong>
-        Encrypted vault backups include prepared notes, not original Materials files.
+        Encrypted vault backups include saved records, prepared notes, saved web snapshots and bookmarks, but not original local Materials files.
        </strong>
-       Restoring never merges with or overwrites an existing vault. Detailed recovery guidance is in
+       Restoring does not merge with an existing vault. Detailed recovery guidance is in
        <code>
         docs/RESTORE_VAULT.md
        </code>
@@ -498,7 +540,7 @@
       When something goes wrong
      </h2>
      <p>
-      Connected does not always mean input is available. Read the status: Local pauses listening during processing and speech; renewal can pause forwarding. In PCS 0.9.10 a preventive OpenAI wait can keep one never-sent answer pending for up to two minutes and request it once when allowance permits. Do not repeat a pending question. A cancelled, expired or rejected request has a different notice and is not automatically replayed. Existing provider and memory-quality limitations remain.
+      Connected does not always mean input is available. Read the status: Local pauses listening during processing and speech; connection renewal can pause forwarding. A preventive OpenAI wait can keep one never-sent answer pending for up to two minutes and request it once when allowance permits. Do not repeat a pending question. A cancelled, expired or rejected request has a different notice and is not automatically replayed. Provider limits and memory-quality limitations remain.
      </p>
      <p>
       In-app
@@ -509,14 +551,18 @@
       <code>
        support/Start with console.cmd
       </code>
-      . The
+      . Export
       <strong>
        Bug report
       </strong>
-      tool lets you review a report before sharing; nothing is uploaded automatically. Remove private information before posting to a public repository.
+      before quitting when possible, and review it before sharing; nothing is uploaded automatically. Never post keys, passphrases, full launch URLs, private vaults or personal conversations.
      </p>
      <p class="source-note">
-      Guide updated for PCS 0.9.10. Screenshot captions identify the actual capture version and synthetic example data. Refer to the bundled Help and release notes for detailed controls and known limitations.
+      Guide aligned with PCS 0.9.13. Screenshot captions identify the actual earlier capture version and synthetic example data. Other online guides retain their existing version labels. Refer to bundled Help and
+      <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.13">
+       release notes
+      </a>
+      for detailed current controls and limitations.
      </p>
     </article>
    </div>
@@ -527,7 +573,7 @@
      PCS — Personal Continuity System
     </span>
     <span>
-     <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.10">
+     <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.13">
       Release notes
      </a>
      ·
