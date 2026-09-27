@@ -1,36 +1,92 @@
 {
-  "status": "passed",
-  "scope": "Static HTML/metadata/link/dimension checks, not a deployed-site browser or external-download test",
-  "counts": {
-    "html_pages": 5,
-    "figures": 16,
-    "internal_anchor_links": 80,
-    "release_links": 13,
-    "image_links": 16,
-    "social_images": 10
-  },
-  "feature_order": [
-    "Continuity Map & Library",
-    "Conversation",
-    "Revisable memory",
-    "Materials and notebooks",
-    "Calendar and plans"
+  "version": "0.9.24",
+  "website_revision": 2,
+  "checked_at_utc": "2026-09-27T04:02:01.471097+00:00",
+  "upstream_site_commit": "f895fafdcf8a28114cc97302bf5d57ddc817ce7c",
+  "html_pages": [
+    "index.html",
+    "continuity-map.html",
+    "getting-started.html",
+    "memory-control.html",
+    "data-and-privacy.html"
   ],
-  "expected_existing_repository_resources": [
-    "assets/documentation-096.css",
-    "assets/guides-c15cb839fc10.css",
-    "assets/pcs-star.svg",
-    "assets/pcs-wordmark-36dae8b37826.webp",
-    "assets/site-baf65b9a3b82.css",
-    "assets/site-controls-0910-r2.js",
-    "website-refresh.css"
+  "local_references_checked": 216,
+  "static_errors": [],
+  "download_links": [
+    {
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.24",
+      "status": 200,
+      "content_length": null
+    },
+    {
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.24/PCS-0.9.24-Windows-x64.zip",
+      "status": 200,
+      "content_length": "42475632"
+    },
+    {
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.24/PCS-0.9.24-Source.zip",
+      "status": 200,
+      "content_length": "15267751"
+    },
+    {
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.24/PCS-0.9.24-SHA256SUMS.txt",
+      "status": 200,
+      "content_length": "183"
+    }
   ],
-  "new_app_captures": 12,
-  "all_capture_hashes_match": true,
-  "errors": [],
-  "not_performed": [
-    "Full website render with existing remote assets (those bytes unavailable to this environment)",
-    "Live GitHub Pages deployment/navigation test",
-    "Native Windows application launch or live AI session"
-  ]
+  "responsive_checks": [
+    {
+      "loaded": "true",
+      "menuExpanded": "false",
+      "page": "/index.html",
+      "scrollWidth": "375",
+      "width": "375"
+    },
+    {
+      "loaded": "true",
+      "menuExpanded": "",
+      "page": "/continuity-map.html",
+      "scrollWidth": "375",
+      "width": "375"
+    },
+    {
+      "loaded": "true",
+      "menuExpanded": "",
+      "page": "/getting-started.html",
+      "scrollWidth": "375",
+      "width": "375"
+    },
+    {
+      "loaded": "true",
+      "menuExpanded": "",
+      "page": "/memory-control.html",
+      "scrollWidth": "375",
+      "width": "375"
+    },
+    {
+      "loaded": "true",
+      "menuExpanded": "",
+      "page": "/data-and-privacy.html",
+      "scrollWidth": "375",
+      "width": "375"
+    },
+    {
+      "loaded": "true",
+      "menuExpanded": "false",
+      "page": "/index.html",
+      "scrollWidth": "305",
+      "width": "305"
+    }
+  ],
+  "browser_checks": [
+    "Desktop opening and guide images visually reviewed",
+    "All seven images use PCS original/default theme; sample captions are outside the pictures",
+    "30 Map themes and 89 connections rendered from 96 invented records",
+    "Conversation leads the homepage in the original frame; Map appears below in features",
+    "Conversation and Map image previews load their full-size targets",
+    "Homepage also fits 320-pixel frame; five pages fit 390-pixel frames"
+  ],
+  "independent_review": "Original homepage CSS/markup restoration reviewed independently; application information and 0.9.24 download links retained.",
+  "release_validation_boundary": "Website checks and synthetic captures only. No app release rebuild, real vault, AI provider, microphone, OBS or GPU session.",
+  "published": false
 }

@@ -1,0 +1,4 @@
+/* Restore the established homepage typography, spacing and product frame. */
+.guide-grid .screenshot figcaption { display:flex; justify-content:space-between; gap:14px; }
+.guide-grid .screenshot-button .enlarge { display:block; color:#c2d79f; padding:7px 0; font-size:13px; }
+.guide-grid .screenshot-button img { border-radius:7px; }

@@ -1,58 +1,21 @@
-# PCS 0.9.13 — real interface captures
+# PCS 0.9.24 website samples
 
-These PNGs are **browser captures of the released PCS 0.9.13 interface with authored sample data**. They are not generated UI illustrations, screenshots of an older version with a new badge, or evidence of a live AI conversation.
-
-The homepage keeps the caption short: **PCS 0.9.13 · Sample data**. This file contains the capture details so a long explanation is not needed above the feature list.
-
-## Capture method
-
-The checksum-verified `PCS-0.9.13-Source.zip` was extracted into a separate working directory. A disposable encrypted vault was populated through the shipped storage classes. The application's actual FastAPI host, vault, Materials readers, notebook store, Calendar store and Continuity Map implementation served the sample records. The real interface controls were then used to browse, inspect, link a document to a notebook, and capture the screens.
-
-The browser environment blocks direct localhost navigation. For capture, the released HTML, styles and scripts were loaded inline, and `fetch`/WebSocket transport was bridged to the actual ASGI application through `TestClient`. **The bridge did not supply fabricated API results, add controls, replace displayed content, or redraw the interface.** It replaces asset loading and browser-to-host transport, not PCS's frontend renderers or storage implementation. A synthetic platform-session monitor replaced the Windows-only monitor; no live provider session was started.
-
-All **923 extracted release files** were checked against the source archive afterward and were unchanged. The source archive SHA-256 is:
-
-```text
-3c45e54924654867d2cdccace9c5adcd4deae66c2e39f8a241f75fd6beb9ae70
-```
-
-Captures are **1920 × 1080**, device scale 1, using Chromium 144.0.7559.96 on Linux with Python 3.13.5. The final capture run recorded no browser page errors and 41 successful real ASGI HTTP requests. This is **not execution of the native Windows launcher, a live-provider test, or a full deployed-website browser test**.
-
-## Sample vault
-
-The data consists of 72 owner-authored sample memories, five topic notebooks, three small local Markdown documents, 15 Calendar plans, and three seeded saved-source snapshots with separate bookmarks. Themes include astronomy, sketching, photography, fiction, robotics, hiking and learning. No personal vault, private conversation, API credential or live research result is used.
-
-The three saved-source examples are original demonstration text at reserved example addresses. They were seeded locally through the real store, **not downloaded from those addresses**. Their source limitations record this. Their visible capture timestamps are the store timestamps of those sample snapshots, not evidence that a public site was fetched. The quiz is open-ended; it does not claim to have a verified answer key or automatic grading.
-
-The Conversation capture shows the **actual welcome panel and memory stream**, not a simulated model conversation. The memory inspector shows a genuine owner correction to one of the sample records, with its linked source. Notebook and Calendar controls are the ones actually present in the release.
+These are **illustrative interface captures with invented data**, displayed using PCS 0.9.24 frontend code. They do not contain a personal vault, live provider output or real calendar plans. They are not proof of live AI, microphone, OBS, GPU or model behavior.
 
 ## Continuity Map
 
-PCS computed **26 themes and 86 connections** from the sample memories and notebooks. Nodes were moved with the map's normal drag controls to make the labels more readable. The node set, edge set, counts, colors and inspector contents were not rewritten or painted onto the screenshots.
+All samples use **PCS (default)**, the `original` appearance preset. It is not the alternate Dark preset. The Map feature image emphasizes the graph and inspector; the detailed image also includes the Map’s surrounding controls. Both show **30 themes, 89 connections and 96 fictional current records**: 72 memories and 24 notebooks.
 
-The map illustrates shared wording and records; it is not a neurological diagram, personality assessment or demonstration of model reasoning. The date comparison shows current records grouped by their last save, not a reconstruction of past beliefs.
+The released Map renderer receives an authored in-memory fixture with validated record/connection structures and a manually spaced layout. The backend did not infer this graph from a real vault. Labels, counts and supporting example text are invented; layout and highlight rendering use the shipped frontend. Capture framing hides unrelated page chrome in the Map feature image, without adding graph nodes or relationships to the captured image.
 
-## Image inventory
+The Map does not automatically detect psychological blind spots. It displays saved wording/topic overlap in bounded current records, so someone can inspect the evidence and form their own questions.
 
-| File | View |
-| --- | --- |
-| `screenshots/01-conversation-0913.png` | Welcome panel and sample memory stream. |
-| `screenshots/02-continuity-map-0913.png` | Full 26-theme, 86-connection overview; homepage's first feature. |
-| `screenshots/03-continuity-map-inspect-0913.png` | Astronomy selected with supporting records. |
-| `screenshots/04-materials-documents-0913.png` | Local Documents tab with a selected Markdown source. |
-| `screenshots/05-materials-web-sources-0913.png` | Saved quiz, study guide and fictional puzzle source cards. |
-| `screenshots/06-notebook-0913.png` | Actual notebook editor with owner notes and a linked document. |
-| `screenshots/07-calendar-0913.png` | September 2026 month view and selected-day details. |
-| `screenshots/08-library-0913.png` | Library record list and selected record. |
-| `screenshots/09-memory-inspect-0913.png` | Real memory inspector, owner correction and source. |
-| `screenshots/10-material-reader-0913.png` | Local document reader; included as an additional capture. |
-| `screenshots/11-saved-source-bookmark-0913.png` | Original saved sample quiz text and separate bookmark controls. |
-| `screenshots/12-map-timeline-0913.png` | Actual timeline and equal-window comparison controls. |
+## Conversation welcome and other workspace samples
 
-[`SCREENSHOT-MANIFEST.json`](SCREENSHOT-MANIFEST.json) contains the file sizes, dimensions, SHA-256 hashes, environment and capture facts. The separate screenshot-evidence archive contains the authored sample-data script, capture harness, control actions, request log, and unchanged-release verification for reproduction.
+The homepage and Getting Started use a landscape 1600 × 900 Conversation welcome view in the default theme, with three fictional saved-memory cards. This restores the original website framing. No live session is running in the welcome image.
 
-## Website use
+Conversation, Materials, Notebook and Calendar samples use unchanged release frontend scripts with isolated synthetic API/WebSocket responses. Conversation text is authored for illustration. Any playback state is simulated; no real microphone, speaker or provider is used. Documents, notes and plans are invented examples. A fixture is not a complete PCS session and is not shipped as a website feature.
 
-All five public HTML pages point to these 0.9.13 images, including social metadata and full-image destinations. Brand artwork and existing site resources are unchanged. Historical PNGs may remain in the repository for older links; the refreshed HTML does not reference them.
+Captions beneath the website images say **PCS 0.9.24 · Sample data**. The README also explicitly describes the fictional records. The large in-image fixture banners were removed for a quieter presentation; the screenshots remain clearly identified as samples in their surrounding context. Image alt text describes the scene. The lightbox retains ordinary full-image links as a fallback, and the README’s main picture links to the public website.
 
-The previously generated concept images are **not included** in this update. They remain possible design references for a future application revision, not screenshots of features in 0.9.13.
+`SCREENSHOT-MANIFEST.json` lists exact filenames, dimensions and SHA-256 hashes for this bundle. Historical image provenance from the previous 0.9.13 website is not reused as evidence for the new captures.
