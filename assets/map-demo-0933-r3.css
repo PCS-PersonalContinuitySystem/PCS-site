@@ -78,6 +78,10 @@
 .pcs-map-node.is-selected .pcs-map-star{display:inline;stroke-linejoin:miter}
 .pcs-map-node.is-selected .pcs-map-star-glow{display:inline;fill:#c5b5d5;stroke:#c5b5d5;stroke-width:3px;filter:url(#pcs-map-star-blur);pointer-events:none;opacity:.3;transform-box:fill-box;transform-origin:center;animation:pcs-map-star-pulse 4s ease-in-out infinite}
 .pcs-map-node.is-selected .pcs-map-label{transform:translateY(7px)}
+/* Hover/focus on the star: drop the circular hit-area outline and highlight the star shape instead */
+.pcs-map-node.is-selected:hover .pcs-map-hit,.pcs-map-node.is-selected:focus-visible .pcs-map-hit{stroke:transparent;fill:transparent}
+.pcs-map-node.is-selected:hover .pcs-map-star,.pcs-map-node.is-selected:focus-visible .pcs-map-star{stroke:#d7dfb4;stroke-opacity:1}
+.pcs-map-node.is-selected:hover .pcs-map-star-glow,.pcs-map-node.is-selected:focus-visible .pcs-map-star-glow{fill:#d7dfb4;stroke:#d7dfb4}
 .pcs-map-edge.is-connected{stroke:#cfc0e4;stroke-opacity:.95;stroke-width:calc(var(--w,1.6) * 1.3px)}
 @keyframes pcs-map-star-pulse{0%,100%{opacity:.18;transform:scale(1)}50%{opacity:.42;transform:scale(1.07)}}
 @media(prefers-reduced-motion:reduce){.pcs-map-node.is-selected .pcs-map-star-glow{animation:none;opacity:.3}}
