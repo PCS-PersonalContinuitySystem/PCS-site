@@ -1,4 +1,4 @@
-# PCS — Your personal thinking space
+# PCS - Your personal thinking space
 
 **Room to think. Space to connect.**
 
