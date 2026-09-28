@@ -1,14 +1,16 @@
-# PCS 0.9.33 website samples
+# PCS 0.9.33 website samples — revision 2
 
-These are **interface captures with invented data**, rendered by the unchanged PCS 0.9.33 frontend in the **PCS (default)** theme. They contain no personal records, live AI answers or real calendar plans. They do not demonstrate live microphone, GPU, OBS or provider behavior.
+All examples use invented data. Five pictures retain the previously delivered captures of the unchanged PCS 0.9.33 frontend in the PCS (default) theme. Two new pictures capture the custom website Map sample. They contain no personal records, live AI answers or real calendar plans and do not demonstrate live microphone, GPU, OBS or provider behavior.
 
-## Continuity Map
+## Interactive Map sample
 
-The new Map was derived through the production encrypted storage and Map code from **90 invented memories and 30 invented notebooks**. It displays **30 themes and 120 connections**; the normal display limit omits 27 weaker links. Its supporting record counts and inspection cards come from that derivation, rather than a hand-drawn graph. Layout positions were arranged using the same positions the product allows a user to save.
+The homepage and Map guide contain a lightweight website demonstration: static HTML and SVG enhanced with local JavaScript for theme selection, connected-theme navigation, zoom and reset. It is labelled **Interactive website sample · Invented data**. This demonstration is not the full PCS application; its two pictures are browser captures of the website component.
 
-The examples connect fermentation with clock drift, music with prime numbers, soup with tide pools, and repairs with imagined future archaeology. A small sourdough diplomacy joke sits among the supporting records. These are saved questions and analogies, not inferred psychological truths or established causal relationships.
+The sample retains **30 themes** and curates **104 of the previous 120 displayed connections**, a **13.3% reduction**. Sixteen weaker links were omitted while protecting Fermentation connections and avoiding isolated themes. The original graph came from the unchanged PCS 0.9.33 storage and Map pipeline using 90 invented memories and 30 invented notebooks. This website revision does not change the app's 30-theme /120-connection display limit.
 
-The feature image emphasizes the graph and inspector; the detailed image includes surrounding controls. No nodes or connections were painted onto a screenshot. The Map remains a bounded view of recurring wording and saved topic labels.
+Four of the 30 example topic labels (13.3%) are more familiar: Kitchen leftovers, Small repairs, Late-night radio and Old keepsakes. Associated invented prose is adapted consistently. Counts retain their supporting-record basis from the original sample. The sourdough joke and several unexpected cross-topic links remain. These are illustrative notes and questions, not psychological findings or established causal relationships.
+
+The Map and a selected example remain visible without JavaScript, and core page text, metadata and ordinary links are static HTML. Sample notes also have a readable text view. Interaction makes no network or AI requests and stores no user data. Zoom and theme choices affect only the current page. Refreshed Map image filenames include `0933-r2` to distinguish cached images.
 
 ## Conversation, Materials, Notebook and Calendar
 
@@ -16,10 +18,10 @@ The welcome image shows the current Conversation screen and three fictional memo
 
 The Calendar contains **15 plans**: 14 dated entries spread across September 2–30, and one undated project. The authored scene selects September 27; earlier completed plans demonstrate the product’s completed-entry styling.
 
-These scenes use the released HTML, CSS and JavaScript with isolated synthetic API/socket responses. The loopback fixture blocks outgoing connections. It is used only to capture illustrations and is not a feature shipped in this static website.
+These five unchanged product scenes use the released HTML, CSS and JavaScript with isolated synthetic API/socket responses. Their capture fixture blocks outgoing connections and is not shipped in this website.
 
 ## Presentation and provenance
 
-All seven pictures have adjacent **PCS 0.9.33 · Sample data** captions, descriptive alt text and full-image links. The labels stay outside the pictures for a quiet presentation. The image preview can be closed with Escape; ordinary image links remain available without JavaScript.
+The five product pictures retain **PCS 0.9.33 · Sample data** captions. The Map has **Website sample · Invented data** captions. Descriptive alt text and ordinary image links remain available; image previews can be closed with Escape.
 
-`SCREENSHOT-MANIFEST.json` records exact image dimensions, SHA-256 hashes, current frontend source hashes and sample counts. Brand artwork is preserved. Earlier screenshots and their validation claims are excluded from this upload bundle.
+`SCREENSHOT-MANIFEST.json` distinguishes product captures from website demo captures, records dimensions and hashes, and preserves original graph provenance. Production frontend hashes describe the five unchanged product captures and the original graph derivation. Brand artwork is preserved. The previous Map pictures are excluded from this upload bundle.

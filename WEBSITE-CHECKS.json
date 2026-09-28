@@ -1,12 +1,8 @@
 {
   "version": "0.9.33",
-  "checked_at_utc": "2026-09-28T05:29:20.769802+00:00",
-  "upstream": {
-    "repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
-    "branch": "main",
-    "commit": "c15212e2fcb56056e9f7af1cdbbc68bb437bd898",
-    "zip_sha256": "773f3ef3ea79cc1a3fe3c98b94b35647b899a8ac10a35f91e8140d7309f51e3a"
-  },
+  "website_revision": 2,
+  "checked_at_utc": "2026-09-28T06:28:47.853964+00:00",
+  "base_archive_sha256": "168ed56e39382236dab7a4cf370a7971b9fcb7b2c38e34577a9c4309a886f290",
   "html_pages": [
     "index.html",
     "continuity-map.html",
@@ -14,175 +10,119 @@
     "memory-control.html",
     "data-and-privacy.html"
   ],
-  "local_references_checked": 216,
+  "local_references_checked": 304,
   "static_errors": [],
-  "external_links": [
-    {
-      "url": "https://developers.google.com/program/plans-and-pricing",
-      "status": 200
-    },
-    {
-      "url": "https://discord.gg/Tfd4kHQun",
-      "status": 200
-    },
-    {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS",
-      "status": 200
-    },
-    {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/issues",
-      "status": 200
-    },
-    {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-SHA256SUMS.txt",
-      "status": 200
-    },
-    {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Source.zip",
-      "status": 200
-    },
-    {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Windows-x64.zip",
-      "status": 200
-    },
-    {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.33",
-      "status": 200
-    },
-    {
-      "url": "https://ko-fi.com/pcssupport",
-      "status": 200
-    }
-  ],
   "browser": {
     "passed": true,
     "responsive": [
       {
         "page": "index.html",
-        "viewport": 390,
-        "clientWidth": 375,
-        "h1": "Room to think.\n         \n\n          Space to connect.",
-        "scrollWidth": 375,
-        "title": "PCS \u2014 Your personal thinking space"
-      },
-      {
-        "page": "continuity-map.html",
-        "viewport": 390,
-        "clientWidth": 375,
-        "h1": "A wider view of your saved thoughts",
-        "scrollWidth": 375,
-        "title": "Continuity Map \u2014 Find a new perspective | PCS"
-      },
-      {
-        "page": "getting-started.html",
-        "viewport": 390,
-        "clientWidth": 375,
-        "h1": "Getting started with PCS on Windows",
-        "scrollWidth": 375,
-        "title": "Getting started with PCS on Windows | PCS"
-      },
-      {
-        "page": "memory-control.html",
-        "viewport": 390,
-        "clientWidth": 375,
-        "h1": "What PCS remembers\u2014and how to change it",
-        "scrollWidth": 375,
-        "title": "What PCS remembers\u2014and how to change it | PCS"
-      },
-      {
-        "page": "data-and-privacy.html",
-        "viewport": 390,
-        "clientWidth": 375,
-        "h1": "What stays on your PC\u2014and what is shared",
-        "scrollWidth": 375,
-        "title": "What stays on your PC\u2014and what is shared | PCS"
-      },
-      {
-        "page": "index.html",
-        "viewport": 768,
-        "clientWidth": 753,
-        "scrollWidth": 753
-      },
-      {
-        "page": "continuity-map.html",
-        "viewport": 768,
-        "clientWidth": 753,
-        "scrollWidth": 753
-      },
-      {
-        "page": "getting-started.html",
-        "viewport": 768,
-        "clientWidth": 753,
-        "scrollWidth": 753
-      },
-      {
-        "page": "memory-control.html",
-        "viewport": 768,
-        "clientWidth": 753,
-        "scrollWidth": 753
-      },
-      {
-        "page": "data-and-privacy.html",
-        "viewport": 768,
-        "clientWidth": 753,
-        "scrollWidth": 753
-      },
-      {
-        "page": "index.html",
-        "viewport": 320,
         "clientWidth": 305,
-        "scrollWidth": 305
-      },
-      {
-        "page": "index.html",
-        "viewport": 1440,
-        "clientWidth": 1425,
-        "scrollWidth": 1425
+        "columns": "241px",
+        "mapWidth": 265,
+        "ready": true,
+        "scrollWidth": 305,
+        "width": 320
       },
       {
         "page": "continuity-map.html",
-        "viewport": 1440,
-        "clientWidth": 1425,
-        "scrollWidth": 1425
+        "clientWidth": 305,
+        "columns": "241px",
+        "mapWidth": 265,
+        "ready": true,
+        "scrollWidth": 305,
+        "width": 320
       },
       {
-        "page": "getting-started.html",
-        "viewport": 1440,
-        "clientWidth": 1425,
-        "scrollWidth": 1425
+        "page": "index.html",
+        "clientWidth": 375,
+        "columns": "311px",
+        "mapWidth": 335,
+        "ready": true,
+        "scrollWidth": 375,
+        "width": 390
       },
       {
-        "page": "memory-control.html",
-        "viewport": 1440,
-        "clientWidth": 1425,
-        "scrollWidth": 1425
+        "page": "continuity-map.html",
+        "clientWidth": 375,
+        "columns": "311px",
+        "mapWidth": 335,
+        "ready": true,
+        "scrollWidth": 375,
+        "width": 390
       },
       {
-        "page": "data-and-privacy.html",
-        "viewport": 1440,
+        "page": "index.html",
+        "clientWidth": 753,
+        "columns": "671px",
+        "mapWidth": 705,
+        "ready": true,
+        "scrollWidth": 753,
+        "width": 768
+      },
+      {
+        "page": "continuity-map.html",
+        "clientWidth": 753,
+        "columns": "354px",
+        "mapWidth": 388,
+        "ready": true,
+        "scrollWidth": 753,
+        "width": 768
+      },
+      {
+        "page": "index.html",
+        "clientWidth": 1009,
+        "columns": "592.734px 282.266px",
+        "mapWidth": 937,
+        "ready": true,
+        "scrollWidth": 1009,
+        "width": 1024
+      },
+      {
+        "page": "continuity-map.html",
+        "clientWidth": 1009,
+        "columns": "596px",
+        "mapWidth": 644,
+        "ready": true,
+        "scrollWidth": 1009,
+        "width": 1024
+      },
+      {
+        "page": "index.html",
         "clientWidth": 1425,
-        "scrollWidth": 1425
+        "columns": "847.438px 403.562px",
+        "mapWidth": 1313,
+        "ready": true,
+        "scrollWidth": 1425,
+        "width": 1440
+      },
+      {
+        "page": "continuity-map.html",
+        "clientWidth": 1425,
+        "columns": "787px",
+        "mapWidth": 835,
+        "ready": true,
+        "scrollWidth": 1425,
+        "width": 1440
       }
     ],
     "interactions": [
-      "Mobile menu opens; Escape closes and returns focus",
-      "Mobile section link closes menu and reaches correct anchor",
-      "FAQ opens with click and closes with Enter",
-      "Welcome image opens in modal; Escape closes, restores focus and scroll",
-      "Map thumbnail opens the detailed image",
-      "Image modal Tab and Shift+Tab stay within its controls; Close restores page",
-      "Desktop and 320px homepage visually reviewed",
-      "Community and footer links visually reviewed",
-      "Route table scrolls within its container; row header styling verified"
+      "SVG click selects Kitchen leftovers and its six connections plus adapted excerpts",
+      "Connected theme navigation updates selection and restores focus to selector",
+      "Enter on SVG node selects Old keepsakes",
+      "Zoom, keyboard pan and reset restore default viewBox",
+      "JavaScript blocked by preview CSP: static map, selected notes, links and native 30-theme text view remain usable; enhancement controls stay hidden",
+      "390px selection centers Small repairs within the map scroller without page overflow",
+      "Detailed sample image dialog opens and Escape closes it with focus restored",
+      "Read sample records link opens the native text alternative",
+      "Map guide also retains usable static map and native text alternative when scripts are blocked",
+      "Map guide selection updates Late-night radio excerpts"
     ],
-    "site_console_errors": [],
-    "images": "Seven new default-theme screenshots visually reviewed; fixture ready markers verified. No personal data or live AI/device use.",
-    "discord": {
-      "url": "https://discord.gg/Tfd4kHQun",
-      "verified": "Browser invite page displays PCS | Personal Continuity System; no join or sign-in performed"
-    }
+    "console": [],
+    "images": "Five previous released-frontend captures unchanged; two new website sample captures visually reviewed at1265x853.",
+    "scope": "Desktop/mobile Chromium browser checks with invented website data; no live AI, account or PCS vault access."
   },
   "sample_images": 7,
-  "scope": "Static website and synthetic interface illustrations. No live AI, private vault, microphone, GPU or OBS session tested.",
+  "scope": "Website interaction with invented sample data. Five existing product captures and two new website demo captures. No AI, private vault or device session.",
   "published": false
 }

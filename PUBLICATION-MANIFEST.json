@@ -1,5 +1,6 @@
 {
   "version": "0.9.33",
+  "website_revision": 2,
   "kind": "complete static website",
   "files": [
     {
@@ -9,28 +10,28 @@
     },
     {
       "path": "README.md",
-      "bytes": 5502,
-      "sha256": "0da6ae65a844f69641db33a78de750bf598dc1f8146e002f37f15d442ce1f605"
+      "bytes": 6163,
+      "sha256": "6f2bf85eb91c8808c36b763d9432937a607b3ce254033d941576e580b54083a8"
     },
     {
       "path": "SCREENSHOT-MANIFEST.json",
-      "bytes": 3145,
-      "sha256": "223a466f9663fe67316c466e5504039f673b25cbbdb382911647fc3e52f17d71"
+      "bytes": 3924,
+      "sha256": "6079c2d6b5472c91d973741879df40a58843725c98a34e04ca1aeef334aa95df"
     },
     {
       "path": "SCREENSHOTS.md",
-      "bytes": 2718,
-      "sha256": "5233e8902bab72254bad03b7a2eabb0e01556b90984fb888afacfa0ae4c7adbb"
+      "bytes": 3483,
+      "sha256": "87624b2f49243f3b1b2d6f14794fed97fa1384329347bffd9e625c4f896048f4"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "bytes": 1890,
-      "sha256": "871537d70a532a8744a02c6aaab58b53101343f0bd4fc83186a99973652ad3a5"
+      "bytes": 1949,
+      "sha256": "2a995e0cc15e5196a1a81251a1a3ef7bc797685ee9b2234717ffe523405eaa90"
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 5829,
-      "sha256": "d7a7b7e5fde172966b1155466b5697c380a0615990dedb6b109a3c98e6b94635"
+      "bytes": 4056,
+      "sha256": "8dce5b1ca8ed0de9448ce3fe566b85cd194c52156cbc6f80e633ffc8e034614e"
     },
     {
       "path": "assets/documentation-096.css",
@@ -41,6 +42,16 @@
       "path": "assets/guides-c15cb839fc10.css",
       "bytes": 4534,
       "sha256": "c15cb839fc10691c4baa66086a944ab816c3fe512f4be4214a57dbcd494e3cff"
+    },
+    {
+      "path": "assets/map-demo-0933-r2.css",
+      "bytes": 7942,
+      "sha256": "98a1adee4af9e8a40eb72eb0124e32e09291328802f6a47c773aaa761171ca21"
+    },
+    {
+      "path": "assets/map-demo-0933-r2.js",
+      "bytes": 7438,
+      "sha256": "be12b5d3e4eb2a40c1cdb21c2212ab71da4b60b31e9aa667391e7435922f7715"
     },
     {
       "path": "assets/pcs-star.svg",
@@ -84,28 +95,28 @@
     },
     {
       "path": "continuity-map.html",
-      "bytes": 10791,
-      "sha256": "216e0ab0a46123bdf1410f55a84ed55b58450e1bbb434b67c9bf48172517a607"
+      "bytes": 107938,
+      "sha256": "d44c095b62e279b1989cd80e2dc3b50571262f5de8027a7b594681ef6fdbd871"
     },
     {
       "path": "data-and-privacy.html",
-      "bytes": 15245,
-      "sha256": "ca47408c774f34aaa21f589bbc9970eb859f7e832c29f6346f6fd5fa57ec8da4"
+      "bytes": 15199,
+      "sha256": "003421cacd58474380cb57d64023226b5529b2dd4abbf44fa0b985ed4110dad1"
     },
     {
       "path": "getting-started.html",
-      "bytes": 22751,
-      "sha256": "19ba2c7f37df17a2776c9d2e73e355b485e1d6c70b38f8162c06646261eb564e"
+      "bytes": 22705,
+      "sha256": "cca6b02cfff13b8cf64375593bd3061c4219041cc2339521ba6f7267a5fffa80"
     },
     {
       "path": "index.html",
-      "bytes": 45788,
-      "sha256": "6f067a728a9186b5ae44f2f4bb333862a4b4a9335d17e79971dc763c05d53948"
+      "bytes": 142864,
+      "sha256": "ea6dd02b08b99b3d4a4ed5f50c925e3513d94228aba0aad0299d20c9a73467b2"
     },
     {
       "path": "memory-control.html",
-      "bytes": 16691,
-      "sha256": "1b8956bcbf94d1a4520223f98079cb85424359590bbef8431aad38b355b55b5b"
+      "bytes": 16661,
+      "sha256": "2001cea02f1ffae879ecdd7e184d82fa1f634153d66197ae86dfc625229be25c"
     },
     {
       "path": "screenshots/pcs-calendar-0933.jpg",
@@ -123,14 +134,14 @@
       "sha256": "9e2836e88134749f76882204a68fc6153e873f2da4bde862bb93db6136c1bc04"
     },
     {
-      "path": "screenshots/pcs-map-detail-0933.jpg",
-      "bytes": 240673,
-      "sha256": "0bdc1959724f5fafbda495c62d0ab2fe0e1437b828d8e92ec1ccc9cd980b0faf"
+      "path": "screenshots/pcs-map-sample-0933-r2.jpg",
+      "bytes": 119864,
+      "sha256": "8973d0a2cfe1709e5323ab22199ae751548b6ed98e35c0616cffef2e908b55e9"
     },
     {
-      "path": "screenshots/pcs-map-hero-0933.jpg",
-      "bytes": 155205,
-      "sha256": "9664d4077d4bc05cdaccbf9ae8f0d7c1b46b1d3e548578fb3b2d715e84d5d05a"
+      "path": "screenshots/pcs-map-sample-detail-0933-r2.jpg",
+      "bytes": 122642,
+      "sha256": "70356c52e04ec8647a17254e72c2e5cb088a3455fa11d967b9b5bb0cf4636801"
     },
     {
       "path": "screenshots/pcs-materials-0933.jpg",

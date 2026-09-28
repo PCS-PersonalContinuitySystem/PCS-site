@@ -1,12 +1,21 @@
 {
   "version": "0.9.33",
-  "method": "Browser captures of unchanged released frontend in the original/default theme, with authored synthetic fixture responses. Map derived by the production storage and Map pipeline from invented records. No live provider, personal vault or device session.",
+  "method": "Five unchanged PCS 0.9.33 frontend captures using invented fixture data; two new browser captures of a custom static HTML/SVG website Map sample. The website demo is not the full application UI. No AI, personal vault or device session.",
   "map": {
     "themes": 30,
-    "connections": 120,
-    "memories": 90,
-    "notebooks": 30,
-    "weaker_links_omitted": 27
+    "connections": 104,
+    "previous_sample_connections": 120,
+    "reduction_percent": 13.333333333333334,
+    "adapted_topic_labels": 4,
+    "adapted_topic_percent": 13.333333333333334,
+    "method": "Curated subset of the previous invented sample projection; four labels and affected prose adapted for everyday familiarity. Counts retain support from the original synthetic records.",
+    "original_sample": {
+      "themes": 30,
+      "connections": 120,
+      "memories": 90,
+      "notebooks": 30,
+      "weaker_links_omitted": 27
+    }
   },
   "calendar": {
     "plans": 15,
@@ -57,49 +66,57 @@
       "width": 1265,
       "height": 1140,
       "bytes": 120284,
-      "sha256": "28bbbd8722a6c8ce218c9c9c0b648eb5b157d8ffee9cda8a6556419434893db0"
+      "sha256": "28bbbd8722a6c8ce218c9c9c0b648eb5b157d8ffee9cda8a6556419434893db0",
+      "kind": "released_frontend_capture"
     },
     {
       "file": "screenshots/pcs-conversation-0933.jpg",
       "width": 1265,
       "height": 1140,
       "bytes": 165557,
-      "sha256": "12acaeecc1004b14b067c360809db9506fe6af74c59a71fa0279aee6d2a28d6b"
+      "sha256": "12acaeecc1004b14b067c360809db9506fe6af74c59a71fa0279aee6d2a28d6b",
+      "kind": "released_frontend_capture"
     },
     {
       "file": "screenshots/pcs-conversation-welcome-0933.jpg",
       "width": 1600,
       "height": 900,
       "bytes": 140057,
-      "sha256": "9e2836e88134749f76882204a68fc6153e873f2da4bde862bb93db6136c1bc04"
+      "sha256": "9e2836e88134749f76882204a68fc6153e873f2da4bde862bb93db6136c1bc04",
+      "kind": "released_frontend_capture"
     },
     {
-      "file": "screenshots/pcs-map-detail-0933.jpg",
+      "file": "screenshots/pcs-map-sample-0933-r2.jpg",
       "width": 1265,
-      "height": 1501,
-      "bytes": 240673,
-      "sha256": "0bdc1959724f5fafbda495c62d0ab2fe0e1437b828d8e92ec1ccc9cd980b0faf"
+      "height": 853,
+      "bytes": 119864,
+      "sha256": "8973d0a2cfe1709e5323ab22199ae751548b6ed98e35c0616cffef2e908b55e9",
+      "kind": "website_demo_capture"
     },
     {
-      "file": "screenshots/pcs-map-hero-0933.jpg",
+      "file": "screenshots/pcs-map-sample-detail-0933-r2.jpg",
       "width": 1265,
-      "height": 834,
-      "bytes": 155205,
-      "sha256": "9664d4077d4bc05cdaccbf9ae8f0d7c1b46b1d3e548578fb3b2d715e84d5d05a"
+      "height": 853,
+      "bytes": 122642,
+      "sha256": "70356c52e04ec8647a17254e72c2e5cb088a3455fa11d967b9b5bb0cf4636801",
+      "kind": "website_demo_capture"
     },
     {
       "file": "screenshots/pcs-materials-0933.jpg",
       "width": 1265,
       "height": 1140,
       "bytes": 157148,
-      "sha256": "5420e26a067a70f13f3c5fb6f78e0b269f828fd39ff7db1db4f457e7e129fbf1"
+      "sha256": "5420e26a067a70f13f3c5fb6f78e0b269f828fd39ff7db1db4f457e7e129fbf1",
+      "kind": "released_frontend_capture"
     },
     {
       "file": "screenshots/pcs-notebook-0933.jpg",
       "width": 1265,
       "height": 980,
       "bytes": 77216,
-      "sha256": "31b4f2b6b4d4b1b18be61b38904d958f2619d3084398303ead402583e69d1587"
+      "sha256": "31b4f2b6b4d4b1b18be61b38904d958f2619d3084398303ead402583e69d1587",
+      "kind": "released_frontend_capture"
     }
-  ]
+  ],
+  "website_revision": 2
 }

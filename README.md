@@ -1,4 +1,4 @@
-# PCS - Your personal thinking space
+# PCS — Your personal thinking space
 
 **Room to think. Space to connect.**
 
@@ -6,9 +6,9 @@ The public website for PCS: a Windows application for conversation, learning and
 
 **[Visit the website](https://pcs-personalcontinuitysystem.github.io/PCS-site/)** · [Download PCS 0.9.33](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Windows-x64.zip) · [Release notes](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.33) · [Discord community](https://discord.gg/Tfd4kHQun)
 
-[![PCS Continuity Map with interconnected fictional themes and inspectable records.](screenshots/pcs-map-hero-0933.jpg)](https://pcs-personalcontinuitysystem.github.io/PCS-site/)
+[![PCS Continuity Map with interconnected fictional themes and inspectable records.](screenshots/pcs-map-sample-0933-r2.jpg)](https://pcs-personalcontinuitysystem.github.io/PCS-site/)
 
-*PCS 0.9.33 interface · Default theme · Invented sample data. [Open the detailed Map](screenshots/pcs-map-detail-0933.jpg).*
+*Interactive website Map sample · Invented data. [Open the detailed Map](screenshots/pcs-map-sample-detail-0933-r2.jpg).*
 
 ## A wider view of your saved thoughts
 
@@ -18,7 +18,8 @@ The **Continuity Map** displays recurring wording and topic labels from saved me
 
 ## This website update
 
-- **Current pictures:** seven refreshed 0.9.33 interface captures, a denser Map with unusual connections, and plans spread across a full month. All examples use invented data.
+- **A calmer, interactive Map:** 30 themes and 104 sample connections (13.3% fewer), with four more familiar topics and the sourdough joke intact. Select a theme, follow its connections and read sample notes; zoom or reset the view. The Map and selected notes also display without JavaScript.
+- **Current pictures:** five unchanged PCS 0.9.33 interface captures and two new captures of the website Map sample. Calendar plans remain spread across a full month. All examples use invented data.
 - **Clearer setup:** a visible recommendation for an NVIDIA GPU with at least **16 GB VRAM** for a smooth Local experience. Needs vary by model, context and optional features; Google and OpenAI cloud routes do not require a 16 GB GPU.
 - **Current guidance:** Local cancellation and voice controls, draft recovery, pasted web sources, launch-link privacy, and the 2 GiB native backup/restore limit.
 - **Community:** Discord links alongside optional Ko-fi support, plus a subscription FAQ covering both Google and OpenAI.
@@ -43,7 +44,7 @@ This is a complete static website with **no build step**. Extract the upload ZIP
 
 See [UPLOAD-INSTRUCTIONS.md](UPLOAD-INSTRUCTIONS.md). For a local preview, serve the extracted folder with `python -m http.server 8000` and visit `http://localhost:8000/`.
 
-The five HTML files are the editable source. Download links, FAQs and image links work without JavaScript; a small script adds mobile navigation and image previews. Keep version labels, download links, metadata and guides in agreement. Historical vault minimum-reader versions are compatibility facts, not release labels to replace.
+The five HTML files are the editable source. Download links, FAQs and image links work without JavaScript; small scripts add mobile navigation, image previews and Map interaction. The Map sample is a static HTML/SVG enhancement, uses no external library, stores nothing and makes no AI requests. Core text, metadata and guide links remain ordinary HTML; this follows [Google Search guidance for JavaScript sites](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics). Keep version labels, download links, metadata and guides in agreement. Historical vault minimum-reader versions are compatibility facts, not release labels to replace.
 
 [SCREENSHOTS.md](SCREENSHOTS.md) explains the examples. `SCREENSHOT-MANIFEST.json` records dimensions, hashes and provenance; `PUBLICATION-MANIFEST.json` records the delivered files. `WEBSITE-CHECKS.json` describes website validation, not live provider or hardware certification.
 
