@@ -1,8 +1,12 @@
 {
-  "version": "0.9.24",
-  "website_revision": 2,
-  "checked_at_utc": "2026-09-27T04:02:01.471097+00:00",
-  "upstream_site_commit": "f895fafdcf8a28114cc97302bf5d57ddc817ce7c",
+  "version": "0.9.33",
+  "checked_at_utc": "2026-09-28T05:29:20.769802+00:00",
+  "upstream": {
+    "repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
+    "branch": "main",
+    "commit": "c15212e2fcb56056e9f7af1cdbbc68bb437bd898",
+    "zip_sha256": "773f3ef3ea79cc1a3fe3c98b94b35647b899a8ac10a35f91e8140d7309f51e3a"
+  },
   "html_pages": [
     "index.html",
     "continuity-map.html",
@@ -12,81 +16,173 @@
   ],
   "local_references_checked": 216,
   "static_errors": [],
-  "download_links": [
+  "external_links": [
     {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.24",
-      "status": 200,
-      "content_length": null
+      "url": "https://developers.google.com/program/plans-and-pricing",
+      "status": 200
     },
     {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.24/PCS-0.9.24-Windows-x64.zip",
-      "status": 200,
-      "content_length": "42475632"
+      "url": "https://discord.gg/Tfd4kHQun",
+      "status": 200
     },
     {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.24/PCS-0.9.24-Source.zip",
-      "status": 200,
-      "content_length": "15267751"
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS",
+      "status": 200
     },
     {
-      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.24/PCS-0.9.24-SHA256SUMS.txt",
-      "status": 200,
-      "content_length": "183"
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/issues",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-SHA256SUMS.txt",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Source.zip",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Windows-x64.zip",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.33",
+      "status": 200
+    },
+    {
+      "url": "https://ko-fi.com/pcssupport",
+      "status": 200
     }
   ],
-  "responsive_checks": [
-    {
-      "loaded": "true",
-      "menuExpanded": "false",
-      "page": "/index.html",
-      "scrollWidth": "375",
-      "width": "375"
-    },
-    {
-      "loaded": "true",
-      "menuExpanded": "",
-      "page": "/continuity-map.html",
-      "scrollWidth": "375",
-      "width": "375"
-    },
-    {
-      "loaded": "true",
-      "menuExpanded": "",
-      "page": "/getting-started.html",
-      "scrollWidth": "375",
-      "width": "375"
-    },
-    {
-      "loaded": "true",
-      "menuExpanded": "",
-      "page": "/memory-control.html",
-      "scrollWidth": "375",
-      "width": "375"
-    },
-    {
-      "loaded": "true",
-      "menuExpanded": "",
-      "page": "/data-and-privacy.html",
-      "scrollWidth": "375",
-      "width": "375"
-    },
-    {
-      "loaded": "true",
-      "menuExpanded": "false",
-      "page": "/index.html",
-      "scrollWidth": "305",
-      "width": "305"
+  "browser": {
+    "passed": true,
+    "responsive": [
+      {
+        "page": "index.html",
+        "viewport": 390,
+        "clientWidth": 375,
+        "h1": "Room to think.\n         \n\n          Space to connect.",
+        "scrollWidth": 375,
+        "title": "PCS \u2014 Your personal thinking space"
+      },
+      {
+        "page": "continuity-map.html",
+        "viewport": 390,
+        "clientWidth": 375,
+        "h1": "A wider view of your saved thoughts",
+        "scrollWidth": 375,
+        "title": "Continuity Map \u2014 Find a new perspective | PCS"
+      },
+      {
+        "page": "getting-started.html",
+        "viewport": 390,
+        "clientWidth": 375,
+        "h1": "Getting started with PCS on Windows",
+        "scrollWidth": 375,
+        "title": "Getting started with PCS on Windows | PCS"
+      },
+      {
+        "page": "memory-control.html",
+        "viewport": 390,
+        "clientWidth": 375,
+        "h1": "What PCS remembers\u2014and how to change it",
+        "scrollWidth": 375,
+        "title": "What PCS remembers\u2014and how to change it | PCS"
+      },
+      {
+        "page": "data-and-privacy.html",
+        "viewport": 390,
+        "clientWidth": 375,
+        "h1": "What stays on your PC\u2014and what is shared",
+        "scrollWidth": 375,
+        "title": "What stays on your PC\u2014and what is shared | PCS"
+      },
+      {
+        "page": "index.html",
+        "viewport": 768,
+        "clientWidth": 753,
+        "scrollWidth": 753
+      },
+      {
+        "page": "continuity-map.html",
+        "viewport": 768,
+        "clientWidth": 753,
+        "scrollWidth": 753
+      },
+      {
+        "page": "getting-started.html",
+        "viewport": 768,
+        "clientWidth": 753,
+        "scrollWidth": 753
+      },
+      {
+        "page": "memory-control.html",
+        "viewport": 768,
+        "clientWidth": 753,
+        "scrollWidth": 753
+      },
+      {
+        "page": "data-and-privacy.html",
+        "viewport": 768,
+        "clientWidth": 753,
+        "scrollWidth": 753
+      },
+      {
+        "page": "index.html",
+        "viewport": 320,
+        "clientWidth": 305,
+        "scrollWidth": 305
+      },
+      {
+        "page": "index.html",
+        "viewport": 1440,
+        "clientWidth": 1425,
+        "scrollWidth": 1425
+      },
+      {
+        "page": "continuity-map.html",
+        "viewport": 1440,
+        "clientWidth": 1425,
+        "scrollWidth": 1425
+      },
+      {
+        "page": "getting-started.html",
+        "viewport": 1440,
+        "clientWidth": 1425,
+        "scrollWidth": 1425
+      },
+      {
+        "page": "memory-control.html",
+        "viewport": 1440,
+        "clientWidth": 1425,
+        "scrollWidth": 1425
+      },
+      {
+        "page": "data-and-privacy.html",
+        "viewport": 1440,
+        "clientWidth": 1425,
+        "scrollWidth": 1425
+      }
+    ],
+    "interactions": [
+      "Mobile menu opens; Escape closes and returns focus",
+      "Mobile section link closes menu and reaches correct anchor",
+      "FAQ opens with click and closes with Enter",
+      "Welcome image opens in modal; Escape closes, restores focus and scroll",
+      "Map thumbnail opens the detailed image",
+      "Image modal Tab and Shift+Tab stay within its controls; Close restores page",
+      "Desktop and 320px homepage visually reviewed",
+      "Community and footer links visually reviewed",
+      "Route table scrolls within its container; row header styling verified"
+    ],
+    "site_console_errors": [],
+    "images": "Seven new default-theme screenshots visually reviewed; fixture ready markers verified. No personal data or live AI/device use.",
+    "discord": {
+      "url": "https://discord.gg/Tfd4kHQun",
+      "verified": "Browser invite page displays PCS | Personal Continuity System; no join or sign-in performed"
     }
-  ],
-  "browser_checks": [
-    "Desktop opening and guide images visually reviewed",
-    "All seven images use PCS original/default theme; sample captions are outside the pictures",
-    "30 Map themes and 89 connections rendered from 96 invented records",
-    "Conversation leads the homepage in the original frame; Map appears below in features",
-    "Conversation and Map image previews load their full-size targets",
-    "Homepage also fits 320-pixel frame; five pages fit 390-pixel frames"
-  ],
-  "independent_review": "Original homepage CSS/markup restoration reviewed independently; application information and 0.9.24 download links retained.",
-  "release_validation_boundary": "Website checks and synthetic captures only. No app release rebuild, real vault, AI provider, microphone, OBS or GPU session.",
+  },
+  "sample_images": 7,
+  "scope": "Static website and synthetic interface illustrations. No live AI, private vault, microphone, GPU or OBS session tested.",
   "published": false
 }

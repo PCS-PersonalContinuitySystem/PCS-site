@@ -1,77 +1,105 @@
 {
-  "schema_version": 2,
-  "app_version": "0.9.24",
-  "theme": "PCS (default)",
-  "theme_value": "original",
-  "release_source_manifest_sha256": "1b9bb05a028efabcf97caa5100961ad7d6000b3409e767f2561227b3ac51e3de",
-  "method": "Direct browser captures of released frontend with authored synthetic fixture responses in the original/default PCS theme. Quiet sample-data labels are in surrounding website captions, not in a fixture banner. No personal data, real vault, live AI or real device session.",
+  "version": "0.9.33",
+  "method": "Browser captures of unchanged released frontend in the original/default theme, with authored synthetic fixture responses. Map derived by the production storage and Map pipeline from invented records. No live provider, personal vault or device session.",
   "map": {
     "themes": 30,
-    "connections": 89,
-    "memories": 72,
-    "notebooks": 24,
-    "records": 96,
-    "derived_by": "authored fixture, rendered by released PCS frontend",
-    "layout": "manually spaced fictional graph"
+    "connections": 120,
+    "memories": 90,
+    "notebooks": 30,
+    "weaker_links_omitted": 27
   },
-  "images": [
+  "calendar": {
+    "plans": 15,
+    "dated": 14,
+    "undated": 1,
+    "dates": [
+      "2026-09-02",
+      "2026-09-04",
+      "2026-09-06",
+      "2026-09-09",
+      "2026-09-11",
+      "2026-09-13",
+      "2026-09-16",
+      "2026-09-18",
+      "2026-09-20",
+      "2026-09-23",
+      "2026-09-25",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-30"
+    ]
+  },
+  "frontend_inputs": [
     {
-      "file": "screenshots/pcs-calendar-0924.jpg",
-      "width": 1265,
-      "height": 1140,
-      "bytes": 111280,
-      "sha256": "8a2c068d735cc19af1d44d528ec776dbcffdd92553caefb5d66bd27c00a10b45"
+      "path": "pcs\\static\\index.html",
+      "sha256": "9165092b3044ce49da7a9f689bb6515b297639181512381273156b3bec972700"
     },
     {
-      "file": "screenshots/pcs-conversation-0924.jpg",
-      "width": 1265,
-      "height": 1140,
-      "bytes": 157797,
-      "sha256": "fc63c30f30216e3342e6104fc9e4baf435a88e3faffd29c332f44bea8a9bbeb6"
+      "path": "pcs\\static\\app.js",
+      "sha256": "a34b1e918e3cbdc5e106a84a9b0e0c881df5fa3962894cfbcb54980bae3953dd"
     },
     {
-      "file": "screenshots/pcs-conversation-welcome-0924.jpg",
-      "width": 1600,
-      "height": 900,
-      "bytes": 133116,
-      "sha256": "913351eb1dce467b035c4e0e813e33bdb1d5ca330e8607e2ef50d7e960af2b20"
+      "path": "pcs\\static\\appearance.js",
+      "sha256": "513ea6348a2bb246be5cfdcde2cbb7e0f0832e1171093769100f5690193b1c5f"
     },
     {
-      "file": "screenshots/pcs-map-detail-0924.jpg",
-      "width": 1265,
-      "height": 1479,
-      "bytes": 224534,
-      "sha256": "8b7b61cac5332b6e92b6570ee9432d25946085d5b64a7a1a8e2bec8e840ed62d"
+      "path": "pcs\\static\\continuity_map_ui.js",
+      "sha256": "b69acb622441ef6d1f8f223c17ff19fd96191465560f0e8cbf38403df2cb6892"
     },
     {
-      "file": "screenshots/pcs-map-hero-0924.jpg",
-      "width": 1265,
-      "height": 834,
-      "bytes": 143928,
-      "sha256": "c66f93518e89ae98f8bfd535935e4b8eb97bd0111d9f7c51a62f3aa28d8f6482"
-    },
-    {
-      "file": "screenshots/pcs-materials-0924.jpg",
-      "width": 1265,
-      "height": 1140,
-      "bytes": 152251,
-      "sha256": "1ec355ea282548d1abd56bcf3c0b9450fc30d06723aa7af5cc047a1ca40cd408"
-    },
-    {
-      "file": "screenshots/pcs-notebook-0924.jpg",
-      "width": 1265,
-      "height": 980,
-      "bytes": 75839,
-      "sha256": "0b056970a994257bd72aafc88acad84c74305e515a80625f384cf609729115a4"
+      "path": "pcs\\continuity_map.py",
+      "sha256": "91b976b49c1e5e51ddbc5da8d880803c3d9612dc80f8ef20ff7eed712675d39e"
     }
   ],
-  "website_revision": 2,
-  "welcome": {
-    "size": [
-      1600,
-      900
-    ],
-    "saved_memories": 3,
-    "kind": "fictional current records; no active session"
-  }
+  "images": [
+    {
+      "file": "screenshots/pcs-calendar-0933.jpg",
+      "width": 1265,
+      "height": 1140,
+      "bytes": 120284,
+      "sha256": "28bbbd8722a6c8ce218c9c9c0b648eb5b157d8ffee9cda8a6556419434893db0"
+    },
+    {
+      "file": "screenshots/pcs-conversation-0933.jpg",
+      "width": 1265,
+      "height": 1140,
+      "bytes": 165557,
+      "sha256": "12acaeecc1004b14b067c360809db9506fe6af74c59a71fa0279aee6d2a28d6b"
+    },
+    {
+      "file": "screenshots/pcs-conversation-welcome-0933.jpg",
+      "width": 1600,
+      "height": 900,
+      "bytes": 140057,
+      "sha256": "9e2836e88134749f76882204a68fc6153e873f2da4bde862bb93db6136c1bc04"
+    },
+    {
+      "file": "screenshots/pcs-map-detail-0933.jpg",
+      "width": 1265,
+      "height": 1501,
+      "bytes": 240673,
+      "sha256": "0bdc1959724f5fafbda495c62d0ab2fe0e1437b828d8e92ec1ccc9cd980b0faf"
+    },
+    {
+      "file": "screenshots/pcs-map-hero-0933.jpg",
+      "width": 1265,
+      "height": 834,
+      "bytes": 155205,
+      "sha256": "9664d4077d4bc05cdaccbf9ae8f0d7c1b46b1d3e548578fb3b2d715e84d5d05a"
+    },
+    {
+      "file": "screenshots/pcs-materials-0933.jpg",
+      "width": 1265,
+      "height": 1140,
+      "bytes": 157148,
+      "sha256": "5420e26a067a70f13f3c5fb6f78e0b269f828fd39ff7db1db4f457e7e129fbf1"
+    },
+    {
+      "file": "screenshots/pcs-notebook-0933.jpg",
+      "width": 1265,
+      "height": 980,
+      "bytes": 77216,
+      "sha256": "31b4f2b6b4d4b1b18be61b38904d958f2619d3084398303ead402583e69d1587"
+    }
+  ]
 }

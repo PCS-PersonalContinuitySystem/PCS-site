@@ -1,72 +1,54 @@
-# PCS — Personal Continuity System
+# PCS — Your personal thinking space
 
 **Room to think. Space to connect.**
 
-This repository contains the public PCS website: a Windows AI companion for conversation, learning and continuity you can inspect and revise.
+The public website for PCS: a Windows application for conversation, learning and memory you can inspect and revise.
 
-**[Visit the website](https://pcs-personalcontinuitysystem.github.io/PCS-site/)** · [Download PCS 0.9.24 for Windows](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.24/PCS-0.9.24-Windows-x64.zip) · [Release notes](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.24) · [Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS)
+**[Visit the website](https://pcs-personalcontinuitysystem.github.io/PCS-site/)** · [Download PCS 0.9.33](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Windows-x64.zip) · [Release notes](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.33) · [Discord community](https://discord.gg/Tfd4kHQun)
 
-[![PCS Continuity Map in its default theme, with 30 themes and 89 connections. Click to visit the website.](screenshots/pcs-map-hero-0924.jpg)](https://pcs-personalcontinuitysystem.github.io/PCS-site/)
+[![PCS Continuity Map with interconnected fictional themes and inspectable records.](screenshots/pcs-map-hero-0933.jpg)](https://pcs-personalcontinuitysystem.github.io/PCS-site/)
 
-*PCS 0.9.24 interface · Default PCS theme · Illustrative sample: 30 themes, 89 connections and 96 fictional records. [Open the detailed view](screenshots/pcs-map-detail-0924.jpg).*
+*PCS 0.9.33 interface · Default theme · Invented sample data. [Open the detailed Map](screenshots/pcs-map-detail-0933.jpg).*
 
 ## A wider view of your saved thoughts
 
-An idea in a notebook. A recurring question. A connection worth looking at again. The **Continuity Map** brings recurring wording and topic labels from saved memories and notebooks into view. Select a theme, follow a connection and inspect the records behind it. A different question—or a fresh perspective—can begin there.
+Talk through an idea, explore a question, and return to what matters. PCS brings conversation, notebooks, reading materials, local plans and revisable memory into a space you control. Choose Google, OpenAI or a supported Local model while keeping your vault.
 
-Links mean the labels occur together in supporting records. The Map is a bounded local overview, not a psychological profile or a claim to detect hidden beliefs. You interpret what the connections mean. It needs no running AI conversation; layout positions can be saved in the encrypted vault. In the neighboring **Library**, review a **Continue this thought** draft before bringing a saved thread into conversation.
+The **Continuity Map** displays recurring wording and topic labels from saved memories and notebooks. Follow a connection and inspect its supporting records. Links represent shared saved content; they do not establish causation or detect hidden beliefs. Browse locally without an AI request and save your layout in the encrypted vault. In **Library**, review a **Continue this thought** draft before bringing a thread into conversation.
 
-PCS also includes typed and spoken conversation, revisable memory with source evidence and history, Materials and notebooks, Research and Practice tools, and local tasks, goals and events. Choose Google, OpenAI or a supported Local model while keeping your vault.
+## This website update
 
-## Updated for 0.9.24
+- **Current pictures:** seven refreshed 0.9.33 interface captures, a denser Map with unusual connections, and plans spread across a full month. All examples use invented data.
+- **Clearer setup:** a visible recommendation for an NVIDIA GPU with at least **16 GB VRAM** for a smooth Local experience. Needs vary by model, context and optional features; Google and OpenAI cloud routes do not require a 16 GB GPU.
+- **Current guidance:** Local cancellation and voice controls, draft recovery, pasted web sources, launch-link privacy, and the 2 GiB native backup/restore limit.
+- **Community:** Discord links alongside optional Ko-fi support, plus a subscription FAQ covering both Google and OpenAI.
 
-- **Conversation first:** the original welcoming homepage framing and Conversation screen, followed by a detailed Map feature and dedicated guide.
-- **Current Local features:** guided Gemma setup, experimental Custom GGUF profiles, optional OBS vision, Brave lookup, separate speech downloads and Kokoro CPU/NVIDIA voices.
-- **Speech and reliability:** Skip speech for current/queued Local playback, spoken Markdown cleanup, saved Map layouts, notebook draft protection, Calendar fixes and clearer backup limits.
-- **Fresh samples:** current interface captures using invented data, including the default PCS theme. See [SCREENSHOTS.md](SCREENSHOTS.md) for exactly how they were made and what they demonstrate.
-- **Current downloads and guides:** Windows, matching source and checksum links all target the published 0.9.24 pre-release.
+PCS is free and open source under GPL-3.0-only, with no PCS subscription or locked features. Cloud API access has provider-specific terms and possible charges. The Windows package includes Python and ordinary dependencies for offline installation. Optional Local models, runtimes, listening and voice packs are separate downloads.
 
-PCS is free and open source under GPL-3.0-only, with no PCS subscription or locked features. Cloud providers may charge separately. Local conversation needs compatible Windows/NVIDIA hardware and downloaded model/runtime assets; ordinary saved-record browsing and cloud use do not require an NVIDIA GPU. The Windows package includes ordinary Python and application dependencies for offline installation. Optional AI and speech packs are separate downloads.
+Local storage and external sharing are separate choices. Cloud features receive permitted content. Optional Brave queries and requested page fetches leave the PC; separately approved preparation can use its displayed cloud provider. **Don’t save this conversation** controls PCS saving, not provider retention. Original local Materials files and readable exports are outside vault encryption.
 
-Local storage and external sharing are separate. Cloud features receive permitted content. Optional Brave queries and requested page fetches leave the PC; separately approved preparation can use its displayed cloud provider. “Don’t save this conversation” controls PCS saving, not provider retention. Original local Materials files and readable exports are outside vault encryption. Manual and automatic encrypted backup/restore are limited to 256 MiB; larger vaults use the documented fully stopped data-folder procedure.
-
-## Website pages
+## Pages
 
 | Page | Purpose |
 | --- | --- |
-| [index.html](index.html) | Conversation-led introduction, Map feature, route comparison, downloads and FAQ |
-| [continuity-map.html](continuity-map.html) | Themes, evidence, layouts, dates, paths and coverage |
-| [getting-started.html](getting-started.html) | Windows setup, optional components, upgrades and recovery |
-| [memory-control.html](memory-control.html) | Reviewing, correcting, retaining and backing up continuity |
-| [data-and-privacy.html](data-and-privacy.html) | Vault, cloud, Local, web lookup and sharing boundaries |
+| [index.html](index.html) | Introduction, features, downloads and FAQ |
+| [continuity-map.html](continuity-map.html) | Themes, supporting records, layouts and coverage |
+| [getting-started.html](getting-started.html) | Setup, Local hardware, upgrades and recovery |
+| [memory-control.html](memory-control.html) | Reviewing, correcting and backing up continuity |
+| [data-and-privacy.html](data-and-privacy.html) | Vault, cloud, Local and sharing boundaries |
 
-## Upload or preview
+## Upload and preview
 
-This is a **complete static website**, ready for GitHub Pages. There is no build step, npm install, API key or server application. The site does not connect to a PCS vault or call an AI provider.
+This is a complete static website with **no build step**. Extract the upload ZIP and copy its contents to the root of `PCS-PersonalContinuitySystem/PCS-site`, replacing same-named files. Keep `index.html`, `.nojekyll`, guides and asset folders at that level; preserve existing deployment or custom-domain configuration. Older unused assets may remain.
 
-1. Extract the upload ZIP locally.
-2. Upload **the extracted contents** to the root of `PCS-PersonalContinuitySystem/PCS-site`. Keep `index.html`, `.nojekyll`, the four guide pages and the asset folders at that level. Do not upload only the ZIP or nest the site in an extra folder.
-3. Replace same-named files. Preserve the repository’s existing Pages deployment configuration and any custom-domain configuration.
-4. Wait for the existing GitHub Pages deployment, then check the main page, Map image, guides, download buttons and mobile navigation.
+See [UPLOAD-INSTRUCTIONS.md](UPLOAD-INSTRUCTIONS.md). For a local preview, serve the extracted folder with `python -m http.server 8000` and visit `http://localhost:8000/`.
 
-See [UPLOAD-INSTRUCTIONS.md](UPLOAD-INSTRUCTIONS.md) for the exact checklist. The package is self-contained; it does not depend on old files already being in the repository. Legacy unused assets in an existing repository do not need to be removed during this upload.
+The five HTML files are the editable source. Download links, FAQs and image links work without JavaScript; a small script adds mobile navigation and image previews. Keep version labels, download links, metadata and guides in agreement. Historical vault minimum-reader versions are compatibility facts, not release labels to replace.
 
-For a local preview, serve this folder with any static HTTP server, for example `python -m http.server 8000`, then visit `http://localhost:8000/`. Opening HTML directly also provides the static content. Downloads are ordinary links; FAQs use native details/summary. The small script adds an accessible mobile menu and image previews, with normal image-link fallbacks when JavaScript is unavailable.
-
-## Maintaining the site
-
-The five HTML files are the editable source. Keep their version labels, release/download links, JSON-LD software version and supporting guides in agreement. Do not globally replace historical minimum-reader versions; those are compatibility facts.
-
-- `website-0924-r2.css` adds small guide-image refinements. The original homepage framing, PCS styles and brand assets are retained.
-- `assets/site-controls-0924.js` handles navigation and image previews. Its filename is an asset revision, not the advertised application version.
-- `screenshots/` contains the images actually referenced by this publication bundle.
-- `SCREENSHOT-MANIFEST.json` records image dimensions, hashes and provenance.
-- `WEBSITE-CHECKS.json` records this package’s local validation. Website checks do not certify live provider, device or model behavior.
-
-Keep image captions honest. These samples show the real 0.9.24 frontend with invented data and isolated fixture responses; they are not private records or evidence of a live AI answer. The website does not promise exhaustive recall, semantic mind mapping, autonomous desktop awareness or universal hardware compatibility.
+[SCREENSHOTS.md](SCREENSHOTS.md) explains the examples. `SCREENSHOT-MANIFEST.json` records dimensions, hashes and provenance; `PUBLICATION-MANIFEST.json` records the delivered files. `WEBSITE-CHECKS.json` describes website validation, not live provider or hardware certification.
 
 ## Links and support
 
-[Application source ZIP](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.24/PCS-0.9.24-Source.zip) · [Checksums](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.24/PCS-0.9.24-SHA256SUMS.txt) · [Application issues](https://github.com/PCS-PersonalContinuitySystem/PCS/issues) · [Website issues](https://github.com/PCS-PersonalContinuitySystem/PCS-site/issues) · [Discord](https://discord.gg/558hSvYp4)
+[Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Matching source](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Source.zip) · [Checksums](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-SHA256SUMS.txt) · [Report an app bug](https://github.com/PCS-PersonalContinuitySystem/PCS/issues) · [Website issues](https://github.com/PCS-PersonalContinuitySystem/PCS-site/issues) · [Discord](https://discord.gg/Tfd4kHQun)
 
-[Support PCS on Ko-fi](https://ko-fi.com/pcssupport). Support is optional; no PCS features are locked behind payment. Review bug reports before posting them publicly and remove private information.
+[Support PCS on Ko-fi](https://ko-fi.com/pcssupport). Support is optional; no features are locked behind payment. Review reports before posting and remove private information.

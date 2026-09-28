@@ -17,20 +17,20 @@
 <meta content="What PCS remembers—and how to change it | PCS" property="og:title"/>
 <meta content="Inspect saved memories and their sources, correct what is wrong, and understand saving, clearing, exporting and backing up." property="og:description"/>
 <meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html" property="og:url"/>
-<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/pcs-map-hero-0924.jpg" property="og:image"/>
-<meta content="PCS 0.9.24 Continuity Map in the default PCS theme, with 30 themes and 89 connections from invented data." property="og:image:alt"/>
+<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/pcs-map-hero-0933.jpg" property="og:image"/>
+<meta content="PCS 0.9.33 Continuity Map in the default PCS theme, with connected themes and supporting records from invented data." property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="PCS 0.9.24 Continuity Map in the default PCS theme, with 30 themes and 89 connections from invented data." name="twitter:image:alt"/>
+<meta content="PCS 0.9.33 Continuity Map in the default PCS theme, with connected themes and supporting records from invented data." name="twitter:image:alt"/>
 <link href="assets/guides-c15cb839fc10.css" rel="stylesheet"/>
 <link href="website-refresh.css" rel="stylesheet"/>
 <script defer="" src="assets/site-controls-0924.js">
 </script>
 <meta content="1265" property="og:image:width"/>
 <meta content="834" property="og:image:height"/>
-<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/pcs-map-hero-0924.jpg" name="twitter:image"/>
+<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/pcs-map-hero-0933.jpg" name="twitter:image"/>
 <meta content="What PCS remembers—and how to change it | PCS" name="twitter:title"/>
 <link href="website-screenshots-0913.css" rel="stylesheet"/>
-<link href="website-0924-r2.css" rel="stylesheet"/></head>
+<link href="website-0933.css" rel="stylesheet"/></head>
 <body>
 <a class="skip" href="#main">
    Skip to guide
@@ -71,7 +71,7 @@
       Inspect saved memories and their sources, correct what is wrong, and understand saving, clearing, exporting and backing up.
      </p>
 <p class="version">
-      PCS 0.9.24 · Pre-release guide
+      PCS 0.9.33 · Pre-release guide
      </p>
 </div>
 </div>
@@ -187,7 +187,7 @@
 <p>
       Memory formation and recall can be incomplete or wrong. Useful context is not a promise that every detail will be remembered, interpreted correctly, or included in every reply. The current pre-release still has open memory-quality validation.
      </p>
-<figure class="screenshot"><a aria-label="Open image: Follow a theme back to supporting records" class="screenshot-button" data-image-preview="" href="screenshots/pcs-map-detail-0924.jpg"><img alt="PCS 0.9.24 default-theme Map showing invented records that support the Sketchbook theme." decoding="async" height="1479" loading="lazy" src="screenshots/pcs-map-detail-0924.jpg" width="1265"/><span class="enlarge">Explore full image ↗</span></a><figcaption><span>Follow a theme back to supporting records</span><span>PCS 0.9.24 · Sample data</span></figcaption></figure>
+<figure class="screenshot"><a aria-label="Open image: Follow a theme back to supporting records" class="screenshot-button" data-image-preview="" href="screenshots/pcs-map-detail-0933.jpg"><img alt="PCS 0.9.33 default-theme Map showing the invented records that support a selected theme." decoding="async" height="1501" loading="lazy" src="screenshots/pcs-map-detail-0933.jpg" width="1265"/><span class="enlarge">Explore full image ↗</span></a><figcaption><span>Follow a theme back to supporting records</span><span>PCS 0.9.33 · Sample data</span></figcaption></figure>
 <h2 id="inspect-correct">
       Inspect before relying on a memory
      </h2>
@@ -199,6 +199,7 @@
       , choose a memory, and inspect its linked sources and revision history. Use the correction controls when it misses your meaning and check the saved outcome afterward. A correction should express what you actually want retained, not merely repeat an interpretation you disagree with.
      </p>
 <p>Learning and recall are controlled in <strong>Settings → Sharing &amp; research</strong>. Read the explanation beside <strong>Learn from our conversations and recall personal memories</strong> and any additional sharing permission offered there. Existing saved choices can retain an earlier scope; review the explanation for the permission actually saved. Local storage does not make cloud processing local.</p>
+<p>If a correction cannot be confirmed, choose <strong>Review latest saved memory</strong>. PCS keeps your correction separate while you inspect the saved revision. Choose which content to continue with; reviewing does not save automatically. Ordinary Close or Escape retains the unsaved correction on the current page, while locking or losing the private page clears its displayed text.</p>
 <h3>
       Recorded writer versus editable content
      </h3>
@@ -229,7 +230,8 @@
          </th>
 </tr>
 </thead>
-<tbody><tr><td>Skip speech</td><td>Stops current and queued Local playback. Text, session and volume remain; later replies can speak. This does not delete or undo saved content.</td></tr>
+<tbody><tr><td><strong>Skip speech</strong></td><td>Clears current and queued Local playback, cancels unfinished speech synthesis, and waits for cleanup before input returns. Completed text, history and saved actions remain; later replies can speak.</td></tr>
+<tr><td><strong>Stop thinking</strong></td><td>Cancels an in-progress Local answer and its pending lookup. The session and typed draft remain once cancellation is confirmed. It does not undo already-saved actions or delete the original input.</td></tr>
 <tr>
 <td>
 <strong>
@@ -283,6 +285,7 @@
 </tbody>
 </table>
 </div>
+<p><strong>Quit PCS</strong> shuts down the application after confirmation. Closing only the browser tab can leave the desktop host running and the vault unlocked. Use <strong>Lock</strong> to close vault access or <strong>Quit PCS</strong> to finish using the program.</p>
 <div class="callout">
 <p>
 <strong>
@@ -297,11 +300,13 @@
 <p>
       Notebooks can bring together a goal, your own notes, linked original documents and prepared reading notes, with up to 24 linked sources. Separately labeled suggestions may be saved during eligible conversations. A saved source link is not the same as a saved generated suggestion.
      </p>
-<figure class="screenshot"><a aria-label="Open image: A notebook for a season of noticing" class="screenshot-button" data-image-preview="" href="screenshots/pcs-notebook-0924.jpg"><img alt="PCS 0.9.24 topic notebook in the default PCS theme, with an invented creative goal, personal notes and linked sources." decoding="async" height="980" loading="lazy" src="screenshots/pcs-notebook-0924.jpg" width="1265"/><span class="enlarge">Explore full image ↗</span></a><figcaption><span>A notebook for a season of noticing</span><span>PCS 0.9.24 · Sample data</span></figcaption></figure>
+<figure class="screenshot"><a aria-label="Open image: A notebook for a season of noticing" class="screenshot-button" data-image-preview="" href="screenshots/pcs-notebook-0933.jpg"><img alt="PCS 0.9.33 topic notebook in the default PCS theme, with an invented creative goal, personal notes and linked sources." decoding="async" height="980" loading="lazy" src="screenshots/pcs-notebook-0933.jpg" width="1265"/><span class="enlarge">Explore full image ↗</span></a><figcaption><span>A notebook for a season of noticing</span><span>PCS 0.9.33 · Sample data</span></figcaption></figure>
 <p>
       Materials preparation is bounded. Linking a book does not mean PCS has read its whole contents. Related records in Library suggest possible connections; they are not proof that two ideas mean the same thing. Practice assessments are provisional and can be corrected.
      </p>
 <p>Saved web sources in <strong>Materials → Web sources</strong> retain supported captured text separately from personal memories and model-prepared notes. A bookmark or progress note is saved separately from the source. Keep generated questions distinct from original text; a partial capture does not establish a complete answer key.</p>
+<p><strong>Paste page text</strong> saves text you explicitly provide, including in Local mode, without fetching a website. It remains labeled as pasted text; the address does not prove its origin or completeness. Bookmark edits support conflict review, so inspect the saved result before replacing your draft.</p>
+<p>If a new notebook’s save is uncertain, use <strong>Check saved result</strong>. This reads the local result without creating another notebook or contacting a provider. Keep your draft separate while reviewing a different saved version, and follow the offered retry or draft choices.</p>
 <h2 id="backups">
       Keep a restorable backup
      </h2>
@@ -327,10 +332,11 @@
       </strong>
       is outside vault encryption and is not a complete restorable backup.
      </p>
-<p>Some saved features raise the minimum PCS reader for the vault and its later backups, even if those choices are cleared. Saved web sources require 0.9.13; Kokoro NVIDIA GPU needs 0.9.21; Custom GGUF profiles need 0.9.22. Keep a pre-feature backup if rollback matters. See the <a href="getting-started.html#updating">complete update guidance</a>.</p>
-<p>Manual and automatic encrypted backup/restore have a <strong>256 MiB limit</strong>. Near-limit warnings do not mean a new backup was saved; above the limit, use a fully stopped data-folder copy. Follow <code>docs/RESTORE_VAULT.md</code> in the download and verify a restored copy without overwriting your only working vault. <a href="data-and-privacy.html">Review storage and sharing boundaries.</a></p>
+<p>Some saved features raise the minimum PCS version that can read the vault and later backups, even after those choices are cleared. Creating a new notebook, for example, requires 0.9.31 or newer. Keep a pre-feature backup if rollback matters. See the <a href="getting-started.html#updating">complete update guidance</a>.</p>
+<p>Normal Windows Save As, automatic encrypted backups and in-app restore support the <strong>2 GiB physical vault limit</strong>. The compatibility browser-download route remains limited to 256 MiB. Wait for a confirmed save; a capacity warning is not a new backup. Follow <code>docs/RESTORE_VAULT.md</code> and verify a restored copy without overwriting your only working vault.</p>
+<p><strong>Automatic backups</strong> run only while PCS is open, its page connected, and the vault unlocked with conversation and background work stopped. “Don’t save” pauses them. All copies are retained, and a moved or restored vault needs its destination selected again. Earlier backups can still contain records you later forgot. <a href="data-and-privacy.html">Review storage and sharing boundaries.</a></p>
 <p class="source-note">
-      Guide for PCS 0.9.24. See the bundled Help and release notes for detailed controls and limitations.
+      Guide for PCS 0.9.33. See the bundled Help and release notes for detailed controls and limitations.
      </p>
 </article>
 </div>
@@ -341,11 +347,11 @@
      PCS — Personal Continuity System
     </span>
 <span>
-<a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.24">
+<a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.33">
       Release notes
      </a>
      ·
-     <a href="https://ko-fi.com/pcssupport">
+     <a href="https://discord.gg/Tfd4kHQun">Discord community</a> · <a href="https://ko-fi.com/pcssupport">
       Optional one-time support
      </a>
 </span>

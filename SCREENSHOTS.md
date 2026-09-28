@@ -1,21 +1,25 @@
-# PCS 0.9.24 website samples
+# PCS 0.9.33 website samples
 
-These are **illustrative interface captures with invented data**, displayed using PCS 0.9.24 frontend code. They do not contain a personal vault, live provider output or real calendar plans. They are not proof of live AI, microphone, OBS, GPU or model behavior.
+These are **interface captures with invented data**, rendered by the unchanged PCS 0.9.33 frontend in the **PCS (default)** theme. They contain no personal records, live AI answers or real calendar plans. They do not demonstrate live microphone, GPU, OBS or provider behavior.
 
 ## Continuity Map
 
-All samples use **PCS (default)**, the `original` appearance preset. It is not the alternate Dark preset. The Map feature image emphasizes the graph and inspector; the detailed image also includes the Map’s surrounding controls. Both show **30 themes, 89 connections and 96 fictional current records**: 72 memories and 24 notebooks.
+The new Map was derived through the production encrypted storage and Map code from **90 invented memories and 30 invented notebooks**. It displays **30 themes and 120 connections**; the normal display limit omits 27 weaker links. Its supporting record counts and inspection cards come from that derivation, rather than a hand-drawn graph. Layout positions were arranged using the same positions the product allows a user to save.
 
-The released Map renderer receives an authored in-memory fixture with validated record/connection structures and a manually spaced layout. The backend did not infer this graph from a real vault. Labels, counts and supporting example text are invented; layout and highlight rendering use the shipped frontend. Capture framing hides unrelated page chrome in the Map feature image, without adding graph nodes or relationships to the captured image.
+The examples connect fermentation with clock drift, music with prime numbers, soup with tide pools, and repairs with imagined future archaeology. A small sourdough diplomacy joke sits among the supporting records. These are saved questions and analogies, not inferred psychological truths or established causal relationships.
 
-The Map does not automatically detect psychological blind spots. It displays saved wording/topic overlap in bounded current records, so someone can inspect the evidence and form their own questions.
+The feature image emphasizes the graph and inspector; the detailed image includes surrounding controls. No nodes or connections were painted onto a screenshot. The Map remains a bounded view of recurring wording and saved topic labels.
 
-## Conversation welcome and other workspace samples
+## Conversation, Materials, Notebook and Calendar
 
-The homepage and Getting Started use a landscape 1600 × 900 Conversation welcome view in the default theme, with three fictional saved-memory cards. This restores the original website framing. No live session is running in the welcome image.
+The welcome image shows the current Conversation screen and three fictional memory cards, without an active session. The conversation example is authored text with simulated playback state. No model, microphone or speaker is activated. Materials and notebook documents, prepared notes and annotations are invented.
 
-Conversation, Materials, Notebook and Calendar samples use unchanged release frontend scripts with isolated synthetic API/WebSocket responses. Conversation text is authored for illustration. Any playback state is simulated; no real microphone, speaker or provider is used. Documents, notes and plans are invented examples. A fixture is not a complete PCS session and is not shipped as a website feature.
+The Calendar contains **15 plans**: 14 dated entries spread across September 2–30, and one undated project. The authored scene selects September 27; earlier completed plans demonstrate the product’s completed-entry styling.
 
-Captions beneath the website images say **PCS 0.9.24 · Sample data**. The README also explicitly describes the fictional records. The large in-image fixture banners were removed for a quieter presentation; the screenshots remain clearly identified as samples in their surrounding context. Image alt text describes the scene. The lightbox retains ordinary full-image links as a fallback, and the README’s main picture links to the public website.
+These scenes use the released HTML, CSS and JavaScript with isolated synthetic API/socket responses. The loopback fixture blocks outgoing connections. It is used only to capture illustrations and is not a feature shipped in this static website.
 
-`SCREENSHOT-MANIFEST.json` lists exact filenames, dimensions and SHA-256 hashes for this bundle. Historical image provenance from the previous 0.9.13 website is not reused as evidence for the new captures.
+## Presentation and provenance
+
+All seven pictures have adjacent **PCS 0.9.33 · Sample data** captions, descriptive alt text and full-image links. The labels stay outside the pictures for a quiet presentation. The image preview can be closed with Escape; ordinary image links remain available without JavaScript.
+
+`SCREENSHOT-MANIFEST.json` records exact image dimensions, SHA-256 hashes, current frontend source hashes and sample counts. Brand artwork is preserved. Earlier screenshots and their validation claims are excluded from this upload bundle.
