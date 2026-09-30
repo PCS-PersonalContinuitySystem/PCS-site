@@ -1,21 +1,50 @@
 {
   "version": "0.9.33",
-  "method": "Five unchanged PCS 0.9.33 frontend captures using invented fixture data; two new browser captures of a custom static HTML/SVG website Map sample. The website demo is not the full application UI. No AI, personal vault or device session.",
+  "method": "Five unchanged PCS 0.9.33 frontend fixture captures; two fresh browser captures of the revised static HTML/SVG website Map. All displayed sample content is invented. No personal vault, live AI or device session.",
   "map": {
-    "themes": 30,
+    "topics": 30,
+    "everyday_topics": 22,
+    "everyday_percent": 73.33333333333333,
     "connections": 104,
-    "previous_sample_connections": 120,
-    "reduction_percent": 13.333333333333334,
-    "adapted_topic_labels": 4,
-    "adapted_topic_percent": 13.333333333333334,
-    "method": "Curated subset of the previous invented sample projection; four labels and affected prose adapted for everyday familiarity. Counts retain support from the original synthetic records.",
-    "original_sample": {
-      "themes": 30,
-      "connections": 120,
-      "memories": 90,
-      "notebooks": 30,
-      "weaker_links_omitted": 27
-    }
+    "invented_notes": 48,
+    "everyday_labels": [
+      "Appointments",
+      "Bread baking",
+      "Budgeting",
+      "Calling friends",
+      "Cooking",
+      "Dog walks",
+      "Exercise",
+      "Family time",
+      "Gardening",
+      "Grocery shopping",
+      "Housework",
+      "Journaling",
+      "Learning",
+      "Meal planning",
+      "Music practice",
+      "Photography",
+      "Reading",
+      "Sleep routine",
+      "Small repairs",
+      "Travel plans",
+      "Weekend plans",
+      "Work tasks"
+    ],
+    "other_labels": [
+      "Career plans",
+      "Desk organizer",
+      "Garden project",
+      "Less screen time",
+      "Local history",
+      "Sketchbook",
+      "Stargazing",
+      "Story ideas"
+    ],
+    "possible_connections": 127,
+    "omitted_connections": 23,
+    "method": "48 authored fictional notes with explicit topic membership. Counts are derived from these notes. Display the 104 strongest shared-note links; all 30 topics remain connected. 22 everyday activities, four interests, two thoughts and two projects.",
+    "counts_from_app_pipeline": false
   },
   "calendar": {
     "plans": 15,
@@ -86,19 +115,19 @@
       "kind": "released_frontend_capture"
     },
     {
-      "file": "screenshots/pcs-map-sample-0933-r2.jpg",
+      "file": "screenshots/pcs-map-sample-0933-r3.jpg",
       "width": 1265,
-      "height": 853,
-      "bytes": 119864,
-      "sha256": "8973d0a2cfe1709e5323ab22199ae751548b6ed98e35c0616cffef2e908b55e9",
+      "height": 905,
+      "bytes": 128821,
+      "sha256": "595fc2462c687769f720297331bf6126673c24858bb0f46e70e4467d82d96122",
       "kind": "website_demo_capture"
     },
     {
-      "file": "screenshots/pcs-map-sample-detail-0933-r2.jpg",
+      "file": "screenshots/pcs-map-sample-detail-0933-r3.jpg",
       "width": 1265,
-      "height": 853,
-      "bytes": 122642,
-      "sha256": "70356c52e04ec8647a17254e72c2e5cb088a3455fa11d967b9b5bb0cf4636801",
+      "height": 905,
+      "bytes": 134078,
+      "sha256": "84330ad669df40ecd747b71d201c6bbe30d8511ab174ae2c4073b74a54a177bc",
       "kind": "website_demo_capture"
     },
     {
@@ -118,5 +147,6 @@
       "kind": "released_frontend_capture"
     }
   ],
-  "website_revision": 2
+  "website_revision": 3,
+  "frontend_inputs_scope": "Preserved provenance for the five unchanged PCS 0.9.33 product pictures; the current website Map is authored separately."
 }

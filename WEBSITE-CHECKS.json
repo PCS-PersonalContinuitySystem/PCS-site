@@ -1,128 +1,28 @@
 {
-  "version": "0.9.33",
-  "website_revision": 2,
-  "checked_at_utc": "2026-09-28T06:28:47.853964+00:00",
-  "base_archive_sha256": "168ed56e39382236dab7a4cf370a7971b9fcb7b2c38e34577a9c4309a886f290",
-  "html_pages": [
-    "index.html",
-    "continuity-map.html",
-    "getting-started.html",
-    "memory-control.html",
-    "data-and-privacy.html"
-  ],
-  "local_references_checked": 304,
-  "static_errors": [],
-  "browser": {
+  "website_revision": 3,
+  "application_version": "0.9.33",
+  "baseline_commit": "35c9962f7b984eacc31cff63509ba6f5b4492336",
+  "static": {
     "passed": true,
-    "responsive": [
-      {
-        "page": "index.html",
-        "clientWidth": 305,
-        "columns": "241px",
-        "mapWidth": 265,
-        "ready": true,
-        "scrollWidth": 305,
-        "width": 320
-      },
-      {
-        "page": "continuity-map.html",
-        "clientWidth": 305,
-        "columns": "241px",
-        "mapWidth": 265,
-        "ready": true,
-        "scrollWidth": 305,
-        "width": 320
-      },
-      {
-        "page": "index.html",
-        "clientWidth": 375,
-        "columns": "311px",
-        "mapWidth": 335,
-        "ready": true,
-        "scrollWidth": 375,
-        "width": 390
-      },
-      {
-        "page": "continuity-map.html",
-        "clientWidth": 375,
-        "columns": "311px",
-        "mapWidth": 335,
-        "ready": true,
-        "scrollWidth": 375,
-        "width": 390
-      },
-      {
-        "page": "index.html",
-        "clientWidth": 753,
-        "columns": "671px",
-        "mapWidth": 705,
-        "ready": true,
-        "scrollWidth": 753,
-        "width": 768
-      },
-      {
-        "page": "continuity-map.html",
-        "clientWidth": 753,
-        "columns": "354px",
-        "mapWidth": 388,
-        "ready": true,
-        "scrollWidth": 753,
-        "width": 768
-      },
-      {
-        "page": "index.html",
-        "clientWidth": 1009,
-        "columns": "592.734px 282.266px",
-        "mapWidth": 937,
-        "ready": true,
-        "scrollWidth": 1009,
-        "width": 1024
-      },
-      {
-        "page": "continuity-map.html",
-        "clientWidth": 1009,
-        "columns": "596px",
-        "mapWidth": 644,
-        "ready": true,
-        "scrollWidth": 1009,
-        "width": 1024
-      },
-      {
-        "page": "index.html",
-        "clientWidth": 1425,
-        "columns": "847.438px 403.562px",
-        "mapWidth": 1313,
-        "ready": true,
-        "scrollWidth": 1425,
-        "width": 1440
-      },
-      {
-        "page": "continuity-map.html",
-        "clientWidth": 1425,
-        "columns": "787px",
-        "mapWidth": 835,
-        "ready": true,
-        "scrollWidth": 1425,
-        "width": 1440
-      }
-    ],
-    "interactions": [
-      "SVG click selects Kitchen leftovers and its six connections plus adapted excerpts",
-      "Connected theme navigation updates selection and restores focus to selector",
-      "Enter on SVG node selects Old keepsakes",
-      "Zoom, keyboard pan and reset restore default viewBox",
-      "JavaScript blocked by preview CSP: static map, selected notes, links and native 30-theme text view remain usable; enhancement controls stay hidden",
-      "390px selection centers Small repairs within the map scroller without page overflow",
-      "Detailed sample image dialog opens and Escape closes it with focus restored",
-      "Read sample records link opens the native text alternative",
-      "Map guide also retains usable static map and native text alternative when scripts are blocked",
-      "Map guide selection updates Late-night radio excerpts"
-    ],
-    "console": [],
-    "images": "Five previous released-frontend captures unchanged; two new website sample captures visually reviewed at1265x853.",
-    "scope": "Desktop/mobile Chromium browser checks with invented website data; no live AI, account or PCS vault access."
+    "html_pages": 5,
+    "local_html_references_checked": 283,
+    "css_references_checked": 0,
+    "unique_page_ids": true,
+    "social_images_present": true,
+    "map_data_identical_on_both_pages": true,
+    "graph_counts_and_shared_note_evidence_consistent": true,
+    "all_30_topics_connected": true,
+    "text_alternative_note_occurrences": 149,
+    "everyday_topics": 22,
+    "total_topics": 30,
+    "everyday_percent": 73.3
   },
-  "sample_images": 7,
-  "scope": "Website interaction with invented sample data. Five existing product captures and two new website demo captures. No AI, private vault or device session.",
-  "published": false
+  "browser": {
+    "desktop": "Passed: homepage rendering; everyday, project and thought selection; connected-topic navigation and stable focus; zoom to 125%; keyboard pan; reset; no Map errors.",
+    "narrow_screen": "Passed in a 390px iframe preview (375px content area with scrollbar): mobile menu opens and closes; Garden project selection works; page width stays 375px; 660px graph scrolls inside its own 294px surface. The browser viewport override was ineffective, so the fixture used a real narrow iframe viewport.",
+    "no_scripts": "Passed using a scripts-removed copy: 30 map nodes and all 149 grouped note occurrences remain in HTML; opening the text alternative exposes the garden project note.",
+    "memory_guide": "The new recall section renders and both guide navigation lists link to it; no console errors observed.",
+    "selected_colors": "Passed for all 30 nodes and all four palette colors: selected star stroke, glow and every highlighted connection match the original node color. Direct SVG node click also selects correctly."
+  },
+  "scope": "Static website only. No app source changes, provider/device tests, personal vault access, GitHub commit or publishing."
 }
