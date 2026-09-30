@@ -1,7 +1,7 @@
 {
   "application_version": "0.9.33",
-  "website_revision": 3,
-  "prepared_utc": "2026-09-30T00:34:08.637551+00:00",
+  "website_revision": 4,
+  "prepared_utc": "2026-09-30T00:48:30.233795+00:00",
   "baseline": "35c9962f7b984eacc31cff63509ba6f5b4492336",
   "method": "Complete static site from the pinned public repository, revised locally. Earlier deployment artifact.tar omitted. No publishing performed.",
   "files": [
@@ -127,8 +127,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 198790,
-      "sha256": "5bb43d820cf1569bbf04b4da2880911041e46af4e407a16a5ff363fa52d070be"
+      "bytes": 198784,
+      "sha256": "49ecd9b83d824e402574bf680208c2d012cdc0239001a80a92f6ea6381661a82"
     },
     {
       "path": "memory-control.html",
@@ -142,13 +142,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 5512,
-      "sha256": "4a04105e23a2fd43145a4ea78246c818180fc2b6ffb68d6cf7dee35cbf8dbdaa"
+      "bytes": 5564,
+      "sha256": "ad1e12b38001eee3154fc6fe6d69d8a3a52df08b30a6b9122e7055edc027c682"
     },
     {
       "path": "SCREENSHOT-MANIFEST.json",
       "bytes": 4721,
-      "sha256": "7d88aa86607c3662f0b24306cc3c74adc082d8b6ea052769a3dc395cb434511c"
+      "sha256": "a09cf9600de031136e6e9171c53dafb1cc4a6cc38ef37e7b428f7c0a7b1d655f"
     },
     {
       "path": "screenshots/01-conversation-0913.png",
@@ -423,7 +423,7 @@
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
       "bytes": 1971,
-      "sha256": "4c5b15b9a88292e7cdf5d50049ca1e653e94a44eaed7fd1dde64d0bbc8f5a3f7"
+      "sha256": "b71c8f101d4e890fbcee36e18f76bca8589f13c345b1cc85ad33d14180fa8f8e"
     },
     {
       "path": "website-0924-r2.css",
@@ -437,8 +437,8 @@
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 1816,
-      "sha256": "1cf679518ff7fc13c011cdd9a3f0bd57ef1585a15f45c5122cfa20aeedd5f1d5"
+      "bytes": 2423,
+      "sha256": "48d5e2ca5d19fb767de6880c555114837aa31ffd91fc8fb0a41dd98a76f02f9a"
     },
     {
       "path": "website-refresh.css",

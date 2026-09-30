@@ -1,5 +1,7 @@
 # PCS — AI conversations, notes and memory for Windows
 
+**Room to think. Space to connect.**
+
 PCS is a Windows app for AI conversations, saved memories, notebooks and plans. Use Google, OpenAI or a supported local model. Review and correct what PCS saves.
 
 **[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/)** · [Download PCS 0.9.33](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Windows-x64.zip) · [Release notes](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.33) · [Discord](https://discord.gg/Tfd4kHQun)
@@ -20,9 +22,9 @@ PCS is free and open source under GPL-3.0-only. There is no PCS subscription or 
 
 For a smooth Local experience, we recommend an NVIDIA GPU with **at least 16 GB VRAM**. Needs vary by model, context and optional features. Google and OpenAI cloud routes do not require that GPU capacity. Local models, runtimes and optional voice packs are separate downloads.
 
-## Website revision 3
+## Website revision 4
 
-This update replaces vague introductory copy with concrete feature descriptions across the homepage, guides and search/social metadata. The interactive Map uses **22 everyday activities out of 30 topics (73%)**, with a few thoughts and projects: career plans, less screen time, a garden project and a desk organizer. It contains **48 invented notes** and **104 displayed connections**, with counts derived from those notes. Selected stars, glows and highlighted connections keep each node's original color. Two new Map previews match the demo. Existing product screenshots are retained.
+This update restores only the main **Room to think. Space to connect.** tagline. The other headings, feature descriptions, guides and search/social metadata retain the clearer wording from revision 3. The interactive Map uses **22 everyday activities out of 30 topics (73%)**, with a few thoughts and projects: career plans, less screen time, a garden project and a desk organizer. It contains **48 invented notes** and **104 displayed connections**, with counts derived from those notes. Selected stars, glows and highlighted connections keep each node's original color. Two new Map previews match the demo. Existing product screenshots are retained.
 
 Theme selection, connected-topic links, zoom, keyboard access and a complete text alternative remain available. All feature copy, guide text and sample notes are ordinary HTML. Interaction requires no external library, makes no network or AI request and stores no user data.
 

@@ -1,8 +1,8 @@
-# Upload the PCS 0.9.33 website — revision 3
+# Upload the PCS 0.9.33 website — revision 4
 
 This ZIP is a complete ready-to-serve static site. It is not an application installer and it does not contain personal PCS data.
 
-1. Extract `PCS-Website-0.9.33-r3-Upload.zip`.
+1. Extract `PCS-Website-0.9.33-r4-Upload.zip`.
 2. Open `PCS-PersonalContinuitySystem/PCS-site` on GitHub and use **Add file → Upload files** at the repository root.
 3. Upload the extracted files and folders, replacing same-named files. `index.html` must sit at the root beside the four guide pages, `README.md`, `.nojekyll`, `assets/`, `brand/` and `screenshots/`. Keep folder structure intact. Ensure the hidden `.nojekyll` file is included.
 4. Commit the upload to the branch your existing Pages setup publishes. Preserve the existing workflow and custom-domain settings. This package does not require replacing them.

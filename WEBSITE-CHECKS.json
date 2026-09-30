@@ -1,5 +1,5 @@
 {
-  "website_revision": 3,
+  "website_revision": 4,
   "application_version": "0.9.33",
   "baseline_commit": "35c9962f7b984eacc31cff63509ba6f5b4492336",
   "static": {
@@ -18,11 +18,20 @@
     "everyday_percent": 73.3
   },
   "browser": {
-    "desktop": "Passed: homepage rendering; everyday, project and thought selection; connected-topic navigation and stable focus; zoom to 125%; keyboard pan; reset; no Map errors.",
+    "desktop": "Previous revision: homepage rendering; everyday, project and thought selection; connected-topic navigation and stable focus; zoom to 125%; keyboard pan; reset; no Map errors.",
     "narrow_screen": "Passed in a 390px iframe preview (375px content area with scrollbar): mobile menu opens and closes; Garden project selection works; page width stays 375px; 660px graph scrolls inside its own 294px surface. The browser viewport override was ineffective, so the fixture used a real narrow iframe viewport.",
     "no_scripts": "Passed using a scripts-removed copy: 30 map nodes and all 149 grouped note occurrences remain in HTML; opening the text alternative exposes the garden project note.",
     "memory_guide": "The new recall section renders and both guide navigation lists link to it; no console errors observed.",
-    "selected_colors": "Passed for all 30 nodes and all four palette colors: selected star stroke, glow and every highlighted connection match the original node color. Direct SVG node click also selects correctly."
+    "selected_colors": "Passed for all 30 nodes and all four palette colors: selected star stroke, glow and every highlighted connection match the original node color. Direct SVG node click also selects correctly.",
+    "hero_tagline": "Revision 4: confirmed the original two-line hero tagline, unchanged direct feature heading and description, and no document overflow at 1265px. Saved a fresh homepage preview."
   },
-  "scope": "Static website only. No app source changes, provider/device tests, personal vault access, GitHub commit or publishing."
+  "scope": "Static website only. No app source changes, provider/device tests, personal vault access, GitHub commit or publishing.",
+  "tagline_restoration": {
+    "restored_headings": [
+      "Room to think. Space to connect."
+    ],
+    "hero": "Room to think. Space to connect.",
+    "scope": "Restore only the main homepage tagline, also quoted in the README. Keep all other revision-3 headings, descriptions, metadata, guide explanations and the unchanged revised map."
+  },
+  "map_unchanged_from_revision_3": true
 }
