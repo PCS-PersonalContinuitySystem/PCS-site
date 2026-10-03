@@ -1,53 +1,59 @@
-# PCS — AI conversations, notes and memory for Windows
+# PCS website
 
-**Room to think. Space to connect.**
+*Room to think. Space to connect.*
 
-PCS is a Windows app for AI conversations, saved memories, notebooks and plans. Use Google, OpenAI or a supported local model. Review and correct what PCS saves.
+The public website for **Personal Continuity System**, a Windows app for AI conversation, editable memory, notebooks and local plans. The application source and releases are in the [PCS repository](https://github.com/PCS-PersonalContinuitySystem/PCS).
 
-**[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/)** · [Download PCS 0.9.33](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Windows-x64.zip) · [Release notes](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.33) · [Discord](https://discord.gg/Tfd4kHQun)
-
-[![Sample PCS Map with everyday activities, thoughts and small projects.](screenshots/pcs-map-sample-0933-r3.jpg)](https://pcs-personalcontinuitysystem.github.io/PCS-site/continuity-map.html)
-
-## What PCS does
-
-- **Conversation:** type or use a microphone to ask questions, work through a problem or discuss a document.
-- **Saved memory:** with learning enabled, PCS can save details from conversations and retrieve relevant records later. Inspect their source passages, correct mistakes and compare revisions. PCS can miss details or retrieve the wrong record.
-- **Materials and notebooks:** organize documents, your notes, prepared reading notes and saved web text. Link sources to a notebook for later discussion or study.
-- **Calendar:** store local tasks, goals and events. Enable AI assistance separately and check the saved result. Calendar has no account sync, invitations or reminders.
-- **Continuity Map:** browse topics shared by saved memories and notebooks. Read the records behind a connection. Browsing makes no AI request; a line does not establish causation or hidden beliefs.
-
-Saved records stay in an encrypted vault on your PC. Cloud conversations and enabled sharing send content to selected providers. Original local document files and readable exports are outside vault encryption. **Don’t save this conversation** pauses new PCS saving; it does not stop cloud processing or erase earlier records.
-
-PCS is free and open source under GPL-3.0-only. There is no PCS subscription or paid feature tier. Cloud API access has provider-specific terms and possible charges. Optional support on [Ko-fi](https://ko-fi.com/pcssupport) is separate from using the app.
-
-For a smooth Local experience, we recommend an NVIDIA GPU with **at least 16 GB VRAM**. Needs vary by model, context and optional features. Google and OpenAI cloud routes do not require that GPU capacity. Local models, runtimes and optional voice packs are separate downloads.
-
-## Website revision 4
-
-This update restores only the main **Room to think. Space to connect.** tagline. The other headings, feature descriptions, guides and search/social metadata retain the clearer wording from revision 3. The interactive Map uses **22 everyday activities out of 30 topics (73%)**, with a few thoughts and projects: career plans, less screen time, a garden project and a desk organizer. It contains **48 invented notes** and **104 displayed connections**, with counts derived from those notes. Selected stars, glows and highlighted connections keep each node's original color. Two new Map previews match the demo. Existing product screenshots are retained.
-
-Theme selection, connected-topic links, zoom, keyboard access and a complete text alternative remain available. All feature copy, guide text and sample notes are ordinary HTML. Interaction requires no external library, makes no network or AI request and stores no user data.
+[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS](https://github.com/PCS-PersonalContinuitySystem/PCS/releases) · [Discord](https://discord.com/invite/2ssCQhNgAN)
 
 ## Pages
 
-| Page | Purpose |
+| File | Contents |
 | --- | --- |
-| [index.html](index.html) | Features, download and FAQ |
-| [continuity-map.html](continuity-map.html) | Topics, supporting records and Map limits |
-| [getting-started.html](getting-started.html) | Setup, Local hardware, upgrades and recovery |
-| [memory-control.html](memory-control.html) | Saving, recall, corrections and backups |
-| [data-and-privacy.html](data-and-privacy.html) | Vault encryption and online sharing |
+| [index.html](index.html) | Features, interactive Map, memory examples, downloads and common questions. |
+| [continuity-map.html](continuity-map.html) | Map demonstration, supporting records, original passages and owner corrections. |
+| [memory-control.html](memory-control.html) | Saving, memory formation, inspection, correction, recall and backups. |
+| [local-ai.html](local-ai.html) | Local models, Custom GGUF profiles, NVIDIA requirements, CPU meaning search, voice and optional vision. |
+| [getting-started.html](getting-started.html) | Four-step setup, provider-specific instructions, optional features and updating. |
+| [data-and-privacy.html](data-and-privacy.html) | Vault storage, provider sharing, Materials, exports and session controls. |
 
-## Upload and preview
+## Map demonstration
 
-This is a complete static website with **no build step**. Extract the upload ZIP and copy its contents to the root of `PCS-PersonalContinuitySystem/PCS-site`, replacing same-named files. Keep `index.html`, `.nojekyll`, guides and asset folders at that level. Preserve existing deployment and custom-domain configuration. Older unused assets can remain.
+The sample follows six weeks of Mara’s work, family and home projects. Its 24 themes connect through 36 authored records, including original passages, four owner corrections and six connection notes.
 
-See [UPLOAD-INSTRUCTIONS.md](UPLOAD-INSTRUCTIONS.md). Preview locally with `python -m http.server 8000 --bind 127.0.0.1`, then open `http://127.0.0.1:8000/`.
+Select a theme or connection to read its evidence. The demo includes five layouts, source filters, search, comparison, hiding, exploration history, zoom and a list view. Counts come from explicit shared record tags; they are not confidence scores. PCS derives its own Map from saved wording and topic labels.
 
-The HTML files are editable source. Small scripts add mobile navigation, image previews and Map interaction. [SCREENSHOTS.md](SCREENSHOTS.md) describes sample provenance. `SCREENSHOT-MANIFEST.json` records image dimensions and hashes; `PUBLICATION-MANIFEST.json` records the delivered files. `WEBSITE-CHECKS.json` describes website validation, not live app, provider or hardware acceptance.
+The records and application screenshots use fictional data. The website does not open a PCS vault, call an AI model or save changes. The interactive Map needs JavaScript; all 36 sample records are also available as ordinary HTML on its page.
 
-## Project and support
+## Preview locally
 
-[Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Matching source](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-Source.zip) · [Checksums](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.33/PCS-0.9.33-SHA256SUMS.txt) · [Report an app bug](https://github.com/PCS-PersonalContinuitySystem/PCS/issues) · [Website issues](https://github.com/PCS-PersonalContinuitySystem/PCS-site/issues) · [Discord community](https://discord.gg/Tfd4kHQun)
+This is a static HTML, CSS and JavaScript site. Serving it requires no build step, npm packages or application backend.
 
-Review screenshots and reports before sharing. Remove private information from public posts.
+With Python 3 installed, run this from the repository root:
+
+```console
+python -m http.server 8000 --bind 127.0.0.1
+```
+
+Open [localhost:8000](http://localhost:8000/). Stop the server with **Ctrl+C**.
+
+## Edit the site
+
+- The six HTML files contain page content, navigation and metadata.
+- `assets/site.css` and `assets/site.js` provide the shared appearance, menu, tabs and image previews.
+- `assets/map.js`, `assets/map.css` and `assets/map-data.js` provide the Map demonstration.
+- `assets/pcs-memory-flow.svg` explains memory; `screenshots/` contains the app captures.
+
+When changing sample records, update both `assets/map-data.js` and the HTML records in `continuity-map.html`. Keep version labels, download links, descriptions and screenshots consistent. Check links, phone layouts and interactive controls after changes.
+
+The separate authoring kit includes page fragments and Python generators. If using that kit, edit its source fragments and rebuild before copying the generated `site/` contents here; a rebuild replaces direct edits to generated HTML.
+
+## Publish an update
+
+Use the repository’s configured GitHub Pages publishing process. Keep the HTML files, `assets/`, `screenshots/` and `.nojekyll` at the publishing root. Preserve existing deployment and custom-domain configuration. Upload the extracted files, not the ZIP itself.
+
+For an app release update, publish the matching release first and verify the public Windows, source and checksum links. Then check the deployed website. Update canonical, social-preview and sitemap URLs if the site address changes.
+
+## Feedback
+
+[Website issues](https://github.com/PCS-PersonalContinuitySystem/PCS-site/issues) · [App bugs](https://github.com/PCS-PersonalContinuitySystem/PCS/issues) · [Discord](https://discord.com/invite/2ssCQhNgAN) · [Optional Ko-fi support](https://ko-fi.com/pcssupport)
