@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pcs-personalcontinuitysystem.github.io/PCS-site/sitemap.xml

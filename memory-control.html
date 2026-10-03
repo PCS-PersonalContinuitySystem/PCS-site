@@ -1,366 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How memory works — PCS</title><meta name="description" content="See how PCS saves originals, forms revisable memories, preserves your corrections and selects permitted evidence for recall."><meta name="theme-color" content="#c2cabe">
+<link rel="canonical" href="https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html"><link rel="icon" type="image/svg+xml" href="assets/pcs-star.svg">
+<meta property="og:type" content="website"><meta property="og:site_name" content="PCS"><meta property="og:title" content="How memory works — PCS"><meta property="og:description" content="See how PCS saves originals, forms revisable memories, preserves your corrections and selects permitted evidence for recall."><meta property="og:url" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html"><meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview.jpg"><meta property="og:image:alt" content="PCS — Room to think. Space to connect. Explore the Map, memory and Local AI."><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "How memory works \u2014 PCS", "description": "See how PCS saves originals, forms revisable memories, preserves your corrections and selects permitted evidence for recall.", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html", "isPartOf": {"@type": "WebSite", "name": "PCS", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/"}}</script><link rel="stylesheet" href="assets/site.css"><script defer src="assets/site.js"></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="PCS home"><img src="assets/pcs-star.svg" width="38" height="38" alt=""><span>PCS<small>Personal Continuity System</small></span></a>
+<button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
+<nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="continuity-map.html">Map</a><a href="memory-control.html" aria-current="page">Memory</a><a href="local-ai.html">Local AI</a><a href="getting-started.html">Get started</a><a href="https://discord.com/invite/2ssCQhNgAN" class="nav-community">Community ↗</a><a href="index.html#download" class="button small">Get PCS <span aria-hidden="true">↗</span></a></nav>
+</div></header><main id="main"><section class="page-intro wrap">
+  <p class="eyebrow">PCS 0.9.50 · Memory guide</p>
+  <h1>See what was saved. Change what was understood.</h1>
+  <p class="lead">Original passages, AI interpretations and your corrections have different roles. PCS keeps them inspectable and uses selected context when you permit recall.</p>
+</section>
+<div class="wrap article-layout">
+  <aside class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#flow">How memory works</a>
+    <a href="#review">Inspect and correct</a>
+    <a href="#recall">Choose what recall can use</a>
+    <a href="#saving">Check saving</a>
+    <a href="#controls">Saving and clearing</a>
+    <a href="#backup">Keep a backup</a>
+  </aside>
+  <article class="prose">
+    <h2 id="flow">From a conversation to useful context</h2>
+    <p>With saving and learning enabled, PCS retains original conversation passages and uses the selected memory model to form source-linked interpretations. Saving the original and forming a memory are separate steps. A retained passage can exist before a useful memory has been formed.</p>
+    <figure>
+      <a href="assets/pcs-memory-flow.svg"><img src="assets/pcs-memory-flow.svg" alt="Memory flow: saved originals support revisable interpretations; current corrections and sharing permissions govern the selected evidence used in recall." loading="lazy"></a>
+      <figcaption><a href="assets/pcs-memory-flow.svg">Open the memory diagram at full size</a>.</figcaption>
+    </figure>
+    <p>Your corrections remain distinct from earlier interpretations. Automatic memory formation preserves owner corrections, and recall keeps required current corrections with the evidence they qualify. If that combination cannot fit or is no longer current, PCS can withhold it.</p>
 
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>
-   What PCS remembers—and how to change it | PCS
-  </title>
-<meta content="Inspect saved memories and their sources, correct what is wrong, and understand saving, clearing, exporting and backing up." name="description"/>
-<link href="https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html" rel="canonical"/>
-<meta content="index,follow,max-image-preview:large" name="robots"/>
-<meta content="#101920" name="theme-color"/>
-<link href="assets/pcs-star.svg" rel="icon" type="image/svg+xml"/>
-<meta content="website" property="og:type"/>
-<meta content="PCS — Personal Continuity System" property="og:site_name"/>
-<meta content="What PCS remembers—and how to change it | PCS" property="og:title"/>
-<meta content="Inspect saved memories and their sources, correct what is wrong, and understand saving, clearing, exporting and backing up." property="og:description"/>
-<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html" property="og:url"/>
-<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/pcs-map-sample-0933-r3.jpg" property="og:image"/>
-<meta content="Sample PCS Map with everyday activities, thoughts and projects, linked to invented notes." property="og:image:alt"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Sample PCS Map with everyday activities, thoughts and projects, linked to invented notes." name="twitter:image:alt"/>
-<link href="assets/guides-c15cb839fc10.css" rel="stylesheet"/>
-<link href="website-refresh.css" rel="stylesheet"/>
-<script defer="" src="assets/site-controls-0924.js">
-</script>
-<meta content="1265" property="og:image:width"/>
-<meta content="905" property="og:image:height"/>
-<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/pcs-map-sample-0933-r3.jpg" name="twitter:image"/>
-<meta content="What PCS remembers—and how to change it | PCS" name="twitter:title"/>
-<link href="website-screenshots-0913.css" rel="stylesheet"/>
-<link href="website-0933.css" rel="stylesheet"/></head>
-<body>
-<a class="skip" href="#main">
-   Skip to guide
-  </a>
-<header class="topbar">
-<div class="shell">
-<a aria-label="PCS home" class="brand" href="./">
-<img alt="PCS" height="69" src="assets/pcs-wordmark-36dae8b37826.webp" width="222"/>
-<span>
-      Personal
-      <br/>
-      Continuity System
-     </span>
-</a>
-<nav aria-label="Main navigation" class="toplinks">
-<a href="./">
-      Home
-     </a>
-<a href="./#setup">
-      Download
-     </a>
-<a href="https://github.com/PCS-PersonalContinuitySystem/PCS">
-      GitHub
-     </a>
-</nav>
+    <h2 id="review">Inspect a memory and correct it</h2>
+    <ol class="steps">
+      <li>Open <strong>Continuity → Library</strong> and select a memory.</li>
+      <li>Read its original sources and revision history. Distinguish what you said from the interpretation made from it.</li>
+      <li>Use the correction controls to state what you want retained, then check the saved result.</li>
+    </ol>
+    <figure>
+      <a href="screenshots/pcs-library-0950.jpg"><img src="screenshots/pcs-library-0950.jpg" alt="PCS 0.9.50 Library showing fictional saved records available for inspection." loading="lazy"></a>
+      <figcaption>Fictional demonstration in the actual PCS 0.9.50 interface.</figcaption>
+    </figure>
+    <p>If a correction needs review, use <strong>Review latest saved memory</strong>. Reviewing the saved revision does not save your draft automatically. The recorded revision writer identifies the owner or model attached by PCS; editable text inside a memory cannot replace that attribution.</p>
+    <p>The <a href="continuity-map.html">Continuity Map</a> offers another route into the records. Follow a connection, inspect its support, and review a draft to bring selected records into Conversation.</p>
+
+    <h2 id="recall">Choose what recall can use</h2>
+    <p>Open <strong>Settings → Memory &amp; sharing → Personal memory &amp; practice</strong>. Read the learning and original-source choices saved for your selected connection. Recall returns selected evidence within your permissions and the model’s context limits; it does not send the whole vault.</p>
+    <p><strong>Find references in saved conversation passages</strong> can recover details that never became a memory. This needs permission to share originals. <strong>Search by meaning</strong> can complement word search; the optional <a href="local-ai.html#semantic">Local Nomic search model</a> runs on CPU without cloud embeddings.</p>
+    <p>Recall can miss a detail, select an imperfect match or choose no callback. Inspect important evidence and correct mistakes. An earlier experience does not prove what you think or need now.</p>
+
+    <h2 id="saving">Check saving separately from memory formation</h2>
+    <p><strong>Saving &amp; memory health</strong> shows pending work and problems. A reply that says “saved” is not a storage receipt; check PCS’s save result and the record. Local memory processing can work through large originals in smaller sections and wait for quiet conversation periods.</p>
+    <div class="callout"><p>If <strong>Saving needs recovery</strong> appears, keep PCS open. Choose <strong>Recover saving</strong> and enter this vault’s passphrase. PCS checks confirmed writes and retries retained text without starting a provider request. Wait for saving to settle before quitting.</p></div>
+
+    <h2 id="controls">Saving, clearing and forgetting</h2>
+    <ul>
+      <li><strong>Don’t save this conversation</strong> pauses new PCS saving. Earlier saved records remain. Cloud providers still receive an active cloud conversation.</li>
+      <li><strong>Clear chat</strong> clears the displayed chat. Hiding the memory stream only hides that panel; neither deletes saved continuity or stops learning.</li>
+      <li><strong>Forgetting or deleting</strong> changes the selected saved records. It cannot retract content already sent to a provider or remove copies in earlier backups.</li>
+    </ul>
+
+    <h2 id="backup">Keep a restorable copy</h2>
+    <p>While stopped and unlocked, use <strong>Settings → Privacy &amp; maintenance → Backup &amp; restore → Save current backup…</strong>. Wait for confirmation and keep the passphrase. Original Materials files need a separate copy; readable exports are not encrypted vault backups.</p>
+    <p>Keep a pre-upgrade backup and verify a restored copy in an empty installation. See <a href="getting-started.html#upgrade">upgrade steps</a> and <a href="data-and-privacy.html">storage and sharing boundaries</a>.</p>
+  </article>
 </div>
-</header>
-<main id="main" tabindex="-1">
-<div class="guide-header">
-<div class="shell">
-<p class="eyebrow">
-      PCS GUIDES / SETUP AND FEATURES
-     </p>
-<h1>
-      What PCS remembers—and how to change it
-     </h1>
-<p class="intro">
-      Inspect saved memories and their sources, correct what is wrong, and understand saving, clearing, exporting and backing up.
-     </p>
-<p class="version">
-      PCS 0.9.33 · Pre-release guide
-     </p>
-</div>
-</div>
-<div class="shell guide-grid">
-<aside class="guide-nav">
-<h2>
-      In this guide
-     </h2>
-<ul class="toc">
-<li>
-<a href="#memory-not-transcript">
-        What PCS saves from conversations
-       </a>
-</li>
-<li><a href="#recall">How recall works</a></li>
-<li>
-<a href="#inspect-correct">
-        Read and correct a saved memory
-       </a>
-</li>
-<li>
-<a href="#different-controls">
-        What each conversation control does
-       </a>
-</li>
-<li>
-<a href="#notes-sources">
-        Documents, notes and AI suggestions
-       </a>
-</li>
-<li>
-<a href="#backups">
-        Back up your vault
-       </a>
-</li>
-</ul>
-<h2>
-      Read next
-     </h2>
-<nav aria-label="PCS guides">
-<a href="getting-started.html">
-       Getting started with PCS on Windows
-      </a>
-<a aria-current="page" class="active" href="memory-control.html">
-       What PCS remembers—and how to change it
-      </a>
-<a href="data-and-privacy.html">
-       What stays on your PC—and what is shared
-      </a>
-<a href="continuity-map.html">
-       Using the Continuity Map
-      </a>
-</nav>
-<p>
-      These pages work without JavaScript and do not make AI requests.
-     </p>
-</aside>
-<article>
-<details class="mobile-guide-nav">
-<summary>
-       In this guide &amp; related guides
-      </summary>
-<ul class="toc">
-<li>
-<a href="#memory-not-transcript">
-         What PCS saves from conversations
-        </a>
-</li>
-<li><a href="#recall">How recall works</a></li>
-<li>
-<a href="#inspect-correct">
-         Read and correct a saved memory
-        </a>
-</li>
-<li>
-<a href="#different-controls">
-         What each conversation control does
-        </a>
-</li>
-<li>
-<a href="#notes-sources">
-         Documents, notes and AI suggestions
-        </a>
-</li>
-<li>
-<a href="#backups">
-         Back up your vault
-        </a>
-</li>
-</ul>
-<h2>
-       Read next
-      </h2>
-<nav aria-label="Mobile PCS guides">
-<a href="getting-started.html">
-        Getting started with PCS on Windows
-       </a>
-<a aria-current="page" class="active" href="memory-control.html">
-        What PCS remembers—and how to change it
-       </a>
-<a href="data-and-privacy.html">
-        What stays on your PC—and what is shared
-       </a>
-<a href="continuity-map.html">
-        Using the Continuity Map
-       </a>
-</nav>
-</details>
-<h2 id="memory-not-transcript">
-      What PCS saves from conversations
-     </h2>
-<p>
-      With learning enabled, PCS can turn details from a conversation into saved memory records. These records can be updated and linked to source passages. They are stored in your local encrypted vault alongside notebooks and plans.
-     </p>
-<p>
-      PCS can miss details, save a mistaken interpretation or retrieve the wrong memory. It does not guarantee that every line of a long conversation will be remembered or included in a later reply. Review important records and correct mistakes.
-     </p>
-<figure class="screenshot"><a aria-label="Open image: Follow a theme back to sample notes" class="screenshot-button" data-image-preview="" href="screenshots/pcs-map-sample-detail-0933-r3.jpg"><img alt="PCS website Map sample showing a selected theme and two invented notes about old keepsakes." decoding="async" height="905" loading="lazy" src="screenshots/pcs-map-sample-detail-0933-r3.jpg" width="1265"/><span class="enlarge">Explore full image ↗</span></a><figcaption><span>Follow a theme back to sample notes</span><span>Website sample · Invented data</span></figcaption></figure>
-<h2 id="recall">How PCS retrieves saved information</h2>
-<p>The current conversation and saved memory are separate. The AI uses the conversation context available to it. When recall is enabled, it can also request a search of saved memory records. PCS returns selected matches; the AI can inspect those records and their linked source passages before answering.</p>
-<p>Local recall uses word searches. Cloud recall can also use embedding-based similarity when a compatible embedding provider is available. The search index covers current saved memories, rather than every line of every original conversation. Linked source passages help you check a recalled detail. This is a form of retrieval-augmented generation (RAG), with additional controls for inspecting and revising memory.</p>
-<h2 id="inspect-correct">
-      Read and correct a saved memory
-     </h2>
-<p>
-      Open
-      <strong>
-       Continuity → Library
-      </strong>
-      , choose a memory, and inspect its linked sources and revision history. Use the correction controls when it misses your meaning and check the saved outcome afterward. A correction should express what you actually want retained, not merely repeat an interpretation you disagree with.
-     </p>
-<p>Learning and recall are controlled in <strong>Settings → Sharing &amp; research</strong>. Read the explanation beside <strong>Learn from our conversations and recall personal memories</strong> and any additional sharing permission offered there. Existing saved choices can retain an earlier scope; review the explanation for the permission actually saved. Local storage does not make cloud processing local.</p>
-<p>If a correction cannot be confirmed, choose <strong>Review latest saved memory</strong>. PCS keeps your correction separate while you inspect the saved revision. Choose which content to continue with; reviewing does not save automatically. Ordinary Close or Escape retains the unsaved correction on the current page, while locking or losing the private page clears its displayed text.</p>
-<h3>
-      Recorded writer versus editable content
-     </h3>
-<p>
-<strong>
-       Revision writer · recorded by PCS
-      </strong>
-      identifies the writer attached by the host to that revision, including an owner edit or a provider/model where recorded. An
-      <code>
-       authorship
-      </code>
-      field inside editable JSON is just saved content; it cannot override the host record. PCS warns about that distinction rather than silently rewriting old memories. Accurate attribution does not establish accurate transcription or interpretation.
-     </p>
-<p>A requested save can create a memory, revise an existing one, save a verbatim note or remain pending/refused. For Local replies, inspect the separate <strong>PCS save result</strong> as well as the saved record: a model’s prose can claim success without a completed write. A second note is not proof that the original was corrected.</p>
-<p>The <a href="continuity-map.html">Continuity Map</a> offers a local overview of recurring wording and topic labels with inspectable records, saved-date comparisons and paths. Drag themes into an arrangement that works for you; layout positions are saved in the encrypted vault. In <strong>Library</strong>, review a <strong>Continue this thought</strong> draft before bringing it into a conversation.</p>
-<h2 id="different-controls">
-      What each conversation control does
-     </h2>
-<div class="table-wrap">
-<table>
-<thead>
-<tr>
-<th scope="col">
-          Control
-         </th>
-<th scope="col">
-          What to expect
-         </th>
-</tr>
-</thead>
-<tbody><tr><td><strong>Skip speech</strong></td><td>Clears current and queued Local playback, cancels unfinished speech synthesis, and waits for cleanup before input returns. Completed text, history and saved actions remain; later replies can speak.</td></tr>
-<tr><td><strong>Stop thinking</strong></td><td>Cancels an in-progress Local answer and its pending lookup. The session and typed draft remain once cancellation is confirmed. It does not undo already-saved actions or delete the original input.</td></tr>
-<tr>
-<td>
-<strong>
-           Clear chat
-          </strong>
-</td>
-<td>
-          Clears displayed messages and completed reference cards. It does not erase saved memories or end the session.
-         </td>
-</tr>
-<tr>
-<td>
-<strong>
-           Hide memory stream
-          </strong>
-</td>
-<td>
-          Hides a panel. Learning continues under your saved settings.
-         </td>
-</tr>
-<tr>
-<td>
-<strong>
-           Don’t save this conversation
-          </strong>
-</td>
-<td>
-          Choose before starting. PCS pauses new saving for that conversation; earlier records and saved settings remain.
-         </td>
-</tr>
-<tr>
-<td>
-<strong>
-           Stop PCS
-          </strong>
-</td>
-<td>
-          Ends conversation and capture, leaving the vault available.
-         </td>
-</tr>
-<tr>
-<td>
-<strong>
-           Lock
-          </strong>
-</td>
-<td>
-          Also closes vault access and clears temporary Materials views. It does not delete original local files.
-         </td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Quit PCS</strong> shuts down the application after confirmation. Closing only the browser tab can leave the desktop host running and the vault unlocked. Use <strong>Lock</strong> to close vault access or <strong>Quit PCS</strong> to finish using the program.</p>
-<div class="callout">
-<p>
-<strong>
-        Not saving is not the same as not sharing.
-       </strong>
-       “Don’t save this conversation” controls PCS saving. A selected cloud provider still receives the conversation under its own terms; changing the PCS control cannot undo that receipt.
-      </p>
-</div>
-<h2 id="notes-sources">
-      Documents, your notes and AI suggestions
-     </h2>
-<p>
-      Notebooks can bring together a goal, your own notes, linked original documents and prepared reading notes, with up to 24 linked sources. Separately labeled suggestions may be saved during eligible conversations. A saved source link is not the same as a saved generated suggestion.
-     </p>
-<figure class="screenshot"><a aria-label="Open image: A notebook with notes and linked sources" class="screenshot-button" data-image-preview="" href="screenshots/pcs-notebook-0933.jpg"><img alt="PCS 0.9.33 topic notebook in the default PCS theme, with an invented creative goal, personal notes and linked sources." decoding="async" height="980" loading="lazy" src="screenshots/pcs-notebook-0933.jpg" width="1265"/><span class="enlarge">Explore full image ↗</span></a><figcaption><span>A notebook with notes and linked sources</span><span>PCS 0.9.33 · Sample data</span></figcaption></figure>
-<p>
-      Materials preparation is bounded. Linking a book does not mean PCS has read its whole contents. Related records in Library suggest possible connections; they are not proof that two ideas mean the same thing. Practice assessments are provisional and can be corrected.
-     </p>
-<p>Saved web sources in <strong>Materials → Web sources</strong> retain supported captured text separately from personal memories and model-prepared notes. A bookmark or progress note is saved separately from the source. Keep generated questions distinct from original text; a partial capture does not establish a complete answer key.</p>
-<p><strong>Paste page text</strong> saves text you explicitly provide, including in Local mode, without fetching a website. It remains labeled as pasted text; the address does not prove its origin or completeness. Bookmark edits support conflict review, so inspect the saved result before replacing your draft.</p>
-<p>If a new notebook’s save is uncertain, use <strong>Check saved result</strong>. This reads the local result without creating another notebook or contacting a provider. Keep your draft separate while reviewing a different saved version, and follow the offered retry or draft choices.</p>
-<h2 id="backups">
-      Back up your vault
-     </h2>
-<p>
-      Finish or cancel background work, stop the conversation and keep the vault unlocked. Open
-      <strong>
-       Backup &amp; restore
-      </strong>
-      from Settings or Help, choose
-      <strong>
-       Save current backup…
-      </strong>
-      , select a destination and wait for confirmation of the saved
-      <code>
-       .pcs
-      </code>
-      file. Keep the passphrase separately.
-     </p>
-<p>
-      A complete encrypted backup includes saved continuity and other vault contents, including saved web snapshots and bookmarks. Original Materials files must be copied separately. A readable Markdown or plain-text
-      <strong>
-       Export
-      </strong>
-      is outside vault encryption and is not a complete restorable backup.
-     </p>
-<p>Some saved features raise the minimum PCS version that can read the vault and later backups, even after those choices are cleared. Creating a new notebook, for example, requires 0.9.31 or newer. Keep a pre-feature backup if rollback matters. See the <a href="getting-started.html#updating">complete update guidance</a>.</p>
-<p>Normal Windows Save As, automatic encrypted backups and in-app restore support the <strong>2 GiB physical vault limit</strong>. The compatibility browser-download route remains limited to 256 MiB. Wait for a confirmed save; a capacity warning is not a new backup. Follow <code>docs/RESTORE_VAULT.md</code> and verify a restored copy without overwriting your only working vault.</p>
-<p><strong>Automatic backups</strong> run only while PCS is open, its page connected, and the vault unlocked with conversation and background work stopped. “Don’t save” pauses them. All copies are retained, and a moved or restored vault needs its destination selected again. Earlier backups can still contain records you later forgot. <a href="data-and-privacy.html">Review storage and sharing boundaries.</a></p>
-<p class="source-note">
-      Guide for PCS 0.9.33. See the bundled Help and release notes for detailed controls and limitations.
-     </p>
-</article>
-</div>
-</main>
-<footer>
-<div class="shell">
-<span>
-     PCS — Personal Continuity System
-    </span>
-<span>
-<a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.33">
-      Release notes
-     </a>
-     ·
-     <a href="https://discord.gg/Tfd4kHQun">Discord community</a> · <a href="https://ko-fi.com/pcssupport">
-      Optional one-time support
-     </a>
-</span>
-</div>
-</footer>
-</body>
-</html>
+</main><footer class="site-footer"><div class="wrap footer-top"><div><a class="footer-brand" href="index.html">PCS</a><p>Room to think.<br>Space to connect.</p></div><div class="footer-links"><div><strong>Explore</strong><a href="continuity-map.html">Continuity Map</a><a href="memory-control.html">How memory works</a><a href="local-ai.html">Local AI</a></div><div><strong>Use PCS</strong><a href="getting-started.html">Setup &amp; updates</a><a href="data-and-privacy.html">Data &amp; privacy</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases">All releases ↗</a></div><div><strong>Get involved</strong><a href="https://discord.com/invite/2ssCQhNgAN">Discord ↗</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/issues">Report a bug ↗</a><a href="https://ko-fi.com/pcssupport">Support development ↗</a></div></div></div><div class="wrap footer-bottom"><p>© 2026 Courtney Dickson · First-party app code: GPL-3.0-only.</p><a href="https://github.com/PCS-PersonalContinuitySystem/PCS">App source &amp; license ↗</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS-site">Website source ↗</a></div></footer>
+<dialog class="image-dialog" aria-label="Full-size application screenshot"><button class="image-close" type="button" aria-label="Close full-size image">Close ×</button><img alt=""><p></p></dialog></body></html>

@@ -1,343 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your data and sharing choices — PCS</title><meta name="description" content="Understand what stays in your PCS vault, what Local and cloud features send, and how Stop, Lock, backups and deletion work."><meta name="theme-color" content="#c2cabe">
+<link rel="canonical" href="https://pcs-personalcontinuitysystem.github.io/PCS-site/data-and-privacy.html"><link rel="icon" type="image/svg+xml" href="assets/pcs-star.svg">
+<meta property="og:type" content="website"><meta property="og:site_name" content="PCS"><meta property="og:title" content="Your data and sharing choices — PCS"><meta property="og:description" content="Understand what stays in your PCS vault, what Local and cloud features send, and how Stop, Lock, backups and deletion work."><meta property="og:url" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/data-and-privacy.html"><meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview.jpg"><meta property="og:image:alt" content="PCS — Room to think. Space to connect. Explore the Map, memory and Local AI."><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Your data and sharing choices \u2014 PCS", "description": "Understand what stays in your PCS vault, what Local and cloud features send, and how Stop, Lock, backups and deletion work.", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/data-and-privacy.html", "isPartOf": {"@type": "WebSite", "name": "PCS", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/"}}</script><link rel="stylesheet" href="assets/site.css"><script defer src="assets/site.js"></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="PCS home"><img src="assets/pcs-star.svg" width="38" height="38" alt=""><span>PCS<small>Personal Continuity System</small></span></a>
+<button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
+<nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="continuity-map.html">Map</a><a href="memory-control.html">Memory</a><a href="local-ai.html">Local AI</a><a href="getting-started.html">Get started</a><a href="https://discord.com/invite/2ssCQhNgAN" class="nav-community">Community ↗</a><a href="index.html#download" class="button small">Get PCS <span aria-hidden="true">↗</span></a></nav>
+</div></header><main id="main"><section class="page-intro wrap">
+  <p class="eyebrow">PCS 0.9.50 · Storage and sharing</p>
+  <h1>Know what stays here and what you share.</h1>
+  <p class="lead">The encrypted vault belongs on your PC. Your connection and feature permissions determine which selected content can leave it.</p>
+</section>
+<div class="wrap article-layout">
+  <aside class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <a href="#stored">Stored on your PC</a>
+    <a href="#cloud">Cloud connections</a>
+    <a href="#local">Local AI and online choices</a>
+    <a href="#controls">Saving and session controls</a>
+    <a href="#sharing">Screens and support files</a>
+  </aside>
+  <article class="prose">
+    <h2 id="stored">What the vault protects</h2>
+    <p>PCS stores saved conversations, memories, notebooks, prepared reading notes, saved web snapshots and local plans in an encrypted vault. Encrypted backups preserve vault contents, including settings and API keys you chose to remember. Keep backups protected and the passphrase separately; a forgotten passphrase cannot be recovered.</p>
+    <p><strong>Original Materials files and readable exports are outside vault encryption.</strong> Copy original documents separately when making a backup. A Markdown or TXT export is readable to anyone with access to that file and is not a complete restorable vault.</p>
+    <p>Manual reading, notebook editing, Calendar and Map browsing need no AI connection. Map connections are calculated from bounded current saved records, without a model or embedding request.</p>
 
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>
-   What stays on your PC—and what is shared | PCS
-  </title>
-<meta content="PCS stores saved records on your PC. This guide explains what is encrypted, what can be sent online and which controls stop saving or sharing." name="description"/>
-<link href="https://pcs-personalcontinuitysystem.github.io/PCS-site/data-and-privacy.html" rel="canonical"/>
-<meta content="index,follow,max-image-preview:large" name="robots"/>
-<meta content="#101920" name="theme-color"/>
-<link href="assets/pcs-star.svg" rel="icon" type="image/svg+xml"/>
-<meta content="website" property="og:type"/>
-<meta content="PCS — Personal Continuity System" property="og:site_name"/>
-<meta content="What stays on your PC—and what is shared | PCS" property="og:title"/>
-<meta content="PCS stores saved records on your PC. This guide explains what is encrypted, what can be sent online and which controls stop saving or sharing." property="og:description"/>
-<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/data-and-privacy.html" property="og:url"/>
-<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/pcs-map-sample-0933-r3.jpg" property="og:image"/>
-<meta content="Sample PCS Map with everyday activities, thoughts and projects, linked to invented notes." property="og:image:alt"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Sample PCS Map with everyday activities, thoughts and projects, linked to invented notes." name="twitter:image:alt"/>
-<link href="assets/guides-c15cb839fc10.css" rel="stylesheet"/>
-<link href="website-refresh.css" rel="stylesheet"/>
-<script defer="" src="assets/site-controls-0924.js">
-</script>
-<meta content="1265" property="og:image:width"/>
-<meta content="905" property="og:image:height"/>
-<meta content="https://pcs-personalcontinuitysystem.github.io/PCS-site/screenshots/pcs-map-sample-0933-r3.jpg" name="twitter:image"/>
-<meta content="What stays on your PC—and what is shared | PCS" name="twitter:title"/>
-<link href="website-screenshots-0913.css" rel="stylesheet"/>
-<link href="website-0933.css" rel="stylesheet"/></head>
-<body>
-<a class="skip" href="#main">
-   Skip to guide
-  </a>
-<header class="topbar">
-<div class="shell">
-<a aria-label="PCS home" class="brand" href="./">
-<img alt="PCS" height="69" src="assets/pcs-wordmark-36dae8b37826.webp" width="222"/>
-<span>
-      Personal
-      <br/>
-      Continuity System
-     </span>
-</a>
-<nav aria-label="Main navigation" class="toplinks">
-<a href="./">
-      Home
-     </a>
-<a href="./#setup">
-      Download
-     </a>
-<a href="https://github.com/PCS-PersonalContinuitySystem/PCS">
-      GitHub
-     </a>
-</nav>
+    <h2 id="cloud">What can reach a cloud provider</h2>
+    <p>Google, OpenAI and experimental Alibaba Qwen are cloud connections. Conversation and enabled features can send selected text, recalled evidence, corrections, document portions, audio or permitted images. Their API charges and data-use terms apply. Local encrypted storage does not make cloud processing local.</p>
+    <p>Review <strong>Settings → Memory &amp; sharing</strong> and the selected provider roles under <strong>Connections</strong>. A memory or Preparation helper can differ from the conversation provider. Proactive help has its own <strong>Review model and inputs</strong> step showing its destination and permitted inputs.</p>
+    <p>Original-passage sharing is a separate choice. Saved connection profiles do not carry sharing permissions; review the offered choices when changing the model or destination.</p>
+
+    <h2 id="local">What Local changes</h2>
+    <p><a href="local-ai.html">Local conversation and memory</a> use the selected model on your PC, without cloud AI fallback. Optional CPU <strong>Search by meaning</strong> also works locally; its temporary index stays in RAM and clears at Lock.</p>
+    <p>Online features still have their own destinations. Explicit <strong>Local online lookup</strong> sends queries to Brave and fetches public pages; generated queries can include details from your request. The Local model interprets the excerpts. Separately approved Materials preparation or a notebook outline may use the cloud provider displayed for that job.</p>
+    <p><strong>Paste page text</strong> retains text you provide without a website or AI request. Explicit public-page imports contact the website. Later sharing a saved source with cloud conversation sends permitted portions under Materials controls. A pasted source is labeled as pasted; its address does not verify origin or completeness.</p>
+
+    <h2 id="controls">Saving and session controls</h2>
+    <ul>
+      <li><strong>Don’t save this conversation</strong> controls new PCS saving. It does not prevent an active cloud provider from receiving the conversation.</li>
+      <li><strong>Clear chat</strong> and hiding the memory stream change the display. They do not delete saved records or disable learning.</li>
+      <li><strong>Stop PCS</strong> ends conversation and capture; <strong>Lock</strong> closes vault access; <strong>Quit PCS</strong> shuts down the host.</li>
+    </ul>
+    <p>Closing the browser tab alone can leave the host running and the vault unlocked. Deleting records cannot retract earlier provider disclosure or erase older backups. See <a href="memory-control.html">memory controls</a> for inspection and correction.</p>
+
+    <h2 id="sharing">Before sharing a screen or support file</h2>
+    <p>OBS shares the scene you permit. Preview it before enabling Vision. Visible Library or Map records can appear in a shared scene; opening a local page does not protect it from screen capture.</p>
+    <p>PCS normally removes its private launch code from the browser address. A clean <code>http://127.0.0.1:8765</code> address contains no code; a link containing <code>#token=</code> should stay private.</p>
+    <p>Bug reports are not automatically posted to support. Review the file yourself before using <a href="https://discord.com/invite/2ssCQhNgAN">Discord</a> or <a href="https://github.com/PCS-PersonalContinuitySystem/PCS/issues">GitHub Issues</a>. Remove keys, passphrases, tokens, personal records and sensitive paths.</p>
+  </article>
 </div>
-</header>
-<main id="main" tabindex="-1">
-<div class="guide-header">
-<div class="shell">
-<p class="eyebrow">
-      PCS GUIDES / SETUP AND FEATURES
-     </p>
-<h1>
-      What stays on your PC—and what is shared
-     </h1>
-<p class="intro">
-      PCS stores saved records on your PC. This guide explains what is encrypted, what can be sent online and which controls stop saving or sharing.
-     </p>
-<p class="version">
-      PCS 0.9.33 · Pre-release guide
-     </p>
-</div>
-</div>
-<div class="shell guide-grid">
-<aside class="guide-nav">
-<h2>
-      In this guide
-     </h2>
-<ul class="toc">
-<li>
-<a href="#two-different-questions">
-        Local storage and local AI are different
-       </a>
-</li>
-<li>
-<a href="#vault">
-        What the vault covers
-       </a>
-</li>
-<li>
-<a href="#cloud-sharing">
-        What can go to cloud providers
-       </a>
-</li>
-<li>
-<a href="#saved-web">
-        Saving and reusing a web source
-       </a>
-</li>
-<li>
-<a href="#local-route">
-        What Local mode changes
-       </a>
-</li>
-<li>
-<a href="#saving-sharing">
-        What “Don’t save” means
-       </a>
-</li>
-<li>
-<a href="#closing-support">
-        Quit PCS and check files before sharing
-       </a>
-</li>
-<li>
-<a href="#map-privacy">
-        Map privacy and writer attribution
-       </a>
-</li>
-</ul>
-<h2>
-      Read next
-     </h2>
-<nav aria-label="PCS guides">
-<a href="getting-started.html">
-       Getting started with PCS on Windows
-      </a>
-<a href="memory-control.html">
-       What PCS remembers—and how to change it
-      </a>
-<a aria-current="page" class="active" href="data-and-privacy.html">
-       What stays on your PC—and what is shared
-      </a>
-<a href="continuity-map.html">
-       Using the Continuity Map
-      </a>
-</nav>
-<p>
-      These pages work without JavaScript and do not make AI requests.
-     </p>
-</aside>
-<article>
-<details class="mobile-guide-nav">
-<summary>
-       In this guide &amp; related guides
-      </summary>
-<ul class="toc">
-<li>
-<a href="#two-different-questions">
-         Local storage and local AI are different
-        </a>
-</li>
-<li>
-<a href="#vault">
-         What the vault covers
-        </a>
-</li>
-<li>
-<a href="#cloud-sharing">
-         What can go to cloud providers
-        </a>
-</li>
-<li>
-<a href="#saved-web">
-         Saving and reusing a web source
-        </a>
-</li>
-<li>
-<a href="#local-route">
-         What Local mode changes
-        </a>
-</li>
-<li>
-<a href="#saving-sharing">
-         What “Don’t save” means
-        </a>
-</li>
-<li>
-<a href="#closing-support">
-         Quit PCS and check files before sharing
-        </a>
-</li>
-<li>
-<a href="#map-privacy">
-         Map privacy and writer attribution
-        </a>
-</li>
-</ul>
-<h2>
-       Read next
-      </h2>
-<nav aria-label="Mobile PCS guides">
-<a href="getting-started.html">
-        Getting started with PCS on Windows
-       </a>
-<a href="memory-control.html">
-        What PCS remembers—and how to change it
-       </a>
-<a aria-current="page" class="active" href="data-and-privacy.html">
-        What stays on your PC—and what is shared
-       </a>
-<a href="continuity-map.html">
-        Using the Continuity Map
-       </a>
-</nav>
-</details>
-<h2 id="two-different-questions">
-      Local storage and local AI are different
-     </h2>
-<p>
-      PCS keeps saved continuity in an encrypted vault on your Windows PC. That describes storage. It does not make a Google or OpenAI conversation an offline session, and it does not make cloud processing end-to-end private.
-     </p>
-<p>
-      For cloud routes, conversation and enabled sharing send selected content to configured providers. Their charges and data-handling terms apply. PCS supports a separate Local conversation route for compatible Windows/NVIDIA hardware; the required model and runtime must be installed separately.
-     </p>
-<div class="callout">
-<p>
-<strong>
-        This page explains product behavior, not a security certification or a provider-retention guarantee.
-       </strong>
-       The app is a pre-release. Review the current release notes and the provider’s terms before using sensitive information.
-      </p>
-</div>
-<h2 id="vault">
-      What the vault covers
-     </h2>
-<p>
-      Saved continuity, notebooks and local plans can be inspected and revised in PCS. Encrypted backups preserve vault contents, including saved settings and remembered keys. Keep backup files protected and keep their passphrases separately. Forgotten vault passphrases cannot be recovered.
-     </p>
-<p>
-<strong>
-       Original document files and readable exports are outside vault encryption.
-      </strong>
-      Keep separate copies of original Materials when making a backup. An exported Markdown or plain-text record is readable by anyone who can access that file; it is not a protected vault backup.
-     </p>
-<p>Saved web source snapshots and bookmarks are encrypted vault records, unlike original local Materials files. Some saved features increase the minimum PCS version able to read the vault and later backups. Clearing them does not lower that requirement. Keep a pre-feature backup and read <a href="getting-started.html#updating">upgrade and recovery guidance</a>.</p>
-<h2 id="cloud-sharing">
-      What can go to cloud providers
-     </h2>
-<p>Conversation and enabled features can share selected content: recalled context, conversation excerpts, corrections, document portions, vision input and eligible Calendar or Practice requests. In <strong>Settings → Sharing &amp; research → Memory and preparation options</strong>, review separately configured provider roles as well as each sharing choice.</p>
-<p>
-      The updated memory-sharing choice can include selected original passages and current corrections. Existing users may retain a previous scope until choosing an offered update. Read the explanation for the setting actually saved in your vault.
-     </p>
-<p>
-      Local storage does not prevent a selected provider from receiving permitted content. This website does not quote provider retention periods or prices because those depend on the provider and configuration and may change.
-     </p>
-<h2 id="saved-web">
-      Saving and reusing a web source
-     </h2>
-<p>
-      An explicit web import contacts the selected public website. It captures supported static text, not an interactive quiz, linked-page crawl or private signed-in session. Reading a saved source later is local retrieval; sharing its passages with a cloud conversation is still provider sharing under the Materials controls.
-     </p>
-<p>
-      Source text is external evidence, not instructions or personal memory. Refresh preserves an earlier snapshot when the text changes; deletion removes the selected snapshot and bookmark, not other revisions or old backups. A confirmed TXT export is unencrypted.
-     </p>
-<p><strong>Paste page text</strong> retains only the text you explicitly provide, with no website or AI request. PCS labels it as pasted text and does not verify that it matches the address or represents a complete page. It is available in Local mode; any later cloud use still requires Materials sharing.</p>
-<h2 id="local-route">
-      What Local mode changes
-     </h2>
-<p>Local conversation and memory run on the PC with your selected model, without a cloud AI key or fallback. Optional <strong>Brave lookup</strong> sends queries to Brave and requests public pages online; generated queries can include details from your request. Separately approved preparation may use the cloud provider shown for that job. Local storage and local reasoning do not imply that every optional feature is offline.</p>
-<p>Use the in-app guided Gemma setup, matching llama.cpp/CUDA files and compatibility checks. Experimental <strong>Custom GGUF</strong> profiles support selected models and 8K/16K/32K context choices. Local conversation requires compatible Windows/NVIDIA hardware; model and runtime assets are separate downloads. Consult bundled Help for the tested combinations rather than assuming arbitrary files will work.</p>
-<p><strong>Recommended for Local AI:</strong> an NVIDIA GPU with <strong>at least 16 GB of VRAM</strong> for a smooth experience. Needs vary with the model, context length, and optional vision or GPU voice features. Google and OpenAI cloud connections do not require that GPU capacity.</p>
-<p>English recognition and Kokoro CPU/NVIDIA voices are optional downloaded packs. CPU listening is the ordinary choice; resident NVIDIA GPU recognition is selected separately. Installed Windows voices are also supported. Listening pauses while Local processes and speaks. Optional OBS vision reads the selected, permitted scene frame for a user turn with a compatible model/projector; install OBS separately. Review the scene before sharing it.</p>
-<h2 id="saving-sharing">
-      What “Don’t save” means
-     </h2>
-<p>
-      Choose
-      <strong>
-       Don’t save this conversation
-      </strong>
-      before starting to pause new PCS saving. Earlier saved records and settings remain. The selected cloud provider still receives the conversation, and its own terms still apply.
-     </p>
-<p>
-<strong>
-       Clear chat
-      </strong>
-      only clears displayed content. Hiding the memory stream only hides its panel. Neither action should be treated as deletion of saved continuity. See the
-      <a href="memory-control.html">
-       memory-control guide
-      </a>
-      for the differences.
-     </p>
-<h2 id="closing-support">
-      Quit PCS and check files before sharing
-     </h2>
-<p>PCS opens a local browser page with a private access code and normally removes that code from the address automatically. A clean address such as <code>http://127.0.0.1:8765</code> contains no access code and is fine to show. If a launch link still contains <code>#token=</code>, keep the full link private and exclude it from screenshots and support reports.</p>
-<p>
-      Closing the controlling browser page stops the conversation and capture but can leave the desktop host running and the vault unlocked. Use
-      <strong>
-       Lock
-      </strong>
-      to close vault access or
-      <strong>
-       Quit PCS
-      </strong>
-      to shut the program down.
-     </p>
-<p>
-      Review a generated bug report before sharing it. Reports are not uploaded automatically. Public issues and community posts are not private support channels: remove names, keys, launch tokens, personal conversations, original documents and sensitive filesystem paths.
-     </p>
-<p>
-      For your first trial, follow
-      <a href="getting-started.html">
-       the setup guide
-      </a>
-      using non-sensitive example information and turn on additional sharing only after reading its explanation.
-     </p>
-<h2 id="map-privacy">
-      Map privacy and memory writer labels
-     </h2>
-<p>Map browsing and inspection make no model or embedding request. Themes and connections derive from bounded current saved records; source excerpts support inspection after selecting records. The graph is not a persisted semantic index. Manually arranged positions are saved in the encrypted vault. Lock clears the private displayed view. Already-enabled screen sharing can still capture the visible Map or inspector.</p>
-<p>
-      A host-recorded Local memory writer is separate from a provider name written inside editable JSON. A copied Google or OpenAI label in that JSON is not proof of a cloud call. Review the session’s selected provider roles and sharing choices, not a model-authored tag alone.
-     </p>
-<p class="source-note">
-      Guide for PCS 0.9.33. See the bundled Help and release notes for detailed controls and limitations.
-     </p>
-</article>
-</div>
-</main>
-<footer>
-<div class="shell">
-<span>
-     PCS — Personal Continuity System
-    </span>
-<span>
-<a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.33">
-      Release notes
-     </a>
-     ·
-     <a href="https://discord.gg/Tfd4kHQun">Discord community</a> · <a href="https://ko-fi.com/pcssupport">
-      Optional one-time support
-     </a>
-</span>
-</div>
-</footer>
-</body>
-</html>
+</main><footer class="site-footer"><div class="wrap footer-top"><div><a class="footer-brand" href="index.html">PCS</a><p>Room to think.<br>Space to connect.</p></div><div class="footer-links"><div><strong>Explore</strong><a href="continuity-map.html">Continuity Map</a><a href="memory-control.html">How memory works</a><a href="local-ai.html">Local AI</a></div><div><strong>Use PCS</strong><a href="getting-started.html">Setup &amp; updates</a><a href="data-and-privacy.html">Data &amp; privacy</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases">All releases ↗</a></div><div><strong>Get involved</strong><a href="https://discord.com/invite/2ssCQhNgAN">Discord ↗</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/issues">Report a bug ↗</a><a href="https://ko-fi.com/pcssupport">Support development ↗</a></div></div></div><div class="wrap footer-bottom"><p>© 2026 Courtney Dickson · First-party app code: GPL-3.0-only.</p><a href="https://github.com/PCS-PersonalContinuitySystem/PCS">App source &amp; license ↗</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS-site">Website source ↗</a></div></footer>
+<dialog class="image-dialog" aria-label="Full-size application screenshot"><button class="image-close" type="button" aria-label="Close full-size image">Close ×</button><img alt=""><p></p></dialog></body></html>

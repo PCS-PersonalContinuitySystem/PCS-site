@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title description">
+  <title id="title">How PCS memory works</title>
+  <desc id="description">With saving and learning enabled, PCS keeps original conversation passages separate from source-linked AI interpretations. Memory formation uses the selected Local model for Local conversations, or the chosen cloud Memory provider. Your corrections take priority. For a new question, PCS searches current memories and permitted original passages, selects relevant evidence, and rechecks sharing permissions, saved versions and required corrections before use. Optional local search by meaning uses a temporary index that clears at Lock. Incomplete correction context and uncertain neighboring turns are withheld. Recall is selective, not a guarantee of complete or correct recollection.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10" fill="#99cbb9"/>
+    </marker>
+  </defs>
+  <style>
+    text{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#edf5f3}
+    .title{font-size:40px;font-weight:650;letter-spacing:-.6px}
+    .section{font-size:16px;font-weight:600;letter-spacing:1.5px;fill:#99cbb9}
+    .heading{font-size:23px;font-weight:600}
+    .body{font-size:20px;fill:#c8dad9}
+    .small{font-size:18px;fill:#b9d0cf}
+    .card{fill:#173139;stroke:#486b70;stroke-width:1.5}
+    .line{fill:none;stroke:#99cbb9;stroke-width:2;marker-end:url(#arrow)}
+  </style>
+  <rect width="1200" height="1000" rx="20" fill="#0c2027"/>
+  <rect x="48" y="39" width="6" height="38" rx="3" fill="#99cbb9"/>
+  <text x="70" y="70" class="title">How PCS memory works</text>
+  <text x="48" y="111" class="body">Keep the original words. Build revisable memories. Recall what helps now.</text>
+
+  <text x="48" y="165" class="section">01 · SAVE AND LEARN WITH YOUR PERMISSION</text>
+  <rect x="48" y="187" width="330" height="181" rx="14" class="card"/>
+  <text x="70" y="229" class="heading">Saved conversation</text>
+  <text x="70" y="268" class="body">
+    <tspan x="70">Words and speakers as saved.</tspan>
+    <tspan x="70" dy="29">Kept apart from AI summaries.</tspan>
+    <tspan x="70" dy="29">Transcripts can be mistaken.</tspan>
+  </text>
+  <path d="M378 278H428" class="line"/>
+
+  <rect x="432" y="187" width="330" height="181" rx="14" class="card"/>
+  <text x="454" y="229" class="heading">AI interpretations</text>
+  <text x="454" y="268" class="body">
+    <tspan x="454">The model forms revisable</tspan>
+    <tspan x="454" dy="29">memories linked to the</tspan>
+    <tspan x="454" dy="29">saved source passages.</tspan>
+  </text>
+  <path d="M762 278H812" class="line"/>
+
+  <rect x="816" y="187" width="336" height="181" rx="14" class="card"/>
+  <text x="838" y="229" class="heading">Your memory vault</text>
+  <text x="838" y="268" class="body">
+    <tspan x="838">On your PC, encrypted.</tspan>
+    <tspan x="838" dy="29">Inspect sources and history.</tspan>
+    <tspan x="838" dy="29">Correct or forget as needed.</tspan>
+  </text>
+  <text x="48" y="402" class="small">Formation uses your selected Local model, or your chosen cloud Memory provider.</text>
+
+  <rect x="48" y="433" width="1104" height="116" rx="14" fill="#203d36" stroke="#668f78" stroke-width="1.5"/>
+  <rect x="48" y="450" width="4" height="82" rx="2" fill="#99cbb9"/>
+  <text x="72" y="468" class="heading">Your corrections take priority</text>
+  <text x="72" y="501" class="body">
+    <tspan x="72">Automatic learning preserves your edited record.</tspan>
+    <tspan x="72" dy="28">Recall includes the current corrections it needs, or leaves that evidence out.</tspan>
+  </text>
+
+  <text x="48" y="600" class="section">02 · RECALL FOR THE QUESTION IN FRONT OF YOU</text>
+  <rect x="48" y="622" width="238" height="183" rx="14" class="card"/>
+  <text x="68" y="661" class="heading">Present question</text>
+  <text x="68" y="700" class="body">
+    <tspan x="68">This exchange sets</tspan>
+    <tspan x="68" dy="29">what may be useful.</tspan>
+    <tspan x="68" dy="29">Recall is optional.</tspan>
+  </text>
+  <path d="M286 716H333" class="line"/>
+
+  <rect x="337" y="622" width="238" height="183" rx="14" class="card"/>
+  <text x="357" y="661" class="heading">Find evidence</text>
+  <text x="357" y="700" class="body">
+    <tspan x="357">Current memories and</tspan>
+    <tspan x="357" dy="29">original passages,</tspan>
+    <tspan x="357" dy="29">when permitted.</tspan>
+  </text>
+  <path d="M575 716H622" class="line"/>
+
+  <rect x="626" y="622" width="238" height="183" rx="14" class="card"/>
+  <text x="646" y="661" class="heading">Check again</text>
+  <text x="646" y="700" class="body">
+    <tspan x="646">Sharing permissions.</tspan>
+    <tspan x="646" dy="29">Current saved text.</tspan>
+    <tspan x="646" dy="29">Required corrections.</tspan>
+  </text>
+  <path d="M864 716H911" class="line"/>
+
+  <rect x="915" y="622" width="237" height="183" rx="14" class="card"/>
+  <text x="935" y="661" class="heading">Use in the reply</text>
+  <text x="935" y="700" class="body">
+    <tspan x="935">Selected evidence</tspan>
+    <tspan x="935" dy="29">goes to your model,</tspan>
+    <tspan x="935" dy="29">if sharing allows it.</tspan>
+  </text>
+
+  <rect x="48" y="831" width="1104" height="81" rx="12" fill="#122b32" stroke="#385d63"/>
+  <text x="70" y="863" class="body" font-weight="600">Optional: local search by meaning</text>
+  <text x="70" y="891" class="small">A separate model finds related wording. Its search index stays in memory and clears at Lock.</text>
+
+  <text x="48" y="948" class="small">Browsing saved records and the Map stays on your PC. AI sharing follows your choices.</text>
+  <text x="48" y="978" class="small">Recall selects evidence for this question; it can miss details or misinterpret them.</text>
+</svg>
