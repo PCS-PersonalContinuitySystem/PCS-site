@@ -219,13 +219,13 @@
     heading.append(element('p', 'eyebrow', 'Interactive website demo'), element('h3', 'title', `${data.person?.name || 'A fictional person'}’s continuity map`));
     const intro = element('p', 'intro', `Follow ${data.person?.name || 'one person'}’s work, home, and everyday plans. Select a theme to read the evidence.`);
     const about = element('details', 'about');
-    about.append(element('summary', '', `About ${data.person?.name || 'this fictional person'}`), element('p', '', data.person?.intro || 'This is a fictional collection of saved memories and notebooks.'));
+    about.append(element('summary', '', `About ${data.person?.name || 'this fictional person'}`), intro, element('p', '', data.person?.intro || 'This is a fictional collection of saved memories and notebooks.'));
     const fullscreen = button('Full screen ↗', async () => {
       try { if (doc.fullscreenElement === host) await doc.exitFullscreen(); else if (host.requestFullscreen) await host.requestFullscreen(); else announce('Full screen is unavailable in this browser.'); }
       catch (_) { announce('This browser did not allow full screen. The Map is still available here.'); }
     });
     fullscreen.disabled = !host.requestFullscreen; fullscreen.title = fullscreen.disabled ? 'Full screen is unavailable in this browser' : 'Open this demo in full screen';
-    header.append(heading, fullscreen); host.append(header, intro, about);
+    header.append(heading, fullscreen); host.append(header, about);
     const toolbar = element('div', 'toolbar'), search = element('form', 'search');
     const searchInput = element('input', 'input'); searchInput.type = 'search'; searchInput.placeholder = 'Photography, home, work…'; searchInput.autocomplete = 'off'; searchInput.setAttribute('aria-label', 'Find a theme in this fictional Map');
     const searchResults = element('div', 'search-results'); searchResults.id = prefix + '-search'; searchInput.setAttribute('aria-controls', searchResults.id); searchResults.hidden = true;
@@ -244,7 +244,8 @@
     const dottedOutput = element('output', 'range-output', '60%'); dottedOutput.htmlFor = dotted.id = prefix + '-dotted';
     dotted.addEventListener('input', () => { percent = Number(dotted.value); dottedOutput.value = `${percent}%`; renderGraph(); });
     const rangeLabel = element('label', 'dotted'); rangeLabel.append(doc.createTextNode('Dotted connections'), dotted, dottedOutput);
-    options.append(repeatLabel, rangeLabel); host.append(toolbar, options);
+    options.append(repeatLabel, rangeLabel);
+    const filters = element('div', 'filters'); filters.append(toolbar, options); host.append(filters);
     const viewbar = element('div', 'viewbar'), layouts = select([['overview', 'Overview'], ['rings', 'Focus rings'], ['grid', 'Grid'], ['date', 'Saved-date'], ['compare', 'Compare']], () => change(() => { state.layout = layouts.value; }));
     controls.layouts = layouts;
     const comparison = select([], () => change(() => { state.compare = comparison.value; state.edge = null; })), compareField = field('Compare with', comparison);
@@ -443,8 +444,15 @@
     svg.addEventListener('pointerup', stopDrag); svg.addEventListener('pointercancel', stopDrag);
     svg.addEventListener('lostpointercapture', () => { drag = null; });
     doc.addEventListener('fullscreenchange', () => { fullscreen.textContent = doc.fullscreenElement === host ? 'Exit full screen ↙' : 'Full screen ↗'; });
+    const pageHeader = doc.querySelector('.site-header');
+    const measurePageHeader = () => host.style.setProperty('--pcs-map-header-height', `${pageHeader?.getBoundingClientRect().height || 0}px`);
+    measurePageHeader();
+    win.addEventListener('resize', measurePageHeader);
     render();
-    if (win.ResizeObserver) { const observer = new win.ResizeObserver(() => { if (!listMode) renderGraph(); }); observer.observe(stage); }
+    if (win.ResizeObserver) {
+      const observer = new win.ResizeObserver(() => { if (!listMode) renderGraph(); }); observer.observe(stage);
+      if (pageHeader) { const headerObserver = new win.ResizeObserver(measurePageHeader); headerObserver.observe(pageHeader); }
+    }
     return {render, getState: () => ({...state, hidden: [...state.hidden], hiddenEdges: [...state.hiddenEdges]})};
   }
 

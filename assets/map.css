@@ -131,5 +131,54 @@
 @media(max-width:1050px){.pcs-map{padding:19px}.pcs-map-workspace{grid-template-columns:minmax(0,1fr) 275px}.pcs-map-stage,.pcs-map-svg{min-height:500px}.pcs-map-canvas{min-height:550px}.pcs-map-tab{font-size:10px}.pcs-map-tabs{gap:8px}.pcs-map-inspector{padding:15px 12px;max-height:640px}.pcs-map .pcs-map-inspector-title{font-size:20px}}
 @media(max-width:800px){.pcs-map-workspace,.pcs-map:fullscreen .pcs-map-workspace{grid-template-columns:minmax(0,1fr)}.pcs-map-inspector,.pcs-map:fullscreen .pcs-map-inspector{max-height:none;height:auto}.pcs-map-inspector-body{max-height:510px}.pcs-map-stage,.pcs-map-svg{min-height:460px}.pcs-map-canvas{min-height:500px}.pcs-map-tabs{gap:22px}.pcs-map-tab{font-size:12px}.pcs-map-list{max-height:470px}.pcs-map:fullscreen{padding:16px}.pcs-map-toolbar{gap:10px}.pcs-map-options{gap:10px}.pcs-map-dotted{margin-left:auto}}
 @media(max-width:560px){.pcs-map{padding:14px;border-radius:14px}.pcs-map-header{gap:10px;align-items:flex-start}.pcs-map .pcs-map-title{font-size:21px}.pcs-map-header>.pcs-map-button{font-size:11px;white-space:normal;min-width:77px;padding:9px}.pcs-map-intro{font-size:12px}.pcs-map-toolbar{display:block;padding:12px}.pcs-map-toolbar>.pcs-map-field{margin-top:12px}.pcs-map-search{gap:6px}.pcs-map-input{font-size:12px}.pcs-map-options{padding:12px}.pcs-map-dotted{margin-left:0;justify-content:space-between;width:100%}.pcs-map-range{flex:1;max-width:120px}.pcs-map-viewbar{gap:7px}.pcs-map-viewbar .pcs-map-field{flex:1 1 125px}.pcs-map-viewbar .pcs-map-select{width:100%}.pcs-map-viewbar .pcs-map-button{padding:8px;font-size:11px}.pcs-map-view-switch{margin-left:0}.pcs-map-caption{line-height:1.7}.pcs-map-stage,.pcs-map-svg{min-height:330px}.pcs-map-canvas{min-height:380px}.pcs-map-graph-tools{left:8px;top:8px}.pcs-map-history{left:8px;bottom:8px}.pcs-map-navigation-help{font-size:10px}.pcs-map-list{grid-template-columns:1fr;padding:11px}.pcs-map-footnote{font-size:10px}.pcs-map-inspector-body{max-height:570px}}
+
+/* Desktop uses one viewport budget; records and lists scroll inside it. */
+@media(min-width:801px){
+ .pcs-map{display:flex;flex-direction:column;height:calc(100dvh - var(--pcs-map-header-height,89px) - 24px);min-height:0;max-height:1100px;padding:16px;overflow:auto;scroll-margin-top:calc(var(--pcs-map-header-height,89px) + 12px)}
+ .pcs-map> :not(.pcs-map-workspace){flex-shrink:0}
+ .pcs-map-header{gap:12px}
+ .pcs-map .pcs-map-title{font-size:22px}
+ .pcs-map-eyebrow{font-size:10px!important;margin-bottom:3px!important}
+ .pcs-map-header>.pcs-map-button{min-height:36px;padding:8px 12px;font-size:12px}
+ .pcs-map-about{margin:4px 0 10px;max-width:none;max-height:140px;overflow:auto;flex-shrink:0}
+ .pcs-map-about>summary{min-height:20px}
+ .pcs-map-about>p{max-width:100ch;font-size:12px;padding-top:5px}
+ .pcs-map-filters{display:flex;align-items:center;gap:16px;padding:10px 12px;background:var(--pcs-map-panel);border:1px solid var(--pcs-map-line);border-radius:10px}
+ .pcs-map-toolbar{flex:1;min-width:0;padding:0;border:0;border-radius:0;gap:12px;background:none}
+ .pcs-map-options{flex:0 0 auto;flex-direction:column;align-items:flex-start;gap:8px;padding:0;border:0;border-radius:0;background:none}
+ .pcs-map-field{gap:3px}
+ .pcs-map-input,.pcs-map-select{height:36px;padding:6px 9px;font-size:12px}
+ .pcs-map-search>.pcs-map-button{min-height:36px;padding:8px 11px;font-size:12px}
+ .pcs-map-viewbar{margin:10px 0 8px;gap:7px}
+ .pcs-map-viewbar .pcs-map-button{min-height:34px;padding:7px 9px}
+ .pcs-map-view-switch{padding:2px}
+ .pcs-map-view-switch .pcs-map-button{min-height:30px}
+ .pcs-map-caption{margin-bottom:3px!important}
+ .pcs-map-legend{margin-bottom:8px!important}
+ .pcs-map-workspace,.pcs-map:fullscreen .pcs-map-workspace{flex:1 0 300px;min-height:300px;grid-template-rows:minmax(0,1fr);grid-template-columns:minmax(0,1fr) 320px}
+ .pcs-map-canvas,.pcs-map-stage,.pcs-map-svg{min-height:0}
+ .pcs-map-canvas{height:100%;min-width:0}
+ .pcs-map-stage{flex:1 1 0;min-width:0}
+ .pcs-map-navigation-help{flex:none;padding:7px 10px;font-size:10px;line-height:1.5}
+ .pcs-map-inspector,.pcs-map:fullscreen .pcs-map-inspector{height:100%;max-height:none;min-height:0;padding:13px 12px}
+ .pcs-map-inspector> :not(.pcs-map-inspector-body){flex-shrink:0}
+ .pcs-map-inspector-body{flex:1 1 0;min-height:0;max-height:none;overflow:auto}
+ .pcs-map-list{flex:1 1 0;min-height:0;max-height:none;overflow:auto}
+ .pcs-map-footnote{margin-top:7px!important;font-size:10px;line-height:1.4}
+ .pcs-map-status{margin-top:4px!important;font-size:11px;line-height:1.4}
+ .pcs-map:fullscreen{height:100dvh;max-height:none;padding:16px;overflow:auto}
+ .pcs-map:fullscreen .pcs-map-workspace{grid-template-columns:minmax(0,1fr) 360px}
+}
+@media(min-width:801px) and (max-width:1100px){
+ .pcs-map-filters{flex-wrap:wrap;gap:8px}
+ .pcs-map-toolbar{flex-basis:100%}
+ .pcs-map-options{flex-direction:row;justify-content:space-between;width:100%}
+ .pcs-map-workspace,.pcs-map:fullscreen .pcs-map-workspace{grid-template-columns:minmax(0,1fr) 275px}
+}
+/* At narrow widths keep the reading flow instead of squeezing two panes. */
+@media(max-width:800px){.pcs-map:fullscreen{height:100dvh;overflow:auto}.pcs-map-about{max-height:180px;overflow:auto}}
+/* The workspace floor permits scrolling only when controls leave too little room,
+   including expanded About / Compare at high zoom or in short windows. */
+
 @media(prefers-reduced-motion:reduce){.pcs-map *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.pcs-map{border:1px solid CanvasText}.pcs-map-node-dot,.pcs-map-node-star{fill:Canvas;stroke:ButtonText;filter:none}.pcs-map-node-count,.pcs-map-node-label{fill:CanvasText;stroke:Canvas}.pcs-map-node-ring{stroke:Highlight}.pcs-map-edge-line{stroke:CanvasText;opacity:1}.pcs-map-node-halo{display:none}.pcs-map-button,.pcs-map-tab,.pcs-map-list-item,.pcs-map-connection{border:1px solid ButtonText}.pcs-map button[aria-pressed=true],.pcs-map-tab[aria-selected=true]{border:2px solid Highlight}}

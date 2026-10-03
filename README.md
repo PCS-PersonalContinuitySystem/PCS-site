@@ -23,6 +23,8 @@ The sample follows six weeks of Mara’s work, family and home projects. Its 24 
 
 Select a theme or connection to read its evidence. The demo includes five layouts, source filters, search, comparison, hiding, exploration history, zoom and a list view. Counts come from explicit shared record tags; they are not confidence scores. PCS derives its own Map from saved wording and topic labels.
 
+On desktop, the Map uses the available window height, with records and lists scrolling inside their panels. Full screen gives the graph more room. Short windows retain scrolling access to the controls; phones place the records below the graph.
+
 The records and application screenshots use fictional data. The website does not open a PCS vault, call an AI model or save changes. The interactive Map needs JavaScript; all 36 sample records are also available as ordinary HTML on its page.
 
 ## Preview locally
