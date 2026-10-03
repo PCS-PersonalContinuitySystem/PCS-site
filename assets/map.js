@@ -3,6 +3,10 @@
   'use strict';
   const NS = 'http://www.w3.org/2000/svg';
   const WIDTH = 1000, HEIGHT = 700;
+  // Production's six Map tones, assigned to the demo's authored groups.
+  // Keep assignments stable across filters, layouts and hidden themes.
+  const groupTones = new Map([['Everyday', 0], ['Work', 1], ['Family', 2], ['Home', 3], ['Community', 4], ['Friends', 5], ['Plans', 1]]);
+  const toneClass = node => `pcs-map-group-${groupTones.get(node?.group) ?? 0}`;
   const edgeKey = (a, b) => [a, b].sort().join('|');
   const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
   const plural = (count, word) => `${count} ${word}${count === 1 ? '' : 's'}`;
@@ -220,6 +224,7 @@
     const intro = element('p', 'intro', `Follow ${data.person?.name || 'one person'}’s work, home, and everyday plans. Select a theme to read the evidence.`);
     const about = element('details', 'about');
     about.append(element('summary', '', `About ${data.person?.name || 'this fictional person'}`), intro, element('p', '', data.person?.intro || 'This is a fictional collection of saved memories and notebooks.'));
+    about.append(element('p', '', 'Colors distinguish the sample’s theme groups. They do not measure importance or certainty.'));
     const fullscreen = button('Full screen ↗', async () => {
       try { if (doc.fullscreenElement === host) await doc.exitFullscreen(); else if (host.requestFullscreen) await host.requestFullscreen(); else announce('Full screen is unavailable in this browser.'); }
       catch (_) { announce('This browser did not allow full screen. The Map is still available here.'); }
@@ -340,7 +345,8 @@
       const routes = routeEdges(visible.edges, positions, state.selected, state.layout), routeLookup = new Map(routes.map(route => [route.id, route])), edgeControls = [];
       for (const edge of visible.edges) {
         const route = routeLookup.get(edge.id), selected = edge.id === state.edge, related = edge.from === state.selected || edge.to === state.selected;
-        const group = svgElement('g', {class: `pcs-map-edge${selected ? ' pcs-map-edge-selected' : related ? ' pcs-map-edge-related' : ''}`, 'data-edge': edge.id});
+        const tone = toneClass(lookup.get(related ? state.selected : edge.from));
+        const group = svgElement('g', {class: `pcs-map-edge ${tone}${selected ? ' pcs-map-edge-selected' : related ? ' pcs-map-edge-related' : ''}`, 'data-edge': edge.id});
         const line = svgElement('path', {d: route.d, class: 'pcs-map-edge-line', 'stroke-width': 1.1 + Math.min(2.6, Math.log2(edge.count + 1) * .75)});
         if (edge.count <= dots.cutoff) line.setAttribute('stroke-dasharray', '3 7');
         group.append(svgElement('path', {d: route.d, class: 'pcs-map-edge-hit'}), line); group.append(svgElement('title', {}, `${lookup.get(edge.from).label} + ${lookup.get(edge.to).label}: ${plural(edge.count, 'shared record')}`));
@@ -351,7 +357,7 @@
           const id = closestEdge(routes, point.matrixTransform(transform.inverse()));
           if (id) chooseEdge(id);
         });
-        const control = svgElement('g', {class: `pcs-map-edge-control${selected || related ? ' pcs-map-edge-control-shown' : ''}`, transform: `translate(${route.point.x},${route.point.y})`, role: 'button', tabindex: '-1', 'aria-pressed': String(selected), 'aria-label': `${lookup.get(edge.from).label} and ${lookup.get(edge.to).label}: ${plural(edge.count, 'shared record')}`, 'data-edge': edge.id});
+        const control = svgElement('g', {class: `pcs-map-edge-control ${tone}${selected || related ? ' pcs-map-edge-control-shown' : ''}`, transform: `translate(${route.point.x},${route.point.y})`, role: 'button', tabindex: '-1', 'aria-pressed': String(selected), 'aria-label': `${lookup.get(edge.from).label} and ${lookup.get(edge.to).label}: ${plural(edge.count, 'shared record')}`, 'data-edge': edge.id});
         control.append(svgElement('circle', {r: 13, class: 'pcs-map-edge-control-hit'}), svgElement('circle', {r: 9, class: 'pcs-map-edge-control-dot'}), svgElement('text', {y: 4, 'text-anchor': 'middle', class: 'pcs-map-edge-control-count'}, edge.count));
         control.addEventListener('click', event => { event.stopPropagation(); if (!moved) chooseEdge(edge.id); });
         control.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); chooseEdge(edge.id); } });
@@ -364,7 +370,7 @@
       svg.append(...edgeControls);
       for (const node of visible.nodes) {
         const point = positions.get(node.id), selected = node.id === state.selected, edgeSelected = visible.edges.find(edge => edge.id === state.edge), adjacent = edgeSelected && [edgeSelected.from, edgeSelected.to].includes(node.id);
-        const group = svgElement('g', {class: `pcs-map-node${selected ? ' pcs-map-node-selected' : ''}${adjacent ? ' pcs-map-node-adjacent' : ''}`, transform: `translate(${point.x},${point.y})`, role: 'button', tabindex: '0', 'data-theme': node.id, 'aria-pressed': String(selected), 'aria-label': `${node.label}, ${plural(node.count, 'record')}. Inspect theme.`});
+        const group = svgElement('g', {class: `pcs-map-node ${toneClass(node)}${selected ? ' pcs-map-node-selected' : ''}${adjacent ? ' pcs-map-node-adjacent' : ''}`, transform: `translate(${point.x},${point.y})`, role: 'button', tabindex: '0', 'data-theme': node.id, 'aria-pressed': String(selected), 'aria-label': `${node.label}, ${plural(node.count, 'record')}. Inspect theme.`});
         const words = node.label.split(' '), lines = []; let line = '';
         for (const word of words) { if (line && (line + ' ' + word).length > 19) { lines.push(line); line = ''; } line += (line ? ' ' : '') + word; } if (line) lines.push(line);
         const halfLabel = Math.max(...lines.map(text => text.length * labelSize * .29), 35);
@@ -408,7 +414,7 @@
       const explanation = state.layout === 'rings' ? 'Focus rings show the selected theme and its direct connections.' : state.layout === 'compare' ? 'Compare shows both themes and their direct connections.' : state.layout === 'date' ? 'Saved-date groups themes by the latest record saved in this source filter, not when a thought began.' : 'Select a theme or connection to inspect its evidence.';
       caption.textContent = `${visible.nodes.length} of ${graph.nodes.length} themes · ${plural(visible.edges.length, 'connection')} · ${state.hidden.length + state.hiddenEdges.length} hidden. ${explanation}`;
       renderGraph(); list.replaceChildren();
-      for (const node of visible.nodes) { const item = button('', () => choose(node.id), 'list-item'); item.dataset.listTheme = node.id; item.setAttribute('aria-pressed', String(node.id === state.selected)); item.append(element('strong', '', node.label), element('span', 'muted', `${node.group} · ${plural(node.count, 'record')}`), element('span', '', node.summary)); list.append(item); }
+      for (const node of visible.nodes) { const item = button('', () => choose(node.id), 'list-item'); item.classList.add(toneClass(node)); item.dataset.listTheme = node.id; item.setAttribute('aria-pressed', String(node.id === state.selected)); item.append(element('strong', '', node.label), element('span', 'muted', `${node.group} · ${plural(node.count, 'record')}`), element('span', '', node.summary)); list.append(item); }
       if (!visible.nodes.length) list.append(element('p', 'empty', 'No themes in this view. Reset hidden items or change the source type.'));
       renderInspector();
       if (activeListId) [...list.children].find(item => item.dataset.listTheme === activeListId)?.focus();

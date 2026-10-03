@@ -25,6 +25,8 @@ Select a theme or connection to read its evidence. The demo includes five layout
 
 On desktop, the Map uses the available window height, with records and lists scrolling inside their panels. Full screen gives the graph more room. Short windows retain scrolling access to the controls; phones place the records below the graph.
 
+The demo uses the production Map's original slate-and-pastel palette. Colors distinguish the sample's authored theme groups and stay consistent across views; they do not indicate importance or confidence.
+
 The records and application screenshots use fictional data. The website does not open a PCS vault, call an AI model or save changes. The interactive Map needs JavaScript; all 36 sample records are also available as ordinary HTML on its page.
 
 ## Preview locally
