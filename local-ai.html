@@ -11,8 +11,8 @@
 <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="continuity-map.html">Map</a><a href="memory-control.html">Memory</a><a href="local-ai.html" aria-current="page">Local AI</a><a href="getting-started.html">Get started</a><a href="https://discord.com/invite/2ssCQhNgAN" class="nav-community">Community ↗</a><a href="index.html#download" class="button small">Get PCS <span aria-hidden="true">↗</span></a></nav>
 </div></header><main id="main"><section class="page-intro wrap">
   <p class="eyebrow">PCS 0.9.57 · Local AI</p>
-  <h1>Choose a model. Keep your setup.</h1>
-  <p class="lead">Run conversation and memory on compatible NVIDIA hardware, save Custom GGUF profiles, and add CPU search by meaning, voice or vision when useful.</p>
+  <h1>Choose a model. Keep your continuity.</h1>
+  <p class="lead">Your Local model can change while your saved memories, corrections and notebooks stay in the PCS vault. Run conversation and memory on compatible NVIDIA hardware, and add voice or vision when useful.</p>
 </section>
 <div class="wrap article-layout">
   <aside class="toc" aria-label="On this page">
@@ -38,6 +38,7 @@
     <p>Typed conversation needs no cloud AI key or speech pack. Hardware needs depend on the model, context window, vision and any GPU speech components. CPU semantic search is a separate feature; it does not enable CPU conversation. The <a href="#previews">Radeon and Linux previews</a> have their own narrower limits.</p>
 
     <h2 id="profiles">Custom GGUF and saved setups</h2>
+    <p>Saved setups make it easier to return to a compatible Local model without rebuilding its configuration. They use the same PCS vault; changing the model does not replace your saved continuity. <a href="getting-started.html#switching">Review the connection-switching steps</a>.</p>
     <p><strong>Experimental model support · Custom GGUF</strong> lets you select model and runtime files, choose <strong>8K, 16K or 32K</strong> context, and run <strong>Check compatibility</strong>. A selected vision projector also needs checking. Checks cover text, tools, structured output and selected vision; they do not guarantee every architecture or model’s quality. Keep the recommended 32K context when your model and GPU allow it. A smaller context may not fit every enabled tool.</p>
     <p>Under <strong>Saved custom setups</strong>, choose <strong>New custom profile</strong>, name it, and <strong>Save current setup</strong>. Keep up to eight named setups, including model, runtime, projector, context, listening and voice choices. Enable <strong>Show in Conversation picker</strong> to switch while stopped.</p>
     <p><strong>Use profile</strong> selects a saved setup for the next Start. Save unfinished Settings edits before switching. Profiles do not carry API keys or sharing permissions; review original-source sharing again for the new setup. <strong>Remove profile</strong> keeps its files and current settings.</p>

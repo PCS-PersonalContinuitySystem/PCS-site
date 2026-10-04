@@ -8,6 +8,10 @@ This website revision presents PCS **0.9.57**, including the optional starting-m
 
 [Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS](https://github.com/PCS-PersonalContinuitySystem/PCS/releases) · [Discord](https://discord.com/invite/2ssCQhNgAN)
 
+## Swappable cognition
+
+Change the AI. Keep your continuity. Supported conversation, memory and preparation connections can change while saved records remain in the PCS vault. The homepage introduces this benefit; the setup guide explains switching and the sharing and compatibility choices to review. Different models can produce different answers and recall.
+
 ## Pages
 
 | File | Contents |
