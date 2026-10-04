@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How memory works — PCS</title><meta name="description" content="See how PCS saves originals, forms revisable memories, preserves your corrections and selects permitted evidence for recall."><meta name="theme-color" content="#c2cabe">
+<title>How memory works — PCS</title><meta name="description" content="See how PCS saves originals, preserves your corrections, reviews activity memories and selects permitted evidence for recall."><meta name="theme-color" content="#c2cabe">
 <link rel="canonical" href="https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html"><link rel="icon" type="image/svg+xml" href="assets/pcs-star.svg">
-<meta property="og:type" content="website"><meta property="og:site_name" content="PCS"><meta property="og:title" content="How memory works — PCS"><meta property="og:description" content="See how PCS saves originals, forms revisable memories, preserves your corrections and selects permitted evidence for recall."><meta property="og:url" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html"><meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview.jpg"><meta property="og:image:alt" content="PCS — Room to think. Space to connect. Explore the Map, memory and Local AI."><meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "How memory works \u2014 PCS", "description": "See how PCS saves originals, forms revisable memories, preserves your corrections and selects permitted evidence for recall.", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html", "isPartOf": {"@type": "WebSite", "name": "PCS", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/"}}</script><link rel="stylesheet" href="assets/site.css"><script defer src="assets/site.js"></script></head>
+<meta property="og:type" content="website"><meta property="og:site_name" content="PCS"><meta property="og:title" content="How memory works — PCS"><meta property="og:description" content="See how PCS saves originals, preserves your corrections, reviews activity memories and selects permitted evidence for recall."><meta property="og:url" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html"><meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview.jpg"><meta property="og:image:alt" content="PCS — Room to think. Space to connect. Explore the Map, memory and Local AI."><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "How memory works \u2014 PCS", "description": "See how PCS saves originals, preserves your corrections, reviews activity memories and selects permitted evidence for recall.", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/memory-control.html", "isPartOf": {"@type": "WebSite", "name": "PCS", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/"}}</script><link rel="stylesheet" href="assets/site.css"><script defer src="assets/site.js"></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="index.html" aria-label="PCS home"><img src="assets/pcs-star.svg" width="38" height="38" alt=""><span>PCS<small>Personal Continuity System</small></span></a>
 <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
 <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="continuity-map.html">Map</a><a href="memory-control.html" aria-current="page">Memory</a><a href="local-ai.html">Local AI</a><a href="getting-started.html">Get started</a><a href="https://discord.com/invite/2ssCQhNgAN" class="nav-community">Community ↗</a><a href="index.html#download" class="button small">Get PCS <span aria-hidden="true">↗</span></a></nav>
 </div></header><main id="main"><section class="page-intro wrap">
-  <p class="eyebrow">PCS 0.9.50 · Memory guide</p>
+  <p class="eyebrow">PCS 0.9.57 · Memory guide</p>
   <h1>See what was saved. Change what was understood.</h1>
   <p class="lead">Original passages, AI interpretations and your corrections have different roles. PCS keeps them inspectable and uses selected context when you permit recall.</p>
 </section>
@@ -20,6 +20,8 @@
     <a href="#flow">How memory works</a>
     <a href="#review">Inspect and correct</a>
     <a href="#recall">Choose what recall can use</a>
+    <a href="#activity">Activity memories</a>
+    <a href="#reflection">Explore another perspective</a>
     <a href="#saving">Check saving</a>
     <a href="#controls">Saving and clearing</a>
     <a href="#backup">Keep a backup</a>
@@ -37,19 +39,31 @@
     <ol class="steps">
       <li>Open <strong>Continuity → Library</strong> and select a memory.</li>
       <li>Read its original sources and revision history. Distinguish what you said from the interpretation made from it.</li>
-      <li>Use the correction controls to state what you want retained, then check the saved result.</li>
+      <li>Choose <strong>Correct this memory in your own words</strong>, then <strong>Incorrect</strong>, <strong>Changed</strong>, <strong>Applies in a specific context</strong>, or <strong>Forget</strong>.</li>
+      <li>Enter your wording and choose <strong>Preview change</strong>. Review the effects before saving; Forget reviews dependent saved work.</li>
     </ol>
     <figure>
-      <a href="screenshots/pcs-library-0950.jpg"><img src="screenshots/pcs-library-0950.jpg" alt="PCS 0.9.50 Library showing fictional saved records available for inspection." loading="lazy"></a>
-      <figcaption>Fictional demonstration in the actual PCS 0.9.50 interface.</figcaption>
+      <a href="screenshots/pcs-library-0957.jpg"><img src="screenshots/pcs-library-0957.jpg" alt="PCS 0.9.57 Library showing fictional saved records available for inspection." loading="lazy"></a>
+      <figcaption>Fictional demonstration in the actual PCS 0.9.57 interface.</figcaption>
     </figure>
-    <p>If a correction needs review, use <strong>Review latest saved memory</strong>. Reviewing the saved revision does not save your draft automatically. The recorded revision writer identifies the owner or model attached by PCS; editable text inside a memory cannot replace that attribution.</p>
+    <p>After an uncertain plain-language save, choose <strong>Review latest saved revision</strong>, compare it with your retained wording, then preview again. Advanced JSON has its separate <strong>Review latest saved memory</strong> action. Reviewing does not save either draft, and unfinished text in the other editor stays intact.</p>
+    <p>PCS records whether the owner or a model wrote each account; editable text cannot replace that attribution. Applicability wording explains context, not an access or spoiler filter. A correction cannot erase text already delivered to a conversation model; use a fresh conversation to continue without that earlier context.</p>
     <p>The <a href="continuity-map.html">Continuity Map</a> offers another route into the records. Follow a connection, inspect its support, and review a draft to bring selected records into Conversation.</p>
 
     <h2 id="recall">Choose what recall can use</h2>
     <p>Open <strong>Settings → Memory &amp; sharing → Personal memory &amp; practice</strong>. Read the learning and original-source choices saved for your selected connection. Recall returns selected evidence within your permissions and the model’s context limits; it does not send the whole vault.</p>
     <p><strong>Find references in saved conversation passages</strong> can recover details that never became a memory. This needs permission to share originals. <strong>Search by meaning</strong> can complement word search; the optional <a href="local-ai.html#semantic">Local Nomic search model</a> runs on CPU without cloud embeddings.</p>
     <p>Recall can miss a detail, select an imperfect match or choose no callback. Inspect important evidence and correct mistakes. An earlier experience does not prove what you think or need now.</p>
+
+    <h2 id="activity">Choose memories for the current activity</h2>
+    <p>Open <strong>Activity</strong> in the Conversation toolbar to describe a book, game, film, series or real-life situation. Add progress and the kind of help you want. Optional <strong>Automatically follow my current activity</strong> uses your current words; it does not grant permission to share saved accounts. You can still set details manually.</p>
+    <p>For a spoiler-limited story activity, choose <strong>Choose memories for this activity</strong> while stopped. Review the complete current accounts and required corrections before approving. Saved approvals belong to the exact activity and account revisions you reviewed. Changed accounts or activity settings require review again. No approval means no saved memory is supplied for that scope.</p>
+    <p>Automatic following waits for current activity classification before supplying saved memory. A later activity or progress change is a choice for a fresh conversation: use <strong>Use for next conversation</strong>, Stop, then Start. If unidentified speech overlaps typing, PCS explains that automatic voice following is paused for that conversation; use typing on a supported route or start a fresh conversation to resume it.</p>
+    <p>These controls restrict saved-memory disclosure. Model knowledge and what you say can still contain spoilers, and an approval cannot erase earlier context. <strong>Why this? Inspect memory context</strong> shows recent memory handoffs with record references; it does not prove which memory caused every answer.</p>
+
+    <h2 id="reflection">Explore another perspective</h2>
+    <p>Choose a question and up to six saved memories, then review the model and sharing choice before requesting a reflection. Your complete selection stays visible across searches, with Inspect and removal controls. This is separate from activity-memory approval.</p>
+    <p>The result offers neutral questions, with complete supplied accounts available for inspection. Choose <strong>Save this question</strong> only if you want to retain it with its model attribution and evidence references. A saved question is not a fact about you. Question relevance remains experimental, and missing memories do not establish a blind spot.</p>
 
     <h2 id="saving">Check saving separately from memory formation</h2>
     <p><strong>Saving &amp; memory health</strong> shows pending work and problems. A reply that says “saved” is not a storage receipt; check PCS’s save result and the record. Local memory processing can work through large originals in smaller sections and wait for quiet conversation periods.</p>

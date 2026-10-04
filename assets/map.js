@@ -55,8 +55,9 @@
     let nodes = graph.nodes.filter(node => !hidden.has(node.id));
     const ids = new Set(nodes.map(node => node.id));
     let edges = graph.edges.filter(edge => ids.has(edge.from) && ids.has(edge.to) && !hiddenEdges.has(edge.id) && (!state.repeated || edge.count >= 2));
-    if ((state.layout === 'rings' || state.layout === 'compare') && ids.has(state.selected)) {
-      const anchors = new Set([state.selected]);
+    const anchor = state.anchor ?? state.selected;
+    if ((state.layout === 'rings' || state.layout === 'compare') && ids.has(anchor)) {
+      const anchors = new Set([anchor]);
       if (state.layout === 'compare' && ids.has(state.compare)) anchors.add(state.compare);
       const wanted = new Set(anchors);
       for (const edge of edges) if (anchors.has(edge.from) || anchors.has(edge.to)) { wanted.add(edge.from); wanted.add(edge.to); }
@@ -206,17 +207,36 @@
     host.classList.add('pcs-map'); host.dataset.pcsMapReady = 'true';
     if (!data || !Array.isArray(data.themes) || !Array.isArray(data.records) || !data.themes.length) { host.append(element('p', 'empty', 'The fictional Map is unavailable. You can still explore the rest of this page.')); return null; }
     const lookup = new Map(data.themes.map(theme => [theme.id, theme]));
-    let state = {selected: lookup.has('photography') ? 'photography' : data.themes[0].id, edge: null, layout: 'rings', compare: '', type: 'all', repeated: false, hidden: [], hiddenEdges: []};
+    const initialTheme = lookup.has('photography') ? 'photography' : data.themes[0].id;
+    // Focus rings follows the selected theme without resetting the camera.
+    // Keep its anchor separately so edge inspection and deselection retain it.
+    let state = {selected: initialTheme, anchor: initialTheme, edge: null, layout: 'rings', compare: '', type: 'all', repeated: false, hidden: [], hiddenEdges: []};
     let percent = 60, listMode = false, tab = 'overview', past = [], future = [], positions = new Map(), graph, visible, layout;
     let box = {x: 0, y: 0, width: WIDTH, height: HEIGHT}, drag = null, moved = false;
     const overrides = new Map(), controls = {}, snapshot = () => JSON.stringify(state);
+    // An arrangement belongs to its focused neighborhood. A theme dragged in
+    // the outer ring must not carry that offset when it becomes the center.
+    const positionKey = id => state.layout === 'rings' ? `rings:${state.anchor}:${id}` : `${state.layout}:${id}`;
     const announce = message => { status.textContent = message; };
-    function change(mutator, message) { const before = snapshot(); mutator(); if (before !== snapshot()) { past.push(before); if (past.length > 60) past.shift(); future = []; } resetBox(); render(); if (message) announce(message); }
+    function change(mutator, message, resetView = true) { const before = snapshot(); mutator(); if (before !== snapshot()) { past.push(before); if (past.length > 60) past.shift(); future = []; } if (resetView) resetBox(); render(); if (message) announce(message); }
     function resetBox() { box = {x: 0, y: 0, width: WIDTH, height: HEIGHT}; applyBox(); }
     function applyBox() { svg.setAttribute('viewBox', `${box.x} ${box.y} ${box.width} ${box.height}`); }
-    function zoom(factor) { const width = clamp(box.width * factor, 300, 2200), ratio = width / box.width; box = {x: box.x + (box.width - width) / 2, y: box.y + (box.height - box.height * ratio) / 2, width, height: box.height * ratio}; applyBox(); }
-    function choose(id) { change(() => { state.selected = id; state.edge = null; if (state.compare === id) state.compare = ''; state.hidden = state.hidden.filter(item => item !== id); }, `${lookup.get(id).label} selected.`); }
-    function chooseEdge(id) { change(() => { state.edge = id; }, 'Connection selected. Shared records and authored notes are in the details panel.'); }
+    function zoom(factor, point = {x: box.x + box.width / 2, y: box.y + box.height / 2}) { const width = clamp(box.width * factor, 300, 2200), ratio = width / box.width; box = {x: point.x - (point.x - box.x) * ratio, y: point.y - (point.y - box.y) * ratio, width, height: box.height * ratio}; applyBox(); }
+    function choose(id) {
+      if (state.selected === id && !state.edge && !state.hidden.includes(id) && (state.layout !== 'rings' || state.anchor === id)) return;
+      const reveal = !visible.nodes.some(node => node.id === id);
+      const refocus = state.layout === 'rings';
+      change(() => {
+        state.selected = id; state.edge = null;
+        if (refocus || reveal) {
+          const newAnchor = state.anchor !== id; state.anchor = id;
+          if (refocus && newAnchor) overrides.delete(positionKey(id));
+        }
+        state.hidden = state.hidden.filter(item => item !== id);
+      }, `${lookup.get(id).label} ${refocus ? 'focused' : 'selected'}.`, reveal && !refocus);
+    }
+    function chooseEdge(id) { if (state.edge === id) return; change(() => { state.edge = id; }, 'Connection selected. Shared records and authored notes are in the details panel.', false); }
+    function clearSelection() { change(() => { state.selected = ''; state.edge = null; }, 'Selection cleared. Choose a theme or connection to inspect its evidence.', false); }
     function navigate(back) { const source = back ? past : future, target = back ? future : past; if (!source.length) return; target.push(snapshot()); state = JSON.parse(source.pop()); resetBox(); render(); announce(back ? 'Previous view restored.' : 'Next view restored.'); }
 
     const header = element('div', 'header'), heading = element('div', 'heading');
@@ -251,10 +271,10 @@
     const rangeLabel = element('label', 'dotted'); rangeLabel.append(doc.createTextNode('Dotted connections'), dotted, dottedOutput);
     options.append(repeatLabel, rangeLabel);
     const filters = element('div', 'filters'); filters.append(toolbar, options); host.append(filters);
-    const viewbar = element('div', 'viewbar'), layouts = select([['overview', 'Overview'], ['rings', 'Focus rings'], ['grid', 'Grid'], ['date', 'Saved-date'], ['compare', 'Compare']], () => change(() => { state.layout = layouts.value; }));
+    const viewbar = element('div', 'viewbar'), layouts = select([['overview', 'Overview'], ['rings', 'Focus rings'], ['grid', 'Grid'], ['date', 'Saved-date'], ['compare', 'Compare']], () => change(() => { state.layout = layouts.value; state.anchor = state.selected || state.anchor; }));
     controls.layouts = layouts;
     const comparison = select([], () => change(() => { state.compare = comparison.value; state.edge = null; })), compareField = field('Compare with', comparison);
-    const focus = button('Focus selected', () => change(() => { state.layout = 'rings'; state.edge = null; }));
+    const focus = button('Focus selected', () => change(() => { state.layout = 'rings'; state.anchor = state.selected; state.edge = null; overrides.delete(positionKey(state.selected)); }));
     const showAll = button('Show all', () => change(() => { state.layout = 'overview'; state.edge = null; }));
     const hide = button('Hide selected', () => change(() => { if (state.edge) { state.hiddenEdges.push(state.edge); state.edge = null; } else { state.hidden.push(state.selected); state.selected = ''; } }, 'Selection hidden in this demo. Its records are unchanged.'));
     const restore = button('Reset hidden', () => change(() => { state.hidden = []; state.hiddenEdges = []; }, 'Hidden themes and connections restored.'));
@@ -271,7 +291,7 @@
     const back = button('← Back', () => navigate(true)), forward = button('Forward →', () => navigate(false)); history.append(back, forward);
     stage.append(svg, graphTools, history);
     const list = element('div', 'list'); list.setAttribute('aria-label', 'Themes in the current view');
-    const help = element('p', 'navigation-help', 'Drag the background to pan or a theme to arrange it. Tab to themes; Enter opens details. Arrow keys move between themes. + / − zoom, 0 fits. List offers the same evidence.');
+    const help = element('p', 'navigation-help', 'In Focus rings, select a theme to center its neighborhood without resetting pan or zoom. Drag the background to pan or a theme to arrange it. Scroll to zoom. Double-click empty space or press Escape to clear the selection. Tab to themes; Enter selects. Arrow keys move between themes. + / − zoom, 0 fits. List offers the same evidence.');
     canvas.append(stage, list, help);
     const inspector = element('aside', 'inspector'); inspector.setAttribute('aria-label', 'Selected theme or connection details');
     workspace.append(canvas, inspector); host.append(workspace);
@@ -291,13 +311,13 @@
     function renderInspector() {
       const active = doc.activeElement, focusTab = active?.closest?.('.pcs-map-tab')?.dataset.tab;
       inspector.replaceChildren();
-      const node = graph.nodes.find(item => item.id === state.selected), edge = visible.edges.find(item => item.id === state.edge);
-      if (!node) { inspector.append(element('h4', '', 'No themes in this view'), element('p', 'muted', 'Choose another source type or reset hidden items to explore the fictional records.')); return; }
+      const edge = visible.edges.find(item => item.id === state.edge), node = graph.nodes.find(item => item.id === state.selected) || (edge && graph.nodes.find(item => item.id === edge.from));
+      if (!node) { inspector.append(element('h4', '', visible.nodes.length ? 'No selection' : 'No themes in this view'), element('p', 'muted', visible.nodes.length ? 'Select a theme or connection to inspect its evidence. The current layout stays in place.' : 'Choose another source type or reset hidden items to explore the fictional records.')); return; }
       const title = edge ? `${lookup.get(edge.from).label} + ${lookup.get(edge.to).label}` : node.label;
       const related = visible.edges.filter(item => item.from === node.id || item.to === node.id).sort((a, b) => b.count - a.count || a.id.localeCompare(b.id));
       const records = edge ? edge.records : node.records;
       inspector.append(element('p', 'eyebrow', edge ? 'Shared evidence' : 'Selected theme'), element('h4', 'inspector-title', title), element('p', 'inspector-count', edge ? `${plural(edge.count, 'shared record')}` : `${plural(node.count, 'record')} · ${plural(related.length, 'displayed connection')}`));
-      if (edge) inspector.append(button('← Back to theme', () => change(() => { state.edge = null; })));
+      if (edge) inspector.append(button('← Back to theme', () => change(() => { state.selected = node.id; state.edge = null; }, '', false)));
       const tabs = element('div', 'tabs'); tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Evidence details');
       const panels = [['overview', 'Overview'], ['records', `Records (${records.length})`], ['connections', `Connections (${related.length})`]];
       const body = element('div', 'inspector-body'); body.id = prefix + '-panel'; body.setAttribute('role', 'tabpanel'); body.setAttribute('aria-labelledby', prefix + '-tab-' + tab); body.tabIndex = 0;
@@ -339,10 +359,10 @@
       const dots = dottedConnections(visible.edges, percent);
       legend.textContent = `Dotted: weakest ${percent}% target, keeping equal counts together. Showing ${dots.count} of ${dots.total} connections dotted${dots.total ? ` (${Math.round(dots.count / dots.total * 100)}%)` : ''}. The rest are solid.`;
       svg.replaceChildren();
-      layout = layoutGraph(visible, state.layout, state.selected, state.compare); positions = layout.positions;
-      for (const node of visible.nodes) { const movedPoint = overrides.get(state.layout + ':' + node.id); if (movedPoint) positions.set(node.id, {...movedPoint}); }
+      layout = layoutGraph(visible, state.layout, state.anchor, state.compare); positions = layout.positions;
+      for (const node of visible.nodes) { const movedPoint = overrides.get(positionKey(node.id)); if (movedPoint) positions.set(node.id, {...movedPoint}); }
       for (const heading of layout.headings) svg.append(svgElement('text', {x: heading.x, y: 55, class: 'pcs-map-date-heading', 'text-anchor': 'middle'}, `Week of ${heading.label}`));
-      const routes = routeEdges(visible.edges, positions, state.selected, state.layout), routeLookup = new Map(routes.map(route => [route.id, route])), edgeControls = [];
+      const routes = routeEdges(visible.edges, positions, state.anchor, state.layout), routeLookup = new Map(routes.map(route => [route.id, route])), edgeControls = [];
       for (const edge of visible.edges) {
         const route = routeLookup.get(edge.id), selected = edge.id === state.edge, related = edge.from === state.selected || edge.to === state.selected;
         const tone = toneClass(lookup.get(related ? state.selected : edge.from));
@@ -401,17 +421,18 @@
       searchResults.hidden = true;
       graph = deriveGraph(data, state.type);
       const eligible = graph.nodes.filter(node => !state.hidden.includes(node.id));
-      if (!eligible.some(node => node.id === state.selected)) { state.selected = eligible[0]?.id || ''; state.edge = null; }
-      if (!eligible.some(node => node.id === state.compare && node.id !== state.selected)) state.compare = eligible.find(node => node.id !== state.selected)?.id || '';
+      if (state.selected && !eligible.some(node => node.id === state.selected)) { state.selected = ''; state.edge = null; }
+      if (!eligible.some(node => node.id === state.anchor)) state.anchor = eligible.find(node => node.id === state.selected)?.id || eligible[0]?.id || '';
+      if (!eligible.some(node => node.id === state.compare && node.id !== state.anchor)) state.compare = eligible.find(node => node.id !== state.anchor)?.id || '';
       visible = visibleGraph(graph, state);
       if (!visible.edges.some(edge => edge.id === state.edge)) state.edge = null;
       controls.type.value = state.type; controls.repeated.checked = state.repeated; controls.layouts.value = state.layout;
-      comparison.replaceChildren(); for (const node of eligible) if (node.id !== state.selected) { const option = element('option', '', node.label); option.value = node.id; comparison.append(option); } comparison.value = state.compare; compareField.hidden = state.layout !== 'compare';
-      comparison.disabled = eligible.length < 2; focus.disabled = hide.disabled = !state.selected; restore.disabled = !state.hidden.length && !state.hiddenEdges.length;
+      comparison.replaceChildren(); for (const node of eligible) if (node.id !== state.anchor) { const option = element('option', '', node.label); option.value = node.id; comparison.append(option); } comparison.value = state.compare; compareField.hidden = state.layout !== 'compare';
+      comparison.disabled = eligible.length < 2; focus.disabled = !state.selected; hide.disabled = !state.selected && !state.edge; restore.disabled = !state.hidden.length && !state.hiddenEdges.length;
       back.disabled = !past.length; forward.disabled = !future.length;
       graphView.setAttribute('aria-pressed', String(!listMode)); listView.setAttribute('aria-pressed', String(listMode));
       stage.hidden = listMode; list.hidden = !listMode; help.hidden = listMode;
-      const explanation = state.layout === 'rings' ? 'Focus rings show the selected theme and its direct connections.' : state.layout === 'compare' ? 'Compare shows both themes and their direct connections.' : state.layout === 'date' ? 'Saved-date groups themes by the latest record saved in this source filter, not when a thought began.' : 'Select a theme or connection to inspect its evidence.';
+      const explanation = state.layout === 'rings' && state.anchor ? `Focus rings show ${lookup.get(state.anchor).label} and its direct connections. Select another theme to follow its neighborhood; pan and zoom stay in place.` : state.layout === 'compare' && state.anchor ? `Compare shows ${lookup.get(state.anchor).label} and ${lookup.get(state.compare)?.label || 'another theme'} with their direct connections.` : state.layout === 'date' ? 'Saved-date groups themes by the latest record saved in this source filter, not when a thought began.' : 'Select a theme or connection to inspect its evidence.';
       caption.textContent = `${visible.nodes.length} of ${graph.nodes.length} themes · ${plural(visible.edges.length, 'connection')} · ${state.hidden.length + state.hiddenEdges.length} hidden. ${explanation}`;
       renderGraph(); list.replaceChildren();
       for (const node of visible.nodes) { const item = button('', () => choose(node.id), 'list-item'); item.classList.add(toneClass(node)); item.dataset.listTheme = node.id; item.setAttribute('aria-pressed', String(node.id === state.selected)); item.append(element('strong', '', node.label), element('span', 'muted', `${node.group} · ${plural(node.count, 'record')}`), element('span', '', node.summary)); list.append(item); }
@@ -421,10 +442,26 @@
     }
 
     svg.addEventListener('keydown', event => {
+      if (event.key === 'Escape') { event.preventDefault(); clearSelection(); svg.focus({preventScroll: true}); return; }
       if (event.target !== svg && !['+', '=', '-', '0'].includes(event.key)) return;
       if (['+', '=', '-', '0', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) event.preventDefault();
       if (event.key === '+' || event.key === '=') zoom(.8); else if (event.key === '-') zoom(1.25); else if (event.key === '0') resetBox();
       else { const amount = box.width * .06; if (event.key === 'ArrowLeft') box.x -= amount; if (event.key === 'ArrowRight') box.x += amount; if (event.key === 'ArrowUp') box.y -= amount; if (event.key === 'ArrowDown') box.y += amount; applyBox(); }
+    });
+    svg.addEventListener('wheel', event => {
+      // Preserve browser zoom and other modifier gestures. Only an ordinary
+      // wheel movement belongs to the Map's zoom controls.
+      if (event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+      if (drag || !Number.isFinite(event.deltaY) || !event.deltaY) return;
+      const transform = svg.getScreenCTM(); if (!transform) return;
+      const point = svg.createSVGPoint(); point.x = event.clientX; point.y = event.clientY;
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? svg.getBoundingClientRect().height : 1;
+      event.preventDefault();
+      zoom(Math.exp(clamp(event.deltaY * unit, -240, 240) * .002), point.matrixTransform(transform.inverse()));
+    }, {passive: false});
+    svg.addEventListener('dblclick', event => {
+      if (moved || event.target.closest?.('[data-theme], [data-edge]')) return;
+      event.preventDefault(); clearSelection(); svg.focus({preventScroll: true});
     });
     svg.addEventListener('pointerdown', event => {
       if (event.button !== 0 || event.isPrimary === false) return;
@@ -443,7 +480,7 @@
       // gesture has actually become a drag.
       if (!moved) svg.setPointerCapture?.(event.pointerId);
       moved = true;
-      if (drag.id) { overrides.set(state.layout + ':' + drag.id, {x: clamp(drag.point.x + dx, 60, WIDTH - 60), y: clamp(drag.point.y + dy, 70, HEIGHT - 85)}); renderGraph(); }
+      if (drag.id) { overrides.set(positionKey(drag.id), {x: clamp(drag.point.x + dx, 60, WIDTH - 60), y: clamp(drag.point.y + dy, 70, HEIGHT - 85)}); renderGraph(); }
       else { box.x = drag.box.x - dx; box.y = drag.box.y - dy; applyBox(); }
     });
     function stopDrag(event) { if (svg.hasPointerCapture?.(event.pointerId)) svg.releasePointerCapture(event.pointerId); drag = null; win.setTimeout(() => { moved = false; }, 0); }

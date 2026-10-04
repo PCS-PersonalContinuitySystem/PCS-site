@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Local AI, models and voice — PCS</title><meta name="description" content="Run supported Local conversation on NVIDIA hardware, choose GGUF models and voice, and add optional CPU search by meaning."><meta name="theme-color" content="#c2cabe">
+<title>Local AI, models and voice — PCS</title><meta name="description" content="Set up Local conversation on NVIDIA hardware, choose models and voice, and understand the separate Radeon and Linux previews."><meta name="theme-color" content="#c2cabe">
 <link rel="canonical" href="https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html"><link rel="icon" type="image/svg+xml" href="assets/pcs-star.svg">
-<meta property="og:type" content="website"><meta property="og:site_name" content="PCS"><meta property="og:title" content="Local AI, models and voice — PCS"><meta property="og:description" content="Run supported Local conversation on NVIDIA hardware, choose GGUF models and voice, and add optional CPU search by meaning."><meta property="og:url" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html"><meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview.jpg"><meta property="og:image:alt" content="PCS — Room to think. Space to connect. Explore the Map, memory and Local AI."><meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Local AI, models and voice \u2014 PCS", "description": "Run supported Local conversation on NVIDIA hardware, choose GGUF models and voice, and add optional CPU search by meaning.", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html", "isPartOf": {"@type": "WebSite", "name": "PCS", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/"}}</script><link rel="stylesheet" href="assets/site.css"><script defer src="assets/site.js"></script></head>
+<meta property="og:type" content="website"><meta property="og:site_name" content="PCS"><meta property="og:title" content="Local AI, models and voice — PCS"><meta property="og:description" content="Set up Local conversation on NVIDIA hardware, choose models and voice, and understand the separate Radeon and Linux previews."><meta property="og:url" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html"><meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview.jpg"><meta property="og:image:alt" content="PCS — Room to think. Space to connect. Explore the Map, memory and Local AI."><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Local AI, models and voice \u2014 PCS", "description": "Set up Local conversation on NVIDIA hardware, choose models and voice, and understand the separate Radeon and Linux previews.", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html", "isPartOf": {"@type": "WebSite", "name": "PCS", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/"}}</script><link rel="stylesheet" href="assets/site.css"><script defer src="assets/site.js"></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="index.html" aria-label="PCS home"><img src="assets/pcs-star.svg" width="38" height="38" alt=""><span>PCS<small>Personal Continuity System</small></span></a>
 <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
 <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="continuity-map.html">Map</a><a href="memory-control.html">Memory</a><a href="local-ai.html" aria-current="page">Local AI</a><a href="getting-started.html">Get started</a><a href="https://discord.com/invite/2ssCQhNgAN" class="nav-community">Community ↗</a><a href="index.html#download" class="button small">Get PCS <span aria-hidden="true">↗</span></a></nav>
 </div></header><main id="main"><section class="page-intro wrap">
-  <p class="eyebrow">PCS 0.9.50 · Local AI</p>
+  <p class="eyebrow">PCS 0.9.57 · Local AI</p>
   <h1>Choose a model. Keep your setup.</h1>
   <p class="lead">Run conversation and memory on compatible NVIDIA hardware, save Custom GGUF profiles, and add CPU search by meaning, voice or vision when useful.</p>
 </section>
@@ -23,25 +23,22 @@
     <a href="#voice">Listening and replies</a>
     <a href="#vision">Vision and tutoring</a>
     <a href="#online">Online lookup and preparation</a>
+    <a href="#previews">Radeon and Linux previews</a>
     <a href="#controls">Stop and troubleshoot</a>
   </aside>
   <article class="prose">
     <h2 id="start">Start with typed conversation</h2>
-    <p><strong>Local conversation requires a compatible NVIDIA GPU.</strong> Choose the recommended <strong>Gemma 4 12B</strong> setup for the guided route. Model, runtime, optional vision projector and speech packs are separate from the PCS download. Keep them outside the application folder so a fresh PCS installation can reuse them.</p>
+    <p><strong>The established Windows CUDA route requires a compatible NVIDIA GPU.</strong> Choose the recommended <strong>Gemma 4 12B</strong> setup for the guided route. Model, runtime, optional vision projector and speech packs are separate from the PCS download. Keep them outside the application folder so a fresh PCS installation can reuse them.</p>
     <ol class="steps">
       <li>Open <strong>Settings → Connections</strong> and choose <strong>Local on this PC</strong>.</li>
       <li>In <strong>Local model &amp; files</strong>, choose <strong>Download to folder…</strong> or <strong>Use existing files…</strong> for the model and matching llama.cpp CUDA runtime. Wait for verification.</li>
       <li>Review <strong>Memory &amp; sharing</strong>, then <strong>Save settings</strong>.</li>
       <li>Leave <strong>Use microphone</strong> off, choose <strong>Start PCS</strong>, and try a short typed message.</li>
     </ol>
-    <p>Typed conversation needs no cloud AI key or speech pack. Hardware needs depend on the model, context window, vision and any GPU speech components. CPU semantic search is a separate feature; it does not enable CPU conversation.</p>
-    <figure>
-      <a href="screenshots/pcs-local-settings-0950.jpg"><img src="screenshots/pcs-local-settings-0950.jpg" alt="PCS 0.9.50 Local model and files settings with setup choices for local components." loading="lazy"></a>
-      <figcaption>Fictional demonstration in the actual PCS 0.9.50 interface.</figcaption>
-    </figure>
+    <p>Typed conversation needs no cloud AI key or speech pack. Hardware needs depend on the model, context window, vision and any GPU speech components. CPU semantic search is a separate feature; it does not enable CPU conversation. The <a href="#previews">Radeon and Linux previews</a> have their own narrower limits.</p>
 
     <h2 id="profiles">Custom GGUF and saved setups</h2>
-    <p><strong>Experimental model support · Custom GGUF</strong> lets you select model and runtime files, choose <strong>8K, 16K or 32K</strong> context, and run <strong>Check compatibility</strong>. A selected vision projector also needs checking. Checks cover text, tools, structured output and selected vision; they do not guarantee every architecture or model’s quality. A smaller context may not fit every enabled tool.</p>
+    <p><strong>Experimental model support · Custom GGUF</strong> lets you select model and runtime files, choose <strong>8K, 16K or 32K</strong> context, and run <strong>Check compatibility</strong>. A selected vision projector also needs checking. Checks cover text, tools, structured output and selected vision; they do not guarantee every architecture or model’s quality. Keep the recommended 32K context when your model and GPU allow it. A smaller context may not fit every enabled tool.</p>
     <p>Under <strong>Saved custom setups</strong>, choose <strong>New custom profile</strong>, name it, and <strong>Save current setup</strong>. Keep up to eight named setups, including model, runtime, projector, context, listening and voice choices. Enable <strong>Show in Conversation picker</strong> to switch while stopped.</p>
     <p><strong>Use profile</strong> selects a saved setup for the next Start. Save unfinished Settings edits before switching. Profiles do not carry API keys or sharing permissions; review original-source sharing again for the new setup. <strong>Remove profile</strong> keeps its files and current settings.</p>
 
@@ -56,6 +53,7 @@
       <li><strong>Kokoro · CPU:</strong> the matching CPU voice pack.</li>
       <li><strong>Kokoro · NVIDIA GPU:</strong> the matching GPU voice pack and available GPU resources.</li>
     </ul>
+    <p><strong>Read along</strong> uses an available local browser/OS voice, separately from this conversation voice. Reading alone does not send a source to an AI.</p>
     <p>Save, enable <strong>Use microphone</strong>, Start, and allow browser microphone access. Speak in short turns. Listening pauses during recognition, processing and replies. GPU listening stays loaded during the session. If speech fails, text replies can continue; use a fresh Start after changing the voice setup.</p>
 
     <h2 id="vision">Share a scene or work through a problem</h2>
@@ -66,6 +64,10 @@
     <h2 id="online">Optional online lookup and preparation</h2>
     <p>Local conversation and memory have <strong>no cloud AI fallback</strong>. Explicit <strong>Local online lookup</strong>, under <strong>Memory &amp; sharing → Web &amp; study research</strong>, needs its own Brave Search API key. Queries and public-page requests leave the PC; the selected model interprets excerpts locally. Keep private details out of queries.</p>
     <p>Local conversation does not create retained Study research notes. Separately approved Materials preparation or notebook outlines can use the displayed cloud Preparation provider. Review that destination before sending. See <a href="data-and-privacy.html">storage and sharing</a> for the distinction.</p>
+
+    <h2 id="previews">Radeon and Linux are separate previews</h2>
+    <p>The <strong>Windows Radeon Vulkan text preview</strong> uses the recommended pinned model with a <strong>16K context</strong>, CPU speech and CPU search. It requires an explicitly selected compatible discrete AMD adapter; integrated/APU devices are outside this preview. Custom models, vision, larger contexts and GPU speech are not qualified on this route. Real card/driver inference and performance still need testing; this is not an established Radeon support guarantee.</p>
+    <p>The Source ZIP includes an <strong>Ubuntu 24.04 x64 browser/cloud preview</strong>. Native Local AI, local speech/search packs and OS session-lock tracking are unavailable there; browser audio and OBS still need target testing. Linux installation and device acceptance remain separate from Windows checks. <strong>macOS is not included.</strong> The packaged <code>docs/LOCAL_BACKENDS.md</code> and <code>docs/LINUX_PREVIEW.md</code> describe these limits.</p>
 
     <h2 id="controls">Stop, skip and check the result</h2>
     <p><strong>Stop thinking</strong> cancels a Local answer and pending lookup after cancellation settles. <strong>Skip speech</strong> clears playback and unfinished speech synthesis. These controls do not undo already-saved actions. <strong>Stop PCS</strong> ends the session and unloads Local components.</p>

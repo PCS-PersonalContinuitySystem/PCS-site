@@ -10,7 +10,7 @@
 <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
 <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="continuity-map.html">Map</a><a href="memory-control.html">Memory</a><a href="local-ai.html">Local AI</a><a href="getting-started.html">Get started</a><a href="https://discord.com/invite/2ssCQhNgAN" class="nav-community">Community ↗</a><a href="index.html#download" class="button small">Get PCS <span aria-hidden="true">↗</span></a></nav>
 </div></header><main id="main"><section class="page-intro wrap">
-  <p class="eyebrow">PCS 0.9.50 · Storage and sharing</p>
+  <p class="eyebrow">PCS 0.9.57 · Storage and sharing</p>
   <h1>Know what stays here and what you share.</h1>
   <p class="lead">The encrypted vault belongs on your PC. Your connection and feature permissions determine which selected content can leave it.</p>
 </section>
@@ -25,19 +25,22 @@
   </aside>
   <article class="prose">
     <h2 id="stored">What the vault protects</h2>
-    <p>PCS stores saved conversations, memories, notebooks, prepared reading notes, saved web snapshots and local plans in an encrypted vault. Encrypted backups preserve vault contents, including settings and API keys you chose to remember. Keep backups protected and the passphrase separately; a forgotten passphrase cannot be recovered.</p>
+    <p>PCS stores saved conversations, memories, notebooks, prepared reading notes, saved web snapshots, reading bookmarks, activity approvals and local plans in an encrypted vault. Encrypted backups preserve vault contents, including settings and API keys you chose to remember. Keep backups protected and the passphrase separately; a forgotten passphrase cannot be recovered.</p>
     <p><strong>Original Materials files and readable exports are outside vault encryption.</strong> Copy original documents separately when making a backup. A Markdown or TXT export is readable to anyone with access to that file and is not a complete restorable vault.</p>
     <p>Manual reading, notebook editing, Calendar and Map browsing need no AI connection. Map connections are calculated from bounded current saved records, without a model or embedding request.</p>
 
     <h2 id="cloud">What can reach a cloud provider</h2>
     <p>Google, OpenAI and experimental Alibaba Qwen are cloud connections. Conversation and enabled features can send selected text, recalled evidence, corrections, document portions, audio or permitted images. Their API charges and data-use terms apply. Local encrypted storage does not make cloud processing local.</p>
     <p>Review <strong>Settings → Memory &amp; sharing</strong> and the selected provider roles under <strong>Connections</strong>. A memory or Preparation helper can differ from the conversation provider. Proactive help has its own <strong>Review model and inputs</strong> step showing its destination and permitted inputs.</p>
+    <p>Spoiler-limited story activities have an additional saved-memory boundary: review and approve complete current accounts for that exact scope. Automatic activity recognition cannot approve accounts for you. A separate selected-account reflection also requires review before sharing. These controls cannot remove a model’s own knowledge or context already delivered. See <a href="memory-control.html#activity">activity memory and reflection</a>.</p>
     <p>Original-passage sharing is a separate choice. Saved connection profiles do not carry sharing permissions; review the offered choices when changing the model or destination.</p>
 
     <h2 id="local">What Local changes</h2>
     <p><a href="local-ai.html">Local conversation and memory</a> use the selected model on your PC, without cloud AI fallback. Optional CPU <strong>Search by meaning</strong> also works locally; its temporary index stays in RAM and clears at Lock.</p>
     <p>Online features still have their own destinations. Explicit <strong>Local online lookup</strong> sends queries to Brave and fetches public pages; generated queries can include details from your request. The Local model interprets the excerpts. Separately approved Materials preparation or a notebook outline may use the cloud provider displayed for that job.</p>
     <p><strong>Paste page text</strong> retains text you provide without a website or AI request. Explicit public-page imports contact the website. Later sharing a saved source with cloud conversation sends permitted portions under Materials controls. A pasted source is labeled as pasted; its address does not verify origin or completeness.</p>
+
+    <p><strong>Read along</strong> speaks retained extracted text through a local browser/OS voice without contacting a website or AI. <strong>Discuss what we read</strong> prepares a draft; sending it uses the ordinary conversation permissions. The <strong>Build my starting map</strong> preview and download are also local. Normal saving and sharing settings apply if you later send the introduction, and learning may save before its recap.</p>
 
     <h2 id="controls">Saving and session controls</h2>
     <ul>

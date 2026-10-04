@@ -4,6 +4,8 @@
 
 The public website for **Personal Continuity System**, a Windows app for AI conversation, editable memory, notebooks and local plans. The application source and releases are in the [PCS repository](https://github.com/PCS-PersonalContinuitySystem/PCS).
 
+This website revision presents PCS **0.9.57**, including the optional starting-map introduction, plain-language memory corrections, activity approvals, selected-account reflection, read-along and broader source formats. Download links use the published `v.0.9.57` release tag. Current screenshots show fictional records in the actual application.
+
 [Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS](https://github.com/PCS-PersonalContinuitySystem/PCS/releases) · [Discord](https://discord.com/invite/2ssCQhNgAN)
 
 ## Pages
@@ -12,16 +14,18 @@ The public website for **Personal Continuity System**, a Windows app for AI conv
 | --- | --- |
 | [index.html](index.html) | Features, interactive Map, memory examples, downloads and common questions. |
 | [continuity-map.html](continuity-map.html) | Map demonstration, supporting records, original passages and owner corrections. |
-| [memory-control.html](memory-control.html) | Saving, memory formation, inspection, correction, recall and backups. |
-| [local-ai.html](local-ai.html) | Local models, Custom GGUF profiles, NVIDIA requirements, CPU meaning search, voice and optional vision. |
-| [getting-started.html](getting-started.html) | Four-step setup, provider-specific instructions, optional features and updating. |
+| [memory-control.html](memory-control.html) | Saving, formation, plain-language correction, activity approvals, reflection and recall. |
+| [local-ai.html](local-ai.html) | Local models, Custom GGUF profiles, the NVIDIA route, CPU meaning search, voice, vision and separate platform previews. |
+| [getting-started.html](getting-started.html) | Setup, the optional starting introduction, read-along, provider choices and updating. |
 | [data-and-privacy.html](data-and-privacy.html) | Vault storage, provider sharing, Materials, exports and session controls. |
 
 ## Map demonstration
 
-The sample follows six weeks of Mara’s work, family and home projects. Its 24 themes connect through 36 authored records, including original passages, four owner corrections and six connection notes.
+The sample follows six weeks of Mara’s work, family and home projects. Its 24 themes connect through 36 authored records, including original passages, four owner corrections and six connection notes. A small question about a blue chair by the footbridge runs through Photography, The river and Repair café; follow their records to find the clues.
 
 Select a theme or connection to read its evidence. The demo includes five layouts, source filters, search, comparison, hiding, exploration history, zoom and a list view. Counts come from explicit shared record tags; they are not confidence scores. PCS derives its own Map from saved wording and topic labels.
+
+Scroll over the graph to zoom around the pointer. Drag its background to pan. In **Focus rings**, click a surrounding theme to make it the new center and explore its connections. Your pan and zoom stay as set. Selecting a connection or inspecting themes in other layouts keeps the arrangement in place. **Focus selected** switches to Focus rings and fits the view. Double-click empty graph space to clear the selection without selecting node text. Inspector text remains selectable for copying. The zoom buttons and keyboard shortcuts remain available.
 
 On desktop, the Map uses the available window height, with records and lists scrolling inside their panels. Full screen gives the graph more room. Short windows retain scrolling access to the controls; phones place the records below the graph.
 
