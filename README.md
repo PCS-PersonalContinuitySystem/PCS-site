@@ -2,40 +2,44 @@
 
 *Room to think. Space to connect.*
 
-The public website for **Personal Continuity System**, a Windows app for AI conversation, editable memory, notebooks and local plans. The application source and releases are in the [PCS repository](https://github.com/PCS-PersonalContinuitySystem/PCS).
+The public website for **Personal Continuity System**, a Windows app for AI conversation, editable memory, notebooks and local plans. Application source and releases are in the [PCS repository](https://github.com/PCS-PersonalContinuitySystem/PCS).
 
-This website revision presents PCS **0.9.57**, including the optional starting-map introduction, plain-language memory corrections, activity approvals, selected-account reflection, read-along and broader source formats. Download links use the published `v.0.9.57` release tag. Current screenshots show fictional records in the actual application.
+This website presents **PCS 0.9.59**, including simpler public research during activities, a fuller app Map, Balanced OpenAI turn-taking by default and a Local stopped-reply notice that fades after six seconds. Download links use the published `v.0.9.59` release tag.
 
-[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS](https://github.com/PCS-PersonalContinuitySystem/PCS/releases) · [Discord](https://discord.com/invite/2ssCQhNgAN)
+Retained app screenshots show fictional records captured in **PCS 0.9.57** and keep their original version labels.
+
+[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v.0.9.59) · [Discord](https://discord.com/invite/2ssCQhNgAN)
 
 ## Swappable cognition
 
-Change the AI. Keep your continuity. Supported conversation, memory and preparation connections can change while saved records remain in the PCS vault. The homepage introduces this benefit; the setup guide explains switching and the sharing and compatibility choices to review. Different models can produce different answers and recall.
+Change the AI. Keep your continuity. Supported conversation, memory and preparation connections can change while saved records remain in the PCS vault. The setup guide explains switching and the sharing and compatibility choices to review. Different models can produce different answers and recall.
+
+For Local AI, we recommend a compatible NVIDIA GPU with **16 GB of VRAM**. This is a recommendation, not a minimum or a guarantee for every model and configuration. Google and OpenAI cloud connections do not require this GPU. The Local AI guide explains the separate Radeon and Linux preview limits.
 
 ## Pages
 
 | File | Contents |
 | --- | --- |
 | [index.html](index.html) | Features, interactive Map, memory examples, downloads and common questions. |
-| [continuity-map.html](continuity-map.html) | Map demonstration, supporting records, original passages and owner corrections. |
-| [memory-control.html](memory-control.html) | Saving, formation, plain-language correction, activity approvals, reflection and recall. |
-| [local-ai.html](local-ai.html) | Local models, Custom GGUF profiles, the NVIDIA route, CPU meaning search, voice, vision and separate platform previews. |
-| [getting-started.html](getting-started.html) | Setup, the optional starting introduction, read-along, provider choices and updating. |
-| [data-and-privacy.html](data-and-privacy.html) | Vault storage, provider sharing, Materials, exports and session controls. |
+| [continuity-map.html](continuity-map.html) | Mara's fictional Map story, supporting records and an explicit resolution. |
+| [memory-control.html](memory-control.html) | Saving, formation, correction, activity-memory approvals, reflection and recall. |
+| [local-ai.html](local-ai.html) | Local models, recommended hardware, profiles, search, voice, vision and platform previews. |
+| [getting-started.html](getting-started.html) | Setup, optional starting introduction, read-along, provider choices and updating. |
+| [data-and-privacy.html](data-and-privacy.html) | Vault storage, provider sharing, public research, Materials, exports and session controls. |
 
 ## Map demonstration
 
-The sample follows six weeks of Mara’s work, family and home projects. Its 24 themes connect through 36 authored records, including original passages, four owner corrections and six connection notes. A small question about a blue chair by the footbridge runs through Photography, The river and Repair café; follow their records to find the clues.
+Begin in **Focus**, close to the opening thread of Mara's fictional story. Choose **Connections** to reveal the full web of **60 themes** and **299 shared-record connections**, arranged in eight constellations and supported by **76 records**. Choose **Constellations** for a calmer overview, then open a group to explore its five to ten themes. Her unfinished idea connects practical skills, small teaching moments and what others have asked of her. Follow the supporting records to discover **A table for first tries**: a concrete beginning for welcoming repair sessions where people can learn by doing. The story has an answer and an outcome; the Map makes the scattered evidence available for inspection.
 
-Select a theme or connection to read its evidence. The demo includes five layouts, source filters, search, comparison, hiding, exploration history, zoom and a list view. Counts come from explicit shared record tags; they are not confidence scores. PCS derives its own Map from saved wording and topic labels.
+Select a theme or connection to read its evidence. Advanced controls stay collapsed until wanted. They offer alternative layouts, source filters, search, comparison, hiding, exploration history, zoom and a list view. Counts come from explicit shared record tags; they are not confidence scores. The three primary views are specific to this website demonstration. PCS derives its own Map from saved wording and topic labels; its 0.9.59 app display supports up to 60 nodes and 300 connections with adaptive limits. In your own records, a connection can be a useful question to investigate, rather than proof of a motive or a prediction.
 
-Scroll over the graph to zoom around the pointer. Drag its background to pan. In **Focus rings**, click a surrounding theme to make it the new center and explore its connections. Your pan and zoom stay as set. Selecting a connection or inspecting themes in other layouts keeps the arrangement in place. **Focus selected** switches to Focus rings and fits the view. Double-click empty graph space to clear the selection without selecting node text. Inspector text remains selectable for copying. The zoom buttons and keyboard shortcuts remain available.
+Move between **Focus**, **Constellations** and **Connections** as your question changes. Guided story threads take you to the relevant themes. Scroll over a theme graph to zoom around the pointer. Drag its background to pan. In **Focus rings**, click a surrounding theme to make it the new center and explore its connections. Your pan and zoom stay as set. Selecting a connection or inspecting themes in other layouts keeps the arrangement in place. **Focus selected** switches to Focus rings and fits the view. Double-click empty graph space to clear selection without selecting node text. Inspector text remains selectable for copying. Zoom buttons and keyboard shortcuts remain available.
 
 On desktop, the Map uses the available window height, with records and lists scrolling inside their panels. Full screen gives the graph more room. Short windows retain scrolling access to the controls; phones place the records below the graph.
 
-The demo uses the production Map's original slate-and-pastel palette. Colors distinguish the sample's authored theme groups and stay consistent across views; they do not indicate importance or confidence.
+The Map uses the established slate-and-pastel palette. Colors distinguish authored theme groups and stay consistent across views; they do not indicate importance or confidence.
 
-The records and application screenshots use fictional data. The website does not open a PCS vault, call an AI model or save changes. The interactive Map needs JavaScript; all 36 sample records are also available as ordinary HTML on its page.
+The records and app screenshots use fictional data. The website does not open a PCS vault, call an AI model or save changes. The interactive Map needs JavaScript; the sample records are also available as ordinary HTML on its page.
 
 ## Preview locally
 
@@ -54,15 +58,15 @@ Open [localhost:8000](http://localhost:8000/). Stop the server with **Ctrl+C**.
 - The six HTML files contain page content, navigation and metadata.
 - `assets/site.css` and `assets/site.js` provide the shared appearance, menu, tabs and image previews.
 - `assets/map.js`, `assets/map.css` and `assets/map-data.js` provide the Map demonstration.
-- `assets/pcs-memory-flow.svg` explains memory; `screenshots/` contains the app captures.
+- `assets/pcs-memory-flow.svg` explains memory; `screenshots/` contains the retained app captures.
 
-When changing sample records, update both `assets/map-data.js` and the HTML records in `continuity-map.html`. Keep version labels, download links, descriptions and screenshots consistent. Check links, phone layouts and interactive controls after changes.
+When changing sample records, update both `assets/map-data.js` and the HTML records in `continuity-map.html`. Keep the story's evidence and resolution consistent. Current release labels and links should match the app release; screenshot labels should describe the version actually captured. Check links, phone layouts and interactive controls after changes.
 
 The separate authoring kit includes page fragments and Python generators. If using that kit, edit its source fragments and rebuild before copying the generated `site/` contents here; a rebuild replaces direct edits to generated HTML.
 
 ## Publish an update
 
-Use the repository’s configured GitHub Pages publishing process. Keep the HTML files, `assets/`, `screenshots/` and `.nojekyll` at the publishing root. Preserve existing deployment and custom-domain configuration. Upload the extracted files, not the ZIP itself.
+Use the repository's configured GitHub Pages publishing process. Keep the HTML files, `assets/`, `screenshots/` and `.nojekyll` at the publishing root. Preserve existing deployment and custom-domain configuration. Upload the extracted files, not the ZIP itself.
 
 For an app release update, publish the matching release first and verify the public Windows, source and checksum links. Then check the deployed website. Update canonical, social-preview and sitemap URLs if the site address changes.
 

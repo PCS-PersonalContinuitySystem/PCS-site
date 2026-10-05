@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Local AI, models and voice — PCS</title><meta name="description" content="Set up Local conversation on NVIDIA hardware, choose models and voice, and understand the separate Radeon and Linux previews."><meta name="theme-color" content="#c2cabe">
+<title>Local AI, models and voice — PCS</title><meta name="description" content="Set up Local conversation with a recommended compatible 16 GB NVIDIA GPU, choose models and voice, and understand the separate Radeon and Linux previews."><meta name="theme-color" content="#c2cabe">
 <link rel="canonical" href="https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html"><link rel="icon" type="image/svg+xml" href="assets/pcs-star.svg">
-<meta property="og:type" content="website"><meta property="og:site_name" content="PCS"><meta property="og:title" content="Local AI, models and voice — PCS"><meta property="og:description" content="Set up Local conversation on NVIDIA hardware, choose models and voice, and understand the separate Radeon and Linux previews."><meta property="og:url" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html"><meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview.jpg"><meta property="og:image:alt" content="PCS — Room to think. Space to connect. Explore the Map, memory and Local AI."><meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Local AI, models and voice \u2014 PCS", "description": "Set up Local conversation on NVIDIA hardware, choose models and voice, and understand the separate Radeon and Linux previews.", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html", "isPartOf": {"@type": "WebSite", "name": "PCS", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/"}}</script><link rel="stylesheet" href="assets/site.css"><script defer src="assets/site.js"></script></head>
+<meta property="og:type" content="website"><meta property="og:site_name" content="PCS"><meta property="og:title" content="Local AI, models and voice — PCS"><meta property="og:description" content="Set up Local conversation with a recommended compatible 16 GB NVIDIA GPU, choose models and voice, and understand the separate Radeon and Linux previews."><meta property="og:url" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html"><meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview.jpg"><meta property="og:image:alt" content="PCS — Room to think. Space to connect. Explore the Map, memory and Local AI."><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Local AI, models and voice \u2014 PCS", "description": "Set up Local conversation with a recommended compatible 16 GB NVIDIA GPU, choose models and voice, and understand the separate Radeon and Linux previews.", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/local-ai.html", "isPartOf": {"@type": "WebSite", "name": "PCS", "url": "https://pcs-personalcontinuitysystem.github.io/PCS-site/"}}</script><link rel="stylesheet" href="assets/site.css"><script defer src="assets/site.js"></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="index.html" aria-label="PCS home"><img src="assets/pcs-star.svg" width="38" height="38" alt=""><span>PCS<small>Personal Continuity System</small></span></a>
 <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
 <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="continuity-map.html">Map</a><a href="memory-control.html">Memory</a><a href="local-ai.html" aria-current="page">Local AI</a><a href="getting-started.html">Get started</a><a href="https://discord.com/invite/2ssCQhNgAN" class="nav-community">Community ↗</a><a href="index.html#download" class="button small">Get PCS <span aria-hidden="true">↗</span></a></nav>
 </div></header><main id="main"><section class="page-intro wrap">
-  <p class="eyebrow">PCS 0.9.57 · Local AI</p>
+  <p class="eyebrow">PCS 0.9.59 · Local AI</p>
   <h1>Choose a model. Keep your continuity.</h1>
   <p class="lead">Your Local model can change while your saved memories, corrections and notebooks stay in the PCS vault. Run conversation and memory on compatible NVIDIA hardware, and add voice or vision when useful.</p>
 </section>
@@ -28,7 +28,8 @@
   </aside>
   <article class="prose">
     <h2 id="start">Start with typed conversation</h2>
-    <p><strong>The established Windows CUDA route requires a compatible NVIDIA GPU.</strong> Choose the recommended <strong>Gemma 4 12B</strong> setup for the guided route. Model, runtime, optional vision projector and speech packs are separate from the PCS download. Keep them outside the application folder so a fresh PCS installation can reuse them.</p>
+    <div class="callout"><p><strong>Recommended for Local AI: a compatible NVIDIA GPU with 16 GB of VRAM.</strong> This is a recommendation, not a minimum or a guarantee that every model and feature combination will fit. Model size, context, vision and GPU speech all affect memory use. Google and OpenAI cloud connections do not require this GPU.</p></div>
+    <p>The established Windows CUDA route requires a compatible NVIDIA GPU. Choose the recommended <strong>Gemma 4 12B</strong> setup for the guided route. Model, runtime, optional vision projector and speech packs are separate from the PCS download. Keep them outside the application folder so a fresh PCS installation can reuse them.</p>
     <ol class="steps">
       <li>Open <strong>Settings → Connections</strong> and choose <strong>Local on this PC</strong>.</li>
       <li>In <strong>Local model &amp; files</strong>, choose <strong>Download to folder…</strong> or <strong>Use existing files…</strong> for the model and matching llama.cpp CUDA runtime. Wait for verification.</li>
@@ -64,6 +65,7 @@
 
     <h2 id="online">Optional online lookup and preparation</h2>
     <p>Local conversation and memory have <strong>no cloud AI fallback</strong>. Explicit <strong>Local online lookup</strong>, under <strong>Memory &amp; sharing → Web &amp; study research</strong>, needs its own Brave Search API key. Queries and public-page requests leave the PC; the selected model interprets excerpts locally. Keep private details out of queries.</p>
+    <p>Once enabled, public lookup remains available during activities, including while automatic activity following is waiting or pending. Ordinary questions about controls, hardware, DLC or unrelated topics need no extra activity approval or conversation restart. Title and progress guide relevant story answers; spoiler avoidance is best effort. Saved-memory permissions remain separate.</p>
     <p>Local conversation does not create retained Study research notes. Separately approved Materials preparation or notebook outlines can use the displayed cloud Preparation provider. Review that destination before sending. See <a href="data-and-privacy.html">storage and sharing</a> for the distinction.</p>
 
     <h2 id="previews">Radeon and Linux are separate previews</h2>
@@ -72,6 +74,7 @@
 
     <h2 id="controls">Stop, skip and check the result</h2>
     <p><strong>Stop thinking</strong> cancels a Local answer and pending lookup after cancellation settles. <strong>Skip speech</strong> clears playback and unfinished speech synthesis. These controls do not undo already-saved actions. <strong>Stop PCS</strong> ends the session and unloads Local components.</p>
+    <p>The <strong>Local reply stopped…</strong> notice fades after six seconds, leaving your draft and conversation open. With reduced motion enabled, it dismisses without animation.</p>
     <p>If startup fails, read the stage and check verified model/runtime paths and GPU support first. Speech downloads will not fix a model error. If a save is claimed, check the separate PCS save result and the record. The <a href="memory-control.html">memory guide</a> explains saving health, corrections and recovery.</p>
   </article>
 </div>
