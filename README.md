@@ -4,7 +4,7 @@
 
 The public website for **Personal Continuity System**, a Windows app for AI conversation, editable memory, notebooks and local plans. Application source and releases are in the [PCS repository](https://github.com/PCS-PersonalContinuitySystem/PCS).
 
-This website presents **PCS 0.9.61**, including simpler public research during activities, a fuller app Map, Balanced OpenAI turn-taking by default and a Local stopped-reply notice that fades after six seconds. Download links use the published `v.0.9.59` release tag.
+This website presents **PCS 0.9.61**, including simpler public research during activities, a fuller app Map, Balanced OpenAI turn-taking by default and a Local stopped-reply notice that fades after six seconds. Download links use the published `v.0.9.61` release tag.
 
 Retained app screenshots show fictional records captured in **PCS 0.9.61** and keep their original version labels.
 
