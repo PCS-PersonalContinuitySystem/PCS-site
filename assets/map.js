@@ -306,7 +306,6 @@
     const svgElement = (tag, attrs, text) => { const item = doc.createElementNS(NS, tag); for (const [name, value] of Object.entries(attrs || {})) item.setAttribute(name, String(value)); if (text !== undefined) item.textContent = text; return item; };
     const button = (text, callback, className = 'button') => { const item = element('button', className, text); item.type = 'button'; item.addEventListener('click', callback); return item; };
     const field = (label, input) => { const wrapper = element('label', 'field'), title = element('span', 'field-label', label); wrapper.append(title, input); return wrapper; };
-    const select = (choices, callback) => { const input = element('select', 'select'); for (const [value, label] of choices) { const option = element('option', '', label); option.value = value; input.append(option); } input.addEventListener('change', callback); return input; };
     host.classList.add('pcs-map'); host.dataset.pcsMapReady = 'true';
     if (!data || !Array.isArray(data.themes) || !Array.isArray(data.records) || !data.themes.length) { host.append(element('p', 'empty', 'The fictional Map is unavailable. You can still explore the rest of this page.')); return null; }
     const lookup = new Map(data.themes.map(theme => [theme.id, theme]));
@@ -317,9 +316,10 @@
     // Focus rings follows the selected theme without resetting the camera.
     // Keep its anchor separately so edge inspection and deselection retain it.
     let state = {selected: initialTheme, anchor: initialTheme, edge: null, layout: 'rings', cluster: '', compare: '', type: 'all', repeated: false, hidden: [], hiddenEdges: []};
-    let percent = 60, listMode = false, tab = 'overview', past = [], future = [], positions = new Map(), graph, visible, layout, constellations;
+    const percent = 60;
+    let listMode = false, tab = 'overview', past = [], future = [], positions = new Map(), graph, visible, layout, constellations;
     let box = {x: 0, y: 0, width: WIDTH, height: HEIGHT}, drag = null, moved = false, hoveredTheme = '', focusedTheme = '';
-    const overrides = new Map(), controls = {}, snapshot = () => JSON.stringify(state);
+    const overrides = new Map(), snapshot = () => JSON.stringify(state);
     // An arrangement belongs to its focused neighborhood. A theme dragged in
     // the outer ring must not carry that offset when it becomes the center.
     const positionKey = id => state.layout === 'rings' ? `rings:${state.anchor}:${id}` : `${state.layout}:${id}`;
@@ -381,8 +381,9 @@
       const outside = !visible.edges.some(item => item.id === id);
       change(() => {
         if (outside) { state.layout = 'rings'; state.anchor = state.selected && [edge.from, edge.to].includes(state.selected) ? state.selected : edge.from; }
+        if (![edge.from, edge.to].includes(state.selected)) state.selected = edge.from;
         state.edge = id;
-      }, 'Connection selected. Shared records and authored notes are in the details panel.', outside);
+      }, `${lookup.get(edge.from).label} and ${lookup.get(edge.to).label} focused. Their connections are highlighted; shared records are in the details panel.`, outside);
     }
     function clearSelection() { storyStep = null; storyEnding = false; change(() => { state.selected = ''; state.edge = null; }, 'Selection cleared. Choose a theme or connection to inspect its evidence.', false); }
     function navigate(back) { const source = back ? past : future, target = back ? future : past; if (!source.length) return; storyStep = null; storyEnding = false; target.push(snapshot()); state = JSON.parse(source.pop()); resetBox(); render(); announce(back ? 'Previous view restored.' : 'Next view restored.'); }
@@ -449,24 +450,8 @@
     searchInput.addEventListener('keydown', event => { if (event.key === 'Escape') searchResults.hidden = true; });
     host.addEventListener('pointerdown', event => { if (!search.contains(event.target)) searchResults.hidden = true; });
     search.addEventListener('submit', event => { event.preventDefault(); const found = matches(); if (found.length) { choose(found[0].id); searchResults.hidden = true; } else announce('No matching theme. Try a name shown in the Map or List.'); });
-    const type = select([['all', 'Memories & notebooks'], ['memory', 'Memories'], ['notebook', 'Notebooks']], () => change(() => { state.type = type.value; state.edge = null; }));
-    controls.type = type; toolbar.append(search); host.append(toolbar);
-    const options = element('div', 'options'), repeated = element('input', 'checkbox'); repeated.type = 'checkbox'; repeated.addEventListener('change', () => change(() => { state.repeated = repeated.checked; state.edge = null; })); controls.repeated = repeated;
-    const repeatLabel = element('label', 'check'); repeatLabel.append(repeated, doc.createTextNode('Repeated links only (2+ records)'));
-    const dotted = element('input', 'range'); dotted.type = 'range'; dotted.min = '0'; dotted.max = '100'; dotted.step = '10'; dotted.value = '60'; dotted.setAttribute('aria-label', 'Target percentage of weakest connections drawn dotted');
-    const dottedOutput = element('output', 'range-output', '60%'); dottedOutput.htmlFor = dotted.id = prefix + '-dotted';
-    dotted.addEventListener('input', () => { percent = Number(dotted.value); dottedOutput.value = `${percent}%`; renderGraph(); });
-    const rangeLabel = element('label', 'dotted'); rangeLabel.append(doc.createTextNode('Dotted connections'), dotted, dottedOutput);
-    options.append(repeatLabel, rangeLabel);
-    const advanced = element('details', 'advanced-controls'), filters = element('div', 'filters');
-    advanced.append(element('summary', '', 'More map controls')); filters.append(field('Source type', type), options);
-    const viewbar = element('div', 'viewbar'), layouts = select([['constellations', 'Constellations'], ['rings', 'Focus rings'], ['overview', 'Connections · full web'], ['grid', 'Grid'], ['date', 'Saved-date'], ['compare', 'Compare']], () => change(() => { state.layout = layouts.value; state.anchor = state.selected || state.anchor; if (state.layout === 'constellations') state.cluster = state.selected ? lookup.get(state.selected).group : ''; }));
-    controls.layouts = layouts;
-    const comparison = select([], () => change(() => { state.compare = comparison.value; state.edge = null; })), compareField = field('Compare with', comparison);
-    const focus = button('Focus selected', () => change(() => { state.layout = 'rings'; state.anchor = state.selected; state.edge = null; overrides.delete(positionKey(state.selected)); }));
+    toolbar.append(search); host.append(toolbar);
     const showAll = button('← All constellations', () => openCluster('')), clusterCaption = element('span', 'cluster-caption');
-    const hide = button('Hide selected', () => change(() => { if (state.edge) { state.hiddenEdges.push(state.edge); state.edge = null; } else { state.hidden.push(state.selected); state.selected = ''; } }, 'Selection hidden in this demo. Its records are unchanged.'));
-    const restore = button('Reset hidden', () => change(() => { state.hidden = []; state.hiddenEdges = []; }, 'Hidden themes and connections restored.'));
     const views = element('div', 'view-switch'); views.setAttribute('role', 'group'); views.setAttribute('aria-label', 'Map presentation');
     const graphView = button('Map', () => { listMode = false; render(); }), listView = button('List', () => { listMode = true; render(); }); views.append(graphView, listView);
     const navigation = element('div', 'constellation-navigation'); navigation.append(showAll, clusterCaption, views); host.append(navigation);
@@ -476,16 +461,15 @@
       change(() => { state.layout = 'rings'; state.anchor = state.selected || state.anchor; state.edge = null; }, 'Focus shows one theme and its direct connections.', true, true);
     });
     const constellationView = button('Constellations', () => change(() => { state.layout = 'constellations'; state.cluster = ''; state.selected = ''; state.edge = null; }, 'Open a constellation to explore its themes.', true, true));
-    const connectionsView = button('Connections', () => change(() => { state.layout = 'overview'; state.edge = null; }, 'The full web shows all themes in your current filters. Select a theme to inspect its evidence, or choose Focus for its neighborhood.', true, true));
+    const connectionsView = button('Connections', () => change(() => { state.layout = 'overview'; state.edge = null; }, 'The full web shows all themes. Select a thread to focus both themes and their connections.', true, true));
     primaryViews.append(focusView, constellationView, connectionsView); navigation.prepend(primaryViews);
-    viewbar.append(field('Layout', layouts), compareField, focus, hide, restore); advanced.append(filters, viewbar); host.append(advanced);
     const caption = element('p', 'caption'), legend = element('p', 'legend'); host.append(caption, legend);
     const workspace = element('div', 'workspace'), canvas = element('div', 'canvas'), stage = element('div', 'stage');
     const svg = svgElement('svg', {class: 'pcs-map-svg', viewBox: `0 0 ${WIDTH} ${HEIGHT}`, role: 'group', 'aria-label': 'Fictional continuity graph. Tab to themes, Enter to inspect; arrow keys move between themes.', tabindex: '0'});
     const activeLabel = element('div', 'active-label'); activeLabel.hidden = true; activeLabel.style.fontSize = '13px'; activeLabel.setAttribute('aria-hidden', 'true');
     const graphTools = element('div', 'graph-tools');
     const zoomIn = button('+', () => zoom(.8)), zoomOut = button('−', () => zoom(1.25)), fit = button('Fit', () => { overrides.clear(); resetBox(); renderGraph(); announce('Layout and zoom reset.'); });
-    zoomIn.setAttribute('aria-label', 'Zoom in'); zoomOut.setAttribute('aria-label', 'Zoom out'); fit.title = 'Reset zoom and dragged positions'; graphTools.append(zoomIn, zoomOut, fit);
+    zoomIn.setAttribute('aria-label', 'Zoom in'); zoomOut.setAttribute('aria-label', 'Zoom out'); fit.title = 'Reset zoom and dragged positions'; graphTools.append(zoomIn, zoomOut, fit, button('Clear selection', clearSelection));
     const history = element('nav', 'history'); history.setAttribute('aria-label', 'Map exploration history');
     const back = button('← Back', () => navigate(true)), forward = button('Forward →', () => navigate(false)); history.append(back, forward);
     stage.append(svg, activeLabel, graphTools, history);
@@ -570,10 +554,11 @@
         inspector.append(body); return;
       }
       const edge = visible.edges.find(item => item.id === state.edge), node = graph.nodes.find(item => item.id === state.selected) || (edge && graph.nodes.find(item => item.id === edge.from));
-      if (!node) { inspector.append(element('h4', '', visible.nodes.length ? 'No selection' : 'No themes in this view'), element('p', 'muted', visible.nodes.length ? 'Select a theme or connection to inspect its evidence. The current layout stays in place.' : 'Choose another source type or reset hidden items to explore the fictional records.')); return; }
+      if (!node) { inspector.append(element('h4', '', visible.nodes.length ? 'No selection' : 'No themes in this view'), element('p', 'muted', visible.nodes.length ? 'Select a theme or connection to inspect its evidence. The current layout stays in place.' : 'Choose Connections to explore the fictional records.')); return; }
       const title = edge ? `${lookup.get(edge.from).label} + ${lookup.get(edge.to).label}` : node.label;
       const evidenceEdges = state.layout === 'constellations' ? visibleGraph(graph, {...state, layout: 'overview'}).edges : visible.edges;
-      const related = evidenceEdges.filter(item => item.from === node.id || item.to === node.id).sort((a, b) => b.count - a.count || a.id.localeCompare(b.id));
+      const endpoints = new Set(edge ? [edge.from, edge.to] : [node.id]);
+      const related = evidenceEdges.filter(item => endpoints.has(item.from) || endpoints.has(item.to)).sort((a, b) => b.count - a.count || a.id.localeCompare(b.id));
       const records = edge ? edge.records : node.records;
       inspector.append(element('p', 'eyebrow', edge ? 'Shared evidence' : 'Selected theme'), element('h4', 'inspector-title', title), element('p', 'inspector-count', edge ? `${plural(edge.count, 'shared record')}` : `${plural(node.count, 'record')} · ${plural(related.length, state.layout === 'constellations' ? 'connection' : 'displayed connection')}`));
       if (edge) inspector.append(button('← Back to theme', () => change(() => { state.selected = node.id; state.edge = null; }, '', false)));
@@ -589,7 +574,7 @@
       }
       inspector.append(tabs, body);
       if (tab === 'overview') {
-        body.append(element('p', 'summary', edge ? `${plural(edge.count, 'record')} in this source filter mention both themes. This is a connection in the saved wording, not a conclusion about cause or importance.` : node.summary));
+        body.append(element('p', 'summary', edge ? `${plural(edge.count, 'record')} mention both themes. This is a connection in the saved wording, not a conclusion about cause or importance.` : node.summary));
         if (edge) for (const note of ownerNotes(edge)) body.append(noteCard(note));
         else {
           const notes = (data.connectionNotes || []).filter(note => note.from === node.id || note.to === node.id);
@@ -602,10 +587,11 @@
         for (let i = 0; i < records.length; i++) body.append(recordCard(records[i], i === 0));
       } else {
         body.append(element('p', 'muted', 'Counts come from the same saved records appearing under both themes. Select a connection to inspect its evidence.'));
-        if (!related.length) body.append(element('p', 'empty', 'No connections in this view. Try turning off Repeated links only or showing all themes.'));
+        if (!related.length) body.append(element('p', 'empty', 'No connections in this view. Choose Connections to see the full web.'));
         for (const connection of related) {
           const other = connection.from === node.id ? connection.to : connection.from;
-          const item = button('', () => { tab = 'overview'; chooseEdge(connection.id); }, 'connection'); item.dataset.connection = connection.id; item.append(element('strong', '', lookup.get(other).label), element('span', 'connection-count', `${plural(connection.count, 'shared record')}${lookup.get(other).group !== node.group ? ' · ' + lookup.get(other).group : ''}`));
+          const label = edge ? `${lookup.get(connection.from).label} + ${lookup.get(connection.to).label}` : lookup.get(other).label;
+          const item = button('', () => { tab = 'overview'; chooseEdge(connection.id); }, 'connection'); item.dataset.connection = connection.id; item.append(element('strong', '', label), element('span', 'connection-count', `${plural(connection.count, 'shared record')}${!edge && lookup.get(other).group !== node.group ? ' · ' + lookup.get(other).group : ''}`));
           for (const note of ownerNotes(connection)) item.append(element('span', 'connection-note', note.spoiler ? 'Connection note available · Ending spoilers' : `${data.person?.name || 'Owner'}’s note: ${note.text}`)); body.append(item);
         }
       }
@@ -664,7 +650,7 @@
         svg.append(group);
       }
       if (active) [...svg.querySelectorAll('[data-cluster]')].find(node => node.dataset.cluster === active)?.focus();
-      if (!constellations.nodes.length) svg.append(svgElement('text', {x: 500, y: 320, 'text-anchor': 'middle', class: 'pcs-map-empty-label'}, 'No themes in this view. Reset hidden items or change the source type.'));
+      if (!constellations.nodes.length) svg.append(svgElement('text', {x: 500, y: 320, 'text-anchor': 'middle', class: 'pcs-map-empty-label'}, 'No themes in this view. Choose Connections to see the full web.'));
     }
 
     function renderGraph() {
@@ -682,10 +668,16 @@
       for (const node of visible.nodes) { const movedPoint = overrides.get(positionKey(node.id)); if (movedPoint) positions.set(node.id, {...movedPoint}); }
       for (const heading of layout.headings) svg.append(svgElement('text', {x: heading.x, y: heading.y || 55, class: heading.kind === 'group' ? 'pcs-map-group-heading' : 'pcs-map-date-heading', 'text-anchor': 'middle'}, heading.kind === 'group' ? heading.label : `Week of ${heading.label}`));
       const routes = routeEdges(visible.edges, positions, state.anchor, state.layout, layout), routeLookup = new Map(routes.map(route => [route.id, route])), edgeControls = [];
+      // A selected thread focuses both endpoints, independently of the theme
+      // previously inspected. Keep the arrangement and camera in place.
+      const selectedEdge = visible.edges.find(edge => edge.id === state.edge);
+      const selectedNodes = new Set(selectedEdge ? [selectedEdge.from, selectedEdge.to] : state.selected ? [state.selected] : []);
+      const neighborhood = new Set(selectedNodes);
+      for (const edge of visible.edges) if (selectedNodes.has(edge.from) || selectedNodes.has(edge.to)) { neighborhood.add(edge.from); neighborhood.add(edge.to); }
       for (const edge of visible.edges) {
-        const route = routeLookup.get(edge.id), selected = edge.id === state.edge, related = edge.from === state.selected || edge.to === state.selected;
-        const tone = toneClass(lookup.get(related ? state.selected : edge.from));
-        const group = svgElement('g', {class: `pcs-map-edge ${tone}${selected ? ' pcs-map-edge-selected' : related ? ' pcs-map-edge-related' : ''}`, 'data-edge': edge.id});
+        const route = routeLookup.get(edge.id), selected = edge.id === state.edge, related = selectedNodes.has(edge.from) || selectedNodes.has(edge.to);
+        const tone = toneClass(lookup.get(selectedNodes.has(edge.to) && !selectedNodes.has(edge.from) ? edge.to : edge.from));
+        const group = svgElement('g', {class: `pcs-map-edge ${tone}${selected ? ' pcs-map-edge-selected' : related ? ' pcs-map-edge-related' : selectedEdge ? ' pcs-map-edge-muted' : ''}`, 'data-edge': edge.id});
         const line = svgElement('path', {d: route.d, class: 'pcs-map-edge-line', 'stroke-width': 1.1 + Math.min(2.6, Math.log2(edge.count + 1) * .75)});
         if (edge.count <= dots.cutoff) line.setAttribute('stroke-dasharray', '3 7');
         group.append(svgElement('path', {d: route.d, class: 'pcs-map-edge-hit'}), line); group.append(svgElement('title', {}, `${lookup.get(edge.from).label} + ${lookup.get(edge.to).label}: ${plural(edge.count, 'shared record')}`));
@@ -708,8 +700,9 @@
       // capture a click intended for a named connection's selection target.
       svg.append(...edgeControls);
       for (const node of visible.nodes) {
-        const point = positions.get(node.id), selected = node.id === state.selected, edgeSelected = visible.edges.find(edge => edge.id === state.edge), adjacent = edgeSelected && [edgeSelected.from, edgeSelected.to].includes(node.id);
-        const group = svgElement('g', {class: `pcs-map-node ${toneClass(node)}${selected ? ' pcs-map-node-selected' : ''}${adjacent ? ' pcs-map-node-adjacent' : ''}`, transform: `translate(${point.x},${point.y})`, role: 'button', tabindex: '0', 'data-theme': node.id, 'aria-pressed': String(selected), 'aria-label': `${node.label}, ${plural(node.count, 'record')}. Inspect theme.`});
+        const point = positions.get(node.id), selected = selectedNodes.has(node.id);
+        const emphasis = selected ? ' pcs-map-node-selected' : selectedEdge ? neighborhood.has(node.id) ? ' pcs-map-node-related' : ' pcs-map-node-muted' : '';
+        const group = svgElement('g', {class: `pcs-map-node ${toneClass(node)}${emphasis}`, transform: `translate(${point.x},${point.y})`, role: 'button', tabindex: '0', 'data-theme': node.id, 'aria-pressed': String(selected), 'aria-label': `${node.label}, ${plural(node.count, 'record')}. Inspect theme.`});
         group.append(svgElement('title', {}, `${node.label}: ${plural(node.count, 'record')}`));
         const lines = labelLines(node.label);
         const halfLabel = Math.max(...lines.map(text => text.length * labelSize * .29), 35);
@@ -734,7 +727,7 @@
           if (options.length) [...svg.querySelectorAll('[data-theme]')].find(item => item.dataset.theme === options[0].id)?.focus();
         }); svg.append(group);
       }
-      if (!visible.nodes.length) svg.append(svgElement('text', {x: 500, y: 320, 'text-anchor': 'middle', class: 'pcs-map-empty-label'}, 'No themes in this view. Reset hidden items or change the source type.'));
+      if (!visible.nodes.length) svg.append(svgElement('text', {x: 500, y: 320, 'text-anchor': 'middle', class: 'pcs-map-empty-label'}, 'No themes in this view. Choose Connections to see the full web.'));
       if (activeId) [...svg.querySelectorAll('[data-theme]')].find(item => item.dataset.theme === activeId)?.focus();
       if (activeEdge) [...svg.querySelectorAll('.pcs-map-edge-control')].find(item => item.dataset.edge === activeEdge)?.focus();
       applyBox();
@@ -752,15 +745,12 @@
       if (!eligible.some(node => node.id === state.compare && node.id !== state.anchor)) state.compare = eligible.find(node => node.id !== state.anchor)?.id || '';
       visible = visibleGraph(graph, state);
       if (!visible.edges.some(edge => edge.id === state.edge)) state.edge = null;
-      controls.type.value = state.type; controls.repeated.checked = state.repeated; controls.layouts.value = state.layout;
       showAll.disabled = state.layout === 'constellations' && !state.cluster;
       showAll.hidden = state.layout !== 'constellations' || !state.cluster;
       focusView.setAttribute('aria-pressed', String(state.layout === 'rings'));
       constellationView.setAttribute('aria-pressed', String(state.layout === 'constellations'));
       connectionsView.setAttribute('aria-pressed', String(state.layout === 'overview'));
       clusterCaption.textContent = state.layout === 'constellations' ? state.cluster || 'Mara’s constellations' : 'Detailed Map';
-      comparison.replaceChildren(); for (const node of eligible) if (node.id !== state.anchor) { const option = element('option', '', node.label); option.value = node.id; comparison.append(option); } comparison.value = state.compare; compareField.hidden = state.layout !== 'compare';
-      comparison.disabled = eligible.length < 2; focus.disabled = !state.selected; hide.disabled = !state.selected && !state.edge; restore.disabled = !state.hidden.length && !state.hiddenEdges.length;
       back.disabled = !past.length; forward.disabled = !future.length;
       graphView.setAttribute('aria-pressed', String(!listMode)); listView.setAttribute('aria-pressed', String(listMode));
       stage.hidden = listMode; list.hidden = !listMode; help.hidden = listMode;
@@ -768,21 +758,23 @@
       const constellationOverview = state.layout === 'constellations' && !state.cluster;
       caption.textContent = constellationOverview ? `${plural(constellations.nodes.length, 'constellation')} · ${plural(constellations.nodes.reduce((sum, group) => sum + group.count, 0), 'theme')}. Open one to explore.` :
         state.layout === 'constellations' ? `${state.cluster} · ${plural(visible.nodes.length, 'theme')} · ${plural(visible.edges.length, 'connection')} within this constellation. Choose a theme to follow its records and connections.` :
-          `${visible.nodes.length} of ${graph.nodes.length} themes · ${plural(visible.edges.length, 'connection')} · ${state.hidden.length + state.hiddenEdges.length} hidden. ${explanation}`;
+          `${visible.nodes.length} of ${graph.nodes.length} themes · ${plural(visible.edges.length, 'connection')}. ${explanation}`;
       const viewHelp = {
-        overview: 'Connections shows the full web, arranged by constellation. Hover or focus a star to read its name; select it to inspect the evidence. Choose Focus for its neighborhood, or Constellations to explore one group.',
+        overview: 'Select a thread to focus both themes and highlight their connections. Hover or focus a star to read its name; select it to inspect the evidence. Choose Focus for its neighborhood, or Constellations to explore one group.',
         rings: 'Focus shows one theme and its direct connections. Select a neighboring theme to center its neighborhood without resetting pan or zoom.',
         compare: 'Compare shows the two chosen themes and their direct connections. Selecting a star inspects its evidence while keeping both comparison anchors.',
         grid: 'Grid arranges themes by name. Select a theme or connection to inspect its evidence without moving the layout.',
         date: 'Saved-date groups themes by the latest supporting record’s saved date. Select a theme or connection to inspect its evidence.'
       };
-      help.textContent = state.layout === 'constellations' ? 'Open a constellation, then select a theme. Tab and Enter work throughout; arrow keys move between stars. Scroll to zoom, drag empty space to pan, and use All constellations to return. More map controls offers detailed layouts and filters.' :
+      help.textContent = state.layout === 'constellations' ? 'Open a constellation, then select a theme. Tab and Enter work throughout; arrow keys move between stars. Scroll to zoom, drag empty space to pan, and use All constellations to return.' :
         `${viewHelp[state.layout] || viewHelp.overview} Drag empty space to pan, scroll to zoom, and use Fit to return. Tab and arrow keys move between themes; Enter selects, Escape clears. List offers the same evidence.`;
       renderGraph(); list.replaceChildren();
+      const listEdge = visible.edges.find(edge => edge.id === state.edge);
+      const listSelection = new Set(listEdge ? [listEdge.from, listEdge.to] : [state.selected]);
       if (constellationOverview) {
         for (const group of constellations.nodes) { const item = button('', () => openCluster(group.id), 'list-item'); item.classList.add(toneClass(group)); item.dataset.listCluster = group.id; item.append(element('strong', '', group.label), element('span', 'muted', plural(group.count, 'theme')), element('span', '', 'Open this constellation')); list.append(item); }
-      } else for (const node of visible.nodes) { const item = button('', () => choose(node.id), 'list-item'); item.classList.add(toneClass(node)); item.dataset.listTheme = node.id; item.setAttribute('aria-pressed', String(node.id === state.selected)); item.append(element('strong', '', node.label), element('span', 'muted', `${node.group} · ${plural(node.count, 'record')}`), element('span', '', node.summary)); list.append(item); }
-      if (!(constellationOverview ? constellations.nodes.length : visible.nodes.length)) list.append(element('p', 'empty', 'No themes in this view. Reset hidden items or change the source type.'));
+      } else for (const node of visible.nodes) { const item = button('', () => choose(node.id), 'list-item'); item.classList.add(toneClass(node)); item.dataset.listTheme = node.id; item.setAttribute('aria-pressed', String(listSelection.has(node.id))); item.append(element('strong', '', node.label), element('span', 'muted', `${node.group} · ${plural(node.count, 'record')}`), element('span', '', node.summary)); list.append(item); }
+      if (!(constellationOverview ? constellations.nodes.length : visible.nodes.length)) list.append(element('p', 'empty', 'No themes in this view. Choose Connections to see the full web.'));
       renderInspector();
       if (activeListId) [...list.children].find(item => item.dataset.listTheme === activeListId)?.focus();
     }
