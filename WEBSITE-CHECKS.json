@@ -1,37 +1,171 @@
 {
-  "website_revision": 4,
-  "application_version": "0.9.33",
-  "baseline_commit": "35c9962f7b984eacc31cff63509ba6f5b4492336",
+  "application_version": "0.9.78",
+  "prepared_utc": "2026-10-12T19:44:13.461487+00:00",
+  "baseline_repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
+  "baseline_commit": "3f7816bb5a2b6a8e3979c20e600f212d0ddcaa86",
+  "latest_branch_check": {
+    "sha": "3f7816bb5a2b6a8e3979c20e600f212d0ddcaa86",
+    "date": "2026-10-12T19:22:37Z",
+    "message": "Update getting-started.html",
+    "checked_at_utc": "2026-10-12T19:39:34.7241744Z"
+  },
+  "application_release": {
+    "tag": "v0.9.78",
+    "html_url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.78",
+    "published_at": "2026-10-12T18:49:27Z",
+    "assets": [
+      {
+        "name": "PCS-0.9.78-SHA256SUMS.txt",
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.78/PCS-0.9.78-SHA256SUMS.txt",
+        "size": 183,
+        "digest": "sha256:f790978570fd8a74c97790da5dc2f388f780f439c939b89f25c966193b239457"
+      },
+      {
+        "name": "PCS-0.9.78-Source.zip",
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.78/PCS-0.9.78-Source.zip",
+        "size": 8148229,
+        "digest": "sha256:d6bfd94388d441ac27ba3dda69f6c5c5dfdce5802a0cab22d3fd4d0504279288"
+      },
+      {
+        "name": "PCS-0.9.78-Windows-x64.zip",
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.78/PCS-0.9.78-Windows-x64.zip",
+        "size": 47741597,
+        "digest": "sha256:38d810c7629bbb09a940140cfffcaf595cc46c0ca25ea668307f4cae6d4b97a8"
+      }
+    ],
+    "published_digests_match_delivered_package": true,
+    "checksum_text": "38d810c7629bbb09a940140cfffcaf595cc46c0ca25ea668307f4cae6d4b97a8  PCS-0.9.78-Windows-x64.zip\r\nd6bfd94388d441ac27ba3dda69f6c5c5dfdce5802a0cab22d3fd4d0504279288  PCS-0.9.78-Source.zip\r\n",
+    "draft": false,
+    "prerelease": false
+  },
   "static": {
-    "passed": true,
-    "html_pages": 5,
-    "local_html_references_checked": 283,
-    "css_references_checked": 0,
-    "unique_page_ids": true,
-    "social_images_present": true,
-    "map_data_identical_on_both_pages": true,
-    "graph_counts_and_shared_note_evidence_consistent": true,
-    "all_30_topics_connected": true,
-    "text_alternative_note_occurrences": 149,
-    "everyday_topics": 22,
-    "total_topics": 30,
-    "everyday_percent": 73.3
+    "status": "passed",
+    "pages": 6,
+    "local_references": 248,
+    "fragment_targets": 92,
+    "page_titles": {
+      "continuity-map.html": "Mara’s story · Explore the Continuity Map — PCS",
+      "data-and-privacy.html": "Your data and sharing choices — PCS",
+      "getting-started.html": "Get started with PCS on Windows",
+      "index.html": "PCS - Your Personal Thinking Space for Windows",
+      "local-ai.html": "Local AI, models and voice — PCS",
+      "memory-control.html": "How memory works — PCS"
+    },
+    "structured_metadata": "valid JSON on all pages",
+    "image_dimensions": "match actual PNGs",
+    "map_scripts_data_styles_and_memory_diagram_unchanged": true,
+    "google_verification_and_hero_tagline_preserved": true
   },
   "browser": {
-    "desktop": "Previous revision: homepage rendering; everyday, project and thought selection; connected-topic navigation and stable focus; zoom to 125%; keyboard pan; reset; no Map errors.",
-    "narrow_screen": "Passed in a 390px iframe preview (375px content area with scrollbar): mobile menu opens and closes; Garden project selection works; page width stays 375px; 660px graph scrolls inside its own 294px surface. The browser viewport override was ineffective, so the fixture used a real narrow iframe viewport.",
-    "no_scripts": "Passed using a scripts-removed copy: 30 map nodes and all 149 grouped note occurrences remain in HTML; opening the text alternative exposes the garden project note.",
-    "memory_guide": "The new recall section renders and both guide navigation lists link to it; no console errors observed.",
-    "selected_colors": "Passed for all 30 nodes and all four palette colors: selected star stroke, glow and every highlighted connection match the original node color. Direct SVG node click also selects correctly.",
-    "hero_tagline": "Revision 4: confirmed the original two-line hero tagline, unchanged direct feature heading and description, and no document overflow at 1265px. Saved a fresh homepage preview."
-  },
-  "scope": "Static website only. No app source changes, provider/device tests, personal vault access, GitHub commit or publishing.",
-  "tagline_restoration": {
-    "restored_headings": [
-      "Room to think. Space to connect."
+    "status": "passed",
+    "engine": "155.0.4283.45",
+    "viewport_widths": [
+      1440,
+      390
     ],
-    "hero": "Room to think. Space to connect.",
-    "scope": "Restore only the main homepage tagline, also quoted in the README. Keep all other revision-3 headings, descriptions, metadata, guide explanations and the unchanged revised map."
+    "viewport_height": 1000,
+    "pages_checked": 12,
+    "checks": [
+      {
+        "name": "all six pages at desktop and 390px; images load without horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "mobile menu opens, follows guide link and Escape closes",
+        "passed": true
+      },
+      {
+        "name": "screenshot preview opens current image and Escape closes",
+        "passed": true
+      },
+      {
+        "name": "setup tabs and keyboard navigation show matching panels",
+        "passed": true
+      },
+      {
+        "name": "homepage memory tabs work without replacing saved-word meaning",
+        "passed": true
+      },
+      {
+        "name": "Map demo retains authored counts and HTML record fallback",
+        "passed": true
+      },
+      {
+        "name": "Map Connections selects both endpoints; Clear, List and constellation views remain usable",
+        "passed": true
+      },
+      {
+        "name": "ordinary navigation, setup panels and all story records available without JavaScript",
+        "passed": true
+      }
+    ],
+    "page_console_and_http_errors": 0,
+    "external_runtime_requests": 0,
+    "tested_file_sha256": {
+      "index.html": "531b2240b585bf82b6cf17e28407d6d8c2a0e765e0b4d9e64445cc24703d10d6",
+      "continuity-map.html": "90e3b8ba4ec482ddb899941a4d2983f8b4a77fd5007685a6342215c88cb3e90a",
+      "memory-control.html": "c2646c264ef2c0bb278e0639dd52cd76cac3a75487b20bfaca6afab2e2cfcd60",
+      "local-ai.html": "1996fcc03a4479dc8fedd980b9e1da9b4062c1e10ed1dae9f7d0d7ec261c7381",
+      "getting-started.html": "61c8cd6d191447df7f84fc30a1b1e7d8c7a8291dba724696ba504cad1e5cb2ea",
+      "data-and-privacy.html": "8eb7a2a5f5462b33e52e9bb3945ce27e04cd6af693d04db0a903573ac88a2596",
+      "assets/site.css": "9f79c7a266d65956fe4f632a9971f7dc00fa79be9596ee25d111855d1e09b570",
+      "assets/site.js": "e0fc2977285d0b74ddef3115a0e9164720d19516f25cd1f20fb1760c0c4de30c",
+      "assets/map.js": "e60c93aa57f7e584eecc3556417e4ccbd55315c2058274d9892926c88b9d853d",
+      "assets/map.css": "3e0a834b646e0e51c0a58f2adee2e4f75ce31fea669ae3575d7378ca81bcab30",
+      "assets/map-data.js": "41deab9ddef902a61eb89a61179e0d1490574d875af94e5310ab528277c4f2af"
+    },
+    "isolated_browser_and_local_server_closed": true
   },
-  "map_unchanged_from_revision_3": true
+  "javascript_syntax": {
+    "status": "passed",
+    "files": [
+      "assets/site.js",
+      "assets/map.js",
+      "assets/map-data.js"
+    ]
+  },
+  "map_regression": {
+    "status": "passed",
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "method": "Existing edge-focus.test.cjs executed against this site assets directory; result recorded from the completed Node test output.",
+    "test_file": "work/website-map-connections-20261006/checks/edge-focus.test.cjs",
+    "test_sha256": "88f9a53d68ac06795560d7e79d6ee9abcdaf5d8ffee2c52cc13c3cbebb615fee",
+    "fixture_sha256": "633ec7a2bffdaa22472dca80dcfe3be446c09ca5d61c8e9f45f4be8275dce2dd",
+    "bound": {
+      "assets/map.js": "e60c93aa57f7e584eecc3556417e4ccbd55315c2058274d9892926c88b9d853d",
+      "assets/map-data.js": "41deab9ddef902a61eb89a61179e0d1490574d875af94e5310ab528277c4f2af",
+      "assets/map.css": "3e0a834b646e0e51c0a58f2adee2e4f75ce31fea669ae3575d7378ca81bcab30"
+    },
+    "scope": "Map event regression fixtures; additional actual-browser behavior is in browser-4/receipt.json."
+  },
+  "screenshots": {
+    "count": 8,
+    "version": "0.9.78",
+    "dimensions": [
+      1440,
+      1000
+    ],
+    "manifest_sha256": "c89df1f26d5f7037f2fb77371f6a94fed9d22f7f48c2611a5d2914e3c2c94c58"
+  },
+  "targeted_visual_review": {
+    "status": "passed",
+    "views": 8,
+    "scope": "Homepage conversation explanation, Conversation/Map and Notebook/Library screenshot pairs, and expanded setup pace controls, at 1440 and 390 pixels.",
+    "tested_file_sha256": {
+      "index.html": "531b2240b585bf82b6cf17e28407d6d8c2a0e765e0b4d9e64445cc24703d10d6",
+      "getting-started.html": "61c8cd6d191447df7f84fc30a1b1e7d8c7a8291dba724696ba504cad1e5cb2ea",
+      "assets/site.css": "9f79c7a266d65956fe4f632a9971f7dc00fa79be9596ee25d111855d1e09b570",
+      "assets/site.js": "e0fc2977285d0b74ddef3115a0e9164720d19516f25cd1f20fb1760c0c4de30c"
+    },
+    "capture_note": "The tall mobile element crop includes the fixed header; ordinary page screenshots were used to assess page layout."
+  },
+  "evidence_notes": [
+    "Initial browser launch was blocked by the Windows sandbox before page assertions; the isolated retry ran successfully.",
+    "A helper initially selected the sample-records heading rather than the adjacent records container. The selector was corrected; website bytes did not change.",
+    "Original failed receipts and the successful browser receipt are retained in the local work folder.",
+    "External community/support services were not exercised. Public release metadata and checksum contents were verified separately."
+  ],
+  "scope": "Static website files only. No application changes, personal vault access, new provider/device validation, Git commit, upload or deployment."
 }

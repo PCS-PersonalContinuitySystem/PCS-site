@@ -1,152 +1,95 @@
 {
-  "version": "0.9.33",
-  "method": "Five unchanged PCS 0.9.33 frontend fixture captures; two fresh browser captures of the revised static HTML/SVG website Map. All displayed sample content is invented. No personal vault, live AI or device session.",
-  "map": {
-    "topics": 30,
-    "everyday_topics": 22,
-    "everyday_percent": 73.33333333333333,
-    "connections": 104,
-    "invented_notes": 48,
-    "everyday_labels": [
-      "Appointments",
-      "Bread baking",
-      "Budgeting",
-      "Calling friends",
-      "Cooking",
-      "Dog walks",
-      "Exercise",
-      "Family time",
-      "Gardening",
-      "Grocery shopping",
-      "Housework",
-      "Journaling",
-      "Learning",
-      "Meal planning",
-      "Music practice",
-      "Photography",
-      "Reading",
-      "Sleep routine",
-      "Small repairs",
-      "Travel plans",
-      "Weekend plans",
-      "Work tasks"
-    ],
-    "other_labels": [
-      "Career plans",
-      "Desk organizer",
-      "Garden project",
-      "Less screen time",
-      "Local history",
-      "Sketchbook",
-      "Stargazing",
-      "Story ideas"
-    ],
-    "possible_connections": 127,
-    "omitted_connections": 23,
-    "method": "48 authored fictional notes with explicit topic membership. Counts are derived from these notes. Display the 104 strongest shared-note links; all 30 topics remain connected. 22 everyday activities, four interests, two thoughts and two projects.",
-    "counts_from_app_pipeline": false
-  },
-  "calendar": {
-    "plans": 15,
-    "dated": 14,
-    "undated": 1,
-    "dates": [
-      "2026-09-02",
-      "2026-09-04",
-      "2026-09-06",
-      "2026-09-09",
-      "2026-09-11",
-      "2026-09-13",
-      "2026-09-16",
-      "2026-09-18",
-      "2026-09-20",
-      "2026-09-23",
-      "2026-09-25",
-      "2026-09-27",
-      "2026-09-28",
-      "2026-09-30"
-    ]
-  },
-  "frontend_inputs": [
+  "version": "0.9.78",
+  "scope": "Current website application screenshots. Existing unreferenced historical repository assets are not relabeled.",
+  "fictional_data": true,
+  "screenshots": [
     {
-      "path": "pcs\\static\\index.html",
-      "sha256": "9165092b3044ce49da7a9f689bb6515b297639181512381273156b3bec972700"
+      "path": "screenshots/pcs-conversation-0978.png",
+      "version": "0.9.78",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "46e0ba0b38d9f0062295d754b0a466d5e77b3230f4ab106e84d43f08a86daf86",
+      "bytes": 237276,
+      "method": "Actual Local Huihui reply, fictional creative-writing prompt; experimental openings enabled explicitly.",
+      "original_asset": "work/roadmap0978/candidate3/native-browser/02-real-opening-display.png",
+      "unmodified": true
     },
     {
-      "path": "pcs\\static\\app.js",
-      "sha256": "a34b1e918e3cbdc5e106a84a9b0e0c881df5fa3962894cfbcb54980bae3953dd"
+      "path": "screenshots/pcs-map-0978.png",
+      "version": "0.9.78",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7f2344baff1cde997dc7944e20216792b9e220988bdbce85a9ec9191128c709f",
+      "bytes": 265175,
+      "method": "Installed PCS 0.9.78 interface with generated fictional records; no AI session.",
+      "original_asset": "work/roadmap0978/candidate3/extended-browser/map/02-connection-evidence.png",
+      "unmodified": true
     },
     {
-      "path": "pcs\\static\\appearance.js",
-      "sha256": "513ea6348a2bb246be5cfdcde2cbb7e0f0832e1171093769100f5690193b1c5f"
+      "path": "screenshots/pcs-notebook-0978.png",
+      "version": "0.9.78",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "96e2c477f2623b251d3718ee71548585a1da6a690295be542406799625a3ed45",
+      "bytes": 121298,
+      "method": "PCS 0.9.78 Help capture with fictional records and isolated fixture responses; not a live provider conversation.",
+      "original_asset": "work/roadmap0978/source/pcs/static/help-notebook-0978.png",
+      "unmodified": true
     },
     {
-      "path": "pcs\\static\\continuity_map_ui.js",
-      "sha256": "b69acb622441ef6d1f8f223c17ff19fd96191465560f0e8cbf38403df2cb6892"
+      "path": "screenshots/pcs-library-0978.png",
+      "version": "0.9.78",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "cd7f5f01651599aa4fd3432fe2409e8afec22b90da410ecc8ee5054e9e0d4a7b",
+      "bytes": 146741,
+      "method": "PCS 0.9.78 Help capture with fictional records and isolated fixture responses; not a live provider conversation.",
+      "original_asset": "work/roadmap0978/source/pcs/static/help-library-0978.png",
+      "unmodified": true
     },
     {
-      "path": "pcs\\continuity_map.py",
-      "sha256": "91b976b49c1e5e51ddbc5da8d880803c3d9612dc80f8ef20ff7eed712675d39e"
+      "path": "screenshots/pcs-materials-0978.png",
+      "version": "0.9.78",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "585c63828749cca0972f18805bff64ce54ef46b45918653a3fb635022d173770",
+      "bytes": 135578,
+      "method": "PCS 0.9.78 Help capture with fictional records and isolated fixture responses; not a live provider conversation.",
+      "original_asset": "work/roadmap0978/source/pcs/static/help-materials-0978.png",
+      "unmodified": true
+    },
+    {
+      "path": "screenshots/pcs-calendar-0978.png",
+      "version": "0.9.78",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "f2dc4d9a8f51b15a3b8eef1135a947f4ea332d3a519bbb55e37c286a0dd12e77",
+      "bytes": 104848,
+      "method": "PCS 0.9.78 Help capture with fictional records and isolated fixture responses; not a live provider conversation.",
+      "original_asset": "work/roadmap0978/source/pcs/static/help-calendar-0978.png",
+      "unmodified": true
+    },
+    {
+      "path": "screenshots/pcs-bookmarks-0978.png",
+      "version": "0.9.78",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "e16ef6d9fd335cceba8019a4ede9775e422908048c0bbddaacf7a3fe890aed28",
+      "bytes": 170207,
+      "method": "PCS 0.9.78 Help capture with fictional records and isolated fixture responses; not a live provider conversation.",
+      "original_asset": "work/roadmap0978/source/pcs/static/help-bookmarks-0978.png",
+      "unmodified": true
+    },
+    {
+      "path": "screenshots/pcs-writer-0978.png",
+      "version": "0.9.78",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "4e13537f574e13cc0d3d5abfb2dc1e619122eca6d116f42d9156b7aabe485354",
+      "bytes": 115777,
+      "method": "PCS 0.9.78 Help capture with fictional records and isolated fixture responses; not a live provider conversation.",
+      "original_asset": "work/roadmap0978/source/pcs/static/help-writer-0978.png",
+      "unmodified": true
     }
-  ],
-  "images": [
-    {
-      "file": "screenshots/pcs-calendar-0933.jpg",
-      "width": 1265,
-      "height": 1140,
-      "bytes": 120284,
-      "sha256": "28bbbd8722a6c8ce218c9c9c0b648eb5b157d8ffee9cda8a6556419434893db0",
-      "kind": "released_frontend_capture"
-    },
-    {
-      "file": "screenshots/pcs-conversation-0933.jpg",
-      "width": 1265,
-      "height": 1140,
-      "bytes": 165557,
-      "sha256": "12acaeecc1004b14b067c360809db9506fe6af74c59a71fa0279aee6d2a28d6b",
-      "kind": "released_frontend_capture"
-    },
-    {
-      "file": "screenshots/pcs-conversation-welcome-0933.jpg",
-      "width": 1600,
-      "height": 900,
-      "bytes": 140057,
-      "sha256": "9e2836e88134749f76882204a68fc6153e873f2da4bde862bb93db6136c1bc04",
-      "kind": "released_frontend_capture"
-    },
-    {
-      "file": "screenshots/pcs-map-sample-0933-r3.jpg",
-      "width": 1265,
-      "height": 905,
-      "bytes": 128821,
-      "sha256": "595fc2462c687769f720297331bf6126673c24858bb0f46e70e4467d82d96122",
-      "kind": "website_demo_capture"
-    },
-    {
-      "file": "screenshots/pcs-map-sample-detail-0933-r3.jpg",
-      "width": 1265,
-      "height": 905,
-      "bytes": 134078,
-      "sha256": "84330ad669df40ecd747b71d201c6bbe30d8511ab174ae2c4073b74a54a177bc",
-      "kind": "website_demo_capture"
-    },
-    {
-      "file": "screenshots/pcs-materials-0933.jpg",
-      "width": 1265,
-      "height": 1140,
-      "bytes": 157148,
-      "sha256": "5420e26a067a70f13f3c5fb6f78e0b269f828fd39ff7db1db4f457e7e129fbf1",
-      "kind": "released_frontend_capture"
-    },
-    {
-      "file": "screenshots/pcs-notebook-0933.jpg",
-      "width": 1265,
-      "height": 980,
-      "bytes": 77216,
-      "sha256": "31b4f2b6b4d4b1b18be61b38904d958f2619d3084398303ead402583e69d1587",
-      "kind": "released_frontend_capture"
-    }
-  ],
-  "website_revision": 4,
-  "frontend_inputs_scope": "Preserved provenance for the five unchanged PCS 0.9.33 product pictures; the current website Map is authored separately."
+  ]
 }

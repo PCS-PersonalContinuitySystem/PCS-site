@@ -1,18 +1,15 @@
-# Upload the PCS 0.9.33 website — revision 4
+# Upload the PCS 0.9.78 website update
 
-This ZIP is a complete ready-to-serve static site. It is not an application installer and it does not contain personal PCS data.
+The website update is prepared against PCS-site main commit `3f7816bb5a2b6a8e3979c20e600f212d0ddcaa86`. The matching public application release is `v0.9.78`; its published Windows and Source asset digests and checksum file were checked against the qualified packages on October 12, 2026.
 
-1. Extract `PCS-Website-0.9.33-r4-Upload.zip`.
-2. Open `PCS-PersonalContinuitySystem/PCS-site` on GitHub and use **Add file → Upload files** at the repository root.
-3. Upload the extracted files and folders, replacing same-named files. `index.html` must sit at the root beside the four guide pages, `README.md`, `.nojekyll`, `assets/`, `brand/` and `screenshots/`. Keep folder structure intact. Ensure the hidden `.nojekyll` file is included.
-4. Commit the upload to the branch your existing Pages setup publishes. Preserve the existing workflow and custom-domain settings. This package does not require replacing them.
-5. Wait for GitHub Pages to finish its deployment. Open the site, refresh, and check the plain feature descriptions, the interactive Map and its everyday topics, thoughts and projects, theme selection and zoom/reset, the two matching preview images, the four guides and the mobile menu. Download links should say **0.9.33** and point to the named Windows/source/checksum release assets.
+1. Extract **PCS-Website-0.9.78-Update.zip**. It contains only changed and new website files.
+2. Upload those extracted files and folders to the root of `PCS-PersonalContinuitySystem/PCS-site`, replacing matching paths. Keep the `assets/` and `screenshots/` paths intact. Do not place the update inside another folder.
+3. Preserve existing deployment workflows, `.nojekyll`, custom-domain settings and unrelated files. Older unused images and archives do not need to be deleted.
+4. Review the changes against the site's current branch before committing, especially if that branch changed after the baseline above. Use the repository's existing Pages publishing process.
+5. After deployment, check all six pages, the desktop and narrow-screen navigation, screenshot previews, setup tabs and Map controls. Confirm the Windows, Source and checksum links open the **v0.9.78** assets.
 
-Do not upload only the ZIP: GitHub Pages will not extract it. Do not nest the extracted site under a new folder. The ZIP has no extra enclosing directory, and all required runtime assets are included. Older unused repository assets can remain; this refresh does not need a cleanup commit.
+**PCS-Website-0.9.78-Full-Site.zip** is also provided for a clean local preview. It contains all active site files and no nested release archives or obsolete assets. Extract it and run `python -m http.server 8000 --bind 127.0.0.1`, then open `http://127.0.0.1:8000/`. Stop with Ctrl+C. The full-site ZIP can also be overlaid at the publishing root; it is not an instruction to erase other repository files.
 
-The site is intended for the existing project URL:
-https://pcs-personalcontinuitysystem.github.io/PCS-site/
+GitHub Pages does not extract ZIP files. Upload their contents. Both ZIPs use root-relative package paths with no enclosing folder. `PUBLICATION-MANIFEST.json` binds the active full-site files. The delivery report lists the exact additions and modifications and the website validation scope.
 
-For another domain or path, update canonical, Open Graph, JSON-LD and sitemap URLs. All internal navigation and local assets use relative links.
-
-No npm or build tool is needed. HTML is the editable source. See README.md for maintenance and SCREENSHOTS.md for image provenance. The upload bundle was prepared locally; publishing occurs when you commit/upload it to your Pages source.
+The site remains configured for https://pcs-personalcontinuitysystem.github.io/PCS-site/. Its canonical URLs, social metadata and sitemap retain that address. It uses no application backend or build step. This delivery prepares files; committing/uploading them to the Pages branch performs publication.

@@ -1,19 +1,22 @@
-# PCS 0.9.33 website samples — revision 3
+# PCS 0.9.78 website pictures
 
-All sample information is invented. Existing Conversation, Materials, Notebook and Calendar pictures are preserved from the previous PCS 0.9.33 website delivery. The two revision-3 Map pictures are fresh browser captures of the website demo, rather than the full PCS application.
+All displayed example content is fictional. Current pages use new, unmodified 0.9.78 PNG captures with their real version labels. `SCREENSHOT-MANIFEST.json` records each image's size, dimensions, SHA-256 and source evidence.
 
-## Interactive Map
+| Image | Source and scope |
+| --- | --- |
+| `pcs-conversation-0978.png` | Actual Local Huihui creative-writing trial in a disposable 0.9.78 instance. Experimental quiet-moment openings were explicitly enabled. No personal vault, microphone or audio trial. |
+| `pcs-map-0978.png` | Installed 0.9.78 Map, with generated fictional records and a selected Astronomy–Photography connection. |
+| `pcs-notebook-0978.png` | 0.9.78 Notebook Help capture with fictional saved work. |
+| `pcs-library-0978.png` | 0.9.78 Library Help capture with fictional saved records. |
+| `pcs-materials-0978.png` | 0.9.78 Materials Help capture with a fictional document. |
+| `pcs-calendar-0978.png` | 0.9.78 Calendar Help capture with fictional plans. |
+| `pcs-bookmarks-0978.png` | 0.9.78 retained reading positions with fictional sources. |
+| `pcs-writer-0978.png` | 0.9.78 writing/source Help capture with fictional content. |
 
-The same demo appears on the homepage and Map guide. It has 30 topics: 22 everyday activities (73%) and eight topics covering interests, thoughts and small projects. Examples include meal planning, chores, dog walks, work tasks, career plans, less screen time, a garden project and a desk organizer. A small joke remains in the bread-baking notes.
+Every PNG is 1440 × 1000. Conversation contains an actual model response; the remaining examples use generated records or isolated fixture responses. They are interface illustrations, not promises about model quality, hardware compatibility or personal usefulness. Captions distinguish the actual Local example from the other demonstration data. Images are not cropped, repainted or relabeled to simulate a newer version.
 
-All 48 fictional notes are authored for this website revision. Each note is assigned to the topics it supports. A topic count is the number of these notes mentioning that topic; a connection count is the number shared by its two topics. The picture shows 104 of 127 possible links, prioritizing repeated links and omitting some single-note links for readability. Every topic remains connected. These counts no longer come from the previous app-generated fixture.
+The interactive website Map is separate from the application screenshots. Its original story has 60 themes, 299 connections, eight constellations and 76 fictional records. Counts come from explicit shared-record membership. It makes no AI requests and saves no visitor changes. Its smaller size is a demonstration choice, not the application's capacity.
 
-The demo uses static HTML/SVG, enhanced by local JavaScript for selection, connected-topic navigation, zoom and reset. The selected notes and the full text alternative exist without JavaScript. The demo sends no network or AI request and stores no user data. It is not a psychological profile or proof of a causal connection.
+`assets/pcs-memory-flow.svg` is a hand-authored diagram of current memory controls, sources, corrections and permitted recall. It remains an explanation, not a screenshot or proof that a model will recall a particular fact.
 
-`screenshots/pcs-map-sample-0933-r3.jpg` shows Meal planning; `screenshots/pcs-map-sample-detail-0933-r3.jpg` shows Garden project. Older repository assets remain for archive compatibility and are not referenced by current pages.
-
-## Existing product pictures
-
-The five unchanged pictures were captured from the PCS 0.9.33 frontend with isolated invented fixture responses. They show no personal vault, live AI answer or real calendar plan. They do not establish microphone, GPU, OBS or provider behavior. The Calendar has 14 dated entries spread across September 2–30 plus one undated project.
-
-Product captions say **PCS 0.9.33 · Sample data**. Map captions say **Website sample · Invented data**. Image links and alt text are ordinary HTML. `SCREENSHOT-MANIFEST.json` records the current images and preserves frontend provenance for the five unchanged product captures.
+Older screenshot files can remain for historical links, but current pages do not present them as PCS 0.9.78. No deletion of historical repository assets is needed for this update.

@@ -10,7 +10,7 @@
 <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
 <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="continuity-map.html">Map</a><a href="memory-control.html" aria-current="page">Memory</a><a href="local-ai.html">Local AI</a><a href="getting-started.html">Get started</a><a href="https://discord.com/invite/2ssCQhNgAN" class="nav-community">Community ↗</a><a href="index.html#download" class="button small">Get PCS <span aria-hidden="true">↗</span></a></nav>
 </div></header><main id="main"><section class="page-intro wrap">
-  <p class="eyebrow">PCS 0.9.59 · Memory guide</p>
+  <p class="eyebrow">PCS 0.9.78 · Memory guide</p>
   <h1>See what was saved. Change what was understood.</h1>
   <p class="lead">Original passages, AI interpretations and your corrections have different roles. PCS keeps them inspectable and uses selected context when you permit recall.</p>
 </section>
@@ -20,6 +20,7 @@
     <a href="#flow">How memory works</a>
     <a href="#review">Inspect and correct</a>
     <a href="#recall">Choose what recall can use</a>
+    <a href="#keep">Keep wording and add quotations</a>
     <a href="#activity">Activity memories</a>
     <a href="#reflection">Explore another perspective</a>
     <a href="#saving">Check saving</a>
@@ -43,18 +44,36 @@
       <li>Enter your wording and choose <strong>Preview change</strong>. Review the effects before saving; Forget reviews dependent saved work.</li>
     </ol>
     <figure>
-      <a href="screenshots/pcs-library-0957.jpg"><img src="screenshots/pcs-library-0957.jpg" alt="PCS 0.9.57 Library showing fictional saved records available for inspection." loading="lazy"></a>
-      <figcaption>Fictional demonstration in the actual PCS 0.9.57 interface.</figcaption>
+      <a href="screenshots/pcs-library-0978.png"><img src="screenshots/pcs-library-0978.png" width="1440" height="1000" alt="PCS 0.9.78 Library with a selected fictional memory and saved-word search, including separate Map-note and Practice-history scopes." loading="lazy"></a>
+      <figcaption>PCS 0.9.78 · Actual interface with fictional saved records.</figcaption>
     </figure>
     <p>After an uncertain plain-language save, choose <strong>Review latest saved revision</strong>, compare it with your retained wording, then preview again. Advanced JSON has its separate <strong>Review latest saved memory</strong> action. Reviewing does not save either draft, and unfinished text in the other editor stays intact.</p>
-    <p>PCS records whether the owner or a model wrote each account; editable text cannot replace that attribution. Applicability wording explains context, not an access or spoiler filter. A correction cannot erase text already delivered to a conversation model; use a fresh conversation to continue without that earlier context.</p>
+    <p>PCS keeps recorded authorship—Owner, model or unknown—separate from editable wording. Applicability wording explains context, not an access or spoiler filter. A correction cannot erase text already delivered to a conversation model; use a fresh conversation to continue without that earlier context.</p>
+    <p>A correction can also change the words used to find a record. For a name record previously selected for the start of a conversation, PCS can preserve its identity across your correction so a fresh Start can consult the current account. This internal link does not declare a preferred name or grant permission to share it; current corrections and sharing checks still apply.</p>
+    <p><strong>Find saved work</strong> searches the coverage stated beside each group. Choose <strong>My Map notes</strong> or <strong>Practice history</strong> explicitly to find your connection notes or a question whose assessment you disputed. Open the current record before changing it. Original-document search and <strong>Resume reading</strong> stay in Materials.</p>
     <p>The <a href="continuity-map.html">Continuity Map</a> offers another route into the records. Follow a connection, inspect its support, and review a draft to bring selected records into Conversation.</p>
 
     <h2 id="recall">Choose what recall can use</h2>
-    <p>Open <strong>Settings → Memory &amp; sharing → Personal memory &amp; practice</strong>. Read the learning and original-source choices saved for your selected connection. Recall returns selected evidence within your permissions and the model’s context limits; it does not send the whole vault.</p>
+    <p>Open <strong>Settings → Memory &amp; sharing → Personal memory</strong>. Read the learning and original-source choices saved for your selected connection. Recall returns selected evidence within your permissions and the model’s context limits; it does not send the whole vault.</p>
     <p><strong>Your continuity is separate from the model.</strong> Changing a supported provider leaves saved originals, memories, corrections and notebooks in the same vault. The next model can work with permitted evidence from those records; it may interpret or recall them differently. <a href="getting-started.html#switching">Learn about switching connections</a>.</p>
     <p><strong>Find references in saved conversation passages</strong> can recover details that never became a memory. This needs permission to share originals. <strong>Search by meaning</strong> can complement word search; the optional <a href="local-ai.html#semantic">Local Nomic search model</a> runs on CPU without cloud embeddings.</p>
     <p>Recall can miss a detail, select an imperfect match or choose no callback. Inspect important evidence and correct mistakes. An earlier experience does not prove what you think or need now.</p>
+
+    <h2 id="keep">Keep exact wording, then choose where it belongs</h2>
+    <p>Use <strong>Keep draft</strong> below the Conversation message box, or <strong>Keep wording for later</strong> on a selected record or message. Review the complete wording, title and recorded authorship. Pasted or mixed wording stays unidentified unless you explicitly identify it as your own note. Keeping a thought does not mean you agree with it.</p>
+    <p>Open <strong>Kept for later</strong> below the composer. <strong>Continue</strong> places a complete, labeled draft in an empty composer for you to review and send. It does not send automatically. Kept text allows up to 6,000 Unicode code points; attribution and changed-evidence warnings count toward the complete 12,000-code-point Conversation draft. If it cannot fit, PCS explains why without shortening it or replacing your current draft.</p>
+    <ol class="steps">
+      <li>Select a kept thought and choose <strong>Add quoted thought…</strong>.</li>
+      <li>Choose an existing Notebook’s general notes or a lesson, or create a Calendar plan with the title and timing you choose.</li>
+      <li>Write your own framing separately. Review the exact quotation, authorship, evidence state and destination before saving.</li>
+    </ol>
+    <p>The original wording remains in a separate <strong>Quoted contributions</strong> section; your framing becomes ordinary destination notes. Quotations are available for local inspection and export. Current Notebook and Calendar model tools read ordinary fields, not the attached quotation bodies, so your framing follows the destination’s usual sharing permissions. An unencrypted export is a separate readable file.</p>
+    <figure>
+      <a href="screenshots/pcs-notebook-0978.png"><img src="screenshots/pcs-notebook-0978.png" width="1440" height="1000" alt="PCS 0.9.78 notebook editor with a fictional photography goal, Owner notes, and Keep wording for later and Export controls." loading="lazy"></a>
+      <figcaption>PCS 0.9.78 · A fictional notebook with your notes and saved-source controls.</figcaption>
+    </figure>
+    <p>After an uncertain addition, choose <strong>Check unconfirmed addition</strong> before trying again. PCS reconciles that same operation to avoid duplicates. Removing a shelf bookmark leaves an attached quotation in its destination. <strong>Remove this quotation</strong> removes that separate contribution while preserving your notes.</p>
+    <p>Selected records retain their exact references and revisions. Changed evidence needs review; forgetting linked evidence can remove kept copies and attached quotations. Model-written or mixed copies are removed conservatively when complete source exposure cannot be established. A verified selection is not proof that PCS knows everything a model saw. See <a href="data-and-privacy.html#compatibility">first-save reader requirements</a> before using these features with a vault you may reopen in an older PCS.</p>
 
     <h2 id="activity">Choose memories for the current activity</h2>
     <p>Open <strong>Activity</strong> in the Conversation toolbar to describe a book, game, film, series or real-life situation. Add progress and the kind of help you want. Optional <strong>Automatically follow my current activity</strong> uses your current words; it does not grant permission to share saved accounts. You can still set details manually.</p>
@@ -68,7 +87,7 @@
     <p>The result offers neutral questions, with complete supplied accounts available for inspection. Choose <strong>Save this question</strong> only if you want to retain it with its model attribution and evidence references. A saved question is not a fact about you. Question relevance remains experimental, and missing memories do not establish a blind spot.</p>
 
     <h2 id="saving">Check saving separately from memory formation</h2>
-    <p><strong>Saving &amp; memory health</strong> shows pending work and problems. A reply that says “saved” is not a storage receipt; check PCS’s save result and the record. Local memory processing can work through large originals in smaller sections and wait for quiet conversation periods.</p>
+    <p><strong>Work status</strong> and <strong>Saving &amp; memory health</strong> show pending work and problems. Work status can take you to the owning feature’s controls without starting or retrying provider work. A reply that says “saved” is not a storage receipt; check PCS’s save result and the record. Local memory processing can work through large originals in smaller sections and wait for quiet conversation periods.</p>
     <div class="callout"><p>If <strong>Saving needs recovery</strong> appears, keep PCS open. Choose <strong>Recover saving</strong> and enter this vault’s passphrase. PCS checks confirmed writes and retries retained text without starting a provider request. Wait for saving to settle before quitting.</p></div>
 
     <h2 id="controls">Saving, clearing and forgetting</h2>
@@ -77,11 +96,13 @@
       <li><strong>Clear chat</strong> clears the displayed chat. Hiding the memory stream only hides that panel; neither deletes saved continuity or stops learning.</li>
       <li><strong>Forgetting or deleting</strong> changes the selected saved records. It cannot retract content already sent to a provider or remove copies in earlier backups.</li>
     </ul>
+    <p>Review the current deletion preview: it can include dependent memories, saved questions, kept copies, quotations and unfinished-edit recovery. If the records change, review again. Removing an attached quotation preserves independently written destination notes. Restoring an older backup can bring back information forgotten afterward.</p>
+    <p>Practice corrections preserve later typing while an earlier save finishes. If unfinished-edit recovery is offered after Lock, inspect the saved assessment first, then copy the wording you still want into that attempt’s correction form. Recovery keeps the attempt and revision context; it never automatically reapplies the correction. See <a href="data-and-privacy.html#recovery">recovery limits</a>.</p>
 
     <h2 id="backup">Keep a restorable copy</h2>
-    <p>While stopped and unlocked, use <strong>Settings → Privacy &amp; maintenance → Backup &amp; restore → Save current backup…</strong>. Wait for confirmation and keep the passphrase. Original Materials files need a separate copy; readable exports are not encrypted vault backups.</p>
-    <p>Keep a pre-upgrade backup and verify a restored copy in an empty installation. See <a href="getting-started.html#upgrade">upgrade steps</a> and <a href="data-and-privacy.html">storage and sharing boundaries</a>.</p>
+    <p>Finish or cancel background work, then while stopped and unlocked use <strong>Settings → Privacy &amp; maintenance → Backup &amp; restore → Save current backup…</strong>. Wait for confirmation and keep the passphrase. Original Materials files need a separate copy; readable exports are not encrypted vault backups.</p>
+    <p>You can also enable automatic encrypted backups to an existing local or removable-drive folder, or create a protected copy with its own passphrase. Keep a pre-upgrade backup and verify a restored copy in an empty installation. See <a href="data-and-privacy.html#backup">backup schedules, passphrases and restore</a> and the <a href="getting-started.html#upgrade">upgrade steps</a>.</p>
   </article>
 </div>
-</main><footer class="site-footer"><div class="wrap footer-top"><div><a class="footer-brand" href="index.html">PCS</a><p>Room to think.<br>Space to connect.</p></div><div class="footer-links"><div><strong>Explore</strong><a href="continuity-map.html">Continuity Map</a><a href="memory-control.html">How memory works</a><a href="local-ai.html">Local AI</a></div><div><strong>Use PCS</strong><a href="getting-started.html">Setup &amp; updates</a><a href="data-and-privacy.html">Data &amp; privacy</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases">All releases ↗</a></div><div><strong>Get involved</strong><a href="https://discord.com/invite/2ssCQhNgAN">Discord ↗</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/issues">Report a bug ↗</a><a href="https://ko-fi.com/pcssupport">Support development ↗</a></div></div></div><div class="wrap footer-bottom"><p>© 2026 Courtney Dickson · First-party app code: GPL-3.0-only.</p><a href="https://github.com/PCS-PersonalContinuitySystem/PCS">App source &amp; license ↗</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS-site">Website source ↗</a></div></footer>
+</main><footer class="site-footer"><div class="wrap footer-top"><div><a class="footer-brand" href="index.html">PCS</a><p>Room to think.<br>Space to connect.</p></div><div class="footer-links"><div><strong>Explore</strong><a href="continuity-map.html">Continuity Map</a><a href="memory-control.html">How memory works</a><a href="local-ai.html">Local AI</a></div><div><strong>Use PCS</strong><a href="getting-started.html">Setup &amp; updates</a><a href="data-and-privacy.html">Data &amp; privacy</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases">All releases ↗</a></div><div><strong>Get involved</strong><a href="https://discord.com/invite/2ssCQhNgAN">Discord ↗</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/issues">Report a bug ↗</a><a href="https://ko-fi.com/pcssupport">Support development ↗</a></div></div></div><div class="wrap footer-bottom"><p>© 2026 Courtney Dickson · First-party app code: GPL-3.0-only.</p><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.78">App source &amp; license ↗</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS-site">Website source ↗</a></div></footer>
 <dialog class="image-dialog" aria-label="Full-size application screenshot"><button class="image-close" type="button" aria-label="Close full-size image">Close ×</button><img alt=""><p></p></dialog></body></html>
