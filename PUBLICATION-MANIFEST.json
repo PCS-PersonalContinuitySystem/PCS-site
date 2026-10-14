@@ -1,9 +1,9 @@
 {
-  "application_version": "0.9.78",
-  "prepared_utc": "2026-10-12T19:44:13.461487+00:00",
-  "baseline_repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
-  "baseline_commit": "3f7816bb5a2b6a8e3979c20e600f212d0ddcaa86",
-  "scope": "Active full-site files. The manifest excludes itself to avoid a circular hash. Historical unused repository assets may remain outside this list.",
+  "application_version": "0.9.87",
+  "prepared_utc": "2026-10-14T20:58:24.545306+00:00",
+  "baseline_repository": "PCS-PersonalContinuitySystem/PCS-site",
+  "baseline_commit": "30356b97fd809b3f2a4ad2f0709fe78a9b004c97",
+  "scope": "Active full-site files. Excludes this manifest itself. Historical unused repository assets may remain.",
   "files": [
     {
       "path": ".nojekyll",
@@ -12,28 +12,28 @@
     },
     {
       "path": "README.md",
-      "bytes": 6452,
-      "sha256": "8ec1ddf5146650fadd957e56052c4ef3167c93f8a7668181b4ad3ac680dada5c"
+      "bytes": 6535,
+      "sha256": "0881994cf8de58489e2470bc60ddbd2d508f336caad7bd99661f7e2988dcaaa7"
     },
     {
       "path": "SCREENSHOT-MANIFEST.json",
-      "bytes": 4145,
-      "sha256": "c89df1f26d5f7037f2fb77371f6a94fed9d22f7f48c2611a5d2914e3c2c94c58"
+      "bytes": 4227,
+      "sha256": "d5045338e53902bec2ae5b1dcfeae21f2a9c79f3ea81a60cd9d79fd8ea03745c"
     },
     {
       "path": "SCREENSHOTS.md",
-      "bytes": 2372,
-      "sha256": "f92a652ac84abe24b8b001ebdf0676dd6c32beb12bbaf66bd85d99335074f949"
+      "bytes": 2566,
+      "sha256": "2a7da510524e2e5c29d99e07cf22020333d95b4cdbd7bf3da7c3d4a9dbf6e1c2"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "bytes": 2229,
-      "sha256": "fbe4ce03173845b84e5dc39ed5685ce3e0675a735ed82eac0a9aa0982faa93f6"
+      "bytes": 2373,
+      "sha256": "3a56b6dead6160a13c3aeeca58ad3460bde33acf7225c5789bb3ecc59a305e29"
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 8010,
-      "sha256": "006db234244a112fe1fe13d82a7d8ac1f6aa9de48fce149422c572cf7b57618e"
+      "bytes": 18189,
+      "sha256": "12e01f6d14c3c51f8ffe96a0da2196404a2ae4245d2d969f4a5adc2831625b88"
     },
     {
       "path": "assets/map-data.js",
@@ -77,33 +77,33 @@
     },
     {
       "path": "continuity-map.html",
-      "bytes": 97675,
-      "sha256": "90e3b8ba4ec482ddb899941a4d2983f8b4a77fd5007685a6342215c88cb3e90a"
+      "bytes": 98312,
+      "sha256": "8984c8b9fe36c60cdc6e319bb7cb6772952b30b1e0081ed2c878d57c7a8f3211"
     },
     {
       "path": "data-and-privacy.html",
-      "bytes": 19059,
-      "sha256": "8eb7a2a5f5462b33e52e9bb3945ce27e04cd6af693d04db0a903573ac88a2596"
+      "bytes": 21862,
+      "sha256": "bf8204e7f1762eebad9a8c8c7ad84a1e67a166af2e0d65d141d8368ba6d85848"
     },
     {
       "path": "getting-started.html",
-      "bytes": 24395,
-      "sha256": "61c8cd6d191447df7f84fc30a1b1e7d8c7a8291dba724696ba504cad1e5cb2ea"
+      "bytes": 29204,
+      "sha256": "b1ae5a34fe90ecc4294b059f0ac4f0ef40c86bf41a390776ac7c54b1452cda93"
     },
     {
       "path": "index.html",
-      "bytes": 28596,
-      "sha256": "531b2240b585bf82b6cf17e28407d6d8c2a0e765e0b4d9e64445cc24703d10d6"
+      "bytes": 29474,
+      "sha256": "41d7002a262dce4bd7edf006bb17664a9df6eee9fe54369f466ea592256711ca"
     },
     {
       "path": "local-ai.html",
-      "bytes": 18289,
-      "sha256": "1996fcc03a4479dc8fedd980b9e1da9b4062c1e10ed1dae9f7d0d7ec261c7381"
+      "bytes": 20692,
+      "sha256": "092f4087ef29618f3b15fb8831c2bab7672f0a723f66df3f7df0dd11bdf4dae0"
     },
     {
       "path": "memory-control.html",
-      "bytes": 18911,
-      "sha256": "c2646c264ef2c0bb278e0639dd52cd76cac3a75487b20bfaca6afab2e2cfcd60"
+      "bytes": 22046,
+      "sha256": "a6614b2c7ccc58c37993ac66be07e6f72e074607c80623776d260e27b5388bd7"
     },
     {
       "path": "robots.txt",
@@ -131,9 +131,9 @@
       "sha256": "cd7f5f01651599aa4fd3432fe2409e8afec22b90da410ecc8ee5054e9e0d4a7b"
     },
     {
-      "path": "screenshots/pcs-map-0978.png",
-      "bytes": 265175,
-      "sha256": "7f2344baff1cde997dc7944e20216792b9e220988bdbce85a9ec9191128c709f"
+      "path": "screenshots/pcs-map-0987.png",
+      "bytes": 361920,
+      "sha256": "ba2af1be66ecafa84fdef706b0deaf17b6de0d0cdea3105f2e9729775ab3cbf2"
     },
     {
       "path": "screenshots/pcs-materials-0978.png",

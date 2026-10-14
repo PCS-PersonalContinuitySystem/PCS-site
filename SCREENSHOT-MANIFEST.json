@@ -1,6 +1,6 @@
 {
-  "version": "0.9.78",
-  "scope": "Current website application screenshots. Existing unreferenced historical repository assets are not relabeled.",
+  "version": "0.9.87",
+  "scope": "Website for PCS 0.9.87. Each capture retains its actual application version; the new Map is 0.9.87 and the retained examples are 0.9.78.",
   "fictional_data": true,
   "screenshots": [
     {
@@ -15,14 +15,14 @@
       "unmodified": true
     },
     {
-      "path": "screenshots/pcs-map-0978.png",
-      "version": "0.9.78",
-      "width": 1440,
-      "height": 1000,
-      "sha256": "7f2344baff1cde997dc7944e20216792b9e220988bdbce85a9ec9191128c709f",
-      "bytes": 265175,
-      "method": "Installed PCS 0.9.78 interface with generated fictional records; no AI session.",
-      "original_asset": "work/roadmap0978/candidate3/extended-browser/map/02-connection-evidence.png",
+      "path": "screenshots/pcs-map-0987.png",
+      "version": "0.9.87",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "ba2af1be66ecafa84fdef706b0deaf17b6de0d0cdea3105f2e9729775ab3cbf2",
+      "bytes": 361920,
+      "method": "Unmodified shipped PCS 0.9.87; 16 fictional records; Astronomy and Photography selected; supporting note expanded; no model or device request.",
+      "original_asset": "work/pcs-readme-0.9.87-20261014/assets/pcs-continuity-map-0.9.87.png",
       "unmodified": true
     },
     {

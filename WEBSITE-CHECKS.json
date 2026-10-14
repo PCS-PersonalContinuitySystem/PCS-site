@@ -1,54 +1,48 @@
 {
-  "application_version": "0.9.78",
-  "prepared_utc": "2026-10-12T19:44:13.461487+00:00",
-  "baseline_repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
-  "baseline_commit": "3f7816bb5a2b6a8e3979c20e600f212d0ddcaa86",
+  "application_version": "0.9.87",
+  "prepared_utc": "2026-10-14T20:58:24.545306+00:00",
+  "baseline_repository": "PCS-PersonalContinuitySystem/PCS-site",
+  "baseline_commit": "30356b97fd809b3f2a4ad2f0709fe78a9b004c97",
   "latest_branch_check": {
-    "sha": "3f7816bb5a2b6a8e3979c20e600f212d0ddcaa86",
-    "date": "2026-10-12T19:22:37Z",
-    "message": "Update getting-started.html",
-    "checked_at_utc": "2026-10-12T19:39:34.7241744Z"
+    "sha": "30356b97fd809b3f2a4ad2f0709fe78a9b004c97",
+    "checked_utc": "2026-10-14T20:58:16.808Z"
   },
   "application_release": {
-    "tag": "v0.9.78",
-    "html_url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.78",
-    "published_at": "2026-10-12T18:49:27Z",
+    "tag": "v0.9.87",
+    "published_at": "2026-10-14T20:30:02Z",
     "assets": [
       {
-        "name": "PCS-0.9.78-SHA256SUMS.txt",
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.78/PCS-0.9.78-SHA256SUMS.txt",
+        "name": "PCS-0.9.87-SHA256SUMS.txt",
         "size": 183,
-        "digest": "sha256:f790978570fd8a74c97790da5dc2f388f780f439c939b89f25c966193b239457"
+        "digest": "sha256:df63d0416aaf18ffb1abaf88174047349873f237ea5d4a50fb120af75039c1da",
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.87/PCS-0.9.87-SHA256SUMS.txt"
       },
       {
-        "name": "PCS-0.9.78-Source.zip",
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.78/PCS-0.9.78-Source.zip",
-        "size": 8148229,
-        "digest": "sha256:d6bfd94388d441ac27ba3dda69f6c5c5dfdce5802a0cab22d3fd4d0504279288"
+        "name": "PCS-0.9.87-Source.zip",
+        "size": 8417449,
+        "digest": "sha256:4c29b4bcc09058a9ff8fedb038b241fad6493812862e94be7e7b702168e83ccf",
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.87/PCS-0.9.87-Source.zip"
       },
       {
-        "name": "PCS-0.9.78-Windows-x64.zip",
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.78/PCS-0.9.78-Windows-x64.zip",
-        "size": 47741597,
-        "digest": "sha256:38d810c7629bbb09a940140cfffcaf595cc46c0ca25ea668307f4cae6d4b97a8"
+        "name": "PCS-0.9.87-Windows-x64.zip",
+        "size": 48005225,
+        "digest": "sha256:cc8d68082c3009797dacaba683a8a0fe5c599c923c3dfcc1a1cc66dbf5a4816c",
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.87/PCS-0.9.87-Windows-x64.zip"
       }
-    ],
-    "published_digests_match_delivered_package": true,
-    "checksum_text": "38d810c7629bbb09a940140cfffcaf595cc46c0ca25ea668307f4cae6d4b97a8  PCS-0.9.78-Windows-x64.zip\r\nd6bfd94388d441ac27ba3dda69f6c5c5dfdce5802a0cab22d3fd4d0504279288  PCS-0.9.78-Source.zip\r\n",
-    "draft": false,
-    "prerelease": false
+    ]
   },
+  "published_application_digests_and_checksum_bytes_match_qualified_delivery": true,
   "static": {
     "status": "passed",
     "pages": 6,
-    "local_references": 248,
-    "fragment_targets": 92,
+    "local_references": 253,
+    "fragment_targets": 96,
     "page_titles": {
       "continuity-map.html": "Mara’s story · Explore the Continuity Map — PCS",
       "data-and-privacy.html": "Your data and sharing choices — PCS",
-      "getting-started.html": "Get started with PCS on Windows",
+      "getting-started.html": "Get started with PCS 0.9.87 on Windows",
       "index.html": "PCS - Your Personal Thinking Space for Windows",
-      "local-ai.html": "Local AI, models and voice — PCS",
+      "local-ai.html": "Local AI, models and voice — PCS 0.9.87",
       "memory-control.html": "How memory works — PCS"
     },
     "structured_metadata": "valid JSON on all pages",
@@ -63,8 +57,51 @@
       1440,
       390
     ],
-    "viewport_height": 1000,
     "pages_checked": 12,
+    "image_loads": 32,
+    "image_previews": 18,
+    "setup_tabs": [
+      {
+        "width": 1440,
+        "id": "setup-google",
+        "name": "Google"
+      },
+      {
+        "width": 1440,
+        "id": "setup-openai",
+        "name": "OpenAI"
+      },
+      {
+        "width": 1440,
+        "id": "setup-meta",
+        "name": "Meta"
+      },
+      {
+        "width": 1440,
+        "id": "setup-local",
+        "name": "Local on this PC"
+      },
+      {
+        "width": 390,
+        "id": "setup-google",
+        "name": "Google"
+      },
+      {
+        "width": 390,
+        "id": "setup-openai",
+        "name": "OpenAI"
+      },
+      {
+        "width": 390,
+        "id": "setup-meta",
+        "name": "Meta"
+      },
+      {
+        "width": 390,
+        "id": "setup-local",
+        "name": "Local on this PC"
+      }
+    ],
     "checks": [
       {
         "name": "all six pages at desktop and 390px; images load without horizontal overflow",
@@ -75,11 +112,15 @@
         "passed": true
       },
       {
-        "name": "screenshot preview opens current image and Escape closes",
+        "name": "new1600x1100 PCS0.9.87 image loads and previews at both widths",
         "passed": true
       },
       {
         "name": "setup tabs and keyboard navigation show matching panels",
+        "passed": true
+      },
+      {
+        "name": "FAQ disclosures open and close by pointer and keyboard at both widths",
         "passed": true
       },
       {
@@ -91,7 +132,7 @@
         "passed": true
       },
       {
-        "name": "Map Connections selects both endpoints; Clear, List and constellation views remain usable",
+        "name": "Map theme/edge evidence, star selection, List, Fit and constellation semantics at both widths",
         "passed": true
       },
       {
@@ -99,73 +140,141 @@
         "passed": true
       }
     ],
-    "page_console_and_http_errors": 0,
-    "external_runtime_requests": 0,
+    "errors": [],
+    "external_requests": [],
     "tested_file_sha256": {
-      "index.html": "531b2240b585bf82b6cf17e28407d6d8c2a0e765e0b4d9e64445cc24703d10d6",
-      "continuity-map.html": "90e3b8ba4ec482ddb899941a4d2983f8b4a77fd5007685a6342215c88cb3e90a",
-      "memory-control.html": "c2646c264ef2c0bb278e0639dd52cd76cac3a75487b20bfaca6afab2e2cfcd60",
-      "local-ai.html": "1996fcc03a4479dc8fedd980b9e1da9b4062c1e10ed1dae9f7d0d7ec261c7381",
-      "getting-started.html": "61c8cd6d191447df7f84fc30a1b1e7d8c7a8291dba724696ba504cad1e5cb2ea",
-      "data-and-privacy.html": "8eb7a2a5f5462b33e52e9bb3945ce27e04cd6af693d04db0a903573ac88a2596",
+      ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "assets/documentation-096.css": "4b4ef72c63234ecc662476290d1b2561823cddc486266b410a43efc8db9052b3",
+      "assets/guides-c15cb839fc10.css": "c15cb839fc10691c4baa66086a944ab816c3fe512f4be4214a57dbcd494e3cff",
+      "assets/map-data.js": "41deab9ddef902a61eb89a61179e0d1490574d875af94e5310ab528277c4f2af",
+      "assets/map-demo-0933-r2.css": "98a1adee4af9e8a40eb72eb0124e32e09291328802f6a47c773aaa761171ca21",
+      "assets/map-demo-0933-r2.js": "be12b5d3e4eb2a40c1cdb21c2212ab71da4b60b31e9aa667391e7435922f7715",
+      "assets/map-demo-0933-r3-selected-colors.css": "0af57474813428a59f27c4c3936074070a1e20cb70ded92c4989565349b1c776",
+      "assets/map-demo-0933-r3.css": "d86cb823a3ff782b2f2397d4db05cea94fb23a4c33cc6afbe23a0e00682b666a",
+      "assets/map-demo-0933-r3.js": "9f8c9a4c4fea697f7e8b1b5e6b0aaf98011cd80ee08e7d36a91fdf96b2d277e4",
+      "assets/map.css": "3e0a834b646e0e51c0a58f2adee2e4f75ce31fea669ae3575d7378ca81bcab30",
+      "assets/map.js": "e60c93aa57f7e584eecc3556417e4ccbd55315c2058274d9892926c88b9d853d",
+      "assets/pcs-desktop.ico": "22f25df23c7d9c6d7ec45d551008f24de0c59f292835b855ceed72df6b555567",
+      "assets/pcs-memory-flow.svg": "84dd2b5efc9bbf96208f6fd703d1b3422c6e5787d6b03cc510ea4373c3c29d52",
+      "assets/pcs-star.svg": "70819824da82ed8cc8a473b4e097e453d569cfa89188e2e03e4f315aba03af2d",
+      "assets/pcs-wordmark-36dae8b37826.webp": "36dae8b37826d77dd914edcfeba73a10ed3a4036a3179f919941d53a5f28273d",
+      "assets/site-13805acce83d.js": "13805acce83d958e8e9cbf2b573540be095e9bafab691a50b0ea329d46774b1b",
+      "assets/site-5ac2421fa76b.js": "5ac2421fa76ba4768ca0cce36a8c297a4681312368a7d955a4420c0050057386",
+      "assets/site-9fb1750e41e8.js": "9fb1750e41e87c4b549e641096a8faa6d7bc3d36f316cadb79d51dcc411b48b3",
+      "assets/site-baf65b9a3b82.css": "baf65b9a3b8266af71a53d6bb0812778d86ccdf69d9e4a68fb923e90a9f38267",
+      "assets/site-controls-0910-r2.js": "74354f3e49de7cf44b28477b9bb26ff617ddeb2fbd97f2ce07b6807938e0857b",
+      "assets/site-controls-0924.js": "4c8d62caf94d114ef0d5092d647a0046e29a44a3d9d9d60f256c70c5ca033499",
       "assets/site.css": "9f79c7a266d65956fe4f632a9971f7dc00fa79be9596ee25d111855d1e09b570",
       "assets/site.js": "e0fc2977285d0b74ddef3115a0e9164720d19516f25cd1f20fb1760c0c4de30c",
-      "assets/map.js": "e60c93aa57f7e584eecc3556417e4ccbd55315c2058274d9892926c88b9d853d",
-      "assets/map.css": "3e0a834b646e0e51c0a58f2adee2e4f75ce31fea669ae3575d7378ca81bcab30",
-      "assets/map-data.js": "41deab9ddef902a61eb89a61179e0d1490574d875af94e5310ab528277c4f2af"
+      "assets/social-preview.jpg": "d962a1776bc3ae978bffafe5ad65cde5b6dc580f0b0430c9aa26e0a9c1de1ee5",
+      "assets/social-preview.svg": "d14fe0e791a1991b2a3ab4de5cfc941a0ed15bec8c189c5a726710d1e44c6f40",
+      "brand/pcs-banner-dark.png": "b50a6fd17682b871b7c3dd410ae9c323dd24a12b194b9861100ee0d96c1b8e42",
+      "brand/pcs-icon-transparent.png": "d4beeb2fe81f568336cd20fae65e73f70a1692f751b1cdff3c6ee10a4cf0fad8",
+      "brand/pcs-lockup-transparent.png": "1ee6ca3ab208fb2aa182f165ec54ba7740a532d956311a5d5b07552042e328b2",
+      "brand/pcs-wordmark-transparent.png": "a203e4bcc3917fac84e3586457d7da61d5fed4eff97fc276e480e1874908c7f6",
+      "continuity-map.html": "8984c8b9fe36c60cdc6e319bb7cb6772952b30b1e0081ed2c878d57c7a8f3211",
+      "data-and-privacy.html": "bf8204e7f1762eebad9a8c8c7ad84a1e67a166af2e0d65d141d8368ba6d85848",
+      "getting-started.html": "b1ae5a34fe90ecc4294b059f0ac4f0ef40c86bf41a390776ac7c54b1452cda93",
+      "index.html": "41d7002a262dce4bd7edf006bb17664a9df6eee9fe54369f466ea592256711ca",
+      "local-ai.html": "092f4087ef29618f3b15fb8831c2bab7672f0a723f66df3f7df0dd11bdf4dae0",
+      "memory-control.html": "a6614b2c7ccc58c37993ac66be07e6f72e074607c80623776d260e27b5388bd7",
+      "og.png": "b50a6fd17682b871b7c3dd410ae9c323dd24a12b194b9861100ee0d96c1b8e42",
+      "README.md": "0881994cf8de58489e2470bc60ddbd2d508f336caad7bd99661f7e2988dcaaa7",
+      "robots.txt": "5c0e5862bf4da3983972448ec1df52a7543bbc817c1b432a3cf262fb91ae089b",
+      "SCREENSHOT-MANIFEST.json": "d5045338e53902bec2ae5b1dcfeae21f2a9c79f3ea81a60cd9d79fd8ea03745c",
+      "screenshots/01-conversation-0913.png": "b9056eb4369afa7489fa30b3fc8266720f7b9c6e01f1045acaedab757104b349",
+      "screenshots/01-welcome-098.png": "a86aee1bda70abfbd290888f58e5a5ffd60dac4580733e9e407e85ba4603a5da",
+      "screenshots/01-welcome.jpg": "835c38bb755fe1e79ea80082b8d5a0fc879163c12347f2affb6b16851d6c7931",
+      "screenshots/02-continuity-map-0913.png": "ae46fcab7b60986f9947ff4b9b98bfb30e5d222e20bb7c56b0d7a8d66ff3e1d0",
+      "screenshots/02-memory-inspect-098.png": "1f99038ccd80d76b4c59f2086c1d27d97890a19bd43c9e64fa77b410cdecb25c",
+      "screenshots/02-memory-inspect.jpg": "ae8cb9b4d9da011d5c956166fa67a1e45a75b3b13e6d94bcdd5f581ccf04823b",
+      "screenshots/03-continuity-map-inspect-0913.png": "17e24be248995bc0af150e424023e320c8f80f9ea1466140700c92fde7c088da",
+      "screenshots/03-idea-streams.jpg": "29f65395a035139b853c0f6c0f275def789d34f7d95c79b31a0f151e9e3ade1c",
+      "screenshots/03-library-098.png": "cc04eb8456dee8dc5638bb4eee786e64c9c562ac6cb303516f53534c291cb525",
+      "screenshots/03-materials-documents-0910.png": "c6b7f478f35f74d771f4e3d5a398d9fbc9e14aecabf25797040d5904f43a71fe",
+      "screenshots/03-materials-documents.png": "c6b7f478f35f74d771f4e3d5a398d9fbc9e14aecabf25797040d5904f43a71fe",
+      "screenshots/03-materials-reference-notes-0910.png": "cab0892487a0810a9aff92552905b2e0f9a89bb8938e7c39db9b7387e7f1fe9c",
+      "screenshots/03-materials-reference-notes.png": "cab0892487a0810a9aff92552905b2e0f9a89bb8938e7c39db9b7387e7f1fe9c",
+      "screenshots/04-materials-documents-0913.png": "a97a1d07774152c3dc65f50684bd5578c301f780e94620db1ce943d203a139d2",
+      "screenshots/04-notebook-098.png": "7848024d47b8c2a32664f6ceed759d239dc9e2b6f7aab2215f35f2c925cb20ab",
+      "screenshots/04-notebook.jpg": "55fb80861ebb4719f7080ee4dd96ab3e04fea49c0e4a00219cfdf7849edf2c97",
+      "screenshots/05-calendar-0910.png": "c3e965afb67b32dfdcaa303636ffc172ea18c9903fb79417e5a8a22bdca652fc",
+      "screenshots/05-calendar-099.png": "c3e965afb67b32dfdcaa303636ffc172ea18c9903fb79417e5a8a22bdca652fc",
+      "screenshots/05-calendar.jpg": "548d74ad856985edd9cf0b9493b0dc15c8b4117caab3d61dff2bc95efdefc0af",
+      "screenshots/05-materials-web-sources-0913.png": "a0cbf490e8a18395a7d9288480f997b53b6c505ddd571e49244cd6903ac24118",
+      "screenshots/06-map-0910.png": "876b7bed6bc9712855cb1c38ef3c91824ebb918cd9e0fb560c6bc685c72d023f",
+      "screenshots/06-map-098.png": "876b7bed6bc9712855cb1c38ef3c91824ebb918cd9e0fb560c6bc685c72d023f",
+      "screenshots/06-map-v2-096.webp": "3992e83ef680cc132dcf12096f88c1cb5098c34e324ac09301fbc5f007c2f581",
+      "screenshots/06-notebook-0913.png": "a19ed3b1edacc063379e96a825352f95ab8a740d0be4e0feeb95d0f69f3ac329",
+      "screenshots/07-calendar-0913.png": "f6371b39642c361f0152a8d2815fd2b492ff1ffd9cbca4b0d1783ca51641d70b",
+      "screenshots/07-map-timeline-096.webp": "cd371da64dfb21ce13ec6d1f093d7c5c5b8eb5e87be0ea89daf7088a88c33d86",
+      "screenshots/07-map-timeline-098.png": "d003bf5f324f2295b360fcf6f858e4fdee28a9ab31fdb86f0f38adda3dbe5898",
+      "screenshots/08-library-0913.png": "16db90f1c4a9561d5361b6606adec67ca3b6f01856b2c4130ce37afebb85ac56",
+      "screenshots/08-writer-096.webp": "a3f20e8fddd1ad69bd87a09de15e74e0d71da99f6f939e404decd3b9ae6054c1",
+      "screenshots/09-memory-inspect-0913.png": "a596190f5c977d0ce80fac77db342666d86c3a15661d5eeb965de4b4f0d5656b",
+      "screenshots/10-material-reader-0913.png": "20c352e9950df18a940fc24fd453887a911e2663e35dd54dc41e245906dc2483",
+      "screenshots/11-saved-source-bookmark-0913.png": "624c62fe7d8bc259227efe0d3c22ade8366f5c9dbb46c8895cd1fcbb9d352cb6",
+      "screenshots/12-map-timeline-0913.png": "c4106426ff690aa7a049ebf56d0675125c7cdafe94fafea344ff8df416498043",
+      "screenshots/pcs-bookmarks-0978.png": "e16ef6d9fd335cceba8019a4ede9775e422908048c0bbddaacf7a3fe890aed28",
+      "screenshots/pcs-calendar-0924.jpg": "8a2c068d735cc19af1d44d528ec776dbcffdd92553caefb5d66bd27c00a10b45",
+      "screenshots/pcs-calendar-0933.jpg": "28bbbd8722a6c8ce218c9c9c0b648eb5b157d8ffee9cda8a6556419434893db0",
+      "screenshots/pcs-calendar-0950.jpg": "b40baac45d997d1587095ee239b067bb2ddc48400587ac723630fcbf3a1fb021",
+      "screenshots/pcs-calendar-0957.jpg": "5b9bdde3c2b9e9daf09f0134d11920c5928f48fa8f2e8afa1b9412bbb5684304",
+      "screenshots/pcs-calendar-0978.png": "f2dc4d9a8f51b15a3b8eef1135a947f4ea332d3a519bbb55e37c286a0dd12e77",
+      "screenshots/pcs-conversation-0924.jpg": "fc63c30f30216e3342e6104fc9e4baf435a88e3faffd29c332f44bea8a9bbeb6",
+      "screenshots/pcs-conversation-0933.jpg": "12acaeecc1004b14b067c360809db9506fe6af74c59a71fa0279aee6d2a28d6b",
+      "screenshots/pcs-conversation-0950.jpg": "c71e69323e3eacfc05c045421f3ed579a7f01264127c8b7e6ff24b25625349a6",
+      "screenshots/pcs-conversation-0957.jpg": "c80c25f4354c605a2824fa969e5af2a6dcf2a8c595301b30acd57f301de5860a",
+      "screenshots/pcs-conversation-0978.png": "46e0ba0b38d9f0062295d754b0a466d5e77b3230f4ab106e84d43f08a86daf86",
+      "screenshots/pcs-conversation-welcome-0924.jpg": "913351eb1dce467b035c4e0e813e33bdb1d5ca330e8607e2ef50d7e960af2b20",
+      "screenshots/pcs-conversation-welcome-0933.jpg": "9e2836e88134749f76882204a68fc6153e873f2da4bde862bb93db6136c1bc04",
+      "screenshots/pcs-library-0950.jpg": "ec981dad24da27cea29d605bd65880e1731c43d77cbe30669f4ceb02967b6d5d",
+      "screenshots/pcs-library-0957.jpg": "5a4e4b7a0d083dcef4855ef16c83d04a6993216cf24e3e6b0799ff9b8209cb57",
+      "screenshots/pcs-library-0978.png": "cd7f5f01651599aa4fd3432fe2409e8afec22b90da410ecc8ee5054e9e0d4a7b",
+      "screenshots/pcs-local-settings-0950.jpg": "e9480d734eaf57908736cc07149ed68fa54955646eba1f16381831a0c2da1419",
+      "screenshots/pcs-map-0950.jpg": "c83fba8d2570d62554051dacd11ac68ef63378b74956286e6d10212c980ebd18",
+      "screenshots/pcs-map-0957.jpg": "926812a672548b660cba25315ebf8a3f9a3a407b7220d906ef5805dc9dd2e5bc",
+      "screenshots/pcs-map-0978.png": "7f2344baff1cde997dc7944e20216792b9e220988bdbce85a9ec9191128c709f",
+      "screenshots/pcs-map-0987.png": "ba2af1be66ecafa84fdef706b0deaf17b6de0d0cdea3105f2e9729775ab3cbf2",
+      "screenshots/pcs-map-detail-0924.jpg": "8b7b61cac5332b6e92b6570ee9432d25946085d5b64a7a1a8e2bec8e840ed62d",
+      "screenshots/pcs-map-detail-0933.jpg": "0bdc1959724f5fafbda495c62d0ab2fe0e1437b828d8e92ec1ccc9cd980b0faf",
+      "screenshots/pcs-map-hero-0924.jpg": "c66f93518e89ae98f8bfd535935e4b8eb97bd0111d9f7c51a62f3aa28d8f6482",
+      "screenshots/pcs-map-hero-0933.jpg": "9664d4077d4bc05cdaccbf9ae8f0d7c1b46b1d3e548578fb3b2d715e84d5d05a",
+      "screenshots/pcs-map-sample-0933-r2.jpg": "8973d0a2cfe1709e5323ab22199ae751548b6ed98e35c0616cffef2e908b55e9",
+      "screenshots/pcs-map-sample-0933-r3.jpg": "595fc2462c687769f720297331bf6126673c24858bb0f46e70e4467d82d96122",
+      "screenshots/pcs-map-sample-detail-0933-r2.jpg": "70356c52e04ec8647a17254e72c2e5cb088a3455fa11d967b9b5bb0cf4636801",
+      "screenshots/pcs-map-sample-detail-0933-r3.jpg": "84330ad669df40ecd747b71d201c6bbe30d8511ab174ae2c4073b74a54a177bc",
+      "screenshots/pcs-materials-0924.jpg": "1ec355ea282548d1abd56bcf3c0b9450fc30d06723aa7af5cc047a1ca40cd408",
+      "screenshots/pcs-materials-0933.jpg": "5420e26a067a70f13f3c5fb6f78e0b269f828fd39ff7db1db4f457e7e129fbf1",
+      "screenshots/pcs-materials-0957.jpg": "f4e8fce30341c2f20ded12de5d2f1beb9bb49ea6878cca05814c6c940f6ab940",
+      "screenshots/pcs-materials-0978.png": "585c63828749cca0972f18805bff64ce54ef46b45918653a3fb635022d173770",
+      "screenshots/pcs-notebook-0924.jpg": "0b056970a994257bd72aafc88acad84c74305e515a80625f384cf609729115a4",
+      "screenshots/pcs-notebook-0933.jpg": "31b4f2b6b4d4b1b18be61b38904d958f2619d3084398303ead402583e69d1587",
+      "screenshots/pcs-notebook-0950.jpg": "8b6e71548feba93b4f5387cc9fd26785a006a62f152715ce63d77cd5bb5fffd3",
+      "screenshots/pcs-notebook-0957.jpg": "49561c244ca28085c22b0316104c33fad8fbdd39ba76676c3878dceb02f8235f",
+      "screenshots/pcs-notebook-0978.png": "96e2c477f2623b251d3718ee71548585a1da6a690295be542406799625a3ed45",
+      "screenshots/pcs-writer-0978.png": "4e13537f574e13cc0d3d5abfb2dc1e619122eca6d116f42d9156b7aabe485354",
+      "SCREENSHOTS.md": "2a7da510524e2e5c29d99e07cf22020333d95b4cdbd7bf3da7c3d4a9dbf6e1c2",
+      "sitemap.xml": "48effee8924b04948008d5e90fa85ab5da7b7f720705a08ad495e1079ebcf9ef",
+      "styles.css": "9f9b622f78318b9beeb7eb54131ca6010a9db4f47c574e8a835765966ae5eded",
+      "UPLOAD-INSTRUCTIONS.md": "3a56b6dead6160a13c3aeeca58ad3460bde33acf7225c5789bb3ecc59a305e29",
+      "website-0924-r2.css": "b1607bde666e4e35b5b58b3967987c3662c6d782cdb6b7f578a42584444e592a",
+      "website-0933.css": "951bf5f21e1b92a0f163e6615e7db6c2065e4e88bd8a1d5a399f21400e038661",
+      "website-refresh.css": "c2649eed5cb1e75b0cd3670303c03aed3d66dc1474cf87df55d1a871181781c7",
+      "website-screenshots-0913.css": "5c0016d8ca5d518f26d93c7016b0252439fb20040f8b9a5d777c8e40a89bc379"
     },
-    "isolated_browser_and_local_server_closed": true
-  },
-  "javascript_syntax": {
-    "status": "passed",
-    "files": [
-      "assets/site.js",
-      "assets/map.js",
-      "assets/map-data.js"
-    ]
-  },
-  "map_regression": {
-    "status": "passed",
-    "passed": 9,
-    "failed": 0,
-    "skipped": 0,
-    "method": "Existing edge-focus.test.cjs executed against this site assets directory; result recorded from the completed Node test output.",
-    "test_file": "work/website-map-connections-20261006/checks/edge-focus.test.cjs",
-    "test_sha256": "88f9a53d68ac06795560d7e79d6ee9abcdaf5d8ffee2c52cc13c3cbebb615fee",
-    "fixture_sha256": "633ec7a2bffdaa22472dca80dcfe3be446c09ca5d61c8e9f45f4be8275dce2dd",
-    "bound": {
-      "assets/map.js": "e60c93aa57f7e584eecc3556417e4ccbd55315c2058274d9892926c88b9d853d",
-      "assets/map-data.js": "41deab9ddef902a61eb89a61179e0d1490574d875af94e5310ab528277c4f2af",
-      "assets/map.css": "3e0a834b646e0e51c0a58f2adee2e4f75ce31fea669ae3575d7378ca81bcab30"
-    },
-    "scope": "Map event regression fixtures; additional actual-browser behavior is in browser-4/receipt.json."
+    "browser_and_test_server_closed": true,
+    "receipt_note": "All site files remained unchanged during this run. Only the generated check receipt and publication manifest are written afterwards."
   },
   "screenshots": {
     "count": 8,
-    "version": "0.9.78",
-    "dimensions": [
-      1440,
-      1000
+    "new_map_version": "0.9.87",
+    "new_map_dimensions": [
+      1600,
+      1100
     ],
-    "manifest_sha256": "c89df1f26d5f7037f2fb77371f6a94fed9d22f7f48c2611a5d2914e3c2c94c58"
+    "retained_versions": "0.9.78",
+    "manifest_sha256": "d5045338e53902bec2ae5b1dcfeae21f2a9c79f3ea81a60cd9d79fd8ea03745c"
   },
-  "targeted_visual_review": {
-    "status": "passed",
-    "views": 8,
-    "scope": "Homepage conversation explanation, Conversation/Map and Notebook/Library screenshot pairs, and expanded setup pace controls, at 1440 and 390 pixels.",
-    "tested_file_sha256": {
-      "index.html": "531b2240b585bf82b6cf17e28407d6d8c2a0e765e0b4d9e64445cc24703d10d6",
-      "getting-started.html": "61c8cd6d191447df7f84fc30a1b1e7d8c7a8291dba724696ba504cad1e5cb2ea",
-      "assets/site.css": "9f79c7a266d65956fe4f632a9971f7dc00fa79be9596ee25d111855d1e09b570",
-      "assets/site.js": "e0fc2977285d0b74ddef3115a0e9164720d19516f25cd1f20fb1760c0c4de30c"
-    },
-    "capture_note": "The tall mobile element crop includes the fixed header; ordinary page screenshots were used to assess page layout."
-  },
-  "evidence_notes": [
-    "Initial browser launch was blocked by the Windows sandbox before page assertions; the isolated retry ran successfully.",
-    "A helper initially selected the sample-records heading rather than the adjacent records container. The selector was corrected; website bytes did not change.",
-    "Original failed receipts and the successful browser receipt are retained in the local work folder.",
-    "External community/support services were not exercised. Public release metadata and checksum contents were verified separately."
-  ],
-  "scope": "Static website files only. No application changes, personal vault access, new provider/device validation, Git commit, upload or deployment."
+  "scope": "Static website packet. No GitHub commit or deployment, application model/device/private-vault testing, or long-session acceptance."
 }
