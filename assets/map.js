@@ -299,6 +299,30 @@
     return chosen;
   }
 
+  // Only an explicit Keep changes this page-local reading progress. Opening a
+  // passage, exploring the graph and skipping to the ending never count it.
+  function createStoryJourney(story) {
+    const clues = story?.clues || [], required = new Set(clues.flatMap(clue => clue.records)), kept = new Set();
+    return {
+      has: id => kept.has(id),
+      keep(id) { if (!required.has(id) || kept.has(id)) return false; kept.add(id); return true; },
+      reset() { kept.clear(); },
+      progress() {
+        const threads = clues.map(clue => ({id: clue.id, kept: clue.records.filter(id => kept.has(id)).length, total: clue.records.length,
+          complete: clue.records.every(id => kept.has(id))}));
+        return {kept: kept.size, total: required.size, threads, complete: required.size > 0 && kept.size === required.size};
+      },
+      next(clueId) {
+        const start = Math.max(0, clues.findIndex(clue => clue.id === clueId));
+        for (let offset = 0; offset < clues.length; offset++) {
+          const clue = clues[(start + offset) % clues.length], record = clue.records.find(id => !kept.has(id));
+          if (record) return {clueId: clue.id, recordId: record};
+        }
+        return null;
+      }
+    };
+  }
+
   function create(host, data) {
     if (host.dataset.pcsMapReady) return null;
     const doc = host.ownerDocument, win = doc.defaultView, prefix = `pcs-map-${++serial}`;
@@ -309,10 +333,11 @@
     host.classList.add('pcs-map'); host.dataset.pcsMapReady = 'true';
     if (!data || !Array.isArray(data.themes) || !Array.isArray(data.records) || !data.themes.length) { host.append(element('p', 'empty', 'The fictional Map is unavailable. You can still explore the rest of this page.')); return null; }
     const lookup = new Map(data.themes.map(theme => [theme.id, theme]));
-    const story = data.story, keptPassages = new Set();
+    const story = data.story, journey = createStoryJourney(story);
     const storyRecords = new Set((story?.clues || []).flatMap(clue => clue.records));
     const initialTheme = story?.clues?.[0]?.theme || data.themes[0].id;
-    let storyStep = story?.clues?.[0]?.id || null, storyEnding = false, storyInsight = null, storyFinish = null;
+    let storyStep = null, storyEnding = false, storyStarted = false, storyRecord = null, lastStoryStep = null;
+    let updateStoryReading = null;
     // Focus rings follows the selected theme without resetting the camera.
     // Keep its anchor separately so edge inspection and deselection retain it.
     let state = {selected: initialTheme, anchor: initialTheme, edge: null, layout: 'rings', cluster: '', compare: '', type: 'all', repeated: false, hidden: [], hiddenEdges: []};
@@ -400,44 +425,69 @@
     });
     fullscreen.disabled = !host.requestFullscreen; fullscreen.title = fullscreen.disabled ? 'Full screen is unavailable in this browser' : 'Open this demo in full screen';
     header.append(heading, fullscreen); host.append(header, about);
-    const storyPanel = element('details', 'story'), storyProgress = element('span', 'story-progress');
+    const storyPanel = element('section', 'story'), storyProgress = element('p', 'story-progress');
     const storySteps = new Map();
-    const storyComplete = clue => clue.records.every(id => keptPassages.has(id));
     const endingButton = button('Piece it together', () => openStoryEnding(false));
+    const startStory = button('Start story', resumeStory);
+    startStory.classList.add('pcs-map-story-primary');
+    const endingHint = element('p', 'story-instruction');
     function updateStoryProgress() {
       if (!story) return;
-      const complete = story.clues.filter(storyComplete).length;
-      storyProgress.textContent = `${complete} of ${story.clues.length} threads connected`;
-      endingButton.disabled = complete !== story.clues.length;
-      if (storyFinish) storyFinish.disabled = endingButton.disabled;
-      for (const clue of story.clues) {
+      const progress = journey.progress(), complete = progress.threads.filter(thread => thread.complete).length;
+      storyProgress.textContent = `${progress.kept} of ${progress.total} passages kept · ${complete} of ${story.clues.length} threads complete`;
+      endingButton.disabled = !progress.complete;
+      endingHint.textContent = progress.complete ? 'All eight passages are kept. Piece it together is ready.'
+        : `Keep all ${progress.total} passages to enable Piece it together (${progress.total - progress.kept} remaining), or skip to the ending at any time.`;
+      startStory.textContent = progress.complete ? 'Reread the story' : storyStarted || progress.kept ? 'Resume story' : 'Start story';
+      for (const [index, clue] of story.clues.entries()) {
         const control = storySteps.get(clue.id);
-        if (control) control.textContent = `${storyComplete(clue) ? '✓ ' : ''}${clue.label}`;
+        if (control) {
+          const thread = progress.threads[index];
+          control.count.textContent = `${thread.kept} of ${thread.total} passages kept${thread.complete ? ' · Complete' : ''}`;
+          control.button.setAttribute('aria-current', storyStep === clue.id ? 'step' : 'false');
+        }
       }
-      if (storyInsight && storyStep) {
-        const clue = story.clues.find(item => item.id === storyStep);
-        storyInsight.hidden = !storyComplete(clue);
-      }
+      updateStoryReading?.();
     }
-    function exploreStory(clue) {
-      storyStep = clue.id; storyEnding = false; storyPanel.open = false;
-      change(() => { state.type = 'all'; state.repeated = false; state.hidden = []; state.hiddenEdges = []; state.layout = 'rings'; state.cluster = lookup.get(clue.theme).group; state.selected = clue.theme; state.anchor = clue.theme; state.edge = null; }, `${clue.label}. Open the passages in the details panel and keep the ones that connect.`, true, true);
+    function resumeStory() {
+      const next = journey.next(lastStoryStep);
+      exploreStory(story.clues.find(clue => clue.id === next?.clueId) || story.clues[0], next?.recordId);
+    }
+    function exploreStory(clue, recordId) {
+      storyStarted = true; storyStep = clue.id; lastStoryStep = clue.id; storyEnding = false;
+      storyRecord = recordId || clue.records.find(id => !journey.has(id)) || clue.records[0];
+      change(() => { state.type = 'all'; state.repeated = false; state.hidden = []; state.hiddenEdges = []; state.layout = 'rings'; state.cluster = lookup.get(clue.theme).group; state.selected = clue.theme; state.anchor = clue.theme; state.edge = null; },
+        `${clue.label}. Passage ${clue.records.indexOf(storyRecord) + 1} of ${clue.records.length} is open. Read it, then choose Keep for this story when ready.`, true, true);
       focusStoryInspector();
     }
-    function focusStoryInspector() { inspector.focus({preventScroll: true}); if (win.matchMedia?.('(max-width: 800px)').matches) inspector.scrollIntoView({block: 'start'}); }
+    function focusStoryInspector() { inspector.focus({preventScroll: true}); inspector.scrollIntoView({block: 'start'}); }
+    function exploreFreely(connections = false) {
+      storyStep = null; storyEnding = false;
+      change(() => { if (connections) { state.layout = 'overview'; state.edge = null; } }, 'Explore freely. Your kept passages remain on this page; choose Resume story to return.', connections);
+      (listMode ? list.querySelector('button') : svg).focus({preventScroll: true});
+      if (win.matchMedia?.('(max-width: 800px)').matches) canvas.scrollIntoView({block: 'start'});
+    }
     function openStoryEnding(skipped) {
-      if (!story || (!skipped && !story.clues.every(storyComplete))) return;
+      if (!story || (!skipped && !journey.progress().complete)) return;
       storyStep = null; storyEnding = true; renderInspector();
       announce(skipped ? 'The ending is open. You can return to its supporting passages at any time.' : 'All three threads connect. Read what Mara did next.');
       focusStoryInspector();
     }
     if (story?.clues?.length) {
-      storyPanel.open = true;
-      const summary = element('summary', 'story-toggle', 'Follow Mara’s story'); summary.append(storyProgress);
+      const title = element('h4', 'story-title', 'Follow Mara’s story'); title.id = prefix + '-story-title';
+      storyPanel.setAttribute('aria-labelledby', title.id);
+      const steps = element('ol', 'story-steps');
       const options = element('div', 'story-actions');
-      for (const clue of story.clues) { const step = button(clue.label, () => exploreStory(clue)); storySteps.set(clue.id, step); options.append(step); }
-      options.append(endingButton, button('Skip to the ending', () => openStoryEnding(true), 'story-skip'));
-      storyPanel.append(summary, element('p', 'story-question', story.question), options, element('p', 'story-instruction', 'Follow three threads. Open their passages and keep the clues you find. You can also explore the Map freely.'));
+      for (const [index, clue] of story.clues.entries()) {
+        const step = button('', () => exploreStory(clue)), count = element('span', 'story-step-count'), item = element('li', 'story-step');
+        step.dataset.storyStep = clue.id;
+        step.append(element('span', 'story-step-title', `${index + 1}. ${clue.label}`), count);
+        storySteps.set(clue.id, {button: step, count}); item.append(step); steps.append(item);
+      }
+      options.append(startStory, button('Explore freely', () => exploreFreely()), endingButton, button('Skip to the ending', () => openStoryEnding(true), 'story-skip'));
+      storyPanel.append(title, element('p', 'story-question', story.question),
+        element('p', 'story-instruction', `Read and keep ${journey.progress().total} passages across three threads, then read the ending. Only Keep counts a passage; opening it does not. Progress lasts only on this page.`),
+        steps, storyProgress, options, endingHint);
       host.append(storyPanel); updateStoryProgress();
     }
     const toolbar = element('div', 'toolbar'), search = element('form', 'search');
@@ -481,19 +531,24 @@
     const status = element('p', 'status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); status.setAttribute('aria-atomic', 'true');
     host.append(status, element('p', 'footnote', 'Fictional website demo · Everything here stays in this page. No AI request, account, upload, or change to a PCS vault. Counts show shared records, not certainty or importance.'));
 
-    function recordCard(record, open = false) {
+    function keepStoryPassage(record) {
+      const added = journey.keep(record.id), progress = journey.progress();
+      const index = story.clues.findIndex(clue => clue.records.includes(record.id)), thread = progress.threads[index];
+      updateStoryProgress();
+      const message = `${added ? 'Kept' : 'Already kept'}: ${record.title}. ${thread.kept} of ${thread.total} passages in this thread; ${progress.kept} of ${progress.total} overall.${progress.complete ? ' All three threads are complete. Piece it together is ready.' : ''}`;
+      announce(message); return message;
+    }
+    function recordCard(record, open = false, guided = false) {
       const ending = record.id === story?.epilogueRecord;
-      const card = element('details', 'record'); card.open = open && (!ending || storyEnding);
+      const card = element('details', 'record'); card.dataset.recordId = record.id; card.open = open && (!ending || storyEnding);
       const summary = element('summary', 'record-summary'); summary.append(element('span', 'record-meta', `${record.type === 'notebook' ? 'Notebook' : 'Memory'} · ${new Date(record.date + 'T12:00:00Z').toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC'})}`), element('strong', 'record-title', record.title));
       if (ending && !storyEnding) summary.prepend(element('span', 'record-meta', 'Ending (spoilers) · Open to read'));
       const body = element('div', 'record-body'); body.append(element('p', '', record.text));
-      if (storyRecords.has(record.id)) {
-        const keep = button(keptPassages.has(record.id) ? 'Kept in your discoveries' : 'Keep this passage', () => {
-          keptPassages.add(record.id); keep.textContent = 'Kept in your discoveries'; keep.disabled = true;
-          updateStoryProgress();
-          announce(story.clues.every(storyComplete) ? 'You have connected all three threads. Choose Piece it together to read the ending.' : 'Passage kept. Your discoveries stay while this page is open.');
+      if (storyRecords.has(record.id) && !guided) {
+        const keep = button(journey.has(record.id) ? 'Kept for this story' : 'Keep for this story', () => {
+          keepStoryPassage(record); keep.textContent = 'Kept for this story'; keep.setAttribute('aria-pressed', 'true');
         });
-        keep.disabled = keptPassages.has(record.id); keep.dataset.keepRecord = record.id; body.append(keep);
+        keep.setAttribute('aria-pressed', String(journey.has(record.id))); keep.dataset.keepRecord = record.id; body.append(keep);
       }
       if (record.correction) { const correction = element('div', 'correction'); correction.append(element('strong', '', `${data.person?.name || 'Owner'}’s correction`), element('p', '', record.correction)); body.append(correction); }
       if (record.original) { const original = element('details', 'original'); const label = element('summary', '', record.type === 'notebook' ? 'Read the original note excerpt' : 'Read the original conversation excerpt'); original.append(label, element('blockquote', '', record.original)); body.append(original); }
@@ -508,30 +563,73 @@
     function renderInspector() {
       const active = doc.activeElement, focusTab = active?.closest?.('.pcs-map-tab')?.dataset.tab;
       inspector.replaceChildren();
-      storyInsight = null; storyFinish = null;
+      updateStoryReading = null;
+      host.dataset.storyMode = storyStep || storyEnding ? 'reading' : 'exploring';
+      // The reading pane comes first in both the visual and keyboard order.
+      // Free exploration restores the graph's original placement and geometry.
+      workspace.prepend(storyStep || storyEnding ? inspector : canvas);
+      inspector.setAttribute('aria-label', 'Selected theme or connection details');
+      updateStoryProgress();
       if (story && (storyStep || storyEnding)) {
         inspector.append(element('p', 'eyebrow', storyEnding ? 'The connection, made real' : 'Follow the evidence'));
-        inspector.append(button('← Browse the Map', () => { storyStep = null; storyEnding = false; renderInspector(); inspector.focus({preventScroll: true}); }));
+        inspector.append(button('Explore freely · keep my progress', () => exploreFreely()));
         const body = element('div', 'inspector-body'); body.tabIndex = 0; body.setAttribute('aria-label', 'Mara’s story passages');
         if (storyEnding) {
           inspector.append(element('h4', 'inspector-title', story.answerTitle));
+          inspector.append(element('p', 'inspector-count', journey.progress().complete ? 'All eight passages kept · three threads complete' : `Ending preview · ${journey.progress().kept} of ${journey.progress().total} passages kept`));
           for (const paragraph of story.answer) body.append(element('p', '', paragraph));
           const outcome = data.records.find(record => record.id === story.epilogueRecord);
           if (outcome) body.append(element('h5', 'subheading', 'What happened next'), recordCard(outcome, true));
           body.append(element('p', 'story-reflection', story.reflection), element('p', 'muted', 'This is an authored fictional story. In your own Map, connections are starting points for questions; the records and your judgment give them meaning.'));
+          body.append(element('p', 'summary', 'A theme gathers records. A line joins themes that share a record. Try selecting a line to inspect what connects them.'), button('Explore Connections', () => exploreFreely(true)));
           const own = element('a', 'button', 'Start your own thinking space ↗'); own.href = 'getting-started.html'; body.append(own);
-          body.append(button('Explore the story again', () => { keptPassages.clear(); updateStoryProgress(); exploreStory(story.clues[0]); }));
+          if (!journey.progress().complete) body.append(button('Return to unkept passages', resumeStory));
+          body.append(button('Start again · clear story progress', () => { journey.reset(); exploreStory(story.clues[0]); }));
+          inspector.append(body);
         } else {
           const clue = story.clues.find(item => item.id === storyStep);
-          inspector.append(element('h4', 'inspector-title', clue.label));
+          const record = data.records.find(item => item.id === storyRecord), index = clue.records.indexOf(storyRecord);
+          inspector.setAttribute('aria-label', `${clue.label}. Passage ${index + 1} of ${clue.records.length}`);
+          inspector.append(element('h4', 'inspector-title', `${story.clues.indexOf(clue) + 1}. ${clue.label}`));
+          const passageNav = element('nav', 'story-passages'); passageNav.setAttribute('aria-label', 'Passages in this thread');
+          const passageButtons = clue.records.map((id, offset) => {
+            const item = button('', () => { storyRecord = id; renderInspector(); focusStoryInspector(); });
+            item.dataset.storyPassage = id; item.setAttribute('aria-current', id === storyRecord ? 'true' : 'false');
+            item.title = data.records.find(value => value.id === id).title;
+            passageNav.append(item); return {item, id, offset};
+          });
+          inspector.append(passageNav);
           body.append(element('p', 'summary', clue.hint));
-          for (const id of clue.records) { const record = data.records.find(item => item.id === id); if (record) body.append(recordCard(record)); }
-          storyInsight = element('div', 'owner-note'); storyInsight.append(element('strong', '', 'A connection worth keeping'), element('p', '', clue.insight)); storyInsight.hidden = !storyComplete(clue); body.append(storyInsight);
-          const next = story.clues[(story.clues.indexOf(clue) + 1) % story.clues.length];
-          body.append(button(`Follow: ${next.label}`, () => exploreStory(next)));
-          storyFinish = button('Piece it together', () => openStoryEnding(false)); storyFinish.disabled = !story.clues.every(storyComplete); body.append(storyFinish);
+          body.append(recordCard(record, true, true));
+          const insight = element('div', 'owner-note'); insight.append(element('strong', '', 'This thread, connected'), element('p', '', clue.insight)); body.append(insight);
+          const controls = element('div', 'story-reader-controls'), feedback = element('p', 'story-reader-feedback'), actions = element('div', 'story-reader-actions');
+          const keep = button('Keep for this story', () => {
+            feedback.textContent = keepStoryPassage(record);
+            next.focus({preventScroll: true});
+          });
+          keep.dataset.keepRecord = record.id; keep.classList.add('pcs-map-story-primary');
+          const next = button('', () => {
+            const target = journey.next(clue.id);
+            if (target) exploreStory(story.clues.find(item => item.id === target.clueId), target.recordId);
+            else openStoryEnding(false);
+          });
+          next.dataset.storyNext = 'true';
+          updateStoryReading = () => {
+            const progress = journey.progress(), thread = progress.threads.find(item => item.id === clue.id), kept = journey.has(record.id), target = journey.next(clue.id);
+            for (const {item, id, offset} of passageButtons) item.textContent = `${journey.has(id) ? '✓ ' : ''}Passage ${offset + 1}`;
+            keep.textContent = kept ? 'Passage kept' : 'Keep for this story'; keep.setAttribute('aria-pressed', String(kept));
+            insight.hidden = !thread.complete;
+            feedback.textContent = `${thread.kept} of ${thread.total} passages kept in this thread · ${progress.kept} of ${progress.total} overall.${kept ? ' Choose the next passage when ready.' : ' Read this passage, then choose Keep. It counts once.'}`;
+            next.hidden = !kept;
+            if (!target) next.textContent = 'Piece it together →';
+            else {
+              const nextClue = story.clues.find(item => item.id === target.clueId);
+              next.textContent = nextClue === clue ? `Read passage ${clue.records.indexOf(target.recordId) + 1} of ${clue.records.length} →` : `Next thread: ${nextClue.label} →`;
+            }
+          };
+          actions.append(keep, next); controls.append(feedback, actions); inspector.append(body, controls); updateStoryReading();
         }
-        inspector.append(body); return;
+        return;
       }
       if (state.layout === 'constellations' && !state.selected && !state.edge) {
         inspector.append(element('p', 'eyebrow', state.cluster ? 'One constellation' : 'A fictional life, at a glance'),
@@ -839,7 +937,7 @@
   }
 
   function mountAll(doc = root.document, data = root.PCS_MAP_DATA) { if (!doc) return []; return [...doc.querySelectorAll('[data-pcs-map]')].map(host => create(host, data)); }
-  const api = {deriveGraph, dottedConnections, visibleGraph, constellationGraph, constellationLayout, labelLines, layoutGraph, routeEdges, curvePoint, closestEdge, create, mountAll};
+  const api = {deriveGraph, dottedConnections, visibleGraph, constellationGraph, constellationLayout, labelLines, layoutGraph, routeEdges, curvePoint, closestEdge, createStoryJourney, create, mountAll};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.PCSMapDemo = api;
   if (root.document) { if (root.document.readyState === 'loading') root.document.addEventListener('DOMContentLoaded', () => mountAll()); else mountAll(); }

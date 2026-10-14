@@ -236,8 +236,58 @@
 }
 /* At narrow widths keep the reading flow instead of squeezing two panes. */
 @media(max-width:800px){.pcs-map:fullscreen{height:100dvh;overflow:auto}.pcs-map-about{max-height:180px;overflow:auto}}
-/* The workspace floor permits scrolling only when controls leave too little room,
-   including expanded About / Compare at high zoom or in short windows. */
+/* A guided story is a reading task. Give the passage and its explicit Keep / next
+   actions their own space instead of fitting them below a crowded graph toolbar. */
+.pcs-map .pcs-map-story-title{font-size:18px;line-height:1.35;margin:0 0 5px}
+.pcs-map-story-progress{font-size:13px;font-weight:600;color:#dfecd1!important;margin:10px 0!important}
+.pcs-map-story-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;list-style:none;margin:12px 0 0;padding:0}
+.pcs-map-story-step{min-width:0;margin:0;padding:0}
+.pcs-map-story-step>.pcs-map-button{width:100%;height:100%;white-space:normal;text-align:left;padding:11px 12px}
+.pcs-map-story-step-title,.pcs-map-story-step-count{display:block}
+.pcs-map-story-step-title{font-size:13px;font-weight:650}
+.pcs-map-story-step-count{margin-top:5px;font-size:12px;color:#c2d3ca}
+.pcs-map-story-step [aria-current=step],.pcs-map-story-passages [aria-current=true]{border-color:var(--pcs-map-accent);background:#304437}
+.pcs-map .pcs-map-story-primary{background:#bfd29f;border-color:#bfd29f;color:#14241b;font-weight:650}
+.pcs-map .pcs-map-story-primary:hover{background:#d1e3b5;color:#14241b}
+.pcs-map-story-actions .pcs-map-button{min-height:40px}
+.pcs-map-story-instruction{font-size:12px;line-height:1.55}
+.pcs-map[data-story-mode=reading]{height:auto;max-height:none;overflow:visible}
+.pcs-map[data-story-mode=reading] .pcs-map-workspace{flex:none;height:clamp(600px,74dvh,850px);min-height:600px;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.pcs-map[data-story-mode=reading] .pcs-map-inspector{height:100%;min-height:0;max-height:none;padding:18px}
+.pcs-map[data-story-mode=reading] .pcs-map-inspector-body{flex:1 1 0;min-height:0;max-height:none;overflow:auto;overscroll-behavior:auto}
+.pcs-map[data-story-mode=reading] .pcs-map-record-body{font-size:15px;line-height:1.75;padding:0 16px 10px}
+.pcs-map[data-story-mode=reading] .pcs-map-record-title{font-size:16px;line-height:1.5}
+.pcs-map[data-story-mode=reading] .pcs-map-record-summary{padding:14px 30px 14px 16px}
+.pcs-map[data-story-mode=reading] .pcs-map-record-meta{font-size:12px}
+.pcs-map-story-passages{display:flex;gap:7px;flex-wrap:wrap;margin:4px 0 10px}
+.pcs-map-story-passages>.pcs-map-button{font-size:12px;min-height:36px;padding:8px 10px}
+.pcs-map-story-reader-controls{flex:none;border-top:1px solid #49645b;margin-top:8px;padding-top:12px;background:var(--pcs-map-panel)}
+.pcs-map-story-reader-feedback{font-size:12px;line-height:1.5;color:#cfddcc!important;margin:0 0 8px!important}
+.pcs-map-story-reader-actions{display:flex;flex-wrap:wrap;gap:8px}
+.pcs-map-story-reader-actions>.pcs-map-button{white-space:normal;text-align:left;line-height:1.45;min-height:44px}
+.pcs-map[data-story-mode=reading]:fullscreen{height:100dvh;overflow:auto}
+@media(min-width:801px) and (max-width:1100px){
+ .pcs-map[data-story-mode=reading] .pcs-map-workspace{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+}
+@media(max-width:800px){
+ .pcs-map[data-story-mode=reading] .pcs-map-workspace{height:auto;min-height:0;grid-template-columns:minmax(0,1fr)}
+ .pcs-map[data-story-mode=reading] .pcs-map-inspector{height:auto;padding:16px;overflow:visible}
+ .pcs-map[data-story-mode=reading] .pcs-map-inspector-body{flex:none;max-height:none;overflow:visible;padding:0}
+ .pcs-map[data-story-mode=reading] .pcs-map-canvas{min-height:340px;height:400px}
+ .pcs-map[data-story-mode=reading] .pcs-map-stage,.pcs-map[data-story-mode=reading] .pcs-map-svg{min-height:260px}
+ .pcs-map-story-reader-controls{padding-bottom:3px}
+ .pcs-map-story-reader-actions>.pcs-map-button{flex:1 1 160px}
+}
+@media(max-width:560px){
+ .pcs-map-primary-views{flex-wrap:wrap;min-width:0;max-width:100%}
+ .pcs-map-primary-views .pcs-map-button{white-space:normal}
+ .pcs-map-story-steps{grid-template-columns:minmax(0,1fr);gap:6px}
+ .pcs-map-story-step>.pcs-map-button{padding:9px 11px}
+ .pcs-map-story-step-count{margin-top:2px}
+ .pcs-map[data-story-mode=reading] .pcs-map-inspector{padding:13px}
+ .pcs-map[data-story-mode=reading] .pcs-map-record-body{padding-left:12px;padding-right:12px}
+ .pcs-map-story-actions .pcs-map-button{white-space:normal}
+}
 
 @media(prefers-reduced-motion:reduce){.pcs-map *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.pcs-map-edge-control-dot{fill:Canvas;stroke:ButtonText}.pcs-map-edge-control-count{fill:CanvasText}.pcs-map-node-dot{filter:none}.pcs-map{border:1px solid CanvasText}.pcs-map-node-dot,.pcs-map-node-star{fill:Canvas;stroke:ButtonText;filter:none}.pcs-map-node-count,.pcs-map-node-label{fill:CanvasText;stroke:Canvas}.pcs-map-node-ring{stroke:Highlight}.pcs-map-edge-line{stroke:CanvasText;opacity:1}.pcs-map-node-halo{display:none}.pcs-map-button,.pcs-map-tab,.pcs-map-list-item,.pcs-map-connection{border:1px solid ButtonText}.pcs-map button[aria-pressed=true],.pcs-map-tab[aria-selected=true]{border:2px solid Highlight}}
