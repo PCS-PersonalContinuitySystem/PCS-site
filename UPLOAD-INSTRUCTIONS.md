@@ -1,17 +1,28 @@
-# Upload the PCS 0.9.88 website update
+# Upload the PCS 0.9.102 website update
 
-The website update is prepared against PCS-site main commit `a211e22325be3490ed155822697af0736b06da5b`. The matching public application release is `v0.9.88`; its published Windows and Source asset digests and checksum file were checked against the qualified packages on October 14, 2026.
+This packet is prepared for `PCS-PersonalContinuitySystem/PCS-site`, using repository commit `5118cfe528a6afec5980241a1efd3a7302226a7b` as its baseline. It has not been published by this task.
 
-1. Extract **PCS-Website-0.9.88-Update.zip**. It contains only changed and new website files.
-2. Upload those extracted files and folders to the root of `PCS-PersonalContinuitySystem/PCS-site`, replacing matching paths. Keep the `assets/` and `screenshots/` paths intact. Do not place the update inside another folder.
-3. Preserve existing deployment workflows, `.nojekyll`, custom-domain settings and unrelated files. Older unused images and archives do not need to be deleted.
-4. Review the changes against the site's current branch before committing, especially if that branch changed after the baseline above. Use the repository's existing Pages publishing process.
-5. After deployment, check all six pages, the desktop and narrow-screen navigation, screenshot previews, setup tabs and Map controls. Confirm the Windows, Source and checksum links open the **v0.9.88** assets.
+## Use the Update ZIP
 
-**PCS-Website-0.9.88-Full-Site.zip** is also provided for a clean local preview. It contains all active site files and no nested release archives or obsolete assets. Extract it and run `python -m http.server 8000 --bind 127.0.0.1`, then open `http://127.0.0.1:8000/`. Stop with Ctrl+C. The full-site ZIP can also be overlaid at the publishing root; it is not an instruction to erase other repository files.
+1. Keep a copy of the current website or retain its Git commit before updating.
+2. Extract `PCS-Website-0.9.102-Update.zip` locally.
+3. Upload the **extracted contents to the existing repository root**, preserving the `assets/` and `screenshots/` subfolders. Replace the matching files. Do not upload the ZIP itself or put its contents inside a new enclosing folder.
+4. Preserve `.nojekyll`, any `CNAME`, `.github` deployment configuration and unrelated files. This update requires no deletion of historical assets, archives or screenshots.
+5. Review the changed paths before committing. If the repository has changed since the baseline above, compare overlapping files rather than replacing newer work blindly.
+6. After GitHub Pages finishes, reload the site and check the download, guide links, screenshot previews and Map story. A fresh page load may be needed for cached content.
 
-GitHub Pages does not extract ZIP files. Upload their contents. Both ZIPs use root-relative package paths with no enclosing folder. `PUBLICATION-MANIFEST.json` binds the active full-site files. The delivery report lists the exact additions and modifications and the website validation scope. Existing screenshots are unchanged, so the update ZIP does not duplicate them. The full-site ZIP includes all active images. The Map capture remains labeled 0.9.87 and other retained captures remain labeled 0.9.78.
+The Update ZIP contains only changed and new files. `CHANGED-FILES.json` identifies the paths and their baseline/current hashes. The Full-Site ZIP contains the active static pages, supporting assets and site documentation for a clean local preview; it is not a replacement for unrelated repository or deployment files.
 
-The site remains configured for https://pcs-personalcontinuitysystem.github.io/PCS-site/. Its canonical URLs, social metadata and sitemap retain that address. It uses no application backend or build step. This delivery prepares files; committing/uploading them to the Pages branch performs publication.
+## What to check after upload
 
-This update also clarifies the Map story: three numbered threads, eight passages, visible Keep and next-step actions, exact progress, a wider reading panel, phone-friendly reading order, and a separate free-exploration route. Progress lasts only on the current page. After upload, use a fresh page load to check the new Map assets.
+- Download links lead to published **v0.9.102** Windows, Source and SHA256SUMS assets.
+- The new app pictures are labeled **PCS 0.9.102 · fictional demonstration data**. No live AI conversation is claimed for them.
+- The two SVG diagrams open and remain readable. The Local diagram distinguishes image delivery from screen capture.
+- On desktop and a narrow screen, navigation, image dialogs, FAQ disclosures and memory/provider tabs remain usable.
+- The existing Map story still uses Start story and Keep & continue, with all eight passages, free exploration and the ending. Its 60-theme fictional website demo is separate from the app screenshots.
+
+## Local preview
+
+Extract `PCS-Website-0.9.102-Full-Site.zip` into a new folder. With Python installed, run `python -m http.server 8000 --bind 127.0.0.1` there and open `http://127.0.0.1:8000/`. Stop the server with Ctrl+C.
+
+`SHA256SUMS.txt` in the delivery folder checks the two website ZIPs. `DELIVERY-REPORT.json` and `INDEPENDENT-AUDIT.json` record the prepared packet's checks and exact identities. These are local preparation receipts; they do not establish a successful public deployment or live PCS model/device behavior.

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="890" viewBox="0 0 1200 890" role="img" aria-labelledby="title description">
+  <title id="title">How Local chooses context for a reply in PCS 0.9.102</title>
+  <desc id="description">Local first considers the current question and recent conversation using text. It can request permitted saved evidence, include an available current screen frame when relevant, use both, or answer without either. Memory and image permissions remain in force. Screen capture has separate controls. Optional memory hints are a different feature and are not required for this decision.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#a9c79b"/></marker></defs>
+  <style>text{font-family:system-ui,Segoe UI,sans-serif;fill:#e8eef0}.title{font-size:38px;font-weight:650}.section{font-size:16px;letter-spacing:2px;fill:#b6cca2}.heading{font-size:24px;font-weight:600}.body{font-size:20px;fill:#c4d2d6}.small{font-size:18px;fill:#c4d2d6}.card{fill:#192e38;stroke:#547078;stroke-width:1.5}.line{fill:none;stroke:#a9c79b;stroke-width:2;marker-end:url(#arrow)}</style>
+  <rect width="1200" height="890" rx="18" fill="#0d1b23"/>
+  <text x="48" y="66" class="title">Bring the context this question needs</text>
+  <text x="48" y="105" class="body">Local reply preparation in PCS 0.9.102</text>
+
+  <rect x="48" y="150" width="420" height="130" rx="14" class="card"/>
+  <text x="72" y="192" class="heading">Your question in context</text>
+  <text x="72" y="230" class="body"><tspan x="72">Typed input or completed speech.</tspan><tspan x="72" dy="28">What are we trying to answer?</tspan></text>
+  <path d="M468 215H535" class="line"/>
+  <rect x="537" y="150" width="615" height="130" rx="14" fill="#21372f" stroke="#69835e"/>
+  <text x="561" y="192" class="heading">A short text-only context decision</text>
+  <text x="561" y="230" class="body"><tspan x="561">Does saved memory or an available image help?</tspan><tspan x="561" dy="28">The decision itself receives no screen pixels.</tspan></text>
+
+  <path d="M844 280V315H227V351" class="line"/>
+  <path d="M844 315H600V351" class="line"/>
+  <path d="M844 315H973V351" class="line"/>
+  <rect x="48" y="353" width="358" height="211" rx="14" class="card"/>
+  <text x="72" y="395" class="heading">Saved context</text>
+  <text x="72" y="436" class="body"><tspan x="72">“What did we decide earlier?”</tspan><tspan x="72" dy="37">Use the normal guarded lookup.</tspan><tspan x="72" dy="29">Carry the relevant evidence</tspan><tspan x="72" dy="29">and its required corrections.</tspan></text>
+  <rect x="421" y="353" width="358" height="211" rx="14" class="card"/>
+  <text x="445" y="395" class="heading">Visual context</text>
+  <text x="445" y="436" class="body"><tspan x="445">“What is shown here?”</tspan><tspan x="445" dy="37">Include an available current</tspan><tspan x="445" dy="29">frame when relevant, with</tspan><tspan x="445" dy="29">Vision permission still required.</tspan></text>
+  <rect x="794" y="353" width="358" height="211" rx="14" class="card"/>
+  <text x="818" y="395" class="heading">Neither is needed</text>
+  <text x="818" y="436" class="body"><tspan x="818">“What is seven times eight?”</tspan><tspan x="818" dy="37">Reply without a personal lookup</tspan><tspan x="818" dy="29">or attaching incidental</tspan><tspan x="818" dy="29">desktop imagery.</tspan></text>
+  <path d="M227 564V600H600V635" class="line"/>
+  <path d="M600 564V635" class="line"/>
+  <path d="M973 564V600H600" fill="none" stroke="#a9c79b" stroke-width="2"/>
+  <rect x="48" y="637" width="1104" height="112" rx="14" class="card"/>
+  <text x="72" y="678" class="heading">Compose the reply with the selected context</text>
+  <text x="72" y="715" class="body">A question can need both memory and an image. Existing sharing and freshness checks still apply.</text>
+  <text x="48" y="795" class="small">This controls the image supplied to a reply. Screen capture has its own separate controls.</text>
+  <text x="48" y="824" class="small">Optional memory hints are separate and are not required. The decision adds some processing time.</text>
+  <text x="48" y="853" class="small">Illustrative questions · Model choices and answers can still be mistaken; this is not a reliability guarantee.</text>
+</svg>

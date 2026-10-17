@@ -1,22 +1,20 @@
-# Pictures for the PCS 0.9.87 website
+# Pictures for the PCS 0.9.102 website
 
-All displayed example content is fictional. The new Map picture is an unmodified capture of PCS 0.9.87; retained supporting examples are labeled with their actual 0.9.78 version. `SCREENSHOT-MANIFEST.json` records each image's size, dimensions, SHA-256 and source evidence.
+The six current images are unmodified captures of the shipped PCS 0.9.102 interface at 1920 × 1080. Their atlas, astronomy, photography and writing examples are authored fictional demonstration data in an isolated local vault. No AI model was started, no provider request was made, and no microphone, OBS capture or personal vault was used. These are interface illustrations, not live AI results.
 
-| Image | Source and scope |
+| Image | What it shows |
 | --- | --- |
-| `pcs-conversation-0978.png` | Actual Local Huihui creative-writing trial in a disposable 0.9.78 instance. Experimental quiet-moment openings were explicitly enabled. No personal vault, microphone or audio trial. |
-| `pcs-map-0987.png` | Shipped 0.9.87 Map with 16 fictional records. Astronomy–Photography selected, Repeated links only enabled, and a note about lenses expanded and selected for Conversation review. No AI request or device input. |
-| `pcs-notebook-0978.png` | 0.9.78 Notebook Help capture with fictional saved work. |
-| `pcs-library-0978.png` | 0.9.78 Library Help capture with fictional saved records. |
-| `pcs-materials-0978.png` | 0.9.78 Materials Help capture with a fictional document. |
-| `pcs-calendar-0978.png` | 0.9.78 Calendar Help capture with fictional plans. |
-| `pcs-bookmarks-0978.png` | 0.9.78 retained reading positions with fictional sources. |
-| `pcs-writer-0978.png` | 0.9.78 writing/source Help capture with fictional content. |
+| [Conversation](screenshots/pcs-conversation-0102.png) | A saved stopping point and next step, ready to review and continue. |
+| [Map](screenshots/pcs-map-0102.png) | A selected connection, supporting saved words and the Leave a landmark control. |
+| [Library](screenshots/pcs-library-0102.png) | Saved records beside a selected atlas memory and its available actions. |
+| [Materials](screenshots/pcs-materials-0102.png) | Two local documents and the selected original's reading and preparation controls. |
+| [Notebook](screenshots/pcs-notebook-0102.png) | An editable lesson outline with step notes and progress. |
+| [Calendar](screenshots/pcs-calendar-0102.png) | Private fictional plans, a selected day and an undated task. |
 
-The new Map PNG is 1600 × 1100; the retained 0.9.78 PNGs are 1440 × 1000. Conversation contains an actual model response; the remaining examples use generated records or isolated fixture responses. They are interface illustrations, not promises about model quality, hardware compatibility or personal usefulness. Captions distinguish the actual Local example from the other demonstration data. Images are not cropped, repainted or relabeled to simulate a newer version.
+[SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json) records the image versions, dimensions, file sizes, SHA-256 hashes and original capture paths. The local update packet also retains the full capture, fixture, source-binding and cleanup receipts. Captures use the actual delivered interface and ordinary navigation; images have not been repainted, cropped or relabeled to simulate a newer release.
 
-The interactive website Map is separate from the application screenshots. Its original story has 60 themes, 299 connections, eight constellations and 76 fictional records. Counts come from explicit shared-record membership. It makes no AI requests and saves no visitor changes. Its smaller size is a demonstration choice, not the application's capacity.
+The [memory diagram](assets/pcs-memory-flow-0102.svg) explains originals, revisable interpretations, optional memory hints, permitted lookup and selected evidence. The [Local context diagram](assets/pcs-local-context-0102.svg) explains when a reply can use saved evidence, an available image, both or neither. Both are hand-authored SVG explanations. Neither is a screenshot or a guarantee that a model will recall or interpret a particular fact correctly.
 
-`assets/pcs-memory-flow.svg` is a hand-authored diagram of current memory controls, sources, corrections and permitted recall. It remains an explanation, not a screenshot or proof that a model will recall a particular fact.
+The interactive website Map is separate from the application screenshots. Its story has 60 themes, 299 connections, eight constellations and 76 fictional records. Counts come from explicit shared-record membership. It makes no AI requests and saves no visitor changes. Its smaller size is a demonstration choice, not the application's capacity.
 
-Older screenshot files can remain for historical links, and their captions retain the version they actually show. No deletion of historical repository assets is needed for this update.
+Historical 0.9.78 supporting captures, the 0.9.87 Map capture and the earlier memory diagram remain available for existing links. Their original provenance is retained unchanged in the manifest. The historical 0.9.78 Conversation image contains an actual Local trial; it is not one of the six current illustrations. No historical repository assets need to be deleted when applying this update.

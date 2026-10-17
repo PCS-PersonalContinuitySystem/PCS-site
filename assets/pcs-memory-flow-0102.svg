@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1080" viewBox="0 0 1200 1080" role="img" aria-labelledby="title description">
+  <title id="title">PCS memory: saved words, current corrections and relevant recall</title>
+  <desc id="description">With saving and learning enabled, original conversation passages support source-linked memory interpretations. You can inspect, correct or forget them. A current question can use optional memory hints or initiate a permitted lookup. PCS checks sources, sharing, current versions and required corrections before sending selected evidence to the conversation provider. A failed lookup is different from an empty result, and a delivered result does not guarantee a correct answer.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#a9c79b"/></marker></defs>
+  <style>text{font-family:system-ui,Segoe UI,sans-serif;fill:#e8eef0}.title{font-size:38px;font-weight:650}.section{font-size:16px;letter-spacing:2px;fill:#b6cca2}.heading{font-size:23px;font-weight:600}.body{font-size:20px;fill:#c4d2d6}.small{font-size:18px;fill:#c4d2d6}.card{fill:#192e38;stroke:#547078;stroke-width:1.5}.line{fill:none;stroke:#a9c79b;stroke-width:2;marker-end:url(#arrow)}</style>
+  <rect width="1200" height="1080" rx="18" fill="#0d1b23"/>
+  <text x="48" y="66" class="title">Memory you can inspect and revise</text>
+  <text x="48" y="105" class="body">Keep the sources. Update the account. Bring back what helps with this question.</text>
+
+  <text x="48" y="161" class="section">01 · SAVE AND FORM, WITH YOUR PERMISSION</text>
+  <rect x="48" y="184" width="330" height="171" rx="14" class="card"/>
+  <text x="70" y="225" class="heading">Original passages</text>
+  <text x="70" y="264" class="body"><tspan x="70">Recorded words and speakers.</tspan><tspan x="70" dy="29">Transcripts can contain errors;</tspan><tspan x="70" dy="29">inspect the original wording.</tspan></text>
+  <path d="M378 269H430" class="line"/>
+  <rect x="432" y="184" width="330" height="171" rx="14" class="card"/>
+  <text x="454" y="225" class="heading">Memory interpretations</text>
+  <text x="454" y="264" class="body"><tspan x="454">Your chosen Memory provider</tspan><tspan x="454" dy="29">forms revisable accounts</tspan><tspan x="454" dy="29">linked to saved sources.</tspan></text>
+  <path d="M762 269H814" class="line"/>
+  <rect x="816" y="184" width="336" height="171" rx="14" class="card"/>
+  <text x="838" y="225" class="heading">Your current account</text>
+  <text x="838" y="264" class="body"><tspan x="838">Inspect sources and history.</tspan><tspan x="838" dy="29">Correct in your own words,</tspan><tspan x="838" dy="29">or choose Forget.</tspan></text>
+
+  <text x="48" y="410" class="section">02 · OPTIONAL HELP NOTICING CONTEXT</text>
+  <rect x="48" y="433" width="1104" height="132" rx="14" fill="#21372f" stroke="#69835e"/>
+  <text x="72" y="474" class="heading">Small hints, when enabled</text>
+  <text x="72" y="511" class="body"><tspan x="72">A startup sample or matching cue can point a supported model toward saved context.</tspan><tspan x="72" dy="29">Starts off. Uses existing sharing choices. A missing hint does not mean a missing memory.</tspan></text>
+
+  <text x="48" y="619" class="section">03 · RECALL FOR THE QUESTION IN FRONT OF YOU</text>
+  <rect x="48" y="643" width="238" height="176" rx="14" class="card"/>
+  <text x="68" y="684" class="heading">Current question</text>
+  <text x="68" y="723" class="body"><tspan x="68">Choose whether saved</tspan><tspan x="68" dy="29">context would help.</tspan><tspan x="68" dy="29">Hints are not required.</tspan></text>
+  <path d="M286 732H335" class="line"/>
+  <rect x="337" y="643" width="238" height="176" rx="14" class="card"/>
+  <text x="357" y="684" class="heading">Permitted lookup</text>
+  <text x="357" y="723" class="body"><tspan x="357">Search saved words</tspan><tspan x="357" dy="29">or configured meaning</tspan><tspan x="357" dy="29">and read evidence.</tspan></text>
+  <path d="M575 732H624" class="line"/>
+  <rect x="626" y="643" width="238" height="176" rx="14" class="card"/>
+  <text x="646" y="684" class="heading">Check before use</text>
+  <text x="646" y="723" class="body"><tspan x="646">Activity and sharing.</tspan><tspan x="646" dy="29">Sources and versions.</tspan><tspan x="646" dy="29">Required corrections.</tspan></text>
+  <path d="M864 732H913" class="line"/>
+  <rect x="915" y="643" width="237" height="176" rx="14" class="card"/>
+  <text x="935" y="684" class="heading">Selected evidence</text>
+  <text x="935" y="723" class="body"><tspan x="935">Relevant context for</tspan><tspan x="935" dy="29">your Conversation</tspan><tspan x="935" dy="29">provider to answer.</tspan></text>
+
+  <rect x="48" y="855" width="1104" height="127" rx="14" fill="#14252e" stroke="#405963"/>
+  <text x="72" y="892" class="heading">A lookup failure is different from an empty result</text>
+  <text x="72" y="928" class="body"><tspan x="72">If evidence cannot be safely delivered, PCS reports the lookup problem.</tspan><tspan x="72" dy="29">It does not establish that nothing was saved. A successful handoff can still yield a mistaken answer.</tspan></text>
+  <text x="48" y="1023" class="small">Saved continuity stays in your encrypted vault. Permitted cloud requests share their selected content.</text>
+  <text x="48" y="1052" class="small">Simplified PCS 0.9.102 workflow · Browsing alone makes no AI request; optional AI actions have their own controls.</text>
+</svg>
