@@ -424,21 +424,22 @@
       catch (_) { announce('This browser did not allow full screen. The Map is still available here.'); }
     });
     fullscreen.disabled = !host.requestFullscreen; fullscreen.title = fullscreen.disabled ? 'Full screen is unavailable in this browser' : 'Open this demo in full screen';
-    header.append(heading, fullscreen); host.append(header, about);
+    header.append(heading, fullscreen); host.append(header);
     const storyPanel = element('section', 'story'), storyProgress = element('p', 'story-progress');
+    const storyGuide = element('details', 'story-guide');
     const storySteps = new Map();
-    const endingButton = button('Piece it together', () => openStoryEnding(false));
+    const endingButton = button('Read the ending', () => openStoryEnding(false));
     const startStory = button('Start story', resumeStory);
     startStory.classList.add('pcs-map-story-primary');
     const endingHint = element('p', 'story-instruction');
     function updateStoryProgress() {
       if (!story) return;
-      const progress = journey.progress(), complete = progress.threads.filter(thread => thread.complete).length;
-      storyProgress.textContent = `${progress.kept} of ${progress.total} passages kept · ${complete} of ${story.clues.length} threads complete`;
+      const progress = journey.progress();
+      storyProgress.textContent = `${progress.kept} of ${progress.total} passages kept${progress.complete ? ' · Story complete' : ''}`;
       endingButton.disabled = !progress.complete;
-      endingHint.textContent = progress.complete ? 'All eight passages are kept. Piece it together is ready.'
-        : `Keep all ${progress.total} passages to enable Piece it together (${progress.total - progress.kept} remaining), or skip to the ending at any time.`;
-      startStory.textContent = progress.complete ? 'Reread the story' : storyStarted || progress.kept ? 'Resume story' : 'Start story';
+      endingHint.textContent = progress.complete ? 'You have kept all eight passages. The ending is ready.'
+        : 'No puzzle to solve: the story takes you through every passage in order. You can also skip ahead to the ending.';
+      startStory.textContent = progress.complete ? 'Read the ending' : storyStarted || progress.kept ? 'Resume story' : 'Start story';
       for (const [index, clue] of story.clues.entries()) {
         const control = storySteps.get(clue.id);
         if (control) {
@@ -450,25 +451,33 @@
       updateStoryReading?.();
     }
     function resumeStory() {
+      if (journey.progress().complete) { openStoryEnding(false); return; }
       const next = journey.next(lastStoryStep);
       exploreStory(story.clues.find(clue => clue.id === next?.clueId) || story.clues[0], next?.recordId);
     }
     function exploreStory(clue, recordId) {
+      storyGuide.open = false;
       storyStarted = true; storyStep = clue.id; lastStoryStep = clue.id; storyEnding = false;
       storyRecord = recordId || clue.records.find(id => !journey.has(id)) || clue.records[0];
       change(() => { state.type = 'all'; state.repeated = false; state.hidden = []; state.hiddenEdges = []; state.layout = 'rings'; state.cluster = lookup.get(clue.theme).group; state.selected = clue.theme; state.anchor = clue.theme; state.edge = null; },
-        `${clue.label}. Passage ${clue.records.indexOf(storyRecord) + 1} of ${clue.records.length} is open. Read it, then choose Keep for this story when ready.`, true, true);
+        `${clue.label}. Passage ${story.clues.flatMap(item => item.records).indexOf(storyRecord) + 1} of ${journey.progress().total} is open. Read it, then use the Keep and continue button below the passage.`, true, true);
       focusStoryInspector();
     }
-    function focusStoryInspector() { inspector.focus({preventScroll: true}); inspector.scrollIntoView({block: 'start'}); }
+    function focusStoryInspector() {
+      inspector.focus({preventScroll: true});
+      if (win.matchMedia?.('(max-width: 800px)').matches) inspector.scrollIntoView({block: 'start'});
+      else host.scrollIntoView({block: 'start'});
+    }
     function exploreFreely(connections = false) {
       storyStep = null; storyEnding = false;
       change(() => { if (connections) { state.layout = 'overview'; state.edge = null; } }, 'Explore freely. Your kept passages remain on this page; choose Resume story to return.', connections);
       (listMode ? list.querySelector('button') : svg).focus({preventScroll: true});
       if (win.matchMedia?.('(max-width: 800px)').matches) canvas.scrollIntoView({block: 'start'});
+      else host.scrollIntoView({block: 'start'});
     }
     function openStoryEnding(skipped) {
       if (!story || (!skipped && !journey.progress().complete)) return;
+      storyGuide.open = false;
       storyStep = null; storyEnding = true; renderInspector();
       announce(skipped ? 'The ending is open. You can return to its supporting passages at any time.' : 'All three threads connect. Read what Mara did next.');
       focusStoryInspector();
@@ -484,10 +493,17 @@
         step.append(element('span', 'story-step-title', `${index + 1}. ${clue.label}`), count);
         storySteps.set(clue.id, {button: step, count}); item.append(step); steps.append(item);
       }
-      options.append(startStory, button('Explore freely', () => exploreFreely()), endingButton, button('Skip to the ending', () => openStoryEnding(true), 'story-skip'));
-      storyPanel.append(title, element('p', 'story-question', story.question),
-        element('p', 'story-instruction', `Read and keep ${journey.progress().total} passages across three threads, then read the ending. Only Keep counts a passage; opening it does not. Progress lasts only on this page.`),
-        steps, storyProgress, options, endingHint);
+      options.append(startStory, button('Explore freely', () => exploreFreely()));
+      const summary = element('div', 'story-summary');
+      summary.append(title, element('p', 'story-question', 'How did an old idea find a place in Mara’s life? Read eight short passages to see the connection.'));
+      const guideSummary = element('summary', 'story-guide-toggle', 'Story guide');
+      const endingActions = element('div', 'story-actions');
+      endingActions.append(endingButton, button('Skip to the ending', () => openStoryEnding(true), 'story-skip'));
+      storyGuide.append(guideSummary,
+        element('p', 'story-instruction', '1. Start story. 2. Read the passage, then choose Keep & continue. 3. After passage 8, read the ending. The map follows along automatically; you do not need to find anything.'),
+        steps, endingHint, endingActions,
+        element('p', 'story-instruction', 'Keep marks a passage as read for this demo. Opening it alone does not count. Your progress stays on this page and resets when you leave or reload.'));
+      storyPanel.append(summary, options, storyProgress, storyGuide);
       host.append(storyPanel); updateStoryProgress();
     }
     const toolbar = element('div', 'toolbar'), search = element('form', 'search');
@@ -504,7 +520,7 @@
     const showAll = button('← All constellations', () => openCluster('')), clusterCaption = element('span', 'cluster-caption');
     const views = element('div', 'view-switch'); views.setAttribute('role', 'group'); views.setAttribute('aria-label', 'Map presentation');
     const graphView = button('Map', () => { listMode = false; render(); }), listView = button('List', () => { listMode = true; render(); }); views.append(graphView, listView);
-    const navigation = element('div', 'constellation-navigation'); navigation.append(showAll, clusterCaption, views); host.append(navigation);
+    const navigation = element('div', 'constellation-navigation'); navigation.append(views); host.append(navigation);
     const primaryViews = element('div', 'primary-views'); primaryViews.setAttribute('role', 'group'); primaryViews.setAttribute('aria-label', 'Explore the Map');
     const focusView = button('Focus', () => {
       if (!state.selected && story?.clues?.length) { exploreStory(story.clues[0]); return; }
@@ -513,7 +529,9 @@
     const constellationView = button('Constellations', () => change(() => { state.layout = 'constellations'; state.cluster = ''; state.selected = ''; state.edge = null; }, 'Open a constellation to explore its themes.', true, true));
     const connectionsView = button('Connections', () => change(() => { state.layout = 'overview'; state.edge = null; }, 'The full web shows all themes. Select a thread to focus both themes and their connections.', true, true));
     primaryViews.append(focusView, constellationView, connectionsView); navigation.prepend(primaryViews);
-    const caption = element('p', 'caption'), legend = element('p', 'legend'); host.append(caption, legend);
+    toolbar.prepend(navigation);
+    const caption = element('p', 'caption'), legend = element('p', 'legend');
+    const contextBar = element('div', 'context-bar'); contextBar.append(showAll, clusterCaption, caption); host.append(contextBar);
     const workspace = element('div', 'workspace'), canvas = element('div', 'canvas'), stage = element('div', 'stage');
     const svg = svgElement('svg', {class: 'pcs-map-svg', viewBox: `0 0 ${WIDTH} ${HEIGHT}`, role: 'group', 'aria-label': 'Fictional continuity graph. Tab to themes, Enter to inspect; arrow keys move between themes.', tabindex: '0'});
     const activeLabel = element('div', 'active-label'); activeLabel.hidden = true; activeLabel.style.fontSize = '13px'; activeLabel.setAttribute('aria-hidden', 'true');
@@ -525,23 +543,26 @@
     stage.append(svg, activeLabel, graphTools, history);
     const list = element('div', 'list'); list.setAttribute('aria-label', 'Themes in the current view');
     const help = element('p', 'navigation-help', 'In Focus rings, select a theme to center its neighborhood without resetting pan or zoom. Drag the background to pan or a theme to arrange it. Scroll to zoom. Double-click empty space or press Escape to clear the selection. Tab to themes; Enter selects. Arrow keys move between themes. + / − zoom, 0 fits. List offers the same evidence.');
-    canvas.append(stage, list, help);
+    canvas.append(stage, list);
     const inspector = element('aside', 'inspector'); inspector.setAttribute('aria-label', 'Selected theme or connection details'); inspector.tabIndex = -1;
     workspace.append(canvas, inspector); host.append(workspace);
     const status = element('p', 'status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); status.setAttribute('aria-atomic', 'true');
-    host.append(status, element('p', 'footnote', 'Fictional website demo · Everything here stays in this page. No AI request, account, upload, or change to a PCS vault. Counts show shared records, not certainty or importance.'));
+    const mapHelp = element('details', 'help');
+    mapHelp.append(element('summary', '', 'How to explore the map'), help, legend, about);
+    host.append(status, mapHelp, element('p', 'footnote', 'Fictional demo · No AI requests or uploads. Nothing is saved to PCS. Progress resets when you leave or reload. Lines show shared records, not cause or importance.'));
 
     function keepStoryPassage(record) {
       const added = journey.keep(record.id), progress = journey.progress();
       const index = story.clues.findIndex(clue => clue.records.includes(record.id)), thread = progress.threads[index];
       updateStoryProgress();
-      const message = `${added ? 'Kept' : 'Already kept'}: ${record.title}. ${thread.kept} of ${thread.total} passages in this thread; ${progress.kept} of ${progress.total} overall.${progress.complete ? ' All three threads are complete. Piece it together is ready.' : ''}`;
+      const message = `${added ? 'Kept' : 'Already kept'}: ${record.title}. ${thread.kept} of ${thread.total} passages in this thread; ${progress.kept} of ${progress.total} overall.${progress.complete ? ' All eight passages are kept. The ending is ready.' : ''}`;
       announce(message); return message;
     }
     function recordCard(record, open = false, guided = false) {
       const ending = record.id === story?.epilogueRecord;
-      const card = element('details', 'record'); card.dataset.recordId = record.id; card.open = open && (!ending || storyEnding);
-      const summary = element('summary', 'record-summary'); summary.append(element('span', 'record-meta', `${record.type === 'notebook' ? 'Notebook' : 'Memory'} · ${new Date(record.date + 'T12:00:00Z').toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC'})}`), element('strong', 'record-title', record.title));
+      const card = element(guided ? 'article' : 'details', 'record'); card.dataset.recordId = record.id; card.open = open && (!ending || storyEnding);
+      if (guided) card.classList.add('pcs-map-record-guided');
+      const summary = element(guided ? 'div' : 'summary', 'record-summary'); summary.append(element('span', 'record-meta', `${record.type === 'notebook' ? 'Notebook' : 'Memory'} · ${new Date(record.date + 'T12:00:00Z').toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC'})}`), element('strong', 'record-title', record.title));
       if (ending && !storyEnding) summary.prepend(element('span', 'record-meta', 'Ending (spoilers) · Open to read'));
       const body = element('div', 'record-body'); body.append(element('p', '', record.text));
       if (storyRecords.has(record.id) && !guided) {
@@ -572,7 +593,6 @@
       updateStoryProgress();
       if (story && (storyStep || storyEnding)) {
         inspector.append(element('p', 'eyebrow', storyEnding ? 'The connection, made real' : 'Follow the evidence'));
-        inspector.append(button('Explore freely · keep my progress', () => exploreFreely()));
         const body = element('div', 'inspector-body'); body.tabIndex = 0; body.setAttribute('aria-label', 'Mara’s story passages');
         if (storyEnding) {
           inspector.append(element('h4', 'inspector-title', story.answerTitle));
@@ -590,7 +610,9 @@
           const clue = story.clues.find(item => item.id === storyStep);
           const record = data.records.find(item => item.id === storyRecord), index = clue.records.indexOf(storyRecord);
           inspector.setAttribute('aria-label', `${clue.label}. Passage ${index + 1} of ${clue.records.length}`);
-          inspector.append(element('h4', 'inspector-title', `${story.clues.indexOf(clue) + 1}. ${clue.label}`));
+          const allPassages = story.clues.flatMap(item => item.records), passageNumber = allPassages.indexOf(record.id) + 1;
+          inspector.append(element('p', 'reader-position', `Passage ${passageNumber} of ${allPassages.length} · ${clue.label}`));
+          inspector.append(element('h4', 'inspector-title', record.title));
           const passageNav = element('nav', 'story-passages'); passageNav.setAttribute('aria-label', 'Passages in this thread');
           const passageButtons = clue.records.map((id, offset) => {
             const item = button('', () => { storyRecord = id; renderInspector(); focusStoryInspector(); });
@@ -598,36 +620,27 @@
             item.title = data.records.find(value => value.id === id).title;
             passageNav.append(item); return {item, id, offset};
           });
-          inspector.append(passageNav);
-          body.append(element('p', 'summary', clue.hint));
+          const passagePicker = element('details', 'passage-picker');
+          passagePicker.append(element('summary', '', 'Revisit a passage in this thread'), passageNav);
           body.append(recordCard(record, true, true));
           const insight = element('div', 'owner-note'); insight.append(element('strong', '', 'This thread, connected'), element('p', '', clue.insight)); body.append(insight);
           const controls = element('div', 'story-reader-controls'), feedback = element('p', 'story-reader-feedback'), actions = element('div', 'story-reader-actions');
-          const keep = button('Keep for this story', () => {
-            feedback.textContent = keepStoryPassage(record);
-            next.focus({preventScroll: true});
-          });
-          keep.dataset.keepRecord = record.id; keep.classList.add('pcs-map-story-primary');
           const next = button('', () => {
+            if (!journey.has(record.id)) keepStoryPassage(record);
             const target = journey.next(clue.id);
             if (target) exploreStory(story.clues.find(item => item.id === target.clueId), target.recordId);
             else openStoryEnding(false);
           });
-          next.dataset.storyNext = 'true';
+          next.dataset.storyNext = 'true'; next.dataset.keepRecord = record.id; next.classList.add('pcs-map-story-primary');
           updateStoryReading = () => {
             const progress = journey.progress(), thread = progress.threads.find(item => item.id === clue.id), kept = journey.has(record.id), target = journey.next(clue.id);
             for (const {item, id, offset} of passageButtons) item.textContent = `${journey.has(id) ? '✓ ' : ''}Passage ${offset + 1}`;
-            keep.textContent = kept ? 'Passage kept' : 'Keep for this story'; keep.setAttribute('aria-pressed', String(kept));
             insight.hidden = !thread.complete;
-            feedback.textContent = `${thread.kept} of ${thread.total} passages kept in this thread · ${progress.kept} of ${progress.total} overall.${kept ? ' Choose the next passage when ready.' : ' Read this passage, then choose Keep. It counts once.'}`;
-            next.hidden = !kept;
-            if (!target) next.textContent = 'Piece it together →';
-            else {
-              const nextClue = story.clues.find(item => item.id === target.clueId);
-              next.textContent = nextClue === clue ? `Read passage ${clue.records.indexOf(target.recordId) + 1} of ${clue.records.length} →` : `Next thread: ${nextClue.label} →`;
-            }
+            feedback.textContent = `${progress.kept} of ${progress.total} kept. ${kept ? 'You have already kept this passage.' : 'When you finish reading, keep this passage and move to the next one.'}`;
+            const finalKeep = !kept && progress.kept === progress.total - 1;
+            next.textContent = kept ? (target ? 'Continue story →' : 'Read the ending →') : finalKeep ? 'Keep & read the ending →' : 'Keep & continue →';
           };
-          actions.append(keep, next); controls.append(feedback, actions); inspector.append(body, controls); updateStoryReading();
+          actions.append(next); controls.append(feedback, actions); body.append(passagePicker); inspector.append(body, controls); updateStoryReading();
         }
         return;
       }
@@ -848,15 +861,13 @@
       focusView.setAttribute('aria-pressed', String(state.layout === 'rings'));
       constellationView.setAttribute('aria-pressed', String(state.layout === 'constellations'));
       connectionsView.setAttribute('aria-pressed', String(state.layout === 'overview'));
-      clusterCaption.textContent = state.layout === 'constellations' ? state.cluster || 'Mara’s constellations' : 'Detailed Map';
+      clusterCaption.textContent = state.layout === 'constellations' ? state.cluster || 'Mara’s constellations' : state.layout === 'rings' ? `Around ${lookup.get(state.anchor)?.label || 'one theme'}` : 'All connections';
       back.disabled = !past.length; forward.disabled = !future.length;
       graphView.setAttribute('aria-pressed', String(!listMode)); listView.setAttribute('aria-pressed', String(listMode));
       stage.hidden = listMode; list.hidden = !listMode; help.hidden = listMode;
-      const explanation = state.layout === 'rings' && state.anchor ? `Focus rings show ${lookup.get(state.anchor).label} and its direct connections. Select another theme to follow its neighborhood; pan and zoom stay in place.` : state.layout === 'compare' && state.anchor ? `Compare shows ${lookup.get(state.anchor).label} and ${lookup.get(state.compare)?.label || 'another theme'} with their direct connections.` : state.layout === 'date' ? 'Saved-date groups themes by the latest record saved in this source filter, not when a thought began.' : 'Select a theme or connection to inspect its evidence.';
       const constellationOverview = state.layout === 'constellations' && !state.cluster;
-      caption.textContent = constellationOverview ? `${plural(constellations.nodes.length, 'constellation')} · ${plural(constellations.nodes.reduce((sum, group) => sum + group.count, 0), 'theme')}. Open one to explore.` :
-        state.layout === 'constellations' ? `${state.cluster} · ${plural(visible.nodes.length, 'theme')} · ${plural(visible.edges.length, 'connection')} within this constellation. Choose a theme to follow its records and connections.` :
-          `${visible.nodes.length} of ${graph.nodes.length} themes · ${plural(visible.edges.length, 'connection')}. ${explanation}`;
+      caption.textContent = constellationOverview ? `${plural(constellations.nodes.length, 'constellation')} · ${plural(constellations.nodes.reduce((sum, group) => sum + group.count, 0), 'theme')}` :
+        `${visible.nodes.length} of ${graph.nodes.length} themes · ${plural(visible.edges.length, 'connection')}`;
       const viewHelp = {
         overview: 'Select a thread to focus both themes and highlight their connections. Hover or focus a star to read its name; select it to inspect the evidence. Choose Focus for its neighborhood, or Constellations to explore one group.',
         rings: 'Focus shows one theme and its direct connections. Select a neighboring theme to center its neighborhood without resetting pan or zoom.',
