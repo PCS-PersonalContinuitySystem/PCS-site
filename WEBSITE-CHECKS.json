@@ -1,500 +1,86 @@
 {
   "application_version": "0.9.114",
-  "prepared_utc": "2026-10-20T20:33:08.900887+00:00",
-  "baseline_commit": "cd2eb15726f79f482325e2f1e856a26fb3ae0fa3",
+  "revision": "map-clean-20261020-r2",
+  "prepared_utc": "2026-10-20T20:49:01.482728+00:00",
   "publication_performed": false,
-  "scope": "Local static website and fictional interface illustrations; not live PCS acceptance or public deployment.",
+  "scope": "Map presentation only; locally checked desktop and mobile website demo. No live PCS acceptance.",
+  "baseline": "PCS-Website-0.9.114-Full-Site.zip",
+  "baseline_sha256": "ecc3264295d830f728ba3c644bcf05b5b7449e06aed7d81abc7c70d42edc57f2",
+  "prior_checks_sha256": "70eaaf5e5fa42e218480ec9752c73a8e4ffffe14accc3dac06f2498c531b4fb4",
   "static": {
-    "result": "passed",
-    "checks": {
-      "unrelated_files_branding_and_original_map_records_preserved": true,
-      "safe_reference_closure_and_fragments": true,
-      "current_release_links_and_six_jsonld_blocks_match_verified_release": true,
-      "screenshot_bytes_dimensions_versions_and_retained_provenance": true,
-      "active_svg_xml_valid_without_scripts": true,
-      "76_map_supporting_records_preserved": true,
-      "sitemap_exact_six_pages_and_robots_target": true,
-      "all_active_javascript_syntax_valid": true,
-      "site_and_baseline_unchanged_during_checks": true
-    },
-    "receipt": "STATIC-CHECKS-1.json",
-    "sha256": "9884c6df8e92e7440f059df739c7274bc56ab2d9a9ced25d090f1833124a7d1a"
-  },
-  "browser": {
     "status": "passed",
-    "pages": [
-      {
-        "name": "index.html",
-        "viewport": "desktop",
-        "metrics": {
-          "width": 1440,
-          "height": 1000,
-          "document_width": 1440,
-          "body_width": 1440,
-          "h1": "Room to think.Space to connect."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "screenshots/pcs-notebook-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-library-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-conversation-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-map-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "continuity-map.html",
-        "viewport": "desktop",
-        "metrics": {
-          "width": 1440,
-          "height": 1000,
-          "document_width": 1440,
-          "body_width": 1440,
-          "h1": "A possibility hidingin an ordinary life."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "screenshots/pcs-map-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "memory-control.html",
-        "viewport": "desktop",
-        "metrics": {
-          "width": 1440,
-          "height": 1000,
-          "document_width": 1440,
-          "body_width": 1440,
-          "h1": "See what was saved. Change what was understood."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "assets/pcs-memory-flow-0114.svg",
-            "width": 1200,
-            "height": 1260
-          },
-          {
-            "src": "screenshots/pcs-library-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-memory-links-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-memory-lessons-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-materials-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-notebook-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "local-ai.html",
-        "viewport": "desktop",
-        "metrics": {
-          "width": 1440,
-          "height": 1000,
-          "document_width": 1440,
-          "body_width": 1440,
-          "h1": "Choose a model. Keep your continuity."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "assets/pcs-local-context-0114.svg",
-            "width": 1200,
-            "height": 1010
-          },
-          {
-            "src": "screenshots/pcs-conversation-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "getting-started.html",
-        "viewport": "desktop",
-        "metrics": {
-          "width": 1440,
-          "height": 1000,
-          "document_width": 1440,
-          "body_width": 1440,
-          "h1": "Your first conversation.One step at a time."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "screenshots/pcs-conversation-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "data-and-privacy.html",
-        "viewport": "desktop",
-        "metrics": {
-          "width": 1440,
-          "height": 1000,
-          "document_width": 1440,
-          "body_width": 1440,
-          "h1": "Know what stays here and what you share."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "screenshots/pcs-calendar-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "index.html",
-        "viewport": "mobile",
-        "metrics": {
-          "width": 390,
-          "height": 844,
-          "document_width": 390,
-          "body_width": 390,
-          "h1": "Room to think.Space to connect."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "screenshots/pcs-notebook-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-library-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-conversation-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-map-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "continuity-map.html",
-        "viewport": "mobile",
-        "metrics": {
-          "width": 390,
-          "height": 844,
-          "document_width": 390,
-          "body_width": 390,
-          "h1": "A possibility hidingin an ordinary life."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "screenshots/pcs-map-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "memory-control.html",
-        "viewport": "mobile",
-        "metrics": {
-          "width": 390,
-          "height": 844,
-          "document_width": 390,
-          "body_width": 390,
-          "h1": "See what was saved. Change what was understood."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "assets/pcs-memory-flow-0114.svg",
-            "width": 1200,
-            "height": 1260
-          },
-          {
-            "src": "screenshots/pcs-library-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-memory-links-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-memory-lessons-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-materials-0114.png",
-            "width": 1920,
-            "height": 1080
-          },
-          {
-            "src": "screenshots/pcs-notebook-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "local-ai.html",
-        "viewport": "mobile",
-        "metrics": {
-          "width": 390,
-          "height": 844,
-          "document_width": 390,
-          "body_width": 390,
-          "h1": "Choose a model. Keep your continuity."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "assets/pcs-local-context-0114.svg",
-            "width": 1200,
-            "height": 1010
-          },
-          {
-            "src": "screenshots/pcs-conversation-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "getting-started.html",
-        "viewport": "mobile",
-        "metrics": {
-          "width": 390,
-          "height": 844,
-          "document_width": 390,
-          "body_width": 390,
-          "h1": "Your first conversation.One step at a time."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "screenshots/pcs-conversation-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      },
-      {
-        "name": "data-and-privacy.html",
-        "viewport": "mobile",
-        "metrics": {
-          "width": 390,
-          "height": 844,
-          "document_width": 390,
-          "body_width": 390,
-          "h1": "Know what stays here and what you share."
-        },
-        "images": [
-          {
-            "src": "assets/pcs-star.svg",
-            "width": 150,
-            "height": 150
-          },
-          {
-            "src": "screenshots/pcs-calendar-0114.png",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "http_status": 200,
-        "passed": true
-      }
-    ],
+    "active_files": 48,
+    "local_references": 352,
+    "all_local_targets_and_fragments_valid": true,
+    "story_data_and_unrelated_files_unchanged": true
+  },
+  "map_browser": {
+    "status": "passed",
+    "started": "2026-10-20T20:48:19.671Z",
+    "scope": "Isolated static-site browser and authored fictional data only; no PCS app, vault, model, device or publication.",
     "checks": [
       {
-        "name": "six pages at both exact viewports; all referenced images decode without document overflow",
+        "name": "bundle counts and partition reflect visible theme links, with selected evidence revealed",
         "passed": true
       },
       {
-        "name": "mobile navigation opens, follows local guide, and Escape closes",
+        "name": "desktop unbadged bundle lines expand and collapse by pointer and keyboard without moving viewport",
         "passed": true
       },
       {
-        "name": "image dialog shows the linked capture and Escape closes",
+        "name": "desktop quiet canvas retains counts in details and keyboard/pointer evidence access",
         "passed": true
       },
       {
-        "name": "setup tabs and keyboard Home select corresponding visible panels",
+        "name": "desktop accessible List toggles same bundle state and preserves eight constellations",
         "passed": true
       },
       {
-        "name": "homepage workflow tabs keep one corresponding panel visible",
+        "name": "desktop discovery inspects records and keeps, revisits, edits and removes transient landmark",
         "passed": true
       },
       {
-        "name": "homepage FAQ disclosure opens readable content and closes",
+        "name": "desktop original eight-passage story keeps/resumes to ending, with no horizontal page overflow",
         "passed": true
       },
       {
-        "name": "index.html desktop: eight current Keep-and-continue passages, explore/resume, ending and restart",
+        "name": "mobile unbadged bundle lines expand and collapse by pointer and keyboard without moving viewport",
         "passed": true
       },
       {
-        "name": "continuity-map.html desktop: eight current Keep-and-continue passages, explore/resume, ending and restart",
+        "name": "mobile quiet canvas retains counts in details and keyboard/pointer evidence access",
         "passed": true
       },
       {
-        "name": "index.html mobile: eight current Keep-and-continue passages, explore/resume, ending and restart",
+        "name": "mobile accessible List toggles same bundle state and preserves eight constellations",
         "passed": true
       },
       {
-        "name": "continuity-map.html mobile: eight current Keep-and-continue passages, explore/resume, ending and restart",
+        "name": "mobile discovery inspects records and keeps, revisits, edits and removes transient landmark",
         "passed": true
       },
       {
-        "name": "Map skip leaves progress untouched; Connections, edge inspection, List, Constellations, search and history work",
+        "name": "mobile original eight-passage story keeps/resumes to ending, with no horizontal page overflow",
         "passed": true
       },
       {
-        "name": "homepage fullscreen entry and exit retain story progress",
+        "name": "desktop homepage embedded Map loads updated assets without number bubbles",
         "passed": true
       },
       {
-        "name": "without JavaScript setup routes and all 76 supporting records remain available",
-        "passed": true
-      },
-      {
-        "name": "homepage release-summary paragraph has readable contrast on its download background",
+        "name": "mobile homepage embedded Map loads updated assets without number bubbles",
         "passed": true
       }
     ],
     "errors": [],
-    "external_requests": [],
-    "browser_closed": true,
-    "server_closed": true,
-    "receipt": "qualification/browser2/BROWSER-CHECKS.json",
-    "sha256": "6e6137d52e7aec9e3b365afa270a4e46b10f901b89ed3e367b07f8eec3e8e7fb"
+    "hashes": {
+      "index.html": "33b80d7f35cb7734d4c1933a891c3244b068ddd6786de65eb3daa4183ef7b1d0",
+      "continuity-map.html": "3f26ad88bec7aec2a7247e9d912cfc3ab4db9b5159da612304c02ec46fbe1727",
+      "assets/map.js": "86ade6689fd46c96a995f0c9887008fd840576b30e89f991b2e61daf3b84f1f9",
+      "assets/map.css": "bff7b38925082158359838f856d21f44d60af5b2d4d3605363a775fa7541938f",
+      "assets/map-data.js": "41deab9ddef902a61eb89a61179e0d1490574d875af94e5310ab528277c4f2af"
+    },
+    "finished": "2026-10-20T20:48:24.675Z"
   },
-  "map": {
-    "result": "passed",
-    "receipt": "MAP-REVIEW.json",
-    "sha256": "2849b5f81e0c3a9dbe01007e3bd02cf2b8e7fdd9ca1b299c9369193dfd17149b"
-  },
-  "content": {
-    "result": "passed",
-    "receipt": "CONTENT-REVIEW-final.json",
-    "sha256": "5a6b022ffe42c5ba66d7c97549f4ca7489ead56c78aa9a1931aebca292b61a77"
-  },
-  "captures": {
-    "new_fictional_captures": 8,
-    "manifest_sha256": "2e0dd91ef2cfb9f9a9848687f3e6d079a3354da927f5fc1e3c1d172ecfd997ec"
-  },
-  "limits": [
-    "Automated geometry and interactions do not establish independent human comprehension or cross-browser compatibility.",
-    "No publication or public post-deployment check."
-  ]
+  "receipt_sha256": "3871c37a2ac5df185598341e280eb8a4aad1e8b5edfcd3f4f690ee236f0e8c25"
 }

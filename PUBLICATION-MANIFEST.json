@@ -1,9 +1,9 @@
 {
   "application_version": "0.9.114",
-  "prepared_utc": "2026-10-20T20:33:08.900887+00:00",
+  "prepared_utc": "2026-10-20T20:49:01.482728+00:00",
   "baseline_repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
   "baseline_commit": "cd2eb15726f79f482325e2f1e856a26fb3ae0fa3",
-  "scope": "Active page, asset, support and provenance closure; excludes this self-referential manifest. No deletion of unrelated repository content.",
+  "scope": "Prior 0.9.114 website package with Map-only presentation update; excludes this self-referential manifest.",
   "files": [
     {
       "path": ".nojekyll",
@@ -32,8 +32,8 @@
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 13926,
-      "sha256": "70eaaf5e5fa42e218480ec9752c73a8e4ffffe14accc3dac06f2498c531b4fb4"
+      "bytes": 3579,
+      "sha256": "843b6794a6d930c185008e5b16054b00601b2f2aae310ff271683498f1fff45f"
     },
     {
       "path": "assets/map-data.js",
@@ -42,13 +42,13 @@
     },
     {
       "path": "assets/map.css",
-      "bytes": 42774,
-      "sha256": "b0811191daf4b8493377d221f9f56a8c90fd0da42992b448cdd6940d9a79a756"
+      "bytes": 41296,
+      "sha256": "bff7b38925082158359838f856d21f44d60af5b2d4d3605363a775fa7541938f"
     },
     {
       "path": "assets/map.js",
-      "bytes": 96710,
-      "sha256": "7c6eab4da7b137ff2d32ee6394e1a1e9a4c1701982e69180ff7772e548e70c51"
+      "bytes": 93636,
+      "sha256": "86ade6689fd46c96a995f0c9887008fd840576b30e89f991b2e61daf3b84f1f9"
     },
     {
       "path": "assets/pcs-local-context-0102.svg",
@@ -92,8 +92,8 @@
     },
     {
       "path": "continuity-map.html",
-      "bytes": 100615,
-      "sha256": "b15a977b70bc0ad8b55d008215c502a57e919f4961aa00f3256da906fc05b121"
+      "bytes": 100715,
+      "sha256": "3f26ad88bec7aec2a7247e9d912cfc3ab4db9b5159da612304c02ec46fbe1727"
     },
     {
       "path": "data-and-privacy.html",
@@ -107,8 +107,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 31974,
-      "sha256": "33ada7630cd1d85e4796f1973c02d5d8df55f90f36fddb9e4c0ef97a63fa931a"
+      "bytes": 31901,
+      "sha256": "33b80d7f35cb7734d4c1933a891c3244b068ddd6786de65eb3daa4183ef7b1d0"
     },
     {
       "path": "local-ai.html",
@@ -240,5 +240,6 @@
       "bytes": 671,
       "sha256": "48effee8924b04948008d5e90fa85ab5da7b7f720705a08ad495e1079ebcf9ef"
     }
-  ]
+  ],
+  "revision": "map-clean-20261020-r2"
 }
