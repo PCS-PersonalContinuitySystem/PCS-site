@@ -1,7 +1,7 @@
 {
   "application_version": "0.9.114",
-  "revision": "map-clean-20261020-r2",
-  "prepared_utc": "2026-10-20T20:49:01.482728+00:00",
+  "revision": "map-bundle-only-20261020-r3",
+  "prepared_utc": "2026-10-20T20:57:13.621391+00:00",
   "publication_performed": false,
   "scope": "Map presentation only; locally checked desktop and mobile website demo. No live PCS acceptance.",
   "baseline": "PCS-Website-0.9.114-Full-Site.zip",
@@ -16,7 +16,7 @@
   },
   "map_browser": {
     "status": "passed",
-    "started": "2026-10-20T20:48:19.671Z",
+    "started": "2026-10-20T20:56:42.103Z",
     "scope": "Isolated static-site browser and authored fictional data only; no PCS app, vault, model, device or publication.",
     "checks": [
       {
@@ -28,7 +28,7 @@
         "passed": true
       },
       {
-        "name": "desktop quiet canvas retains counts in details and keyboard/pointer evidence access",
+        "name": "desktop theme and individual-connection numbers remain while only large bundle badges are removed",
         "passed": true
       },
       {
@@ -48,7 +48,7 @@
         "passed": true
       },
       {
-        "name": "mobile quiet canvas retains counts in details and keyboard/pointer evidence access",
+        "name": "mobile theme and individual-connection numbers remain while only large bundle badges are removed",
         "passed": true
       },
       {
@@ -64,23 +64,23 @@
         "passed": true
       },
       {
-        "name": "desktop homepage embedded Map loads updated assets without number bubbles",
+        "name": "desktop homepage preserves theme and individual-connection counts without large bundle badges",
         "passed": true
       },
       {
-        "name": "mobile homepage embedded Map loads updated assets without number bubbles",
+        "name": "mobile homepage preserves theme and individual-connection counts without large bundle badges",
         "passed": true
       }
     ],
     "errors": [],
     "hashes": {
-      "index.html": "33b80d7f35cb7734d4c1933a891c3244b068ddd6786de65eb3daa4183ef7b1d0",
-      "continuity-map.html": "3f26ad88bec7aec2a7247e9d912cfc3ab4db9b5159da612304c02ec46fbe1727",
-      "assets/map.js": "86ade6689fd46c96a995f0c9887008fd840576b30e89f991b2e61daf3b84f1f9",
-      "assets/map.css": "bff7b38925082158359838f856d21f44d60af5b2d4d3605363a775fa7541938f",
+      "index.html": "e72bd23a4542be74e22a9532ae3639a3766846567e4c2e1ee6b9de6731c028fd",
+      "continuity-map.html": "6657df42ffbdcb82839a9ea8e75464f45d4767eff1754dce605cb5946b030b9e",
+      "assets/map.js": "46e6861184fd2978d2c8a539c91d8a30199940e66d86c574316b134047606aed",
+      "assets/map.css": "2b9bc58a84b2254f95fc8a9a295d58b82cecfc6bcaa6145a6cf21518684bba97",
       "assets/map-data.js": "41deab9ddef902a61eb89a61179e0d1490574d875af94e5310ab528277c4f2af"
     },
-    "finished": "2026-10-20T20:48:24.675Z"
+    "finished": "2026-10-20T20:56:47.676Z"
   },
-  "receipt_sha256": "3871c37a2ac5df185598341e280eb8a4aad1e8b5edfcd3f4f690ee236f0e8c25"
+  "receipt_sha256": "49829e5ac9a2195f1372afeaf789045b1759af23f1e1ff9ecb57a1833481bbb8"
 }

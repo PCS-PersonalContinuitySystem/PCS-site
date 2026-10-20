@@ -573,7 +573,7 @@
     const status = element('p', 'status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); status.setAttribute('aria-atomic', 'true');
     const mapHelp = element('details', 'help');
     mapHelp.append(element('summary', '', 'How to explore the map'), help, legend, about);
-    host.append(status, mapHelp, element('p', 'footnote', 'Fictional demo · No AI requests or uploads. Story progress, arrangements and your demo landmarks stay only on this page and reset on reload. Nothing is saved to PCS. Counts in the details and List describe shared records or bundled theme links. Neither establishes cause or importance.'));
+    host.append(status, mapHelp, element('p', 'footnote', 'Fictional demo · No AI requests or uploads. Story progress, arrangements and your demo landmarks stay only on this page and reset on reload. Nothing is saved to PCS. Individual lines count shared records; bundles count theme links. Neither establishes cause or importance.'));
 
     function toggleBundle(id) {
       expandedBundles.has(id) ? expandedBundles.delete(id) : expandedBundles.add(id);
@@ -865,14 +865,14 @@
       const bounds = svg.getBoundingClientRect();
       layout = layoutGraph(visible, state.layout, state.anchor, state.compare); positions = layout.positions;
       const scale = Math.min((bounds.width || WIDTH) / layout.width, (bounds.height || HEIGHT) / layout.height);
-      const labelSize = clamp(12 / scale, 15, layout.labelSize), lineHeight = Math.max(18, labelSize + 2);
+      const labelSize = clamp(12 / scale, 15, layout.labelSize), countSize = clamp(11 / scale, 15, 32), lineHeight = Math.max(18, labelSize + 2);
       const presentation = connectionPresentation(visible, state, expandedBundles);
       const dots = dottedConnections(presentation.edges, percent);
-      legend.textContent = `Dotted: weakest ${percent}% target, keeping equal shared-record counts together. Showing ${dots.count} of ${dots.total} individual connections dotted${dots.total ? ` (${Math.round(dots.count / dots.total * 100)}%)` : ''}. The rest are solid.${state.layout === 'overview' ? ' Lines between constellations bundle theme links: select a line to expand it. Find counts in List and the details.' : ''}`;
+      legend.textContent = `Dotted: weakest ${percent}% target, keeping equal shared-record counts together. Showing ${dots.count} of ${dots.total} individual connections dotted${dots.total ? ` (${Math.round(dots.count / dots.total * 100)}%)` : ''}. The rest are solid.${state.layout === 'overview' ? ' Bundled lines join constellations: select a line to show its theme links. Their counts are available in List.' : ''}`;
       svg.replaceChildren();
       for (const node of visible.nodes) { const movedPoint = overrides.get(positionKey(node.id)); if (movedPoint) positions.set(node.id, {...movedPoint}); }
       for (const heading of layout.headings) svg.append(svgElement('text', {x: heading.x, y: heading.y || 55, class: heading.kind === 'group' ? 'pcs-map-group-heading' : 'pcs-map-date-heading', 'text-anchor': 'middle'}, heading.kind === 'group' ? heading.label : `Week of ${heading.label}`));
-      const routes = routeEdges(presentation.edges, positions, state.anchor, state.layout, layout), routeLookup = new Map(routes.map(route => [route.id, route]));
+      const routes = routeEdges(presentation.edges, positions, state.anchor, state.layout, layout), routeLookup = new Map(routes.map(route => [route.id, route])), edgeControls = [];
       if (presentation.bundles.length) {
         const groupPositions = new Map();
         for (const group of new Set(visible.nodes.map(node => node.group))) {
@@ -906,7 +906,7 @@
       for (const edge of presentation.edges) {
         const route = routeLookup.get(edge.id), selected = edge.id === state.edge, related = selectedNodes.has(edge.from) || selectedNodes.has(edge.to);
         const tone = toneClass(lookup.get(selectedNodes.has(edge.to) && !selectedNodes.has(edge.from) ? edge.to : edge.from));
-        const group = svgElement('g', {class: `pcs-map-edge pcs-map-edge-control ${tone}${selected ? ' pcs-map-edge-selected' : related ? ' pcs-map-edge-related' : selectedEdge ? ' pcs-map-edge-muted' : ''}`, 'data-edge': edge.id, role: 'button', tabindex: selected || related ? '0' : '-1', 'aria-pressed': String(selected), 'aria-label': `${lookup.get(edge.from).label} and ${lookup.get(edge.to).label}: ${plural(edge.count, 'shared record')}`});
+        const group = svgElement('g', {class: `pcs-map-edge ${tone}${selected ? ' pcs-map-edge-selected' : related ? ' pcs-map-edge-related' : selectedEdge ? ' pcs-map-edge-muted' : ''}`, 'data-edge': edge.id});
         const line = svgElement('path', {d: route.d, class: 'pcs-map-edge-line', 'stroke-width': 1.1 + Math.min(2.6, Math.log2(edge.count + 1) * .75)});
         if (edge.count <= dots.cutoff) line.setAttribute('stroke-dasharray', '3 7');
         group.append(svgElement('path', {d: route.d, class: 'pcs-map-edge-hit'}), line); group.append(svgElement('title', {}, `${lookup.get(edge.from).label} + ${lookup.get(edge.to).label}: ${plural(edge.count, 'shared record')}`));
@@ -917,9 +917,17 @@
           const id = closestEdge(routes, point.matrixTransform(transform.inverse()));
           if (id) chooseEdge(id);
         });
-        group.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); chooseEdge(edge.id); } });
-        svg.append(group);
+        const control = svgElement('g', {class: `pcs-map-edge-control ${tone}${selected || related ? ' pcs-map-edge-control-shown' : ''}`, transform: `translate(${route.point.x},${route.point.y})`, role: 'button', tabindex: selected || related ? '0' : '-1', 'aria-pressed': String(selected), 'aria-label': `${lookup.get(edge.from).label} and ${lookup.get(edge.to).label}: ${plural(edge.count, 'shared record')}`, 'data-edge': edge.id});
+        control.append(svgElement('circle', {r: 13, class: 'pcs-map-edge-control-hit'}), svgElement('circle', {r: 9, class: 'pcs-map-edge-control-dot'}), svgElement('text', {y: 4, 'text-anchor': 'middle', class: 'pcs-map-edge-control-count'}, edge.count));
+        control.addEventListener('click', event => { event.stopPropagation(); if (!moved) chooseEdge(edge.id); });
+        control.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); chooseEdge(edge.id); } });
+        group.addEventListener('pointerenter', () => control.classList.add('pcs-map-edge-control-hover'));
+        group.addEventListener('pointerleave', () => control.classList.remove('pcs-map-edge-control-hover'));
+        svg.append(group); edgeControls.push(control);
       }
+      // Put the compact buttons above all paths, so crossing strokes cannot
+      // capture a click intended for a named connection's selection target.
+      svg.append(...edgeControls);
       for (const node of visible.nodes) {
         const point = positions.get(node.id), selected = selectedNodes.has(node.id);
         const emphasis = selected ? ' pcs-map-node-selected' : selectedEdge ? neighborhood.has(node.id) ? ' pcs-map-node-related' : ' pcs-map-node-muted' : '';
@@ -932,6 +940,7 @@
         group.append(svgElement('circle', {r: hitRadius, class: 'pcs-map-node-hit'}));
         group.append(svgElement('circle', {r: 43, class: 'pcs-map-node-halo'}), svgElement('circle', {r: 37, class: 'pcs-map-node-ring'}));
         group.append(selected ? svgElement('path', {d: 'M 0 -34 L 10 -10 L 34 0 L 10 10 L 0 34 L -10 10 L -34 0 L -10 -10 Z', class: 'pcs-map-node-star'}) : svgElement('circle', {r: 24, class: 'pcs-map-node-dot'}));
+        const countLabel = svgElement('text', {y: countSize * .34, 'text-anchor': 'middle', class: 'pcs-map-node-count'}, node.count); countLabel.style.fontSize = `${countSize}px`; group.append(countLabel);
         lines.forEach((text, i) => { const label = svgElement('text', {x: labelX, y: 53 + i * lineHeight, 'text-anchor': 'middle', class: 'pcs-map-node-label'}, text); label.style.fontSize = `${labelSize}px`; group.append(label); });
         group.addEventListener('click', () => { if (!moved) choose(node.id); });
         group.addEventListener('pointerenter', () => { hoveredTheme = node.id; updateActiveLabel(); });
@@ -980,7 +989,7 @@
       caption.textContent = constellationOverview ? `${plural(constellations.nodes.length, 'constellation')} · ${plural(constellations.nodes.reduce((sum, group) => sum + group.count, 0), 'theme')}` :
         `${visible.nodes.length} of ${graph.nodes.length} themes · ${plural(visible.edges.length, 'connection')}`;
       const viewHelp = {
-        overview: 'Select a line between constellations to show its theme links; select it again to collapse. Counts stay in List and the details. Select a thread to inspect both themes and their evidence. Hover or focus a star to read its name. Choose Focus for its neighborhood, or Constellations to explore one group.',
+        overview: 'Select a bundled line to show each theme link between two constellations; select it again to collapse. Bundle counts are available in List. Individual links count shared records. Select a thread to inspect both themes and their evidence. Hover or focus a star to read its name. Choose Focus for its neighborhood, or Constellations to explore one group.',
         rings: 'Focus shows one theme and its direct connections. Select a neighboring theme to center its neighborhood without resetting pan or zoom.',
         compare: 'Compare shows the two chosen themes and their direct connections. Selecting a star inspects its evidence while keeping both comparison anchors.',
         grid: 'Grid arranges themes by name. Select a theme or connection to inspect its evidence without moving the layout.',

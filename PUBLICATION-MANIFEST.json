@@ -1,6 +1,6 @@
 {
   "application_version": "0.9.114",
-  "prepared_utc": "2026-10-20T20:49:01.482728+00:00",
+  "prepared_utc": "2026-10-20T20:57:13.621391+00:00",
   "baseline_repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
   "baseline_commit": "cd2eb15726f79f482325e2f1e856a26fb3ae0fa3",
   "scope": "Prior 0.9.114 website package with Map-only presentation update; excludes this self-referential manifest.",
@@ -32,8 +32,8 @@
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 3579,
-      "sha256": "843b6794a6d930c185008e5b16054b00601b2f2aae310ff271683498f1fff45f"
+      "bytes": 3653,
+      "sha256": "e2ad1b7be05132a4aab5fc644df0f8752c8868a6ff995961a6a461fe53aa3b23"
     },
     {
       "path": "assets/map-data.js",
@@ -42,13 +42,13 @@
     },
     {
       "path": "assets/map.css",
-      "bytes": 41296,
-      "sha256": "bff7b38925082158359838f856d21f44d60af5b2d4d3605363a775fa7541938f"
+      "bytes": 42741,
+      "sha256": "2b9bc58a84b2254f95fc8a9a295d58b82cecfc6bcaa6145a6cf21518684bba97"
     },
     {
       "path": "assets/map.js",
-      "bytes": 93636,
-      "sha256": "86ade6689fd46c96a995f0c9887008fd840576b30e89f991b2e61daf3b84f1f9"
+      "bytes": 94919,
+      "sha256": "46e6861184fd2978d2c8a539c91d8a30199940e66d86c574316b134047606aed"
     },
     {
       "path": "assets/pcs-local-context-0102.svg",
@@ -92,8 +92,8 @@
     },
     {
       "path": "continuity-map.html",
-      "bytes": 100715,
-      "sha256": "3f26ad88bec7aec2a7247e9d912cfc3ab4db9b5159da612304c02ec46fbe1727"
+      "bytes": 100674,
+      "sha256": "6657df42ffbdcb82839a9ea8e75464f45d4767eff1754dce605cb5946b030b9e"
     },
     {
       "path": "data-and-privacy.html",
@@ -107,8 +107,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 31901,
-      "sha256": "33b80d7f35cb7734d4c1933a891c3244b068ddd6786de65eb3daa4183ef7b1d0"
+      "bytes": 31913,
+      "sha256": "e72bd23a4542be74e22a9532ae3639a3766846567e4c2e1ee6b9de6731c028fd"
     },
     {
       "path": "local-ai.html",
@@ -241,5 +241,5 @@
       "sha256": "48effee8924b04948008d5e90fa85ab5da7b7f720705a08ad495e1079ebcf9ef"
     }
   ],
-  "revision": "map-clean-20261020-r2"
+  "revision": "map-bundle-only-20261020-r3"
 }
