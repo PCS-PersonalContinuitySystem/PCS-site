@@ -1,12 +1,13 @@
 {
-  "application_version": "0.9.102",
-  "prepared_utc": "2026-10-17T04:20:38.940588+00:00",
-  "baseline_commit": "5118cfe528a6afec5980241a1efd3a7302226a7b",
-  "scope": "Local static-site preparation only; no publication or new live PCS model/device acceptance.",
+  "application_version": "0.9.114",
+  "prepared_utc": "2026-10-20T20:33:08.900887+00:00",
+  "baseline_commit": "cd2eb15726f79f482325e2f1e856a26fb3ae0fa3",
+  "publication_performed": false,
+  "scope": "Local static website and fictional interface illustrations; not live PCS acceptance or public deployment.",
   "static": {
     "result": "passed",
     "checks": {
-      "all_unrelated_repository_files_and_public_map_code_data_preserved": true,
+      "unrelated_files_branding_and_original_map_records_preserved": true,
       "safe_reference_closure_and_fragments": true,
       "current_release_links_and_six_jsonld_blocks_match_verified_release": true,
       "screenshot_bytes_dimensions_versions_and_retained_provenance": true,
@@ -16,8 +17,8 @@
       "all_active_javascript_syntax_valid": true,
       "site_and_baseline_unchanged_during_checks": true
     },
-    "receipt": "STATIC-CHECKS-3.json",
-    "sha256": "d453c0b19f86a1d28a7eb939ac1fa64cd0a29e8f596ece1b62923b9e6df16bff"
+    "receipt": "STATIC-CHECKS-1.json",
+    "sha256": "9884c6df8e92e7440f059df739c7274bc56ab2d9a9ced25d090f1833124a7d1a"
   },
   "browser": {
     "status": "passed",
@@ -39,22 +40,22 @@
             "height": 150
           },
           {
-            "src": "screenshots/pcs-notebook-0102.png",
+            "src": "screenshots/pcs-notebook-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-library-0102.png",
+            "src": "screenshots/pcs-library-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-conversation-0102.png",
+            "src": "screenshots/pcs-conversation-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-map-0102.png",
+            "src": "screenshots/pcs-map-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -79,7 +80,7 @@
             "height": 150
           },
           {
-            "src": "screenshots/pcs-map-0102.png",
+            "src": "screenshots/pcs-map-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -104,22 +105,32 @@
             "height": 150
           },
           {
-            "src": "assets/pcs-memory-flow-0102.svg",
+            "src": "assets/pcs-memory-flow-0114.svg",
             "width": 1200,
-            "height": 1080
+            "height": 1260
           },
           {
-            "src": "screenshots/pcs-library-0102.png",
+            "src": "screenshots/pcs-library-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-materials-0102.png",
+            "src": "screenshots/pcs-memory-links-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-notebook-0102.png",
+            "src": "screenshots/pcs-memory-lessons-0114.png",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "src": "screenshots/pcs-materials-0114.png",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "src": "screenshots/pcs-notebook-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -144,12 +155,12 @@
             "height": 150
           },
           {
-            "src": "assets/pcs-local-context-0102.svg",
+            "src": "assets/pcs-local-context-0114.svg",
             "width": 1200,
-            "height": 890
+            "height": 1010
           },
           {
-            "src": "screenshots/pcs-conversation-0102.png",
+            "src": "screenshots/pcs-conversation-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -174,7 +185,7 @@
             "height": 150
           },
           {
-            "src": "screenshots/pcs-conversation-0102.png",
+            "src": "screenshots/pcs-conversation-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -199,7 +210,7 @@
             "height": 150
           },
           {
-            "src": "screenshots/pcs-calendar-0102.png",
+            "src": "screenshots/pcs-calendar-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -224,22 +235,22 @@
             "height": 150
           },
           {
-            "src": "screenshots/pcs-notebook-0102.png",
+            "src": "screenshots/pcs-notebook-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-library-0102.png",
+            "src": "screenshots/pcs-library-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-conversation-0102.png",
+            "src": "screenshots/pcs-conversation-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-map-0102.png",
+            "src": "screenshots/pcs-map-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -264,7 +275,7 @@
             "height": 150
           },
           {
-            "src": "screenshots/pcs-map-0102.png",
+            "src": "screenshots/pcs-map-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -289,22 +300,32 @@
             "height": 150
           },
           {
-            "src": "assets/pcs-memory-flow-0102.svg",
+            "src": "assets/pcs-memory-flow-0114.svg",
             "width": 1200,
-            "height": 1080
+            "height": 1260
           },
           {
-            "src": "screenshots/pcs-library-0102.png",
+            "src": "screenshots/pcs-library-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-materials-0102.png",
+            "src": "screenshots/pcs-memory-links-0114.png",
             "width": 1920,
             "height": 1080
           },
           {
-            "src": "screenshots/pcs-notebook-0102.png",
+            "src": "screenshots/pcs-memory-lessons-0114.png",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "src": "screenshots/pcs-materials-0114.png",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "src": "screenshots/pcs-notebook-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -329,12 +350,12 @@
             "height": 150
           },
           {
-            "src": "assets/pcs-local-context-0102.svg",
+            "src": "assets/pcs-local-context-0114.svg",
             "width": 1200,
-            "height": 890
+            "height": 1010
           },
           {
-            "src": "screenshots/pcs-conversation-0102.png",
+            "src": "screenshots/pcs-conversation-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -359,7 +380,7 @@
             "height": 150
           },
           {
-            "src": "screenshots/pcs-conversation-0102.png",
+            "src": "screenshots/pcs-conversation-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -384,7 +405,7 @@
             "height": 150
           },
           {
-            "src": "screenshots/pcs-calendar-0102.png",
+            "src": "screenshots/pcs-calendar-0114.png",
             "width": 1920,
             "height": 1080
           }
@@ -451,43 +472,29 @@
         "passed": true
       }
     ],
-    "browser_version": "155.0.4283.45",
-    "download_summary_contrast": {
-      "foreground": "rgb(216, 228, 212)",
-      "background": "rgb(42, 81, 64)",
-      "ratio": 6.796407432155809,
-      "minimum": 4.5
-    },
     "errors": [],
     "external_requests": [],
     "browser_closed": true,
     "server_closed": true,
-    "limits": [
-      "Automated geometry and interactions do not establish independent human comprehension or cross-browser compatibility.",
-      "No publication or public post-deployment check."
-    ],
-    "receipt": "qualification/browser4/BROWSER-CHECKS.json",
-    "sha256": "1e2eb99e42cfd56d12bd10e6cde760fc5da0e49c07e743a11e6bb86b38ccb5f6"
+    "receipt": "qualification/browser2/BROWSER-CHECKS.json",
+    "sha256": "6e6137d52e7aec9e3b365afa270a4e46b10f901b89ed3e367b07f8eec3e8e7fb"
   },
-  "content_review": {
+  "map": {
     "result": "passed",
-    "receipt": "CONTENT-REVIEW-2.json",
-    "sha256": "1392627dc991c76140d1ff1431719d777dcbc32c89217f4dd0a1f4853df2332c"
+    "receipt": "MAP-REVIEW.json",
+    "sha256": "2849b5f81e0c3a9dbe01007e3bd02cf2b8e7fdd9ca1b299c9369193dfd17149b"
   },
-  "application_release": {
-    "tag_name": "v0.9.102",
-    "id": 415569082,
-    "published_at": "2026-10-17T03:53:42Z",
-    "html_url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.102",
-    "draft": false,
-    "prerelease": false
+  "content": {
+    "result": "passed",
+    "receipt": "CONTENT-REVIEW-final.json",
+    "sha256": "5a6b022ffe42c5ba66d7c97549f4ca7489ead56c78aa9a1931aebca292b61a77"
   },
-  "public_release_audit_sha256": "8d551873935ff26db192550e4aaa2d4890138e9b567ce42d3dce7e523a069ffe",
-  "public_url_checks_sha256": "3a3bf187e0ff0d641ae533af96aa3d72a9154c53e1a850e744e92d01a6e6a56e",
   "captures": {
-    "new_fictional_captures": 6,
-    "no_live_provider_or_device_claim": true,
-    "manifest_sha256": "311795d90c10a90bfc0f81994666e3dc0a2fbc6a25f9ab4ff889db43de561766"
+    "new_fictional_captures": 8,
+    "manifest_sha256": "2e0dd91ef2cfb9f9a9848687f3e6d079a3354da927f5fc1e3c1d172ecfd997ec"
   },
-  "publication_performed": false
+  "limits": [
+    "Automated geometry and interactions do not establish independent human comprehension or cross-browser compatibility.",
+    "No publication or public post-deployment check."
+  ]
 }

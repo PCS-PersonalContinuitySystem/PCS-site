@@ -1,11 +1,121 @@
 {
-  "version": "0.9.102",
-  "scope": "Six current application-interface captures with authored fictional data. Historical captures retain their original versions and provenance; current page illustrations use the six 0.9.102 images.",
+  "version": "0.9.114",
+  "scope": "Eight genuine current interface captures with authored fictional demonstration data. Historical capture records below retain their exact original provenance.",
   "fictional_data": true,
-  "capture_receipt_sha256": "e6a6cdfa46c3d8464d6db6933e44cb911ed9d61dcd39a2a893a1062fc2ce14ff",
-  "source_zip_sha256": "d92f0058970b57ab4a587a2410f6a44e7469c49348573463a52c358331c42f81",
-  "windows_zip_sha256": "aa3aeb85e58541bd7dab8550ec2e49be2e491611bedd53c91a0eff407ed37f46",
+  "capture_manifest_sha256": "2e0dd91ef2cfb9f9a9848687f3e6d079a3354da927f5fc1e3c1d172ecfd997ec",
   "screenshots": [
+    {
+      "path": "screenshots/pcs-conversation-0114.png",
+      "version": "0.9.114",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 303913,
+      "sha256": "bf732f4868b68c862a50942512f55706824d1c7a018f021b3375ed313b057d4e",
+      "method": "Unmodified shipped PCS 0.9.114 interface, isolated authored fictional records, ordinary UI navigation. No AI session, private vault, provider request or physical device used.",
+      "original_asset": "work/pcs-website-0.9.114-20261020/screenshots/images/pcs-conversation-0114.png",
+      "unmodified": true,
+      "fictional_data": true,
+      "live_ai_result": false,
+      "caption": "PCS 0.9.114 · Fictional demonstration data. A saved stopping point and next step, ready to review and continue."
+    },
+    {
+      "path": "screenshots/pcs-materials-0114.png",
+      "version": "0.9.114",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 142412,
+      "sha256": "5d52d198e1509e32552376b1bfdcd2e4e020c1850d0ad6264f79e91eb53109b5",
+      "method": "Unmodified shipped PCS 0.9.114 interface, isolated authored fictional records, ordinary UI navigation. No AI session, private vault, provider request or physical device used.",
+      "original_asset": "work/pcs-website-0.9.114-20261020/screenshots/images/pcs-materials-0114.png",
+      "unmodified": true,
+      "fictional_data": true,
+      "live_ai_result": false,
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Documents and reading tools in Materials."
+    },
+    {
+      "path": "screenshots/pcs-notebook-0114.png",
+      "version": "0.9.114",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 152158,
+      "sha256": "da01e1e35a859c7c2660f75b0687559f96a9cc304dc4247fb540b7d7bac0a0ac",
+      "method": "Unmodified shipped PCS 0.9.114 interface, isolated authored fictional records, ordinary UI navigation. No AI session, private vault, provider request or physical device used.",
+      "original_asset": "work/pcs-website-0.9.114-20261020/screenshots/images/pcs-notebook-0114.png",
+      "unmodified": true,
+      "fictional_data": true,
+      "live_ai_result": false,
+      "caption": "PCS 0.9.114 · Fictional demonstration data. An editable notebook outline with step notes and progress."
+    },
+    {
+      "path": "screenshots/pcs-library-0114.png",
+      "version": "0.9.114",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 156635,
+      "sha256": "2e23f4235ab1056f2384a19d2369d117e2b926774bda1f6e0c890c226ad64f7f",
+      "method": "Unmodified shipped PCS 0.9.114 interface, isolated authored fictional records, ordinary UI navigation. No AI session, private vault, provider request or physical device used.",
+      "original_asset": "work/pcs-website-0.9.114-20261020/screenshots/images/pcs-library-0114.png",
+      "unmodified": true,
+      "fictional_data": true,
+      "live_ai_result": false,
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Browse saved records and inspect a selected memory."
+    },
+    {
+      "path": "screenshots/pcs-memory-links-0114.png",
+      "version": "0.9.114",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 148445,
+      "sha256": "31b7a730f91f823315605b4638165622d6a064d498f5d89597b4b957c3cc3806",
+      "method": "Unmodified shipped PCS 0.9.114 interface, isolated authored fictional records, ordinary UI navigation. No AI session, private vault, provider request or physical device used.",
+      "original_asset": "work/pcs-website-0.9.114-20261020/screenshots/images/pcs-memory-links-0114.png",
+      "unmodified": true,
+      "fictional_data": true,
+      "live_ai_result": false,
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Inspect a settled account, the earlier memory it came from and the lesson you kept. These are owner navigation and framing."
+    },
+    {
+      "path": "screenshots/pcs-memory-lessons-0114.png",
+      "version": "0.9.114",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 120894,
+      "sha256": "50e2d0cfec0bc63dd06884da9b02796943caace3410690a7aa6575e8da0ab3ca",
+      "method": "Unmodified shipped PCS 0.9.114 interface, isolated authored fictional records, ordinary UI navigation. No AI session, private vault, provider request or physical device used.",
+      "original_asset": "work/pcs-website-0.9.114-20261020/screenshots/images/pcs-memory-lessons-0114.png",
+      "unmodified": true,
+      "fictional_data": true,
+      "live_ai_result": false,
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Keep a named lesson, your own story and takeaway, with links to the memories behind it."
+    },
+    {
+      "path": "screenshots/pcs-map-0114.png",
+      "version": "0.9.114",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 366201,
+      "sha256": "d74abb8ff7c9f2b0bce946c43849174434ca3385a5b772dc84d10ddd93bdd9ef",
+      "method": "Unmodified shipped PCS 0.9.114 interface, isolated authored fictional records, ordinary UI navigation. No AI session, private vault, provider request or physical device used.",
+      "original_asset": "work/pcs-website-0.9.114-20261020/screenshots/images/pcs-map-0114.png",
+      "unmodified": true,
+      "fictional_data": true,
+      "live_ai_result": false,
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Explore shared themes and their saved evidence in the Continuity Map."
+    },
+    {
+      "path": "screenshots/pcs-calendar-0114.png",
+      "version": "0.9.114",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 116401,
+      "sha256": "1b9e294675a76ca97e5a73e9e2b82a2fdaf47d9895c16c3106678ccd956ee398",
+      "method": "Unmodified shipped PCS 0.9.114 interface, isolated authored fictional records, ordinary UI navigation. No AI session, private vault, provider request or physical device used.",
+      "original_asset": "work/pcs-website-0.9.114-20261020/screenshots/images/pcs-calendar-0114.png",
+      "unmodified": true,
+      "fictional_data": true,
+      "live_ai_result": false,
+      "caption": "PCS 0.9.114 · Fictional demonstration data. A private calendar for small plans and unfinished next steps."
+    },
     {
       "path": "screenshots/pcs-conversation-0102.png",
       "version": "0.9.102",
@@ -180,6 +290,16 @@
     }
   ],
   "diagrams": [
+    {
+      "path": "assets/pcs-memory-flow-0114.svg",
+      "sha256": "f23791cfc2e3cdcb1a6afcc4e008f48427c9c01adcbaa951a456d91b858ba021",
+      "method": "Hand-authored SVG explanation. Originals, corrections, exact-revision links, settled marks, named lessons, optional navigation hints and permitted recall."
+    },
+    {
+      "path": "assets/pcs-local-context-0114.svg",
+      "sha256": "bb79f825927c9bfaddddb329e174fc08981b04c95dfd028be843dbd7fb68b087",
+      "method": "Hand-authored SVG explanation. Local context selection, optional area labels, working-context compaction and separate image controls."
+    },
     {
       "path": "assets/pcs-memory-flow-0102.svg",
       "sha256": "c2725442a5106989f570888e68dd374fb09156ce64bbcbf028456e0e55d4ae65",

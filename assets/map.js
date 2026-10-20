@@ -83,12 +83,31 @@
       const from = byId.get(edge.from).group, to = byId.get(edge.to).group;
       if (from === to) continue;
       const id = edgeKey(from, to);
-      if (!links.has(id)) { const [a, b] = [from, to].sort(); links.set(id, {id, from: a, to: b, records: new Map()}); }
+      if (!links.has(id)) { const [a, b] = [from, to].sort(); links.set(id, {id, from: a, to: b, edgeIds: [], records: new Map()}); }
+      links.get(id).edgeIds.push(edge.id);
       for (const record of edge.records) links.get(id).records.set(record.id, record);
     }
     const order = [...groupTones.keys()];
     return {nodes: [...groups.values()].sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id) || a.id.localeCompare(b.id)).map(group => ({...group, count: group.themes.length})),
-      edges: [...links.values()].map(edge => ({...edge, count: edge.records.size, records: [...edge.records.values()].sort((a, b) => a.id.localeCompare(b.id))})).sort((a, b) => b.count - a.count || a.id.localeCompare(b.id))};
+      edges: [...links.values()].map(edge => ({...edge, count: edge.edgeIds.length, records: [...edge.records.values()].sort((a, b) => a.id.localeCompare(b.id))})).sort((a, b) => b.count - a.count || a.id.localeCompare(b.id))};
+  }
+
+  // As in PCS 0.9.114, bundles count theme links, not shared records.
+  // A selected theme's links, or the selected link, remain individually visible.
+  function connectionPresentation(graph, state, expanded = new Set()) {
+    if (state.layout !== 'overview') return {edges: graph.edges, bundles: []};
+    const groups = constellationGraph(graph), bundled = new Set(), bundles = [];
+    for (const bridge of groups.edges) {
+      const hidden = bridge.edgeIds.filter(id => {
+        const edge = graph.edges.find(item => item.id === id);
+        return state.edge ? id !== state.edge : ![edge.from, edge.to].includes(state.selected);
+      });
+      const open = expanded.has(bridge.id), count = open ? bridge.count : hidden.length;
+      if (!count) continue;
+      if (!open) for (const id of hidden) bundled.add(id);
+      bundles.push({...bridge, count, expanded: open});
+    }
+    return {edges: graph.edges.filter(edge => !bundled.has(edge.id)), bundles};
   }
 
   function constellationLayout(groups) {
@@ -241,9 +260,9 @@
       const label = bounds.labelMetrics?.get(id); return label ? {left: point.x - label.halfWidth, right: point.x + label.halfWidth, top: point.y + label.top, bottom: point.y + label.bottom} : null;
     }).filter(Boolean);
     const clearanceAt = point => Math.min(
-      ...points.map(node => Math.hypot(point.x - node.x, point.y - node.y) - 58),
+      ...points.map(node => Math.hypot(point.x - node.x, point.y - node.y) - (bounds.nodeClearance || 58)),
       ...labelBoxes.map(label => Math.hypot(Math.max(label.left - point.x, 0, point.x - label.right), Math.max(label.top - point.y, 0, point.y - label.bottom)) - 16),
-      ...anchors.map(anchor => Math.hypot(point.x - anchor.x, point.y - anchor.y) - 30));
+      ...anchors.map(anchor => Math.hypot(point.x - anchor.x, point.y - anchor.y) - (bounds.anchorClearance || 30)));
     const ordered = [...edges].sort((a, b) => Number(b.from === selected || b.to === selected) - Number(a.from === selected || a.to === selected) || b.count - a.count || a.id.localeCompare(b.id));
     return ordered.map(edge => {
       const from = positions.get(edge.from), to = positions.get(edge.to), middle = {x: (from.x + to.x) / 2, y: (from.y + to.y) / 2};
@@ -345,6 +364,8 @@
     let listMode = false, tab = 'overview', past = [], future = [], positions = new Map(), graph, visible, layout, constellations;
     let box = {x: 0, y: 0, width: WIDTH, height: HEIGHT}, drag = null, moved = false, hoveredTheme = '', focusedTheme = '';
     const overrides = new Map(), snapshot = () => JSON.stringify(state);
+    const expandedBundles = new Set(), landmarks = new Map(), landmarkDrafts = new Map(), discovered = new Set();
+    let discoveryEdge = null, landmarkCompose = null;
     // An arrangement belongs to its focused neighborhood. A theme dragged in
     // the outer ring must not carry that offset when it becomes the center.
     const positionKey = id => state.layout === 'rings' ? `rings:${state.anchor}:${id}` : `${state.layout}:${id}`;
@@ -360,6 +381,8 @@
       if (state.layout === 'overview' && box.width > (layout?.width || WIDTH) * .7) svg.classList.add('pcs-map-full-web');
       else svg.classList.remove('pcs-map-full-web');
       updateActiveLabel();
+      const bounds = svg.getBoundingClientRect(), scale = Math.min((bounds.width || WIDTH) / box.width, (bounds.height || HEIGHT) / box.height);
+      for (const badge of svg.querySelectorAll('[data-bundle]')) badge.setAttribute('transform', `translate(${badge.dataset.x},${badge.dataset.y}) scale(${1 / scale})`);
     }
     function updateActiveLabel() {
       const bounds = svg.getBoundingClientRect(), width = bounds.width || WIDTH, height = bounds.height || HEIGHT;
@@ -532,6 +555,9 @@
     toolbar.prepend(navigation);
     const caption = element('p', 'caption'), legend = element('p', 'legend');
     const contextBar = element('div', 'context-bar'); contextBar.append(showAll, clusterCaption, caption); host.append(contextBar);
+    const bundleReset = button('Bundle all again', () => { expandedBundles.clear(); render(); announce('Links between constellations are bundled again. Selected evidence stays visible.'); });
+    contextBar.append(bundleReset);
+    const discoveryPanel = element('section', 'discovery'); discoveryPanel.setAttribute('aria-label', 'Discover and revisit a connection'); host.append(discoveryPanel);
     const workspace = element('div', 'workspace'), canvas = element('div', 'canvas'), stage = element('div', 'stage');
     const svg = svgElement('svg', {class: 'pcs-map-svg', viewBox: `0 0 ${WIDTH} ${HEIGHT}`, role: 'group', 'aria-label': 'Fictional continuity graph. Tab to themes, Enter to inspect; arrow keys move between themes.', tabindex: '0'});
     const activeLabel = element('div', 'active-label'); activeLabel.hidden = true; activeLabel.style.fontSize = '13px'; activeLabel.setAttribute('aria-hidden', 'true');
@@ -549,7 +575,74 @@
     const status = element('p', 'status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); status.setAttribute('aria-atomic', 'true');
     const mapHelp = element('details', 'help');
     mapHelp.append(element('summary', '', 'How to explore the map'), help, legend, about);
-    host.append(status, mapHelp, element('p', 'footnote', 'Fictional demo · No AI requests or uploads. Nothing is saved to PCS. Progress resets when you leave or reload. Lines show shared records, not cause or importance.'));
+    host.append(status, mapHelp, element('p', 'footnote', 'Fictional demo · No AI requests or uploads. Story progress, arrangements and your demo landmarks stay only on this page and reset on reload. Nothing is saved to PCS. Individual lines count shared records; bundles count theme links. Neither establishes cause or importance.'));
+
+    function toggleBundle(id) {
+      expandedBundles.has(id) ? expandedBundles.delete(id) : expandedBundles.add(id);
+      render();
+      const selector = listMode ? '[data-list-bundle]' : '[data-bundle]';
+      [...host.querySelectorAll(selector)].find(item => (item.dataset.bundle || item.dataset.listBundle) === id)?.focus({preventScroll: true});
+      announce(`${id.split('|').join(' and ')}: ${expandedBundles.has(id) ? 'individual links shown' : 'links bundled again'}. Counts describe theme links, not records.`);
+    }
+    function discoverNext() {
+      const candidates = visibleGraph(graph, {...state, layout: 'overview'}).edges
+        .filter(edge => !discovered.has(edge.id) && !edge.records.some(record => record.id === story?.epilogueRecord))
+        .sort((a, b) => b.count - a.count || a.id.localeCompare(b.id));
+      if (!candidates.length) { announce('You have explored the available demo connections. Continue freely or revisit a landmark.'); return; }
+      const edge = candidates[0]; discovered.add(edge.id); discoveryEdge = edge.id; landmarkCompose = null; tab = 'overview';
+      chooseEdge(edge.id); renderDiscovery(); renderInspector();
+      inspector.focus({preventScroll: true});
+    }
+    function composeLandmark(id) {
+      landmarkCompose = id; tab = 'overview'; renderInspector();
+      inspector.querySelector('[data-landmark-input]')?.focus({preventScroll: true});
+    }
+    function renderDiscovery() {
+      const active = doc.activeElement?.dataset?.discoveryAction;
+      discoveryPanel.replaceChildren();
+      const intro = element('div', 'discovery-intro');
+      intro.append(element('strong', '', 'Find something worth returning to'), element('p', 'muted', 'Inspect a connection, then try a landmark in your own words. Demo notes last only for this visit.'));
+      const actions = element('div', 'discovery-actions');
+      const next = button(discoveryEdge ? 'Try another connection' : 'Discover a connection', discoverNext); next.dataset.discoveryAction = 'next'; actions.append(next);
+      if (discoveryEdge) {
+        const current = state.edge === discoveryEdge;
+        const inspect = button('Read its records', () => { tab = 'records'; chooseEdge(discoveryEdge); renderInspector(); inspector.focus({preventScroll: true}); }); inspect.dataset.discoveryAction = 'inspect';
+        const leave = button('Leave a landmark', () => composeLandmark(discoveryEdge)); leave.disabled = !current; leave.dataset.discoveryAction = 'leave';
+        const finish = button('Finish exploring', () => { discoveryEdge = null; landmarkCompose = null; renderDiscovery(); renderInspector(); announce('Continue exploring freely. Your demo landmarks remain available on this page.'); }); finish.dataset.discoveryAction = 'finish';
+        actions.append(inspect, leave, finish);
+      }
+      discoveryPanel.append(intro, actions);
+      if (landmarks.size) {
+        const saved = element('div', 'landmarks'); saved.append(element('strong', '', 'Your demo landmarks'));
+        for (const [id, text] of landmarks) {
+          const item = button(text.split('\n')[0].slice(0, 70), () => { discoveryEdge = null; tab = 'overview'; chooseEdge(id); renderDiscovery(); renderInspector(); inspector.focus({preventScroll: true}); }, 'landmark-chip');
+          item.dataset.landmark = id; saved.append(item);
+        }
+        discoveryPanel.append(saved);
+      }
+      if (active) discoveryPanel.querySelector(`[data-discovery-action="${active}"]`)?.focus({preventScroll: true});
+    }
+    function landmarkEditor(edge, body) {
+      const section = element('section', 'landmark-editor'); section.append(element('h5', 'subheading', 'Your demo landmark'));
+      if (landmarks.has(edge.id)) section.append(element('p', 'landmark-text', landmarks.get(edge.id)));
+      if (landmarkCompose !== edge.id) {
+        section.append(button(landmarks.has(edge.id) ? 'Edit your landmark' : 'Leave a landmark', () => composeLandmark(edge.id))); body.append(section); return;
+      }
+      const input = element('textarea', 'landmark-input'); input.rows = 4; input.dataset.landmarkInput = edge.id;
+      input.value = landmarkDrafts.get(edge.id) ?? landmarks.get(edge.id) ?? '';
+      input.addEventListener('input', () => landmarkDrafts.set(edge.id, input.value));
+      input.addEventListener('keydown', event => { if (event.key === 'Escape') { event.preventDefault(); landmarkCompose = null; renderInspector(); inspector.querySelector('.pcs-map-landmark-editor button')?.focus({preventScroll: true}); } });
+      section.append(field('A title, a question or a next step in your own words', input), element('p', 'muted', 'Up to 1,000 characters. This note stays in this page’s memory and disappears on reload. It does not change Mara’s records.'));
+      const feedback = element('p', 'muted'); feedback.setAttribute('role', 'status');
+      section.append(button('Keep landmark for this visit', () => {
+        const value = input.value.trim();
+        if (!value || [...value].length > 1000) { feedback.textContent = value ? 'Use at most 1,000 characters. Your draft is retained.' : 'Write a landmark first.'; return; }
+        landmarks.set(edge.id, value); landmarkDrafts.delete(edge.id); landmarkCompose = null; discoveryEdge = null;
+        renderDiscovery(); renderInspector(); announce('Landmark kept for this visit. Return through Your demo landmarks. Reloading clears it.');
+      }), button('Cancel', () => { landmarkCompose = null; renderInspector(); }));
+      if (landmarks.has(edge.id)) section.append(button('Remove this landmark', () => { landmarks.delete(edge.id); landmarkDrafts.delete(edge.id); landmarkCompose = null; renderDiscovery(); renderInspector(); announce('Demo landmark removed. Mara’s records are unchanged.'); }));
+      section.append(feedback); body.append(section);
+    }
 
     function keepStoryPassage(record) {
       const added = journey.keep(record.id), progress = journey.progress();
@@ -706,19 +799,20 @@
           for (const note of ownerNotes(connection)) item.append(element('span', 'connection-note', note.spoiler ? 'Connection note available · Ending spoilers' : `${data.person?.name || 'Owner'}’s note: ${note.text}`)); body.append(item);
         }
       }
+      if (edge && tab !== 'connections') landmarkEditor(edge, body);
       if (focusTab) inspector.querySelector(`[data-tab="${focusTab}"]`)?.focus();
     }
 
     function renderConstellations() {
       const active = doc.activeElement?.closest?.('[data-cluster]')?.dataset.cluster;
       layout = constellationLayout(constellations.nodes); positions = layout.positions; svg.replaceChildren();
-      legend.textContent = 'Each small star is a theme. Faint bridges count distinct records touching both constellations; they do not imply cause or importance.';
+      legend.textContent = 'Each small star is a theme. Bridges count displayed theme links between constellations, not shared records. They do not imply cause or importance.';
       const bridges = [];
       for (const [index, edge] of constellations.edges.entries()) {
         const from = positions.get(edge.from), to = positions.get(edge.to);
         const path = svgElement('path', {d: `M ${from.x} ${from.y} Q ${(from.x + to.x) / 2} ${(from.y + to.y) / 2 - 55} ${to.x} ${to.y}`,
           class: `pcs-map-constellation-bridge${index < 3 ? ' pcs-map-constellation-bridge-visible' : ''}`, 'aria-hidden': 'true'});
-        path.append(svgElement('title', {}, `${edge.from} + ${edge.to}: ${plural(edge.count, 'shared record')}`)); svg.append(path); bridges.push({path, edge, index});
+        path.append(svgElement('title', {}, `${edge.from} + ${edge.to}: ${plural(edge.count, 'theme link')}`)); svg.append(path); bridges.push({path, edge, index});
       }
       const highlight = group => {
         for (const bridge of bridges) {
@@ -768,24 +862,50 @@
       if (state.layout === 'constellations' && !state.cluster) { renderConstellations(); updateActiveLabel(); return; }
       const activeId = doc.activeElement?.closest?.('[data-theme]')?.dataset.theme;
       const activeEdge = doc.activeElement?.closest?.('.pcs-map-edge-control')?.dataset.edge;
+      const activeBundle = doc.activeElement?.closest?.('[data-bundle]')?.dataset.bundle;
       hoveredTheme = ''; focusedTheme = activeId || '';
       const bounds = svg.getBoundingClientRect();
       layout = layoutGraph(visible, state.layout, state.anchor, state.compare); positions = layout.positions;
       const scale = Math.min((bounds.width || WIDTH) / layout.width, (bounds.height || HEIGHT) / layout.height);
       const labelSize = clamp(12 / scale, 15, layout.labelSize), countSize = clamp(11 / scale, 15, 32), lineHeight = Math.max(18, labelSize + 2);
-      const dots = dottedConnections(visible.edges, percent);
-      legend.textContent = `Dotted: weakest ${percent}% target, keeping equal counts together. Showing ${dots.count} of ${dots.total} connections dotted${dots.total ? ` (${Math.round(dots.count / dots.total * 100)}%)` : ''}. The rest are solid.`;
+      const presentation = connectionPresentation(visible, state, expandedBundles);
+      const dots = dottedConnections(presentation.edges, percent);
+      legend.textContent = `Dotted: weakest ${percent}% target, keeping equal shared-record counts together. Showing ${dots.count} of ${dots.total} individual connections dotted${dots.total ? ` (${Math.round(dots.count / dots.total * 100)}%)` : ''}. The rest are solid.${state.layout === 'overview' ? ' Counted bundles join constellations: select one to show its theme links. A bundle count is links, not records.' : ''}`;
       svg.replaceChildren();
       for (const node of visible.nodes) { const movedPoint = overrides.get(positionKey(node.id)); if (movedPoint) positions.set(node.id, {...movedPoint}); }
       for (const heading of layout.headings) svg.append(svgElement('text', {x: heading.x, y: heading.y || 55, class: heading.kind === 'group' ? 'pcs-map-group-heading' : 'pcs-map-date-heading', 'text-anchor': 'middle'}, heading.kind === 'group' ? heading.label : `Week of ${heading.label}`));
-      const routes = routeEdges(visible.edges, positions, state.anchor, state.layout, layout), routeLookup = new Map(routes.map(route => [route.id, route])), edgeControls = [];
+      const routes = routeEdges(presentation.edges, positions, state.anchor, state.layout, layout), routeLookup = new Map(routes.map(route => [route.id, route])), edgeControls = [];
+      const bundleControls = [];
+      if (presentation.bundles.length) {
+        const groupPositions = new Map();
+        for (const group of new Set(visible.nodes.map(node => node.group))) {
+          const points = visible.nodes.filter(node => node.group === group).map(node => positions.get(node.id));
+          groupPositions.set(group, {x: points.reduce((sum, point) => sum + point.x, 0) / points.length, y: points.reduce((sum, point) => sum + point.y, 0) / points.length});
+        }
+        const narrow = bounds.width < 500, badgeScale = 1 / Math.min((bounds.width || WIDTH) / box.width, (bounds.height || HEIGHT) / box.height);
+        const bundleRoutes = routeEdges(presentation.bundles, groupPositions, '', 'overview', {width: layout.width, height: layout.height, anchorClearance: (narrow ? 33 : 53) * badgeScale, nodeClearance: (narrow ? 15 : 22) * badgeScale});
+        for (const bridge of presentation.bundles) {
+          const route = bundleRoutes.find(item => item.id === bridge.id), words = `${plural(bridge.count, 'theme link')} between ${bridge.from} and ${bridge.to}`;
+          const group = svgElement('g', {class: `pcs-map-bundle${bridge.expanded ? ' pcs-map-bundle-expanded' : ''}`, 'data-bundle-path': bridge.id});
+          const path = svgElement('path', {d: route.d, class: 'pcs-map-bundle-line', fill: 'none', 'stroke-width': bridge.expanded ? 1 : 1.2 + Math.log2(bridge.count + 1) * .3, 'vector-effect': 'non-scaling-stroke'});
+          group.append(svgElement('path', {d: route.d, class: 'pcs-map-bundle-hit', fill: 'none', 'vector-effect': 'non-scaling-stroke'}), path);
+          group.addEventListener('click', event => { event.stopPropagation(); if (!moved) toggleBundle(bridge.id); }); svg.append(group);
+          const badge = svgElement('g', {class: 'pcs-map-bundle-badge', transform: `translate(${route.point.x},${route.point.y}) scale(${badgeScale})`, role: 'button', tabindex: '0', 'data-bundle': bridge.id,
+            'data-x': route.point.x, 'data-y': route.point.y, 'aria-expanded': String(bridge.expanded), 'aria-label': `${words}. ${bridge.expanded ? 'Bundle them again.' : 'Show each link.'}`});
+          const label = narrow ? String(bridge.count) : `${bridge.expanded ? '−' : '+'} ${bridge.count}`, width = narrow ? 28 : Math.max(46, label.length * 7 + 20), height = narrow ? 26 : 30;
+          badge.append(svgElement('title', {}, words), svgElement('rect', {x: -width / 2, y: -height / 2, width, height, rx: height / 2}), svgElement('text', {'text-anchor': 'middle', y: 4}, label));
+          badge.addEventListener('click', event => { event.stopPropagation(); if (!moved) toggleBundle(bridge.id); });
+          badge.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); toggleBundle(bridge.id); } });
+          bundleControls.push(badge);
+        }
+      }
       // A selected thread focuses both endpoints, independently of the theme
       // previously inspected. Keep the arrangement and camera in place.
       const selectedEdge = visible.edges.find(edge => edge.id === state.edge);
       const selectedNodes = new Set(selectedEdge ? [selectedEdge.from, selectedEdge.to] : state.selected ? [state.selected] : []);
       const neighborhood = new Set(selectedNodes);
       for (const edge of visible.edges) if (selectedNodes.has(edge.from) || selectedNodes.has(edge.to)) { neighborhood.add(edge.from); neighborhood.add(edge.to); }
-      for (const edge of visible.edges) {
+      for (const edge of presentation.edges) {
         const route = routeLookup.get(edge.id), selected = edge.id === state.edge, related = selectedNodes.has(edge.from) || selectedNodes.has(edge.to);
         const tone = toneClass(lookup.get(selectedNodes.has(edge.to) && !selectedNodes.has(edge.from) ? edge.to : edge.from));
         const group = svgElement('g', {class: `pcs-map-edge ${tone}${selected ? ' pcs-map-edge-selected' : related ? ' pcs-map-edge-related' : selectedEdge ? ' pcs-map-edge-muted' : ''}`, 'data-edge': edge.id});
@@ -799,7 +919,7 @@
           const id = closestEdge(routes, point.matrixTransform(transform.inverse()));
           if (id) chooseEdge(id);
         });
-        const control = svgElement('g', {class: `pcs-map-edge-control ${tone}${selected || related ? ' pcs-map-edge-control-shown' : ''}`, transform: `translate(${route.point.x},${route.point.y})`, role: 'button', tabindex: '-1', 'aria-pressed': String(selected), 'aria-label': `${lookup.get(edge.from).label} and ${lookup.get(edge.to).label}: ${plural(edge.count, 'shared record')}`, 'data-edge': edge.id});
+        const control = svgElement('g', {class: `pcs-map-edge-control ${tone}${selected || related ? ' pcs-map-edge-control-shown' : ''}`, transform: `translate(${route.point.x},${route.point.y})`, role: 'button', tabindex: selected || related ? '0' : '-1', 'aria-pressed': String(selected), 'aria-label': `${lookup.get(edge.from).label} and ${lookup.get(edge.to).label}: ${plural(edge.count, 'shared record')}`, 'data-edge': edge.id});
         control.append(svgElement('circle', {r: 13, class: 'pcs-map-edge-control-hit'}), svgElement('circle', {r: 9, class: 'pcs-map-edge-control-dot'}), svgElement('text', {y: 4, 'text-anchor': 'middle', class: 'pcs-map-edge-control-count'}, edge.count));
         control.addEventListener('click', event => { event.stopPropagation(); if (!moved) chooseEdge(edge.id); });
         control.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); chooseEdge(edge.id); } });
@@ -841,6 +961,8 @@
       if (!visible.nodes.length) svg.append(svgElement('text', {x: 500, y: 320, 'text-anchor': 'middle', class: 'pcs-map-empty-label'}, 'No themes in this view. Choose Connections to see the full web.'));
       if (activeId) [...svg.querySelectorAll('[data-theme]')].find(item => item.dataset.theme === activeId)?.focus();
       if (activeEdge) [...svg.querySelectorAll('.pcs-map-edge-control')].find(item => item.dataset.edge === activeEdge)?.focus();
+      svg.append(...bundleControls);
+      if (activeBundle) [...svg.querySelectorAll('[data-bundle]')].find(item => item.dataset.bundle === activeBundle)?.focus();
       applyBox();
     }
 
@@ -861,6 +983,7 @@
       focusView.setAttribute('aria-pressed', String(state.layout === 'rings'));
       constellationView.setAttribute('aria-pressed', String(state.layout === 'constellations'));
       connectionsView.setAttribute('aria-pressed', String(state.layout === 'overview'));
+      bundleReset.hidden = state.layout !== 'overview' || !expandedBundles.size;
       clusterCaption.textContent = state.layout === 'constellations' ? state.cluster || 'Mara’s constellations' : state.layout === 'rings' ? `Around ${lookup.get(state.anchor)?.label || 'one theme'}` : 'All connections';
       back.disabled = !past.length; forward.disabled = !future.length;
       graphView.setAttribute('aria-pressed', String(!listMode)); listView.setAttribute('aria-pressed', String(listMode));
@@ -869,7 +992,7 @@
       caption.textContent = constellationOverview ? `${plural(constellations.nodes.length, 'constellation')} · ${plural(constellations.nodes.reduce((sum, group) => sum + group.count, 0), 'theme')}` :
         `${visible.nodes.length} of ${graph.nodes.length} themes · ${plural(visible.edges.length, 'connection')}`;
       const viewHelp = {
-        overview: 'Select a thread to focus both themes and highlight their connections. Hover or focus a star to read its name; select it to inspect the evidence. Choose Focus for its neighborhood, or Constellations to explore one group.',
+        overview: 'Select a counted bundle to show each theme link between two constellations; select it again to collapse. Individual links count shared records. Select a thread to inspect both themes and their evidence. Hover or focus a star to read its name. Choose Focus for its neighborhood, or Constellations to explore one group.',
         rings: 'Focus shows one theme and its direct connections. Select a neighboring theme to center its neighborhood without resetting pan or zoom.',
         compare: 'Compare shows the two chosen themes and their direct connections. Selecting a star inspects its evidence while keeping both comparison anchors.',
         grid: 'Grid arranges themes by name. Select a theme or connection to inspect its evidence without moving the layout.',
@@ -878,6 +1001,14 @@
       help.textContent = state.layout === 'constellations' ? 'Open a constellation, then select a theme. Tab and Enter work throughout; arrow keys move between stars. Scroll to zoom, drag empty space to pan, and use All constellations to return.' :
         `${viewHelp[state.layout] || viewHelp.overview} Drag empty space to pan, scroll to zoom, and use Fit to return. Tab and arrow keys move between themes; Enter selects, Escape clears. List offers the same evidence.`;
       renderGraph(); list.replaceChildren();
+      if (state.layout === 'overview') {
+        const bundles = element('div', 'bundle-list'); bundles.append(element('h4', '', 'Between constellations'), element('p', 'muted', 'These counts are theme links. Open a bundle, then select a theme to inspect its records and individual connections.'));
+        for (const bridge of connectionPresentation(visible, state, expandedBundles).bundles) {
+          const item = button(`${bridge.from} + ${bridge.to} · ${plural(bridge.count, 'theme link')} · ${bridge.expanded ? 'Bundle again' : 'Show links'}`, () => toggleBundle(bridge.id));
+          item.dataset.listBundle = bridge.id; item.setAttribute('aria-expanded', String(bridge.expanded)); bundles.append(item);
+        }
+        list.append(bundles);
+      }
       const listEdge = visible.edges.find(edge => edge.id === state.edge);
       const listSelection = new Set(listEdge ? [listEdge.from, listEdge.to] : [state.selected]);
       if (constellationOverview) {
@@ -885,6 +1016,7 @@
       } else for (const node of visible.nodes) { const item = button('', () => choose(node.id), 'list-item'); item.classList.add(toneClass(node)); item.dataset.listTheme = node.id; item.setAttribute('aria-pressed', String(listSelection.has(node.id))); item.append(element('strong', '', node.label), element('span', 'muted', `${node.group} · ${plural(node.count, 'record')}`), element('span', '', node.summary)); list.append(item); }
       if (!(constellationOverview ? constellations.nodes.length : visible.nodes.length)) list.append(element('p', 'empty', 'No themes in this view. Choose Connections to see the full web.'));
       renderInspector();
+      renderDiscovery();
       if (activeListId) [...list.children].find(item => item.dataset.listTheme === activeListId)?.focus();
     }
 
@@ -907,13 +1039,13 @@
       zoom(Math.exp(clamp(event.deltaY * unit, -240, 240) * .002), point.matrixTransform(transform.inverse()));
     }, {passive: false});
     svg.addEventListener('dblclick', event => {
-      if (moved || event.target.closest?.('[data-theme], [data-edge], [data-cluster]')) return;
+      if (moved || event.target.closest?.('[data-theme], [data-edge], [data-cluster], [data-bundle], [data-bundle-path]')) return;
       event.preventDefault(); clearSelection(); svg.focus({preventScroll: true});
     });
     svg.addEventListener('pointerdown', event => {
       if (event.button !== 0 || event.isPrimary === false) return;
       const node = event.target.closest?.('[data-theme]'), edge = event.target.closest?.('[data-edge]');
-      if (edge && !node) return;
+      if (edge && !node || event.target.closest?.('[data-bundle], [data-bundle-path]')) return;
       const bounds = svg.getBoundingClientRect(); if (!bounds.width || !bounds.height) return;
       const scale = Math.min(bounds.width / box.width, bounds.height / box.height);
       drag = {id: node?.dataset.theme || null, x: event.clientX, y: event.clientY, box: {...box}, point: node ? {...positions.get(node.dataset.theme)} : null, scale}; moved = false;
@@ -948,7 +1080,7 @@
   }
 
   function mountAll(doc = root.document, data = root.PCS_MAP_DATA) { if (!doc) return []; return [...doc.querySelectorAll('[data-pcs-map]')].map(host => create(host, data)); }
-  const api = {deriveGraph, dottedConnections, visibleGraph, constellationGraph, constellationLayout, labelLines, layoutGraph, routeEdges, curvePoint, closestEdge, createStoryJourney, create, mountAll};
+  const api = {deriveGraph, dottedConnections, visibleGraph, constellationGraph, connectionPresentation, constellationLayout, labelLines, layoutGraph, routeEdges, curvePoint, closestEdge, createStoryJourney, create, mountAll};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.PCSMapDemo = api;
   if (root.document) { if (root.document.readyState === 'loading') root.document.addEventListener('DOMContentLoaded', () => mountAll()); else mountAll(); }

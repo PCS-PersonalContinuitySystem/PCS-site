@@ -2,45 +2,31 @@
 
 **Your personal thinking space. Room to think. Space to connect.**
 
-This repository contains the public website for **Personal Continuity System**. PCS brings AI conversation, revisable memory, reading, notebooks and planning into a locally owned workspace. **Change the AI. Keep your continuity.**
+This repository contains the public website for Personal Continuity System. PCS brings AI conversation, revisable memory, reading, notebooks and planning into a locally owned workspace. **Change the AI. Keep your continuity.**
 
-[Visit the website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS 0.9.102](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.102) · [Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Discord](https://discord.com/invite/2ssCQhNgAN)
+[Visit the website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS 0.9.114](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.114) · [Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Discord](https://discord.com/invite/2ssCQhNgAN)
 
-The site describes **PCS 0.9.102**. This update refreshes release links, captures the shipped interface with fictional demonstration data, and explains current recall and Local screen relevance. Map discovery, optional memory hints, Jev Library exploration and the roomier Materials/Library views are included in the guides. The Windows, Source and checksum links use the published **v0.9.102** release; their sizes and digests match the qualified application delivery. Existing reader compatibility requirements are unchanged.
+The site describes **PCS 0.9.114**. Current downloads point to the published Windows, Source and checksum assets. The guides cover linked memory revisions, settled marks, named lessons, optional saved-area hints, whole-archive Map indexing, larger Local contexts, longer microphone turns, resumable Prepared Notes and updated setup and compatibility requirements.
 
-PCS is free and open source. Cloud API usage is separate; models, AI runtimes and optional speech packs are separate downloads. Windows x64 is the main application package. Local CUDA needs compatible NVIDIA hardware; Custom GGUF, Radeon Vulkan text and the Ubuntu browser/cloud source route have experimental limits. Models differ in quality and supported tools. Optional Brave, Local + Jev, separately reviewed Jev Library exploration and cloud preparation send their permitted inputs outside the computer.
+The interactive Map reflects current connection bundling, discovery and landmark workflows using a small fictional archive. The existing eight-passage story, free exploration and no-JavaScript reading path remain available. It is an explanatory website demo; it makes no model requests, reads no personal vault and does not save visitor edits.
+
+Current application pictures are genuine captures of the shipped 0.9.114 interface with authored fictional data. They show controls and saved records, not live AI results. SVG diagrams explain the current memory and Local-context workflows. See [SCREENSHOTS.md](SCREENSHOTS.md) and [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json) for provenance. Historical images retain their original versions and paths.
 
 | Page | What it explains |
 | --- | --- |
-| [index.html](index.html) | PCS features, the interactive Map, conversation controls, current screenshots, downloads and common questions. |
-| [continuity-map.html](continuity-map.html) | Mara's fictional Map story, supporting records, exploration controls and the distinction from the application's Map. |
-| [memory-control.html](memory-control.html) | Saved passages, memory formation, corrections, recall, Keep, quotations and saved-work search. |
-| [local-ai.html](local-ai.html) | Local models, hardware, profiles, search, voice, vision, optional online tools and platform previews. |
-| [getting-started.html](getting-started.html) | First launch, provider setup, reading and practice, conversation pace, switching connections and updating. |
-| [data-and-privacy.html](data-and-privacy.html) | Vault storage, sharing, Local/cloud boundaries, drafts, backups, passphrase changes and reader compatibility. |
+| [Home](index.html) | PCS, the Map demo, memory workflow, Local AI, screenshots and downloads. |
+| [Continuity Map](continuity-map.html) | Fictional interactive exploration and the complete story with supporting records. |
+| [Memory](memory-control.html) | Originals, corrections, links, settled memories, lessons and permitted recall. |
+| [Local AI](local-ai.html) | Models, context, voice, Vision and hardware/setup choices. |
+| [Get started](getting-started.html) | Quick Setup, connections, Materials and upgrades. |
+| [Data and privacy](data-and-privacy.html) | Local storage, sharing, backups, deletion and reader compatibility. |
 
-**About the Map demonstration.** The website tells an original fictional story through **60 themes, 299 connections, eight constellations and 76 records**. Start the story for a guided route through three threads and eight passages. Read each passage and choose Keep & continue; the final Keep opens the ending. Counts show exactly what remains. Opening a passage does not count as keeping it; skipping to the ending does not complete the story. Keep is only page-local demonstration progress: leaving or reloading resets it.
+PCS is free and open source. Cloud API usage is separate; models, runtimes and optional speech packs download separately. Windows x64 is the main application package. Local CUDA needs compatible NVIDIA hardware; Custom GGUF, Radeon Vulkan text and the Ubuntu source preview have experimental limits. Models differ in quality and supported features. Optional online services send permitted inputs outside your computer.
 
-Explore freely at any time, then resume the story on the same page. Focus, Constellations, Connections, Map/List, search, Back/Forward, pan, zoom and keyboard controls remain available. Selecting a connection focuses both endpoint themes and their connected evidence without rearranging the graph. The ending explains how themes and lines relate to records. The same story passages and ending are also ordinary HTML without JavaScript.
+## Upload and preview
 
-The demonstration uses fixed authored records and explicit theme membership. It does not open a vault, call an AI model, accept uploads or save changes. Counts describe shared records, not confidence, importance, personality or cause. The PCS application derives its own Map from saved wording and labels; its bounded overview supports up to **120 themes and 900 connections**, considering up to 600 matching memories and 128 notebooks. Filters and available records affect the result. The demonstration's smaller counts are intentional.
+See [UPLOAD-INSTRUCTIONS.md](UPLOAD-INSTRUCTIONS.md). Apply the Update ZIP's extracted contents at the existing repository root and preserve unrelated files. The Full-Site ZIP contains the active site and supporting/provenance assets for a clean preview; it does not replace deployment configuration or historical repository files.
 
-**Images and diagrams.** Six new **PCS 0.9.102** pictures show Conversation, Map, Library, Materials, Notebook and Calendar in the shipped interface. They use a fresh, isolated fictional workspace and no live provider, microphone or real screen input. They are interface illustrations, not evidence of model answer quality. The authored memory diagram distinguishes optional hints, permitted recall and failed lookups; a second diagram explains which context Local supplies to a reply. See [SCREENSHOTS.md](SCREENSHOTS.md) and `SCREENSHOT-MANIFEST.json` for dimensions, hashes and capture provenance. Historical repository assets remain intact and are not relabeled as newer captures.
+This is a buildless static site. Serve a local copy with `python -m http.server 8000 --bind 127.0.0.1`, then open `http://127.0.0.1:8000/`. Stop with Ctrl+C. There are no external font, analytics or application API dependencies for browsing the demo.
 
-**Preview locally.** This is an editable static HTML, CSS and JavaScript site with no build step or npm dependencies. With Python 3 installed, run from this folder:
-
-```console
-python -m http.server 8000 --bind 127.0.0.1
-```
-
-Visit [localhost:8000](http://localhost:8000/). Stop the server with Ctrl+C. This previews the public website, not the PCS application.
-
-**Maintain the site.** The six HTML pages own their content, navigation and metadata. `assets/site.css` and `assets/site.js` provide shared presentation, mobile menus, tabs and image previews. `assets/map.js`, `assets/map.css` and `assets/map-data.js` implement the Map demonstration. Keep the JavaScript records and their HTML equivalents in `continuity-map.html` consistent if editing the story. Application guides and source live in the matching release ZIP, not this repository.
-
-When updating a release, verify the published tag and all three assets. Change current release labels and links together, but preserve historical reader requirements and accurately dated screenshot captions. Check all page links, fragment targets, structured metadata, image dialogs, tabs, Map interactions and narrow-screen layouts. `WEBSITE-CHECKS.json` records the website checks for this delivery; it does not certify application models, microphones, graphics hardware or long sessions.
-
-**Upload an update.** Follow [UPLOAD-INSTRUCTIONS.md](UPLOAD-INSTRUCTIONS.md). The update ZIP contains only changed and new files; overlay those paths at the existing Pages root. The full-site ZIP provides a clean preview with all active runtime files. Upload extracted contents, not the ZIP itself. Preserve deployment workflows and custom-domain configuration. `PUBLICATION-MANIFEST.json` identifies the active files included in the full site; older unrelated assets can remain.
-
-[Website issues](https://github.com/PCS-PersonalContinuitySystem/PCS-site/issues) · [Application bugs](https://github.com/PCS-PersonalContinuitySystem/PCS/issues) · [Optional Ko-fi support](https://ko-fi.com/pcssupport)
-
-Review reports before sharing and remove personal information. First-party application code is GPL-3.0-only; see the [application license and notices](https://github.com/PCS-PersonalContinuitySystem/PCS). Optional components retain their own terms.
+`PUBLICATION-MANIFEST.json` records packaged file identities; `WEBSITE-CHECKS.json` records local preparation checks. These are not a deployment receipt or evidence of live model/device reliability. Application validation and limits are described in its release and repair records.

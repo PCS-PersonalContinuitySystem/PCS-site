@@ -1,28 +1,30 @@
-# Upload the PCS 0.9.102 website update
+# Upload the PCS 0.9.114 website update
 
-This packet is prepared for `PCS-PersonalContinuitySystem/PCS-site`, using repository commit `5118cfe528a6afec5980241a1efd3a7302226a7b` as its baseline. It has not been published by this task.
+Prepared for `PCS-PersonalContinuitySystem/PCS-site`, from public commit `cd2eb15726f79f482325e2f1e856a26fb3ae0fa3`. This task has not published the website.
 
-## Use the Update ZIP
+## Apply the Update ZIP
 
-1. Keep a copy of the current website or retain its Git commit before updating.
-2. Extract `PCS-Website-0.9.102-Update.zip` locally.
-3. Upload the **extracted contents to the existing repository root**, preserving the `assets/` and `screenshots/` subfolders. Replace the matching files. Do not upload the ZIP itself or put its contents inside a new enclosing folder.
-4. Preserve `.nojekyll`, any `CNAME`, `.github` deployment configuration and unrelated files. This update requires no deletion of historical assets, archives or screenshots.
-5. Review the changed paths before committing. If the repository has changed since the baseline above, compare overlapping files rather than replacing newer work blindly.
-6. After GitHub Pages finishes, reload the site and check the download, guide links, screenshot previews and Map story. A fresh page load may be needed for cached content.
+1. Keep the current Git commit or a backup of your website.
+2. Extract `PCS-Website-0.9.114-Update.zip` locally.
+3. Upload the **extracted files and folders to the existing repository root**, keeping `assets/` and `screenshots/` intact. Replace matching files. Do not upload the ZIP itself or add an enclosing folder.
+4. Preserve `.nojekyll`, any `CNAME`, `.github` configuration and unrelated files. No deletion of old screenshots, archives or historical assets is required.
+5. Review the changed paths before committing. If the repository has changed since the baseline above, compare overlapping files before replacing newer work.
+6. After GitHub Pages finishes deploying, reload the site and check the downloads, navigation, new screenshots, diagrams and Map interactions.
 
-The Update ZIP contains only changed and new files. `CHANGED-FILES.json` identifies the paths and their baseline/current hashes. The Full-Site ZIP contains the active static pages, supporting assets and site documentation for a clean local preview; it is not a replacement for unrelated repository or deployment files.
+`CHANGED-FILES.json` lists changed/new paths and hashes. The Full-Site ZIP contains the active pages, assets and documentation for a clean preview. It is not a substitute for unrelated repository/deployment files.
 
-## What to check after upload
+## Check after upload
 
-- Download links lead to published **v0.9.102** Windows, Source and SHA256SUMS assets.
-- The new app pictures are labeled **PCS 0.9.102 · fictional demonstration data**. No live AI conversation is claimed for them.
-- The two SVG diagrams open and remain readable. The Local diagram distinguishes image delivery from screen capture.
-- On desktop and a narrow screen, navigation, image dialogs, FAQ disclosures and memory/provider tabs remain usable.
-- The existing Map story still uses Start story and Keep & continue, with all eight passages, free exploration and the ending. Its 60-theme fictional website demo is separate from the app screenshots.
+- Current Windows, Source and checksum links target **v0.9.114**.
+- Current app pictures say **PCS 0.9.114**, fictional demonstration data and no live AI response.
+- Memory has four stages, including Links & lessons; its guide explains exact revisions and sharing.
+- Both SVG diagrams open; desktop and narrow-screen layouts remain readable.
+- Map Connections opens and collapses counted bundles; selecting a connection opens its evidence.
+- Discover a connection, temporary landmarks, Start story, all eight Keep & continue passages, Explore freely and Resume story work.
+- Refreshing the page resets demonstration changes. The website does not create a real PCS vault or save visitor memory.
 
 ## Local preview
 
-Extract `PCS-Website-0.9.102-Full-Site.zip` into a new folder. With Python installed, run `python -m http.server 8000 --bind 127.0.0.1` there and open `http://127.0.0.1:8000/`. Stop the server with Ctrl+C.
+Extract `PCS-Website-0.9.114-Full-Site.zip` into a fresh folder. With Python installed, run `python -m http.server 8000 --bind 127.0.0.1` there, then open `http://127.0.0.1:8000/`. Stop with Ctrl+C.
 
-`SHA256SUMS.txt` in the delivery folder checks the two website ZIPs. `DELIVERY-REPORT.json` and `INDEPENDENT-AUDIT.json` record the prepared packet's checks and exact identities. These are local preparation receipts; they do not establish a successful public deployment or live PCS model/device behavior.
+`SHA256SUMS.txt` verifies the website ZIPs. The delivery report and audit receipts bind checks to the packaged bytes. The evidence is local website preparation, not successful public deployment or general acceptance of the PCS application, providers or hardware.
