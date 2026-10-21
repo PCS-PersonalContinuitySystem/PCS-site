@@ -1,9 +1,249 @@
 {
   "version": "0.9.114",
-  "scope": "Eight genuine current interface captures with authored fictional demonstration data. Historical capture records below retain their exact original provenance.",
+  "scope": "Six refreshed full-viewport homepage captures, each supplied in inline and enlargement slots, plus retained original and historical image records.",
   "fictional_data": true,
   "capture_manifest_sha256": "2e0dd91ef2cfb9f9a9848687f3e6d079a3354da927f5fc1e3c1d172ecfd997ec",
   "screenshots": [
+    {
+      "path": "screenshots/refresh-0114/conversation.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 127342,
+      "sha256": "737a283376b553355e6f5346c706c739bd27dcc95ac71bb408dd38b49c80c4c3",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "inline",
+      "description": "A saved stopping point, its next step and the action to review and continue.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:32:13.373Z",
+        "display_asset_of": "conversation-full.jpg",
+        "processing": "Byte-identical original viewport capture; natural aspect ratio."
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/conversation-full.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 127342,
+      "sha256": "737a283376b553355e6f5346c706c739bd27dcc95ac71bb408dd38b49c80c4c3",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "enlargement",
+      "description": "A saved stopping point, its next step and the action to review and continue.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:32:13.373Z"
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/library.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 85985,
+      "sha256": "319495652fe0d9109668586d0a45158eb4c36b1ec0d30059fac96af28a40acf1",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "inline",
+      "description": "A saved memory with the original fictional passage available to inspect.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:28:03.059Z",
+        "display_asset_of": "library-full.jpg",
+        "processing": "Byte-identical original viewport capture; natural aspect ratio."
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/library-full.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 85985,
+      "sha256": "319495652fe0d9109668586d0a45158eb4c36b1ec0d30059fac96af28a40acf1",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "enlargement",
+      "description": "A saved memory with the original fictional passage available to inspect.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:28:03.059Z"
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/map.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 125263,
+      "sha256": "af3a9a2e53928ffc1521d11ff6dd98a39a6fad761855a329a55441214e8a27e8",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "inline",
+      "description": "Related topics and the saved records behind a selected connection.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:24:20.331Z",
+        "display_asset_of": "map-full.jpg",
+        "processing": "Byte-identical original viewport capture; natural aspect ratio."
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/map-full.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 125263,
+      "sha256": "af3a9a2e53928ffc1521d11ff6dd98a39a6fad761855a329a55441214e8a27e8",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "enlargement",
+      "description": "Related topics and the saved records behind a selected connection.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:24:20.331Z"
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/materials.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 71453,
+      "sha256": "00a27a448080ab636247ccdee81aab9a8e9b81ffbff475e097ab5fa3671f9297",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "inline",
+      "description": "A short fictional document open in the Materials reader.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:31:48.918Z",
+        "display_asset_of": "materials-full.jpg",
+        "processing": "Byte-identical original viewport capture; natural aspect ratio."
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/materials-full.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 71453,
+      "sha256": "00a27a448080ab636247ccdee81aab9a8e9b81ffbff475e097ab5fa3671f9297",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "enlargement",
+      "description": "A short fictional document open in the Materials reader.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:31:48.918Z"
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/notebook.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 69021,
+      "sha256": "211456e3eb55ff93d0a104b2018863f8db13402a3547bf019265dfe5b8e4af68",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "inline",
+      "description": "A two-step notebook with concise notes and saved progress.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:30:30.480Z",
+        "display_asset_of": "notebook-full.jpg",
+        "processing": "Byte-identical original viewport capture; natural aspect ratio."
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/notebook-full.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 69021,
+      "sha256": "211456e3eb55ff93d0a104b2018863f8db13402a3547bf019265dfe5b8e4af68",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "enlargement",
+      "description": "A two-step notebook with concise notes and saved progress.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:30:30.480Z"
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/calendar.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 91236,
+      "sha256": "e650c6163b97dbdc87f485837458469fb818dbb3fbf953c2abf10f40768209ea",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "inline",
+      "description": "Four short dated tasks in the private Calendar.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:30:42.953Z",
+        "display_asset_of": "calendar-full.jpg",
+        "processing": "Byte-identical original viewport capture; natural aspect ratio."
+      }
+    },
+    {
+      "path": "screenshots/refresh-0114/calendar-full.jpg",
+      "version": "0.9.114",
+      "width": 1363,
+      "height": 936,
+      "bytes": 91236,
+      "sha256": "e650c6163b97dbdc87f485837458469fb818dbb3fbf953c2abf10f40768209ea",
+      "method": "Direct full-viewport browser capture of the published PCS 0.9.114 source interface, using an isolated fictional workspace. The original capture is displayed at its natural aspect ratio in both the inline image and enlargement slots. No cropping, repainting, generated controls or app source edits.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "capture_host": "Isolated Linux source host",
+      "framing": "Full browser viewport",
+      "display_role": "enlargement",
+      "description": "Four short dated tasks in the private Calendar.",
+      "capture": {
+        "captured_utc": "2026-10-21T17:30:42.953Z"
+      }
+    },
     {
       "path": "screenshots/pcs-conversation-0114.png",
       "version": "0.9.114",
@@ -16,7 +256,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 · Fictional demonstration data. A saved stopping point and next step, ready to review and continue."
+      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. A saved stopping point and next step, ready to review and continue."
     },
     {
       "path": "screenshots/pcs-materials-0114.png",
@@ -30,7 +270,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 · Fictional demonstration data. Documents and reading tools in Materials."
+      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Documents and reading tools in Materials."
     },
     {
       "path": "screenshots/pcs-notebook-0114.png",
@@ -44,7 +284,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 · Fictional demonstration data. An editable notebook outline with step notes and progress."
+      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. An editable notebook outline with step notes and progress."
     },
     {
       "path": "screenshots/pcs-library-0114.png",
@@ -58,7 +298,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 · Fictional demonstration data. Browse saved records and inspect a selected memory."
+      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Browse saved records and inspect a selected memory."
     },
     {
       "path": "screenshots/pcs-memory-links-0114.png",
@@ -72,7 +312,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 · Fictional demonstration data. Inspect a settled account, the earlier memory it came from and the lesson you kept. These are owner navigation and framing."
+      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Inspect a settled account, the earlier memory it came from and the lesson you kept. These are owner navigation and framing."
     },
     {
       "path": "screenshots/pcs-memory-lessons-0114.png",
@@ -86,7 +326,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 · Fictional demonstration data. Keep a named lesson, your own story and takeaway, with links to the memories behind it."
+      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Keep a named lesson, your own story and takeaway, with links to the memories behind it."
     },
     {
       "path": "screenshots/pcs-map-0114.png",
@@ -100,7 +340,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 · Fictional demonstration data. Explore shared themes and their saved evidence in the Continuity Map."
+      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Explore shared themes and their saved evidence in the Continuity Map."
     },
     {
       "path": "screenshots/pcs-calendar-0114.png",
@@ -114,7 +354,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 · Fictional demonstration data. A private calendar for small plans and unfinished next steps."
+      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. A private calendar for small plans and unfinished next steps."
     },
     {
       "path": "screenshots/pcs-conversation-0102.png",
@@ -128,7 +368,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 · Fictional demonstration data. A saved stopping point and next step, ready to review and continue."
+      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. A saved stopping point and next step, ready to review and continue."
     },
     {
       "path": "screenshots/pcs-materials-0102.png",
@@ -142,7 +382,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 · Fictional demonstration data. Documents and reading tools in Materials."
+      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. Documents and reading tools in Materials."
     },
     {
       "path": "screenshots/pcs-notebook-0102.png",
@@ -156,7 +396,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 · Fictional demonstration data. An editable notebook outline with step notes and progress."
+      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. An editable notebook outline with step notes and progress."
     },
     {
       "path": "screenshots/pcs-library-0102.png",
@@ -170,7 +410,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 · Fictional demonstration data. Browse saved records and inspect a selected memory."
+      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. Browse saved records and inspect a selected memory."
     },
     {
       "path": "screenshots/pcs-map-0102.png",
@@ -184,7 +424,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 · Fictional demonstration data. Explore shared themes and their saved evidence in the Continuity Map."
+      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. Explore shared themes and their saved evidence in the Continuity Map."
     },
     {
       "path": "screenshots/pcs-calendar-0102.png",
@@ -198,7 +438,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 · Fictional demonstration data. A private calendar for small plans and unfinished next steps."
+      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. A private calendar for small plans and unfinished next steps."
     },
     {
       "path": "screenshots/pcs-conversation-0978.png",
@@ -310,5 +550,34 @@
       "sha256": "2f149467990a6059cdf2aa7a6f0a62a08c7d2516ebf3c7d75eacb4d6192c5a18",
       "method": "Hand-authored SVG explanation of Local reply context selection and separate image/capture controls."
     }
-  ]
+  ],
+  "homepage_refresh": {
+    "revision": "images-20261021-r1",
+    "prepared_utc": "2026-10-21T17:35:45.364857+00:00",
+    "source_release": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.114",
+    "source_archive_sha256": "b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632",
+    "fixture": "20 explicitly owner-authored fictional memories linked to 20 fictional saved user passages, one stopping point, one notebook, one document and four Calendar tasks.",
+    "source_files_unchanged": true,
+    "source_verification": {
+      "source_files_unchanged": true,
+      "verified_utc": "2026-10-21T17:32:05.160766+00:00",
+      "source_archive": "PCS-0.9.114-Source.zip",
+      "source_archive_expected_sha256": "b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632",
+      "source_archive_actual_sha256": "b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632",
+      "source_archive_hash_matches": true,
+      "served_tree": "capture-work/app-source/pcs",
+      "extensions": [
+        ".css",
+        ".html",
+        ".js",
+        ".py"
+      ],
+      "checked_files": 411,
+      "missing_files": [],
+      "changed_files": [],
+      "unexpected_source_files": [],
+      "method": "Exact SHA-256 comparison of every .py, .js, .css and .html file under pcs in the verified release ZIP against the actual served app-source/pcs copy. Compiled bytecode and runtime data are excluded."
+    },
+    "notes": "The normal PCS host, storage APIs, authentication and interface were used. The supported trusted_hosts argument admits only the isolated preview host in addition to loopback. No model was started, no provider key was supplied and no microphone, OBS or personal vault was used."
+  }
 }

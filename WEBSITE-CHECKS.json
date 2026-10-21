@@ -1,66 +1,209 @@
 {
-  "application_version": "0.9.114",
-  "revision": "star-atlas-20261021-r2",
-  "prepared_utc": "2026-10-21T16:50:40.800475+00:00",
-  "publication_performed": false,
-  "scope": "Star Atlas redesign of all six pages and its review/upload package. Guide wording unchanged. No application build changes.",
-  "baseline_commit": "0957dd19389725a5c7095d68eea863cd6db5c7be",
-  "static": {
+  "scope": "Homepage image refresh for PCS 0.9.114; static and browser display verification only.",
+  "source_files_unchanged": true,
+  "source_verification": {
+    "source_files_unchanged": true,
+    "verified_utc": "2026-10-21T17:32:05.160766+00:00",
+    "source_archive": "PCS-0.9.114-Source.zip",
+    "source_archive_expected_sha256": "b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632",
+    "source_archive_actual_sha256": "b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632",
+    "source_archive_hash_matches": true,
+    "served_tree": "capture-work/app-source/pcs",
+    "extensions": [
+      ".css",
+      ".html",
+      ".js",
+      ".py"
+    ],
+    "checked_files": 411,
+    "missing_files": [],
+    "changed_files": [],
+    "unexpected_source_files": [],
+    "method": "Exact SHA-256 comparison of every .py, .js, .css and .html file under pcs in the verified release ZIP against the actual served app-source/pcs copy. Compiled bytecode and runtime data are excluded."
+  },
+  "static_review": {
     "status": "passed",
+    "checked_utc": "2026-10-21T17:34:21.335978+00:00",
+    "scope": "Focused static validation of screenshot refresh integration; no browser or live AI behavior claimed.",
     "html_pages": 6,
-    "local_references": 342,
+    "local_references_checked": 340,
+    "image_or_enlargement_references_checked": 56,
+    "css_asset_references_checked": 2,
     "missing_files_or_fragments": 0,
-    "duplicate_ids": 0,
-    "json_ld_valid": true,
-    "unchanged": [
-      "assets/map.js",
-      "assets/map.css",
-      "assets/map-data.js",
-      "SCREENSHOT-MANIFEST.json"
-    ]
-  },
-  "browser": {
-    "status": "passed_with_noted_limits",
-    "surface": "Local static preview (python http.server) in headless Microsoft Edge, plus the Claude desktop app's browser pane",
-    "measurement": {
-      "tool": "tasteskill v2 inspect.mjs at 1440, 768 and 390 px; palette-cream allowed because cream is the brand's own star colour",
-      "results": {
-        "index.html": "0 FAIL; WARN no-footage",
-        "getting-started.html": "0 FAIL; WARN card-rows, no-footage, 35px margin difference at 768 px",
-        "memory-control.html": "0 FAIL; WARN no-footage, 768/390 margin difference, a tall SVG diagram counted as blank at 390 px",
-        "local-ai.html": "0 FAIL; WARN no-footage, 768/390 margin difference",
-        "data-and-privacy.html": "0 FAIL; WARN no-footage, 768/390 margin difference",
-        "continuity-map.html": "0 FAIL; WARN no-footage, 768/390 margin difference"
-      },
-      "source_lint": "tasteskill lint.mjs: 0 FAIL; WARN for an em-dash count and the word 'unlock' in existing guide copy",
-      "design_detector": "Impeccable detect: placeholder contrast, empty viewer image and tight leading fixed; remaining findings are existing guide copy or padding expressed through CSS variables"
+    "duplicate_ids": [],
+    "updated_image_elements": 8,
+    "screenshot_zoom_buttons": 5,
+    "showcase_full_image_targets": {
+      "conversation": "screenshots/refresh-0114/conversation-full.jpg",
+      "library": "screenshots/refresh-0114/library-full.jpg",
+      "map": "screenshots/refresh-0114/map-full.jpg"
     },
-    "interactions": [
-      "Homepage model switcher changes only the model name and destination line; all four saved records stay",
-      "Memory section: six true-size control illustrations, each beside its explanation, checked at 1440 and 390 px",
-      "Download picker updates the requirement line for each model",
-      "Conversation, Library and Map tabs swap the screenshot and its full-size link",
-      "FAQ keeps one card open at a time",
-      "Bug-report form builds a pre-filled GitHub issue URL (window.open intercepted; nothing was posted)",
-      "Screenshot viewer opens full-size images on the homepage and the guides",
-      "Guide contents marker follows the reading position and returns to the first section at the top",
-      "Getting started connection tabs show one panel at a time",
-      "Map demo renders its interactive map; each rendered part is marked as product interface (data-ui)"
+    "image_pairs": [
+      {
+        "subject": "conversation",
+        "inline_dimensions": [
+          1363,
+          936
+        ],
+        "full_dimensions": [
+          1363,
+          936
+        ],
+        "same_bytes": true,
+        "sha256": "737a283376b553355e6f5346c706c739bd27dcc95ac71bb408dd38b49c80c4c3"
+      },
+      {
+        "subject": "library",
+        "inline_dimensions": [
+          1363,
+          936
+        ],
+        "full_dimensions": [
+          1363,
+          936
+        ],
+        "same_bytes": true,
+        "sha256": "319495652fe0d9109668586d0a45158eb4c36b1ec0d30059fac96af28a40acf1"
+      },
+      {
+        "subject": "map",
+        "inline_dimensions": [
+          1363,
+          936
+        ],
+        "full_dimensions": [
+          1363,
+          936
+        ],
+        "same_bytes": true,
+        "sha256": "af3a9a2e53928ffc1521d11ff6dd98a39a6fad761855a329a55441214e8a27e8"
+      },
+      {
+        "subject": "materials",
+        "inline_dimensions": [
+          1363,
+          936
+        ],
+        "full_dimensions": [
+          1363,
+          936
+        ],
+        "same_bytes": true,
+        "sha256": "00a27a448080ab636247ccdee81aab9a8e9b81ffbff475e097ab5fa3671f9297"
+      },
+      {
+        "subject": "notebook",
+        "inline_dimensions": [
+          1363,
+          936
+        ],
+        "full_dimensions": [
+          1363,
+          936
+        ],
+        "same_bytes": true,
+        "sha256": "211456e3eb55ff93d0a104b2018863f8db13402a3547bf019265dfe5b8e4af68"
+      },
+      {
+        "subject": "calendar",
+        "inline_dimensions": [
+          1363,
+          936
+        ],
+        "full_dimensions": [
+          1363,
+          936
+        ],
+        "same_bytes": true,
+        "sha256": "e650c6163b97dbdc87f485837458469fb818dbb3fbf953c2abf10f40768209ea"
+      }
     ],
-    "script_syntax": "node --check assets/atlas.js passed",
-    "limits": [
-      "Full-page review captures stop at 16,000 px, so the bottoms of the longest phone-width guides were reviewed through the inspector's screen-by-screen photographs instead",
-      "Not tested on real phones, Safari or Firefox; opening from the file system was checked in Edge only",
-      "The live GitHub Pages site was not changed or tested"
-    ]
+    "git_diff_check": {
+      "passed": true,
+      "output": ""
+    },
+    "javascript_syntax": {
+      "passed": true,
+      "output": ""
+    },
+    "source_files_unchanged": true,
+    "source_equality": {
+      "files_checked": 411,
+      "archive_sha256": "b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632",
+      "changed_files": [],
+      "full_verification": "capture-work/source-checks.json"
+    },
+    "issues": []
   },
-  "package": {
-    "files": 73,
-    "retired_from_package": [
-      "assets/plain-english.css",
-      "assets/site.css",
-      "assets/site.js"
+  "browser_review": {
+    "verified_utc": "2026-10-21T17:35:00.861Z",
+    "viewport": {
+      "width": 1363,
+      "height": 936
+    },
+    "subjects": [
+      {
+        "subject": "library",
+        "opened": true,
+        "loaded": true
+      },
+      {
+        "subject": "map",
+        "opened": true,
+        "loaded": true
+      },
+      {
+        "subject": "materials",
+        "opened": true,
+        "details": [
+          {
+            "complete": true,
+            "height": 936,
+            "src": "screenshots/refresh-0114/materials-full.jpg",
+            "width": 1363
+          }
+        ]
+      },
+      {
+        "subject": "notebook",
+        "opened": true,
+        "details": [
+          {
+            "complete": true,
+            "height": 936,
+            "src": "screenshots/refresh-0114/notebook-full.jpg",
+            "width": 1363
+          }
+        ]
+      },
+      {
+        "subject": "calendar",
+        "opened": true,
+        "details": [
+          {
+            "complete": true,
+            "height": 936,
+            "src": "screenshots/refresh-0114/calendar-full.jpg",
+            "width": 1363
+          }
+        ]
+      },
+      {
+        "subject": "conversation",
+        "opened": true,
+        "details": [
+          {
+            "complete": true,
+            "height": 936,
+            "src": "screenshots/refresh-0114/conversation-full.jpg",
+            "width": 1363
+          }
+        ]
+      }
     ],
-    "scope": "Complete static upload package; no Git history, old archives, design-tool working files or the retired brand banner."
-  }
+    "escape_dismissal": true,
+    "visual_review": "All six captures inspected, full-size viewer loads verified, natural image proportions preserved.",
+    "publication_performed": false
+  },
+  "publication_performed": false
 }

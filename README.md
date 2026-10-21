@@ -27,7 +27,7 @@ The site uses the application's own palette: dark slate (`#101920`, `#17262f`), 
 
 ## Screenshots and examples
 
-The 0.9.114 application screenshots are genuine captures of the shipped interface with authored fictional data. They do not show live AI results. Existing screenshot files are unchanged. See [SCREENSHOTS.md](SCREENSHOTS.md) and [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json) for provenance.
+The 0.9.114 application screenshots are genuine captures of the shipped interface with authored fictional data. They do not show live AI results. The homepage has six refreshed full-viewport examples, including source inspection, displayed without cropping. Earlier screenshot files remain unchanged for the guides and existing links. See [SCREENSHOTS.md](SCREENSHOTS.md) and [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json) for provenance.
 
 The Map demo uses fictional data, makes no model requests and does not read a personal vault. Its eight-passage story, free exploration and no-JavaScript reading path remain available. The homepage memory correction is a labeled illustration.
 
@@ -41,7 +41,7 @@ Saved conversations, memories and notebooks are encrypted locally. Cloud feature
 
 This is a buildless static site. GitHub Pages serves the repository root. There are no external font, analytics or AI dependencies for browsing it.
 
-- Shared Star Atlas styles and behaviour for every page: `assets/atlas.css` and `assets/atlas.js`, with the self-hosted Albert Sans font in `assets/fonts/` (SIL Open Font License, copy beside the font), the transparent wordmark `assets/pcs-wordmark-clear.webp`, and screenshot crops in `screenshots/crops/`. The design system is recorded in [DESIGN.md](DESIGN.md); product facts the site must keep are in [PRODUCT.md](PRODUCT.md).
+- Shared Star Atlas styles and behaviour for every page: `assets/atlas.css` and `assets/atlas.js`, with the self-hosted Albert Sans font in `assets/fonts/` (SIL Open Font License, copy beside the font), the transparent wordmark `assets/pcs-wordmark-clear.webp`, and current homepage images in `screenshots/refresh-0114/` (earlier crops remain in `screenshots/crops/`). The design system is recorded in [DESIGN.md](DESIGN.md); product facts the site must keep are in [PRODUCT.md](PRODUCT.md).
 - Guide pages and the Map demo: `assets/atlas.css`, then `assets/atlas-guides.css`, with the same `assets/atlas.js`. The previous `assets/site.css`, `assets/site.js` and `assets/plain-english.css` are no longer loaded by any page.
 - Map behavior and data: `assets/map.js`, `assets/map.css`, `assets/map-data.js`.
 - Current social card: `assets/social-preview-plain.svg` and its rendered PNG.

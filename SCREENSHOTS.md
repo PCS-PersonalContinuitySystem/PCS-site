@@ -1,6 +1,25 @@
 # Pictures for the PCS 0.9.114 website
 
-The eight current images are unmodified captures of the shipped PCS 0.9.114 interface at 1920 × 1080. Their astronomy, photography, writing, notebook and Calendar examples are authored fictional demonstration data in an isolated local vault. No AI session was started, no provider request was made, and no microphone, OBS capture or personal vault was used. These illustrate the interface, not live AI results.
+## Homepage image refresh — October 21, 2026
+
+The homepage now uses six new full-viewport captures of the PCS 0.9.114 interface. The same original view is supplied for inline display and enlargement, without cropping. Images preserve their natural proportions in the website; the small Materials, Notebook and Calendar tiles also open at full size.
+
+| Subject | Image | What it shows |
+| --- | --- | --- |
+| Conversation | [conversation.jpg](screenshots/refresh-0114/conversation.jpg) | A saved stopping point, its next step and the action to review and continue. |
+| Library | [library.jpg](screenshots/refresh-0114/library.jpg) | A saved memory with the original fictional passage available to inspect. |
+| Map | [map.jpg](screenshots/refresh-0114/map.jpg) | Related topics and the saved records behind a selected connection. |
+| Materials | [materials.jpg](screenshots/refresh-0114/materials.jpg) | A short fictional document open in the Materials reader. |
+| Notebook | [notebook.jpg](screenshots/refresh-0114/notebook.jpg) | A two-step notebook with concise notes and saved progress. |
+| Calendar | [calendar.jpg](screenshots/refresh-0114/calendar.jpg) | Four short dated tasks in the private Calendar. |
+
+All records are authored fictional examples. The memories are explicitly marked as added by the owner, with real links to fictional saved passages; these are interface illustrations, not AI-generated results. Captures were taken from an isolated Linux source host using the published application frontend. All served Python, JavaScript, CSS and HTML files were checked against the verified source release and matched exactly. The screenshot manifest records source-archive binding, dimensions, hashes and framing.
+
+Earlier image files remain available for guide pages and existing links.
+
+## Original eight captures
+
+The eight original images are unmodified captures of the shipped PCS 0.9.114 interface at 1920 × 1080. Their astronomy, photography, writing, notebook and Calendar examples are authored fictional demonstration data in an isolated local vault. No AI session was started, no provider request was made, and no microphone, OBS capture or personal vault was used. These illustrate the interface, not live AI results.
 
 | Image | What it shows |
 | --- | --- |

@@ -58,9 +58,9 @@
     const plates = $$('[data-plate]');
     const zoom = $('.showcase__zoom');
     const shots = {
-      conversation: ['screenshots/pcs-conversation-0114.png', 'Enlarge the Conversation screenshot'],
-      library: ['screenshots/pcs-library-0114.png', 'Enlarge the Library screenshot'],
-      map: ['screenshots/pcs-map-0114.png', 'Enlarge the Map screenshot'],
+      conversation: ['screenshots/refresh-0114/conversation-full.jpg', 'Enlarge the Conversation screenshot'],
+      library: ['screenshots/refresh-0114/library-full.jpg', 'Enlarge the Library screenshot'],
+      map: ['screenshots/refresh-0114/map-full.jpg', 'Enlarge the Map screenshot'],
     };
     const showPlate = (key) => {
       plates.forEach((img) => img.classList.toggle('is-active', img.dataset.plate === key));
