@@ -21,9 +21,9 @@ This repository contains the public GitHub Pages website. The application versio
 
 The homepage leads with the application and the reason to keep saved information across models. It uses plain language, short examples and real app screenshots. Detailed controls and experimental features belong in the guides. The interactive Map story remains on its dedicated page.
 
-## Palette revision 2
+## Star Atlas design
 
-The website now uses the application’s slate (`#101920`, `#17262f`) and sage (`#bfd29f`) colors. Light surfaces remain neutral, with a darker green (`#405f4c`) for readable headings and links. Buttons, selected tabs, guide panels, focus indicators and social preview artwork use the revised palette. This revision retains the page wording, layout, screenshots and interactions.
+The site uses the application's own palette: dark slate (`#101920`, `#17262f`), sage (`#bfd29f`), a darker green (`#405f4c`) and the cream four-point star from the PCS wordmark. The star is the one recurring shape: large and cropped on each page's opening screen, and at text size as list bullets and the current-section marker. The homepage includes a live illustration where visitors switch between Gemini, GPT, Llama and Local while the saved records stay put. The guides keep their wording and are set on a light chart-paper reading sheet with a contents rail and a guides rail. The type is Albert Sans, served from the repository. The design system is recorded in [DESIGN.md](DESIGN.md).
 
 ## Screenshots and examples
 
@@ -41,8 +41,8 @@ Saved conversations, memories and notebooks are encrypted locally. Cloud feature
 
 This is a buildless static site. GitHub Pages serves the repository root. There are no external font, analytics or AI dependencies for browsing it.
 
-- Shared layout and behavior: `assets/site.css` and `assets/site.js`.
-- Current visual refresh: `assets/plain-english.css`, loaded last on all six pages.
+- Shared Star Atlas styles and behaviour for every page: `assets/atlas.css` and `assets/atlas.js`, with the self-hosted Albert Sans font in `assets/fonts/` (SIL Open Font License, copy beside the font), the transparent wordmark `assets/pcs-wordmark-clear.webp`, and screenshot crops in `screenshots/crops/`. The design system is recorded in [DESIGN.md](DESIGN.md); product facts the site must keep are in [PRODUCT.md](PRODUCT.md).
+- Guide pages and the Map demo: `assets/atlas.css`, then `assets/atlas-guides.css`, with the same `assets/atlas.js`. The previous `assets/site.css`, `assets/site.js` and `assets/plain-english.css` are no longer loaded by any page.
 - Map behavior and data: `assets/map.js`, `assets/map.css`, `assets/map-data.js`.
 - Current social card: `assets/social-preview-plain.svg` and its rendered PNG.
 

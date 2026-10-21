@@ -1,20 +1,9 @@
 {
   "application_version": "0.9.114",
-  "package_revision": "plain-english-app-colors-20261021-r2",
-  "prepared_utc": "2026-10-21T13:34:34.666759+00:00",
+  "package_revision": "star-atlas-20261021",
+  "prepared_utc": "2026-10-21T15:59:50.171652+00:00",
   "source_repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
-  "base_source_commit": "a61a45430de48099acb6ebd81d24ab55be4f766b",
-  "changes_after_base": [
-    "index.html",
-    "getting-started.html",
-    "memory-control.html",
-    "local-ai.html",
-    "data-and-privacy.html",
-    "continuity-map.html",
-    "assets/plain-english.css",
-    "assets/social-preview-plain.svg",
-    "assets/social-preview-plain.png"
-  ],
+  "base_source_commit": "0957dd19389725a5c7095d68eea863cd6db5c7be",
   "scope": "Complete static review/upload package. Manifest and SHA256SUMS excluded from self-referential list.",
   "files": [
     {
@@ -23,9 +12,19 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "DESIGN.md",
+      "bytes": 12762,
+      "sha256": "cbd131d7528e2e3003e1a43120c3d42478355764c9605462c891f890178bc5c3"
+    },
+    {
+      "path": "PRODUCT.md",
+      "bytes": 5241,
+      "sha256": "d9cce9f4d73de72ec76310cd313a24b7f34bd3031764eb2298e7c0b1b3b26c0b"
+    },
+    {
       "path": "README.md",
-      "bytes": 4493,
-      "sha256": "03c965936ed41505ea31780b9485b660f06195d81d9d87a4e1ff124263afc90a"
+      "bytes": 5313,
+      "sha256": "108e3b2099db71bd3245aa71b07f0d29890dae37d33f57951575e3cb9008b1e3"
     },
     {
       "path": "SCREENSHOT-MANIFEST.json",
@@ -39,18 +38,43 @@
     },
     {
       "path": "START-HERE.txt",
-      "bytes": 3338,
-      "sha256": "95672655bc8527bcfbca8790e31516ebf13e2bb883a67999b773f6de4bde22c2"
+      "bytes": 3353,
+      "sha256": "4f6028717f799876f951447600ce73b930af0c71aeeb0dfc12fc46a82067bc75"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "bytes": 833,
-      "sha256": "abe4a15f5f7d85d7642c0588128f47c5779b8a82146ff8b832e79ea809b880c9"
+      "bytes": 795,
+      "sha256": "62825b491cb06c45019664d1bbb4ac2fa476a8f75eac4ac96271274ddf713329"
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 3234,
-      "sha256": "a856222f8094b111f088336ba75c07aefcfb1b1b3e8d70ca58c6ce4902f4a720"
+      "bytes": 3493,
+      "sha256": "f2338401531cbf4f89b54dbb195050442b36043b6c680a84abf2ca258ba5a192"
+    },
+    {
+      "path": "assets/atlas-guides.css",
+      "bytes": 16868,
+      "sha256": "a017522fa6b68abf5055e0a66f39e1d5b6b5bbb66067392baac86a809ad2aab4"
+    },
+    {
+      "path": "assets/atlas.css",
+      "bytes": 37488,
+      "sha256": "c34ba5156ef8cc65dc774f9ce3dc4ed7baaf6b57318883099ce6300031076506"
+    },
+    {
+      "path": "assets/atlas.js",
+      "bytes": 10547,
+      "sha256": "c1b511d0c2e4a6a53e33236f55378f90ab48e70463a46a58b56179d3b7149d06"
+    },
+    {
+      "path": "assets/fonts/OFL-albert-sans.txt",
+      "bytes": 4503,
+      "sha256": "0f39abdc3bf858f48853e1e63f1124c9660c8cd8b77d2c9a641b30bcd53f8c64"
+    },
+    {
+      "path": "assets/fonts/albert-sans-latin-wght.woff2",
+      "bytes": 32020,
+      "sha256": "c2fb6fda415c7bf5926c15aa98f759da45cdc5ac4ac6925a72a84db4eb3862a3"
     },
     {
       "path": "assets/map-data.js",
@@ -59,18 +83,18 @@
     },
     {
       "path": "assets/map.css",
-      "bytes": 42741,
-      "sha256": "2b9bc58a84b2254f95fc8a9a295d58b82cecfc6bcaa6145a6cf21518684bba97"
+      "bytes": 43184,
+      "sha256": "3bd60dbebeedb4c31711530ed5d3e48755c2b6606939a047bb6d8bd652d9fc8b"
     },
     {
       "path": "assets/map.js",
-      "bytes": 94919,
-      "sha256": "46e6861184fd2978d2c8a539c91d8a30199940e66d86c574316b134047606aed"
+      "bytes": 96003,
+      "sha256": "2dba159a0cd79f27fe2bd7484ef92fdb5c0b9a02c06995627dd94d0a2292523c"
     },
     {
       "path": "assets/pcs-local-context-0102.svg",
-      "bytes": 4398,
-      "sha256": "2f149467990a6059cdf2aa7a6f0a62a08c7d2516ebf3c7d75eacb4d6192c5a18"
+      "bytes": 4437,
+      "sha256": "a759ebab9c0fdaff7af5c07951f2663df4af6b6eaf03bf906e64c3f8dbbc6ca7"
     },
     {
       "path": "assets/pcs-local-context-0114.svg",
@@ -79,8 +103,8 @@
     },
     {
       "path": "assets/pcs-memory-flow-0102.svg",
-      "bytes": 5590,
-      "sha256": "c2725442a5106989f570888e68dd374fb09156ce64bbcbf028456e0e55d4ae65"
+      "bytes": 5640,
+      "sha256": "4c5657fd090b0341359ca32afa87d3bc979e2672e2c241e14c23b22b9e3eafb2"
     },
     {
       "path": "assets/pcs-memory-flow-0114.svg",
@@ -89,23 +113,18 @@
     },
     {
       "path": "assets/pcs-star.svg",
-      "bytes": 371,
-      "sha256": "70819824da82ed8cc8a473b4e097e453d569cfa89188e2e03e4f315aba03af2d"
+      "bytes": 378,
+      "sha256": "e7eb83d2ec1c1a093d429103d3dbe9e83515b80e13643fddd4ed5278d04fa0f9"
     },
     {
-      "path": "assets/plain-english.css",
-      "bytes": 13334,
-      "sha256": "361d7bdd977fd378fa6315024bb5b050be58b16bb3fb8082dcd187fb2ce20467"
+      "path": "assets/pcs-wordmark-clear.webp",
+      "bytes": 20394,
+      "sha256": "402240af4d22f49c38d23b554393f0c9f98fd9f124fa9b94cd240121aa20c496"
     },
     {
-      "path": "assets/site.css",
-      "bytes": 26667,
-      "sha256": "a1007f5aabbf402524d1e367c6e74a5d19c5c1de5b198df32e4a3ce16e9549d9"
-    },
-    {
-      "path": "assets/site.js",
-      "bytes": 2745,
-      "sha256": "9089b2d12f16e9ba57c7a761ef58c99db341c52510bb12dd0cef59414c5aa0e6"
+      "path": "assets/pcs-wordmark-clear.webp.json",
+      "bytes": 226,
+      "sha256": "001d299ba7d1a137fab6da708cf55d4c51bd45a9e02838220b2f976e97e6cc37"
     },
     {
       "path": "assets/social-preview-plain.png",
@@ -114,8 +133,8 @@
     },
     {
       "path": "assets/social-preview-plain.svg",
-      "bytes": 1312,
-      "sha256": "429d1db4882a141a2bcd12102ca39bc895c54e1866e4b67df581c1a87e3f9eb4"
+      "bytes": 1325,
+      "sha256": "ee196e95f9ee08b14a4c8827a7fc7f04a4bcb0113a92b80c074397cdc7202953"
     },
     {
       "path": "assets/social-preview.jpg",
@@ -124,38 +143,108 @@
     },
     {
       "path": "continuity-map.html",
-      "bytes": 100522,
-      "sha256": "2d6cac825b4f76fe616256263689c2071ffda473811fd9b51633aa459b693ece"
+      "bytes": 101840,
+      "sha256": "6ba7af3f9c9dc48324a694b57d297ddb4598fbf386ce4ae1a67c946d2a80d6cf"
     },
     {
       "path": "data-and-privacy.html",
-      "bytes": 26838,
-      "sha256": "5a4ac94104726b45910264725c8d1c5803656e8a27c6098c0f1943a028880055"
+      "bytes": 28638,
+      "sha256": "6f751ca7aff40ea2228f24533c1e7dcd3f8705016e857683ffe69bd00b12c0dd"
     },
     {
       "path": "getting-started.html",
-      "bytes": 32185,
-      "sha256": "c68e9373b3d5afdd1f5d069e4850fee8fe43439f48473951f9e6df018a9df4e7"
+      "bytes": 33847,
+      "sha256": "7ac4e7aec9f2f48e3a0001a5d3ad8d3c061005af72860e04746bcc924aa4c8f3"
     },
     {
       "path": "index.html",
-      "bytes": 18428,
-      "sha256": "e229d2a33c430d140bd2717ccd2568d8d0beabd06be8ae371ab5b9466d2b65a6"
+      "bytes": 28453,
+      "sha256": "cf2ce6e779d7effea3850bdd55ff822400b56fa1cef2a9690b034533d7abe313"
     },
     {
       "path": "local-ai.html",
-      "bytes": 26346,
-      "sha256": "ff66af2ba124a21561bbe54166aaeffd88498c79ae4c9e6ae9496da2bfdd1a7d"
+      "bytes": 28042,
+      "sha256": "3bade833efd2b3ec8a40250a1391579b865c9a2fbb5ce32b9026acb27911682a"
     },
     {
       "path": "memory-control.html",
-      "bytes": 33415,
-      "sha256": "ee239719d919aa387ab698ee54323d5b63b87088aa40c0bcce9cc6a7e25de1e8"
+      "bytes": 34406,
+      "sha256": "3372ed49907d750bec4aff700ecaf119e516a2793fbe79cae056fa7d460ab2aa"
     },
     {
       "path": "robots.txt",
       "bytes": 103,
       "sha256": "5c0e5862bf4da3983972448ec1df52a7543bbc817c1b432a3cf262fb91ae089b"
+    },
+    {
+      "path": "screenshots/crops/pcs-calendar-0114-square.webp",
+      "bytes": 10246,
+      "sha256": "b4ba3828ac6b77023125e86527e72d19e83d6947c1317c525d7c0cbf927e0287"
+    },
+    {
+      "path": "screenshots/crops/pcs-calendar-0114-square.webp.json",
+      "bytes": 269,
+      "sha256": "29df23e498e63278b92831192670fd7c3f5787bccc6cd31c6e66273665273ec8"
+    },
+    {
+      "path": "screenshots/crops/pcs-conversation-0114-square.webp",
+      "bytes": 62668,
+      "sha256": "be83e787e373625dd56b9b60b290b7fb4094ab0949c71934576376c6694b5512"
+    },
+    {
+      "path": "screenshots/crops/pcs-conversation-0114-square.webp.json",
+      "bytes": 273,
+      "sha256": "6f20c0ecd0081e6137aceb1e67ae43754b0bc54e6d91b12e7eb866fa2954e2c0"
+    },
+    {
+      "path": "screenshots/crops/pcs-library-0114-square.webp",
+      "bytes": 72246,
+      "sha256": "205793b2ec91d647b9bea60a52599865755d533716d9165d7f6c4baff4903693"
+    },
+    {
+      "path": "screenshots/crops/pcs-library-0114-square.webp.json",
+      "bytes": 268,
+      "sha256": "eba0e91fae443ec70498ca311a0f87f2d6751072e8a9fbe91cdaa4c8336e7a00"
+    },
+    {
+      "path": "screenshots/crops/pcs-map-0114-square.webp",
+      "bytes": 50286,
+      "sha256": "92c194fdb2c00acfbb66576bd2a39e877fb56034e5c52b5e763c5a3552d0199f"
+    },
+    {
+      "path": "screenshots/crops/pcs-map-0114-square.webp.json",
+      "bytes": 264,
+      "sha256": "014fd55b1fe0e96ee05a9c69cb4144248e2af318ca8ab27ce115595e0a23fa9e"
+    },
+    {
+      "path": "screenshots/crops/pcs-map-0114-wide.webp",
+      "bytes": 135014,
+      "sha256": "89e398b991c3732bcbaae2de1aa6ba93878e9a96fb7fad047b8cf773df3e6d3d"
+    },
+    {
+      "path": "screenshots/crops/pcs-map-0114-wide.webp.json",
+      "bytes": 200,
+      "sha256": "a034b0b0dd73b8edd8fff59d44a54963fbedeaaa339b0582cd2e714c06a8e1e2"
+    },
+    {
+      "path": "screenshots/crops/pcs-materials-0114-square.webp",
+      "bytes": 46312,
+      "sha256": "01337d50779bbca1837372a63c3177f356d3d365b0bd7a360712896afd0d2292"
+    },
+    {
+      "path": "screenshots/crops/pcs-materials-0114-square.webp.json",
+      "bytes": 270,
+      "sha256": "db4848c0715262c90d94c244ff3659d968f809970caf758aa90db9bfa025b2d4"
+    },
+    {
+      "path": "screenshots/crops/pcs-notebook-0114-square.webp",
+      "bytes": 28376,
+      "sha256": "727fc40789f6a9f535e9ea77074c50f1e777e0ed843917852b4555381340fc67"
+    },
+    {
+      "path": "screenshots/crops/pcs-notebook-0114-square.webp.json",
+      "bytes": 269,
+      "sha256": "f790af45b90b5464dee5dce7c3f0a6b6c137b1689a8c378b9e2c9b061fc430d7"
     },
     {
       "path": "screenshots/pcs-bookmarks-0978.png",

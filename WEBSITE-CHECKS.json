@@ -1,19 +1,17 @@
 {
   "application_version": "0.9.114",
-  "revision": "plain-english-app-colors-20261021-r2",
-  "prepared_utc": "2026-10-21T13:34:34.666759+00:00",
+  "revision": "star-atlas-20261021",
+  "prepared_utc": "2026-10-21T15:59:50.171652+00:00",
   "publication_performed": false,
-  "scope": "Website color revision and review/upload package. No application build changes.",
-  "baseline_commit": "3a854a4ba53cdfe58eb25777d854b17d871b19ef",
+  "scope": "Star Atlas redesign of all six pages and its review/upload package. Guide wording unchanged. No application build changes.",
+  "baseline_commit": "0957dd19389725a5c7095d68eea863cd6db5c7be",
   "static": {
     "status": "passed",
     "html_pages": 6,
-    "local_references": 279,
+    "local_references": 342,
     "missing_files_or_fragments": 0,
     "duplicate_ids": 0,
     "json_ld_valid": true,
-    "site_js_syntax": "node --check passed",
-    "git_diff_whitespace": "git diff --check passed",
     "unchanged": [
       "assets/map.js",
       "assets/map.css",
@@ -21,62 +19,47 @@
       "SCREENSHOT-MANIFEST.json"
     ]
   },
-  "package": {
-    "base_source_commit": "a61a45430de48099acb6ebd81d24ab55be4f766b",
-    "changes_after_base": [
-      "index.html",
-      "getting-started.html",
-      "memory-control.html",
-      "local-ai.html",
-      "data-and-privacy.html",
-      "continuity-map.html",
-      "assets/plain-english.css",
-      "assets/social-preview-plain.svg",
-      "assets/social-preview-plain.png"
-    ],
-    "scope": "Complete static upload package with app-matched color revision; no Git history, old archives or PR screenshot."
-  },
-  "previous_revision_browser_checks": {
-    "status": "smoke_checks_passed",
-    "surface": "Local static preview in cloud Chrome",
-    "checks": [
-      "Desktop homepage visually inspected",
-      "Screenshot tabs switch by pointer and arrow keys",
-      "Full-size screenshot dialog opens and closes",
-      "No broken loaded homepage images",
-      "No horizontal overflow at 1348px document width",
-      "Responsive iframe layouts inspected at 375px and 805px document widths; no horizontal overflow",
-      "Mobile navigation opens and closes after Download navigation",
-      "Standalone Map renders; Start story opens passage 1"
-    ],
-    "limits": [
-      "Narrow layouts checked in same-browser iframes, not physical phones",
-      "Existing Map engine and story data unchanged; complete Map interaction suite not rerun",
-      "No Windows application or live-model acceptance test",
-      "Public GitHub Pages deployment not performed"
-    ]
-  },
   "browser": {
-    "status": "palette_checks_passed",
-    "surface": "Local static preview in cloud Chrome",
-    "checks": [
-      "Homepage and memory section visually inspected beside actual app screenshots",
-      "Setup guide and connection tab surfaces reviewed",
-      "Computed colors match the intended slate/sage palette",
-      "No homepage horizontal overflow at 1348px document width",
-      "Regenerated social preview artwork visually inspected"
+    "status": "passed_with_noted_limits",
+    "surface": "Local static preview (python http.server) in headless Microsoft Edge, plus the Claude desktop app's browser pane",
+    "measurement": {
+      "tool": "tasteskill v2 inspect.mjs at 1440, 768 and 390 px; palette-cream allowed because cream is the brand's own star colour",
+      "results": {
+        "index.html": "0 FAIL; WARN card-rows (dealt word-tile and FAQ card layouts), no-footage",
+        "getting-started.html": "0 FAIL; WARN card-rows, no-footage, 35px margin difference at 768 px",
+        "memory-control.html": "0 FAIL; WARN no-footage, 768/390 margin difference, a tall SVG diagram counted as blank at 390 px",
+        "local-ai.html": "0 FAIL; WARN no-footage, 768/390 margin difference",
+        "data-and-privacy.html": "0 FAIL; WARN no-footage, 768/390 margin difference",
+        "continuity-map.html": "0 FAIL; WARN no-footage, 768/390 margin difference"
+      },
+      "source_lint": "tasteskill lint.mjs: 0 FAIL; WARN for an em-dash count and the word 'unlock' in existing guide copy",
+      "design_detector": "Impeccable detect: placeholder contrast, empty viewer image and tight leading fixed; remaining findings are existing guide copy or padding expressed through CSS variables"
+    },
+    "interactions": [
+      "Homepage model switcher changes only the model name and destination line; all four saved records stay",
+      "Download picker updates the requirement line for each model",
+      "Conversation, Library and Map tabs swap the screenshot and its full-size link",
+      "FAQ keeps one card open at a time",
+      "Bug-report form builds a pre-filled GitHub issue URL (window.open intercepted; nothing was posted)",
+      "Screenshot viewer opens full-size images on the homepage and the guides",
+      "Guide contents marker follows the reading position and returns to the first section at the top",
+      "Getting started connection tabs show one panel at a time",
+      "Map demo renders its interactive map; each rendered part is marked as product interface (data-ui)"
     ],
+    "script_syntax": "node --check assets/atlas.js passed",
     "limits": [
-      "Prior layout/interaction checks are recorded separately; no application or physical-device tests performed",
-      "No GitHub Pages publication performed"
+      "Full-page review captures stop at 16,000 px, so the bottoms of the longest phone-width guides were reviewed through the inspector's screen-by-screen photographs instead",
+      "Not tested on real phones, Safari or Firefox; opening from the file system was checked in Edge only",
+      "The live GitHub Pages site was not changed or tested"
     ]
   },
-  "contrast": {
-    "primary_button_text": 10.94,
-    "heading_accent_on_page": 6.35,
-    "muted_text_on_page": 5.64,
-    "secondary_hover_text": 7.78,
-    "dark_surface_focus": "Light sage #bfd29f overrides the global dark-green outline on dark sections and dialogs",
-    "button_border": "#748d5d; 3.29:1 against page background"
+  "package": {
+    "files": 73,
+    "retired_from_package": [
+      "assets/plain-english.css",
+      "assets/site.css",
+      "assets/site.js"
+    ],
+    "scope": "Complete static upload package; no Git history, old archives, design-tool working files or the retired brand banner."
   }
 }
