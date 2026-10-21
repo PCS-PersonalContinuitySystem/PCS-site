@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PCS — Personal Continuity System","description":"A Windows app for AI conversation, editable memories and notes, with supported cloud and local models.","applicationCategory":"ProductivityApplication","operatingSystem":"Windows x64","softwareVersion":"0.9.114","url":"https://pcs-personalcontinuitysystem.github.io/PCS-site/","downloadUrl":"https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-Windows-x64.zip","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"PCS is free. Cloud provider API charges are separate."}}</script>
 <link rel="preload" href="assets/fonts/albert-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/atlas.css?v=20261021-atlas">
+<link rel="stylesheet" href="assets/atlas.css?v=20261021-atlas-2">
 <script>document.documentElement.classList.add('js')</script>
-<script defer src="assets/atlas.js?v=20261021-atlas"></script>
+<script defer src="assets/atlas.js?v=20261021-atlas-2"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -122,61 +122,67 @@
   </div>
 </section>
 
-<section class="board" id="memory" aria-labelledby="memory-title">
-  <div class="board__grid">
-    <div class="tile tile--heading" data-reveal>
-      <h2 id="memory-title" class="section-title">You decide what it keeps.</h2>
+<section class="memory" id="memory" aria-labelledby="memory-title">
+  <div class="memory__head">
+    <h2 id="memory-title" class="section-title" data-reveal>You decide what it keeps.</h2>
+    <div class="memory__intro" data-reveal style="--d:70ms">
+      <p>Saving, memory and sharing are separate choices. Every memory PCS writes stays open to you: read it, fix it or forget it.</p>
       <a class="text-link" href="memory-control.html">How memory works</a>
     </div>
-
-    <div class="tile tile--wide tile--sage" data-reveal style="--d:60ms">
-      <div class="tile__ui tile__ui--switches" data-ui aria-hidden="true">
-        <span class="switch is-on"><span class="switch__track"></span>Save conversation text</span>
-        <span class="switch"><span class="switch__track"></span>Create memories</span>
-      </div>
-      <p class="tile__caption"><strong>Two separate settings</strong>Save the words, create memories from them, both or neither.</p>
-    </div>
-
-    <div class="tile tile--feature tile--cream" data-reveal style="--d:120ms">
-      <div class="voices">
-        <p class="voice voice--you"><span>What you said</span>“I want to keep this project small for now.”</p>
-        <p class="voice voice--ai"><span>What the AI saved</span><s>“You prefer small projects.”</s></p>
-        <p class="voice voice--fix"><span>Your correction</span>“Only this project needs to stay small.”</p>
-      </div>
-      <p class="tile__caption"><strong>Correct a memory</strong>Each AI-written memory links to the passage it came from. Fix it, and the earlier revision stays readable.</p>
-    </div>
-
-    <div class="tile tile--tall" data-reveal style="--d:180ms">
-      <div class="tile__ui tile__ui--check" data-ui aria-hidden="true"><span class="check"></span><span>Don’t save this<br>conversation</span></div>
-      <p class="tile__caption"><strong>Keep one off the record</strong>Turn saving off for a single conversation.</p>
-    </div>
-
-    <div class="tile tile--small tile--deep" data-reveal style="--d:120ms">
-      <div class="tile__ui tile__ui--source" data-ui aria-hidden="true"><span>1 linked source</span><span class="tile__link">Inspect</span></div>
-      <p class="tile__caption"><strong>Read the source</strong>Open the saved passage.</p>
-    </div>
-
-    <div class="tile tile--small tile--green" data-reveal style="--d:180ms">
-      <div class="tile__ui tile__ui--revision" data-ui aria-hidden="true"><span>Revision</span><span class="tile__figure">2</span></div>
-      <p class="tile__caption"><strong>History is kept</strong>Every revision stays readable.</p>
-    </div>
-
-    <div class="tile tile--small tile--deep" data-reveal style="--d:60ms">
-      <div class="tile__ui tile__ui--forget" data-ui aria-hidden="true"><span class="keycap"><span>Forget</span></span></div>
-      <p class="tile__caption"><strong>Forget a memory</strong>Remove it from recall.</p>
-    </div>
-
-    <div class="tile tile--small" data-reveal style="--d:120ms">
-      <div class="tile__ui tile__ui--lock" data-ui aria-hidden="true"><span class="keycap"><span>Lock</span></span></div>
-      <p class="tile__caption"><strong>Lock the vault</strong>Close access in one step.</p>
-    </div>
-
-    <div class="tile tile--wide tile--sage" data-reveal style="--d:180ms">
-      <div class="tile__ui tile__ui--backup" data-ui aria-hidden="true"><span class="keycap"><span>Create encrypted backup</span></span></div>
-      <p class="tile__caption"><strong>Back up the vault</strong>Restore your saved data with its passphrase. Keep the passphrase safe.</p>
-    </div>
   </div>
-  <p class="board__note">Recall can miss details, and the AI can still get things wrong. That is why every memory can be read, corrected or forgotten.</p>
+  <ul class="memory__list">
+    <li class="proofrow">
+      <div class="proof" data-ui aria-hidden="true"><div class="mini">
+        <p class="mini__label">Memory &amp; sharing</p>
+        <span class="mini-switch is-on"><span class="mini-switch__track"></span>Save conversation text</span>
+        <span class="mini-switch"><span class="mini-switch__track"></span>Create memories</span>
+      </div></div>
+      <div class="proofrow__text"><h3>Choose what gets saved</h3><p>Saving the words and creating memories from them are separate settings. Turn on both, one or neither.</p></div>
+    </li>
+    <li class="proofrow">
+      <div class="proof" data-ui aria-hidden="true"><div class="mini">
+        <p class="mini__label">Session</p>
+        <span class="mini-check"><span class="mini-check__box"></span>Use microphone</span>
+        <span class="mini-check is-on"><span class="mini-check__box"></span>Don’t save this conversation</span>
+        <p class="mini__note">For this conversation. Your usual settings stay saved.</p>
+      </div></div>
+      <div class="proofrow__text"><h3>Keep one conversation off the record</h3><p>Tick Don’t save this conversation before you start. Your usual settings stay as they are.</p></div>
+    </li>
+    <li class="proofrow">
+      <div class="proof" data-ui aria-hidden="true"><div class="mini">
+        <p class="mini__label">Saved memory · revision 1</p>
+        <p class="mini__title">One familiar constellation is enough</p>
+        <p class="mini__meta">1 linked source <span class="mini__link">Inspect</span></p>
+      </div></div>
+      <div class="proofrow__text"><h3>See where a memory came from</h3><p>Each memory the AI writes links to the saved passage behind it, so you can check the original words.</p></div>
+    </li>
+    <li class="proofrow">
+      <div class="proof" data-ui aria-hidden="true"><div class="mini">
+        <p class="mini__label">Revision 2 · your correction</p>
+        <p class="mini__old">You prefer small projects.</p>
+        <p class="mini__title">Only this project needs to stay small.</p>
+        <p class="mini__meta">From: “I want to keep this project small for now.”</p>
+      </div></div>
+      <div class="proofrow__text"><h3>Correct it in your own words</h3><p>If a memory is wrong or too broad, fix it. The earlier revision stays readable.</p></div>
+    </li>
+    <li class="proofrow">
+      <div class="proof" data-ui aria-hidden="true"><div class="mini">
+        <p class="mini__title">Forget this memory?</p>
+        <p class="mini__meta">Review what it affects before you confirm.</p>
+        <span class="mini__actions"><span class="mini-btn mini-btn--quiet">Cancel</span><span class="mini-btn">Forget</span></span>
+      </div></div>
+      <div class="proofrow__text"><h3>Forget what shouldn’t stay</h3><p>Forgetting removes a memory from recall. PCS shows what it affects first.</p></div>
+    </li>
+    <li class="proofrow">
+      <div class="proof" data-ui aria-hidden="true"><div class="mini">
+        <p class="mini__title">Vault unlocked</p>
+        <p class="mini__meta">Continuity is available</p>
+        <span class="mini__actions"><span class="mini-btn mini-btn--quiet">Lock</span><span class="mini-btn">Save current backup…</span></span>
+      </div></div>
+      <div class="proofrow__text"><h3>Lock it and back it up</h3><p>Lock closes access to the vault. An encrypted backup restores your saved data with its passphrase.</p></div>
+    </li>
+  </ul>
+  <p class="memory__note">Illustrations of PCS controls with fictional records. Recall can miss details, and the AI can still get things wrong; that is why every memory can be read, corrected or forgotten.</p>
 </section>
 
 <section class="band" id="map" aria-labelledby="map-title">

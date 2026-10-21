@@ -1,7 +1,7 @@
 {
   "application_version": "0.9.114",
-  "revision": "star-atlas-20261021",
-  "prepared_utc": "2026-10-21T15:59:50.171652+00:00",
+  "revision": "star-atlas-20261021-r2",
+  "prepared_utc": "2026-10-21T16:50:40.800475+00:00",
   "publication_performed": false,
   "scope": "Star Atlas redesign of all six pages and its review/upload package. Guide wording unchanged. No application build changes.",
   "baseline_commit": "0957dd19389725a5c7095d68eea863cd6db5c7be",
@@ -25,7 +25,7 @@
     "measurement": {
       "tool": "tasteskill v2 inspect.mjs at 1440, 768 and 390 px; palette-cream allowed because cream is the brand's own star colour",
       "results": {
-        "index.html": "0 FAIL; WARN card-rows (dealt word-tile and FAQ card layouts), no-footage",
+        "index.html": "0 FAIL; WARN no-footage",
         "getting-started.html": "0 FAIL; WARN card-rows, no-footage, 35px margin difference at 768 px",
         "memory-control.html": "0 FAIL; WARN no-footage, 768/390 margin difference, a tall SVG diagram counted as blank at 390 px",
         "local-ai.html": "0 FAIL; WARN no-footage, 768/390 margin difference",
@@ -37,6 +37,7 @@
     },
     "interactions": [
       "Homepage model switcher changes only the model name and destination line; all four saved records stay",
+      "Memory section: six true-size control illustrations, each beside its explanation, checked at 1440 and 390 px",
       "Download picker updates the requirement line for each model",
       "Conversation, Library and Map tabs swap the screenshot and its full-size link",
       "FAQ keeps one card open at a time",

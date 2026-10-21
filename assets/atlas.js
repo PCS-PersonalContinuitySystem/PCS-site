@@ -228,6 +228,7 @@
 
   // Entrances: once, as each part comes into view
   $$('.prose > h2, .prose > figure, .start-content > :is(section, aside) h2, .start-content figure').forEach((el) => el.setAttribute('data-reveal', ''));
+  $$('.memory__list > li').forEach((el, i) => { el.setAttribute('data-reveal', ''); el.style.setProperty('--d', `${(i % 2) * 80}ms`); });
   $$('.wall__grid > li').forEach((el, i) => { el.setAttribute('data-reveal', ''); el.style.setProperty('--d', `${(i % 4) * 70}ms`); });
   $$('.sheet__group').forEach((el, i) => { el.setAttribute('data-reveal', ''); el.style.setProperty('--d', `${120 + i * 80}ms`); });
   const targets = $$('[data-reveal], [data-grow]');

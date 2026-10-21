@@ -132,14 +132,14 @@ A cool slate night with a lichen-green action and a single warm star.
 - **Sage** (sage): every primary action (download buttons, the selected model chip, action cells) and the chart lines in app fragments. On a sage field it becomes the ground and the action flips to slate.
 
 ### Secondary
-- **Pine** (pine): a full-section field (the Map band, the bug coupon), headings on chart paper, and the deep tile colour. Light ink on pine passes AA.
+- **Pine** (pine): a full-section field (the Map band, the bug coupon), headings on chart paper, and the Map band field. Light ink on pine passes AA.
 
 ### Tertiary
-- **Star Cream** (star-cream): the four-point star and, at most, one tile or block per screen (the memory-correction tile, the last stage of the setup bar).
+- **Star Cream** (star-cream): the four-point star and, at most, one tile or block per screen (the hero star, the last stage of the setup bar).
 
 ### Neutral
 - **Night Slate** (night-slate): the page ground and the ink on every light field.
-- **Chart Slate** (chart-slate) and **Deep Slate** (deep-slate): one and two tone steps up from the ground for sections, tiles, cards and secondary cells.
+- **Chart Slate** (chart-slate) and **Deep Slate** (deep-slate): one and two tone steps up from the ground for sections, proof panels, cards and secondary cells.
 - **Starlight Ink** (starlight-ink): all running text on dark grounds, at full strength.
 - **Lichen Grey** (lichen-grey): secondary notes and captions only (9.3:1 on the ground).
 - **Chart Paper** (chart-paper): the light data sheet on the homepage and the reading sheet of every guide, with paper-ink-soft for its notes.
@@ -176,7 +176,7 @@ A cool slate night with a lichen-green action and a single warm star.
 
 ## Layout
 
-A 12-column grid with one pair of outer margins (clamp 16–32px) and gutters (clamp 12–24px). Sections are separated by 96–184px or by a change of field, and neighbouring sections never share a composition: split, mosaic, band, bar, word wall, sheet, statement, card stack, coupon, mark. The feature board uses 8px gaps and 112px rows; the word wall uses square cells with 8px gaps. Below 1080px, splits stack, the board and wall drop to two or three columns and the setup bar turns vertical; below 860px the navigation collapses behind a Menu button; below 640px every composition is rebuilt for a thumb.
+A 12-column grid with one pair of outer margins (clamp 16–32px) and gutters (clamp 12–24px). Sections are separated by 96–184px or by a change of field, and neighbouring sections never share a composition: split, proof list, band, bar, word wall, sheet, statement, card stack, coupon, mark. The memory section pairs each true-size app fragment, on a chart-slate panel up to 360px wide, with its heading and sentence, two pairs to a row; the word wall uses square cells with 8px gaps. Below 1080px, splits stack, the memory pairs drop to one column, the wall to three or two and the setup bar turns vertical; below 860px the navigation collapses behind a Menu button; below 640px every composition is rebuilt for a thumb.
 
 Guides use three columns on desktop: a contents rail on the left (left-aligned, its current entry marked by a cream star), the chart-paper reading sheet in columns 3–10 with text held to 68ch, and a guides rail on the right (right-aligned, so both rails meet the shared margins). Below 1080px both rails fold into the flow, above and below the sheet; on phones the sheet runs edge to edge, padded to the page margin.
 
@@ -204,9 +204,9 @@ Square corners on every surface, button, cell and field the site draws (0px). Th
 
 ### Cards / Containers
 - **Corner Style:** square.
-- **Background:** chart slate or deep slate on the ground; pine, sage or cream for one tile at a time.
+- **Background:** chart slate or deep slate on the ground; pine or sage for one block at a time; cream only for the star.
 - **Shadow Strategy:** none (see Elevation).
-- **Internal Padding:** 20px on tiles, 22–28px on FAQ cards, 48px on the coupon.
+- **Internal Padding:** 20px on proof panels and word tiles, 22–28px on FAQ cards, 48px on the coupon.
 
 ### Inputs / Fields
 - **Style:** filled blocks one tone lighter than their field, no border, square, 52px tall, 16px text; placeholders at 4.5:1 or better.

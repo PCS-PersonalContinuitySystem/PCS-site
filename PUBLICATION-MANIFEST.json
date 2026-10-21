@@ -1,7 +1,7 @@
 {
   "application_version": "0.9.114",
-  "package_revision": "star-atlas-20261021",
-  "prepared_utc": "2026-10-21T15:59:50.171652+00:00",
+  "package_revision": "star-atlas-20261021-r2",
+  "prepared_utc": "2026-10-21T16:50:40.800475+00:00",
   "source_repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
   "base_source_commit": "0957dd19389725a5c7095d68eea863cd6db5c7be",
   "scope": "Complete static review/upload package. Manifest and SHA256SUMS excluded from self-referential list.",
@@ -13,8 +13,8 @@
     },
     {
       "path": "DESIGN.md",
-      "bytes": 12762,
-      "sha256": "cbd131d7528e2e3003e1a43120c3d42478355764c9605462c891f890178bc5c3"
+      "bytes": 12911,
+      "sha256": "1a61e1e28d66853be9820fb9257570bd26f7a47b12454f2fd3c7e335caf97490"
     },
     {
       "path": "PRODUCT.md",
@@ -48,8 +48,8 @@
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 3493,
-      "sha256": "f2338401531cbf4f89b54dbb195050442b36043b6c680a84abf2ca258ba5a192"
+      "bytes": 3564,
+      "sha256": "502cda1c756ca8ce8f028db4cbe7c85a179180401073674c9e01b51d09e0dc9f"
     },
     {
       "path": "assets/atlas-guides.css",
@@ -58,13 +58,13 @@
     },
     {
       "path": "assets/atlas.css",
-      "bytes": 37488,
-      "sha256": "c34ba5156ef8cc65dc774f9ce3dc4ed7baaf6b57318883099ce6300031076506"
+      "bytes": 34933,
+      "sha256": "4da1308204784b14119986edc862feabe7b561c0fd45849d72f4022a9176197e"
     },
     {
       "path": "assets/atlas.js",
-      "bytes": 10547,
-      "sha256": "c1b511d0c2e4a6a53e33236f55378f90ab48e70463a46a58b56179d3b7149d06"
+      "bytes": 10685,
+      "sha256": "188e5357e451e73460458e8134fb9d4e0d5712af77ad52d237f8735672bccc7a"
     },
     {
       "path": "assets/fonts/OFL-albert-sans.txt",
@@ -143,33 +143,33 @@
     },
     {
       "path": "continuity-map.html",
-      "bytes": 101840,
-      "sha256": "6ba7af3f9c9dc48324a694b57d297ddb4598fbf386ce4ae1a67c946d2a80d6cf"
+      "bytes": 101846,
+      "sha256": "583ba78851c70133532e24a63c544423dadbf310d47f91564b3488ed34c53b13"
     },
     {
       "path": "data-and-privacy.html",
-      "bytes": 28638,
-      "sha256": "6f751ca7aff40ea2228f24533c1e7dcd3f8705016e857683ffe69bd00b12c0dd"
+      "bytes": 28644,
+      "sha256": "e96c2759b67e42a5d688decf07e1cbf50a032decb58eb3b7fbc98da4ce737e2e"
     },
     {
       "path": "getting-started.html",
-      "bytes": 33847,
-      "sha256": "7ac4e7aec9f2f48e3a0001a5d3ad8d3c061005af72860e04746bcc924aa4c8f3"
+      "bytes": 33853,
+      "sha256": "f8e8f39715b72a384eb9cc6b0a72d8548df431f190c0cd189d9be8e74d0aa381"
     },
     {
       "path": "index.html",
-      "bytes": 28453,
-      "sha256": "cf2ce6e779d7effea3850bdd55ff822400b56fa1cef2a9690b034533d7abe313"
+      "bytes": 29047,
+      "sha256": "29c0503be7c0ef7cdd52c423bf138d8e550fd410512ed4c295141f1b9dea408a"
     },
     {
       "path": "local-ai.html",
-      "bytes": 28042,
-      "sha256": "3bade833efd2b3ec8a40250a1391579b865c9a2fbb5ce32b9026acb27911682a"
+      "bytes": 28048,
+      "sha256": "5c2aba4e5d35e9e8b14b2e965c593b604b768e7e0d4acc35094348341792838f"
     },
     {
       "path": "memory-control.html",
-      "bytes": 34406,
-      "sha256": "3372ed49907d750bec4aff700ecaf119e516a2793fbe79cae056fa7d460ab2aa"
+      "bytes": 34412,
+      "sha256": "6e0431e2153771d3420e3387abb6b29edb11dc45a39ac775cd74d153b8c3129f"
     },
     {
       "path": "robots.txt",
