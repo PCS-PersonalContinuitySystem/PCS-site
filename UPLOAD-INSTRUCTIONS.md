@@ -1,30 +1,37 @@
-# Upload the PCS 0.9.114 website update
+# Updating the PCS website
 
-Prepared for `PCS-PersonalContinuitySystem/PCS-site`, from public commit `cd2eb15726f79f482325e2f1e856a26fb3ae0fa3`. This task has not published the website.
+The active website is the static HTML and assets at the root of this repository. It is hosted by GitHub Pages at:
 
-## Apply the Update ZIP
+https://pcs-personalcontinuitysystem.github.io/PCS-site/
 
-1. Keep the current Git commit or a backup of your website.
-2. Extract `PCS-Website-0.9.114-Update.zip` locally.
-3. Upload the **extracted files and folders to the existing repository root**, keeping `assets/` and `screenshots/` intact. Replace matching files. Do not upload the ZIP itself or add an enclosing folder.
-4. Preserve `.nojekyll`, any `CNAME`, `.github` configuration and unrelated files. No deletion of old screenshots, archives or historical assets is required.
-5. Review the changed paths before committing. If the repository has changed since the baseline above, compare overlapping files before replacing newer work.
-6. After GitHub Pages finishes deploying, reload the site and check the downloads, navigation, new screenshots, diagrams and Map interactions.
+## Review and publish a repository change
 
-`CHANGED-FILES.json` lists changed/new paths and hashes. The Full-Site ZIP contains the active pages, assets and documentation for a clean preview. It is not a substitute for unrelated repository/deployment files.
+1. Review the proposed branch or pull request, including the homepage preview and changed copy.
+2. Preview the root as a static website. Check links, screenshots, small-screen navigation and the Map demo.
+3. Merge the approved changes into `main`, using the repository’s existing GitHub Pages setup.
+4. Wait for GitHub Pages to finish its deployment before checking the public URL.
 
-## Check after upload
-
-- Current Windows, Source and checksum links target **v0.9.114**.
-- Current app pictures say **PCS 0.9.114**, fictional demonstration data and no live AI response.
-- Memory has four stages, including Links & lessons; its guide explains exact revisions and sharing.
-- Both SVG diagrams open; desktop and narrow-screen layouts remain readable.
-- Map Connections opens and collapses counted bundles; selecting a connection opens its evidence.
-- Discover a connection, temporary landmarks, Start story, all eight Keep & continue passages, Explore freely and Resume story work.
-- Refreshing the page resets demonstration changes. The website does not create a real PCS vault or save visitor memory.
+A branch or pull request does not change the live site by itself. Do not change the Pages source or hosting settings for this copy update.
 
 ## Local preview
 
-Extract `PCS-Website-0.9.114-Full-Site.zip` into a fresh folder. With Python installed, run `python -m http.server 8000 --bind 127.0.0.1` there, then open `http://127.0.0.1:8000/`. Stop with Ctrl+C.
+From the repository root, run:
 
-`SHA256SUMS.txt` verifies the website ZIPs. The delivery report and audit receipts bind checks to the packaged bytes. The evidence is local website preparation, not successful public deployment or general acceptance of the PCS application, providers or hardware.
+```sh
+python -m http.server 8000 --bind 127.0.0.1
+```
+
+Open `http://127.0.0.1:8000/`. Stop the server with Ctrl+C. No build or package installation is required.
+
+The homepage uses `assets/site.css`, `assets/plain-english.css` and `assets/site.js`. The Map demo also needs `assets/map.css`, `assets/map-data.js` and `assets/map.js`. Preserve the `screenshots` and other referenced asset paths.
+
+## Future updates
+
+- Update the Windows, Source ZIP and checksum links together when the application release changes.
+- Keep screenshot version labels and their provenance. A copy change does not turn an older screenshot into a new application capture.
+- Preserve existing public section IDs so incoming links continue to work.
+- Keep the homepage focused on what PCS does, why someone would use it and what setup requires. Put detailed release changes in release notes or the relevant guide.
+- Regenerate the social card from `assets/social-preview-plain.svg` when its wording changes.
+- Refresh `PUBLICATION-MANIFEST.json` and record only checks actually performed in `WEBSITE-CHECKS.json`.
+
+The historical ZIP/TAR files in this repository are not substitutes for the current files on `main`. This website update does not modify PCS application builds, downloads or user data.

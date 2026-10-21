@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f3ef"/>
+  <rect x="0" y="0" width="16" height="630" fill="#4b4c91"/>
+  <text x="76" y="100" font-family="DejaVu Sans, sans-serif" font-size="42" font-weight="700" fill="#171c26">PCS</text>
+  <text x="195" y="100" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#5d626c">PERSONAL CONTINUITY SYSTEM</text>
+  <path d="M76 140H1120" stroke="#d6d5d9" stroke-width="2"/>
+  <text x="76" y="250" font-family="DejaVu Sans, sans-serif" font-size="70" font-weight="700" letter-spacing="-2.5" fill="#171c26">A new AI shouldn’t</text>
+  <text x="76" y="336" font-family="DejaVu Sans, sans-serif" font-size="70" font-weight="700" letter-spacing="-2.5" fill="#4b4c91">mean starting over.</text>
+  <text x="76" y="415" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#343944">Keep your conversations, memories and notes.</text>
+  <text x="76" y="458" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#343944">Choose your AI.</text>
+  <rect x="76" y="514" width="420" height="52" rx="5" fill="#e9a36c"/>
+  <text x="101" y="548" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="600" fill="#171c26">Free &amp; open source · Windows</text>
+</svg>
