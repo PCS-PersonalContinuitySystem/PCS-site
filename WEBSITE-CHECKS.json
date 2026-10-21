@@ -1,86 +1,82 @@
 {
   "application_version": "0.9.114",
-  "revision": "map-bundle-only-20261020-r3",
-  "prepared_utc": "2026-10-20T20:57:13.621391+00:00",
+  "revision": "plain-english-app-colors-20261021-r2",
+  "prepared_utc": "2026-10-21T13:34:34.666759+00:00",
   "publication_performed": false,
-  "scope": "Map presentation only; locally checked desktop and mobile website demo. No live PCS acceptance.",
-  "baseline": "PCS-Website-0.9.114-Full-Site.zip",
-  "baseline_sha256": "ecc3264295d830f728ba3c644bcf05b5b7449e06aed7d81abc7c70d42edc57f2",
-  "prior_checks_sha256": "70eaaf5e5fa42e218480ec9752c73a8e4ffffe14accc3dac06f2498c531b4fb4",
+  "scope": "Website color revision and review/upload package. No application build changes.",
+  "baseline_commit": "3a854a4ba53cdfe58eb25777d854b17d871b19ef",
   "static": {
     "status": "passed",
-    "active_files": 48,
-    "local_references": 352,
-    "all_local_targets_and_fragments_valid": true,
-    "story_data_and_unrelated_files_unchanged": true
+    "html_pages": 6,
+    "local_references": 279,
+    "missing_files_or_fragments": 0,
+    "duplicate_ids": 0,
+    "json_ld_valid": true,
+    "site_js_syntax": "node --check passed",
+    "git_diff_whitespace": "git diff --check passed",
+    "unchanged": [
+      "assets/map.js",
+      "assets/map.css",
+      "assets/map-data.js",
+      "SCREENSHOT-MANIFEST.json"
+    ]
   },
-  "map_browser": {
-    "status": "passed",
-    "started": "2026-10-20T20:56:42.103Z",
-    "scope": "Isolated static-site browser and authored fictional data only; no PCS app, vault, model, device or publication.",
-    "checks": [
-      {
-        "name": "bundle counts and partition reflect visible theme links, with selected evidence revealed",
-        "passed": true
-      },
-      {
-        "name": "desktop unbadged bundle lines expand and collapse by pointer and keyboard without moving viewport",
-        "passed": true
-      },
-      {
-        "name": "desktop theme and individual-connection numbers remain while only large bundle badges are removed",
-        "passed": true
-      },
-      {
-        "name": "desktop accessible List toggles same bundle state and preserves eight constellations",
-        "passed": true
-      },
-      {
-        "name": "desktop discovery inspects records and keeps, revisits, edits and removes transient landmark",
-        "passed": true
-      },
-      {
-        "name": "desktop original eight-passage story keeps/resumes to ending, with no horizontal page overflow",
-        "passed": true
-      },
-      {
-        "name": "mobile unbadged bundle lines expand and collapse by pointer and keyboard without moving viewport",
-        "passed": true
-      },
-      {
-        "name": "mobile theme and individual-connection numbers remain while only large bundle badges are removed",
-        "passed": true
-      },
-      {
-        "name": "mobile accessible List toggles same bundle state and preserves eight constellations",
-        "passed": true
-      },
-      {
-        "name": "mobile discovery inspects records and keeps, revisits, edits and removes transient landmark",
-        "passed": true
-      },
-      {
-        "name": "mobile original eight-passage story keeps/resumes to ending, with no horizontal page overflow",
-        "passed": true
-      },
-      {
-        "name": "desktop homepage preserves theme and individual-connection counts without large bundle badges",
-        "passed": true
-      },
-      {
-        "name": "mobile homepage preserves theme and individual-connection counts without large bundle badges",
-        "passed": true
-      }
+  "package": {
+    "base_source_commit": "a61a45430de48099acb6ebd81d24ab55be4f766b",
+    "changes_after_base": [
+      "index.html",
+      "getting-started.html",
+      "memory-control.html",
+      "local-ai.html",
+      "data-and-privacy.html",
+      "continuity-map.html",
+      "assets/plain-english.css",
+      "assets/social-preview-plain.svg",
+      "assets/social-preview-plain.png"
     ],
-    "errors": [],
-    "hashes": {
-      "index.html": "e72bd23a4542be74e22a9532ae3639a3766846567e4c2e1ee6b9de6731c028fd",
-      "continuity-map.html": "6657df42ffbdcb82839a9ea8e75464f45d4767eff1754dce605cb5946b030b9e",
-      "assets/map.js": "46e6861184fd2978d2c8a539c91d8a30199940e66d86c574316b134047606aed",
-      "assets/map.css": "2b9bc58a84b2254f95fc8a9a295d58b82cecfc6bcaa6145a6cf21518684bba97",
-      "assets/map-data.js": "41deab9ddef902a61eb89a61179e0d1490574d875af94e5310ab528277c4f2af"
-    },
-    "finished": "2026-10-20T20:56:47.676Z"
+    "scope": "Complete static upload package with app-matched color revision; no Git history, old archives or PR screenshot."
   },
-  "receipt_sha256": "49829e5ac9a2195f1372afeaf789045b1759af23f1e1ff9ecb57a1833481bbb8"
+  "previous_revision_browser_checks": {
+    "status": "smoke_checks_passed",
+    "surface": "Local static preview in cloud Chrome",
+    "checks": [
+      "Desktop homepage visually inspected",
+      "Screenshot tabs switch by pointer and arrow keys",
+      "Full-size screenshot dialog opens and closes",
+      "No broken loaded homepage images",
+      "No horizontal overflow at 1348px document width",
+      "Responsive iframe layouts inspected at 375px and 805px document widths; no horizontal overflow",
+      "Mobile navigation opens and closes after Download navigation",
+      "Standalone Map renders; Start story opens passage 1"
+    ],
+    "limits": [
+      "Narrow layouts checked in same-browser iframes, not physical phones",
+      "Existing Map engine and story data unchanged; complete Map interaction suite not rerun",
+      "No Windows application or live-model acceptance test",
+      "Public GitHub Pages deployment not performed"
+    ]
+  },
+  "browser": {
+    "status": "palette_checks_passed",
+    "surface": "Local static preview in cloud Chrome",
+    "checks": [
+      "Homepage and memory section visually inspected beside actual app screenshots",
+      "Setup guide and connection tab surfaces reviewed",
+      "Computed colors match the intended slate/sage palette",
+      "No homepage horizontal overflow at 1348px document width",
+      "Regenerated social preview artwork visually inspected"
+    ],
+    "limits": [
+      "Prior layout/interaction checks are recorded separately; no application or physical-device tests performed",
+      "No GitHub Pages publication performed"
+    ]
+  },
+  "contrast": {
+    "primary_button_text": 10.94,
+    "heading_accent_on_page": 6.35,
+    "muted_text_on_page": 5.64,
+    "secondary_hover_text": 7.78,
+    "dark_surface_focus": "Light sage #bfd29f overrides the global dark-green outline on dark sections and dialogs",
+    "button_border": "#748d5d; 3.29:1 against page background"
+  }
 }

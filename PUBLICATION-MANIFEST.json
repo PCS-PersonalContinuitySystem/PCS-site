@@ -1,9 +1,21 @@
 {
   "application_version": "0.9.114",
-  "prepared_utc": "2026-10-20T20:57:13.621391+00:00",
-  "baseline_repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
-  "baseline_commit": "cd2eb15726f79f482325e2f1e856a26fb3ae0fa3",
-  "scope": "Prior 0.9.114 website package with Map-only presentation update; excludes this self-referential manifest.",
+  "package_revision": "plain-english-app-colors-20261021-r2",
+  "prepared_utc": "2026-10-21T13:34:34.666759+00:00",
+  "source_repository": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
+  "base_source_commit": "a61a45430de48099acb6ebd81d24ab55be4f766b",
+  "changes_after_base": [
+    "index.html",
+    "getting-started.html",
+    "memory-control.html",
+    "local-ai.html",
+    "data-and-privacy.html",
+    "continuity-map.html",
+    "assets/plain-english.css",
+    "assets/social-preview-plain.svg",
+    "assets/social-preview-plain.png"
+  ],
+  "scope": "Complete static review/upload package. Manifest and SHA256SUMS excluded from self-referential list.",
   "files": [
     {
       "path": ".nojekyll",
@@ -12,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3769,
-      "sha256": "1a8a065870205edc1857f30cc8926706175ba9af28428e807782d5c6651f337b"
+      "bytes": 4493,
+      "sha256": "03c965936ed41505ea31780b9485b660f06195d81d9d87a4e1ff124263afc90a"
     },
     {
       "path": "SCREENSHOT-MANIFEST.json",
@@ -26,14 +38,19 @@
       "sha256": "d3b17234b3232f737af8bbc966246e9f63602e71561d09ffe8de899d33d31127"
     },
     {
+      "path": "START-HERE.txt",
+      "bytes": 3338,
+      "sha256": "95672655bc8527bcfbca8790e31516ebf13e2bb883a67999b773f6de4bde22c2"
+    },
+    {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "bytes": 2447,
-      "sha256": "4ab3b02550aaa19e1a4b22fe5e239367ac96f3127a90502263c337080174c810"
+      "bytes": 833,
+      "sha256": "abe4a15f5f7d85d7642c0588128f47c5779b8a82146ff8b832e79ea809b880c9"
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 3653,
-      "sha256": "e2ad1b7be05132a4aab5fc644df0f8752c8868a6ff995961a6a461fe53aa3b23"
+      "bytes": 3234,
+      "sha256": "a856222f8094b111f088336ba75c07aefcfb1b1b3e8d70ca58c6ce4902f4a720"
     },
     {
       "path": "assets/map-data.js",
@@ -76,14 +93,29 @@
       "sha256": "70819824da82ed8cc8a473b4e097e453d569cfa89188e2e03e4f315aba03af2d"
     },
     {
+      "path": "assets/plain-english.css",
+      "bytes": 13334,
+      "sha256": "361d7bdd977fd378fa6315024bb5b050be58b16bb3fb8082dcd187fb2ce20467"
+    },
+    {
       "path": "assets/site.css",
       "bytes": 26667,
       "sha256": "a1007f5aabbf402524d1e367c6e74a5d19c5c1de5b198df32e4a3ce16e9549d9"
     },
     {
       "path": "assets/site.js",
-      "bytes": 2579,
-      "sha256": "e0fc2977285d0b74ddef3115a0e9164720d19516f25cd1f20fb1760c0c4de30c"
+      "bytes": 2745,
+      "sha256": "9089b2d12f16e9ba57c7a761ef58c99db341c52510bb12dd0cef59414c5aa0e6"
+    },
+    {
+      "path": "assets/social-preview-plain.png",
+      "bytes": 58637,
+      "sha256": "b029ef1cb6b176379e5173ed9d5c56d12e7e3552eeeafa47bcb93aed68255665"
+    },
+    {
+      "path": "assets/social-preview-plain.svg",
+      "bytes": 1312,
+      "sha256": "429d1db4882a141a2bcd12102ca39bc895c54e1866e4b67df581c1a87e3f9eb4"
     },
     {
       "path": "assets/social-preview.jpg",
@@ -92,33 +124,33 @@
     },
     {
       "path": "continuity-map.html",
-      "bytes": 100674,
-      "sha256": "6657df42ffbdcb82839a9ea8e75464f45d4767eff1754dce605cb5946b030b9e"
+      "bytes": 100522,
+      "sha256": "2d6cac825b4f76fe616256263689c2071ffda473811fd9b51633aa459b693ece"
     },
     {
       "path": "data-and-privacy.html",
-      "bytes": 26546,
-      "sha256": "df2f424a583526b11b7cf24a61c3ae99307f2e8949e1aca0577609744ed74a46"
+      "bytes": 26838,
+      "sha256": "5a4ac94104726b45910264725c8d1c5803656e8a27c6098c0f1943a028880055"
     },
     {
       "path": "getting-started.html",
-      "bytes": 32030,
-      "sha256": "d2cb3e47807c1ea9fb4c4abe2d1b45beb1605880def07ad38396c3d02f9332ce"
+      "bytes": 32185,
+      "sha256": "c68e9373b3d5afdd1f5d069e4850fee8fe43439f48473951f9e6df018a9df4e7"
     },
     {
       "path": "index.html",
-      "bytes": 31913,
-      "sha256": "e72bd23a4542be74e22a9532ae3639a3766846567e4c2e1ee6b9de6731c028fd"
+      "bytes": 18428,
+      "sha256": "e229d2a33c430d140bd2717ccd2568d8d0beabd06be8ae371ab5b9466d2b65a6"
     },
     {
       "path": "local-ai.html",
-      "bytes": 26275,
-      "sha256": "bfc71e0ebfdb467c14282f8b4543d9147f7a37c03f7a86d02053ecb6979136ef"
+      "bytes": 26346,
+      "sha256": "ff66af2ba124a21561bbe54166aaeffd88498c79ae4c9e6ae9496da2bfdd1a7d"
     },
     {
       "path": "memory-control.html",
-      "bytes": 33286,
-      "sha256": "fa8ef74363d29f91e222c9b68f28ff4095ab2d9aa572affb61ac1f19246f8b16"
+      "bytes": 33415,
+      "sha256": "ee239719d919aa387ab698ee54323d5b63b87088aa40c0bcce9cc6a7e25de1e8"
     },
     {
       "path": "robots.txt",
@@ -240,6 +272,5 @@
       "bytes": 671,
       "sha256": "48effee8924b04948008d5e90fa85ab5da7b7f720705a08ad495e1079ebcf9ef"
     }
-  ],
-  "revision": "map-bundle-only-20261020-r3"
+  ]
 }

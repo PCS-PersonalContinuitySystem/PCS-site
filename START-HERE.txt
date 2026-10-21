@@ -1,0 +1,59 @@
+PCS WEBSITE — REVIEW AND UPLOAD PACKAGE
+App-matched slate and sage palette — revision 2 for PCS 0.9.114
+Prepared October 21, 2026
+
+This is the plain-English website redesign with the application’s slate and sage colors.
+It replaces the earlier purple review package. It is not a new PCS application build.
+The live website has not been changed by creating this package.
+
+REVIEW ON YOUR PC
+1. Extract the entire ZIP to a folder. Do not open the page from inside the ZIP.
+2. Open index.html in your browser.
+3. Try the screenshot tabs, click an image to enlarge it, and open the Map demo.
+4. Follow the page links to review the setup, memory, Local AI and privacy guides.
+
+No installation or build is needed for this static website. Its pages, images and
+Map demo are included. External links (downloads, GitHub, Discord and Ko-fi)
+need an internet connection. Canonical and social-preview URLs intentionally
+point to the existing public website.
+
+UPLOAD TO YOUR EXISTING WEBSITE
+Repository: https://github.com/PCS-PersonalContinuitySystem/PCS-site
+
+1. Open the repository's main branch and use Add file > Upload files.
+2. Upload the EXTRACTED FILES AND FOLDERS into the existing repository root,
+   where the current index.html is located. Keep assets/ and screenshots/ intact.
+3. Replace matching files. Keep unrelated repository files and existing settings.
+   Preserve .nojekyll; it is also included in this ZIP.
+4. Commit the uploaded changes to main. GitHub Pages will publish the update
+   through the repository's existing setup.
+5. Wait for the Pages deployment to finish, then reload the public website:
+   https://pcs-personalcontinuitysystem.github.io/PCS-site/
+
+IMPORTANT: Do not upload just the ZIP. Do not upload an extra enclosing folder
+around index.html. Upload the contents at the top level of this extracted package.
+
+You can upload the whole extracted package. START-HERE.txt and SHA256SUMS.txt
+are harmless supporting files. The app ZIP download links still point to 0.9.114.
+
+The earlier copy and layout proposal is in pull request #4. This package also includes
+the subsequent palette revision, which is not in that earlier commit. Use this package
+to publish the revised colors; there is no need to merge the earlier pull request too.
+
+WHAT IS INCLUDED
+- All six website pages, required styles/scripts and app screenshots.
+- The existing interactive Map demo and its fictional story data.
+- Updated social-preview artwork, documentation and file/check records.
+- SHA256SUMS.txt for checking the extracted package's files.
+
+The website builds on proposed commit a61a45430de48099acb6ebd81d24ab55be4f766b.
+Revision 2 changes colors, focus indicators, social artwork and their cache keys.
+Page wording, layout, application screenshots and interactive behavior are retained.
+This package includes upload-focused instructions and refreshed metadata.
+It excludes Git history, old ZIP/TAR archives and the pull-request-only screenshot.
+
+Verification: the previous redesign received desktop, narrow-layout and interaction
+checks. Revision 2 was visually reviewed in a browser and checked for text/focus
+contrast. The extracted package is checked for missing local dependencies and
+checksum errors. Opening by double-click is supported by the static file
+structure; a Windows file:// browser was not separately tested.
