@@ -34,6 +34,8 @@
     gemini: { name: 'Gemini', dest: 'Google receives only the records you allow it to use.' },
     gpt: { name: 'GPT', dest: 'OpenAI receives only the records you allow it to use.' },
     llama: { name: 'Llama', dest: 'Meta receives only the records you allow it to use.' },
+    claude: { name: 'Claude', dest: 'Anthropic receives only the records you allow it to use.' },
+    chatgpt: { name: 'ChatGPT', dest: 'Your signed-in OpenAI connection receives only the records you allow it to use.' },
     local: { name: 'a local model', dest: 'It runs on this PC. Optional online tools have their own settings.' },
   };
   const modelButtons = $$('.app__models button');
@@ -60,7 +62,7 @@
     const shots = {
       conversation: ['screenshots/refresh-0114/conversation-full.jpg', 'Enlarge the Conversation screenshot'],
       library: ['screenshots/refresh-0114/library-full.jpg', 'Enlarge the Library screenshot'],
-      map: ['screenshots/refresh-0114/map-full.jpg', 'Enlarge the Map screenshot'],
+      map: ['screenshots/pcs-map-0121.jpg', 'Enlarge the Map screenshot'],
     };
     const showPlate = (key) => {
       plates.forEach((img) => img.classList.toggle('is-active', img.dataset.plate === key));
@@ -183,6 +185,8 @@
     gemini: 'You’ll need a Google API key. API use is billed by Google, separately from any Gemini subscription.',
     gpt: 'You’ll need an OpenAI API key. API use is billed separately from a ChatGPT subscription.',
     llama: 'You’ll need Meta API access with its own key and billing.',
+    claude: 'You’ll need an Anthropic API key and access to a compatible Claude model. API billing is separate from a Claude subscription.',
+    chatgpt: 'Use Settings → Connections → Sign in with ChatGPT with an eligible account. Available models and usage limits depend on your account; this is separate from an OpenAI API key.',
     local: 'The recommended setup uses a compatible NVIDIA GPU. The model and its components download separately.',
   };
   const choice = $('#model-choice');

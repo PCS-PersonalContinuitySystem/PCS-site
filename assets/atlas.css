@@ -165,7 +165,7 @@ strong { font-weight: 600; }
 }
 .app__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 14px; margin-bottom: 14px; }
 .app__crumb { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #c9d6bb; font-weight: 600; }
-.app__models { display: flex; gap: 6px; }
+.app__models { display: flex; flex-wrap: wrap; gap: 6px; }
 .app__models button {
   min-height: 34px; padding: 0 12px; border-radius: 999px; cursor: pointer;
   background: var(--ground); color: #dfe7d8; border: 1px solid #36505c; font-size: 14px; font-weight: 600; /* taste-skill-ignore: data-ui */

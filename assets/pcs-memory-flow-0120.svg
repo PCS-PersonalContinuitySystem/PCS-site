@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1260" viewBox="0 0 1200 1260" role="img" aria-labelledby="title description">
+<title id="title">PCS memory: keep the evidence and how your thinking changed</title><desc id="description">A simplified PCS 0.9.120 workflow. Original passages support revisable memories. Owners inspect corrections, link exact revisions, mark a current account settled, and save named lessons. Optional memory awareness can supply permitted area and lesson labels, previews or complete current accounts when the activity is eligible. A preview points to a record; a complete current account may support an attributed answer without claiming that the original conversation was read. Full stories and source evidence are retrieved separately. Current permissions, versions and corrections are checked before selected content reaches a conversation model.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#9eba8b"/></marker></defs>
+<style>text{font-family:system-ui,Segoe UI,sans-serif;fill:#e9eee6}.title{font-family:Georgia,serif;font-size:40px}.label{font-size:16px;letter-spacing:2px;fill:#bbd1a6}.heading{font-size:24px;font-weight:600}.body{font-size:20px;fill:#d2dcd1}.small{font-size:18px;fill:#c5d3c1}.card{fill:#1e3930;stroke:#617b66;stroke-width:1.5}.line{fill:none;stroke:#9eba8b;stroke-width:2;marker-end:url(#arrow)}</style>
+<rect width="1200" height="1260" rx="18" fill="#122a23"/>
+<text x="48" y="68" class="title">Keep the evidence. Keep how you changed.</text>
+<text x="48" y="110" class="body">Your saved continuity stays in PCS while you choose the model that helps you think.</text>
+<text x="48" y="165" class="label">01 / SAVE, INSPECT AND REVISE</text>
+<rect x="48" y="188" width="340" height="186" rx="14" class="card"/>
+<text x="72" y="231" class="heading">Original passages</text>
+<text x="72" y="271" class="body">Recorded words and speakers.</text>
+<text x="72" y="300" class="body">Saving and memory formation</text>
+<text x="72" y="329" class="body">are separate choices.</text>
+<rect x="430" y="188" width="340" height="186" rx="14" class="card"/>
+<text x="454" y="231" class="heading">Revisable memories</text>
+<text x="454" y="271" class="body">Accounts linked to sources.</text>
+<text x="454" y="300" class="body">Inspect the wording, authors</text>
+<text x="454" y="329" class="body">and available history.</text>
+<rect x="812" y="188" width="340" height="186" rx="14" class="card"/>
+<text x="836" y="231" class="heading">Your corrections</text>
+<text x="836" y="271" class="body">Revise in your own words.</text>
+<text x="836" y="300" class="body">Required corrections travel</text>
+<text x="836" y="329" class="body">with recalled evidence.</text>
+<path d="M388 281H428" class="line"/>
+<path d="M770 281H810" class="line"/>
+<text x="48" y="430" class="label">02 / GIVE THE HISTORY YOUR OWN STRUCTURE</text>
+<rect x="48" y="453" width="340" height="189" rx="14" class="card"/>
+<text x="72" y="496" class="heading">Links between memories</text>
+<text x="72" y="536" class="body">“Changed into” or “because of.”</text>
+<text x="72" y="565" class="body">Follow a decision through</text>
+<text x="72" y="594" class="body">the revisions you reviewed.</text>
+<rect x="430" y="453" width="340" height="189" rx="14" class="card"/>
+<text x="454" y="496" class="heading">Settled marks</text>
+<text x="454" y="536" class="body">Your current word on a subject.</text>
+<text x="454" y="565" class="body">A correction retires the mark</text>
+<text x="454" y="594" class="body">until you review it again.</text>
+<rect x="812" y="453" width="340" height="189" rx="14" class="card"/>
+<text x="836" y="496" class="heading">Named lessons</text>
+<text x="836" y="536" class="body">A name, story and takeaway.</text>
+<text x="836" y="565" class="body">Keep supporting memories.</text>
+<text x="836" y="594" class="body">Review model suggestions.</text>
+<text x="48" y="681" class="small">Available referenced history is retained. Changed or unavailable references stay identified.</text>
+<text x="48" y="739" class="label">03 / RETURN TO WHAT HELPS WITH THIS QUESTION</text>
+<rect x="48" y="762" width="1104" height="131" rx="14" class="card"/>
+<text x="72" y="805" class="heading">Optional memory awareness</text>
+<text x="72" y="845" class="body">Saved areas, lesson names and permitted previews can help a model notice relevant context.</text>
+<text x="72" y="874" class="body">A complete current account can support a reply. Sharing and activity checks still apply.</text>
+<rect x="48" y="926" width="340" height="180" rx="14" class="card"/>
+<text x="72" y="969" class="heading">Your question</text>
+<text x="72" y="1009" class="body">Would saved context help?</text>
+<text x="72" y="1038" class="body">Local can initiate recall</text>
+<text x="72" y="1067" class="body">without optional hints.</text>
+<rect x="430" y="926" width="340" height="180" rx="14" class="card"/>
+<text x="454" y="969" class="heading">Permitted lookup</text>
+<text x="454" y="1009" class="body">Read memories and stories.</text>
+<text x="454" y="1038" class="body">Check activity, sharing, sources,</text>
+<text x="454" y="1067" class="body">versions and corrections.</text>
+<rect x="812" y="926" width="340" height="180" rx="14" class="card"/>
+<text x="836" y="969" class="heading">Selected evidence</text>
+<text x="836" y="1009" class="body">Relevant material reaches</text>
+<text x="836" y="1038" class="body">your conversation model.</text>
+<text x="836" y="1067" class="body">You can inspect its answer.</text>
+<path d="M388 1016H428" class="line"/>
+<path d="M770 1016H810" class="line"/>
+<text x="48" y="1154" class="small">A failed lookup does not mean nothing was saved. Retrieval and model answers can still be wrong.</text>
+<text x="48" y="1185" class="small">Cloud requests disclose permitted content. Original Materials files and exports are outside vault encryption.</text>
+<text x="48" y="1216" class="small">Simplified PCS 0.9.120 workflow · An explanation, not a screenshot or a guarantee of recall.</text>
+</svg>

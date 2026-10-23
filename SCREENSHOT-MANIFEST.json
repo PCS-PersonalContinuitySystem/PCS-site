@@ -1,9 +1,43 @@
 {
-  "version": "0.9.114",
-  "scope": "Six refreshed full-viewport homepage captures, each supplied in inline and enlargement slots, plus retained original and historical image records.",
+  "version": "0.9.121",
+  "scope": "Fresh PCS 0.9.121 homepage Map capture, preserved PCS 0.9.120 guide Map and diagrams, and individually versioned 0.9.114 and historical captures.",
   "fictional_data": true,
   "capture_manifest_sha256": "2e0dd91ef2cfb9f9a9848687f3e6d079a3354da927f5fc1e3c1d172ecfd997ec",
   "screenshots": [
+    {
+      "path": "screenshots/pcs-map-0121.jpg",
+      "version": "0.9.121",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 234587,
+      "sha256": "c6107d533abe612626ee5da04b7bf2a206f8a86ab259a0afb93db1aa43a0418a",
+      "method": "Fresh browser screenshot of the published 0.9.121 source UI, with authored fictional records in an isolated vault. Built-in full-screen Map, expanded Creative writing constellation, Astronomy and Photography connection selected. Original screenshot bytes; no crop, repaint, generated controls or image editing.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "framing": "Original full browser viewport in the app full-screen Map",
+      "display_role": "Homepage showcase and Map section; inline and enlargement",
+      "caption": "Continuity Map in PCS 0.9.121, with fictional example records. No live AI request.",
+      "description": "Expanded Creative writing constellation, with Astronomy and Photography selected and their supporting records visible.",
+      "capture_receipt_sha256": "3d916f48d62a5a86d14eba5f48ba6d56c051b7200f6a21d23c9f54117fe94c86"
+    },
+    {
+      "path": "screenshots/pcs-map-0120.png",
+      "version": "0.9.120",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 413039,
+      "sha256": "c15bae29c6a0b085c3efbf00b283b69978921d465b8e8dba5c9d0200e9c734fa",
+      "method": "Unmodified published PCS 0.9.120 interface, isolated authored fictional records, normal UI navigation. Byte-identical original full-viewport PNG; no cropping, repainting or generated controls.",
+      "original_asset": "deliverables/PCS-0.9.120-GitHub-Main-Page-20261023/assets/pcs-continuity-map-0.9.120.png",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "framing": "Full browser viewport",
+      "display_role": "Retained memory-guide and Map-demo guide image; inline and enlargement",
+      "caption": "Continuity Map in PCS 0.9.120, with fictional example records. No live AI request.",
+      "description": "The current All links view connects Astronomy and Photography and shows the saved records behind the selected connection."
+    },
     {
       "path": "screenshots/refresh-0114/conversation.jpg",
       "version": "0.9.114",
@@ -97,7 +131,7 @@
       "unmodified": true,
       "capture_host": "Isolated Linux source host",
       "framing": "Full browser viewport",
-      "display_role": "inline",
+      "display_role": "Retained historical Map capture; replaced on the homepage by screenshots/pcs-map-0120.png",
       "description": "Related topics and the saved records behind a selected connection.",
       "capture": {
         "captured_utc": "2026-10-21T17:24:20.331Z",
@@ -118,7 +152,7 @@
       "unmodified": true,
       "capture_host": "Isolated Linux source host",
       "framing": "Full browser viewport",
-      "display_role": "enlargement",
+      "display_role": "Retained historical Map capture; replaced on the homepage by screenshots/pcs-map-0120.png",
       "description": "Related topics and the saved records behind a selected connection.",
       "capture": {
         "captured_utc": "2026-10-21T17:24:20.331Z"
@@ -256,7 +290,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. A saved stopping point and next step, ready to review and continue."
+      "caption": "PCS 0.9.114 · Fictional demonstration data. A saved stopping point and next step, ready to review and continue."
     },
     {
       "path": "screenshots/pcs-materials-0114.png",
@@ -270,7 +304,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Documents and reading tools in Materials."
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Documents and reading tools in Materials."
     },
     {
       "path": "screenshots/pcs-notebook-0114.png",
@@ -284,7 +318,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. An editable notebook outline with step notes and progress."
+      "caption": "PCS 0.9.114 · Fictional demonstration data. An editable notebook outline with step notes and progress."
     },
     {
       "path": "screenshots/pcs-library-0114.png",
@@ -298,7 +332,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Browse saved records and inspect a selected memory."
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Browse saved records and inspect a selected memory."
     },
     {
       "path": "screenshots/pcs-memory-links-0114.png",
@@ -312,7 +346,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Inspect a settled account, the earlier memory it came from and the lesson you kept. These are owner navigation and framing."
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Inspect a settled account, the earlier memory it came from and the lesson you kept. These are owner navigation and framing."
     },
     {
       "path": "screenshots/pcs-memory-lessons-0114.png",
@@ -326,7 +360,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Keep a named lesson, your own story and takeaway, with links to the memories behind it."
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Keep a named lesson, your own story and takeaway, with links to the memories behind it."
     },
     {
       "path": "screenshots/pcs-map-0114.png",
@@ -340,7 +374,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. Explore shared themes and their saved evidence in the Continuity Map."
+      "caption": "PCS 0.9.114 · Fictional demonstration data. Explore shared themes and their saved evidence in the Continuity Map."
     },
     {
       "path": "screenshots/pcs-calendar-0114.png",
@@ -354,7 +388,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.114 \u00b7 Fictional demonstration data. A private calendar for small plans and unfinished next steps."
+      "caption": "PCS 0.9.114 · Fictional demonstration data. A private calendar for small plans and unfinished next steps."
     },
     {
       "path": "screenshots/pcs-conversation-0102.png",
@@ -368,7 +402,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. A saved stopping point and next step, ready to review and continue."
+      "caption": "PCS 0.9.102 · Fictional demonstration data. A saved stopping point and next step, ready to review and continue."
     },
     {
       "path": "screenshots/pcs-materials-0102.png",
@@ -382,7 +416,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. Documents and reading tools in Materials."
+      "caption": "PCS 0.9.102 · Fictional demonstration data. Documents and reading tools in Materials."
     },
     {
       "path": "screenshots/pcs-notebook-0102.png",
@@ -396,7 +430,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. An editable notebook outline with step notes and progress."
+      "caption": "PCS 0.9.102 · Fictional demonstration data. An editable notebook outline with step notes and progress."
     },
     {
       "path": "screenshots/pcs-library-0102.png",
@@ -410,7 +444,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. Browse saved records and inspect a selected memory."
+      "caption": "PCS 0.9.102 · Fictional demonstration data. Browse saved records and inspect a selected memory."
     },
     {
       "path": "screenshots/pcs-map-0102.png",
@@ -424,7 +458,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. Explore shared themes and their saved evidence in the Continuity Map."
+      "caption": "PCS 0.9.102 · Fictional demonstration data. Explore shared themes and their saved evidence in the Continuity Map."
     },
     {
       "path": "screenshots/pcs-calendar-0102.png",
@@ -438,7 +472,7 @@
       "unmodified": true,
       "fictional_data": true,
       "live_ai_result": false,
-      "caption": "PCS 0.9.102 \u00b7 Fictional demonstration data. A private calendar for small plans and unfinished next steps."
+      "caption": "PCS 0.9.102 · Fictional demonstration data. A private calendar for small plans and unfinished next steps."
     },
     {
       "path": "screenshots/pcs-conversation-0978.png",
@@ -531,6 +565,22 @@
   ],
   "diagrams": [
     {
+      "path": "assets/pcs-memory-flow-0120.svg",
+      "version": "0.9.120",
+      "width": 1200,
+      "height": 1260,
+      "sha256": "097baf1e4689718e091beae515f79fd5563e99b71084d626aa132cd77d8d5c2c",
+      "method": "Hand-authored SVG explanation, checked against PCS 0.9.120 Help. Updates memory-awareness previews/current accounts and activity eligibility while preserving sources, corrections, exact revisions, lessons and permitted recall."
+    },
+    {
+      "path": "assets/pcs-local-context-0120.svg",
+      "version": "0.9.120",
+      "width": 1200,
+      "height": 1010,
+      "sha256": "30f49fae7d81ce3bd9201f5512de8ed6d8028c72a860fb3958b6e6e38851e7ff",
+      "method": "Hand-authored SVG explanation, rechecked against PCS 0.9.120 Help. Local context selection, optional area labels, working-context compaction and separate image controls remain accurate."
+    },
+    {
       "path": "assets/pcs-memory-flow-0114.svg",
       "sha256": "f23791cfc2e3cdcb1a6afcc4e008f48427c9c01adcbaa951a456d91b858ba021",
       "method": "Hand-authored SVG explanation. Originals, corrections, exact-revision links, settled marks, named lessons, optional navigation hints and permitted recall."
@@ -542,13 +592,17 @@
     },
     {
       "path": "assets/pcs-memory-flow-0102.svg",
-      "sha256": "c2725442a5106989f570888e68dd374fb09156ce64bbcbf028456e0e55d4ae65",
-      "method": "Hand-authored SVG explanation of saved evidence, optional hints, permission checks and recall."
+      "sha256": "4c5657fd090b0341359ca32afa87d3bc979e2672e2c241e14c23b22b9e3eafb2",
+      "method": "Hand-authored SVG explanation of saved evidence, optional hints, permission checks and recall.",
+      "inherited_manifest_sha256": "c2725442a5106989f570888e68dd374fb09156ce64bbcbf028456e0e55d4ae65",
+      "hash_note": "Corrected inherited manifest digest to match the downloaded public baseline bytes. The historical SVG was not changed by this update."
     },
     {
       "path": "assets/pcs-local-context-0102.svg",
-      "sha256": "2f149467990a6059cdf2aa7a6f0a62a08c7d2516ebf3c7d75eacb4d6192c5a18",
-      "method": "Hand-authored SVG explanation of Local reply context selection and separate image/capture controls."
+      "sha256": "a759ebab9c0fdaff7af5c07951f2663df4af6b6eaf03bf906e64c3f8dbbc6ca7",
+      "method": "Hand-authored SVG explanation of Local reply context selection and separate image/capture controls.",
+      "inherited_manifest_sha256": "2f149467990a6059cdf2aa7a6f0a62a08c7d2516ebf3c7d75eacb4d6192c5a18",
+      "hash_note": "Corrected inherited manifest digest to match the downloaded public baseline bytes. The historical SVG was not changed by this update."
     }
   ],
   "homepage_refresh": {
@@ -579,5 +633,34 @@
       "method": "Exact SHA-256 comparison of every .py, .js, .css and .html file under pcs in the verified release ZIP against the actual served app-source/pcs copy. Compiled bytecode and runtime data are excluded."
     },
     "notes": "The normal PCS host, storage APIs, authentication and interface were used. The supported trusted_hosts argument admits only the isolated preview host in addition to loopback. No model was started, no provider key was supplied and no microphone, OBS or personal vault was used."
-  }
+  },
+  "fictional_data_scope": "Current and 0.9.114 illustration records; historical captures retain their individual provenance, including the older Local trial.",
+  "map_refresh": {
+    "revision": "map-20261023-0120",
+    "source_release": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v.0.9.120",
+    "source_archive_sha256": "d5b419d2117f0b680040a78ea3f40d8b169a62729f94ca17598af71bb9ceb763",
+    "source_binding_sha256": "9609198027aa85c5871369fc6c02b3e5c86a40bac8ef81b0a34e030173fe2fd2",
+    "capture_receipt_sha256": "e449fc140d4c56f2750d1f8e4c9beaa7a68b5a6fc3cc22f31dd0a28392a7df0e",
+    "validation_sha256": "1eb97ea6dfc0674794e28badf22c3cff72068ac6015ccd76284b91a63a03b0a4",
+    "fixture": "Isolated owner-authored fictional astronomy, photography and writing records. No personal vault, active provider, microphone or OBS capture.",
+    "source_files_unchanged": true,
+    "shipping_files_verified_at_capture": 1877,
+    "clean_server_exit": true,
+    "pixel_edits": false,
+    "generated_art_included": false,
+    "live_ai_result": false,
+    "notes": "Reused byte-for-byte from the independently packaged 0.9.120 GitHub main-page capture. Current All links view with Astronomy and Photography selected; visible Constellations control is not a claim that this capture shows the default view."
+  },
+  "inherited_metadata_corrections": [
+    {
+      "path": "assets/pcs-memory-flow-0102.svg",
+      "inherited_manifest_sha256": "c2725442a5106989f570888e68dd374fb09156ce64bbcbf028456e0e55d4ae65",
+      "verified_baseline_sha256": "4c5657fd090b0341359ca32afa87d3bc979e2672e2c241e14c23b22b9e3eafb2"
+    },
+    {
+      "path": "assets/pcs-local-context-0102.svg",
+      "inherited_manifest_sha256": "2f149467990a6059cdf2aa7a6f0a62a08c7d2516ebf3c7d75eacb4d6192c5a18",
+      "verified_baseline_sha256": "a759ebab9c0fdaff7af5c07951f2663df4af6b6eaf03bf906e64c3f8dbbc6ca7"
+    }
+  ]
 }

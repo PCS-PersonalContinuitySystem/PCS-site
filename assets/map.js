@@ -66,10 +66,31 @@
       if (state.layout === 'compare' && ids.has(state.compare)) anchors.add(state.compare);
       const wanted = new Set(anchors);
       for (const edge of edges) if (anchors.has(edge.from) || anchors.has(edge.to)) { wanted.add(edge.from); wanted.add(edge.to); }
+      if (state.layout === 'compare') for (const id of shortestRoute({nodes, edges}, anchor, state.compare)) wanted.add(id);
       nodes = nodes.filter(node => wanted.has(node.id));
       edges = edges.filter(edge => wanted.has(edge.from) && wanted.has(edge.to));
     }
     return {nodes, edges};
+  }
+
+  // A route follows existing shared-record links. It never creates a new link
+  // or claims that one record contains every theme along the way.
+  function shortestRoute(graph, from, to) {
+    const ids = new Set(graph.nodes.map(node => node.id));
+    if (!ids.has(from) || !ids.has(to)) return [];
+    const queue = [[from]], visited = new Set([from]);
+    while (queue.length) {
+      const path = queue.shift(), current = path[path.length - 1];
+      if (current === to) return path;
+      const neighbors = graph.edges.filter(edge => edge.from === current || edge.to === current)
+        .sort((a, b) => b.count - a.count || a.id.localeCompare(b.id));
+      for (const edge of neighbors) {
+        const next = edge.from === current ? edge.to : edge.from;
+        if (visited.has(next)) continue;
+        visited.add(next); queue.push([...path, next]);
+      }
+    }
+    return [];
   }
 
   function constellationGraph(graph, state = {}) {
@@ -359,18 +380,19 @@
     let updateStoryReading = null;
     // Focus rings follows the selected theme without resetting the camera.
     // Keep its anchor separately so edge inspection and deselection retain it.
-    let state = {selected: initialTheme, anchor: initialTheme, edge: null, layout: 'rings', cluster: '', compare: '', type: 'all', repeated: false, hidden: [], hiddenEdges: []};
+    let state = {selected: '', anchor: initialTheme, edge: null, layout: 'constellations', cluster: '', compare: '', type: 'all', repeated: false, hidden: [], hiddenEdges: []};
     const percent = 60;
-    let listMode = false, tab = 'overview', past = [], future = [], positions = new Map(), graph, visible, layout, constellations;
+    let listMode = false, past = [], future = [], positions = new Map(), graph, visible, layout, constellations;
     let box = {x: 0, y: 0, width: WIDTH, height: HEIGHT}, drag = null, moved = false, hoveredTheme = '', focusedTheme = '';
     const overrides = new Map(), snapshot = () => JSON.stringify(state);
     const expandedBundles = new Set(), landmarks = new Map(), landmarkDrafts = new Map(), discovered = new Set();
+    const savedViews = new Map();
     let discoveryEdge = null, landmarkCompose = null;
     // An arrangement belongs to its focused neighborhood. A theme dragged in
     // the outer ring must not carry that offset when it becomes the center.
     const positionKey = id => state.layout === 'rings' ? `rings:${state.anchor}:${id}` : `${state.layout}:${id}`;
     const announce = message => { status.textContent = message; };
-    function change(mutator, message, resetView = true, keepStory = false) { if (!keepStory) { storyStep = null; storyEnding = false; } const before = snapshot(); mutator(); if (before !== snapshot()) { past.push(before); if (past.length > 60) past.shift(); future = []; } if (resetView) resetBox(); render(); if (message) announce(message); }
+    function change(mutator, message, resetView = true, keepStory = false) { if (!keepStory) { storyStep = null; storyEnding = false; } const before = snapshot(); mutator(); if (before !== snapshot()) { past.push(before); if (past.length > 60) past.shift(); future = []; } if (resetView) resetBox(); const notice = render(); if (notice || message) announce(notice || message); }
     function resetBox() {
       const current = deriveGraph(data, state.type), projected = visibleGraph(current, state);
       const fitted = state.layout === 'constellations' && !state.cluster ? constellationLayout(constellationGraph(current, state).nodes) : layoutGraph(projected, state.layout, state.anchor, state.compare);
@@ -402,18 +424,18 @@
     function zoom(factor, point = {x: box.x + box.width / 2, y: box.y + box.height / 2}) { const width = clamp(box.width * factor, 300, Math.max(2200, (layout?.width || WIDTH) * 2.2)), ratio = width / box.width; box = {x: point.x - (point.x - box.x) * ratio, y: point.y - (point.y - box.y) * ratio, width, height: box.height * ratio}; applyBox(); }
     function choose(id) {
       const leavingStory = storyStep || storyEnding; storyStep = null; storyEnding = false;
-      if (!leavingStory && state.selected === id && !state.edge && !state.hidden.includes(id) && (state.layout !== 'rings' || state.anchor === id)) return;
+      if (!leavingStory && state.selected === id && !state.edge && !state.hidden.includes(id) && (state.layout === 'compare' || (state.layout === 'rings' && state.anchor === id))) return;
       const reveal = !visible.nodes.some(node => node.id === id);
-      const refocus = state.layout === 'rings';
+      const refocus = state.layout !== 'compare', enteringFocus = state.layout !== 'rings' && refocus;
       change(() => {
         state.selected = id; state.edge = null;
-        if (state.layout === 'constellations') state.cluster = lookup.get(id).group;
+        if (refocus) { state.layout = 'rings'; state.cluster = ''; }
         if (refocus || reveal) {
           const newAnchor = state.anchor !== id; state.anchor = id;
           if (refocus && newAnchor) overrides.delete(positionKey(id));
         }
         state.hidden = state.hidden.filter(item => item !== id);
-      }, `${lookup.get(id).label} ${refocus ? 'focused' : 'selected'}.`, reveal && !refocus);
+      }, `${lookup.get(id).label} ${refocus ? 'focused' : 'selected'}.`, enteringFocus || reveal);
     }
     function openCluster(group) {
       change(() => { state.layout = 'constellations'; state.cluster = group; state.selected = ''; state.edge = null; }, `${group || 'All constellations'}. Choose a theme to inspect its evidence.`);
@@ -432,7 +454,35 @@
       }, `${lookup.get(edge.from).label} and ${lookup.get(edge.to).label} focused. Their connections are highlighted; shared records are in the details panel.`, outside);
     }
     function clearSelection() { storyStep = null; storyEnding = false; change(() => { state.selected = ''; state.edge = null; }, 'Selection cleared. Choose a theme or connection to inspect its evidence.', false); }
-    function navigate(back) { const source = back ? past : future, target = back ? future : past; if (!source.length) return; storyStep = null; storyEnding = false; target.push(snapshot()); state = JSON.parse(source.pop()); resetBox(); render(); announce(back ? 'Previous view restored.' : 'Next view restored.'); }
+    function navigate(back, steps = 1) {
+      const source = back ? past : future, target = back ? future : past;
+      if (!source.length) return;
+      storyStep = null; storyEnding = false;
+      const count = Math.min(steps, source.length);
+      for (let index = 0; index < count; index++) { target.push(snapshot()); state = JSON.parse(source.pop()); }
+      resetBox(); const notice = render(); announce(notice || (back ? 'Previous view restored.' : 'Next view restored.'));
+    }
+    function trailLabel(step) {
+      if (step.edge) return step.edge.split('|').map(id => lookup.get(id)?.label || id).join(' + ');
+      if (step.layout === 'compare') return `Compare: ${lookup.get(step.anchor)?.label} + ${lookup.get(step.compare)?.label}`;
+      if (step.selected) return lookup.get(step.selected)?.label || 'Theme';
+      return step.layout === 'constellations' ? step.cluster || 'Constellations' : step.layout === 'overview' ? 'All links' : 'Focus';
+    }
+    function renderTrail() {
+      trail.replaceChildren();
+      const entries = [...past.map((item, index) => ({label: trailLabel(JSON.parse(item)), steps: past.length - index})), {label: trailLabel(state), steps: 0}];
+      const distinct = entries.filter((item, index) => item.label !== entries[index + 1]?.label).slice(-5);
+      for (const [index, item] of distinct.entries()) {
+        if (index) trail.append(element('span', 'trail-separator', '›'));
+        if (item.steps) { const crumb = button(item.label, () => navigate(true, item.steps), 'trail-crumb'); crumb.setAttribute('aria-label', `Back to ${item.label}`); trail.append(crumb); }
+        else { const current = element('span', 'trail-current', item.label); current.setAttribute('aria-current', 'location'); trail.append(current); }
+      }
+    }
+    function compareWith(id) {
+      const from = state.selected || state.anchor;
+      if (!from || from === id) return;
+      change(() => { state.layout = 'compare'; state.anchor = from; state.compare = id; state.edge = null; state.selected = from; state.cluster = ''; }, 'Comparing two themes. Follow the route and open its shared records in the evidence panel.');
+    }
 
     const header = element('div', 'header'), heading = element('div', 'heading');
     heading.append(element('p', 'eyebrow', 'Interactive website demo'), element('h3', 'title', `${data.person?.name || 'A fictional person'}’s continuity map`));
@@ -544,17 +594,43 @@
     const navigation = element('div', 'constellation-navigation'); navigation.append(views); host.append(navigation);
     const primaryViews = element('div', 'primary-views'); primaryViews.setAttribute('role', 'group'); primaryViews.setAttribute('aria-label', 'Explore the Map');
     const focusView = button('Focus', () => {
-      if (!state.selected && story?.clues?.length) { exploreStory(story.clues[0]); return; }
-      change(() => { state.layout = 'rings'; state.anchor = state.selected || state.anchor; state.edge = null; }, 'Focus shows one theme and its direct connections.', true, true);
+      change(() => { state.layout = 'rings'; state.selected = state.selected || state.anchor || initialTheme; state.anchor = state.selected; state.edge = null; state.cluster = ''; }, 'Focus shows one theme and its direct connections.');
     });
-    const constellationView = button('Constellations', () => change(() => { state.layout = 'constellations'; state.cluster = ''; state.selected = ''; state.edge = null; }, 'Open a constellation to explore its themes.', true, true));
-    const connectionsView = button('Connections', () => change(() => { state.layout = 'overview'; state.edge = null; }, 'The full web shows all themes. Select a thread to focus both themes and their connections.', true, true));
-    primaryViews.append(focusView, constellationView, connectionsView); navigation.prepend(primaryViews);
+    const constellationView = button('Constellations', () => change(() => { state.layout = 'constellations'; state.cluster = ''; state.selected = ''; state.edge = null; }, 'Open a constellation to explore its themes.'));
+    const connectionsView = button('All links', () => change(() => { state.layout = 'overview'; state.edge = null; }, 'The full web shows all themes. Select a thread to inspect its shared records.'));
+    primaryViews.append(constellationView, focusView, connectionsView); navigation.prepend(primaryViews);
     toolbar.prepend(navigation);
     const caption = element('p', 'caption'), legend = element('p', 'legend');
     const contextBar = element('div', 'context-bar'); contextBar.append(showAll, clusterCaption, caption); host.append(contextBar);
     const bundleReset = button('Bundle all again', () => { expandedBundles.clear(); render(); announce('Links between constellations are bundled again. Selected evidence stays visible.'); });
     contextBar.append(bundleReset);
+    const trail = element('nav', 'trail'); trail.setAttribute('aria-label', 'Map exploration trail'); host.append(trail);
+    const drawers = element('div', 'drawers'), settings = element('details', 'settings'), viewsNotes = element('details', 'views-notes');
+    settings.append(element('summary', '', 'Map settings'));
+    const settingsBody = element('div', 'drawer-body'), typeSelect = element('select', 'select');
+    for (const [value, label] of [['all', 'All records'], ['memory', 'Memories'], ['notebook', 'Notebooks']]) { const option = element('option', '', label); option.value = value; typeSelect.append(option); }
+    typeSelect.addEventListener('change', () => change(() => { state.type = typeSelect.value; state.edge = null; }, 'Record filter updated.'));
+    const repeatedInput = element('input', 'checkbox'); repeatedInput.type = 'checkbox';
+    repeatedInput.addEventListener('change', () => change(() => { state.repeated = repeatedInput.checked; }, 'Connection filter updated.'));
+    const repeatedLabel = element('label', 'check'); repeatedLabel.append(repeatedInput, doc.createTextNode('Connections with at least two shared records'));
+    settingsBody.append(field('Records', typeSelect), repeatedLabel, element('p', 'muted', 'Themes from: saved labels. The demo preserves authored phrases such as “Teaching at work”. In PCS, you can also include wording from records.'), element('p', 'muted', 'Coverage: all 76 fictional records are included. This website has no vault or indexing job.'));
+    settings.append(settingsBody);
+    viewsNotes.append(element('summary', '', 'Views & notes'));
+    const viewsBody = element('div', 'drawer-body'), viewName = element('input', 'input'), savedViewList = element('div', 'saved-views'), notesList = element('div', 'landmarks');
+    viewName.type = 'text'; viewName.maxLength = 60; viewName.placeholder = 'A place to return to';
+    viewsBody.append(field('Name this demo view', viewName), button('Keep view for this visit', () => {
+      const name = viewName.value.trim(); if (!name) { announce('Give this view a name first.'); viewName.focus(); return; }
+      savedViews.set(name, {state: snapshot(), listMode}); viewName.value = ''; renderSavedViews(); announce('Demo view kept for this visit. Reloading clears saved views and notes.');
+    }), element('p', 'muted', 'Demo views and connection notes stay in this open page. They disappear on reload.'), savedViewList, notesList);
+    viewsNotes.append(viewsBody); drawers.append(settings, viewsNotes); host.append(drawers);
+    function renderSavedViews() {
+      savedViewList.replaceChildren();
+      for (const [name, saved] of savedViews) {
+        const row = element('div', 'saved-view');
+        row.append(button(name, () => { change(() => { state = JSON.parse(saved.state); listMode = saved.listMode; }, `Restored demo view: ${name}.`); }), button('Remove', () => { savedViews.delete(name); renderSavedViews(); announce(`Removed demo view: ${name}.`); }));
+        row.lastChild.setAttribute('aria-label', `Remove demo view ${name}`); savedViewList.append(row);
+      }
+    }
     const discoveryPanel = element('section', 'discovery'); discoveryPanel.setAttribute('aria-label', 'Discover and revisit a connection'); host.append(discoveryPanel);
     const workspace = element('div', 'workspace'), canvas = element('div', 'canvas'), stage = element('div', 'stage');
     const svg = svgElement('svg', {class: 'pcs-map-svg', viewBox: `0 0 ${WIDTH} ${HEIGHT}`, role: 'group', 'aria-label': 'Fictional continuity graph. Tab to themes, Enter to inspect; arrow keys move between themes.', tabindex: '0'});
@@ -587,44 +663,49 @@
         .filter(edge => !discovered.has(edge.id) && !edge.records.some(record => record.id === story?.epilogueRecord))
         .sort((a, b) => b.count - a.count || a.id.localeCompare(b.id));
       if (!candidates.length) { announce('You have explored the available demo connections. Continue freely or revisit a landmark.'); return; }
-      const edge = candidates[0]; discovered.add(edge.id); discoveryEdge = edge.id; landmarkCompose = null; tab = 'overview';
+      const edge = candidates[0]; discovered.add(edge.id); discoveryEdge = edge.id; landmarkCompose = null;
       chooseEdge(edge.id); renderDiscovery(); renderInspector();
       inspector.focus({preventScroll: true});
     }
     function composeLandmark(id) {
-      landmarkCompose = id; tab = 'overview'; renderInspector();
+      landmarkCompose = id; renderInspector();
       inspector.querySelector('[data-landmark-input]')?.focus({preventScroll: true});
     }
     function renderDiscovery() {
       const active = doc.activeElement?.dataset?.discoveryAction;
       discoveryPanel.replaceChildren();
       const intro = element('div', 'discovery-intro');
-      intro.append(element('strong', '', 'Find something worth returning to'), element('p', 'muted', 'Inspect a connection, then try a landmark in your own words. Demo notes last only for this visit.'));
+      intro.append(element('strong', '', 'Find something worth returning to'), element('p', 'muted', 'Inspect a connection, then add a note in your own words. Revisit your notes under Views & notes.'));
       const actions = element('div', 'discovery-actions');
       const next = button(discoveryEdge ? 'Try another connection' : 'Discover a connection', discoverNext); next.dataset.discoveryAction = 'next'; actions.append(next);
       if (discoveryEdge) {
         const current = state.edge === discoveryEdge;
-        const inspect = button('Read its records', () => { tab = 'records'; chooseEdge(discoveryEdge); renderInspector(); inspector.focus({preventScroll: true}); }); inspect.dataset.discoveryAction = 'inspect';
-        const leave = button('Leave a landmark', () => composeLandmark(discoveryEdge)); leave.disabled = !current; leave.dataset.discoveryAction = 'leave';
+        const inspect = button('Read its records', () => { chooseEdge(discoveryEdge); renderInspector(); inspector.focus({preventScroll: true}); }); inspect.dataset.discoveryAction = 'inspect';
+        const leave = button('Add connection note', () => composeLandmark(discoveryEdge)); leave.disabled = !current; leave.dataset.discoveryAction = 'leave';
         const finish = button('Finish exploring', () => { discoveryEdge = null; landmarkCompose = null; renderDiscovery(); renderInspector(); announce('Continue exploring freely. Your demo landmarks remain available on this page.'); }); finish.dataset.discoveryAction = 'finish';
         actions.append(inspect, leave, finish);
       }
       discoveryPanel.append(intro, actions);
+      notesList.replaceChildren();
       if (landmarks.size) {
-        const saved = element('div', 'landmarks'); saved.append(element('strong', '', 'Your demo landmarks'));
+        const saved = element('div', 'landmarks'); saved.append(element('strong', '', 'Your demo connection notes'));
         for (const [id, text] of landmarks) {
-          const item = button(text.split('\n')[0].slice(0, 70), () => { discoveryEdge = null; tab = 'overview'; chooseEdge(id); renderDiscovery(); renderInspector(); inspector.focus({preventScroll: true}); }, 'landmark-chip');
+          const item = button(text.split('\n')[0].slice(0, 70), () => {
+            discoveryEdge = null;
+            if (!visible.edges.some(edge => edge.id === id)) change(() => { state.type = 'all'; state.repeated = false; state.hidden = []; state.hiddenEdges = []; }, 'Restored the records for this connection note.');
+            chooseEdge(id); renderDiscovery(); renderInspector(); inspector.focus({preventScroll: true});
+          }, 'landmark-chip');
           item.dataset.landmark = id; saved.append(item);
         }
-        discoveryPanel.append(saved);
+        notesList.append(saved);
       }
       if (active) discoveryPanel.querySelector(`[data-discovery-action="${active}"]`)?.focus({preventScroll: true});
     }
     function landmarkEditor(edge, body) {
-      const section = element('section', 'landmark-editor'); section.append(element('h5', 'subheading', 'Your demo landmark'));
+      const section = element('section', 'landmark-editor'); section.append(element('h5', 'subheading', 'Your connection note'));
       if (landmarks.has(edge.id)) section.append(element('p', 'landmark-text', landmarks.get(edge.id)));
       if (landmarkCompose !== edge.id) {
-        section.append(button(landmarks.has(edge.id) ? 'Edit your landmark' : 'Leave a landmark', () => composeLandmark(edge.id))); body.append(section); return;
+        section.append(button(landmarks.has(edge.id) ? 'Edit your note' : 'Add connection note', () => composeLandmark(edge.id))); body.append(section); return;
       }
       const input = element('textarea', 'landmark-input'); input.rows = 4; input.dataset.landmarkInput = edge.id;
       input.value = landmarkDrafts.get(edge.id) ?? landmarks.get(edge.id) ?? '';
@@ -632,13 +713,13 @@
       input.addEventListener('keydown', event => { if (event.key === 'Escape') { event.preventDefault(); landmarkCompose = null; renderInspector(); inspector.querySelector('.pcs-map-landmark-editor button')?.focus({preventScroll: true}); } });
       section.append(field('A title, a question or a next step in your own words', input), element('p', 'muted', 'Up to 1,000 characters. This note stays in this page’s memory and disappears on reload. It does not change Mara’s records.'));
       const feedback = element('p', 'muted'); feedback.setAttribute('role', 'status');
-      section.append(button('Keep landmark for this visit', () => {
+      section.append(button('Keep note for this visit', () => {
         const value = input.value.trim();
-        if (!value || [...value].length > 1000) { feedback.textContent = value ? 'Use at most 1,000 characters. Your draft is retained.' : 'Write a landmark first.'; return; }
+        if (!value || [...value].length > 1000) { feedback.textContent = value ? 'Use at most 1,000 characters. Your draft is retained.' : 'Write a note first.'; return; }
         landmarks.set(edge.id, value); landmarkDrafts.delete(edge.id); landmarkCompose = null; discoveryEdge = null;
-        renderDiscovery(); renderInspector(); announce('Landmark kept for this visit. Return through Your demo landmarks. Reloading clears it.');
+        renderDiscovery(); renderInspector(); announce('Connection note kept for this visit. Return through Views & notes. Reloading clears it.');
       }), button('Cancel', () => { landmarkCompose = null; renderInspector(); }));
-      if (landmarks.has(edge.id)) section.append(button('Remove this landmark', () => { landmarks.delete(edge.id); landmarkDrafts.delete(edge.id); landmarkCompose = null; renderDiscovery(); renderInspector(); announce('Demo landmark removed. Mara’s records are unchanged.'); }));
+      if (landmarks.has(edge.id)) section.append(button('Remove this note', () => { landmarks.delete(edge.id); landmarkDrafts.delete(edge.id); landmarkCompose = null; renderDiscovery(); renderInspector(); announce('Demo connection note removed. Mara’s records are unchanged.'); }));
       section.append(feedback); body.append(section);
     }
 
@@ -673,7 +754,6 @@
       return card;
     }
     function renderInspector() {
-      const active = doc.activeElement, focusTab = active?.closest?.('.pcs-map-tab')?.dataset.tab;
       inspector.replaceChildren();
       updateStoryReading = null;
       host.dataset.storyMode = storyStep || storyEnding ? 'reading' : 'exploring';
@@ -692,7 +772,7 @@
           const outcome = data.records.find(record => record.id === story.epilogueRecord);
           if (outcome) body.append(element('h5', 'subheading', 'What happened next'), recordCard(outcome, true));
           body.append(element('p', 'story-reflection', story.reflection), element('p', 'muted', 'This is an authored fictional story. In your own Map, connections are starting points for questions; the records and your judgment give them meaning.'));
-          body.append(element('p', 'summary', 'A theme gathers records. A line joins themes that share a record. Try selecting a line to inspect what connects them.'), button('Explore Connections', () => exploreFreely(true)));
+          body.append(element('p', 'summary', 'A theme gathers records. A line joins themes that share a record. Try selecting a line to inspect what connects them.'), button('Explore all links', () => exploreFreely(true)));
           const own = element('a', 'button', 'Start your own thinking space ↗'); own.href = 'getting-started.html'; body.append(own);
           if (!journey.progress().complete) body.append(button('Return to unkept passages', resumeStory));
           body.append(button('Start again · clear story progress', () => { journey.reset(); exploreStory(story.clues[0]); }));
@@ -743,10 +823,10 @@
         if (state.cluster) {
           for (const node of visible.nodes) { const item = button(node.label, () => choose(node.id), 'connection'); item.dataset.clusterTheme = node.id; body.append(item); }
           const bridges = constellations.edges.filter(edge => edge.from === state.cluster || edge.to === state.cluster);
-          if (bridges.length) body.append(element('h5', 'subheading', 'Connections beyond this constellation'), element('p', 'muted', 'Each record touching both constellations counts once. These links suggest places to explore, not causes or conclusions.'));
+          if (bridges.length) body.append(element('h5', 'subheading', 'Connections beyond this constellation'), element('p', 'muted', 'Counts describe theme links between groups, not records. These links suggest places to explore, not causes or conclusions.'));
           for (const bridge of bridges) {
             const other = bridge.from === state.cluster ? bridge.to : bridge.from;
-            body.append(button(`${other} · ${plural(bridge.count, 'shared record')}`, () => openCluster(other), 'connection'));
+            body.append(button(`${other} · ${plural(bridge.count, 'theme link')}`, () => openCluster(other), 'connection'));
           }
         } else {
           for (const group of constellations.nodes) {
@@ -756,7 +836,7 @@
         inspector.append(body); return;
       }
       const edge = visible.edges.find(item => item.id === state.edge), node = graph.nodes.find(item => item.id === state.selected) || (edge && graph.nodes.find(item => item.id === edge.from));
-      if (!node) { inspector.append(element('h4', '', visible.nodes.length ? 'No selection' : 'No themes in this view'), element('p', 'muted', visible.nodes.length ? 'Select a theme or connection to inspect its evidence. The current layout stays in place.' : 'Choose Connections to explore the fictional records.')); return; }
+      if (!node) { inspector.append(element('h4', '', visible.nodes.length ? 'No selection' : 'No themes in this view'), element('p', 'muted', visible.nodes.length ? 'Select a theme or connection to inspect its evidence. The current layout stays in place.' : 'Choose All links to explore the fictional records.')); return; }
       const title = edge ? `${lookup.get(edge.from).label} + ${lookup.get(edge.to).label}` : node.label;
       const evidenceEdges = state.layout === 'constellations' ? visibleGraph(graph, {...state, layout: 'overview'}).edges : visible.edges;
       const endpoints = new Set(edge ? [edge.from, edge.to] : [node.id]);
@@ -767,40 +847,52 @@
       if (edge && lookup.get(edge.from).group !== lookup.get(edge.to).group) {
         for (const group of [lookup.get(edge.from).group, lookup.get(edge.to).group]) inspector.append(button(`Open ${group} constellation`, () => openCluster(group)));
       }
-      const tabs = element('div', 'tabs'); tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Evidence details');
-      const panels = [['overview', 'Overview'], ['records', `Records (${records.length})`], ['connections', `Connections (${related.length})`]];
-      const body = element('div', 'inspector-body'); body.id = prefix + '-panel'; body.setAttribute('role', 'tabpanel'); body.setAttribute('aria-labelledby', prefix + '-tab-' + tab); body.tabIndex = 0;
-      for (const [id, label] of panels) {
-        const item = button(label, () => { tab = id; renderInspector(); inspector.querySelector(`[data-tab="${id}"]`).focus(); }, 'tab'); item.id = prefix + '-tab-' + id; item.dataset.tab = id; item.setAttribute('role', 'tab'); item.setAttribute('aria-selected', String(tab === id)); item.setAttribute('aria-controls', body.id); item.tabIndex = tab === id ? 0 : -1;
-        item.addEventListener('keydown', event => { if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return; event.preventDefault(); const index = panels.findIndex(panel => panel[0] === tab); tab = panels[event.key === 'Home' ? 0 : event.key === 'End' ? 2 : (index + (event.key === 'ArrowRight' ? 1 : 2)) % 3][0]; renderInspector(); inspector.querySelector(`[data-tab="${tab}"]`).focus(); }); tabs.append(item);
-      }
-      inspector.append(tabs, body);
-      if (tab === 'overview') {
-        body.append(element('p', 'summary', edge ? `${plural(edge.count, 'record')} mention both themes. This is a connection in the saved wording, not a conclusion about cause or importance.` : node.summary));
-        if (edge) for (const note of ownerNotes(edge)) body.append(noteCard(note));
-        else {
-          const notes = (data.connectionNotes || []).filter(note => note.from === node.id || note.to === node.id);
-          for (const note of notes) { const card = noteCard(note), other = note.from === node.id ? note.to : note.from; card.prepend(element('p', 'note-topic', `${node.label} + ${lookup.get(other)?.label || other}`)); body.append(card); }
+      const body = element('div', 'inspector-body'); body.tabIndex = 0; body.setAttribute('aria-label', 'Records, connection notes and related themes');
+      inspector.append(body);
+      body.append(element('p', 'summary', edge ? `${plural(edge.count, 'record')} carry both saved theme labels. This does not establish cause, agreement or importance.` : node.summary));
+      if (state.layout === 'compare') {
+        const route = shortestRoute(visible, state.anchor, state.compare), routePanel = element('section', 'compare-route');
+        routePanel.append(element('h5', 'subheading', `${lookup.get(state.anchor)?.label} + ${lookup.get(state.compare)?.label}`));
+        routePanel.append(element('p', 'muted', route.length ? 'Shortest route through displayed shared-record links. Each step has its own evidence; one record need not contain the whole route.' : 'No route is visible under these filters. That does not prove the subjects are unrelated.'));
+        for (let index = 1; index < route.length; index++) {
+          const id = edgeKey(route[index - 1], route[index]), item = visible.edges.find(value => value.id === id);
+          const link = button(`${lookup.get(route[index - 1]).label} + ${lookup.get(route[index]).label} · ${plural(item.count, 'shared record')}`, () => chooseEdge(id), 'connection');
+          link.dataset.routeEdge = id; routePanel.append(link);
         }
-        body.append(element('h5', 'subheading', 'Start with the evidence'), recordCard(records[0], true));
-        if (records.length > 1) body.append(button(`Read all ${records.length} records`, () => { tab = 'records'; renderInspector(); inspector.querySelector('[data-tab="records"]').focus(); }));
-      } else if (tab === 'records') {
-        body.append(element('p', 'muted', 'Current wording, original excerpts, and owner corrections are kept distinct. Open a record to read it.'));
-        for (let i = 0; i < records.length; i++) body.append(recordCard(records[i], i === 0));
+        const common = visible.nodes.filter(theme => theme.id !== state.anchor && theme.id !== state.compare && visible.edges.some(item => item.id === edgeKey(theme.id, state.anchor)) && visible.edges.some(item => item.id === edgeKey(theme.id, state.compare)));
+        if (common.length) routePanel.append(element('p', 'muted', `Themes connected to both: ${common.map(theme => theme.label).join(' · ')}. These links may come from different records.`));
+        routePanel.append(button('Done comparing', () => {
+          const previous = past.findLastIndex(item => JSON.parse(item).layout !== 'compare');
+          if (previous >= 0) navigate(true, past.length - previous); else openCluster('');
+        }));
+        body.append(routePanel);
+      } else if (!edge) {
+        const chooser = element('details', 'compare-chooser'), select = element('select', 'select');
+        chooser.append(element('summary', '', 'Compare with…'));
+        for (const theme of graph.nodes.filter(theme => theme.id !== node.id && !state.hidden.includes(theme.id))) { const option = element('option', '', theme.label); option.value = theme.id; select.append(option); }
+        chooser.append(field('Second theme', select), button('Compare themes', () => compareWith(select.value))); body.append(chooser);
+      }
+      if (edge) {
+        for (const note of ownerNotes(edge)) body.append(noteCard(note));
+        landmarkEditor(edge, body);
       } else {
-        body.append(element('p', 'muted', 'Counts come from the same saved records appearing under both themes. Select a connection to inspect its evidence.'));
-        if (!related.length) body.append(element('p', 'empty', 'No connections in this view. Choose Connections to see the full web.'));
-        for (const connection of related) {
-          const other = connection.from === node.id ? connection.to : connection.from;
-          const label = edge ? `${lookup.get(connection.from).label} + ${lookup.get(connection.to).label}` : lookup.get(other).label;
-          const item = button('', () => { tab = 'overview'; chooseEdge(connection.id); }, 'connection'); item.dataset.connection = connection.id; item.append(element('strong', '', label), element('span', 'connection-count', `${plural(connection.count, 'shared record')}${!edge && lookup.get(other).group !== node.group ? ' · ' + lookup.get(other).group : ''}`));
-          for (const note of ownerNotes(connection)) item.append(element('span', 'connection-note', note.spoiler ? 'Connection note available · Ending spoilers' : `${data.person?.name || 'Owner'}’s note: ${note.text}`)); body.append(item);
+        for (const note of (data.connectionNotes || []).filter(note => note.from === node.id || note.to === node.id)) {
+          const card = noteCard(note), other = note.from === node.id ? note.to : note.from;
+          card.prepend(element('p', 'note-topic', `${node.label} + ${lookup.get(other)?.label || other}`)); body.append(card);
         }
       }
-      if (edge && tab !== 'connections') landmarkEditor(edge, body);
-      if (focusTab) inspector.querySelector(`[data-tab="${focusTab}"]`)?.focus();
+      body.append(element('h5', 'subheading', 'Saved records'), element('p', 'muted', 'Current wording, original excerpts and owner corrections remain distinct. Open a record to read it.'));
+      for (let index = 0; index < records.length; index++) body.append(recordCard(records[index], index === 0));
+      const relatedPanel = element('details', 'related-panel'); relatedPanel.open = !edge;
+      relatedPanel.append(element('summary', '', `Related connections (${related.length})`), element('p', 'muted', 'Each count is the number of saved records carrying both theme labels.'));
+      for (const connection of related) {
+        const other = connection.from === node.id ? connection.to : connection.from;
+        const label = edge ? `${lookup.get(connection.from).label} + ${lookup.get(connection.to).label}` : lookup.get(other).label;
+        const item = button('', () => chooseEdge(connection.id), 'connection'); item.dataset.connection = connection.id;
+        item.append(element('strong', '', label), element('span', 'connection-count', plural(connection.count, 'shared record'))); relatedPanel.append(item);
+      }
+      body.append(relatedPanel);
     }
-
     function renderConstellations() {
       const active = doc.activeElement?.closest?.('[data-cluster]')?.dataset.cluster;
       layout = constellationLayout(constellations.nodes); positions = layout.positions; svg.replaceChildren();
@@ -853,7 +945,7 @@
         svg.append(group);
       }
       if (active) [...svg.querySelectorAll('[data-cluster]')].find(node => node.dataset.cluster === active)?.focus();
-      if (!constellations.nodes.length) svg.append(svgElement('text', {x: 500, y: 320, 'text-anchor': 'middle', class: 'pcs-map-empty-label'}, 'No themes in this view. Choose Connections to see the full web.'));
+      if (!constellations.nodes.length) svg.append(svgElement('text', {x: 500, y: 320, 'text-anchor': 'middle', class: 'pcs-map-empty-label'}, 'No themes in this view. Choose All links to see the full web.'));
     }
 
     function renderGraph() {
@@ -956,7 +1048,7 @@
           if (options.length) [...svg.querySelectorAll('[data-theme]')].find(item => item.dataset.theme === options[0].id)?.focus();
         }); svg.append(group);
       }
-      if (!visible.nodes.length) svg.append(svgElement('text', {x: 500, y: 320, 'text-anchor': 'middle', class: 'pcs-map-empty-label'}, 'No themes in this view. Choose Connections to see the full web.'));
+      if (!visible.nodes.length) svg.append(svgElement('text', {x: 500, y: 320, 'text-anchor': 'middle', class: 'pcs-map-empty-label'}, 'No themes in this view. Choose All links to see the full web.'));
       if (activeId) [...svg.querySelectorAll('[data-theme]')].find(item => item.dataset.theme === activeId)?.focus();
       if (activeEdge) [...svg.querySelectorAll('.pcs-map-edge-control')].find(item => item.dataset.edge === activeEdge)?.focus();
       if (activeBundle) [...svg.querySelectorAll('[data-bundle]')].find(item => item.dataset.bundle === activeBundle)?.focus();
@@ -965,23 +1057,31 @@
 
     function render() {
       const activeListId = doc.activeElement?.dataset?.listTheme;
+      let viewNotice = '';
       searchResults.hidden = true;
       graph = deriveGraph(data, state.type);
       constellations = constellationGraph(graph, state);
       if (state.cluster && !constellations.nodes.some(group => group.id === state.cluster)) state.cluster = '';
       const eligible = graph.nodes.filter(node => !state.hidden.includes(node.id));
+      if (state.layout === 'compare' && (!eligible.some(node => node.id === state.anchor) || !eligible.some(node => node.id === state.compare && node.id !== state.anchor))) {
+        state.layout = 'constellations'; state.cluster = ''; state.selected = ''; state.edge = null; state.compare = '';
+        viewNotice = 'Comparison cleared: one or both chosen themes are unavailable under these filters. Showing Constellations.';
+        resetBox();
+      }
       if (state.selected && !eligible.some(node => node.id === state.selected)) { state.selected = ''; state.edge = null; }
       if (!eligible.some(node => node.id === state.anchor)) state.anchor = eligible.find(node => node.id === state.selected)?.id || eligible[0]?.id || '';
-      if (!eligible.some(node => node.id === state.compare && node.id !== state.anchor)) state.compare = eligible.find(node => node.id !== state.anchor)?.id || '';
+      if (!eligible.some(node => node.id === state.compare && node.id !== state.anchor)) state.compare = '';
       visible = visibleGraph(graph, state);
       if (!visible.edges.some(edge => edge.id === state.edge)) state.edge = null;
+      typeSelect.value = state.type; repeatedInput.checked = state.repeated;
       showAll.disabled = state.layout === 'constellations' && !state.cluster;
       showAll.hidden = state.layout !== 'constellations' || !state.cluster;
       focusView.setAttribute('aria-pressed', String(state.layout === 'rings'));
       constellationView.setAttribute('aria-pressed', String(state.layout === 'constellations'));
       connectionsView.setAttribute('aria-pressed', String(state.layout === 'overview'));
       bundleReset.hidden = state.layout !== 'overview' || !expandedBundles.size;
-      clusterCaption.textContent = state.layout === 'constellations' ? state.cluster || 'Mara’s constellations' : state.layout === 'rings' ? `Around ${lookup.get(state.anchor)?.label || 'one theme'}` : 'All connections';
+      clusterCaption.textContent = state.layout === 'constellations' ? state.cluster || 'Mara’s constellations' : state.layout === 'rings' ? `Around ${lookup.get(state.anchor)?.label || 'one theme'}` : state.layout === 'compare' ? 'Comparing two themes' : 'All links';
+      renderTrail();
       back.disabled = !past.length; forward.disabled = !future.length;
       graphView.setAttribute('aria-pressed', String(!listMode)); listView.setAttribute('aria-pressed', String(listMode));
       stage.hidden = listMode; list.hidden = !listMode; help.hidden = listMode;
@@ -991,9 +1091,7 @@
       const viewHelp = {
         overview: 'Select a bundled line to show each theme link between two constellations; select it again to collapse. Bundle counts are available in List. Individual links count shared records. Select a thread to inspect both themes and their evidence. Hover or focus a star to read its name. Choose Focus for its neighborhood, or Constellations to explore one group.',
         rings: 'Focus shows one theme and its direct connections. Select a neighboring theme to center its neighborhood without resetting pan or zoom.',
-        compare: 'Compare shows the two chosen themes and their direct connections. Selecting a star inspects its evidence while keeping both comparison anchors.',
-        grid: 'Grid arranges themes by name. Select a theme or connection to inspect its evidence without moving the layout.',
-        date: 'Saved-date groups themes by the latest supporting record’s saved date. Select a theme or connection to inspect its evidence.'
+        compare: 'Compare shows the two chosen themes, their direct connections and any route between them. The evidence panel offers each route step and its records. Selecting a star keeps both comparison anchors.'
       };
       help.textContent = state.layout === 'constellations' ? 'Open a constellation, then select a theme. Tab and Enter work throughout; arrow keys move between stars. Scroll to zoom, drag empty space to pan, and use All constellations to return.' :
         `${viewHelp[state.layout] || viewHelp.overview} Drag empty space to pan, scroll to zoom, and use Fit to return. Tab and arrow keys move between themes; Enter selects, Escape clears. List offers the same evidence.`;
@@ -1011,10 +1109,12 @@
       if (constellationOverview) {
         for (const group of constellations.nodes) { const item = button('', () => openCluster(group.id), 'list-item'); item.classList.add(toneClass(group)); item.dataset.listCluster = group.id; item.append(element('strong', '', group.label), element('span', 'muted', plural(group.count, 'theme')), element('span', '', 'Open this constellation')); list.append(item); }
       } else for (const node of visible.nodes) { const item = button('', () => choose(node.id), 'list-item'); item.classList.add(toneClass(node)); item.dataset.listTheme = node.id; item.setAttribute('aria-pressed', String(listSelection.has(node.id))); item.append(element('strong', '', node.label), element('span', 'muted', `${node.group} · ${plural(node.count, 'record')}`), element('span', '', node.summary)); list.append(item); }
-      if (!(constellationOverview ? constellations.nodes.length : visible.nodes.length)) list.append(element('p', 'empty', 'No themes in this view. Choose Connections to see the full web.'));
+      if (!(constellationOverview ? constellations.nodes.length : visible.nodes.length)) list.append(element('p', 'empty', 'No themes in this view. Choose All links to see the full web.'));
       renderInspector();
       renderDiscovery();
       if (activeListId) [...list.children].find(item => item.dataset.listTheme === activeListId)?.focus();
+      if (viewNotice) announce(viewNotice);
+      return viewNotice;
     }
 
     svg.addEventListener('keydown', event => {
@@ -1077,7 +1177,7 @@
   }
 
   function mountAll(doc = root.document, data = root.PCS_MAP_DATA) { if (!doc) return []; return [...doc.querySelectorAll('[data-pcs-map]')].map(host => create(host, data)); }
-  const api = {deriveGraph, dottedConnections, visibleGraph, constellationGraph, connectionPresentation, constellationLayout, labelLines, layoutGraph, routeEdges, curvePoint, closestEdge, createStoryJourney, create, mountAll};
+  const api = {deriveGraph, dottedConnections, visibleGraph, shortestRoute, constellationGraph, connectionPresentation, constellationLayout, labelLines, layoutGraph, routeEdges, curvePoint, closestEdge, createStoryJourney, create, mountAll};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.PCSMapDemo = api;
   if (root.document) { if (root.document.readyState === 'loading') root.document.addEventListener('DOMContentLoaded', () => mountAll()); else mountAll(); }

@@ -1,15 +1,16 @@
-PCS WEBSITE — UPDATED SAMPLE IMAGES
-Application version: 0.9.114
-Website image revision: October 21, 2026
+PCS WEBSITE — 0.9.121 REFRESH
+Prepared October 23, 2026. Not published.
 
-REVIEW
-Open index.html from the extracted website folder, or serve that folder with a local web server. Click Conversation, Library and Map. Click any screenshot to see the same full-viewport capture enlarged. Materials, Notebook and Calendar tiles now enlarge too.
+Use PCS-Website-0.9.121-Update.zip to update your existing repository.
+Extract it and copy its contents to the PCS-site repository root, preserving
+assets/ and screenshots/ subfolders. Review, commit and push yourself.
+Do not upload the ZIP itself or an extra enclosing folder. Delete nothing.
 
-UPLOAD
-Upload the CONTENTS of website/ into the root of PCS-PersonalContinuitySystem/PCS-site, replacing matching files. Keep the assets/ and screenshots/ folder structure. Do not upload the enclosing website/ directory as a new nested folder. This is a complete current static-site package, so the guides, fonts and Map demo are included for local review.
+PCS-Website-0.9.121-Full-Site.zip contains the active site for local preview.
+See UPLOAD-INSTRUCTIONS.md for preview and merge instructions.
 
-The essential changes are index.html, assets/atlas.css, assets/atlas.js and screenshots/refresh-0114/. Updated documentation and manifests describe the captures. The application download links and application files are unchanged. Existing historical image assets may remain in the repository.
+Includes current Windows download/source/checksum links, connection and
+experimental platform guidance, a fresh 0.9.121 homepage Map screenshot, updated diagrams
+and the refreshed interactive Map. Older screenshots retain actual versions.
 
-No GitHub commits, pushes, pull requests or deployment were performed for this package.
-
-The images show the real published interface with authored fictional records. They do not demonstrate a live AI conversation or prove retrieval quality.
+Current 0.9.114/0.9.120/0.9.121 illustrations use fictional records, with no live AI results or personal vaults. Retained historical captures keep their original provenance.

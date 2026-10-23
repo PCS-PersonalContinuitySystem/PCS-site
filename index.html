@@ -18,11 +18,11 @@
 <meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview-plain.png?v=20261021-sage-r2">
 <meta property="og:image:alt" content="PCS — A new AI shouldn’t mean starting over. Free for Windows.">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PCS — Personal Continuity System","description":"A Windows app for AI conversation, editable memories and notes, with supported cloud and local models.","applicationCategory":"ProductivityApplication","operatingSystem":"Windows x64","softwareVersion":"0.9.114","url":"https://pcs-personalcontinuitysystem.github.io/PCS-site/","downloadUrl":"https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-Windows-x64.zip","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"PCS is free. Cloud provider API charges are separate."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PCS — Personal Continuity System","description":"A Windows app for AI conversation, editable memories and notes, with supported cloud and local models.","applicationCategory":"ProductivityApplication","operatingSystem":"Windows x64","softwareVersion":"0.9.121","url":"https://pcs-personalcontinuitysystem.github.io/PCS-site/","downloadUrl":"https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.121/PCS-0.9.121-Windows-x64.zip","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"PCS is free. Cloud provider API charges are separate."}}</script>
 <link rel="preload" href="assets/fonts/albert-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/atlas.css?v=20261021-images-1">
+<link rel="stylesheet" href="assets/atlas.css?v=20261023-0120">
 <script>document.documentElement.classList.add('js')</script>
-<script defer src="assets/atlas.js?v=20261021-images-1"></script>
+<script defer src="assets/atlas.js?v=20261023-0121"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -49,8 +49,8 @@
     <h1 id="hero-title" class="hero__title"><span class="line"><span data-line style="--i:0">A new AI shouldn’t</span></span> <span class="line"><span data-line style="--i:1">mean starting over.</span></span></h1>
     <p class="hero__lead" data-load style="--d:380ms">A free Windows app that keeps your AI conversations, memories and notes on your PC, so you can switch models and pick up where you left off.</p>
     <div class="hero__action" data-load style="--d:440ms">
-      <a class="button button--large" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-Windows-x64.zip">Download for Windows</a>
-      <p class="hero__note">Free and open source. Use your own API key or a local model.</p>
+      <a class="button button--large" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.121/PCS-0.9.121-Windows-x64.zip">Download for Windows</a>
+      <p class="hero__note">Free and open source. Use an API key, ChatGPT sign-in or a local model.</p>
     </div>
   </div>
 
@@ -63,6 +63,8 @@
           <button type="button" data-model="gemini" aria-pressed="true">Gemini</button>
           <button type="button" data-model="gpt" aria-pressed="false">GPT</button>
           <button type="button" data-model="llama" aria-pressed="false">Llama</button>
+          <button type="button" data-model="claude" aria-pressed="false">Claude</button>
+          <button type="button" data-model="chatgpt" aria-pressed="false">ChatGPT</button>
           <button type="button" data-model="local" aria-pressed="false">Local</button>
         </div>
       </div>
@@ -90,7 +92,7 @@
     <button class="showcase__zoom" type="button" data-enlarge="screenshots/refresh-0114/conversation-full.jpg" aria-label="Enlarge the Conversation screenshot">
       <img width="1363" height="936" class="is-active" data-plate="conversation" src="screenshots/refresh-0114/conversation.jpg" loading="lazy" alt="PCS Conversation showing a fictional saved stopping point, the next photography step, and Review & continue.">
       <img width="1363" height="936" data-plate="library" src="screenshots/refresh-0114/library.jpg" loading="lazy" alt="PCS Library source inspector showing a fictional typed user passage, its source revision, and the exact original wording.">
-      <img width="1363" height="936" data-plate="map" src="screenshots/refresh-0114/map.jpg" loading="lazy" alt="PCS Continuity Map centred on Photography with Astronomy selected and the saved-record explanation for that connection.">
+      <img width="2560" height="1440" data-plate="map" src="screenshots/pcs-map-0121.jpg" loading="lazy" alt="PCS 0.9.121 Map in full screen: the Creative writing constellation, the Astronomy and Photography connection, and the fictional records behind it.">
     </button>
   </div>
   <div class="showcase__text">
@@ -111,14 +113,14 @@
       </div>
       <div class="showcase__panel" role="tabpanel" id="panel-map" aria-labelledby="tab-map" hidden>
         <h3>How your ideas connect</h3>
-        <p>The Continuity Map links topics that share saved records. Choose a connection to read the words behind it.</p>
+        <p>Start with Constellations, follow a theme into Focus, or compare two themes. Open a connection to read the saved records behind it.</p>
       </div>
     </div>
     <div class="showcase__actions" data-reveal style="--d:210ms">
-      <a class="cell cell--ink" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-Windows-x64.zip">Download for Windows</a>
+      <a class="cell cell--ink" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.121/PCS-0.9.121-Windows-x64.zip">Download for Windows</a>
       <a class="cell" href="getting-started.html">Read the setup guide</a>
     </div>
-    <p class="showcase__note">Real PCS 0.9.114 screens with fictional example data.</p>
+    <p class="showcase__note">Actual PCS screens with fictional data: Conversation and Library 0.9.114; updated Map 0.9.121. No live AI results.</p>
   </div>
 </section>
 
@@ -188,16 +190,16 @@
 <section class="band" id="map" aria-labelledby="map-title">
   <div class="band__text">
     <h2 id="map-title" class="section-title" data-reveal>Follow a line back to what you said.</h2>
-    <p data-reveal style="--d:70ms">The Continuity Map groups related memories and notes. A solid line means the topics share saved records; choose it to read them.</p>
+    <p data-reveal style="--d:70ms">The updated Continuity Map starts with Constellations built from your saved topics. Follow a theme into Focus, compare two themes, and use the trail to return. Each line connects topics that share saved records; open it to read them.</p>
     <p data-reveal style="--d:140ms">Try the demo in your browser. It tells a fictional story and never touches your data or an AI model.</p>
     <div data-reveal style="--d:210ms"><a class="button" href="continuity-map.html">Try the Map demo</a></div>
   </div>
   <figure class="band__stage" data-reveal style="--d:120ms">
     <svg class="band__star" viewBox="0 0 200 260" aria-hidden="true" focusable="false"><path d="M100 0C112 83 136 114 200 130 136 146 112 177 100 260 88 177 64 146 0 130 64 114 88 83 100 0Z"/></svg>
-    <button class="band__shot" type="button" data-enlarge="screenshots/refresh-0114/map-full.jpg" aria-label="Enlarge the Continuity Map screenshot">
-      <img width="1363" height="936" src="screenshots/refresh-0114/map-full.jpg" loading="lazy" alt="PCS Continuity Map centred on Photography with Astronomy selected and the saved-record explanation for that connection.">
+    <button class="band__shot" type="button" data-enlarge="screenshots/pcs-map-0121.jpg" aria-label="Enlarge the Continuity Map screenshot">
+      <img width="2560" height="1440" src="screenshots/pcs-map-0121.jpg" loading="lazy" alt="PCS 0.9.121 Map in full screen: the Creative writing constellation, the Astronomy and Photography connection, and the fictional records behind it.">
     </button>
-    <figcaption>Continuity Map in PCS 0.9.114, fictional example records.</figcaption>
+    <figcaption>Updated Continuity Map in PCS 0.9.121 with fictional records; no live AI result.</figcaption>
   </figure>
 </section>
 
@@ -277,13 +279,16 @@
       <option value="gemini" selected>Gemini</option>
       <option value="gpt">GPT</option>
       <option value="llama">Llama</option>
+      <option value="claude">Claude API</option>
+      <option value="chatgpt">ChatGPT sign-in</option>
       <option value="local">a local model</option>
-    </select></span> <a class="download__go" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-Windows-x64.zip">Download for Windows</a></h2>
+    </select></span> <a class="download__go" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.121/PCS-0.9.121-Windows-x64.zip">Download for Windows</a></h2>
     <p class="download__need" id="model-need" aria-live="polite">You’ll need a Google API key. API use is billed by Google, separately from any Gemini subscription.</p>
   </div>
   <div class="download__details">
-    <p>PCS 0.9.114 for Windows x64. Free, with no PCS subscription; cloud providers may charge for API use.</p>
-    <p><a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.114">Release notes</a> <a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-Source.zip">Application source</a> <a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-SHA256SUMS.txt">Checksums</a></p>
+    <p>PCS 0.9.121 for Windows x64. Free, with no PCS subscription; provider API charges and any subscription used for ChatGPT sign-in are separate.</p>
+    <p><a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.121">Release notes</a> <a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.121/PCS-0.9.121-Source.zip">Application source</a> <a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.121/PCS-0.9.121-SHA256SUMS.txt">Checksums</a></p>
+    <p>Linux or Mac? <a class="text-link" href="local-ai.html#previews">See the earlier experimental builds</a>.</p>
     <p>Already using PCS? Make a backup first, then <a class="text-link" href="getting-started.html#upgrade">follow the update and restore steps</a>.</p>
   </div>
 </section>
@@ -293,7 +298,7 @@
   <div class="faq__stack">
     <div class="card card--1 is-open">
       <h3 class="card__head"><button type="button" class="card__toggle" aria-expanded="true" aria-controls="faq-1"><span class="card__tab">Subscriptions</span><span class="card__q">Does my ChatGPT or Gemini subscription cover PCS?</span></button></h3>
-      <div class="card__panel" id="faq-1"><div><p>PCS connects through provider APIs. Those use their own keys, access rules and billing. A consumer chat subscription does not by itself give PCS API access. A compatible local model does not need a cloud AI subscription.</p></div></div>
+      <div class="card__panel" id="faq-1"><div><p>PCS offers <strong>Sign in with ChatGPT</strong> for eligible accounts, subject to account access and usage limits. This is separate from the OpenAI API connection. Google, OpenAI, Meta and Claude API connections use their own keys and billing; a consumer chat subscription does not provide API credit. A compatible local model does not need a cloud AI subscription.</p></div></div>
     </div>
     <div class="card card--2">
       <h3 class="card__head"><button type="button" class="card__toggle" aria-expanded="false" aria-controls="faq-2"><span class="card__tab">Memory</span><span class="card__q">Will it remember everything automatically?</span></button></h3>
@@ -305,7 +310,7 @@
     </div>
     <div class="card card--1">
       <h3 class="card__head"><button type="button" class="card__toggle" aria-expanded="false" aria-controls="faq-4"><span class="card__tab">Mac and Linux</span><span class="card__q">Can I use it on macOS or Linux?</span></button></h3>
-      <div class="card__panel" id="faq-4"><div><p>The main download is for Windows x64. There is an experimental Ubuntu source preview with limited features. A macOS package is not included. <a class="text-link" href="local-ai.html#previews">Read the platform limits</a>.</p></div></div>
+      <div class="card__panel" id="faq-4"><div><p>The current release is for Windows x64. Earlier experimental builds are available for Linux x64 (0.9.115) and macOS on Apple silicon (0.9.114). They do not include every current Windows feature. <a class="text-link" href="local-ai.html#previews">Read the platform limits</a>.</p></div></div>
     </div>
     <div class="card card--2">
       <h3 class="card__head"><button type="button" class="card__toggle" aria-expanded="false" aria-controls="faq-5"><span class="card__tab">Closing</span><span class="card__q">How do I close PCS?</span></button></h3>
@@ -333,7 +338,7 @@
       <label class="visually-hidden" for="bug-body">What happened, and what did you expect?</label>
       <textarea id="bug-body" name="body" rows="3" placeholder="What happened, and what did you expect?" required></textarea>
       <label class="visually-hidden" for="bug-version">PCS version</label>
-      <input id="bug-version" type="text" value="PCS 0.9.114" autocomplete="off">
+      <input id="bug-version" type="text" value="PCS 0.9.121" autocomplete="off">
       <label class="visually-hidden" for="bug-windows">Windows version</label>
       <input id="bug-windows" type="text" placeholder="Windows version, for example Windows 11" autocomplete="off">
       <button class="coupon__submit" type="submit">Open a GitHub issue</button>
@@ -349,7 +354,7 @@
     <div><h2>Explore</h2><a href="continuity-map.html">Map demo</a><a href="memory-control.html">How memory works</a><a href="local-ai.html">Local AI</a></div>
     <div><h2>Use PCS</h2><a href="getting-started.html">Setup and updates</a><a href="data-and-privacy.html">Data and privacy</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases">All releases</a></div>
     <div><h2>Get involved</h2><a href="https://discord.com/invite/2ssCQhNgAN">Discord</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/issues">Report a bug</a><a href="https://ko-fi.com/pcssupport">Support development</a></div>
-    <div><h2>Source</h2><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-Source.zip">App source and license</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS-site">Website source</a></div>
+    <div><h2>Source</h2><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.121/PCS-0.9.121-Source.zip">App source and license</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS-site">Website source</a></div>
   </div>
   <div class="footer__last">
     <p>© 2026 Courtney Dickson. First-party app code: GPL-3.0-only.</p>

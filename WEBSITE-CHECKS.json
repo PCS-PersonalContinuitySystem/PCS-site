@@ -1,209 +1,100 @@
 {
-  "scope": "Homepage image refresh for PCS 0.9.114; static and browser display verification only.",
-  "source_files_unchanged": true,
-  "source_verification": {
-    "source_files_unchanged": true,
-    "verified_utc": "2026-10-21T17:32:05.160766+00:00",
-    "source_archive": "PCS-0.9.114-Source.zip",
-    "source_archive_expected_sha256": "b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632",
-    "source_archive_actual_sha256": "b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632",
-    "source_archive_hash_matches": true,
-    "served_tree": "capture-work/app-source/pcs",
-    "extensions": [
-      ".css",
-      ".html",
-      ".js",
-      ".py"
+  "application_version": "0.9.121",
+  "prepared_utc": "2026-10-23T20:16:39.063236+00:00",
+  "status": "passed",
+  "publication_performed": false,
+  "baseline_commit": "fcdf99c814a7bcfd771cbda7cf4ac359502120e7",
+  "scope": "0.9.121 release links and current labels, plus a fresh actual 0.9.121 homepage Map screenshot; includes previous website and interactive Map updates.",
+  "static": {
+    "active_files": 72,
+    "local_references": 458,
+    "baseline_git_blobs_verified": 181,
+    "javascript_syntax": [
+      "assets/atlas.js",
+      "assets/map-data.js",
+      "assets/map.js"
     ],
-    "checked_files": 411,
-    "missing_files": [],
-    "changed_files": [],
-    "unexpected_source_files": [],
-    "method": "Exact SHA-256 comparison of every .py, .js, .css and .html file under pcs in the verified release ZIP against the actual served app-source/pcs copy. Compiled bytecode and runtime data are excluded."
-  },
-  "static_review": {
-    "status": "passed",
-    "checked_utc": "2026-10-21T17:34:21.335978+00:00",
-    "scope": "Focused static validation of screenshot refresh integration; no browser or live AI behavior claimed.",
-    "html_pages": 6,
-    "local_references_checked": 340,
-    "image_or_enlargement_references_checked": 56,
-    "css_asset_references_checked": 2,
-    "missing_files_or_fragments": 0,
-    "duplicate_ids": [],
-    "updated_image_elements": 8,
-    "screenshot_zoom_buttons": 5,
-    "showcase_full_image_targets": {
-      "conversation": "screenshots/refresh-0114/conversation-full.jpg",
-      "library": "screenshots/refresh-0114/library-full.jpg",
-      "map": "screenshots/refresh-0114/map-full.jpg"
-    },
-    "image_pairs": [
+    "html_structure": [
       {
-        "subject": "conversation",
-        "inline_dimensions": [
-          1363,
-          936
-        ],
-        "full_dimensions": [
-          1363,
-          936
-        ],
-        "same_bytes": true,
-        "sha256": "737a283376b553355e6f5346c706c739bd27dcc95ac71bb408dd38b49c80c4c3"
+        "page": "index.html",
+        "structure": "unchanged",
+        "image_attributes": "Homepage Map source, natural dimensions and alt text updated; targeted browser checks passed.",
+        "download_tag": "v0.9.121"
       },
       {
-        "subject": "library",
-        "inline_dimensions": [
-          1363,
-          936
-        ],
-        "full_dimensions": [
-          1363,
-          936
-        ],
-        "same_bytes": true,
-        "sha256": "319495652fe0d9109668586d0a45158eb4c36b1ec0d30059fac96af28a40acf1"
+        "page": "continuity-map.html",
+        "structure": "unchanged",
+        "image_attributes": "unchanged",
+        "download_tag": "v0.9.121"
       },
       {
-        "subject": "map",
-        "inline_dimensions": [
-          1363,
-          936
-        ],
-        "full_dimensions": [
-          1363,
-          936
-        ],
-        "same_bytes": true,
-        "sha256": "af3a9a2e53928ffc1521d11ff6dd98a39a6fad761855a329a55441214e8a27e8"
+        "page": "memory-control.html",
+        "structure": "unchanged",
+        "image_attributes": "unchanged",
+        "download_tag": "v0.9.121"
       },
       {
-        "subject": "materials",
-        "inline_dimensions": [
-          1363,
-          936
-        ],
-        "full_dimensions": [
-          1363,
-          936
-        ],
-        "same_bytes": true,
-        "sha256": "00a27a448080ab636247ccdee81aab9a8e9b81ffbff475e097ab5fa3671f9297"
+        "page": "local-ai.html",
+        "structure": "unchanged",
+        "image_attributes": "unchanged",
+        "download_tag": "v0.9.121"
       },
       {
-        "subject": "notebook",
-        "inline_dimensions": [
-          1363,
-          936
-        ],
-        "full_dimensions": [
-          1363,
-          936
-        ],
-        "same_bytes": true,
-        "sha256": "211456e3eb55ff93d0a104b2018863f8db13402a3547bf019265dfe5b8e4af68"
+        "page": "getting-started.html",
+        "structure": "unchanged",
+        "image_attributes": "unchanged",
+        "download_tag": "v0.9.121"
       },
       {
-        "subject": "calendar",
-        "inline_dimensions": [
-          1363,
-          936
-        ],
-        "full_dimensions": [
-          1363,
-          936
-        ],
-        "same_bytes": true,
-        "sha256": "e650c6163b97dbdc87f485837458469fb818dbb3fbf953c2abf10f40768209ea"
+        "page": "data-and-privacy.html",
+        "structure": "unchanged",
+        "image_attributes": "unchanged",
+        "download_tag": "v0.9.121"
       }
-    ],
-    "git_diff_check": {
-      "passed": true,
-      "output": ""
-    },
-    "javascript_syntax": {
-      "passed": true,
-      "output": ""
-    },
-    "source_files_unchanged": true,
-    "source_equality": {
-      "files_checked": 411,
-      "archive_sha256": "b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632",
-      "changed_files": [],
-      "full_verification": "capture-work/source-checks.json"
-    },
-    "issues": []
+    ]
   },
-  "browser_review": {
-    "verified_utc": "2026-10-21T17:35:00.861Z",
-    "viewport": {
-      "width": 1363,
-      "height": 936
-    },
-    "subjects": [
-      {
-        "subject": "library",
-        "opened": true,
-        "loaded": true
-      },
-      {
-        "subject": "map",
-        "opened": true,
-        "loaded": true
-      },
-      {
-        "subject": "materials",
-        "opened": true,
-        "details": [
-          {
-            "complete": true,
-            "height": 936,
-            "src": "screenshots/refresh-0114/materials-full.jpg",
-            "width": 1363
-          }
-        ]
-      },
-      {
-        "subject": "notebook",
-        "opened": true,
-        "details": [
-          {
-            "complete": true,
-            "height": 936,
-            "src": "screenshots/refresh-0114/notebook-full.jpg",
-            "width": 1363
-          }
-        ]
-      },
-      {
-        "subject": "calendar",
-        "opened": true,
-        "details": [
-          {
-            "complete": true,
-            "height": 936,
-            "src": "screenshots/refresh-0114/calendar-full.jpg",
-            "width": 1363
-          }
-        ]
-      },
-      {
-        "subject": "conversation",
-        "opened": true,
-        "details": [
-          {
-            "complete": true,
-            "height": 936,
-            "src": "screenshots/refresh-0114/conversation-full.jpg",
-            "width": 1363
-          }
-        ]
-      }
-    ],
-    "escape_dismissal": true,
-    "visual_review": "All six captures inspected, full-size viewer loads verified, natural image proportions preserved.",
-    "publication_performed": false
+  "external_links": {
+    "verified": 13,
+    "failed": [],
+    "unverified": [],
+    "release_assets_verified_by": "Fresh official GitHub API metadata; binary app downloads were not repeated."
   },
-  "publication_performed": false
+  "preservation": {
+    "previous_website_and_map_updates": "retained",
+    "interactive_map_code_styles_and_fixture": "unchanged",
+    "existing_screenshot_and_diagram_bytes": "unchanged",
+    "new_homepage_map_capture": "0.9.121",
+    "new_capture_sha256": "c6107d533abe612626ee5da04b7bf2a206f8a86ab259a0afb93db1aa43a0418a",
+    "media_manifest_hashes_verified": 42,
+    "historical_capture_and_minimum_reader_versions": "preserved"
+  },
+  "browser": {
+    "status": "passed_targeted_homepage_checks",
+    "checks": [
+      "Map showcase selected and displayed the fresh image.",
+      "Showcase enlargement loaded screenshots/pcs-map-0121.jpg at natural 2560 by 1440.",
+      "Main Map section enlargement loaded the same new image.",
+      "Desktop 1280 by 720 and phone 390 by 844: no horizontal overflow; both Map images loaded.",
+      "Phone main Map enlargement opened and closed successfully.",
+      "No browser console errors observed.",
+      "Final cache key assets/atlas.js?v=20261023-0121 and both enlargement links rechecked successfully after cache-key change.",
+      "Browser viewport restored; preview and app capture tabs closed."
+    ],
+    "limits": [
+      "Targeted homepage checks only. Earlier six-page and interactive Map checks remain prior evidence; interactive Map code and data are unchanged."
+    ]
+  },
+  "limits": [
+    "Website preparation only; no commit, push or deployment.",
+    "No new live application/provider/device acceptance."
+  ],
+  "evidence_sha256": {
+    "latest_release": "a3a6667cff9dc980b800e8824c102caf69b2783f531f1451c33acc75766715e2",
+    "previous_platform_release": "947c28e42098da03459414efa10d716634207558f2ab36996af995f06ef9cf52",
+    "site_head": "f1c4803e5fe84df89539b19d4d442bedda5547723ddc3bba35c51d548080f9b4",
+    "link_checks": "516714b19a79190554dd7b6ee62bf3bf105d3e0c38f1411d36b1f0ccec1b5189",
+    "prior_browser_checks": "5e284decfb2e60785e8e0d1ccd1fe56d6a2d675554b8777f744da28de7848a14",
+    "fresh_map_capture": "3d916f48d62a5a86d14eba5f48ba6d56c051b7200f6a21d23c9f54117fe94c86",
+    "homepage_browser_checks": "cabf69830b71f7719916cde8c198550a6a3134f5baee86eb30b6e339e13c0786"
+  }
 }
