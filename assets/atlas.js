@@ -62,7 +62,7 @@
     const shots = {
       conversation: ['screenshots/refresh-0114/conversation-full.jpg', 'Enlarge the Conversation screenshot'],
       library: ['screenshots/refresh-0114/library-full.jpg', 'Enlarge the Library screenshot'],
-      map: ['screenshots/pcs-map-0121.jpg', 'Enlarge the Map screenshot'],
+      map: ['screenshots/pcs-map-0139.jpg', 'Enlarge the Map screenshot'],
     };
     const showPlate = (key) => {
       plates.forEach((img) => img.classList.toggle('is-active', img.dataset.plate === key));

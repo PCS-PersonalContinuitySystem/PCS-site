@@ -1,16 +1,15 @@
-PCS WEBSITE — 0.9.121 REFRESH
-Prepared October 23, 2026. Not published.
+PCS WEBSITE — 0.9.139 UPDATE
+Prepared November 5, 2026. Not published.
 
-Use PCS-Website-0.9.121-Update.zip to update your existing repository.
-Extract it and copy its contents to the PCS-site repository root, preserving
-assets/ and screenshots/ subfolders. Review, commit and push yourself.
-Do not upload the ZIP itself or an extra enclosing folder. Delete nothing.
+Copy the contents of the PCS-Website-0.9.139-Update folder into the root of
+the PCS-site repository, preserving the assets/ and screenshots/ subfolders.
+Review, commit and push yourself. Do not add an extra enclosing folder.
+Delete nothing.
 
-PCS-Website-0.9.121-Full-Site.zip contains the active site for local preview.
-See UPLOAD-INSTRUCTIONS.md for preview and merge instructions.
+Includes Windows download/source/checksum links to the v0.9.139
+release, updated setup, connection, Map, Local AI and privacy guidance,
+a new PCS Perspective section, and fresh 0.9.139 Map screenshots.
+Older screenshots keep their actual versions.
 
-Includes current Windows download/source/checksum links, connection and
-experimental platform guidance, a fresh 0.9.121 homepage Map screenshot, updated diagrams
-and the refreshed interactive Map. Older screenshots retain actual versions.
-
-Current 0.9.114/0.9.120/0.9.121 illustrations use fictional records, with no live AI results or personal vaults. Retained historical captures keep their original provenance.
+All illustrations use fictional records, with no live AI results or
+personal vaults. See UPLOAD-INSTRUCTIONS.md for preview and merge steps.

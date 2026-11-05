@@ -1,6 +1,6 @@
 {
-  "version": "0.9.121",
-  "scope": "Fresh PCS 0.9.121 homepage Map capture, preserved PCS 0.9.120 guide Map and diagrams, and individually versioned 0.9.114 and historical captures.",
+  "version": "0.9.139",
+  "scope": "Fresh PCS 0.9.139 Map captures for the homepage and guides; earlier 0.9.121 and 0.9.120 Map captures retained but no longer displayed; individually versioned 0.9.114 and historical captures.",
   "fictional_data": true,
   "capture_manifest_sha256": "2e0dd91ef2cfb9f9a9848687f3e6d079a3354da927f5fc1e3c1d172ecfd997ec",
   "screenshots": [
@@ -561,6 +561,38 @@
       "method": "PCS 0.9.78 Help capture with fictional records and isolated fixture responses; not a live provider conversation.",
       "original_asset": "work/roadmap0978/source/pcs/static/help-writer-0978.png",
       "unmodified": true
+    },
+    {
+      "path": "screenshots/pcs-map-0139.jpg",
+      "version": "0.9.139",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 307802,
+      "sha256": "82df66922a6a8c2bdddb78c6c2c55901b16d3c6dce554899411ac2528033a021",
+      "method": "Headless Microsoft Edge (DevTools protocol) screenshot of the PCS 0.9.139 release source served locally through the managed build launcher, with a hand-written fictional demonstration vault in the Local memory format (six statement accounts about an invented night-sky atlas project). No model started; no provider request. PCS closed with Quit PCS. Original screenshot bytes; no crop, repaint, generated controls or image editing. 1600 x 900 CSS pixels at device scale 1.6, JPEG quality 90.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "framing": "Original full browser viewport in the app full-screen Map",
+      "display_role": "Homepage showcase and Map section; inline and enlargement",
+      "caption": "Continuity Map in PCS 0.9.139 with fictional records; no live AI result.",
+      "description": "Expanded constellation for the fictional atlas project, with the Mara and Pleiades connection selected (2 saved records) and its supporting records visible."
+    },
+    {
+      "path": "screenshots/pcs-map-focus-0139.png",
+      "version": "0.9.139",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 357632,
+      "sha256": "005e1e1339c85b9f8221ab6f13ebd99b951e68cf00360d449e55ad626f338f0c",
+      "method": "Headless Microsoft Edge (DevTools protocol) screenshot of the PCS 0.9.139 release source served locally through the managed build launcher, with a hand-written fictional demonstration vault in the Local memory format (six statement accounts about an invented night-sky atlas project). No model started; no provider request. PCS closed with Quit PCS. Original screenshot bytes; no crop, repaint, generated controls or image editing. 1600 x 1000 CSS pixels at device scale 1, PNG. Captured before one demonstration statement was reworded; that statement is not visible.",
+      "fictional_data": true,
+      "live_ai_result": false,
+      "unmodified": true,
+      "framing": "Original full browser viewport, Continuity page",
+      "display_role": "Memory guide and Map-demo guide figures; also the application repository main page",
+      "caption": "PCS 0.9.139 · Actual interface with fictional demonstration records in the Local memory format.",
+      "description": "Focus on Harrow Point: six neighbouring themes and the inspector reading 4 observations in 3 current records."
     }
   ],
   "diagrams": [

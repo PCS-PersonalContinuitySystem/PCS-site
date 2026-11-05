@@ -1,7 +1,7 @@
 {
-  "application_version": "0.9.121",
-  "prepared_utc": "2026-10-23T20:16:39.063236+00:00",
-  "baseline_commit": "fcdf99c814a7bcfd771cbda7cf4ac359502120e7",
+  "application_version": "0.9.139",
+  "prepared_utc": "2026-11-05T17:30:59.239444+00:00",
+  "baseline_commit": "74835e3a77095c838dc84c60dba9d21917e101c3",
   "publication_performed": false,
   "scope": "Active website closure. Excludes this manifest and SHA256SUMS.txt to avoid cycles. Preserve unrelated repository files.",
   "files": [
@@ -17,38 +17,38 @@
     },
     {
       "path": "PRODUCT.md",
-      "bytes": 5722,
-      "sha256": "71d61a1171e9fb7f6fb573c42b16968444942a3ed1d6c46803214a4ed45ecbfb"
+      "bytes": 6056,
+      "sha256": "1db0731613b6db7b31daa83d1e0d1a7f0d337e7d2ab13eeaa28c1de5caa42ace"
     },
     {
       "path": "README.md",
-      "bytes": 6283,
-      "sha256": "590be3ec04ebe0fe92419be21ece85d61a292417bba3e6218049aac8e80d3bd8"
+      "bytes": 6401,
+      "sha256": "ffaad4bacf36077caee1632f90cd1e622ed6bfd59c9e02592f4fec0a6694ce2a"
     },
     {
       "path": "SCREENSHOT-MANIFEST.json",
-      "bytes": 36074,
-      "sha256": "29515b68d2c638d477d10b5d2e53ade15312c523dabaabf690e9f8b30e6a1e76"
+      "bytes": 38763,
+      "sha256": "855b89441345c5e1075b151e1accf53c4eedf7176860a9dad255cf4929cca863"
     },
     {
       "path": "SCREENSHOTS.md",
-      "bytes": 8006,
-      "sha256": "3a37183c04b1fde147496ae31f384b77ea0d53068ef38bba43a75c968cc0e442"
+      "bytes": 9870,
+      "sha256": "f92f194de6917289ea7156513ff90af006973610cd8795fa141416df0cd09db0"
     },
     {
       "path": "START-HERE.txt",
-      "bytes": 942,
-      "sha256": "f5d6f17063b9a3c1fa2027466c8ff090f11948d0aed10dbe8a5426a49a117d5b"
+      "bytes": 721,
+      "sha256": "4c8d5b2a2ae082ef2913825ab898a533df9fd2122b16bf3cc23a95fe98f340c1"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "bytes": 2342,
-      "sha256": "0b2304e65910091c856e186da0400fa459cb4cb4fe090d20f7ca4d5613c02de9"
+      "bytes": 2620,
+      "sha256": "2754904e960bee2613c5b955997deb1a4470352aeb02de866b0faeb789a0a86d"
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 4152,
-      "sha256": "3600ca3967337063ba8673a0d8408d3db1aca2d61059009ff197d5935ab9ef8c"
+      "bytes": 4495,
+      "sha256": "96d4b929ad669ba26ad78c96bff336097d1ac1f092607545b38fa4b6baf2fbf8"
     },
     {
       "path": "assets/atlas-guides.css",
@@ -63,7 +63,7 @@
     {
       "path": "assets/atlas.js",
       "bytes": 11262,
-      "sha256": "643ce88f42382793ffeed8fef6ca6e4010c3012bcc185456796a57ef3d0e9fe0"
+      "sha256": "d3757158268a3b67b46627e417ec2c0b2088ce5e1bdf2bb57b3449c5a1a72cca"
     },
     {
       "path": "assets/fonts/OFL-albert-sans.txt",
@@ -137,33 +137,33 @@
     },
     {
       "path": "continuity-map.html",
-      "bytes": 101177,
-      "sha256": "f2b5866acc61141adf480fabd64f2a5fc652f9a464855f4acc636cecef3eb4cc"
+      "bytes": 101669,
+      "sha256": "2bc1efc848f3ec132cce75af2b96e8a6555b38405cbfab07264a45ae6ba7beec"
     },
     {
       "path": "data-and-privacy.html",
-      "bytes": 30205,
-      "sha256": "1838596cd678e81456632ed39399cd0ac0d2cafceeee998ac659c523365fbea8"
+      "bytes": 31478,
+      "sha256": "d5cb106e78f09618ed1d3aaf2b7810da5b99c774f37fa856bedc8f5158a4c3a9"
     },
     {
       "path": "getting-started.html",
-      "bytes": 36813,
-      "sha256": "21e004d3bba44606d79395e7766292d324b96c3fcb8040ba62ea25df63814850"
+      "bytes": 39027,
+      "sha256": "49b2984325f9495fedbe555aea0a787bf005b7aa5f2adfc8631f7a61b6c6c24b"
     },
     {
       "path": "index.html",
-      "bytes": 30439,
-      "sha256": "3296f37b2946d37fae3f4d9285fa8b2d09566dd7cc6a1668f452b1b3d5870d24"
+      "bytes": 30550,
+      "sha256": "e538b05aab6138ff99adc9ce936e20fae73e3a0508999c7e9d643e0b1ae97dc1"
     },
     {
       "path": "local-ai.html",
-      "bytes": 29653,
-      "sha256": "708ffe40b8073c41edf75fc1766817a8ca489f1814f55e30c434357c2811a218"
+      "bytes": 29838,
+      "sha256": "30bdc33c9a21c2a69b8aaae2aff612fd162a659eca7981a7eb7d4ba47dfb1fa4"
     },
     {
       "path": "memory-control.html",
-      "bytes": 36554,
-      "sha256": "14701519bcb5e389be7be7dde6e4b3cf51fecdc2d9c67c615bdf15f2cd43aebd"
+      "bytes": 39530,
+      "sha256": "8771f862eea9ddb94d13f0765d15bb92d9b4211979c8d6e884581b1f357cb52b"
     },
     {
       "path": "robots.txt",
@@ -241,9 +241,19 @@
       "sha256": "c6107d533abe612626ee5da04b7bf2a206f8a86ab259a0afb93db1aa43a0418a"
     },
     {
+      "path": "screenshots/pcs-map-0139.jpg",
+      "bytes": 307802,
+      "sha256": "82df66922a6a8c2bdddb78c6c2c55901b16d3c6dce554899411ac2528033a021"
+    },
+    {
       "path": "screenshots/pcs-map-0987.png",
       "bytes": 361920,
       "sha256": "ba2af1be66ecafa84fdef706b0deaf17b6de0d0cdea3105f2e9729775ab3cbf2"
+    },
+    {
+      "path": "screenshots/pcs-map-focus-0139.png",
+      "bytes": 357632,
+      "sha256": "005e1e1339c85b9f8221ab6f13ebd99b951e68cf00360d449e55ad626f338f0c"
     },
     {
       "path": "screenshots/pcs-materials-0102.png",

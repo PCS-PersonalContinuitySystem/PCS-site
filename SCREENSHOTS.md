@@ -1,27 +1,38 @@
-# Pictures for the PCS 0.9.121 website
+# Pictures for the PCS 0.9.139 website
 
 
-## Fresh homepage Map — October 23, 2026
+## Fresh Map captures — November 5, 2026
 
-The homepage uses [pcs-map-0121.jpg](screenshots/pcs-map-0121.jpg), a fresh 2560 × 1440 screenshot of the published PCS 0.9.121 interface. It shows the built-in full-screen Map, the expanded Creative writing constellation, the selected Astronomy–Photography connection and the saved records behind it. Both homepage placements and their enlargement controls use the same original image bytes.
+Two new screenshots show the published PCS 0.9.139 interface. Both used a small fictional demonstration vault: six memories about one invented night-sky atlas project, written by hand in the Local memory format (one account per subject, each holding dated statements). They were not formed by a model from a conversation. No model was started and no provider request was made. No personal vault, microphone or OBS capture was used. Each capture ran headless Microsoft Edge against the 0.9.139 release source, served on this PC through the managed build launcher, and closed PCS with **Quit PCS**. There are no pixel edits, crops, repainted labels or generated controls.
+
+- **Homepage:** [pcs-map-0139.jpg](screenshots/pcs-map-0139.jpg), 2560 × 1440. The built-in full-screen Map, the expanded constellation for the atlas project, and the connection between Mara and the Pleiades selected with the saved records behind it. Both homepage placements and the enlargement use the same bytes.
+  **Caption:** Continuity Map in PCS 0.9.139 with fictional records; no live AI result.
+- **Guides:** [pcs-map-focus-0139.png](screenshots/pcs-map-focus-0139.png), 1600 × 1000. Focus on Harrow Point, a place named in observations under three subjects, with its inspector reading “4 observations in 3 current records”. The same image is on the application repository's main page. It was captured before one demonstration statement was reworded for the homepage capture; the reworded statement is not visible in it.
+  **Caption:** PCS 0.9.139 · Actual interface with fictional demonstration records in the Local memory format.
+
+The earlier [pcs-map-0121.jpg](screenshots/pcs-map-0121.jpg) and [pcs-map-0120.png](screenshots/pcs-map-0120.png) remain in the repository for existing links; no page now displays them.
+
+## Earlier homepage Map — PCS 0.9.121
+
+The 0.9.121 homepage used [pcs-map-0121.jpg](screenshots/pcs-map-0121.jpg), a fresh 2560 × 1440 screenshot of the published PCS 0.9.121 interface. It shows the built-in full-screen Map, the expanded Creative writing constellation, the selected Astronomy–Photography connection and the saved records behind it. Both homepage placements and their enlargement controls use the same original image bytes.
 
 **Caption:** Continuity Map in PCS 0.9.121, with fictional example records. No live AI request.
 
 The capture used an isolated fictional vault and the unchanged published app source. No model was started; the capture host blocked remote network access. No personal vault or microphone/OBS capture was used. The server exited cleanly and source hashes remained unchanged. There are no pixel edits, crops, repainted version labels or generated controls.
 
-## Retained guide Map capture — PCS 0.9.120
+## Earlier guide Map capture — PCS 0.9.120
 
-The memory and Map-demo guides retain [pcs-map-0120.png](screenshots/pcs-map-0120.png), a 1600 × 1000 full-viewport capture of the published PCS 0.9.120 interface. It shows the **All links** view, Astronomy and Photography selected, and the saved records behind their connection. Constellations, Focus, Map settings, Views & notes and Continue in Conversation are visible in the current interface.
+The memory and Map-demo guides used [pcs-map-0120.png](screenshots/pcs-map-0120.png), a 1600 × 1000 full-viewport capture of the published PCS 0.9.120 interface. It shows the **All links** view, Astronomy and Photography selected, and the saved records behind their connection. Constellations, Focus, Map settings, Views & notes and Continue in Conversation are visible in the current interface.
 
 **Caption:** Continuity Map in PCS 0.9.120, with fictional example records. No live AI request.
 
 The image is reused byte-for-byte from the verified 0.9.120 GitHub main-page package. Its isolated records are authored fictional examples. No model was started, no provider request was made and no personal vault, microphone or OBS capture was used. Source binding and a clean server exit were recorded. There are no pixel edits, generated controls, crops or repainted version labels.
 
-Conversation, Library, Materials, Notebook and Calendar images below remain actual **PCS 0.9.114** captures. They are retained as illustrations with their original version labels; they are not presented as new 0.9.121 captures.
+Conversation, Library, Materials, Notebook and Calendar images below remain actual **PCS 0.9.114** captures. They are retained as illustrations with their original version labels; they are not presented as new 0.9.139 captures.
 
 ## Retained homepage captures — October 21, 2026
 
-The October 21 refresh supplied six full-viewport captures of the PCS 0.9.114 interface. Five subjects remain in use; its Map images are retained for existing links and replaced on the homepage by the fresh 0.9.121 capture above. The same original view is supplied for inline display and enlargement, without cropping. Images preserve their natural proportions in the website; the small Materials, Notebook and Calendar tiles also open at full size.
+The October 21 refresh supplied six full-viewport captures of the PCS 0.9.114 interface. Five subjects remain in use; its Map images are retained for existing links and replaced on the homepage by the fresh 0.9.139 capture above. The same original view is supplied for inline display and enlargement, without cropping. Images preserve their natural proportions in the website; the small Materials, Notebook and Calendar tiles also open at full size.
 
 | Subject | Image | What it shows |
 | --- | --- | --- |
