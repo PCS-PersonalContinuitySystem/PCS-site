@@ -1,7 +1,7 @@
 {
-  "application_version": "0.9.139",
-  "prepared_utc": "2026-11-05T17:30:59.239444+00:00",
-  "baseline_commit": "74835e3a77095c838dc84c60dba9d21917e101c3",
+  "application_version": "0.9.146",
+  "prepared_utc": "2026-11-09T15:14:05.549834+00:00",
+  "baseline_commit": "2c5036bc67814bf2e6e95e749b526240d858fbbc",
   "publication_performed": false,
   "scope": "Active website closure. Excludes this manifest and SHA256SUMS.txt to avoid cycles. Preserve unrelated repository files.",
   "files": [
@@ -17,13 +17,13 @@
     },
     {
       "path": "PRODUCT.md",
-      "bytes": 6056,
-      "sha256": "1db0731613b6db7b31daa83d1e0d1a7f0d337e7d2ab13eeaa28c1de5caa42ace"
+      "bytes": 6075,
+      "sha256": "85f822461a1daaa56401173ffcf5b50c6f7a14ca2bd1c30bbfc14d54f96ca8a3"
     },
     {
       "path": "README.md",
-      "bytes": 6401,
-      "sha256": "ffaad4bacf36077caee1632f90cd1e622ed6bfd59c9e02592f4fec0a6694ce2a"
+      "bytes": 6308,
+      "sha256": "f1b2c1d94e1b9ce95ba497cee9eeda1e7d9803848745032350bdbabd70607d6e"
     },
     {
       "path": "SCREENSHOT-MANIFEST.json",
@@ -37,18 +37,18 @@
     },
     {
       "path": "START-HERE.txt",
-      "bytes": 721,
-      "sha256": "4c8d5b2a2ae082ef2913825ab898a533df9fd2122b16bf3cc23a95fe98f340c1"
+      "bytes": 227,
+      "sha256": "6f689dd32670904402d9d1bf084e98a7f274f3d71f51c770ae2ecb3c0af2655b"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "bytes": 2620,
-      "sha256": "2754904e960bee2613c5b955997deb1a4470352aeb02de866b0faeb789a0a86d"
+      "bytes": 1027,
+      "sha256": "a298b36ca134e4f61f11a697979c862f42403de98ef89f2b9a92415e8a7b1420"
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 4495,
-      "sha256": "96d4b929ad669ba26ad78c96bff336097d1ac1f092607545b38fa4b6baf2fbf8"
+      "bytes": 1511,
+      "sha256": "07684fa30e0fbfcecede6c8c33ce7a5f9f777fc7bd1fb865a65f0badd0d29453"
     },
     {
       "path": "assets/atlas-guides.css",
@@ -137,33 +137,33 @@
     },
     {
       "path": "continuity-map.html",
-      "bytes": 101669,
-      "sha256": "2bc1efc848f3ec132cce75af2b96e8a6555b38405cbfab07264a45ae6ba7beec"
+      "bytes": 101680,
+      "sha256": "979d0ab3f2a02ae69135ee35172ed74902c14c5370dc547bc05e38b55e8188e4"
     },
     {
       "path": "data-and-privacy.html",
-      "bytes": 31478,
-      "sha256": "d5cb106e78f09618ed1d3aaf2b7810da5b99c774f37fa856bedc8f5158a4c3a9"
+      "bytes": 31792,
+      "sha256": "78857383a3bedd9c4f32fd9c4364736032737b5b2f9f2d6a732e4fbc19a39ac8"
     },
     {
       "path": "getting-started.html",
-      "bytes": 39027,
-      "sha256": "49b2984325f9495fedbe555aea0a787bf005b7aa5f2adfc8631f7a61b6c6c24b"
+      "bytes": 39158,
+      "sha256": "88458db1cd33ee7d5a3689976fe9e9ead8aa429a1734ce66aa5d813dd1e1711e"
     },
     {
       "path": "index.html",
-      "bytes": 30550,
-      "sha256": "e538b05aab6138ff99adc9ce936e20fae73e3a0508999c7e9d643e0b1ae97dc1"
+      "bytes": 30546,
+      "sha256": "081d4249816138146af07eb456014449c2cff308dc2279e7a5f80391d96cc4c0"
     },
     {
       "path": "local-ai.html",
-      "bytes": 29838,
-      "sha256": "30bdc33c9a21c2a69b8aaae2aff612fd162a659eca7981a7eb7d4ba47dfb1fa4"
+      "bytes": 28749,
+      "sha256": "cd042d2c3837d0e54913c97b7e20dbb8c75a05b8463866867dd81b609cc305f2"
     },
     {
       "path": "memory-control.html",
-      "bytes": 39530,
-      "sha256": "8771f862eea9ddb94d13f0765d15bb92d9b4211979c8d6e884581b1f357cb52b"
+      "bytes": 39541,
+      "sha256": "bbf88fcdb51c056831e2a4f26d14807764717f76f9cbdcfe99653ca49a173818"
     },
     {
       "path": "robots.txt",

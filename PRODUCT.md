@@ -22,7 +22,7 @@ Continuity belongs to the person, not the model. PCS keeps the saved records (co
 
 ## Operating Context
 
-- Download is a Windows x64 ZIP from GitHub Releases. Extract it to a writable folder, open `Start PCS.exe`, choose **Set up PCS** and follow its four steps (Workspace, Connection, Sharing, Review) to create the vault and choose an AI connection.
+- Download is a Windows x64 ZIP from GitHub Releases. Extract it to a writable folder, open `Start PCS.exe`, choose **Set up PCS** and follow its six steps (Workspace, Connection, Sharing, Voice, Screen and Review) to create the vault and choose an AI connection.
 - Cloud API connections need the user's provider API key with separate billing. ChatGPT sign-in is an alternative for eligible accounts, subject to account access and usage limits. Local models, runtimes and optional speech packs download separately and need compatible hardware.
 - App areas: Conversation (with a "Where you left off" briefing and saved stopping points), Continuity (Map and Library of memories), Materials (documents, reading notes), Notebooks, Calendar (manual entries and optional conversation assistance), Settings, and optional PCS Perspective (PCS's own interests and open questions, kept apart from the user's memories). Optional voice and OBS screen sharing.
 - Controls people must learn: Stop, Lock and Quit PCS do different jobs; "Don't save this conversation" is a per-conversation setting.
@@ -30,7 +30,7 @@ Continuity belongs to the person, not the model. PCS keeps the saved records (co
 
 ## Capabilities and Constraints
 
-- Current Windows application version: 0.9.139. Website changes never change the app version.
+- Current Windows application version is 0.9.146. Website changes never change the app version.
 - Saved conversations, memories and notebooks are encrypted locally. Original Materials files and readable exports sit outside vault encryption.
 - Cloud features send permitted content to the selected provider. Local chat and memory can work offline after setup.
 - Switching models keeps saved records; it does not transfer a provider's internal state or guarantee complete recall. Recall can miss details and AI-written memories can be wrong.

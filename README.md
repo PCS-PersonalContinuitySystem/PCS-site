@@ -4,9 +4,9 @@
 
 PCS is a free Windows app that keeps saved AI conversations, memories and notes together. Users can talk or type with a supported model, then use those saved records again when they change models.
 
-[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS 0.9.139](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.139) · [Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Discord](https://discord.com/invite/2ssCQhNgAN)
+[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS 0.9.146](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.146) · [Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Discord](https://discord.com/invite/2ssCQhNgAN)
 
-This repository contains the public GitHub Pages website. The current Windows application version is **0.9.139**. This website update refreshes release links and the setup, connection, Map and privacy guidance, adds PCS Perspective to the guides, and replaces the Map screenshots. It does not modify the application.
+This repository contains the public GitHub Pages website. The current Windows application version is **0.9.146**. This website update refreshes the release links and aligns the setup and sharing guides with the new release.
 
 ## Website content
 
@@ -33,7 +33,7 @@ The Map demo uses fictional data, makes no model requests and does not read a pe
 
 ## Accurate product claims
 
-PCS is free and open source; cloud API charges are separate. Google, OpenAI, Meta and Claude API routes require their own API access. ChatGPT sign-in is a separate connection for eligible accounts, subject to access and usage limits. Claude and ChatGPT support personal-memory learning and recall, Vision, web lookup, Wikipedia Study, Preparation and PCS Perspective, with the existing sharing controls. Local models, runtimes and optional speech packs download separately, and need compatible hardware. Windows x64 is the current 0.9.139 package. Earlier Linux x64 0.9.115 and macOS Apple silicon 0.9.114 experimental builds remain linked with their actual versions and limits.
+PCS is free and open source; cloud API charges are separate. Google, OpenAI, Meta and Claude API routes require their own API access. ChatGPT sign-in is a separate connection for eligible accounts, subject to access and usage limits. Claude and ChatGPT support personal-memory learning and recall, Vision, web lookup, Wikipedia Study, Preparation and PCS Perspective, with the existing sharing controls. Local models, runtimes and optional speech packs download separately, and need compatible hardware. Windows x64 is the current 0.9.146 package. Earlier Linux x64 0.9.115 and macOS Apple silicon 0.9.114 experimental builds remain linked with their actual versions and limits.
 
 Saved conversations, memories and notebooks are encrypted locally. Cloud features send permitted content to the selected provider. Original Materials files and readable exports are outside vault encryption. Saved records remain available when models change; this does not transfer a provider’s internal state or guarantee complete recall.
 
