@@ -608,12 +608,12 @@
     const drawers = element('div', 'drawers'), settings = element('details', 'settings'), viewsNotes = element('details', 'views-notes');
     settings.append(element('summary', '', 'Map settings'));
     const settingsBody = element('div', 'drawer-body'), typeSelect = element('select', 'select');
-    for (const [value, label] of [['all', 'All records'], ['memory', 'Memories'], ['notebook', 'Notebooks']]) { const option = element('option', '', label); option.value = value; typeSelect.append(option); }
+    for (const [value, label] of [['all', 'Memories & notebooks'], ['memory', 'Memories'], ['notebook', 'Notebooks']]) { const option = element('option', '', label); option.value = value; typeSelect.append(option); }
     typeSelect.addEventListener('change', () => change(() => { state.type = typeSelect.value; state.edge = null; }, 'Record filter updated.'));
     const repeatedInput = element('input', 'checkbox'); repeatedInput.type = 'checkbox';
     repeatedInput.addEventListener('change', () => change(() => { state.repeated = repeatedInput.checked; }, 'Connection filter updated.'));
-    const repeatedLabel = element('label', 'check'); repeatedLabel.append(repeatedInput, doc.createTextNode('Connections with at least two shared records'));
-    settingsBody.append(field('Records', typeSelect), repeatedLabel, element('p', 'muted', 'Themes from: saved labels. The demo preserves authored phrases such as “Teaching at work”. In PCS, you can also include wording from records.'), element('p', 'muted', 'Coverage: all 76 fictional records are included. This website has no vault or indexing job.'));
+    const repeatedLabel = element('label', 'check'); repeatedLabel.append(repeatedInput, doc.createTextNode('Only connections shared by 2+ records'));
+    settingsBody.append(field('Source type', typeSelect), repeatedLabel, element('p', 'muted', 'Themes from: saved labels. The demo preserves authored phrases such as “Teaching at work”. PCS defaults to saved labels and repeated wording; change Themes from under Map settings.'), element('p', 'muted', 'Coverage: all 76 fictional records are included. This website has no vault, date window or indexing job.'));
     settings.append(settingsBody);
     viewsNotes.append(element('summary', '', 'Views & notes'));
     const viewsBody = element('div', 'drawer-body'), viewName = element('input', 'input'), savedViewList = element('div', 'saved-views'), notesList = element('div', 'landmarks');
@@ -642,7 +642,7 @@
     const back = button('← Back', () => navigate(true)), forward = button('Forward →', () => navigate(false)); history.append(back, forward);
     stage.append(svg, activeLabel, graphTools, history);
     const list = element('div', 'list'); list.setAttribute('aria-label', 'Themes in the current view');
-    const help = element('p', 'navigation-help', 'In Focus rings, select a theme to center its neighborhood without resetting pan or zoom. Drag the background to pan or a theme to arrange it. Scroll to zoom. Double-click empty space or press Escape to clear the selection. Tab to themes; Enter selects. Arrow keys move between themes. + / − zoom, 0 fits. List offers the same evidence.');
+    const help = element('p', 'navigation-help', 'In Focus, select a theme to center its neighborhood without resetting pan or zoom. Drag the background to pan or a theme to arrange it. Scroll to zoom. Double-click empty space or press Escape to clear the selection. Tab to themes; Enter selects. Arrow keys move between themes. + / − zoom, 0 fits. List offers the same evidence.');
     canvas.append(stage, list);
     const inspector = element('aside', 'inspector'); inspector.setAttribute('aria-label', 'Selected theme or connection details'); inspector.tabIndex = -1;
     workspace.append(canvas, inspector); host.append(workspace);

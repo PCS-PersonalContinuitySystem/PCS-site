@@ -36,6 +36,7 @@
     llama: { name: 'Llama', dest: 'Meta receives only the records you allow it to use.' },
     claude: { name: 'Claude', dest: 'Anthropic receives only the records you allow it to use.' },
     chatgpt: { name: 'ChatGPT', dest: 'Your signed-in OpenAI connection receives only the records you allow it to use.' },
+    openrouter: { name: 'an OpenRouter model', dest: 'OpenRouter forwards permitted content to the selected upstream provider.' },
     local: { name: 'a local model', dest: 'It runs on this PC. Optional online tools have their own settings.' },
   };
   const modelButtons = $$('.app__models button');
@@ -187,6 +188,7 @@
     llama: 'You’ll need Meta API access with its own key and billing.',
     claude: 'You’ll need an Anthropic API key and access to a compatible Claude model. API billing is separate from a Claude subscription.',
     chatgpt: 'Use Settings → Connections → Sign in with ChatGPT with an eligible account. Available models and usage limits depend on your account; this is separate from an OpenAI API key.',
+    openrouter: 'Use your OpenRouter API key in Set up PCS, load the catalogue and select an exact tool-capable model. Vision needs image support. Free-model limits vary; web research can cost extra.',
     local: 'The recommended setup uses a compatible NVIDIA GPU. The model and its components download separately.',
   };
   const choice = $('#model-choice');

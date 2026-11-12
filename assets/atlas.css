@@ -561,6 +561,27 @@ strong { font-weight: 600; }
   html:not(.js) .masthead__inner { flex-wrap: wrap; }
 }
 
+/* Perspective diagram belongs only to the memory guide. */
+.prose .perspective-diagram { scroll-margin-top: 24px; }
+.prose .perspective-diagram[data-reveal] { opacity: 1; translate: 0 0; }
+.prose .perspective-diagram__wide { display: block; border: 1px solid var(--green); }
+.prose .perspective-diagram__wide img { display: block; width: 100%; height: auto; }
+.prose .perspective-diagram figcaption { margin-top: 12px; color: var(--paper-muted); font-size: var(--step-small); }
+.prose .perspective-diagram figcaption a { display: inline; }
+.prose .perspective-diagram__steps { display: none; }
+@media (max-width: 760px) {
+  .prose .perspective-diagram__wide { display: none; }
+  .prose .perspective-diagram__steps { display: grid; gap: 36px; list-style: none; padding: 0; margin: 0; }
+  .prose .perspective-diagram__steps li { position: relative; background: var(--ground-2); color: var(--ink); border-left: 3px solid var(--sage); padding: 24px; }
+  .prose .perspective-diagram__steps li::before { content: none; }
+  .prose .perspective-diagram__steps li + li::before { content: '↓'; position: absolute; top: -34px; left: 22px; font-size: 26px; color: var(--green); }
+  .prose .perspective-diagram__steps li > span { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sage); }
+  .prose .perspective-diagram__steps h3 { font-size: 24px; margin: 10px 0; }
+  .prose .perspective-diagram__steps p { font-size: 18px; line-height: 1.5; }
+  .prose .perspective-diagram__steps li:last-child { background: var(--sage); color: var(--ground); }
+  .prose .perspective-diagram__steps li:last-child > span { color: var(--green); }
+}
+
 /* Phone */
 @media (max-width: 640px) {
   .masthead__brand img { height: 28px; }

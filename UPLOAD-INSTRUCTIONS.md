@@ -1,16 +1,19 @@
-# Upload the PCS 0.9.121 website update
+# Upload the PCS 0.9.154 website update
 
-Prepared October 23, 2026 against `PCS-PersonalContinuitySystem/PCS-site` main commit `fcdf99c814a7bcfd771cbda7cf4ac359502120e7`. No commit, push or deployment was performed.
+Prepared November 12, 2026 against `PCS-PersonalContinuitySystem/PCS-site` main commit `94d06f924b049b19d4d21ee7c43db2803cb9066a`. This package does not commit, push or publish anything.
 
-1. Extract `PCS-Website-0.9.121-Update.zip`.
-2. Copy its **contents** into the root of your existing website checkout, replacing matching files. Keep the `assets/` and `screenshots/` paths. Do not create an enclosing website directory in the repository.
-3. Review the diff and preview the website. Confirm the new Windows links use the release tag `v0.9.121` (no dot after `v`). The earlier Linux and Mac downloads deliberately retain their older versions.
-4. Commit and push when ready. Preserve unrelated files, workflows, domain settings, `.nojekyll` and historical assets. No deletions are required.
+**Revision 3 supersedes the earlier packages.** The PCS Perspective diagram and its readable phone layout now appear only in the memory guide. The homepage diagram section has been removed. Use this revision on its own; it includes the prior website updates and is cumulative from the same baseline. If you already applied revision 2, overwrite its files with this update.
 
-This package includes the fresh 0.9.121 homepage Map screenshot and supersedes the earlier website packages and includes its website, picture and interactive Map updates. Use this package on its own. The Update ZIP contains only new or changed website files relative to the repository baseline. The Full-Site ZIP is a complete preview of the active website and its referenced assets; it is not an instruction to replace or delete the rest of your repository. If main has changed since the baseline above, merge those edits before committing.
+1. Extract **PCS-Website-0.9.154-r3-Update.zip** into an ordinary folder.
+2. Copy its **contents** into the root of your existing website checkout, replacing matching files. Keep the `assets/` and `screenshots/` paths. Do not add an enclosing directory to the repository.
+3. Review the diff. If main has moved beyond the baseline above, merge those changes first. No deletions are required; preserve unrelated files, workflows, domain settings, `.nojekyll` and historical assets.
+4. Preview the six pages and their mobile menu. Check the OpenRouter illustration and download selector, setup connection instructions, screenshot enlargement, Map story and filters. Current Windows, application source, checksums and release notes must all use **v0.9.154**. Linux and Mac experiments deliberately keep their older versions.
+5. Commit and push when ready. Confirm your existing GitHub Pages deployment completes, then check the live pages. Local checks do not establish successful deployment.
 
-For local review, extract the Full-Site ZIP into an empty folder, serve that folder with `python -m http.server 8000 --bind 127.0.0.1`, and open `http://127.0.0.1:8000/`. Stop the server with Ctrl+C. The static files also open directly, but a local server most closely matches GitHub Pages.
+The Update ZIP contains changed/new files relative to the baseline. **PCS-Website-0.9.154-r3-Full-Site.zip** provides a complete static preview, including existing image URLs, font and its license. It excludes `.git` and two obsolete root distribution artifacts (`PCS-Website-0.9.33-r3-Upload.zip` and `artifact.tar`); it does not instruct you to delete those from the repository. Use the Update ZIP for merging into an existing checkout.
 
-Review the homepage's Claude and ChatGPT options, the updated Map screenshot and enlargement, current setup and privacy guides, and the Map demo's Constellations, Focus, comparison routes, navigation trail, story and free exploration. Demo notes and progress last for the current visit only.
+For a standalone preview, extract the Full-Site ZIP into an empty folder and serve that folder with a static HTTP server. Open its localhost URL. This is a buildless site; no dependency installation is needed. In the PCS development workspace, start preview/verification jobs through its managed wrappers. Stop your preview server afterward.
 
-Screenshots show actual app interfaces with fictional data. The homepage Map image is a fresh 0.9.121 capture; guide Map images retain their 0.9.120 labels, and other screenshots retain their original capture versions. The website demo does not access a vault, send a model request or save into PCS. Website checks are not live app, provider, device or deployment acceptance.
+`PUBLICATION-MANIFEST.json` records the complete preview's file hashes, excluding itself and `SHA256SUMS.txt` to avoid cycles. `SHA256SUMS.txt` includes the manifest. `WEBSITE-CHECKS.json` records the current revision's verification and limits. The outer package audit and ZIP checksums describe the delivery files.
+
+Screenshots remain older genuine app captures with authored fictional records and their original version labels. No new 0.9.154 screenshot or live AI result is claimed. The interactive website demo does not read a vault, send a model request or save into PCS. Website verification does not qualify every model, device, installer or memory interpretation.

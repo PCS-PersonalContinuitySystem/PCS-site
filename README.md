@@ -4,9 +4,9 @@
 
 PCS is a free Windows app that keeps saved AI conversations, memories and notes together. Users can talk or type with a supported model, then use those saved records again when they change models.
 
-[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS 0.9.146](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.146) · [Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Discord](https://discord.com/invite/2ssCQhNgAN)
+[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS 0.9.154](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.154) · [Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Discord](https://discord.com/invite/2ssCQhNgAN)
 
-This repository contains the public GitHub Pages website. The current Windows application version is **0.9.146**. This website update refreshes the release links and aligns the setup and sharing guides with the new release.
+This repository contains the public GitHub Pages website. The current Windows application version is **0.9.154**. This update covers every public page, release downloads, OpenRouter setup and capabilities, removed controls, privacy, Local AI limits and website maintenance files. It was prepared against main commit `94d06f924b049b19d4d21ee7c43db2803cb9066a`; it has not been published by this package.
 
 ## Website content
 
@@ -23,19 +23,25 @@ The homepage leads with the application and the reason to keep saved information
 
 ## Star Atlas design
 
-The site uses the application's own palette: dark slate (`#101920`, `#17262f`), sage (`#bfd29f`), a darker green (`#405f4c`) and the cream four-point star from the PCS wordmark. The star is the one recurring shape: large and cropped on each page's opening screen, and at text size as list bullets and the current-section marker. The homepage includes an interactive illustration where visitors switch between Gemini, GPT, Llama, Claude, ChatGPT and Local while the saved records stay put. The guides retain their layout and are set on a light chart-paper reading sheet with a contents rail and a guides rail. The type is Albert Sans, served from the repository. The design system is recorded in [DESIGN.md](DESIGN.md).
+The site uses the application's own palette: dark slate (`#101920`, `#17262f`), sage (`#bfd29f`), a darker green (`#405f4c`) and the cream four-point star from the PCS wordmark. The star is the one recurring shape: large and cropped on each page's opening screen, and at text size as list bullets and the current-section marker. The homepage includes an interactive illustration where visitors switch between Gemini, GPT, Llama, Claude, ChatGPT, OpenRouter and Local while the saved records stay put. The guides retain their layout and are set on a light chart-paper reading sheet with a contents rail and a guides rail. The type is Albert Sans, served from the repository. The design system is recorded in [DESIGN.md](DESIGN.md).
 
 ## Screenshots and examples
 
-The homepage and guide Map screenshots are fresh PCS 0.9.139 captures made with a hand-written fictional demonstration vault. Other application screenshots retain their 0.9.114 capture labels. All are genuine captures of the shipped interface with authored fictional data. They do not show live AI results. The homepage has six refreshed full-viewport examples, including source inspection, displayed without cropping. Earlier screenshot files remain unchanged for the guides and existing links. See [SCREENSHOTS.md](SCREENSHOTS.md) and [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json) for provenance.
+The homepage and guide Map screenshots retain their actual PCS 0.9.139 capture labels. Other application screenshots retain their 0.9.114 labels. These are genuine older interface captures with authored fictional data, not new 0.9.154 screenshots or live AI results. Earlier screenshot files remain for the guides and existing links. See [SCREENSHOTS.md](SCREENSHOTS.md) and [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json) for provenance.
 
 The Map demo uses fictional data, makes no model requests and does not read a personal vault. Its eight-passage story, free exploration and no-JavaScript reading path remain available, alongside Constellations, Focus, comparison routes and a navigation trail. Demo progress and notes last only for the current visit. The homepage memory correction is a labeled illustration.
 
+Revision 3 keeps the [PCS Perspective diagram](assets/pcs-perspective-flow-0154.svg) only in the memory guide, with an equivalent vertical HTML diagram on phones. It explains independent exploration and optional quiet contributions, distinguishing background input from focused microphone-off pauses. The homepage has no Perspective diagram section.
+
 ## Accurate product claims
 
-PCS is free and open source; cloud API charges are separate. Google, OpenAI, Meta and Claude API routes require their own API access. ChatGPT sign-in is a separate connection for eligible accounts, subject to access and usage limits. Claude and ChatGPT support personal-memory learning and recall, Vision, web lookup, Wikipedia Study, Preparation and PCS Perspective, with the existing sharing controls. Local models, runtimes and optional speech packs download separately, and need compatible hardware. Windows x64 is the current 0.9.146 package. Earlier Linux x64 0.9.115 and macOS Apple silicon 0.9.114 experimental builds remain linked with their actual versions and limits.
+PCS is free and open source; cloud API charges are separate. Google, OpenAI, Meta, Claude and OpenRouter require their own API access. ChatGPT sign-in is separate and subject to account access and usage limits. OpenRouter is included in guided setup and supports PCS memory, conversation tools, Preparation/notebooks, Practice, Calendar, PCS Perspective and research within the chosen model's abilities and sharing permissions. Vision requires image support. An additional provider is not required. Free-model availability and usage limits vary; optional OpenRouter web research may charge even when inference is free. Only Google and OpenAI provide PCS cloud embeddings; other routes can use word/navigation recall and the optional local Nomic index.
 
-Saved conversations, memories and notebooks are encrypted locally. Cloud features send permitted content to the selected provider. Original Materials files and readable exports are outside vault encryption. Saved records remain available when models change; this does not transfer a provider’s internal state or guarantee complete recall.
+Direct Alibaba Qwen access and automatic activity following are retired. Manual Activity details and explicit activity-memory approvals remain. The older Proactive help panel is also retired; Practice, Conversation pace and PCS Perspective remain supported. The default Companion direction is calmer; custom directions are preserved.
+
+Local models, runtimes and optional speech packs download separately and need compatible hardware. The recommended Local route needs a compatible NVIDIA GPU. Custom GGUF RAM offload is available, but fitting weights does not establish reliable long-prompt operation; the pinned 26B runtime still has a known long-prompt crash. Windows x64 is the current 0.9.154 package. Linux x64 0.9.115 and macOS Apple silicon 0.9.114 remain archived experiments, not current ports.
+
+Saved conversations, memories and notebooks are encrypted locally. Cloud features send permitted content to the selected provider; OpenRouter forwards it to the selected upstream provider. Don’t save controls retention, not where a live cloud request goes. Original Materials files and readable exports are outside vault encryption. Saved records remain available when models change; this does not transfer a provider’s internal state or guarantee complete recall. Back up before upgrading. OpenRouter conversation records require PCS 0.9.151 or later; OpenRouter helper data and larger Practice assessment records require 0.9.152 or later. Check backup reports the actual minimum reader for the saved vault.
 
 ## Maintain and preview
 

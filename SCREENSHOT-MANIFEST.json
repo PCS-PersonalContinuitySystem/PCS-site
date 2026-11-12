@@ -597,20 +597,28 @@
   ],
   "diagrams": [
     {
+      "path": "assets/pcs-perspective-flow-0154.svg",
+      "version": "0.9.154",
+      "width": 1600,
+      "height": 960,
+      "sha256": "5996206d5d0ce29940bb752c9067e879d29c160a53c753f68955620ba1998e11",
+      "method": "Hand-authored SVG explanation of optional PCS Perspective, checked against the 0.9.154 Perspective guide and perspective_session.py. Independent exploration, optional sharing, quiet delivery, microphone-on background steps and separate focused pauses. Not a screenshot or live AI result. Displayed only in the memory guide, with an equivalent vertical HTML diagram on small screens."
+    },
+    {
       "path": "assets/pcs-memory-flow-0120.svg",
-      "version": "0.9.120",
+      "version": "0.9.154",
       "width": 1200,
       "height": 1260,
-      "sha256": "097baf1e4689718e091beae515f79fd5563e99b71084d626aa132cd77d8d5c2c",
-      "method": "Hand-authored SVG explanation, checked against PCS 0.9.120 Help. Updates memory-awareness previews/current accounts and activity eligibility while preserving sources, corrections, exact revisions, lessons and permitted recall."
+      "sha256": "92e4d64208d1e4118660c700f43470af960cb212360e867308be727966b191bb",
+      "method": "Hand-authored SVG explanation, reviewed and updated against PCS 0.9.154 source and Help on 2026-11-12. Includes memory-awareness previews/current accounts and manual activity scopes, preserving sources, corrections, exact revisions, lessons and permitted recall. Stable filename; not an app screenshot."
     },
     {
       "path": "assets/pcs-local-context-0120.svg",
-      "version": "0.9.120",
+      "version": "0.9.154",
       "width": 1200,
       "height": 1010,
-      "sha256": "30f49fae7d81ce3bd9201f5512de8ed6d8028c72a860fb3958b6e6e38851e7ff",
-      "method": "Hand-authored SVG explanation, rechecked against PCS 0.9.120 Help. Local context selection, optional area labels, working-context compaction and separate image controls remain accurate."
+      "sha256": "a9687ed0dd4b120a0a537d68f714b2c00c9af3786773619e8489d9b79988d1fe",
+      "method": "Hand-authored SVG explanation, reviewed and updated against PCS 0.9.154 local_reply_context.py and Help on 2026-11-12. Local context selection, optional area labels, working-context compaction, separate image controls and manual activity scopes. Stable filename; not an app screenshot."
     },
     {
       "path": "assets/pcs-memory-flow-0114.svg",

@@ -18,11 +18,11 @@
 <meta property="og:image" content="https://pcs-personalcontinuitysystem.github.io/PCS-site/assets/social-preview-plain.png?v=20261021-sage-r2">
 <meta property="og:image:alt" content="PCS — A new AI shouldn’t mean starting over. Free for Windows.">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PCS — Personal Continuity System","description":"A Windows app for AI conversation, editable memories and notes, with supported cloud and local models.","applicationCategory":"ProductivityApplication","operatingSystem":"Windows x64","softwareVersion":"0.9.146","url":"https://pcs-personalcontinuitysystem.github.io/PCS-site/","downloadUrl":"https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.146/PCS-0.9.146-Windows-x64.zip","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"PCS is free. Cloud provider API charges are separate."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PCS — Personal Continuity System","description":"A Windows app for AI conversation, editable memories and notes, with supported cloud and local models.","applicationCategory":"ProductivityApplication","operatingSystem":"Windows x64","softwareVersion":"0.9.154","url":"https://pcs-personalcontinuitysystem.github.io/PCS-site/","downloadUrl":"https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Windows-x64.zip","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"PCS is free. Cloud provider API charges are separate."}}</script>
 <link rel="preload" href="assets/fonts/albert-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/atlas.css?v=20261023-0120">
+<link rel="stylesheet" href="assets/atlas.css?v=20261112-0154-r3">
 <script>document.documentElement.classList.add('js')</script>
-<script defer src="assets/atlas.js?v=20261105-0139"></script>
+<script defer src="assets/atlas.js?v=20261112-0154"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -49,7 +49,7 @@
     <h1 id="hero-title" class="hero__title"><span class="line"><span data-line style="--i:0">A new AI shouldn’t</span></span> <span class="line"><span data-line style="--i:1">mean starting over.</span></span></h1>
     <p class="hero__lead" data-load style="--d:380ms">A free Windows app that keeps your AI conversations, memories and notes on your PC, so you can switch models and pick up where you left off.</p>
     <div class="hero__action" data-load style="--d:440ms">
-      <a class="button button--large" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.146/PCS-0.9.146-Windows-x64.zip">Download for Windows</a>
+      <a class="button button--large" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Windows-x64.zip">Download for Windows</a>
       <p class="hero__note">Free and open source. Use an API key, ChatGPT sign-in or a local model.</p>
     </div>
   </div>
@@ -65,6 +65,7 @@
           <button type="button" data-model="llama" aria-pressed="false">Llama</button>
           <button type="button" data-model="claude" aria-pressed="false">Claude</button>
           <button type="button" data-model="chatgpt" aria-pressed="false">ChatGPT</button>
+          <button type="button" data-model="openrouter" aria-pressed="false">OpenRouter</button>
           <button type="button" data-model="local" aria-pressed="false">Local</button>
         </div>
       </div>
@@ -117,7 +118,7 @@
       </div>
     </div>
     <div class="showcase__actions" data-reveal style="--d:210ms">
-      <a class="cell cell--ink" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.146/PCS-0.9.146-Windows-x64.zip">Download for Windows</a>
+      <a class="cell cell--ink" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Windows-x64.zip">Download for Windows</a>
       <a class="cell" href="getting-started.html">Read the setup guide</a>
     </div>
     <p class="showcase__note">Actual PCS screens with fictional data: Conversation and Library 0.9.114; Map 0.9.139. No live AI results.</p>
@@ -220,7 +221,7 @@
     <li class="cellw cellw--b"><a href="getting-started.html#features"><span class="cellw__word">Read</span><span class="cellw__caption">Open books and documents</span></a></li>
     <li class="cellw cellw--photo"><button class="cellw__image" type="button" data-enlarge="screenshots/refresh-0114/materials-full.jpg" aria-label="Enlarge the Materials screenshot"><img width="1363" height="936" src="screenshots/refresh-0114/materials.jpg" loading="lazy" alt="A short fictional photography project document open and readable in the PCS Materials reader."></button></li>
     <li class="cellw cellw--c"><a href="getting-started.html#features"><span class="cellw__word">Study</span><span class="cellw__caption">Discuss passages, practise</span></a></li>
-    <li class="cellw cellw--d"><a href="memory-control.html#lessons"><span class="cellw__word">Write</span><span class="cellw__caption">Keep notebooks</span></a></li>
+    <li class="cellw cellw--d"><a href="getting-started.html#features"><span class="cellw__word">Write</span><span class="cellw__caption">Keep notebooks</span></a></li>
     <li class="cellw cellw--photo"><button class="cellw__image" type="button" data-enlarge="screenshots/refresh-0114/notebook-full.jpg" aria-label="Enlarge the Notebook screenshot"><img width="1363" height="936" src="screenshots/refresh-0114/notebook.jpg" loading="lazy" alt="A PCS notebook showing two complete steps: choose a constellation, marked Complete, and take two test photos, marked In progress."></button></li>
     <li class="cellw cellw--a"><a href="getting-started.html#features"><span class="cellw__word">Plan</span><span class="cellw__caption">A calendar on your PC</span></a></li>
     <li class="cellw cellw--b"><a href="local-ai.html#voice"><span class="cellw__word">Talk</span><span class="cellw__caption">Optional voice</span></a></li>
@@ -281,13 +282,16 @@
       <option value="llama">Llama</option>
       <option value="claude">Claude API</option>
       <option value="chatgpt">ChatGPT sign-in</option>
+      <option value="openrouter">OpenRouter</option>
       <option value="local">a local model</option>
-    </select></span> <a class="download__go" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.146/PCS-0.9.146-Windows-x64.zip">Download for Windows</a></h2>
+    </select></span> <a class="download__go" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Windows-x64.zip">Download for Windows</a></h2>
     <p class="download__need" id="model-need" aria-live="polite">You’ll need a Google API key. API use is billed by Google, separately from any Gemini subscription.</p>
   </div>
   <div class="download__details">
-    <p>PCS 0.9.146 for Windows x64. Free, with no PCS subscription; provider API charges and any subscription used for ChatGPT sign-in are separate.</p>
-    <p><a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.146">Release notes</a> <a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.146/PCS-0.9.146-Source.zip">Application source</a> <a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.146/PCS-0.9.146-SHA256SUMS.txt">Checksums</a></p>
+    <p>PCS 0.9.154 for Windows x64. Free, with no PCS subscription; provider API charges and any subscription used for ChatGPT sign-in are separate.</p>
+    <p>New since 0.9.146: OpenRouter in guided setup, with memory, notebooks, Practice, Calendar and optional Vision for a compatible model. Use its own key and choose an exact model. Free-model limits vary; OpenRouter web research can cost extra.</p>
+    <p>The default Companion direction is calmer, with less routine praise and fewer automatic follow-up questions. Custom directions stay yours. Direct Qwen access and automatic activity following have been retired; manual Activity details, Practice and PCS Perspective remain available.</p>
+    <p><a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.154">Release notes</a> <a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Source.zip">Application source</a> <a class="text-link" href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-SHA256SUMS.txt">Checksums</a></p>
     <p>Linux or Mac? <a class="text-link" href="local-ai.html#previews">See the earlier experimental builds</a>.</p>
     <p>Already using PCS? Make a backup first, then <a class="text-link" href="getting-started.html#upgrade">follow the update and restore steps</a>.</p>
   </div>
@@ -298,7 +302,7 @@
   <div class="faq__stack">
     <div class="card card--1 is-open">
       <h3 class="card__head"><button type="button" class="card__toggle" aria-expanded="true" aria-controls="faq-1"><span class="card__tab">Subscriptions</span><span class="card__q">Does my ChatGPT or Gemini subscription cover PCS?</span></button></h3>
-      <div class="card__panel" id="faq-1"><div><p>PCS offers <strong>Sign in with ChatGPT</strong> for eligible accounts, subject to account access and usage limits. This is separate from the OpenAI API connection. Google, OpenAI, Meta and Claude API connections use their own keys and billing; a consumer chat subscription does not provide API credit. A compatible local model does not need a cloud AI subscription.</p></div></div>
+      <div class="card__panel" id="faq-1"><div><p>PCS offers <strong>Sign in with ChatGPT</strong> for eligible accounts, subject to account access and usage limits. This is separate from the OpenAI API connection. Google, OpenAI, Meta, Claude and OpenRouter API connections use their own keys and billing; a consumer chat subscription does not provide API credit. OpenRouter offers free models as well as paid ones; availability and limits depend on your account and model, and optional web research may charge separately. A compatible local model does not need a cloud AI subscription.</p></div></div>
     </div>
     <div class="card card--2">
       <h3 class="card__head"><button type="button" class="card__toggle" aria-expanded="false" aria-controls="faq-2"><span class="card__tab">Memory</span><span class="card__q">Will it remember everything automatically?</span></button></h3>
@@ -338,7 +342,7 @@
       <label class="visually-hidden" for="bug-body">What happened, and what did you expect?</label>
       <textarea id="bug-body" name="body" rows="3" placeholder="What happened, and what did you expect?" required></textarea>
       <label class="visually-hidden" for="bug-version">PCS version</label>
-      <input id="bug-version" type="text" value="PCS 0.9.146" autocomplete="off">
+      <input id="bug-version" type="text" value="PCS 0.9.154" autocomplete="off">
       <label class="visually-hidden" for="bug-windows">Windows version</label>
       <input id="bug-windows" type="text" placeholder="Windows version, for example Windows 11" autocomplete="off">
       <button class="coupon__submit" type="submit">Open a GitHub issue</button>
@@ -354,7 +358,7 @@
     <div><h2>Explore</h2><a href="continuity-map.html">Map demo</a><a href="memory-control.html">How memory works</a><a href="local-ai.html">Local AI</a></div>
     <div><h2>Use PCS</h2><a href="getting-started.html">Setup and updates</a><a href="data-and-privacy.html">Data and privacy</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases">All releases</a></div>
     <div><h2>Get involved</h2><a href="https://discord.com/invite/2ssCQhNgAN">Discord</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/issues">Report a bug</a><a href="https://ko-fi.com/pcssupport">Support development</a></div>
-    <div><h2>Source</h2><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.146/PCS-0.9.146-Source.zip">App source and license</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS-site">Website source</a></div>
+    <div><h2>Source</h2><a href="https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Source.zip">App source and license</a><a href="https://github.com/PCS-PersonalContinuitySystem/PCS-site">Website source</a></div>
   </div>
   <div class="footer__last">
     <p>© 2026 Courtney Dickson. First-party app code: GPL-3.0-only.</p>

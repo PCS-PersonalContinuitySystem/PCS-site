@@ -18,7 +18,7 @@ PCS (Personal Continuity System) is a free, open-source Windows app that keeps s
 
 ## Positioning
 
-Continuity belongs to the person, not the model. PCS keeps the saved records (conversations, AI-written memories that link back to the passage they came from, corrections, notebooks) on the user's PC, so switching between Google, OpenAI API, Meta, Claude, signed-in ChatGPT or a local model keeps the history. Every AI-written memory can be read back to its source passage, corrected, or forgotten, with revision history kept.
+Continuity belongs to the person, not the model. PCS keeps the saved records (conversations, source-linked AI-written memories, corrections, notebooks) on the user's PC, so switching between Google, OpenAI API, Meta, Claude, signed-in ChatGPT, OpenRouter or a local model keeps the history. Memories can be inspected, corrected or forgotten, with revision history kept. Formation and recall can still omit or misinterpret details.
 
 ## Operating Context
 
@@ -30,9 +30,17 @@ Continuity belongs to the person, not the model. PCS keeps the saved records (co
 
 ## Capabilities and Constraints
 
-- Current Windows application version is 0.9.146. Website changes never change the app version.
+- Current Windows application version is 0.9.154. Website changes never change the app version.
+- OpenRouter is a native route in guided setup and across PCS features within the selected model's tool/image support and permissions. It uses its own key, not a second required provider. Free-model inference limits vary and optional web research can charge separately. Do not promise a fixed monthly free quota.
+- Direct Alibaba Qwen access and automatic activity following are retired. Qwen-family models offered by OpenRouter are a separate choice. Manual Activity details, explicit memory approvals, Practice, Conversation pace and PCS Perspective remain. Do not restore the retired Proactive help panel in website instructions.
+- The default Companion direction now favors calm, warm and independent replies. Custom instructions are preserved. Initiative and Conversation pace remain separate controls.
+- Only Google and OpenAI offer cloud embeddings in PCS. Other routes use word/navigation recall and an optional local Nomic index. Local memory and Preparation remain Local.
+- OpenRouter conversation data requires PCS 0.9.151 or later; OpenRouter helper data and larger Practice assessment records require 0.9.152 or later. Check backup reports the actual saved minimum reader. Keep pre-upgrade backups.
 - Saved conversations, memories and notebooks are encrypted locally. Original Materials files and readable exports sit outside vault encryption.
 - Cloud features send permitted content to the selected provider. Local chat and memory can work offline after setup.
+- OpenRouter forwards permitted inputs to an upstream provider. Don’t save changes retention, not a cloud request's destination. Original Materials need a separate backup.
+- PCS Perspective background thinking leaves the microphone on and user input ends its current step. Focused pauses switch it off and require Return to interrupt. These are separate modes, not a promise that PCS can hear during a focused pause.
+- Custom Local GGUF models can offload weights to RAM and expose a thinking switch. This does not change the recommended model or establish that larger models work reliably; the pinned 26B runtime has a known long-prompt crash.
 - Switching models keeps saved records; it does not transfer a provider's internal state or guarantee complete recall. Recall can miss details and AI-written memories can be wrong.
 - Main package is Windows x64. Earlier experimental Linux x64 0.9.115 and macOS Apple silicon 0.9.114 builds are available on the previous v0.9.114 release page.
 - Website is a buildless static site served by GitHub Pages from the repository root. No external fonts, analytics or AI dependencies at browse time; everything is served from the repository.

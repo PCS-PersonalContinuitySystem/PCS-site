@@ -1,4 +1,10 @@
-# Pictures for the PCS 0.9.139 website
+# Pictures retained for the PCS 0.9.154 website
+
+The November 12, 2026 website update reuses the original screenshot bytes and capture labels below. It does not claim new 0.9.154 app screenshots. Two hand-authored explanatory SVGs were reviewed and updated against 0.9.154; their stable filenames preserve existing links.
+
+## PCS Perspective diagram — revision 3
+
+[Room for a thought of its own](assets/pcs-perspective-flow-0154.svg) is an authored 1600 × 960 diagram displayed only in the memory guide. It explains independent interests, model exploration, the choice to keep a reflection without sharing, and a short contribution at a quiet moment. The memory guide has an equivalent vertical HTML flow for small screens. Background exploration leaves enabled microphone input on; speaking or sending a message ends that step. Focused input-off pauses are a separate mode. The explanation was checked against the 0.9.154 Perspective guide and session implementation. This is a workflow explanation, not a screenshot, a live model result or evidence of subjective experience.
 
 
 ## Fresh Map captures — November 5, 2026
@@ -64,7 +70,7 @@ The eight original images are unmodified captures of the shipped PCS 0.9.114 int
 
 [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json) records exact image versions, dimensions, hashes and provenance. The local delivery evidence retains source binding, capture scripts, fixture description and cleanup receipts. Images were not repainted, relabeled or altered to simulate a newer release.
 
-The current [memory diagram](assets/pcs-memory-flow-0120.svg) explains sources, corrections, linked revisions, settled marks, named lessons, optional memory awareness and permitted recall. It now includes permitted previews and current-account cues, with activity and sharing checks. The [Local context diagram](assets/pcs-local-context-0120.svg) explains context choice and long-session working-context compaction, rechecked against 0.9.120. These hand-authored SVG explanations are not screenshots or guarantees of model accuracy. The original [0.9.114 memory diagram](assets/pcs-memory-flow-0114.svg) and [0.9.114 Local diagram](assets/pcs-local-context-0114.svg) remain unchanged for existing links.
+The current [memory diagram](assets/pcs-memory-flow-0120.svg) explains sources, corrections, linked revisions, settled marks, named lessons, optional memory awareness and permitted recall. The [Local context diagram](assets/pcs-local-context-0120.svg) explains context choice and long-session working-context compaction. Both explanations were checked against 0.9.154 and now describe manual activity scopes, without the retired automatic classifier. They are hand-authored explanations, not screenshots or guarantees of model accuracy. The original [0.9.114 memory diagram](assets/pcs-memory-flow-0114.svg) and [0.9.114 Local diagram](assets/pcs-local-context-0114.svg) remain unchanged for existing links.
 
 The interactive website Map is a separate fictional demonstration: 60 themes, 299 connections and 76 records. It preserves Mara's eight-passage story and free exploration. It now opens in Constellations, follows a selected theme into Focus, and offers All links, List, a navigation trail and Compare with… routes through shared records. Map settings groups filters and coverage; Views & notes holds temporary named views and connection notes. Counts come from explicit shared-record membership. It makes no AI request, reads no personal vault and saves no visitor changes after the page closes or reloads.
 
