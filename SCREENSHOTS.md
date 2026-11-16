@@ -1,3 +1,13 @@
+# Picture and diagram provenance
+
+## November 16, 2026 update for PCS 0.9.164
+
+The memory guide now displays [the revised PCS Perspective explanation](assets/pcs-perspective-flow-0164.svg), with equivalent vertical HTML on phones. It reflects the published 0.9.164 release: think first then file a conclusion, background microphone input, focused Explore now pauses, and thoughts joining an ordinary reply at most four times an hour. It is authored explanatory artwork, not an app capture or a live AI result.
+
+All app screenshot bytes and capture labels remain unchanged. The November 12 entries below are historical provenance. The older 0154 diagram is retained for existing links; the guide uses 0164.
+
+---
+
 # Pictures retained for the PCS 0.9.154 website
 
 The November 12, 2026 website update reuses the original screenshot bytes and capture labels below. It does not claim new 0.9.154 app screenshots. Two hand-authored explanatory SVGs were reviewed and updated against 0.9.154; their stable filenames preserve existing links.

@@ -187,8 +187,8 @@
     gpt: 'You’ll need an OpenAI API key. API use is billed separately from a ChatGPT subscription.',
     llama: 'You’ll need Meta API access with its own key and billing.',
     claude: 'You’ll need an Anthropic API key and access to a compatible Claude model. API billing is separate from a Claude subscription.',
-    chatgpt: 'Use Settings → Connections → Sign in with ChatGPT with an eligible account. Available models and usage limits depend on your account; this is separate from an OpenAI API key.',
-    openrouter: 'Use your OpenRouter API key in Set up PCS, load the catalogue and select an exact tool-capable model. Vision needs image support. Free-model limits vary; web research can cost extra.',
+    chatgpt: 'Sign in with an eligible account in Settings → Connections, then choose Get ChatGPT ready. Repeat Get ChatGPT ready in each newly opened PCS page. Available models and usage limits depend on your account; this is separate from an OpenAI API key.',
+    openrouter: 'Use your OpenRouter API key in Get started, load the catalogue and select an exact tool-capable model. Vision needs image support. For memory, use a capable separate Memory model such as the recommended one in Settings. Free-model limits vary; web research can cost extra.',
     local: 'The recommended setup uses a compatible NVIDIA GPU. The model and its components download separately.',
   };
   const choice = $('#model-choice');

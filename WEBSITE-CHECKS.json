@@ -1,14 +1,14 @@
 {
-  "application_version": "0.9.154",
-  "prepared_utc": "2026-11-12T15:26:41.044920+00:00",
-  "baseline_commit": "94d06f924b049b19d4d21ee7c43db2803cb9066a",
-  "status": "passed",
+  "application_version": "0.9.164",
+  "prepared_utc": "2026-11-16T20:00:54.236632+00:00",
+  "baseline_commit": "714e3d4b39d6a3d1e29d9a0253180aad92cb7720",
   "publication_performed": false,
+  "status": "static checks passed; bounded browser review completed with one unattributed console error",
   "static": {
-    "application_version": "0.9.154",
-    "baseline_commit": "94d06f924b049b19d4d21ee7c43db2803cb9066a",
-    "status": "passed",
+    "application_version": "0.9.164",
+    "baseline_commit": "714e3d4b39d6a3d1e29d9a0253180aad92cb7720",
     "publication_performed": false,
+    "status": "passed",
     "pages": [
       "continuity-map.html",
       "data-and-privacy.html",
@@ -17,292 +17,134 @@
       "local-ai.html",
       "memory-control.html"
     ],
-    "local_references_checked": 420,
+    "counts": {
+      "local_references": 357,
+      "fragment_targets": 139,
+      "aria_targets": 38,
+      "json_ld": 6
+    },
     "javascript_syntax": [
-      "assets/atlas.js",
+      {
+        "path": "assets/atlas.js",
+        "passed": true
+      },
+      {
+        "path": "assets/map-data.js",
+        "passed": true
+      },
+      {
+        "path": "assets/map.js",
+        "passed": true
+      }
+    ],
+    "public_head_checks": [
+      {
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.164/PCS-0.9.164-SHA256SUMS.txt",
+        "status": 200,
+        "content_length": "185"
+      },
+      {
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.164/PCS-0.9.164-Source.zip",
+        "status": 200,
+        "content_length": "11689042"
+      },
+      {
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.164/PCS-0.9.164-Windows-x64.zip",
+        "status": 200,
+        "content_length": "44360639"
+      },
+      {
+        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.164",
+        "status": 200,
+        "content_length": null
+      },
+      {
+        "url": "https://raw.githubusercontent.com/PCS-PersonalContinuitySystem/PCS/main/assets/pcs-continuity-map-0.9.139.png",
+        "status": 200,
+        "content_length": "357632"
+      }
+    ],
+    "unchanged_reference_files": [
       "assets/map-data.js",
-      "assets/map.js"
+      "assets/map.js",
+      "assets/atlas.css",
+      "assets/atlas-guides.css",
+      "SCREENSHOT-MANIFEST.json"
     ],
-    "media_hashes_verified": 45,
+    "screenshots_unchanged": 116,
     "errors": [],
-    "external_links": [
-      {
-        "url": "https://discord.com/invite/2ssCQhNgAN",
-        "status": 200,
-        "final_url": "https://discord.com/invite/2ssCQhNgAN"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS",
-        "status": 200,
-        "final_url": "https://github.com/PCS-PersonalContinuitySystem/PCS"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS-site",
-        "status": 200,
-        "final_url": "https://github.com/PCS-PersonalContinuitySystem/PCS-site"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/issues",
-        "status": 200,
-        "final_url": "https://github.com/PCS-PersonalContinuitySystem/PCS/issues"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/issues/new",
-        "status": 200,
-        "final_url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FPCS-PersonalContinuitySystem%2FPCS%2Fissues%2Fnew"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases",
-        "status": 200,
-        "final_url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-macOS-arm64-Experimental-1.zip",
-        "status": "verified_release_asset",
-        "bytes": 5828163,
-        "digest": "sha256:412bbc9c334135e74d1e988b2aee1d8f8c12765aeb52d0226cfcdff5ce338c1c"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.115-Linux-x64-Experimental.tar.gz",
-        "status": "verified_release_asset",
-        "bytes": 5175692,
-        "digest": "sha256:526715a7ba43c8a6e7941e798640616ccb8f38c4838c4006ae73bb944bf2a71f"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-SHA256SUMS.txt",
-        "status": "verified_release_asset",
-        "bytes": 185,
-        "digest": "sha256:d1b98263e627d56d74fe50a903f3adb77f8d599cbb33700c756620d5b16f5294"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Source.zip",
-        "status": "verified_release_asset",
-        "bytes": 11601261,
-        "digest": "sha256:111210521aeccf408a4973bd7a1120b5f6ef1a616a25f5adde368e6610d27f45"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Windows-x64.zip",
-        "status": "verified_release_asset",
-        "bytes": 51160543,
-        "digest": "sha256:56c5ac54a9196b15f133b75b8bfa15e29fb4197eb4fb082ec10fbd8a86e99a9e"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.114",
-        "status": 200,
-        "final_url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.114"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.154",
-        "status": 200,
-        "final_url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.154"
-      },
-      {
-        "url": "https://ko-fi.com/pcssupport",
-        "status": 200,
-        "final_url": "https://ko-fi.com/pcssupport"
-      }
-    ],
-    "release_metadata": {
-      "v0.9.154": {
-        "tag": "v0.9.154",
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.154",
-        "assets": [
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-SHA256SUMS.txt",
-            "bytes": 185,
-            "digest": "sha256:d1b98263e627d56d74fe50a903f3adb77f8d599cbb33700c756620d5b16f5294"
-          },
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Source.zip",
-            "bytes": 11601261,
-            "digest": "sha256:111210521aeccf408a4973bd7a1120b5f6ef1a616a25f5adde368e6610d27f45"
-          },
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.154/PCS-0.9.154-Windows-x64.zip",
-            "bytes": 51160543,
-            "digest": "sha256:56c5ac54a9196b15f133b75b8bfa15e29fb4197eb4fb082ec10fbd8a86e99a9e"
-          }
-        ]
-      },
-      "v0.9.114": {
-        "tag": "v0.9.114",
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.114",
-        "assets": [
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-macOS-arm64-Experimental-1-Source.zip",
-            "bytes": 9468587,
-            "digest": "sha256:20ef92747bbd4fbbb1efc89776ec5015902b369886fbdb6deee89af68a4452cb"
-          },
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-macOS-arm64-Experimental-1.zip",
-            "bytes": 5828163,
-            "digest": "sha256:412bbc9c334135e74d1e988b2aee1d8f8c12765aeb52d0226cfcdff5ce338c1c"
-          },
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-SHA256SUMS.txt",
-            "bytes": 632,
-            "digest": "sha256:6bf70949dcf61515429eade428baa369bad0175d57702a1eb16624dfb57b2554"
-          },
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-Source.zip",
-            "bytes": 9112304,
-            "digest": "sha256:b2378dd56a19a9d9caf9d99ccd7a29b08322d128b8d4cd495721d414003bc632"
-          },
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.114-Windows-x64.zip",
-            "bytes": 48688456,
-            "digest": "sha256:f88d0b945dfa0fa33d27d9971f82c77e3ea7fe48c0ddc5642c7a0626a424cb00"
-          },
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.115-Linux-Experimental-Source.zip",
-            "bytes": 9262993,
-            "digest": "sha256:e899a85f6968a4fe5eeb66267f1f33cdc726eb84befc4865b0bec19ef71ec7e3"
-          },
-          {
-            "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.114/PCS-0.9.115-Linux-x64-Experimental.tar.gz",
-            "bytes": 5175692,
-            "digest": "sha256:526715a7ba43c8a6e7941e798640616ccb8f38c4838c4006ae73bb944bf2a71f"
-          }
-        ]
-      }
-    },
     "limits": [
-      "No external forms were submitted.",
-      "Release downloads verified against official asset metadata, without downloading application binaries.",
-      "HTTP blocking or transient failures are unverified, not evidence of a broken link.",
-      "Static website checks do not qualify application or device behavior."
-    ],
-    "managed_run": "b3ac14e82f8942418d2fcf8fbed4287f",
-    "audited_file_hashes": {
-      "assets/atlas-guides.css": "ae1b750f9259f7a23735d02c37472c0b29683f6745ee72c5af20b1f50d7215d0",
-      "assets/atlas.css": "8a5f42d42fb8c691333dbf35abbdd4b98afff840b761ceabc3f62e30ea12ef0b",
-      "assets/atlas.js": "07d6026f0777fd9c1bd6a0eac3d74bd6e8d18bb1314db45502aa4c31f2066296",
-      "assets/map-data.js": "41deab9ddef902a61eb89a61179e0d1490574d875af94e5310ab528277c4f2af",
-      "assets/map.css": "83f1ac0fc2245920ee311350c493320bdfe073cf833d0157914189cf26c3363e",
-      "assets/map.js": "79c420df0bf6847f1045288206844f11d1a31c876476079aa47b438e03478184",
-      "assets/pcs-local-context-0120.svg": "a9687ed0dd4b120a0a537d68f714b2c00c9af3786773619e8489d9b79988d1fe",
-      "assets/pcs-memory-flow-0120.svg": "92e4d64208d1e4118660c700f43470af960cb212360e867308be727966b191bb",
-      "assets/pcs-perspective-flow-0154.svg": "5996206d5d0ce29940bb752c9067e879d29c160a53c753f68955620ba1998e11",
-      "continuity-map.html": "d17c093238a38ed759e8b7014d1828ee664d26ac478d6ed4aafeca2b36154fdd",
-      "data-and-privacy.html": "228beec264b4778a4d99bc190b974b0d7d6e5588fcc78abb6463d94e4beabecb",
-      "DESIGN.md": "0e7b198f3aef6b798af6543e3f0fb4d4c12a6a91d91dd418cf9a6f3fb64fd1b7",
-      "getting-started.html": "b28c8e5e60a506e7887b54edfb76d54422463fb5260f3b72c8648273fb4d0a0c",
-      "index.html": "dd264e59b4984fafab5b38ce837cd366dcd2f60410a2d7306cf7da5386c8a6b0",
-      "local-ai.html": "3aee98bb8cc526dab37ddcd32e94fcb3a7dfd7db1c759852c9be0b24d400bc37",
-      "memory-control.html": "4e7bc6d91fee4066a4b9af48b4bce72d277da45ed4cd3942c932bbf7b57e0bd6",
-      "PRODUCT.md": "20425cd0a37bedbf2e651c25de2d29fa236e6c9790029de779fe7ab7d9844bd7",
-      "README.md": "43b014c3a2f6478314b29d96e3f89b96dd458cc7da256abf2ba27593b7e2fbe4",
-      "robots.txt": "5c0e5862bf4da3983972448ec1df52a7543bbc817c1b432a3cf262fb91ae089b",
-      "SCREENSHOT-MANIFEST.json": "9820290f159b5089cd354d7f6e96b7b24e840b310e41e2aaad1c5981fe7ef420",
-      "SCREENSHOTS.md": "e550f3c09af85567288546ed743a85b350d4ba65809df3060e9077e3c491d71f",
-      "sitemap.xml": "9ef38b38f23b9ba2e6cb38844b9b336c93bbb197e273cb04b2d972ba215eb28c",
-      "UPLOAD-INSTRUCTIONS.md": "fad63c1adf708c1e7cc7211edd0f6edf941411a08d4098f45744a6f927fab05c"
-    },
-    "discord_invite": {
-      "status": 200,
-      "code": "2ssCQhNgAN",
-      "guild": "PCS | Personal Continuity System",
-      "expires_at": null
-    }
-  },
-  "browser": {
-    "status": "passed",
-    "target": "http://127.0.0.1:8766/",
-    "browser": "Codex in-app browser",
-    "date": "2026-11-12",
-    "pages": [
-      "index.html",
-      "getting-started.html",
-      "local-ai.html",
-      "memory-control.html",
-      "data-and-privacy.html",
-      "continuity-map.html"
-    ],
-    "responsive": {
-      "desktop_requested_pixels": [
-        1536,
-        1000
-      ],
-      "desktop_observed_css_width": 1267,
-      "phone_requested_pixels": [
-        390,
-        844
-      ],
-      "phone_observed_css_width": 312,
-      "note": "The browser's display scaling makes the observed CSS viewport narrower than the requested pixel dimensions.",
-      "horizontal_overflow": false,
-      "scope": "All six pages at both widths; completed images had no load failures. Offscreen lazy images were additionally covered by file/hash checks."
-    },
-    "interactions": [
-      "Homepage OpenRouter illustration selected; status names OpenRouter and its upstream provider.",
-      "Homepage model picker selected OpenRouter; requirements update names key, exact tool-capable model, image support and possible research costs.",
-      "Homepage Map showcase selected; screenshot viewer opened the .139 Map image at natural width 2560 and closed.",
-      "Phone navigation menu opened with aria-expanded=true.",
-      "Setup OpenRouter tab selected and its panel became visible on desktop and phone.",
-      "Map story completed all eight passages and displayed its ending and 8-of-8 completion state.",
-      "Map free exploration, List view and Map settings opened; Source type changed to Notebooks and 2+ shared-record filtering checked."
-    ],
-    "console_errors_or_warnings_observed": [],
-    "teardown": {
-      "viewport_override_reset": true,
-      "preview_tab_closed": true,
-      "preview_server_stopped": true,
-      "managed_preview_run": "4d440bf23d284d3cbe15340b8f7aa78c",
-      "managed_cleanup_complete": true,
-      "preview_exit_code": 130,
-      "note": "Preview was deliberately interrupted after browser checks; owned-run result confirms cleanup, and port 8766 has no listener."
-    },
-    "revision_2": {
-      "status": "passed_targeted_diagram_and_responsive_checks",
-      "checks": [
-        "New standalone Perspective SVG rendered with all text inside its bounds.",
-        "Homepage desktop diagram loaded at natural width 1600; observed page widths 1523 and 1267 CSS pixels had no horizontal overflow.",
-        "At 312 CSS pixels, the horizontal graphic is replaced by four vertical HTML steps with arrows and 18px body text; no overflow.",
-        "Memory guide image opened the SVG in its viewer at natural width 1600.",
-        "All six pages checked again at phone and desktop widths after the shared CSS update, with no failed completed images or horizontal overflow.",
-        "Fresh homepage and memory-guide tabs produced no console errors or warnings."
-      ],
-      "standalone_svg_diagnostics": {
-        "unattributed_console_messages": [
-          "Cannot use 'in' operator to search for 'animation' in undefined",
-          "Cannot use 'in' operator to search for 'animation' in undefined"
-        ],
-        "note": "These occurred while inspecting the standalone SVG document, which loads no website JavaScript. Their origin was not established. The SVG rendered correctly; the two HTML pages were checked in a fresh tab and had clean logs. The browser also requested an undeclared /favicon.ico for the standalone SVG, returning 404; HTML pages declare their existing SVG favicon."
-      },
-      "viewport_reset": true,
-      "preview_tabs_closed": true,
-      "preview_run": "f09ed325f3c148d391fffd12851b023c",
-      "preview_server_stopped": true,
-      "managed_cleanup_complete": true
-    },
-    "current_revision": "r3",
-    "evidence_scope": "Earlier keys retain historical checks. revision_3 records the current memory-only diagram placement.",
-    "revision_3": {
-      "status": "passed",
-      "checks": [
-        "Homepage has zero Perspective diagram images, zero diagram figures and no former #perspective section at desktop and 312px phone widths.",
-        "Memory introduction has a visible direct jump link to #perspective-diagram; clicking it brings the diagram into view.",
-        "Diagram is directly below Memory's PCS Perspective heading, before its explanatory paragraphs.",
-        "Desktop Memory displays the SVG at natural width 1600 with opacity 1; the alternate phone flow is hidden.",
-        "Phone Memory displays four vertical steps with 18px body text, arrows and no duplicated list counters; the horizontal image is hidden.",
-        "Corrected guide CSS specificity so the general numbered-list styles do not override the responsive diagram.",
-        "Neither checked page has horizontal overflow. No console errors or warnings were observed."
-      ],
-      "diagram_asset_unchanged": true,
-      "viewport_reset": true,
-      "preview_tab_closed": true
-    },
-    "limits": [
-      "Local website checks only; no deployment or live provider/device/installer qualification.",
-      "No GitHub issue, account change or external form submission was performed."
+      "Static and public URL checks only in this receipt; browser review is recorded separately if performed.",
+      "No publication, application tests, provider requests, device checks or installer qualification."
     ]
   },
-  "preservation": {
-    "screenshots": "Original screenshot bytes and actual capture labels preserved; no new captures claimed.",
-    "diagrams": "Perspective SVG and responsive HTML flow appear only in the memory guide; homepage section removed. Two existing SVG explanations updated to .154; hashes recorded.",
-    "fictional_map_data": "Unchanged",
-    "font_license": "assets/fonts/OFL-albert-sans.txt preserved",
-    "historical_assets": "Retained; two obsolete root ZIP/TAR artifacts excluded from delivery only."
+  "browser": {
+    "review_date": "2026-11-16",
+    "viewport": {
+      "width": 319,
+      "height": 751
+    },
+    "pages": [
+      {
+        "path": "continuity-map.html",
+        "no_horizontal_overflow": true,
+        "broken_completed_images": 0,
+        "current_windows_download": true
+      },
+      {
+        "path": "data-and-privacy.html",
+        "no_horizontal_overflow": true,
+        "broken_completed_images": 0,
+        "current_windows_download": true
+      },
+      {
+        "path": "getting-started.html",
+        "no_horizontal_overflow": true,
+        "broken_completed_images": 0,
+        "current_windows_download": true
+      },
+      {
+        "path": "index.html",
+        "no_horizontal_overflow": true,
+        "broken_completed_images": 0,
+        "current_windows_download": true
+      },
+      {
+        "path": "local-ai.html",
+        "no_horizontal_overflow": true,
+        "broken_completed_images": 0,
+        "current_windows_download": true
+      },
+      {
+        "path": "memory-control.html",
+        "no_horizontal_overflow": true,
+        "broken_completed_images": 0,
+        "current_windows_download": true
+      }
+    ],
+    "interactions": [
+      "Homepage OpenRouter model switch updated its label.",
+      "Mobile menu expanded and collapsed.",
+      "Download selector displayed current OpenRouter setup and memory-model guidance.",
+      "Map demo rendered 11 root interface children.",
+      "Revised 0164 Perspective SVG rendered within its viewport; inspected visually.",
+      "Memory guide exposed the equivalent vertical Perspective flow at narrow width."
+    ],
+    "console_limit": {
+      "message": "Uncaught (in promise) TypeError: Cannot use 'in' operator to search for 'animation' in undefined",
+      "timestamp": "2026-11-16T19:58:14.602Z",
+      "source_url": null,
+      "attribution": "Unresolved. No animation, animate(), or getAnimations() reference exists in any of the three active site scripts. Observed interactions completed; an error-free console is not claimed."
+    },
+    "limits": [
+      "Brief narrow-viewport review; no full desktop, accessibility or cross-browser qualification.",
+      "Public download buttons were inspected without downloading application ZIPs.",
+      "No GitHub issue form was submitted."
+    ]
   },
-  "managed_static_audit_run": "b3ac14e82f8942418d2fcf8fbed4287f"
+  "managed_evidence": "D:\\PCS Astra\\work\\.pcs-runs\\b09b9b9c57a74e518fffa3c44740f580\\evidence",
+  "limits": [
+    "This package has not been committed, pushed or deployed.",
+    "Website checks do not qualify PCS, providers, microphones, personal vaults or installers."
+  ]
 }

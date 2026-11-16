@@ -2,56 +2,55 @@
 
 **A new AI shouldn’t mean starting over.**
 
-PCS is a free Windows app that keeps saved AI conversations, memories and notes together. Users can talk or type with a supported model, then use those saved records again when they change models.
+PCS is a free Windows app that keeps saved AI conversations, memories and notes together. Talk or type with a supported model, then use your saved records again when you change models.
 
-[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS 0.9.154](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.154) · [Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Discord](https://discord.com/invite/2ssCQhNgAN)
+[Website](https://pcs-personalcontinuitysystem.github.io/PCS-site/) · [Download PCS 0.9.164](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.164/PCS-0.9.164-Windows-x64.zip) · [Release notes](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.164) · [Application repository](https://github.com/PCS-PersonalContinuitySystem/PCS) · [Discord](https://discord.com/invite/2ssCQhNgAN)
 
-This repository contains the public GitHub Pages website. The current Windows application version is **0.9.154**. This update covers every public page, release downloads, OpenRouter setup and capabilities, removed controls, privacy, Local AI limits and website maintenance files. It was prepared against main commit `94d06f924b049b19d4d21ee7c43db2803cb9066a`; it has not been published by this package.
+This repository contains the public GitHub Pages website. The current Windows application version is **0.9.164**. This file package was prepared on November 16, 2026 against website commit `714e3d4b39d6a3d1e29d9a0253180aad92cb7720` and the published 0.9.164 release. Creating the package does not publish it.
 
-## Website content
+## Pages
 
 | Page | Purpose |
 | --- | --- |
-| [Home](index.html) | Explain PCS, show the actual interface, describe practical uses, and link to requirements and downloads. |
-| [Map demo](continuity-map.html) | Explore a fictional set of related memories and read the supporting records. |
-| [How memory works](memory-control.html) | Explain saved passages, AI-written memories, corrections, history and recall. |
-| [Local AI](local-ai.html) | Explain supported models, hardware, voice, screen input and setup limits. |
-| [Get started](getting-started.html) | Install, choose a connection, set saving and sharing permissions, and update safely. |
-| [Data and privacy](data-and-privacy.html) | Explain what is stored locally, what can be shared, and how backup and deletion work. |
+| [Home](index.html) | Introduce PCS, show its interface, and link to requirements and downloads. |
+| [Map demo](continuity-map.html) | Explore fictional related memories and their supporting passages. |
+| [Memory](memory-control.html) | Inspect sources, corrections, history, recall and PCS Perspective. |
+| [Local AI](local-ai.html) | Review model, hardware, voice and setup limits. |
+| [Get started](getting-started.html) | Install, connect an AI, choose permissions and upgrade safely. |
+| [Data and privacy](data-and-privacy.html) | Understand storage, sharing, backup and deletion. |
 
-The homepage leads with the application and the reason to keep saved information across models. It uses plain language, short examples and real app screenshots. Detailed controls and experimental features belong in the guides. The interactive Map story remains on its dedicated page.
+## Updated for 0.9.164
 
-## Star Atlas design
+All six public pages use the current Windows, Source, checksum and release-note links, including structured metadata and the bug-report version. Setup now describes **Get started**, **Get acquainted** and **Get ChatGPT ready**. The guides reflect the Map’s **All links** opening view, 1,000-theme/10,000-connection display limits, 60-second local speech turns on the supported connections, Research and Practice in Materials, cloud-memory changes and current PCS Perspective behavior.
 
-The site uses the application's own palette: dark slate (`#101920`, `#17262f`), sage (`#bfd29f`), a darker green (`#405f4c`) and the cream four-point star from the PCS wordmark. The star is the one recurring shape: large and cropped on each page's opening screen, and at text size as list bullets and the current-section marker. The homepage includes an interactive illustration where visitors switch between Gemini, GPT, Llama, Claude, ChatGPT, OpenRouter and Local while the saved records stay put. The guides retain their layout and are set on a light chart-paper reading sheet with a contents rail and a guides rail. The type is Albert Sans, served from the repository. The design system is recorded in [DESIGN.md](DESIGN.md).
+The application ZIP contains the offline runtime and user guides. Tests, developer documents and build tools are in the matching [Source ZIP](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.164/PCS-0.9.164-Source.zip). GitHub’s automatic Source code archive contains the download repository, not the complete application source. [Release checksums](https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.164/PCS-0.9.164-SHA256SUMS.txt) identify the application archives.
 
-## Screenshots and examples
+## Design and examples
 
-The homepage and guide Map screenshots retain their actual PCS 0.9.139 capture labels. Other application screenshots retain their 0.9.114 labels. These are genuine older interface captures with authored fictional data, not new 0.9.154 screenshots or live AI results. Earlier screenshot files remain for the guides and existing links. See [SCREENSHOTS.md](SCREENSHOTS.md) and [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json) for provenance.
+Preserve the Star Atlas design: dark slate, sage, cream four-point stars and self-hosted Albert Sans. The homepage demonstrates switching models while saved records stay in place. Shared styles and behavior are in `assets/atlas.css` and `assets/atlas.js`; guides also load `assets/atlas-guides.css`. The font and its SIL Open Font License are in `assets/fonts/`. [DESIGN.md](DESIGN.md) records the design system; [PRODUCT.md](PRODUCT.md) records the product facts.
 
-The Map demo uses fictional data, makes no model requests and does not read a personal vault. Its eight-passage story, free exploration and no-JavaScript reading path remain available, alongside Constellations, Focus, comparison routes and a navigation trail. Demo progress and notes last only for the current visit. The homepage memory correction is a labeled illustration.
+Screenshots retain their genuine **0.9.114** and **0.9.139** capture labels. They contain authored fictional demonstration data, not new 0.9.164 screenshots or live AI results. See [SCREENSHOTS.md](SCREENSHOTS.md) and [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json).
 
-Revision 3 keeps the [PCS Perspective diagram](assets/pcs-perspective-flow-0154.svg) only in the memory guide, with an equivalent vertical HTML diagram on phones. It explains independent exploration and optional quiet contributions, distinguishing background input from focused microphone-off pauses. The homepage has no Perspective diagram section.
+The website Map is an older, explicitly labeled adaptation with 76 fictional records. It starts on Constellations; the current app starts on All links. The demo makes no AI requests, reads no personal vault and does not edit PCS. Its progress and notes last for the current visit. The homepage memory correction is an illustration. The revised Perspective SVG and its equivalent mobile HTML are authored explanations, not captured AI behavior.
 
-## Accurate product claims
+## Keep product claims accurate
 
-PCS is free and open source; cloud API charges are separate. Google, OpenAI, Meta, Claude and OpenRouter require their own API access. ChatGPT sign-in is separate and subject to account access and usage limits. OpenRouter is included in guided setup and supports PCS memory, conversation tools, Preparation/notebooks, Practice, Calendar, PCS Perspective and research within the chosen model's abilities and sharing permissions. Vision requires image support. An additional provider is not required. Free-model availability and usage limits vary; optional OpenRouter web research may charge even when inference is free. Only Google and OpenAI provide PCS cloud embeddings; other routes can use word/navigation recall and the optional local Nomic index.
+- PCS is free and open source. Provider API charges and any account subscription used for ChatGPT sign-in are separate. ChatGPT sign-in does not import chat history or provide unlimited use; each newly opened PCS page needs **Get ChatGPT ready**.
+- OpenRouter uses its own key and the selected upstream provider. Models need the appropriate tool/image capabilities. Small open models did not perform memory work in the release tests; choose a separate memory model, such as the recommended `anthropic/claude-haiku-5.5`. Existing blank Memory-model settings are not changed automatically. Free-model limits and web-search charges still apply.
+- Only Google and OpenAI maintain PCS cloud embeddings. Other routes retain word/navigation recall and can use the optional local Nomic index.
+- Local models, runtimes and speech packs are separate downloads. The recommended Local route requires compatible NVIDIA hardware. Custom GGUF RAM offload does not establish reliable long-prompt operation.
+- Saved continuity is encrypted locally. Original Materials and readable exports are outside that encryption. **Don’t save** controls PCS retention; cloud requests still reach the selected services. Corrections and deletion cannot retract prior disclosures or erase earlier backups.
+- AI memories and recall remain fallible. Google’s lite memory model can still merge drifting subjects; Local subject separation is unchanged. Release tests do not qualify physical devices, personal vaults, long sessions, a fresh installation or live microphone behavior.
+- Windows x64 is the current package. The linked Linux 0.9.115 and macOS Apple silicon 0.9.114 builds are archived experiments. Preserve their older filenames.
+- Direct Alibaba Qwen, automatic activity following, the former Proactive help panel and Activity’s **Explore another perspective** are retired. PCS Perspective remains available.
+- Back up before upgrading. OpenRouter connection records require PCS 0.9.151 or later; helper records and larger Practice assessments require 0.9.152 or later. Versions through 0.9.164 add no later reader requirement. **Check backup** reports the saved copy’s actual requirement.
 
-Direct Alibaba Qwen access and automatic activity following are retired. Manual Activity details and explicit activity-memory approvals remain. The older Proactive help panel is also retired; Practice, Conversation pace and PCS Perspective remain supported. The default Companion direction is calmer; custom directions are preserved.
+## Preview and publish
 
-Local models, runtimes and optional speech packs download separately and need compatible hardware. The recommended Local route needs a compatible NVIDIA GPU. Custom GGUF RAM offload is available, but fitting weights does not establish reliable long-prompt operation; the pinned 26B runtime still has a known long-prompt crash. Windows x64 is the current 0.9.154 package. Linux x64 0.9.115 and macOS Apple silicon 0.9.114 remain archived experiments, not current ports.
+This is a buildless static site. GitHub Pages serves the repository root; browsing needs no external font, analytics or AI service.
 
-Saved conversations, memories and notebooks are encrypted locally. Cloud features send permitted content to the selected provider; OpenRouter forwards it to the selected upstream provider. Don’t save controls retention, not where a live cloud request goes. Original Materials files and readable exports are outside vault encryption. Saved records remain available when models change; this does not transfer a provider’s internal state or guarantee complete recall. Back up before upgrading. OpenRouter conversation records require PCS 0.9.151 or later; OpenRouter helper data and larger Practice assessment records require 0.9.152 or later. Check backup reports the actual minimum reader for the saved vault.
+Serve the extracted full site with `python -m http.server 8000 --bind 127.0.0.1`, then open `http://127.0.0.1:8000/`. Stop the server with Ctrl+C.
 
-## Maintain and preview
+For an existing website checkout, merge the contents of **PCS-Website-0.9.164-Update.zip** into the repository root, preserving its `assets/` subfolder. **PCS-Website-0.9.164-Full-Site.zip** contains the complete static site for preview or restoration. Do not upload either ZIP as a website file. See [UPLOAD-INSTRUCTIONS.md](UPLOAD-INSTRUCTIONS.md).
 
-This is a buildless static site. GitHub Pages serves the repository root. There are no external font, analytics or AI dependencies for browsing it.
-
-- Shared Star Atlas styles and behaviour for every page: `assets/atlas.css` and `assets/atlas.js`, with the self-hosted Albert Sans font in `assets/fonts/` (SIL Open Font License, copy beside the font), the transparent wordmark `assets/pcs-wordmark-clear.webp`, and current homepage images in `screenshots/refresh-0114/` (earlier crops remain in `screenshots/crops/`). The design system is recorded in [DESIGN.md](DESIGN.md); product facts the site must keep are in [PRODUCT.md](PRODUCT.md).
-- Guide pages and the Map demo: `assets/atlas.css`, then `assets/atlas-guides.css`, with the same `assets/atlas.js`. The previous `assets/site.css`, `assets/site.js` and `assets/plain-english.css` are no longer loaded by any page.
-- Map behavior and data: `assets/map.js`, `assets/map.css`, `assets/map-data.js`.
-- Current social card: `assets/social-preview-plain.svg` and its rendered PNG.
-
-Serve a local checkout with `python -m http.server 8000 --bind 127.0.0.1`, then open `http://127.0.0.1:8000/`. Stop with Ctrl+C. See [UPLOAD-INSTRUCTIONS.md](UPLOAD-INSTRUCTIONS.md) for publishing.
-
-`PUBLICATION-MANIFEST.json` records the current site file identities. `WEBSITE-CHECKS.json` records the checks performed for the website revision, including their limits. Neither is proof of live application or device reliability. Older root ZIP/TAR files and stylesheets are historical artifacts, not the current deployment source.
+`PUBLICATION-MANIFEST.json` records file identities; `SHA256SUMS.txt` verifies them. `WEBSITE-CHECKS.json` records only checks performed on this package, with their limits. These records do not establish deployed-site or application reliability. Historical ZIP/TAR files in the repository are not deployment source.
