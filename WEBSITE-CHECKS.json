@@ -1,13 +1,10 @@
 {
-  "application_version": "0.9.164",
-  "prepared_utc": "2026-11-16T20:00:54.236632+00:00",
-  "baseline_commit": "714e3d4b39d6a3d1e29d9a0253180aad92cb7720",
+  "application_version": "0.9.180",
+  "prepared_utc": "2026-11-19T00:20:20.668123+00:00",
+  "baseline_commit": "7e7eeff802c24ff9490cc70ba1b51cffa5d0782c",
   "publication_performed": false,
-  "status": "static checks passed; bounded browser review completed with one unattributed console error",
+  "status": "static checks passed; local browser review passed at phone and desktop widths",
   "static": {
-    "application_version": "0.9.164",
-    "baseline_commit": "714e3d4b39d6a3d1e29d9a0253180aad92cb7720",
-    "publication_performed": false,
     "status": "passed",
     "pages": [
       "continuity-map.html",
@@ -17,12 +14,14 @@
       "local-ai.html",
       "memory-control.html"
     ],
+    "html_well_formed": "Tag balance, duplicate ids and JSON-LD parsing checked with a Python HTML parser on all six pages; no errors. New SVGs parsed as XML.",
     "counts": {
-      "local_references": 357,
-      "fragment_targets": 139,
-      "aria_targets": 38,
-      "json_ld": 6
+      "local_references": 272,
+      "fragment_targets": 155,
+      "aria_and_label_targets": 44,
+      "external_links": 68
     },
+    "missing_files_or_anchors": [],
     "javascript_syntax": [
       {
         "path": "assets/atlas.js",
@@ -37,112 +36,130 @@
         "passed": true
       }
     ],
-    "public_head_checks": [
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.164/PCS-0.9.164-SHA256SUMS.txt",
-        "status": 200,
-        "content_length": "185"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.164/PCS-0.9.164-Source.zip",
-        "status": 200,
-        "content_length": "11689042"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.164/PCS-0.9.164-Windows-x64.zip",
-        "status": 200,
-        "content_length": "44360639"
-      },
-      {
-        "url": "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.164",
-        "status": 200,
-        "content_length": null
-      },
-      {
-        "url": "https://raw.githubusercontent.com/PCS-PersonalContinuitySystem/PCS/main/assets/pcs-continuity-map-0.9.139.png",
-        "status": 200,
-        "content_length": "357632"
-      }
+    "current_release_links": {
+      "urls": [
+        "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.180/PCS-0.9.180-SHA256SUMS.txt",
+        "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.180/PCS-0.9.180-Source.zip",
+        "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.180/PCS-0.9.180-Windows-x64.zip",
+        "https://github.com/PCS-PersonalContinuitySystem/PCS/releases/tag/v0.9.180"
+      ],
+      "pattern": "github.com/PCS-PersonalContinuitySystem/PCS/releases/{tag/v0.9.180 | download/v0.9.180/PCS-0.9.180-<asset>}",
+      "malformed": [],
+      "http_checked": false,
+      "note": "The v0.9.180 release was not yet published when this package was prepared, so these URLs are expected to return 404 until it is. They were checked for form and tag pattern only."
+    },
+    "remaining_0_9_164_mentions": {
+      "current_version_claims": 0,
+      "deliberate_historical": [
+        {
+          "page": "getting-started.html",
+          "context": "r use the encrypted backup option below.</p>\n<p>Coming from 0.9.164: the three experimental memor"
+        },
+        {
+          "page": "memory-control.html",
+          "context": "a mistake, so check memories that matter.</p>\n    <p>Since 0.9.164, memory jobs are harder to de"
+        },
+        {
+          "page": "memory-control.html",
+          "context": "ng\">Check whether text and memories were saved</h2><p>Since 0.9.164, cloud memory checks where ne"
+        },
+        {
+          "page": "local-ai.html",
+          "context": "in about <strong>6 seconds</strong>, against 32 seconds on 0.9.164. The first Start after instal"
+        }
+      ]
+    },
+    "deliberate_older_versions": [
+      "Archived Linux x64 0.9.115 and macOS 0.9.114 links on the v0.9.114 release page",
+      "Screenshot captions and alt text naming their capture versions (0.9.114, 0.9.139)",
+      "Map demo note 'checked against PCS 0.9.154'",
+      "Reader-requirement versions (0.9.74 to 0.9.152) on the privacy and setup guides"
     ],
     "unchanged_reference_files": [
+      "assets/atlas.js",
       "assets/map-data.js",
       "assets/map.js",
-      "assets/atlas.css",
       "assets/atlas-guides.css",
       "SCREENSHOT-MANIFEST.json"
     ],
-    "screenshots_unchanged": 116,
-    "errors": [],
+    "screenshots_unchanged": true,
     "limits": [
-      "Static and public URL checks only in this receipt; browser review is recorded separately if performed.",
-      "No publication, application tests, provider requests, device checks or installer qualification."
+      "No publication, application tests, provider requests, device checks or installer qualification.",
+      "External URLs were not fetched."
     ]
   },
   "browser": {
-    "review_date": "2026-11-16",
-    "viewport": {
-      "width": 319,
-      "height": 751
-    },
-    "pages": [
+    "review_date": "2026-11-19",
+    "method": "Folder served by a short-lived python -m http.server on 127.0.0.1:8806 (stopped afterwards); pages opened in the Claude desktop browser pane (Chromium) and in headless Microsoft Edge.",
+    "viewports": [
       {
-        "path": "continuity-map.html",
-        "no_horizontal_overflow": true,
-        "broken_completed_images": 0,
-        "current_windows_download": true
+        "width": 375,
+        "height": 812
       },
       {
-        "path": "data-and-privacy.html",
-        "no_horizontal_overflow": true,
-        "broken_completed_images": 0,
-        "current_windows_download": true
+        "width": 1366,
+        "height": 900
+      }
+    ],
+    "pages": [
+      {
+        "path": "index.html",
+        "no_horizontal_overflow_375": true,
+        "no_horizontal_overflow_1366": true,
+        "broken_images": 0,
+        "current_windows_download_links_present": true
       },
       {
         "path": "getting-started.html",
-        "no_horizontal_overflow": true,
-        "broken_completed_images": 0,
-        "current_windows_download": true
-      },
-      {
-        "path": "index.html",
-        "no_horizontal_overflow": true,
-        "broken_completed_images": 0,
-        "current_windows_download": true
-      },
-      {
-        "path": "local-ai.html",
-        "no_horizontal_overflow": true,
-        "broken_completed_images": 0,
-        "current_windows_download": true
+        "no_horizontal_overflow_375": true,
+        "no_horizontal_overflow_1366": true,
+        "broken_images": 0,
+        "current_windows_download_links_present": true
       },
       {
         "path": "memory-control.html",
-        "no_horizontal_overflow": true,
-        "broken_completed_images": 0,
-        "current_windows_download": true
+        "no_horizontal_overflow_375": true,
+        "no_horizontal_overflow_1366": true,
+        "broken_images": 0,
+        "current_windows_download_links_present": true
+      },
+      {
+        "path": "local-ai.html",
+        "no_horizontal_overflow_375": true,
+        "no_horizontal_overflow_1366": true,
+        "broken_images": 0,
+        "current_windows_download_links_present": true
+      },
+      {
+        "path": "data-and-privacy.html",
+        "no_horizontal_overflow_375": true,
+        "no_horizontal_overflow_1366": true,
+        "broken_images": 0,
+        "current_windows_download_links_present": true
+      },
+      {
+        "path": "continuity-map.html",
+        "no_horizontal_overflow_375": true,
+        "no_horizontal_overflow_1366": true,
+        "broken_images": 0,
+        "current_windows_download_links_present": true
       }
     ],
     "interactions": [
-      "Homepage OpenRouter model switch updated its label.",
-      "Mobile menu expanded and collapsed.",
-      "Download selector displayed current OpenRouter setup and memory-model guidance.",
-      "Map demo rendered 11 root interface children.",
-      "Revised 0164 Perspective SVG rendered within its viewport; inspected visually.",
-      "Memory guide exposed the equivalent vertical Perspective flow at narrow width."
+      "Mobile Menu button expanded (aria-expanded true, navigation visible) and collapsed on all six pages at 375 px.",
+      "Download selector on index.html changed to Claude API and updated its guidance text.",
+      "Memory guide at 375 px: the memory diagram SVG is hidden and its text version is shown; the Perspective diagram shows its vertical steps.",
+      "Memory guide at 1366 px: memory diagram 0180 shown at 728 px wide, Perspective 0180 at 726 px; the memory diagram opens in the screenshot viewer.",
+      "Local AI guide at 1366 px: Local context 0180 shown at 728 px wide.",
+      "No console errors were reported in the browser pane."
     ],
-    "console_limit": {
-      "message": "Uncaught (in promise) TypeError: Cannot use 'in' operator to search for 'animation' in undefined",
-      "timestamp": "2026-11-16T19:58:14.602Z",
-      "source_url": null,
-      "attribution": "Unresolved. No animation, animate(), or getAnimations() reference exists in any of the three active site scripts. Observed interactions completed; an error-free console is not claimed."
-    },
+    "diagram_renders": "New SVGs rendered to PNG at 1200/1600 px and at a 358-CSS-px phone width (2x) with headless Edge and inspected; kept outside the site.",
     "limits": [
-      "Brief narrow-viewport review; no full desktop, accessibility or cross-browser qualification.",
-      "Public download buttons were inspected without downloading application ZIPs.",
+      "No full accessibility audit or cross-browser qualification.",
+      "Download links were not followed.",
       "No GitHub issue form was submitted."
     ]
   },
-  "managed_evidence": "D:\\PCS Astra\\work\\.pcs-runs\\b09b9b9c57a74e518fffa3c44740f580\\evidence",
   "limits": [
     "This package has not been committed, pushed or deployed.",
     "Website checks do not qualify PCS, providers, microphones, personal vaults or installers."

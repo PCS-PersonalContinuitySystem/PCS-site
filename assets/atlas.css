@@ -582,6 +582,17 @@ strong { font-weight: 600; }
   .prose .perspective-diagram__steps li:last-child > span { color: var(--green); }
 }
 
+/* Memory diagram: the wide SVG on larger screens, the same steps as text on phones. */
+.prose .memory-diagram__wide { display: block; }
+.prose .memory-diagram figcaption a { display: inline; }
+.prose .memory-diagram__steps { display: none; }
+@media (max-width: 760px) {
+  .prose .memory-diagram__wide { display: none; }
+  .prose .memory-diagram__steps { display: block; border-left: 3px solid var(--green); padding-left: 16px; }
+  .prose .memory-diagram__steps h3 { margin-top: 1.2em; }
+  .prose .memory-diagram__steps h3:first-child { margin-top: 0; }
+}
+
 /* Phone */
 @media (max-width: 640px) {
   .masthead__brand img { height: 28px; }

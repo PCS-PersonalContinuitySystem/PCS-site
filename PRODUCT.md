@@ -30,7 +30,7 @@ Continuity belongs to the person, not the model. PCS keeps the saved records (co
 
 ## Capabilities and Constraints
 
-- Current Windows application version is 0.9.164. Website changes never change the app version.
+- Current Windows application version is 0.9.180. Website changes never change the app version.
 - OpenRouter is a native route in guided setup and across PCS features within the selected model's tool/image support and permissions. It uses its own key, not a second required provider. Free-model inference limits vary and optional web research can charge separately. Do not promise a fixed monthly free quota.
 - Direct Alibaba Qwen access and automatic activity following are retired. Qwen-family models offered by OpenRouter are a separate choice. Manual Activity details, explicit memory approvals, Practice, Conversation pace and PCS Perspective remain. Do not restore the retired Proactive help panel in website instructions.
 - The default Companion direction gives PCS opinions, tastes and dry humor without inventing a human life story. Custom instructions are preserved. Initiative and Conversation pace remain separate controls.
@@ -80,3 +80,12 @@ Plain-language copy for non-technical readers. Visible focus, keyboard-operable 
 - Research starts in Materials → Reference notes; Practice starts in Materials → Notebooks. Activity's selected-account Explore another perspective action is removed.
 - Cloud memory placement and shrinkage checks remain fallible; Google lite can merge drifting subjects. Local separation is unchanged. Small OpenRouter open models need a capable separate Memory model.
 - Windows contains the app, offline runtime and user guides. Source contains tests and build tools. This website package does not qualify the app, devices or a fresh installation.
+
+## 0.9.180 website update
+
+- Three experimental memory settings (Let memories come to mind on their own; Start with a fuller picture of what PCS knows; Show what PCS has in mind) are off unless turned on; Quick setup does not turn them on. Arriving memory matches words, not meaning; memories over 900 characters do not arrive; in a scripted spoken OpenAI Realtime test 2 of 4 cases were answered correctly. On OpenAI Realtime it can add paid replies; on Google Live (paid personal-content only) a match can be sent before PCS knows the new topic.
+- Memory jobs: a separate review checks drafts before saving; accepted memories survive a rejected summary; empty jobs leave the Start summary; oversized batches are halved; failing batches are set aside and offered again at the next Start or by Process recent conversation; saves wait briefly for a reply; Perspective and formation take turns. About half of Claude memory jobs were turned down by the review in trials; long Claude drafts on a real vault can force one passage at a time.
+- Claude memory can use its own model (Settings → Connections → Memory); new Recommended Claude setups use Haiku 5.5 for memory, on one test. Existing setups are unchanged.
+- Local speech: about 6 s instead of 32 s to ready GPU listening and Kokoro on the test PC (first Start after install still slow); 1.5 s end-of-turn pause on Meta, Claude, ChatGPT and OpenRouter too; non-speech noise dropped. Measured with synthetic audio, not a microphone.
+- Vision retries OBS twice before pausing; web search on Claude and ChatGPT works again (checked with simulated connections); bug report counts memory-request tokens in counts and fixed words only.
+- Screenshots are unchanged. The memory, Perspective and Local context diagrams have new 0180 versions; older diagram files are kept.

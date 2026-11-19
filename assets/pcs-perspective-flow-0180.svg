@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" style="display:block;width:100%;height:auto;max-width:1600px" role="img" aria-labelledby="title desc">
+  <title id="title">PCS Perspective: room for a thought of its own</title>
+  <desc id="desc">When PCS Perspective and independent interests are enabled, an eligible active conversation with saving permission lets PCS explore a question using the selected Preparation model. A reflection may be saved separately from your memories without being shared. A finished thought can join an ordinary reply, at most four times an hour, spoken when reply voice is enabled. Enabled microphone input stays on during background thinking, including an invitation to think it over. Focused microphone-off pauses are a separate mode. An unprompted Perspective step waits for a running memory job, and automatic memory formation waits for a running Perspective step; a pause to think that you ask for is not held back. Authored for PCS 0.9.180.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto"><path d="M1 1L10 6L1 11" fill="none" stroke="#bfd29f" stroke-width="2"/></marker>
+  </defs>
+  <style>
+    text{font-family:"Albert Sans","Segoe UI",system-ui,sans-serif;fill:#eef2e8}
+    .label{font-size:20px;letter-spacing:2px;fill:#bfd29f;font-weight:600}
+    .heading{font-size:30px;font-weight:600}
+    .body{font-size:26px;fill:#d5ded0}
+    .small{font-size:23px;fill:#b3bfae}
+    .card{fill:#17262f;stroke:#405f4c;stroke-width:2}
+    .line{fill:none;stroke:#bfd29f;stroke-width:2;marker-end:url(#arrow)}
+  </style>
+  <rect width="1600" height="1000" fill="#101920"/>
+  <text x="48" y="58" class="label">OPTIONAL PCS PERSPECTIVE · PCS 0.9.180</text>
+  <text x="48" y="132" font-size="56" font-weight="600">Room for a thought of its own.</text>
+  <text x="48" y="182" class="body">Independent interests can lead to a reflection — and, sometimes, something to share.</text>
+
+  <g>
+    <rect x="48" y="242" width="320" height="320" class="card"/>
+    <text x="72" y="286" class="label">01 · A QUESTION</text>
+    <text x="72" y="340" class="heading">An open question</text>
+    <text x="72" y="395" class="body"><tspan x="72">PCS can follow interests</tspan><tspan x="72" dy="38">beyond the subject</tspan><tspan x="72" dy="38">you brought.</tspan></text>
+    <rect x="444" y="242" width="320" height="320" class="card"/>
+    <text x="468" y="286" class="label">02 · EXPLORE</text>
+    <text x="468" y="340" class="heading">A view takes shape</text>
+    <text x="468" y="395" class="body"><tspan x="468">Your Preparation model</tspan><tspan x="468" dy="38">thinks first, then files</tspan><tspan x="468" dy="38">its conclusion.</tspan></text>
+    <rect x="840" y="242" width="320" height="320" class="card"/>
+    <text x="864" y="286" class="label">03 · CONSIDER</text>
+    <text x="864" y="340" class="heading">Worth sharing?</text>
+    <text x="864" y="395" class="body"><tspan x="864">A reflection can be kept</tspan><tspan x="864" dy="38">in PCS Perspective</tspan><tspan x="864" dy="38">without being said.</tspan></text>
+    <rect x="1236" y="242" width="316" height="320" fill="#bfd29f"/>
+    <text x="1260" y="286" class="label" style="fill:#405f4c">04 · OFFER</text>
+    <text x="1260" y="340" class="heading" style="fill:#101920">A thought to share</text>
+    <text x="1260" y="395" class="body" style="fill:#17262f"><tspan x="1260">A finished thought can</tspan><tspan x="1260" dy="38">join an ordinary reply,</tspan><tspan x="1260" dy="38">spoken if voice is on.</tspan></text>
+    <path d="M380 402H430" class="line"/><path d="M776 402H826" class="line"/><path d="M1172 402H1222" class="line"/>
+  </g>
+
+  <rect x="48" y="602" width="1504" height="133" fill="#1f323c"/>
+  <text x="76" y="654" font-size="34" font-weight="600">While it explores, you can still speak.</text>
+  <text x="76" y="701" class="body">Your enabled microphone stays on during background thinking.</text>
+  <text x="48" y="790" class="small">A finished thought can join an ordinary reply, at most four times an hour.</text>
+  <text x="48" y="828" class="small">Independent steps: up to 12 an hour on cloud Preparation, or 30 on Local.</text>
+  <text x="48" y="866" class="small">An unprompted step waits for a running memory job, and memory formation waits for it.</text>
+  <path d="M48 900H1552" stroke="#405f4c"/>
+  <text x="48" y="938" class="small">Requires an eligible conversation and saving permission. Each step thinks, then files its conclusion.</text>
+  <text x="48" y="974" class="small">Cloud steps use two requests. Saved apart from your memories. Explore now offers an input-off pause.</text>
+</svg>

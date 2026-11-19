@@ -1,5 +1,17 @@
 # Picture and diagram provenance
 
+## November 18, 2026 update for PCS 0.9.180
+
+Three new hand-authored diagrams replace the ones the guides displayed. None is an app capture or a live AI result, and none guarantees recall or model accuracy.
+
+- [Memory flow 0180](assets/pcs-memory-flow-0180.svg) is redrawn for 0.9.180: original passages, the memory writer's drafts and a separate review before anything is saved (a rejected draft is not saved; its passages wait), your corrections, links, settled marks and named lessons, and three ways memory reaches a conversation: at Start (the Start summary, or the optional, experimental fuller picture), as you talk (optional, experimental memories that come to mind on their own) and when more is needed (a permitted lookup with sharing, version and correction checks). The memory guide shows the same content as text on phones.
+- [PCS Perspective 0180](assets/pcs-perspective-flow-0180.svg) keeps the 0164 drawing, with the 0.9.180 label and one added line: an unprompted step waits for a running memory job, and memory formation waits for it. The memory guide's vertical phone version is unchanged.
+- [Local context 0180](assets/pcs-local-context-0180.svg) keeps the 0120 drawing, which still showed a 0.9.154 label, with the 0.9.180 label and one added line about the optional, experimental memories that come to mind on their own.
+
+All app screenshot bytes and capture labels remain unchanged; no new 0.9.180 screenshot is claimed. The older 0102, 0114, 0120, 0154 and 0164 diagrams stay in place for existing links.
+
+---
+
 ## November 16, 2026 update for PCS 0.9.164
 
 The memory guide now displays [the revised PCS Perspective explanation](assets/pcs-perspective-flow-0164.svg), with equivalent vertical HTML on phones. It reflects the published 0.9.164 release: think first then file a conclusion, background microphone input, focused Explore now pauses, and thoughts joining an ordinary reply at most four times an hour. It is authored explanatory artwork, not an app capture or a live AI result.
@@ -80,7 +92,7 @@ The eight original images are unmodified captures of the shipped PCS 0.9.114 int
 
 [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json) records exact image versions, dimensions, hashes and provenance. The local delivery evidence retains source binding, capture scripts, fixture description and cleanup receipts. Images were not repainted, relabeled or altered to simulate a newer release.
 
-The current [memory diagram](assets/pcs-memory-flow-0120.svg) explains sources, corrections, linked revisions, settled marks, named lessons, optional memory awareness and permitted recall. The [Local context diagram](assets/pcs-local-context-0120.svg) explains context choice and long-session working-context compaction. Both explanations were checked against 0.9.154 and now describe manual activity scopes, without the retired automatic classifier. They are hand-authored explanations, not screenshots or guarantees of model accuracy. The original [0.9.114 memory diagram](assets/pcs-memory-flow-0114.svg) and [0.9.114 Local diagram](assets/pcs-local-context-0114.svg) remain unchanged for existing links.
+The 0.9.154 [memory diagram](assets/pcs-memory-flow-0120.svg) explained sources, corrections, linked revisions, settled marks, named lessons, optional memory awareness and permitted recall. The 0.9.154 [Local context diagram](assets/pcs-local-context-0120.svg) explained context choice and long-session working-context compaction. Both explanations were checked against 0.9.154 and now describe manual activity scopes, without the retired automatic classifier. They are hand-authored explanations, not screenshots or guarantees of model accuracy. The original [0.9.114 memory diagram](assets/pcs-memory-flow-0114.svg) and [0.9.114 Local diagram](assets/pcs-local-context-0114.svg) remain unchanged for existing links.
 
 The interactive website Map is a separate fictional demonstration: 60 themes, 299 connections and 76 records. It preserves Mara's eight-passage story and free exploration. It now opens in Constellations, follows a selected theme into Focus, and offers All links, List, a navigation trail and Compare with… routes through shared records. Map settings groups filters and coverage; Views & notes holds temporary named views and connection notes. Counts come from explicit shared-record membership. It makes no AI request, reads no personal vault and saves no visitor changes after the page closes or reloads.
 
