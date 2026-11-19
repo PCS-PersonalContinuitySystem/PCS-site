@@ -57,7 +57,7 @@ Continuity belongs to the person, not the model. PCS keeps the saved records (co
 
 - Genuine 0.9.114 app screenshots with authored fictional data in `screenshots/pcs-*-0114.png` (conversation, library, map, materials, notebook, calendar, memory lessons, memory links). Provenance in `SCREENSHOT-MANIFEST.json`.
 - Fresh 0.9.139 Map screenshots: `screenshots/pcs-map-0139.jpg` (homepage, full screen) and `screenshots/pcs-map-focus-0139.png` (guides), made with a hand-written fictional demonstration vault and no live AI result. Provenance in `SCREENSHOT-MANIFEST.json`.
-- An interactive Continuity Map demo with a fictional story (`continuity-map.html`, `assets/map*.js`).
+- An interactive Continuity Map demo (`continuity-map.html`): the unmodified PCS 0.9.180 Map client in `assets/map-0180/`, answered from responses recorded with PCS 0.9.180's Map code on an invented 86-record vault (Mara's story plus a night-sky strand). Older demo files `assets/map*.js` are kept, unused.
 - Five guides: getting started, memory, local AI, data and privacy, map demo.
 - No testimonials, user counts, press, benchmarks or customer logos exist. Do not invent any.
 
@@ -75,7 +75,7 @@ Plain-language copy for non-technical readers. Visible focus, keyboard-operable 
 ## 0.9.164 website update
 
 - New-user setup uses Get acquainted. Each newly opened page using ChatGPT sign-in needs Get ChatGPT ready.
-- The app Map opens on All links, displaying up to 1,000 themes and 10,000 connections. The website demo retains its older Constellations start.
+- The app Map opens on All links, displaying up to 1,000 themes and 10,000 connections. The website demo (0.9.180 Map client) also opens on All links.
 - Local speech on Meta, Claude, ChatGPT and OpenRouter allows 60-second turns, warning at 50.
 - Research starts in Materials → Reference notes; Practice starts in Materials → Notebooks. Activity's selected-account Explore another perspective action is removed.
 - Cloud memory placement and shrinkage checks remain fallible; Google lite can merge drifting subjects. Local separation is unchanged. Small OpenRouter open models need a capable separate Memory model.

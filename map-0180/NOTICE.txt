@@ -1,0 +1,33 @@
+PCS website Map demo (assets/map-0180)
+
+The files in app/ are first-party PCS 0.9.180 code, copied unmodified from
+pcs/static/ in PCS-0.9.180-Source.zip:
+
+  continuity_map_ui.js, map_layouts.js, map_constellations.js,
+  map_fullscreen_ui.js, source_evidence_ui.js, style.css,
+  continuity_map.css, map_space.css, map_constellations.css,
+  map_shell.css, continuity_library.css, workspace_refresh.css,
+  workspace_usability.css, settings_navigation.css, experience.css,
+  map-space.svg
+
+map-demo-frame.html takes the Map markup from that release's index.html.
+demo-shim.js and demo-frame.css are website demo code that stands in for the
+PCS server and app around the Map. data/ holds responses recorded from PCS
+0.9.180's own Map code on an invented vault; every record is fictional.
+
+PCS - Personal Continuity System
+Copyright (C) 2026 Courtney Dickson
+SPDX-License-Identifier: GPL-3.0-only
+
+PCS is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, version 3 of the License.
+
+PCS is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for details.
+
+A copy of the license is in LICENSE-GPL-3.0.txt beside this file. The PCS
+licensing grant is GNU GPL version 3 only. The complete application source,
+with its LICENSE, COPYRIGHT and THIRD_PARTY files, is
+https://github.com/PCS-PersonalContinuitySystem/PCS/releases/download/v0.9.180/PCS-0.9.180-Source.zip

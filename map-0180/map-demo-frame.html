@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-map-dotted-percent="60">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex">
+  <title>PCS 0.9.180 Map demo (invented records)</title>
+  <meta name="theme-color" content="#101920">
+  <link rel="icon" type="image/svg+xml" href="../pcs-star.svg">
+  <!-- PCS 0.9.180 Map client and styles, unmodified first-party PCS code (GPL-3.0-only); see NOTICE.txt. -->
+  <link rel="stylesheet" href="app/style.css?v=0180-r1">
+  <link rel="stylesheet" href="app/continuity_map.css?v=0180-r1">
+  <link rel="stylesheet" href="app/map_space.css?v=0180-r1">
+  <link rel="stylesheet" href="app/map_constellations.css?v=0180-r1">
+  <link rel="stylesheet" href="app/map_shell.css?v=0180-r1">
+  <link rel="stylesheet" href="app/continuity_library.css?v=0180-r1">
+  <link rel="stylesheet" href="app/workspace_refresh.css?v=0180-r1">
+  <link rel="stylesheet" href="app/workspace_usability.css?v=0180-r1">
+  <link rel="stylesheet" href="app/settings_navigation.css?v=0180-r1">
+  <link rel="stylesheet" href="app/experience.css?v=0180-r1">
+  <link rel="stylesheet" href="demo-frame.css?v=0180-r1">
+  <script src="app/source_evidence_ui.js?v=0180-r1" defer></script>
+  <script src="app/map_layouts.js?v=0180-r1" defer></script>
+  <script src="app/map_constellations.js?v=0180-r1" defer></script>
+  <script src="app/map_fullscreen_ui.js?v=0180-r1" defer></script>
+  <script src="app/continuity_map_ui.js?v=0180-r1" defer></script>
+  <script src="demo-shim.js?v=0180-r1" defer></script>
+</head>
+<body class="pcs-map-demo">
+<main>
+<section class="page content-page map-active" id="page-memories" aria-label="Continuity Map demo with invented records">
+<p class="demo-phone-note">On a phone this demo opens on List. Choose Map for the sky; Full screen and the full Map are for larger screens.</p>
+        <div class="continuity-view-header"><nav class="ideas-tabs" role="tablist" aria-label="Continuity views"><button id="ideas-show-map" class="button secondary" type="button" role="tab" aria-controls="map-view" aria-selected="true" aria-pressed="true" tabindex="0">Map</button><button id="ideas-show-library" class="button secondary" type="button" role="tab" aria-selected="false" aria-pressed="false" tabindex="-1">Library</button></nav><header class="library-heading"><div><p class="eyebrow">YOUR SAVED CONTINUITY</p><h2>Library</h2><p>Browse memories and notebooks, check their sources, and pick up a thought.</p></div><span class="map-local">Local browsing · optional Jev</span></header><p class="continuity-map-intro">Recurring wording and saved topic labels, with the records behind each connection.</p><span class="map-local continuity-map-local">◇ On your PC · no AI request</span></div>
+        <div id="map-view" class="continuity-map map-shell" role="tabpanel" aria-labelledby="ideas-show-map">
+          <p id="demo-notice" class="demo-notice" role="status" aria-live="polite" hidden></p>
+          <div id="map-fullscreen-bar" class="map-fullscreen-bar" hidden><div><strong>Your continuity map</strong><span>Explore saved connections · no AI request</span></div><button id="map-fullscreen-exit" class="button secondary" type="button">Exit full screen <span aria-hidden="true">↙</span></button></div>
+          <div class="map-workspace-controls">
+          <div class="map-toolbar">
+            <form id="map-find-form" class="map-find"><label class="map-visually-hidden" for="map-find">Find a theme in this map</label><div class="inline-form"><input id="map-find" type="search" maxlength="80" autocomplete="off" placeholder="Find a theme…"><button id="map-find-button" type="submit" class="button secondary">Find</button></div></form>
+            <div class="map-main-views" role="group" aria-label="Map view"><button id="map-mode-groups" class="chip-button" type="button" aria-pressed="false">Constellations</button><button id="map-mode-focus" class="chip-button" type="button" aria-pressed="false">Focus</button><button id="map-mode-connections" class="chip-button" type="button" aria-pressed="false">All links</button></div>
+            <div class="map-view-switch" role="group" aria-label="Show as"><button id="map-graph-mode" class="chip-button" aria-pressed="true" type="button">Map</button><button id="map-list-mode" class="chip-button" aria-pressed="false" type="button">List</button></div>
+            <span class="map-toolbar-spacer"></span>
+            <div class="map-popover-anchor"><button id="map-views-toggle" class="button secondary" type="button" aria-expanded="false" aria-controls="map-views-panel">Views &amp; notes</button>
+              <section id="map-views-panel" class="map-popover" aria-label="Saved views and your connection notes" hidden>
+                <div class="map-popover-head"><h3>Saved views</h3><button class="map-popover-close" type="button" data-map-popover-close aria-label="Close saved views and notes">×</button></div>
+                <p class="map-muted">A view keeps the date window, filters, layout and viewport. Opening it rechecks current records. Hidden items and manual positions are shared by every view.</p>
+                <div class="inline-form"><label for="map-view-name">View name<input id="map-view-name" maxlength="120" autocomplete="off" placeholder="A name for this view…"></label><button id="map-save-view" class="button secondary" type="button">Save current view</button></div>
+                <div id="map-named-views"></div>
+                <h3>Your connection notes</h3>
+                <p class="map-muted">The first line of a note is its title. Notes stay readable when their connection is hidden, filtered out or gone, and they never enter Conversation drafts.</p>
+                <div id="map-saved-notes"></div>
+              </section></div>
+            <div class="map-popover-anchor"><button id="map-settings-toggle" class="button secondary" type="button" aria-expanded="false" aria-controls="map-settings-panel">Map settings</button>
+              <section id="map-settings-panel" class="map-popover" aria-label="Map settings" hidden>
+                <div class="map-popover-head"><h3>Map settings</h3><button class="map-popover-close" type="button" data-map-popover-close aria-label="Close Map settings">×</button></div>
+                <h4>What to show</h4>
+                <div class="map-filter-fields"><label for="map-kind">Source type<select id="map-kind"><option value="all">Memories &amp; notebooks</option><option value="memory">Memories</option><option value="notebook">Notebooks</option></select></label><label for="map-themes">Themes from<select id="map-themes" aria-describedby="map-themes-hint"><option value="labels">Saved labels only</option><option value="labels_first">Labels, then wording for unlabeled records</option><option value="all" selected>Labels and repeated wording</option></select></label><label class="check-row"><input id="map-single" type="checkbox"> Themes found only once</label><label class="check-row"><input id="map-strong" type="checkbox" aria-describedby="map-line-legend"> Only connections shared by 2+ records</label><label for="map-count-mode">Size themes by<select id="map-count-mode" aria-describedby="map-count-hint"><option value="records">Observations</option><option value="unique">Distinct saved content</option></select></label></div>
+                <p id="map-themes-hint" class="map-muted">Saved labels are the topics and tags stored with each record. Wording adds words that repeat across records, and the names of people, places and projects in a Local account's statements; phrasing found in more than a fifth of records, such as “next step”, is set aside. Each current statement of a Local account counts as one observation; other records count once.</p>
+                <p id="map-count-hint" class="map-muted">Distinct saved content groups identical current content and provenance. Theme source and sizing are page-only choices that reset on Lock.</p>
+                <h4>Scope</h4>
+                <form id="map-scope-form"><label for="map-query">Only records containing these words</label><div class="inline-form"><input id="map-query" maxlength="300" autocomplete="off" placeholder="Words in saved memories or notebooks…"><button id="map-scope-submit" type="submit" class="button secondary">Apply</button></div><small>Clear the field and apply to return to the full overview.</small></form>
+                <h4>Hidden from the map</h4>
+                <div id="map-hidden-items"></div>
+                <div class="map-settings-actions"><button id="map-undo-hide" class="text-button" type="button" disabled>Undo hide</button><button id="map-restore-hidden" type="button" class="text-button">Restore all hidden items</button><button id="map-reset-layout" class="text-button" type="button">Reset positions in this view</button><button id="map-open-library" class="text-button" type="button">Browse saved records in Library →</button></div>
+                <h4>Coverage</h4>
+                <p id="map-scope"></p>
+                <div id="map-index-panel" class="map-index-panel" hidden><p id="map-index-text" class="map-muted"></p><button id="map-index-build" class="button secondary" type="button">Index the whole archive</button><p id="map-index-status" class="map-muted" role="status" aria-live="polite"></p></div>
+                <details class="map-about"><summary>About this map</summary>
+                  <ul>
+                    <li>Themes are labels and repeated wording from your current saved records. No AI writes or groups them, and nothing is written back into memory.</li>
+                    <li>A line means both themes appear in the same saved record. It does not mean they agree or that one caused the other.</li>
+                    <li>Counts are records, not separate events. Several records can come from one conversation.</li>
+                    <li>Dates are when a record was last saved or edited, not when you first had the thought.</li>
+                    <li>Colors, constellations and positions are for layout only. They are not categories of you.</li>
+                  </ul>
+                  <p id="map-visual-key" class="map-legend"></p>
+                  <p id="map-line-legend" class="map-line-legend">Dotted lines target the weakest 60% of displayed connections. Change this in Settings → Appearance → Map options.</p>
+                  <p id="map-coverage-summary" class="map-coverage-summary" role="status" aria-live="polite"></p>
+                  <p id="map-layout-explanation" class="map-muted" role="status" aria-live="polite"></p>
+                </details>
+              </section></div>
+            <button id="map-refresh" class="button secondary" type="button">Refresh</button>
+            <button id="map-fullscreen" class="button secondary" type="button" aria-controls="map-view" aria-expanded="false">Full screen <span aria-hidden="true">↗</span></button>
+            <div id="map-matches" aria-label="Matching themes"></div>
+          </div>
+          <div class="map-trail-row">
+            <nav id="map-history" class="map-history" aria-label="Exploration history"><button id="map-back" class="chip-button" type="button" aria-label="Back" disabled>←</button><button id="map-forward" class="chip-button" type="button" aria-label="Forward" disabled>→</button></nav>
+            <nav id="map-trail" class="map-trail" aria-label="Where you are in the map"></nav>
+            <div id="map-constellation-trail" class="map-constellation-trail" aria-label="Constellation pages"></div>
+            <div id="map-anchor-controls" class="map-anchor-controls" hidden><div id="map-focus-controls"><label for="map-focus-center">Focus on<select id="map-focus-center"></select></label><label class="check-row"><input id="map-second-ring" type="checkbox"> Two steps out</label></div><div id="map-compare-controls"><label for="map-compare-left">Compare<select id="map-compare-left"></select></label><label for="map-compare-right">with<select id="map-compare-right"></select></label></div></div>
+            <strong id="map-stats"></strong>
+          </div>
+          <div id="map-pins-row" class="map-pin-row" hidden><div id="map-pins"></div><button id="map-clear-pins" type="button" class="text-button">Clear pins</button></div>
+          <p id="map-presentation-status" class="map-muted" role="status" aria-live="polite"></p>
+          <p id="map-status" role="status" aria-live="polite">Unlock your vault to explore its connections.</p>
+          </div>
+          <div class="map-layout">
+            <div class="map-visual">
+              <div id="map-focus-summary" class="map-focus-summary" aria-label="Focus neighborhood" hidden></div>
+              <div class="map-viewport">
+              <div class="map-notices"><div class="map-save-state"><p id="map-layout-status" class="map-layout-status" role="status" aria-live="polite" aria-atomic="true"></p><button id="map-retry-load" class="text-button" type="button" hidden>Retry Map loading</button><button id="map-retry-save" class="text-button" type="button" hidden disabled>Retry Map save</button></div><p id="map-toast" class="map-toast" role="status" aria-live="polite" aria-atomic="true" hidden></p></div>
+              <div id="map-stage" class="map-stage"><div class="map-stage-tools" aria-label="Map navigation"><button id="map-zoom-in" class="chip-button" type="button" aria-label="Zoom in">+</button><button id="map-zoom-out" class="chip-button" type="button" aria-label="Zoom out">−</button><button id="map-fit" class="chip-button" type="button">Fit</button><button id="map-clear-selection" class="chip-button" type="button" disabled>Clear selection</button></div>
+                <div id="map-highlights" class="map-highlights" role="group" aria-label="Highlight on the map"><button id="map-highlight-lately" class="chip-button" type="button" aria-pressed="false" disabled>Saved lately</button><button id="map-highlight-quiet" class="chip-button" type="button" aria-pressed="false" disabled>Gone quiet</button><button id="map-highlight-strong" class="chip-button" type="button" aria-pressed="false" disabled>Strongest links</button><button id="map-highlight-thoughts" class="chip-button map-highlight-pcs" type="button" aria-pressed="false" disabled hidden>PCS's thoughts</button><button id="map-highlight-start" class="chip-button map-highlight-pcs" type="button" aria-pressed="false" disabled hidden>Told at Start</button></div>
+                <svg id="map-canvas" xmlns="http://www.w3.org/2000/svg" tabindex="0" role="group" aria-label="Interactive continuity map" aria-describedby="map-navigation-help"><g id="map-scene"></g></svg>
+                <div id="map-active-label" class="map-active-label" aria-hidden="true" hidden></div>
+                <p id="map-empty">Unlock your vault to explore its connections.</p>
+                <details class="map-navigation-disclosure"><summary>Pan, zoom &amp; keyboard help</summary><p id="map-navigation-help" class="map-navigation-help">Drag the background to pan; drag a theme to move it. Scroll to zoom. Keyboard: focus the map, use arrows, + / −, or 0 to fit. Theme buttons and List offer keyboard access; the inspector lists every visible connection.</p></details>
+              </div>
+              <div id="map-list" class="map-list" aria-label="Theme list" hidden></div>
+              </div>
+              <div id="map-timeline-panel" class="map-timeline-strip" role="group" aria-label="Saved-date window">
+                <label for="map-days" class="map-timeline-window">Saved window<select id="map-days"><option value="0">All dates</option><option value="30">30 days</option><option value="90">90 days</option></select></label>
+                <div class="map-timeline-controls"><button id="map-previous-window" type="button" class="chip-button" aria-label="Preceding window">←</button><label for="map-through"><span class="map-visually-hidden">Through date (UTC)</span><input id="map-through" type="date" min="1900-01-01" aria-describedby="map-timeline-caption" title="Through date (UTC). Blank follows Today."></label><button id="map-next-window" type="button" class="chip-button" aria-label="Next window">→</button><button id="map-today" type="button" class="chip-button">Today</button></div>
+                <input id="map-scrubber" type="range" min="0" max="0" value="0" step="1" aria-label="Explore by last saved date" aria-describedby="map-timeline-caption">
+                <p id="map-timeline-caption" class="map-muted" role="status"></p>
+                <details class="map-activity-disclosure"><summary>Compare with the preceding window</summary><div id="map-activity"></div></details>
+              </div>
+            </div>
+            <div class="map-side">
+              <section id="map-discovery" class="map-discovery" aria-label="Discover and revisit your landmarks" hidden></section>
+              <aside id="map-inspector" class="map-inspector" aria-label="Patterns, themes and connection evidence"></aside>
+            </div>
+          </div>
+        </div>
+</section>
+</main>
+</body>
+</html>

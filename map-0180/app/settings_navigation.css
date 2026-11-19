@@ -1,0 +1,163 @@
+/* Settings has one home per control and one scroll surface. */
+#page-settings { --page-width: 1320px; }
+#page-settings .settings-heading { margin-bottom: 9px; }
+#page-settings .settings-heading > p { max-width: 75ch; line-height: 1.5; }
+#page-settings .settings-heading > button { flex: none; }
+#page-settings .settings-heading { flex-wrap: wrap; }
+#page-settings .settings-heading-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-left: auto; }
+#page-settings .settings-update-button { background: #bfd099; color: #142018; border: 1px solid #bfd099; padding: 9px 16px; font-weight: 600; white-space: nowrap; }
+#page-settings .settings-update-button:hover:not(:disabled) { background: #d0dfae; border-color: #d0dfae; }
+#page-settings .settings-update-button:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+#page-settings .settings-update-result { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: baseline; gap: 6px 16px; }
+#page-settings .settings-update-result > p { margin: 0 0 10px; }
+#page-settings .settings-update-result > p:empty { display: none; }
+#page-settings .settings-update-result > a { margin-bottom: 10px; }
+@media (forced-colors: active) { #page-settings .settings-update-button { border-color: ButtonText; } }
+.settings-scope { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; padding: 9px 14px; margin-bottom: 12px; border: 1px solid var(--line); border-radius: 12px; background: color-mix(in srgb, var(--accent) 4%, var(--panel)); }
+.settings-scope > div { display: grid; gap: 4px; }
+.settings-scope > div > span { color: var(--dim); font-size: 12px; }
+.settings-scope strong { font-size: 14px; font-weight: 600; }
+.settings-scope > p { flex: 1 1 230px; max-width: 50ch; margin: 0 0 0 auto; color: var(--dim); font-size: 13px; line-height: 1.5; }
+.settings-categories { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; padding: 4px; margin-bottom: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+.settings-categories button { min-width: 0; display: grid; gap: 4px; padding: 12px; border: 1px solid transparent; border-radius: 8px; color: var(--dim); background: transparent; text-align: left; cursor: pointer; font: inherit; }
+.settings-categories strong { color: var(--text); font-size: 14px; line-height: 1.35; }
+.settings-categories span { font-size: 12px; line-height: 1.4; }
+.settings-categories button[aria-selected="true"] { background: color-mix(in srgb, var(--accent) 10%, var(--bg)); border-color: color-mix(in srgb, var(--accent) 60%, var(--line)); }
+.settings-categories button[aria-selected="true"] strong { color: var(--accent); }
+.settings-categories button:hover { background: color-mix(in srgb, var(--accent) 6%, var(--bg)); }
+.settings-categories button:focus-visible, .settings-category-panel:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.settings-category-panel[hidden], #page-settings #settings-form[hidden], #page-settings #settings-file-activity[hidden] { display: none; }
+.settings-category-heading { margin: 0 2px 12px; }
+.settings-category-heading h2 { font: 26px/1.3 var(--heading); margin: 0 0 6px; }
+.settings-category-heading > p { color: var(--dim); font-size: 14px; line-height: 1.6; max-width: 90ch; margin: 0; }
+#page-settings .settings-map-options { margin-top: 16px; align-items: start; }
+.settings-map-choice { flex: 1 1 380px; max-width: 620px; min-width: 0; }
+.map-threshold-control { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+.map-threshold-control input { width: 100px; flex: none; }
+.map-threshold-control span { color: var(--dim); font-size: 14px; }
+#page-settings .settings-map-options .field-hint { margin: 8px 0 0; }
+@media (max-width: 700px) {
+  #page-settings .settings-map-options { flex-direction: column; gap: 16px; }
+  .settings-map-choice { flex: none; width: 100%; }
+}
+#settings-panel-connections > .settings-category-heading { display: none; }
+#page-settings .settings-group { margin-bottom: 14px; scroll-margin-top: 16px; }
+#page-settings .settings-group > summary { padding: 16px 19px; }
+#page-settings .settings-group > summary small { max-width: 85ch; }
+#page-settings .settings-group-body { padding: 0 19px 12px; }
+#page-settings .settings-group-body > .settings-section { padding: 15px 16px; margin-bottom: 14px; }
+#page-settings .settings-group-body > .settings-section:last-child { margin-bottom: 0; }
+#page-settings .settings-group-body > .local-capability { border: 0; padding-top: 4px; }
+#page-settings .settings-group-body > .local-capability > .local-capability-heading { display: none; }
+#page-settings {
+  --settings-heading: #bdd9f5;
+  --settings-heading-wash: #203340;
+}
+:root[data-theme="light"] #page-settings {
+  --settings-heading: #245479;
+  --settings-heading-wash: #e6edf4;
+}
+:root[data-theme="dark"] #page-settings {
+  --settings-heading: #bfdbfa;
+  --settings-heading-wash: #202c3a;
+}
+/* Major headings are separated by shape, weight and spacing as well as color.
+   Asset labels and explanatory/status copy retain their own hierarchy. */
+#page-settings .settings-category-heading h2,
+#page-settings .settings-section > legend,
+#page-settings .settings-maintenance-card h3,
+#page-settings .settings-appearance-card h3,
+#page-settings .settings-file-activity h3 { color: var(--settings-heading); font-weight: 650; }
+#page-settings .settings-group > summary {
+  color: var(--settings-heading);
+  font-weight: 650;
+  background: var(--settings-heading-wash);
+  border-left: 4px solid var(--settings-heading);
+  border-radius: 10px;
+}
+#page-settings .settings-group[open] > summary { border-radius: 10px 10px 0 0; }
+#page-settings .settings-group > summary small { font-weight: 400; }
+#page-settings .local-capability + .local-capability { margin-top: 16px; padding-top: 22px; border-top: 2px solid var(--line); }
+#page-settings .local-capability-heading {
+  padding: 13px 16px;
+  background: var(--settings-heading-wash);
+  border-left: 4px solid var(--settings-heading);
+  border-radius: 3px 9px 9px 3px;
+  margin-bottom: 16px;
+}
+#page-settings .local-capability-heading h3 { color: var(--settings-heading); font-weight: 650; font-size: 21px; }
+#page-settings .local-capability-heading :is(.required-label, .optional) {
+  display: inline-block;
+  margin: 3px 0 3px 8px;
+  padding: 2px 8px;
+  border: 1px solid var(--dim);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--panel);
+  font: 600 12px/1.5 "Segoe UI", sans-serif;
+  vertical-align: middle;
+}
+#page-settings .local-capability-heading .required-label { border-color: var(--accent); color: var(--accent); }
+#page-settings #settings-local-voice .local-capability-heading { display: flex; }
+#page-settings .local-voice-subheading { margin-top: 24px; }
+@media (forced-colors: active) {
+  #page-settings .settings-group > summary,
+  #page-settings .local-capability-heading { border-color: CanvasText; }
+}
+#page-settings #settings-research .local-capability-heading { display: flex; }
+#page-settings .field-hint { max-width: 95ch; }
+#page-settings .connection-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#page-settings .settings-footer { bottom: 0; gap: 18px; padding: 13px 16px; margin-top: 18px; }
+#page-settings .settings-footer > p { max-width: 80ch; font-size: 13px; line-height: 1.6; }
+#page-settings #settings-locking { margin-top: 0; }
+.settings-maintenance-card, .settings-appearance-card { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+.settings-maintenance-card > div, .settings-appearance-card > div:first-child { flex: 1 1 280px; }
+.settings-maintenance-card h3, .settings-appearance-card h3, .settings-file-activity h3 { margin: 0 0 7px; font: 21px/1.3 var(--heading); }
+.settings-maintenance-card p, .settings-appearance-card p { color: var(--dim); margin: 0; line-height: 1.55; }
+#page-settings .settings-appearance-card .settings-theme { width: min(100%, 300px); }
+#page-settings .settings-theme .field { flex-direction: column; align-items: stretch; }
+#page-settings .settings-theme .settings-theme-status { text-align: left; margin-top: 7px; }
+.settings-file-activity { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 18px; margin-top: 16px; border: 1px solid var(--line); border-radius: 10px; padding: 12px 15px; }
+.settings-file-activity h3 { font-size: 17px; }
+#page-settings .settings-file-activity #settings-assets-status { margin: 0; font-size: 13px; }
+.local-saved-profiles > summary, .cloud-saved-profiles > summary { cursor: pointer; color: var(--text); font-weight: 600; line-height: 1.4; }
+.local-saved-profiles > summary > span, .cloud-saved-profiles > summary > span { display: block; margin: 4px 0 0 19px; color: var(--dim); font-size: 13px; font-weight: 400; }
+.saved-profiles-body { padding-top: 14px; }
+.cloud-saved-profiles { margin: 0 0 18px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+.cloud-saved-profiles .inline-form { flex-wrap: wrap; margin-top: 12px; }
+.cloud-saved-profiles .local-profiles-fields { grid-template-columns: 1fr 1fr; }
+.experimental-provider-note { border-left: 3px solid var(--accent); padding: 10px 14px; background: color-mix(in srgb, var(--accent) 5%, var(--bg)); }
+#page-settings:has(#connection-openrouter:checked) #cloud-research-settings > :not(legend):not(.check-row):not(#provider-research-unavailable) { display: none; }
+/* Library context uses the same upper row as the view choice. */
+.continuity-view-header > .library-heading { display: none; }
+#page-memories.library-active .continuity-view-header > .library-heading { display: flex; flex: 1 1 450px; min-width: 0; margin: 0; gap: 14px; }
+.continuity-view-header > .library-heading h2 { margin: 0 0 3px; font-size: 23px; }
+.continuity-view-header > .library-heading p { font-size: 14px; line-height: 1.4; }
+.continuity-view-header > .library-heading .map-local { flex-shrink: 0; padding: 6px 11px; font-size: 13px; }
+@media (max-width: 980px) {
+  .settings-categories { display: flex; overflow-x: auto; padding-bottom: 5px; }
+  .settings-categories button { flex: 1 0 auto; min-width: 145px; }
+  .settings-scope > p { margin-left: 0; flex-basis: 100%; max-width: none; }
+}
+@media (max-width: 620px) {
+  #page-settings .settings-heading { display: flex; align-items: start; gap: 10px; }
+  .settings-scope { gap: 12px 24px; padding: 12px; }
+  .settings-scope > div { flex: 1 1 180px; }
+  .settings-categories { margin-bottom: 18px; }
+  .settings-categories button { padding: 10px; min-width: 138px; }
+  .settings-category-heading h2 { font-size: 24px; }
+  #page-settings .settings-group-body { padding-inline: 12px; }
+  #page-settings .settings-group-body > .settings-section { padding-inline: 3px; }
+  #page-settings .connection-choices { grid-template-columns: 1fr; }
+  #page-settings .settings-footer { position: static; flex-direction: column; align-items: stretch; gap: 10px; }
+  #page-settings .settings-footer > p { flex: initial; }
+  #page-settings .settings-footer > .button { width: 100%; }
+  .cloud-saved-profiles .local-profiles-fields { grid-template-columns: 1fr; }
+  #page-memories.library-active .continuity-view-header > .library-heading { flex-basis: 100%; }
+  .continuity-view-header > .library-heading h2 { font-size: 22px; }
+}
+
+.settings-purpose { margin: 28px 4px 12px; font-size: 15px; color: var(--dim); }
+.optional-review { margin: 14px 0; padding: 12px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); overflow-wrap: anywhere; }
+#settings-panel-tools .local-capability-heading { display: flex; }
+#settings-controls > .credential-storage { margin-top: 18px; padding: 12px 4px; }
