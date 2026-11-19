@@ -13,7 +13,7 @@ This repository contains the public GitHub Pages website. The current Windows ap
 | Page | Purpose |
 | --- | --- |
 | [Home](index.html) | Introduce PCS, show its interface, and link to requirements and downloads. |
-| [Map demo](continuity-map.html) | Explore fictional related memories and their supporting passages. |
+| [Map demo](continuity-map.html) | Explore the PCS 0.9.180 Map interface on invented records and read the passages behind each connection. |
 | [Memory](memory-control.html) | Inspect sources, corrections, history, recall and PCS Perspective. |
 | [Local AI](local-ai.html) | Review model, hardware, voice and setup limits. |
 | [Get started](getting-started.html) | Install, connect an AI, choose permissions and upgrade safely. |
@@ -31,7 +31,7 @@ Preserve the Star Atlas design: dark slate, sage, cream four-point stars and sel
 
 Screenshots retain their genuine **0.9.114** and **0.9.139** capture labels. They contain authored fictional demonstration data, not new 0.9.180 screenshots or live AI results. See [SCREENSHOTS.md](SCREENSHOTS.md) and [SCREENSHOT-MANIFEST.json](SCREENSHOT-MANIFEST.json).
 
-The website Map is an older, explicitly labeled adaptation with 76 fictional records. It starts on Constellations; the current app starts on All links. The demo makes no AI requests, reads no personal vault and does not edit PCS. Its progress and notes last for the current visit. The homepage memory correction is an illustration. The 0180 memory, Perspective and Local context SVGs, and the memory and Perspective diagrams’ equivalent phone HTML, are authored explanations, not captured AI behavior.
+The Map demo runs the unmodified PCS 0.9.180 Map client (`assets/map-0180/app/`, GPL-3.0-only, notice and license beside it) in a frame, on responses recorded from PCS 0.9.180's own Map code with an invented vault of 86 records (Mara's 76, a few lightly reworded, plus a night-sky strand). Like the app it opens on All links. A small website script (`assets/map-0180/demo-shim-r2.js`) answers the Map's requests from the 12 files in `assets/map-0180/data/`; it makes no AI request, reads no vault, sets no cookies and stores nothing in the browser. Notes, landmarks and views last for the current visit. Library, Conversation, PCS Perspective, saved-word scope and unrecorded dates show a "Not part of this demo" message. The older demo files (`assets/map.js`, `map.css`, `map-data.js`) are kept but no longer loaded. The homepage memory correction is an illustration. The 0180 memory, Perspective and Local context SVGs, and the memory and Perspective diagrams’ equivalent phone HTML, are authored explanations, not captured AI behavior.
 
 ## Keep product claims accurate
 

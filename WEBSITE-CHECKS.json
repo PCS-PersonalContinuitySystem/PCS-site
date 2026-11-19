@@ -1,9 +1,9 @@
 {
   "application_version": "0.9.180",
-  "prepared_utc": "2026-11-19T00:20:20.668123+00:00",
+  "prepared_utc": "2026-11-19T08:35:00.590325+00:00",
   "baseline_commit": "7e7eeff802c24ff9490cc70ba1b51cffa5d0782c",
   "publication_performed": false,
-  "status": "static checks passed; local browser review passed at phone and desktop widths",
+  "status": "static checks passed; local browser review passed at phone and desktop widths; Map demo controls exercised at 375 and 1366 px (see map_demo)",
   "static": {
     "status": "passed",
     "pages": [
@@ -163,5 +163,217 @@
   "limits": [
     "This package has not been committed, pushed or deployed.",
     "Website checks do not qualify PCS, providers, microphones, personal vaults or installers."
-  ]
+  ],
+  "map_demo": {
+    "revision": 2,
+    "package_under_test": "site-work (without .git) with PCS-Website-0.9.180-Map-Demo-Update.zip extracted over it, served at http://127.0.0.1:8818/PCS-site/ (a GitHub Pages-style sub-path). Only WEBSITE-CHECKS.json, PUBLICATION-MANIFEST.json and SHA256SUMS.txt were rewritten after these runs.",
+    "file_counts": {
+      "update_zip": 42,
+      "data_folder": [
+        "bundle-30days-all.json",
+        "bundle-30days-memory.json",
+        "bundle-90days-all.json",
+        "bundle-90days-memory.json",
+        "bundle-alldates-all.json",
+        "bundle-alldates-memory.json",
+        "bundle-dates.json",
+        "bundle-notebooks.json",
+        "manifest.json",
+        "set-default.json",
+        "table-core.json",
+        "table-rest.json"
+      ]
+    },
+    "failure_state": {
+      "tree": "package tree with assets/map-0180/data removed",
+      "steps": [
+        {
+          "name": "failure at 1366",
+          "ok": true,
+          "texts": [
+            "Loading the demo… | Loading the demo…",
+            "The demo could not load its records. Reload the page; if it still fails, the site may be missing files. | The demo could not load its records. Reload the page; if it still fails, the site may be missing files."
+          ],
+          "final": "The demo could not load its records. Reload the page; if it still fails, the site may be missing files. | The demo could not load its records. Reload the page; if it still fails, the site may be missing files. | hidden=false"
+        },
+        {
+          "name": "failure at 375",
+          "ok": true,
+          "texts": [
+            "The demo could not load its records. Reload the page; if it still fails, the site may be missing files. | The demo could not load its records. Reload the page; if it still fails, the site may be missing files."
+          ],
+          "final": "The demo could not load its records. Reload the page; if it still fails, the site may be missing files. | The demo could not load its records. Reload the page; if it still fails, the site may be missing files. | hidden=false"
+        }
+      ],
+      "expected_404s": [
+        {
+          "url": "http://127.0.0.1:8819/PCS-site/assets/map-0180/data/manifest.json?v=0180-r2",
+          "status": 404
+        },
+        {
+          "url": "http://127.0.0.1:8819/PCS-site/assets/map-0180/data/table-core.json?v=0180-r2",
+          "status": 404
+        },
+        {
+          "url": "http://127.0.0.1:8819/PCS-site/assets/map-0180/data/manifest.json?v=0180-r2",
+          "status": 404
+        },
+        {
+          "url": "http://127.0.0.1:8819/PCS-site/assets/map-0180/data/table-core.json?v=0180-r2",
+          "status": 404
+        }
+      ]
+    },
+    "loading_state": {
+      "method": "data requests held for 4 s through the DevTools Fetch domain",
+      "steps": [
+        {
+          "name": "loading at 1366",
+          "ok": true,
+          "texts": [
+            "Loading the demo… | Loading the demo…",
+            "[hidden] | "
+          ],
+          "final": " |  | hidden=true"
+        },
+        {
+          "name": "loading at 375",
+          "ok": true,
+          "texts": [
+            "Loading the demo… | Loading the demo…",
+            "[hidden] | "
+          ],
+          "final": " |  | hidden=true"
+        }
+      ]
+    },
+    "page": "continuity-map.html",
+    "what": "Unmodified PCS 0.9.180 Map client in assets/map-0180/app, framed by assets/map-0180/map-demo-frame.html, answered by assets/map-0180/demo-shim.js from responses recorded with PCS 0.9.180's continuity_map.build_view and Vault.get_continuity_map_layout on an invented vault.",
+    "recorded": {
+      "browse_responses": 122,
+      "inspect_responses": 16259,
+      "raw_response_bytes": 101981433,
+      "stored_bytes": 6201892,
+      "vault": {
+        "records": 86,
+        "memories": 74,
+        "notebooks": 12,
+        "owner_corrected": 4,
+        "perspective_records": 3,
+        "labels": 63
+      },
+      "opening_view": {
+        "themes": 67,
+        "connections": 250
+      }
+    },
+    "static": {
+      "html_well_formed": {
+        "continuity-map.html": {
+          "tag_errors": [],
+          "unclosed": [],
+          "duplicate_ids": [],
+          "json_ld": 1,
+          "json_ld_ok": true
+        },
+        "data-and-privacy.html": {
+          "tag_errors": [],
+          "unclosed": [],
+          "duplicate_ids": [],
+          "json_ld": 1,
+          "json_ld_ok": true
+        },
+        "getting-started.html": {
+          "tag_errors": [],
+          "unclosed": [],
+          "duplicate_ids": [],
+          "json_ld": 1,
+          "json_ld_ok": true
+        },
+        "index.html": {
+          "tag_errors": [],
+          "unclosed": [],
+          "duplicate_ids": [],
+          "json_ld": 1,
+          "json_ld_ok": true
+        },
+        "local-ai.html": {
+          "tag_errors": [],
+          "unclosed": [],
+          "duplicate_ids": [],
+          "json_ld": 1,
+          "json_ld_ok": true
+        },
+        "memory-control.html": {
+          "tag_errors": [],
+          "unclosed": [],
+          "duplicate_ids": [],
+          "json_ld": 1,
+          "json_ld_ok": true
+        },
+        "assets/map-0180/map-demo-frame-r2.html": {
+          "tag_errors": [],
+          "unclosed": [],
+          "duplicate_ids": [],
+          "json_ld": 0,
+          "json_ld_ok": true
+        }
+      },
+      "missing_files_or_anchors": [],
+      "counts": {
+        "local_references": 374,
+        "fragment_targets": 154,
+        "aria_and_label_targets": 66,
+        "external_links": 18
+      },
+      "javascript_syntax": {
+        "assets/map-0180/demo-shim-r2.js": true,
+        "assets/map-0180/app/continuity_map_ui.js": true,
+        "assets/map-0180/app/map_layouts.js": true,
+        "assets/map-0180/app/map_constellations.js": true,
+        "assets/map-0180/app/map_fullscreen_ui.js": true,
+        "assets/map-0180/app/source_evidence_ui.js": true
+      },
+      "data_json_files_parsed": 12,
+      "cache_busting": {
+        "page_css": [
+          "assets/map-demo-0180.css?v=20261118-0180-map1"
+        ],
+        "page_frame": [
+          "assets/map-0180/map-demo-frame-r2.html?v=0180-r2"
+        ],
+        "frame_assets_not_r2": [],
+        "frame_assets_without_query": [],
+        "old_demo_assets_loaded": []
+      }
+    },
+    "browser": {
+      "method": "Package tree served by a short-lived python -m http.server on 127.0.0.1:8818 under /PCS-site/ (stopped afterwards). Controls driven through the Chrome DevTools Protocol in headless Microsoft Edge (work/cdp.mjs, work/controls.mjs) at 1366x900 and 375x812 (mobile emulation); spot checks in the Claude desktop browser pane.",
+      "runs": {
+        "1366": {
+          "steps": 55,
+          "passed": 55,
+          "failed_steps": [],
+          "page_exceptions": 0,
+          "console_errors": [],
+          "failed_requests": [],
+          "requests_outside_site": []
+        },
+        "375": {
+          "steps": 57,
+          "passed": 57,
+          "failed_steps": [],
+          "page_exceptions": 0,
+          "console_errors": [],
+          "failed_requests": [],
+          "requests_outside_site": []
+        }
+      },
+      "limits": [
+        "Native browser full screen was not granted in headless Edge or the browser pane; the Map's own fallback (filling the frame) was checked, native full screen in a normal browser tab was not.",
+        "No full accessibility audit, screen reader or cross-browser qualification.",
+        "The real PCS server was not run for a side-by-side comparison; the client code and recorded responses are the app's own."
+      ]
+    }
+  }
 }

@@ -1,0 +1,22 @@
+/* PCS website Map demo: the frame around the unmodified PCS 0.9.180 Map styles.
+   Website demo code, GPL-3.0-only. */
+/* The app serves its sky from /static/; this site serves it beside the page. */
+.map-stage::before { background-image: url('app/map-space.svg?v=0180-r2'); }
+html, body { min-height: 100%; }
+body.pcs-map-demo { overflow-x: hidden; }
+.pcs-map-demo #page-memories { display: block; overflow: visible; padding: 18px 22px 32px; }
+.demo-notice { position: fixed; z-index: 200; left: 50%; bottom: 18px; transform: translateX(-50%); width: min(560px, calc(100% - 32px));
+  margin: 0; padding: 12px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); color: var(--text);
+  font-size: 15px; line-height: 1.5; box-shadow: 0 12px 36px rgb(0 0 0 / 40%); }
+.demo-phone-note { display: none; margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+@media (max-width: 720px) {
+  .pcs-map-demo #page-memories { padding: 12px 12px 28px; }
+  /* At this width the app's zoom tools overlap the first highlight chips; start the chips below them. */
+  .pcs-map-demo .map-highlights { padding-top: 58px; }
+}
+@media (max-width: 600px) {
+  .demo-phone-note { display: block; }
+  /* Expanded on a phone, the app's full-screen layout leaves the map only a sliver. */
+  .pcs-map-demo #map-fullscreen { display: none; }
+}
+.demo-noscript { margin: 0 0 12px; color: var(--text); }

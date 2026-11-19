@@ -10,8 +10,8 @@ pcs/static/ in PCS-0.9.180-Source.zip:
   workspace_usability.css, settings_navigation.css, experience.css,
   map-space.svg
 
-map-demo-frame.html takes the Map markup from that release's index.html.
-demo-shim.js and demo-frame.css are website demo code that stands in for the
+map-demo-frame-r2.html takes the Map markup from that release's index.html.
+demo-shim-r2.js and demo-frame-r2.css are website demo code that stands in for the
 PCS server and app around the Map. data/ holds responses recorded from PCS
 0.9.180's own Map code on an invented vault; every record is fictional.
 
