@@ -1,0 +1,10 @@
+/* Map demo page (PCS 0.9.180): the band that holds the app's Map frame. */
+.map-demo-band { padding: 0 var(--margin) clamp(64px, 8vw, 120px); }
+.map-demo-frame { display: block; width: 100%; height: clamp(640px, calc(100vh - 24px), 1040px); border: 0; background: var(--ground); }
+.map-demo-band .map-caption { margin-top: 18px; }
+.map-demo-label { margin-top: 20px; }
+@media (max-width: 640px) {
+  .map-demo-band { padding-inline: 0; }
+  .map-demo-band .map-caption { padding-inline: var(--margin); }
+  .map-demo-frame { height: clamp(560px, calc(100svh - 16px), 900px); }
+}

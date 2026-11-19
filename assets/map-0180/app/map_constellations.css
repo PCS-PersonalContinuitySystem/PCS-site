@@ -1,0 +1,41 @@
+/* Static constellations: actual displayed links, with detail revealed by inspection. */
+.map-main-views { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:18px 0 10px; }
+.map-main-views button { padding:10px 18px; border-radius:999px; }
+.map-main-views [aria-pressed="true"] { color:var(--text); background:var(--accent-dark); border-color:var(--accent); }
+.map-main-views > span { margin-left:auto; font-size:12px; color:var(--dim); }
+.map-constellation-trail { display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+.map-constellation-trail:empty { display:none; }
+.map-cloud { cursor:pointer; outline:none; }
+.map-cloud-hit { fill:transparent; pointer-events:all; }
+.map-cloud-aura { fill:var(--map-tone); opacity:.08; }
+.map-cloud-body { fill:color-mix(in srgb,var(--map-tone) 9%,var(--bg)); stroke:var(--map-tone); stroke-opacity:.45; stroke-width:1.2; }
+.map-cloud-star { fill:var(--map-tone); filter:drop-shadow(0 0 5px var(--map-tone)); pointer-events:none; }
+.map-cloud:hover .map-cloud-aura,.map-cloud:focus-visible .map-cloud-aura { opacity:.2; }
+.map-cloud:focus-visible .map-cloud-body { stroke:var(--text); stroke-width:3; stroke-dasharray:4 4; }
+.map-cloud-label { fill:var(--text); font:600 16px system-ui,sans-serif; pointer-events:none; }
+.map-cloud-count { fill:var(--dim); font:12px system-ui,sans-serif; pointer-events:none; }
+.map-cloud-bridge { stroke:var(--accent); opacity:.25; pointer-events:stroke; vector-effect:non-scaling-stroke; }
+.map-cloud-bridge:hover { opacity:.8; }
+.map-cluster-choice { display:block; width:100%; padding:10px 4px; border:0; border-bottom:1px solid var(--line); background:transparent; color:var(--text); text-align:left; font-size:13px; cursor:pointer; overflow-wrap:anywhere; }
+.map-cluster-choice:hover { color:var(--accent); }
+.map-constellation-heading { fill:var(--dim); font:600 16px system-ui,sans-serif; letter-spacing:.03em; pointer-events:none; }
+.map-active-label { position:absolute; z-index:2; max-width:min(280px,70%); transform:translateX(-50%); padding:5px 9px; border:1px solid var(--line); border-radius:7px; background:var(--panel); color:var(--text); font:600 13px/1.45 system-ui,sans-serif; text-align:center; overflow-wrap:anywhere; pointer-events:none; box-shadow:0 3px 16px #0003; }
+.map-active-label[hidden] { display:none; }
+#map-canvas[data-distant="true"] .map-node-label,
+#map-canvas[data-distant="true"] .map-node-count { visibility:hidden; }
+#map-canvas[data-distant="true"] .map-node-dot { fill:var(--map-tone); stroke-width:1; }
+#map-canvas[data-distant="true"] .map-edge-line { opacity:calc(var(--map-link-opacity,.32) * .58); }
+#map-canvas[data-distant="true"] .map-edge.connected .map-edge-line { opacity:.65; }
+#map-canvas[data-distant="true"] .map-edge.muted .map-edge-line { opacity:.065; }
+#map-canvas[data-distant="true"] .map-edge.selected .map-edge-line,
+#map-canvas[data-distant="true"] .map-edge:hover .map-edge-line { opacity:1; }
+@media(max-width:720px) { .map-main-views > span { width:100%; margin:0; } .map-main-views button { padding:9px 12px; } }
+@media(forced-colors:active) { .map-cloud-body { fill:Canvas;stroke:ButtonText; } .map-cloud-star,.map-cloud-label,.map-cloud-count { fill:CanvasText; } .map-cloud-bridge { stroke:LinkText;opacity:1; } }
+.map-bundle-line { stroke:var(--accent); opacity:.35; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+.map-bundle.expanded .map-bundle-line { opacity:.2; stroke-dasharray:2 6; }
+.map-bundle:hover .map-bundle-line, .map-bundle:focus-visible .map-bundle-line { opacity:.85; }
+.map-bundle.muted { opacity:.35; }
+.map-bundle-badge { cursor:pointer; }
+.map-bundle-badge rect { fill:var(--surface, Canvas); stroke:var(--accent); }
+.map-bundle-badge text { fill:var(--text, CanvasText); font-size:12px; }
+@media(forced-colors:active) { .map-bundle-line { stroke:LinkText; opacity:1; } .map-bundle-badge rect { fill:Canvas; stroke:LinkText; } .map-bundle-badge text { fill:CanvasText; } }

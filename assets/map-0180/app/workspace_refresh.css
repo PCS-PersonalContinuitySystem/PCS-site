@@ -1,0 +1,167 @@
+/* Workspace layout: comfortable reading at browser zoom, without clipped navigation. */
+.sidebar > .nav { flex: 0 0 auto; min-height: auto; overflow: visible; }
+.sidebar { scrollbar-gutter: stable; }
+.nav-item { font-size: 17px; }
+.session-card .check-row { font-size: 15px !important; line-height: 1.5; }
+.session-card .field-hint, .session-card .session-hint { font-size: 14px; line-height: 1.5; }
+.session-card > .eyebrow { font-size: 13px; }
+.vault-status small { font-size: 14px; }
+
+/* The page is the scroll surface. Keep its full width under the cursor,
+   including the open space to the right of narrower Settings content. */
+:is(#page-memories, #page-materials, #page-calendar, #page-settings, #page-help),
+#page-memories:is(.map-active, .library-active) {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: clamp(18px, 2.2vw, 36px);
+}
+#page-settings > * { max-width: 1320px; }
+#page-help > * { max-width: 1140px; }
+#page-memories.map-active { padding-top: 16px; }
+@media (min-width: 1321px) {
+  #page-calendar .calendar-workspace.agenda-layout { grid-template-columns: minmax(0, 1fr) 290px; }
+}
+@media (min-width: 681px) and (max-height: 1000px) {
+  .welcome-wordmark { display: none; }
+  .sidebar { padding-top: 18px; }
+  .brand { margin-bottom: 14px; }
+  .brand-wordmark { width: 196px; }
+  .brand-copy { font-size: 14px; }
+  .nav { gap: 4px; }
+  .nav-item { min-height: 44px; padding: 8px 12px; }
+  .session-card { margin-top: auto; padding: 13px 14px; }
+  .session-card .session-status { font-size: 15px; margin-top: 7px; }
+  .session-card .check-row { margin-bottom: 9px; }
+  .session-card .button { min-height: 44px; font-size: 16px; }
+  .vault-status { margin-top: 0; padding: 15px 3px; }
+}
+
+/* The existing saved-route control lives with its conversation controls. */
+.conversation-session-bar { padding: 18px 26px 12px; gap: 12px 18px; border-bottom: 1px solid var(--line); background: var(--bg); }
+.conversation-connection { display: flex; gap: 10px; align-items: center; flex: 1 1 400px; min-width: 0; flex-wrap: wrap; }
+.conversation-connection .quick-route-choice { display: block; margin: 0; flex: 1 1 215px; max-width: 330px; }
+.conversation-connection .quick-route-choice select { width: 100%; min-height: 44px; padding: 9px 34px 9px 12px; font-size: 15px; border-radius: 9px; }
+.conversation-session-bar .chip-button { border-radius: 9px; min-height: 44px; font-size: 15px; padding: 9px 13px; }
+.conversation-toolbar-status { flex: 1 0 100%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 18px; color: var(--dim); }
+.conversation-toolbar-status :is(small, .connection-label) { font-size: 14px; line-height: 1.5; }
+/* 0.9.163: the controls sit on one row; Boundary notes joins the quiet status line. */
+.conversation-toolbar-status { align-items: center; }
+.conversation-toolbar-aside { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 2px 14px; }
+.conversation-toolbar-aside .hint-disclosure-toggle { padding: 2px 4px; font-size: 14px; color: var(--dim); }
+.conversation-session-bar .conversation-live-controls { flex-wrap: nowrap; margin-left: auto; }
+.conversation-session-bar .conversation-connection { flex: 0 1 auto; }
+.conversation-session-bar .conversation-connection .quick-route-choice { flex: 0 1 240px; max-width: 240px; }
+.conversation-speech-status { flex: 1 0 100%; min-width: 0; margin: 0; color: var(--dim); font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.conversation-tools { margin: 12px 26px; gap: 10px; }
+.conversation-tools > :is(.conversation-audio-controls,.conversation-research-tools,.practice-panel,.conversation-carry-controls) > summary { padding: 8px 13px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); font-size: 15px; }
+.conversation-tools > :is(.conversation-audio-controls,.conversation-research-tools,.practice-panel,.conversation-carry-controls)[open] { padding: 10px 14px 14px; }
+.conversation-tools > :is(.conversation-audio-controls,.conversation-research-tools,.practice-panel,.conversation-carry-controls)[open] > summary { display: list-item; border-color: transparent; background: transparent; padding: 2px 0 8px; }
+.conversation-tool-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 10px 20px; margin: 8px 0 10px; }
+.conversation-tool-options > div { min-width: 0; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; }
+.conversation-tool-options .text-button { text-align: left; }
+.conversation-tool-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; margin: 8px 0 2px; }
+.conversation-tool-links .text-button { font-size: 13px; }
+.memory-card { border-color: var(--line); }
+.memory-card-top { font-size: 13px; }
+.memory-card footer { padding-top: 12px; border-top: 1px solid var(--line); font-size: 14px; }
+.continuity-shelf .shelf-heading { margin-bottom: 16px; }
+#web-materials-search .button { white-space: nowrap; }
+
+/* Reading and exact editing remain distinct; the original JSON is never rewritten by the view. */
+#memory-dialog.memory-inspector { width: min(1340px, calc(100vw - 48px)); max-width: 1340px; padding: 26px; }
+.memory-inspector-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(320px,.55fr); gap: 26px; align-items: start; }
+.memory-inspector-main, .memory-inspector-history { min-width: 0; }
+.memory-inspector .record-metadata { font-size: 14px; margin: 0 0 14px; }
+.memory-writer-record { margin-bottom: 16px; }
+.memory-reading-card { padding: 20px; border: 1px solid var(--line); background: var(--panel); border-radius: 12px; }
+.memory-reading-card h3 { margin: 0 0 16px; font-size: 19px; }
+.memory-reading-view { max-height: 52vh; overflow-y: auto; overscroll-behavior: contain; padding-right: 6px; }
+.memory-reading-view .memory-preview-value { font-size: 17px; line-height: 1.75; margin: 4px 0 10px; }
+.memory-reading-view .memory-preview-label { display: block; margin: 8px 0 4px; font-size: 14px; color: var(--accent); }
+.memory-reading-view .memory-preview-fields > .memory-preview-part + .memory-preview-part { margin-top: 0; }
+.memory-reading-view .memory-preview-list { margin: 8px 0; padding-left: 24px; }
+.memory-reading-view .memory-preview-fields { display: grid; gap: 8px; }
+.memory-reading-view .memory-preview-part { min-width: 0; overflow-wrap: anywhere; }
+.memory-inspector .field-hint { font-size: 14px; line-height: 1.6; }
+.memory-edit-panel { margin: 16px 0; border: 1px solid var(--line); border-radius: 10px; padding: 13px 16px; }
+.memory-edit-panel > summary { cursor: pointer; font-size: 16px; color: var(--accent); }
+.memory-edit-panel[open] > summary { margin-bottom: 16px; }
+.memory-edit-panel .code-editor { width: 100%; max-height: 46vh; }
+.memory-inspector .source-card { padding: 15px; background: var(--panel); border-radius: 10px; }
+.memory-inspector .source-card p { font-size: 16px; line-height: 1.65; }
+.memory-inspector .source-card small { font-size: 13px; }
+.memory-inspector-history { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 18px; }
+.memory-inspector-history .memory-history { border: 0; margin: 0; padding: 0; }
+.memory-inspector-history .memory-history > summary { font-size: 19px; }
+.memory-inspector-history .memory-history-list { border: 0; border-radius: 0; max-height: 58vh; padding-left: 14px; }
+.memory-inspector-history .memory-history-row { position: relative; display: block; border: 0; border-left: 1px solid var(--line); padding: 5px 8px 22px 21px; }
+.memory-inspector-history .memory-history-row::before { content: ""; position: absolute; top: 13px; left: -5px; width: 9px; height: 9px; border: 2px solid var(--dim); border-radius: 50%; background: var(--panel); }
+.memory-inspector-history .memory-history-current::before { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-dark); }
+.memory-inspector-history .memory-history-current strong { color: var(--accent); }
+.memory-inspector-history .memory-history-actions { margin-top: 7px; }
+.memory-inspector-history .memory-history-row-description { gap: 6px; }
+.memory-inspector-history .memory-history-row-description > strong { font-size: 16px; }
+.memory-inspector-history .memory-compare-picker h3 { font-size: 18px; }
+.memory-inspector-history .memory-comparison-columns { grid-template-columns: minmax(0,1fr); }
+@media (max-width: 1050px) {
+  .memory-inspector-layout { grid-template-columns: minmax(0,1fr); }
+  .memory-inspector-history .memory-history-list { max-height: 420px; }
+}
+@media (max-width: 680px) {
+  .sidebar > .nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sidebar .nav-item { justify-content: flex-start; padding: 10px 12px; }
+  #web-materials-search { flex-wrap: wrap; }
+  #web-materials-search input { flex-basis: 100%; }
+  .conversation-session-bar { padding: 14px 16px 12px; }
+  .conversation-connection { flex-basis: 100%; }
+  .conversation-connection .quick-route-choice { max-width: none; }
+  .conversation-tools { margin: 12px 16px; }
+  #memory-dialog.memory-inspector { width: calc(100vw - 20px); padding: 17px; }
+  .memory-inspector-layout { gap: 18px; }
+  .memory-reading-card, .memory-inspector-history { padding: 15px; }
+  .memory-inspector .modal-heading h2 { font-size: 25px; }
+}
+
+.conversation-tools > .chip-button { flex: 0 1 auto; min-width: 0; max-width: min(260px,100%); min-height: 42px; padding: 8px 13px; border-radius: 9px; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--accent); }
+.conversation-tools > .chip-button:focus-visible { outline-offset: -2px; }
+.companion-dialog { max-width: 780px; }
+.companion-context { min-width: 0; }
+.companion-context details { padding: .8rem 0; border-top: 1px solid var(--line); }
+.companion-context summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+.companion-context details[open] > summary { margin-bottom: .8rem; }
+.companion-context > * + * { margin-top: .7rem; }
+.companion-context p { line-height: 1.6; overflow-wrap: anywhere; }
+.companion-current { padding: .8rem 1rem; border-radius: 9px; background: var(--panel); color: var(--accent); }
+.companion-context .companion-auto-label { display: flex; gap: .65rem; align-items: start; font-weight: 600; }
+.companion-auto-label input { flex: 0 0 auto; margin-top: .25rem; }
+.companion-scope-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .7rem; }
+.companion-scope-fields > * { min-width: 0; }
+.companion-context textarea, .companion-context input[type="search"], .companion-scope-fields input { width: 100%; }
+.companion-context label { display: block; }
+.companion-context :is(input,select,textarea) { max-width: 100%; }
+.companion-context button { margin: .25rem .35rem .25rem 0; }
+.readalong-text { white-space: pre-wrap; max-height: 40vh; overflow: auto; line-height: 1.8; }
+#readalong-bookmarks-list { min-width: 0; overflow-wrap: anywhere; }
+#readalong-bookmarks-list .web-source-card { min-width: 0; }
+#readalong-bookmarks-list code { white-space: normal; overflow-wrap: anywhere; }
+#readalong-dialog { width: min(52rem, calc(100vw - 2rem)); max-width: none; }
+#readalong-dialog .button-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-block: .8rem; }
+#readalong-dialog .field-hint { line-height: 1.5; }
+@media (max-width: 600px) { .companion-scope-fields { grid-template-columns: minmax(0,1fr); } }
+
+/* 0.9.163: Study research and the Practice chooser live in Materials; the
+   Conversation page keeps only a live Practice card, outside Modes & tools. */
+#page-materials .materials-tool-row { margin: 0 0 14px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 9px; background: color-mix(in srgb, var(--panel) 60%, transparent); }
+#page-materials .materials-tool-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; min-width: 0; }
+#page-materials .materials-tool-actions > strong { font-size: 14px; font-weight: 600; margin-right: 2px; }
+#page-materials .materials-tool-actions .text-button { font-size: 13px; }
+#page-materials .materials-tool-actions .button { min-height: 36px; padding: 6px 12px; font-size: 13px; }
+#page-materials .materials-tool-row > .field-hint { margin: 6px 0 0; font-size: 13px; }
+#page-materials .materials-tool-row > .field-hint:empty { display: none; }
+.conversation-column > .practice-panel { margin: 0 26px 10px; }
+.conversation-column > .practice-panel[hidden] { display: none; }
+.conversation-column > .practice-panel > summary { cursor: pointer; color: var(--accent); font-size: 15px; }
+.conversation-column > .practice-panel > .practice-toolbar:not(:has(> :not([hidden]))) { display: none; }
+@media (max-width: 680px) { .conversation-column > .practice-panel { margin-left: 16px; margin-right: 16px; } }
+

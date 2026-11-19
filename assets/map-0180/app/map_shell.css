@@ -1,0 +1,184 @@
+/* PCS 0.9.118 Map shell: one toolbar, a trail, the graph with its saved-date
+   strip, and a side column for patterns and evidence. Loaded after the older
+   Map stylesheets; it changes presentation only. */
+.continuity-map.map-shell:not(.map-expanded) { --map-canvas-height: clamp(360px, calc(100dvh - 330px), 980px); }
+.map-visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Toolbar: find, view, show-as, then the two popovers and page actions. */
+.map-shell .map-toolbar { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+.map-shell .map-find { flex: 1 1 220px; min-width: 170px; max-width: 360px; margin: 0; }
+.map-shell .map-find .inline-form { display: flex; gap: 6px; margin: 0; flex-wrap: nowrap; }
+.map-shell .map-find input { flex: 1 1 auto; min-width: 0; width: 100%; min-height: 36px; padding: 6px 10px; }
+.map-shell .map-toolbar .button { min-height: 36px; padding: 6px 12px; font-size: 13px; }
+.map-shell .map-main-views, .map-shell .map-view-switch { display: inline-flex; margin: 0; gap: 0; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.map-shell .map-main-views .chip-button, .map-shell .map-view-switch .chip-button { margin: 0; border: 0; border-radius: 0; padding: 7px 12px; min-height: 34px; background: transparent; color: var(--dim); font-size: 13px; }
+.map-shell .map-main-views .chip-button + .chip-button, .map-shell .map-view-switch .chip-button + .chip-button { border-left: 1px solid var(--line); }
+.map-shell .map-main-views [aria-pressed="true"], .map-shell .map-view-switch [aria-pressed="true"] { background: var(--accent-dark); color: var(--text); font-weight: 600; }
+.map-shell .map-main-views .chip-button:focus-visible, .map-shell .map-view-switch .chip-button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.map-toolbar-spacer { flex: 1 1 0; min-width: 0; }
+.map-shell #map-matches:not(:empty) { display: flex; flex-wrap: wrap; flex-basis: 100%; gap: 6px; margin: 2px 0 0; }
+
+/* Popovers keep their controls mounted; they never write on open or close. */
+/* 0.9.139: popovers open from the toolbar's right edge, inside the page, even
+   when a wrapped toolbar puts their button at the left beside the sidebar. */
+.map-popover-anchor { position: static; }
+.map-shell .map-popover { position: absolute; top: calc(100% + 6px); right: 0; z-index: 30; box-sizing: border-box; width: min(430px, 100%);
+  max-height: min(72dvh, 680px); overflow: auto; overscroll-behavior: contain; display: grid; gap: 10px; padding: 14px 16px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--card, var(--panel)); box-shadow: 0 16px 44px var(--theme-shadow, #0009); text-align: left; }
+.map-popover-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.map-shell .map-popover h3 { margin: 4px 0 0; font-size: 16px; }
+.map-shell .map-popover h4 { margin: 6px 0 -2px; color: var(--dim); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.map-shell .map-popover p { margin: 0; }
+.map-popover-close { width: 30px; height: 30px; border: 0; border-radius: 7px; background: transparent; color: var(--dim); font-size: 19px; line-height: 1; cursor: pointer; }
+.map-popover-close:hover, .map-popover-close:focus-visible { color: var(--text); background: var(--accent-dark); }
+.map-shell .map-popover .inline-form { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; margin: 0; }
+.map-shell .map-popover .inline-form label { display: grid; gap: 5px; flex: 1 1 180px; color: var(--dim); font-size: 13px; }
+.map-shell .map-popover .map-filter-fields { display: grid; gap: 10px; padding: 0; }
+.map-shell .map-popover .map-filter-fields label:not(.check-row) { display: grid; gap: 5px; min-width: 0; color: var(--dim); font-size: 13px; }
+.map-shell .map-popover .check-row { margin: 0; font-size: 14px; }
+.map-shell #map-scope-form { margin: 0; padding: 0; border: 0; display: grid; gap: 6px; }
+.map-shell #map-scope-form label { color: var(--dim); font-size: 13px; }
+.map-shell #map-scope { margin: 0; font-size: 13px; }
+.map-shell #map-hidden-items { display: grid; gap: 6px; max-height: 180px; overflow: auto; padding: 0; }
+.map-settings-actions { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.map-shell .map-about { font-size: 13px; color: var(--dim); }
+.map-shell .map-about summary { cursor: pointer; color: var(--accent); }
+.map-shell .map-about ul { margin: 8px 0; padding-left: 18px; line-height: 1.55; }
+.map-shell .map-about li { margin: 4px 0; }
+.map-shell .map-about p { margin: 8px 0 0; font-size: 12px; line-height: 1.55; }
+.map-shell :is(#map-named-views, #map-saved-notes) { max-height: 240px; margin: 0; }
+
+/* Trail: Back/Forward, where you are, constellation pages and the count. */
+.map-trail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; min-height: 38px; margin: 8px 0 6px; }
+.map-shell .map-history { display: flex; gap: 4px; }
+.map-shell .map-history .chip-button { width: 34px; height: 32px; padding: 0; font-size: 15px; }
+.map-trail { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; flex: 1 1 200px; min-width: 0; font-size: 13px; }
+.map-trail-crumb { max-width: 240px; overflow: hidden; padding: 4px 6px; border: 0; border-radius: 6px; background: transparent; color: var(--dim); font: inherit; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
+.map-trail-crumb:hover, .map-trail-crumb:focus-visible { color: var(--text); background: var(--accent-dark); }
+.map-trail-crumb:disabled { cursor: default; opacity: .6; }
+.map-trail-current { max-width: 280px; overflow: hidden; padding: 4px 6px; color: var(--text); font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.map-trail-sep, .map-trail-more { color: var(--dim); opacity: .7; padding: 0 1px; }
+.map-shell .map-constellation-trail { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; }
+.map-shell .map-constellation-trail:empty { display: none; }
+.map-shell .map-constellation-trail .chip-button { padding: 5px 9px; font-size: 12px; }
+.map-shell #map-stats { color: var(--dim); font-size: 12px; font-weight: 400; white-space: nowrap; margin-left: auto; }
+.map-shell .map-anchor-controls > div { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0; }
+.map-shell .map-anchor-controls label:not(.check-row) { display: flex; align-items: center; gap: 7px; color: var(--dim); font-size: 13px; }
+.map-shell .map-anchor-controls select { width: clamp(140px, 13vw, 220px); min-width: 0; padding: 5px 8px; }
+.map-shell .map-anchor-controls .check-row { margin: 0; font-size: 13px; }
+/* Compare anchors are chosen in the side panel; the trail keeps one line. */
+.map-shell #map-compare-controls { display: none; }
+.map-shell .map-pin-row { padding: 4px 0 8px; }
+.map-shell #map-status, .map-shell #map-presentation-status { margin: 4px 0; }
+
+/* Graph and side column share one row; the side scrolls inside that height. */
+.map-shell .map-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 380px); gap: 12px; align-items: stretch; }
+@media (min-width: 1500px) { .map-shell .map-layout { grid-template-columns: minmax(0, 1fr) minmax(340px, 420px); } }
+.map-side { display: flex; flex-direction: column; gap: 10px; min-width: 0; min-height: 0; contain: size; }
+.map-shell .map-side .map-discovery { flex: none; max-height: 42%; margin: 0; overflow: auto; overscroll-behavior: contain; }
+.map-shell .map-side .map-discovery-idle { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; padding: 10px 12px; }
+.map-shell .map-side .map-discovery-idle > div { flex: 1 1 170px; min-width: 0; }
+.map-shell .map-side .map-discovery-idle > div > small { display: block; margin-top: 2px; line-height: 1.4; }
+.map-shell .map-side .map-discovery-idle > button { flex: none; min-height: 36px; padding: 6px 12px; font-size: 13px; }
+.map-shell .map-side .map-discovery-active { display: grid; gap: 8px; }
+.map-shell .map-side .map-landmark-return { padding: 0 2px; }
+.map-shell .map-side .map-landmark-chip { max-width: 100%; }
+.map-shell .map-inspector { contain: none; flex: 1 1 0; min-height: 0; height: auto; max-height: none; display: flex; flex-direction: column; overflow: auto; padding: 14px 16px; }
+.map-shell .map-inspector > .eyebrow:first-child { margin-top: 2px; }
+.map-shell .map-inspector-header { flex: none; max-height: 48%; overflow-y: auto; overscroll-behavior: contain; }
+.map-shell .map-inspector-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 4px 2px 2px 0; }
+.map-shell .map-inspector h4 { margin: 16px 0 6px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.map-shell .map-inspector .map-inspector-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 10px 0 4px; }
+.map-shell .map-inspector .map-inspector-actions .button { min-height: 36px; padding: 6px 11px; font-size: 13px; }
+.map-shell .map-inspector .map-inspector-actions .button.primary { font-weight: 600; }
+.map-more { position: relative; }
+.map-more > summary { list-style: none; min-height: 34px; display: flex; align-items: center; padding: 6px 10px; border: 1px solid var(--line); border-radius: 9px; color: var(--dim); font-size: 13px; cursor: pointer; }
+.map-more > summary::-webkit-details-marker { display: none; }
+.map-more[open] > summary { color: var(--text); background: var(--accent-dark); }
+.map-more-items { position: absolute; right: 0; top: calc(100% + 4px); z-index: 5; display: grid; min-width: 200px; padding: 5px; border: 1px solid var(--line); border-radius: 10px; background: var(--card, var(--panel)); box-shadow: 0 10px 28px var(--theme-shadow, #0009); }
+.map-more-items .text-button { justify-content: flex-start; text-align: left; padding: 8px 10px; border-radius: 6px; }
+.map-compare-chooser { display: grid; gap: 6px; margin: 8px 0 2px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; }
+.map-compare-chooser label { color: var(--dim); font-size: 13px; }
+.map-compare-chooser .button { justify-self: start; }
+.map-shell .map-related-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 6px; border-bottom: 1px solid var(--line); }
+.map-shell .map-related-row .map-related-link { border-bottom: 0; }
+.map-related-follow { font-size: 12px; padding: 4px 6px; }
+.map-shell .map-owner-note { margin: 12px 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; }
+.map-shell .map-owner-note > summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+
+/* Start panel: patterns read from the checked graph already on screen. */
+.map-pattern-section { display: grid; gap: 2px; }
+.map-pattern-item { display: grid; gap: 2px; width: 100%; padding: 8px 6px; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--text); text-align: left; cursor: pointer; overflow-wrap: anywhere; }
+.map-pattern-section h4 + .map-pattern-item { border-top: 0; }
+.map-pattern-item strong { font-size: 14px; font-weight: 600; }
+.map-pattern-item .map-muted { font-size: 12px; line-height: 1.4; }
+.map-pattern-item:hover, .map-pattern-item:focus-visible { background: color-mix(in srgb, var(--accent) 10%, transparent); border-radius: 7px; }
+.map-pattern-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+/* 0.9.119: saves per UTC month and where themes come from. */
+.map-sparkline { display: block; width: 72px; height: 14px; margin-top: 2px; }
+.map-sparkline-wide { width: 144px; height: 20px; }
+.map-spark-bar { fill: var(--accent); }
+.map-spark-empty { fill: var(--line); }
+.map-months { display: grid; gap: 3px; margin-top: 6px; }
+.map-source-note { display: grid; gap: 6px; justify-items: start; margin: 4px 0 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; }
+.map-source-note .map-muted { margin: 0; font-size: 12px; line-height: 1.45; }
+.map-route { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.map-route-step { padding: 5px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); font: inherit; font-size: 13px; cursor: pointer; }
+.map-route-link { padding: 2px 4px; border: 0; background: transparent; color: var(--accent); font: 600 12px system-ui, sans-serif; cursor: pointer; }
+.map-route-link::before { content: "— "; }
+.map-route-link::after { content: " →"; }
+.map-route-step:focus-visible, .map-route-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Saved-date strip under the graph replaces the timeline drawer. */
+.map-timeline-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 8px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); font-size: 13px; }
+.map-shell .map-timeline-window { display: flex; flex-direction: row; align-items: center; gap: 8px; color: var(--dim); white-space: nowrap; }
+.map-shell .map-timeline-window select { min-height: 30px; padding: 3px 8px; }
+.map-shell .map-timeline-strip .map-timeline-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; min-width: 0; }
+.map-shell .map-timeline-strip .map-timeline-controls label { display: flex; flex-direction: row; align-items: center; gap: 6px; min-width: 0; flex: none; color: var(--dim); white-space: nowrap; }
+.map-shell .map-timeline-strip .map-timeline-controls input { min-height: 30px; padding: 3px 6px; }
+/* An older rule stretches each control to full width under 600px; the strip keeps them inline. */
+.map-shell .map-timeline-strip .map-timeline-controls > * { width: auto; }
+.map-shell .map-timeline-strip .chip-button { min-height: 30px; padding: 3px 10px; }
+.map-shell #map-scrubber { order: 3; flex: 1 1 120px; min-width: 110px; margin: 0; accent-color: var(--accent); }
+/* One quiet line; the full caption stays available as the element's title. */
+.map-shell #map-timeline-caption { order: 4; flex: 1 1 55%; min-width: 0; margin: 0; overflow: hidden; font-size: 12px; line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
+.map-shell #map-timeline-caption:empty { display: none; }
+.map-activity-disclosure { order: 5; flex: none; margin-left: auto; font-size: 12px; }
+.map-activity-disclosure[open] { order: 6; flex-basis: 100%; margin-left: 0; }
+.map-activity-disclosure > summary { cursor: pointer; color: var(--dim); }
+.map-shell .map-activity-rows { max-height: 220px; }
+
+/* Labels keep a readable size when zoomed out; culled labels give way to
+   themes with more records. Hover, focus and List still name every theme. */
+.map-shell .map-node-label { font-size: calc(14px * var(--map-label-scale, 1)); }
+.map-shell #map-canvas[data-distant="true"] .map-node-label { visibility: visible; }
+.map-shell .map-node-label.map-label-culled { display: none; }
+.map-shell .map-node.selected .map-node-label, .map-shell .map-node.focus-anchor .map-node-label { display: inline; }
+.map-cloud-members { fill: var(--dim); font: 12px system-ui, sans-serif; pointer-events: none; }
+
+/* Full screen keeps the toolbar, trail and strip; the graph takes the rest. */
+.map-expanded.map-shell .map-workspace-controls { max-height: 30dvh; }
+.map-expanded.map-shell .map-visual { min-height: 0; display: flex; flex-direction: column; }
+.map-expanded.map-shell .map-viewport { flex: 1 1 auto; min-height: 200px; }
+.map-expanded.map-shell .map-timeline-strip { flex: none; }
+.map-expanded.map-shell .map-side { contain: none; min-height: 0; }
+
+@media (max-width: 1180px) {
+  .map-shell .map-layout { grid-template-columns: minmax(0, 1fr); }
+  .map-side { contain: none; height: auto; }
+  .map-shell .map-side .map-discovery { max-height: none; }
+  .map-shell .map-inspector { height: clamp(320px, 56vh, 560px); flex: none; }
+}
+@media (max-width: 720px) {
+  .map-shell .map-find { flex-basis: 100%; max-width: none; }
+  .map-toolbar-spacer { display: none; }
+  .map-shell .map-popover { position: fixed; top: 72px; left: 16px; right: 16px; width: auto; max-height: calc(100dvh - 96px); }
+  .map-shell #map-stats { margin-left: 0; }
+  .map-shell .map-anchor-controls label:not(.check-row) { flex: 1 1 200px; justify-content: space-between; }
+}
+@media (forced-colors: active) {
+  .map-shell .map-main-views [aria-pressed="true"], .map-shell .map-view-switch [aria-pressed="true"] { forced-color-adjust: none; background: Highlight; color: HighlightText; }
+  .map-cloud-members { fill: CanvasText; }
+  .map-spark-bar { fill: CanvasText; }
+  .map-spark-empty { fill: GrayText; }
+}

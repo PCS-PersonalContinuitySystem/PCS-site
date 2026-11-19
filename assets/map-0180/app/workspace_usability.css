@@ -1,0 +1,94 @@
+/* Non-Conversation workspaces: readable records, responsive panes and reachable actions. */
+:is(#page-memories, #page-materials, #page-calendar, #page-settings, #page-help) {
+  container-type: inline-size;
+  padding-top: 24px;
+  padding-bottom: 28px;
+  scroll-padding-block: 20px 100px;
+}
+:is(#page-memories, #page-materials, #page-calendar, #page-settings, #page-help) :is(input, select, textarea) { max-width: 100%; }
+:is(#page-memories, #page-materials, #page-calendar, #page-settings, #page-help) :is(.section-heading, .inline-form) { min-width: 0; }
+.workspace-guide { margin: 0 0 16px; }
+.workspace-guide h2 { margin: 0 0 5px; font-size: 24px; line-height: 1.3; }
+.workspace-guide p { margin: 0; max-width: 78ch; color: var(--dim); font-size: 15px; line-height: 1.6; }
+#notebook-heading { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Record identity and supporting text should be readable without opening every item. */
+#page-memories .library-toolbar label, #page-memories .library-page-bar,
+#page-memories .library-order, #page-memories .ideas-kind { font-size: 14px; line-height: 1.5; }
+#page-memories .library-layout .ideas-stream { padding: 16px; gap: 7px; }
+#page-memories .library-layout .ideas-stream strong { font-size: 17px; }
+#page-memories .library-layout :is(.ideas-list-excerpt, .ideas-reason) { font-size: 15px; line-height: 1.6; }
+#page-memories .library-layout .ideas-excerpt { font-size: 17px; line-height: 1.7; }
+#page-memories .library-layout .ideas-title { font-size: 16px; }
+#page-memories .library-layout { grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); gap: 24px; }
+#page-memories .library-layout .ideas-list, #page-memories .library-detail {
+  max-height: clamp(280px, calc(100dvh - 410px), 800px);
+  overscroll-behavior: auto;
+  scrollbar-gutter: stable;
+}
+#page-memories .library-detail { padding-inline: 2px 8px; }
+#page-memories #library-inspect { position: sticky; top: 0; z-index: 1; background: var(--bg); padding: 10px 4px; margin: 0; font-size: 15px; }
+#page-memories .library-layout .ideas-stream:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+#page-memories .map-local, #page-memories .map-filter-row { font-size: 14px; }
+
+/* A pane changes layout when its own content area becomes narrow, including at browser zoom. */
+#page-materials .materials-workspace { grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); }
+#page-materials .web-materials-workspace { grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); }
+#page-materials :is(#materials-list, #web-materials-list) {
+  max-height: clamp(260px, calc(100dvh - 450px), 760px);
+  overscroll-behavior: auto;
+}
+#page-materials :is(.notebooks-grid, #materials-reference-panel .materials-list) {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+}
+#page-materials .materials-document-detail { padding: 22px; }
+#page-materials .materials-tabs { margin-bottom: 18px; }
+#page-materials .materials-reference-heading { align-items: start; }
+#page-materials .materials-reference-heading > div { flex: 1 1 420px; }
+
+/* The footer belongs to the main settings form. Locking retains its separate save. */
+#page-settings:has(#settings-advanced[hidden]) [data-settings-jump="settings-advanced"] { display: none; }
+#page-settings .settings-footer { bottom: 0; gap: 18px; margin-top: 18px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 -8px 20px color-mix(in srgb, var(--bg) 80%, transparent); }
+#page-settings .settings-footer p { max-width: 76ch; line-height: 1.5; }
+#page-settings .settings-footer .button { flex: 0 0 auto; min-height: 44px; }
+#page-settings .settings-group { scroll-margin-top: 18px; }
+#page-settings .settings-help { margin-bottom: 14px; }
+#page-settings #settings-locking { margin-top: 18px; }
+#page-settings .settings-group-body > .settings-section { border-radius: 8px; }
+#page-settings .field-hint { line-height: 1.6; }
+
+/* Browse a compact guide index; give an opened answer the full reading row. */
+#page-help > * { max-width: 1600px; }
+#page-help .help-results { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 14px; }
+#page-help .help-article[open] { grid-column: 1 / -1; }
+#page-help .help-article-summary { padding: 17px 20px; }
+#page-help .help-article-title { font-size: 20px; line-height: 1.4; margin-top: 6px; }
+#page-help .help-article-answer { font-size: 15px; line-height: 1.55; margin-top: 6px; }
+#page-help .help-article-body { padding: 8px 24px 24px; }
+#page-help .help-article-body :is(p, ul, ol) { max-width: 75ch; }
+#page-help .help-topic-shortcuts { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+#page-help .help-topic-shortcuts .button { min-height: 40px; font-size: 14px; padding: 8px 12px; }
+
+@container (max-width: 900px) {
+  #page-materials :is(.materials-workspace, .web-materials-workspace),
+  #page-memories .library-layout { grid-template-columns: minmax(0, 1fr); }
+  #page-materials :is(.materials-document-detail, #web-materials-detail) { position: static; }
+  #page-materials :is(#materials-list, #web-materials-list), #page-memories .library-layout .ideas-list { max-height: 340px; }
+  #page-memories .library-detail { max-height: none; overflow: visible; }
+  #page-memories #library-inspect { position: static; }
+  #page-materials #materials-reference-panel { grid-template-columns: minmax(0, 1fr); }
+  #page-settings .provider-fields { grid-template-columns: minmax(0, 1fr); }
+}
+@container (max-width: 680px) {
+  #page-help .help-results, #page-materials #materials-documents-panel { grid-template-columns: minmax(0, 1fr); }
+  #page-materials #materials-documents-panel > :is(.materials-topbar, .materials-passage-search) { grid-column: 1; }
+  #page-settings :is(.connection-choices, .settings-asset-pair, .local-voice-choices) { grid-template-columns: minmax(0, 1fr); }
+  #page-settings .settings-footer { flex-wrap: wrap; }
+  #page-settings .settings-footer p { flex: 1 1 260px; }
+  #page-settings .settings-footer .button { width: auto; }
+}
+@media (max-width: 680px) {
+  :is(#page-memories, #page-materials, #page-calendar, #page-settings, #page-help) { padding-inline: 16px; }
+  #page-settings .settings-footer p { font-size: 13px; }
+  #page-help .help-article-summary { padding: 15px; }
+}
