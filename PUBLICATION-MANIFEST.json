@@ -1,7 +1,7 @@
 {
-  "application_version": "0.9.180",
-  "prepared_utc": "2026-11-19T08:35:00.602445+00:00",
-  "baseline_commit": "7e7eeff802c24ff9490cc70ba1b51cffa5d0782c",
+  "application_version": "0.9.181",
+  "prepared_utc": "2026-11-20T01:41:03.464356+00:00",
+  "baseline_commit": "4fcc7935ee5cd252f8ca70fadd87e2906e0276b3",
   "publication_performed": false,
   "scope": "Complete static preview; excludes .git and two obsolete root ZIP/TAR files. This manifest and SHA256SUMS.txt are excluded to avoid cycles. No repository deletions required.",
   "files": [
@@ -428,12 +428,12 @@
     {
       "path": "continuity-map.html",
       "bytes": 109059,
-      "sha256": "054b2b862101add65a25249a08335a1f8de293000fd448f1b58cab537179a5f4"
+      "sha256": "3d0647a8a8b8a8b054f986500483a6e95da57e8a0172adcc126eb651aa0fe5fd"
     },
     {
       "path": "data-and-privacy.html",
       "bytes": 35725,
-      "sha256": "ab3b56b12bd799409506efd4243f7f4c7a987f6c970bf8c2c713be7f682f7444"
+      "sha256": "fa0e3706a72dbfda212c3ae6f22ea6284c330352de6f0757a0930b76f1c96fab"
     },
     {
       "path": "DESIGN.md",
@@ -442,23 +442,23 @@
     },
     {
       "path": "getting-started.html",
-      "bytes": 44043,
-      "sha256": "0be1340804aee75c3e1f9b4f863d5a56c19a9e0f48c47c259c55c7179ee37389"
+      "bytes": 44120,
+      "sha256": "2c1dd614be1905d06e38a58de364f00864a993b2222e11870e0f1e6553984772"
     },
     {
       "path": "index.html",
-      "bytes": 32100,
-      "sha256": "af7e568b2791b85557381ee42c424376d13a2b14cbd8786c6e3b1b33c8bf0f57"
+      "bytes": 32157,
+      "sha256": "cb14cc8ac69045bc8b1d0d06a97be4679b686b15ba6dc770860474b6ce883fdc"
     },
     {
       "path": "local-ai.html",
-      "bytes": 33025,
-      "sha256": "500dbcd717fafcb87ada9d8154cfad75b0e74790c353ec92ba2823d554a411bb"
+      "bytes": 33282,
+      "sha256": "1a28c54f1d3c898252e3ecea0537f5436088e7865f49b8104f7ead7882d2c7be"
     },
     {
       "path": "memory-control.html",
-      "bytes": 56206,
-      "sha256": "b8000e97c009efc3f691ab52c45803f241556d6c0591de83c344f9779173ccdc"
+      "bytes": 56607,
+      "sha256": "a5f5989f1a6714b8c837d25750c6737f90f6de994bcba0b6b6c7155b6328d424"
     },
     {
       "path": "og.png",
@@ -467,13 +467,13 @@
     },
     {
       "path": "PRODUCT.md",
-      "bytes": 11031,
-      "sha256": "4b43fec16f6f6f4cbd05334c05740d6453a63d28ccb7a520a5a5acfc8ae52971"
+      "bytes": 12136,
+      "sha256": "8b1f41b4c561b090028916b6af753e1e4f613024a002240d56e92e8cf2471ee6"
     },
     {
       "path": "README.md",
-      "bytes": 8404,
-      "sha256": "8dab084adb7d63fa1f4498e6a3575d423858c6a87e432b32b638a72826bfd206"
+      "bytes": 9362,
+      "sha256": "49eecde4d989a0bb5d56a0a96696918da9eeb2058c37d3eed5449b1d16b48168"
     },
     {
       "path": "robots.txt",
@@ -1073,7 +1073,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 862,
-      "sha256": "8b9730d5e706bb40e1a91dc6d1c206ebe471248256100c04cee7ce70d2e569b6"
+      "sha256": "098bacb97f0fb8a14994c45b1dd7537aa5eac51ef9391ec7d5131d4f7c95b688"
     },
     {
       "path": "START-HERE.txt",
@@ -1087,8 +1087,8 @@
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "bytes": 5099,
-      "sha256": "8129bad90f1df3a663bf787470d50299f9358c048133200b4d7309b31745f412"
+      "bytes": 3138,
+      "sha256": "4c3b94b01c6f846afecbf8a797c0e395b7fb2f6364926ec2d489b378441cd892"
     },
     {
       "path": "website-0924-r2.css",
@@ -1102,8 +1102,8 @@
     },
     {
       "path": "WEBSITE-CHECKS.json",
-      "bytes": 14314,
-      "sha256": "ebb5e20646bac586ef43968809724d6b5a0d2c25ca70cadc214069201b22be1e"
+      "bytes": 16144,
+      "sha256": "1e57e8244db6b6ab1c33e9d47d968325063c5e97f1434dbf4da4857b65d1e80a"
     },
     {
       "path": "website-refresh.css",

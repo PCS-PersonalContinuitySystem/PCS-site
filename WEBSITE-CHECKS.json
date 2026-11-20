@@ -375,5 +375,20 @@
         "The real PCS server was not run for a side-by-side comparison; the client code and recorded responses are the app's own."
       ]
     }
+  },
+  "update_0181": {
+    "application_version": "0.9.181",
+    "prepared_utc": "2026-11-20T01:41:03.464356+00:00",
+    "baseline_commit": "4fcc7935ee5cd252f8ca70fadd87e2906e0276b3",
+    "publication_performed": false,
+    "status": "static and browser checks passed",
+    "scope": "Links, structured metadata and the bug-report version moved to v0.9.181; short 0.9.181 notes on the home, memory, Local AI, setup and privacy pages; README, PRODUCT, sitemap and upload records. Map demo, diagrams, screenshots and archived Linux/macOS links unchanged.",
+    "static": "All six pages parsed with a Python HTML parser: tags balanced, no duplicate ids, JSON-LD parses, 356 local references and fragment targets resolve against the full site at the baseline commit with this update laid over it. No v0.9.180 download or release link remains; remaining 0.9.180 mentions are the Map demo, diagram captions and history.",
+    "external_links": "Every github.com link in the changed pages, README and PRODUCT (12 distinct, including the 0.9.181 Windows ZIP, Source ZIP, SHA256SUMS and release page and the archived 0.9.114 builds) answered 206 to a one-byte range request on 2026-11-19. The uploaded 0.9.181 asset digests match the local release.",
+    "browser": "Served locally over http.server and opened in a Chromium-based browser pane: no console errors on any page; the only 404 was the browser's automatic /favicon.ico request, as before. No horizontal scroll at 375 px on all six pages. Home download notes, memory guide In mind section and Local AI paragraph read correctly at desktop and 375 px widths.",
+    "limits": [
+      "Not committed, pushed or deployed; the live GitHub Pages site was not checked after upload.",
+      "Website checks do not qualify PCS, providers, microphones, personal vaults or installers."
+    ]
   }
 }

@@ -30,7 +30,7 @@ Continuity belongs to the person, not the model. PCS keeps the saved records (co
 
 ## Capabilities and Constraints
 
-- Current Windows application version is 0.9.180. Website changes never change the app version.
+- Current Windows application version is 0.9.181. Website changes never change the app version.
 - OpenRouter is a native route in guided setup and across PCS features within the selected model's tool/image support and permissions. It uses its own key, not a second required provider. Free-model inference limits vary and optional web research can charge separately. Do not promise a fixed monthly free quota.
 - Direct Alibaba Qwen access and automatic activity following are retired. Qwen-family models offered by OpenRouter are a separate choice. Manual Activity details, explicit memory approvals, Practice, Conversation pace and PCS Perspective remain. Do not restore the retired Proactive help panel in website instructions.
 - The default Companion direction gives PCS opinions, tastes and dry humor without inventing a human life story. Custom instructions are preserved. Initiative and Conversation pace remain separate controls.
@@ -89,3 +89,11 @@ Plain-language copy for non-technical readers. Visible focus, keyboard-operable 
 - Local speech: about 6 s instead of 32 s to ready GPU listening and Kokoro on the test PC (first Start after install still slow); 1.5 s end-of-turn pause on Meta, Claude, ChatGPT and OpenRouter too; non-speech noise dropped. Measured with synthetic audio, not a microphone.
 - Vision retries OBS twice before pausing; web search on Claude and ChatGPT works again (checked with simulated connections); bug report counts memory-request tokens in counts and fixed words only.
 - Screenshots are unchanged. The memory, Perspective and Local context diagrams have new 0180 versions; older diagram files are kept.
+
+## 0.9.181 website update
+
+- Links, structured metadata and the bug-report version point to 0.9.181. The Map demo, diagrams and screenshots keep their actual versions.
+- Local AI background work (memory writing and checking, Study, background PCS Perspective) stops as soon as you speak or type. Measured with Gemma 12B on an NVIDIA card (first reply waited about 26 s in one 0.9.180 session; under 0.1 s in the test); not with a custom model or Vulkan, not yet in a full conversation. A Local reply you stop is still written to its end.
+- On Claude, ChatGPT and OpenRouter, a memory update can send only what changed; PCS fills it in before the review, and the shrink, correction and newer-version protections still apply. One test per version on Claude Sonnet 5.5 with a made-up conversation; not tried on a real vault, ChatGPT, OpenRouter or Claude Haiku. Local, Meta, OpenAI and Google memory writing is unchanged.
+- The In mind right now list shows Still in mind for a memory carried over from an earlier turn; up to six are kept at a time. Display only.
+- 0.9.181 adds no vault reader requirement.
